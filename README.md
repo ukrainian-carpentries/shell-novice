@@ -1,5 +1,4 @@
 [![Create a Slack Account with us][create_slack_svg]][slack_invite]
-[![Slack Status][slack_status_svg]][slack_status]
 
 # Internationalisation hub repository for Software Carpentry shell-novice
 
@@ -8,3 +7,5 @@ Please see [https://swcarpentry.github.io/shell-novice/](https://swcarpentry.git
 for a rendered version of this material in english.
 
 More info to follow.
+
+[create_slack_svg]: https://img.shields.io/badge/Create_Slack_Account-The_Carpentries-071159.svg
