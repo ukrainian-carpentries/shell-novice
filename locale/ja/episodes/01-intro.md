@@ -1,19 +1,19 @@
 ---
-title: Introducing the Shell
+title: シェルの紹介
 teaching: 5
 exercises: 0
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain how the shell relates to the keyboard, the screen, the operating system, and users' programs.
-- Explain when and why command-line interfaces should be used instead of graphical interfaces.
+- シェルがキーボード、画面、オペレーティングシステム、およびユーザーのプログラムとどのように関係しているかを説明する
+- グラフィカルインターフェイスの代わりにコマンドラインインターフェイスを使用する場合と理由を説明する
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- What is a command shell and why would I use one?
+- コマンドシェルとは何ですか？それを使う利点は何ですか？
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
