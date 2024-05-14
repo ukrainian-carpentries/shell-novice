@@ -9,5 +9,4 @@ for a rendered version of this material in english.
 More info to follow.
 
 [create_slack_svg]: https://img.shields.io/badge/Create_Slack_Account-The_Carpentries-071159.svg
-
 [slack_invite]: https://slack-invite.carpentries.org/
