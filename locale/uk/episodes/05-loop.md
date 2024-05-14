@@ -652,7 +652,7 @@ the shell runs the modified command.
 However, nothing appears to happen --- there is no output.
 After a moment, Nelle realizes that since her script doesn't print anything to the screen
 any longer, she has no idea whether it is running, much less how quickly.
-She kills the running command by typing <kbd>Ctrl</kbd>+<kbd>C</kbd>,
+She kills the running command by typing <kbd>Ctrl</kbd>\+<kbd>C</kbd>,
 uses <kbd>↑</kbd> to repeat the command,
 and edits it to read:
 
@@ -665,8 +665,8 @@ bash goostats.sh $datafile stats-$datafile; done
 
 ## Beginning and End
 
-We can move to the beginning of a line in the shell by typing <kbd>Ctrl</kbd>+<kbd>A</kbd>
-and to the end using <kbd>Ctrl</kbd>+<kbd>E</kbd>.
+We can move to the beginning of a line in the shell by typing <kbd>Ctrl</kbd>\+<kbd>A</kbd>
+and to the end using <kbd>Ctrl</kbd>\+<kbd>E</kbd>.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -724,9 +724,9 @@ then she can re-run `goostats.sh` on the files simply by typing
 
 There are a number of other shortcut commands for getting at the history.
 
-- <kbd>Ctrl</kbd>+<kbd>R</kbd> enters a history search mode 'reverse-i-search' and finds the
+- <kbd>Ctrl</kbd>\+<kbd>R</kbd> enters a history search mode 'reverse-i-search' and finds the
   most recent command in your history that matches the text you enter next.
-  Press <kbd>Ctrl</kbd>+<kbd>R</kbd> one or more additional times to search for earlier matches.
+  Press <kbd>Ctrl</kbd>\+<kbd>R</kbd> one or more additional times to search for earlier matches.
   You can then use the left and right arrow keys to choose that line and edit
   it then hit <kbd>Return</kbd> to run the command.
 - `!!` retrieves the immediately preceding command
@@ -839,7 +839,7 @@ Try running the code for yourself to see which directories are created!
 - Do not use spaces, quotes, or wildcard characters such as '\*' or '?' in filenames, as it complicates variable expansion.
 - Give files consistent names that are easy to match with wildcard patterns to make it easy to select them for looping.
 - Use the up-arrow key to scroll up through previous commands to edit and repeat them.
-- Use <kbd>Ctrl</kbd>+<kbd>R</kbd> to search through the previously entered commands.
+- Use <kbd>Ctrl</kbd>\+<kbd>R</kbd> to search through the previously entered commands.
 - Use `history` to display recent commands, and `![number]` to repeat a command by number.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
