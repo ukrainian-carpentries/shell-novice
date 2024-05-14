@@ -6,16 +6,17 @@ exercises: 10
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Redirect a command's output to a file.
-- Construct command pipelines with two or more stages.
-- Explain what usually happens if a program or pipeline isn't given any input to process.
 - Explain the advantage of linking commands with pipes and filters.
+- Combine sequences of commands to get new output
+- Redirect a command's output to a file.
+- Explain what usually happens if a program or pipeline isn't given any input to process.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- How can I combine existing commands to do new things?
+- How can I combine existing commands to produce a desired output?
+- How can I show only part of the output?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -107,7 +108,7 @@ for us to give it some data interactively. From the outside, though, all we
 see is it sitting there, and the command doesn't appear to do anything.
 
 If you make this kind of mistake, you can escape out of this state by
-holding down the control key (<kbd>Ctrl</kbd>) and pressing the letter <kbd>C</kbd> once: <kbd>Ctrl</kbd>+<kbd>C</kbd>. Then release both keys.
+holding down the control key (<kbd>Ctrl</kbd>) and pressing the letter <kbd>C</kbd> once: <kbd>Ctrl</kbd>\+<kbd>C</kbd>. Then release both keys.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
