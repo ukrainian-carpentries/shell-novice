@@ -17,7 +17,7 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Background
+### 背景
 
 Humans and computers commonly interact in many different ways, such as through a keyboard and mouse,
 touch screen interfaces, or using speech recognition systems.
@@ -39,15 +39,13 @@ With the proper commands, the shell can repeat tasks with or without some modifi
 as many times as we want.
 Using the shell, the task in the literature example can be accomplished in seconds.
 
-### The Shell
+### シェル
 
 The shell is a program where users can type commands.
 With the shell, it's possible to invoke complicated programs like climate modeling software
 or simple commands that create an empty directory with only one line of code.
-The most popular Unix shell is Bash (the Bourne Again SHell ---
-so-called because it's derived from a shell written by Stephen Bourne).
-Bash is the default shell on most modern implementations of Unix and in most packages that provide
-Unix-like tools for Windows.
+最も人気のある Unix シェルは、Bash、Bourne Again SHell です (これは Stephen Bourne によって書かれたシェルから派生したものであるためそう呼ばれています)。
+Bash はほとんどの最新の Unix の搭載されたもののデフォルトシェルであり、 Windows 用の Unix のようなツールを提供するほとんどのパッケージで使われています。
 Note that 'Git Bash' is a piece of software that enables Windows users to use a Bash like interface
 when interacting with Git.
 
@@ -62,14 +60,10 @@ pipelines and handle large volumes of data automatically. Sequences of
 commands can be written into a _script_, improving the reproducibility of
 workflows.
 
-In addition, the command line is often the easiest way to interact with remote machines
-and supercomputers.
-Familiarity with the shell is near essential to run a variety of specialized tools and resources
-including high-performance computing systems.
-As clusters and cloud computing systems become more popular for scientific data crunching,
-being able to interact with the shell is becoming a necessary skill.
-We can build on the command-line skills covered here
-to tackle a wide range of scientific questions and computational challenges.
+さらに、リモートマシンやスーパーコンピュータとやりとりするには、コマンドラインが最も簡単な方法であることが多いです。
+高性能コンピュータシステムなどの多様な特殊なリソースやツールを実行するにはシェルに精通していることはほぼ必須です。
+クラスターやクラウドコンピューティングシステムが科学的なデータクランチングのために普及するにつれ、 シェルによってやりとりできるということは必須のスキルになってきています。
+ここで取り扱うコマンドラインのスキルを手にいれることで、 幅広く科学的な問題や計算機上の課題に取り組むことができます。
 
 Let's get started.
 
@@ -119,7 +113,7 @@ Documents   Library     Music       Public
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Command not found
+## コマンドが見つからないとき
 
 If the shell can't find a program whose name is the command you typed, it
 will print an error message such as:
