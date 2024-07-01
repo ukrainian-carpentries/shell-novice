@@ -196,7 +196,7 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="01-intro.html">1. Introducing the Shell</a>
+        <a href="01-intro.html">1. Знайомство з терміналом</a>
     </div><!--/div.accordion-header-->
         
   </div><!--/div.accordion-item-->
@@ -316,7 +316,7 @@
       <div class="d-none d-sm-none d-md-block">
         <a class="chapter-link" href="01-intro.html" rel="prev">
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
-          Previous: Introducing the
+          Previous: Знайомство з
         </a>
         <a class="chapter-link float-end" href="03-create.html" rel="next">
           Next: Working With Files... 
@@ -602,6 +602,22 @@ Mandatory arguments to long options are mandatory for short options, too.
   -F, --classify             append indicator (one of */=&gt;@|) to entries
 ...        ...        ...</code></pre>
 </div>
+<div id="when-to-use-short-or-long-options" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="when-to-use-short-or-long-options" class="callout-inner">
+<h3 class="callout-title">When to use short or long options<a class="anchor" aria-label="anchor" href="#when-to-use-short-or-long-options"></a>
+</h3>
+<div class="callout-content">
+<p>When options exist as both short and long options:</p>
+<ul><li>Use the short option when typing commands directly into the shell to
+minimize keystrokes and get your task done faster.</li>
+<li>Use the long option in scripts to provide clarity. It will be read
+many times and typed once.</li>
+</ul></div>
+</div>
+</div>
 <div id="unsupported-command-line-options" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -688,7 +704,7 @@ useful nevertheless.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>The <code>-l</code> option makes <code>ls</code> use a
 <strong>l</strong>ong listing format, showing not only the
@@ -724,7 +740,7 @@ option to see the last changed dates.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>The most recently changed file is listed last when using
 <code>-rt</code>. This can be very useful for finding your most recent
@@ -1071,20 +1087,20 @@ commands could Nelle use to navigate to her home directory, which is
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
-<ol style="list-style-type: decimal"><li>No: <code>.</code> stands for the current directory.</li>
-<li>No: <code>/</code> stands for the root directory.</li>
-<li>No: Nelle’s home directory is <code>/Users/nelle</code>.</li>
-<li>No: this command goes up two levels, i.e. ends in
-<code>/Users</code>.</li>
-<li>Yes: <code>~</code> stands for the user’s home directory, in this
-case <code>/Users/nelle</code>.</li>
-<li>No: this command would navigate into a directory <code>home</code>
-in the current directory if it exists.</li>
-<li>Yes: unnecessarily complicated, but correct.</li>
-<li>Yes: shortcut to go back to the user’s home directory.</li>
-<li>Yes: goes up one level.</li>
+<ol style="list-style-type: decimal"><li><p>No: <code>.</code> stands for the current directory.</p></li>
+<li><p>No: <code>/</code> stands for the root directory.</p></li>
+<li><p>No: Nelle’s home directory is <code>/Users/nelle</code>.</p></li>
+<li><p>No: this command goes up two levels, i.e. ends in
+<code>/Users</code>.</p></li>
+<li><p>Yes: <code>~</code> stands for the user’s home directory, in this
+case <code>/Users/nelle</code>.</p></li>
+<li><p>No: this command would navigate into a directory
+<code>home</code> in the current directory if it exists.</p></li>
+<li><p>Yes: unnecessarily complicated, but correct.</p></li>
+<li><p>Yes: shortcut to go back to the user’s home directory.</p></li>
+<li><p>Yes: goes up one level.</p></li>
 </ol></div>
 </div>
 </div>
@@ -1112,15 +1128,15 @@ display?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
-<ol style="list-style-type: decimal"><li>No: there <em>is</em> a directory <code>backup</code> in
-<code>/Users</code>.</li>
-<li>No: this is the content of <code>Users/thing/backup</code>, but with
-<code>..</code>, we asked for one level further up.</li>
-<li>No: see previous explanation.</li>
-<li>Yes: <code>../backup/</code> refers to
-<code>/Users/backup/</code>.</li>
+<ol style="list-style-type: decimal"><li><p>No: there <em>is</em> a directory <code>backup</code> in
+<code>/Users</code>.</p></li>
+<li><p>No: this is the content of <code>Users/thing/backup</code>, but
+with <code>..</code>, we asked for one level further up.</p></li>
+<li><p>No: see previous explanation.</p></li>
+<li><p>Yes: <code>../backup/</code> refers to
+<code>/Users/backup/</code>.</p></li>
 </ol></div>
 </div>
 </div>
@@ -1154,12 +1170,12 @@ following output:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
-<ol style="list-style-type: decimal"><li>No: <code>pwd</code> is not the name of a directory.</li>
-<li>Yes: <code>ls</code> without directory argument lists files and
-directories in the current directory.</li>
-<li>Yes: uses the absolute path explicitly.</li>
+<ol style="list-style-type: decimal"><li><p>No: <code>pwd</code> is not the name of a directory.</p></li>
+<li><p>Yes: <code>ls</code> without directory argument lists files and
+directories in the current directory.</p></li>
+<li><p>Yes: uses the absolute path explicitly.</p></li>
 </ol></div>
 </div>
 </div>
@@ -1238,22 +1254,6 @@ command is given below:</p>
 <pre class="output" tabindex="0"><code>Applications/         System/
 Library/              Users/
 Network/              Volumes/</code></pre>
-</div>
-<div id="when-to-use-short-or-long-options" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<div id="when-to-use-short-or-long-options" class="callout-inner">
-<h3 class="callout-title">When to use short or long options<a class="anchor" aria-label="anchor" href="#when-to-use-short-or-long-options"></a>
-</h3>
-<div class="callout-content">
-<p>When options exist as both short and long options:</p>
-<ul><li>Use the short option when typing commands directly into the shell to
-minimize keystrokes and get your task done faster.</li>
-<li>Use the long option in scripts to provide clarity. It will be read
-many times and typed once.</li>
-</ul></div>
-</div>
 </div>
 <div class="section level3">
 <h3 id="nelles-pipeline-organizing-files">Nelle’s Pipeline: Organizing Files<a class="anchor" aria-label="anchor" href="#nelles-pipeline-organizing-files"></a></h3>
@@ -1362,7 +1362,7 @@ location.</li>
       <div class="d-none d-sm-none d-md-block">
         <a class="chapter-link" href="01-intro.html" rel="prev">
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
-          Previous: Introducing the
+          Previous: Знайомство з
         </a>
         <a class="chapter-link float-end" href="03-create.html" rel="next">
           Next: Working With Files... 
