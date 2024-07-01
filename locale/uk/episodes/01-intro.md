@@ -1,5 +1,5 @@
 ---
-title: Introducing the Shell
+title: Знайомство з терміналом
 teaching: 5
 exercises: 0
 ---
@@ -17,13 +17,11 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Background
+### Попередні знання
 
-Humans and computers commonly interact in many different ways, such as through a keyboard and mouse,
-touch screen interfaces, or using speech recognition systems.
-The most widely used way to interact with personal computers is called a
-**graphical user interface** (GUI).
-With a GUI, we give instructions by clicking a mouse and using menu-driven interactions.
+Люди та комп’ютери зазвичай взаємодіють багатьма різними способами, наприклад за допомогою клавіатури та миші, сенсорного екрану або системи розпізнавання мови.
+Найбільш поширений спосіб взаємодії з персональними комп’ютерами називається графічний інтерфейс користувача (GUI - graphical user interface).
+За допомогою такого інтерфейсу ми надаємо комп’ютеру інструкції, обираючи дію у меню за допомогою миші.
 
 While the visual aid of a GUI makes it intuitive to learn,
 this way of delivering instructions to a computer scales very poorly.
