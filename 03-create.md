@@ -19,7 +19,6 @@ exercises: 20
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-
 ## Creating directories
 
 We now know how to explore files and directories,
@@ -147,7 +146,8 @@ There are special characters that can cause your command to not work as
 expected and can even result in data loss.
 
 If you need to refer to names of files or directories that have spaces
-or other special characters, you should surround the name in quotes (`""`).
+or other special characters, you should surround the name in single
+[quotes](https://www.gnu.org/software/bash/manual/html_node/Quoting.html) (`''`).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -257,8 +257,8 @@ $ touch my_file.txt
 ```
 
 1. What did the `touch` command do?
-  When you look at your current directory using the GUI file explorer,
-  does the file show up?
+   When you look at your current directory using the GUI file explorer,
+   does the file show up?
 
 2. Use `ls -l` to inspect the files.  How large is `my_file.txt`?
 
@@ -269,21 +269,21 @@ $ touch my_file.txt
 ## Solution
 
 1. The `touch` command generates a new file called `my_file.txt` in
-  your current directory.  You
-  can observe this newly generated file by typing `ls` at the
-  command line prompt.  `my_file.txt` can also be viewed in your
-  GUI file explorer.
+   your current directory.  You
+   can observe this newly generated file by typing `ls` at the
+   command line prompt.  `my_file.txt` can also be viewed in your
+   GUI file explorer.
 
 2. When you inspect the file with `ls -l`, note that the size of
-  `my_file.txt` is 0 bytes.  In other words, it contains no data.
-  If you open `my_file.txt` using your text editor it is blank.
+   `my_file.txt` is 0 bytes.  In other words, it contains no data.
+   If you open `my_file.txt` using your text editor it is blank.
 
 3. Some programs do not generate output files themselves, but
-  instead require that empty files have already been generated.
-  When the program is run, it searches for an existing file to
-  populate with its output.  The touch command allows you to
-  efficiently generate a blank text file to be used by such
-  programs.
+   instead require that empty files have already been generated.
+   When the program is run, it searches for an existing file to
+   populate with its output.  The touch command allows you to
+   efficiently generate a blank text file to be used by such
+   programs.
 
 :::::::::::::::::::::::::
 
@@ -319,10 +319,10 @@ according to the rules for plain text files, PDF documents, configuration
 files, images, and so on.
 
 Naming a PNG image of a whale as `whale.mp3` doesn't somehow
-magically turn it into a recording of whale song, though it *might*
+magically turn it into a recording of whale song, though it _might_
 cause the operating system to associate the file with a music player
 program. In this case, if someone double-clicked `whale.mp3` in a file
-explorer program,the music player will automatically (and erroneously)
+explorer program, the music player will automatically (and erroneously)
 attempt to open the `whale.mp3` file.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -495,11 +495,10 @@ quotations.txt
 It is important to include the `-r` flag. If you want to copy a directory and you omit this option
 you will see a message that the directory has been omitted because `-r not specified`.
 
-``` bash
+```bash
 $ cp thesis thesis_backup
 cp: -r not specified; omitting directory 'thesis'
 ```
-
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
@@ -521,14 +520,14 @@ correct the mistake, which of the following commands could you use to do so?
 ## Solution
 
 1. No.  While this would create a file with the correct name,
-  the incorrectly named file still exists in the directory
-  and would need to be deleted.
+   the incorrectly named file still exists in the directory
+   and would need to be deleted.
 2. Yes, this would work to rename the file.
 3. No, the period(.) indicates where to move the file, but does not provide a new file name;
-  identical file names
-  cannot be created.
+   identical file names
+   cannot be created.
 4. No, the period(.) indicates where to copy the file, but does not provide a new file name;
-  identical file names cannot be created.
+   identical file names cannot be created.
 
 :::::::::::::::::::::::::
 
@@ -662,15 +661,15 @@ rm: cannot remove 'thesis': Is a directory
 
 This happens because `rm` by default only works on files, not directories.
 
-`rm` can remove a directory *and all its contents* if we use the
-recursive option `-r`, and it will do so *without any confirmation prompts*:
+`rm` can remove a directory _and all its contents_ if we use the
+recursive option `-r`, and it will do so _without any confirmation prompts_:
 
 ```bash
 $ rm -r thesis
 ```
 
 Given that there is no way to retrieve files deleted using the shell,
-`rm -r` *should be used with great caution*
+`rm -r` _should be used with great caution_
 (you might consider adding the interactive option `rm -r -i`).
 
 ## Operations with multiple files and directories
@@ -750,7 +749,7 @@ Wildcards can be used in combination with each other. For example,
 giving `cubane.pdb  ethane.pdb  octane.pdb`.
 
 When the shell sees a wildcard, it expands the wildcard to create a
-list of matching filenames *before* running the preceding command.
+list of matching filenames _before_ running the preceding command.
 As an exception, if a wildcard expression does not match
 any file, Bash will pass the expression as an argument to the command
 as it is. For example, typing `ls *.pdf` in the `alkanes` directory

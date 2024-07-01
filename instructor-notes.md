@@ -85,14 +85,14 @@ as long as learners using Windows do not run into roadblocks such as:
 ## Preparing to Teach
 
 - Use the `data` directory for in-workshop exercises and live coding examples.
-  You can clone the shell-novice directory or use the *Download ZIP*
+  You can clone the shell-novice directory or use the _Download ZIP_
   button on the right to get the entire
   [Git repository](https://github.com/swcarpentry/shell-novice). We also now provide
   a zip file of the `data` directory
   at the [Setup page](../learners/setup.md).
 
 - Website: various practices have been used.
-  
+
   - Option 1: Can give links to learners before the lesson so they can follow along,
     catch up,
     and see exercises (particularly if you're following the lesson content without many changes).
@@ -145,9 +145,9 @@ as long as learners using Windows do not run into roadblocks such as:
   isn't a small thing either,
   and neither are wildcard expansion and `for` loops.
   Each one is an opportunity to repeat one of the big ideas of Software Carpentry:
-  if the computer *can* repeat it,
+  if the computer _can_ repeat it,
   some programmer somewhere will almost certainly have built
-  some way for the computer *to* repeat it.
+  some way for the computer _to_ repeat it.
 
 - Building up a pipeline with four or five stages,
   then putting it in a shell script for re-use
@@ -191,12 +191,12 @@ as long as learners using Windows do not run into roadblocks such as:
 - Installing Bash and a reasonable set of Unix commands on Windows
   always involves some fiddling and frustration.
   Please see the latest set of installation guidelines for advice,
-  and try it out yourself *before* teaching a class.
+  and try it out yourself _before_ teaching a class.
 
 - By default, you may have a long string of information attached to
   your command prompt in Git Bash. To reduce the "noise" and proceed
   with a tidier prompt, enter the command:
-  
+
   ```bash
   PS1='$ '
   ```
@@ -209,12 +209,12 @@ as long as learners using Windows do not run into roadblocks such as:
   the purposes of this lesson, `notepad` and `nano` can be used almost interchangeably.
 
 - On Windows, it appears that:
-  
+
   ```bash
   $ cd
   $ cd Desktop
   ```
-  
+
   will always put someone on their desktop
   (unless their machine is backed up using enterprise OneDrive, see next point).
   Have them create the example directory for the shell exercises there
@@ -226,12 +226,12 @@ as long as learners using Windows do not run into roadblocks such as:
   The OneDrive desktop should be accessible using one of the following commands
   (if the name of the enterprise isn't clear, look through the output of `ls` to find
   the right folder):
-  
+
   ```bash
   $ cd "~/OneDrive - Name Of Enterprise/Desktop"
   $ cd "C:/Users/Username/OneDrive - Name Of Enterprise/Desktop"
   ```
-  
+
   One way to spot if the computer is using this kind of configuration is to look at files,
   folders or links on the desktop. Usually the icon contains a shortcut/arrow symbol if it
   is a link, or just the plain icon if the file is just saved in the `Desktop` folder.
@@ -249,7 +249,7 @@ as long as learners using Windows do not run into roadblocks such as:
 Installing Bash and a reasonable set of Unix commands on Windows
 always involves some fiddling and frustration.
 Please see the latest set of installation guidelines for advice,
-and try it out yourself *before* teaching a class.
+and try it out yourself _before_ teaching a class.
 Options we have explored include:
 
 1. [msysGit](https://msysgit.github.io/) (also called "Git Bash"),
@@ -267,18 +267,15 @@ but:
 1. they don't work well on underpowered machines,
 2. they're confusing for novices (because simple things like copy and paste work differently),
 3. learners leave the workshop without a working environment on their operating system of choice,
-  and
+   and
 4. learners may show up without having downloaded the VM or the wireless will go down
-  (or become congested) during the lesson.
+   (or become congested) during the lesson.
 
 Whatever you use,
-please *test it yourself* on a Windows machine *before* your workshop:
+please _test it yourself_ on a Windows machine _before_ your workshop:
 things may always have changed behind your back since your last workshop.
 And please also make use of our
 [Software Carpentry Windows Installer][windows-installer].
 
 [shebang]: https://www.in-ulm.de/~mascheck/various/shebang/
 [windows-installer]: https://github.com/swcarpentry/windows-installer
-
-
-

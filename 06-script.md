@@ -50,7 +50,7 @@ head -n 15 octane.pdb | tail -n 5
 ```
 
 This is a variation on the pipe we constructed earlier, which selects lines 11-15 of
-the file `octane.pdb`. Remember, we are *not* running it as a command just yet;
+the file `octane.pdb`. Remember, we are _not_ running it as a command just yet;
 we are only incorporating the commands in a file.
 
 Then we save the file (`Ctrl-O` in nano) and exit the text editor (`Ctrl-X` in nano).
@@ -88,7 +88,6 @@ anything to tools like `head`, which expects input files to contain
 nothing but the letters, digits, and punctuation on a standard computer
 keyboard. When editing programs, therefore, you must either use a plain
 text editor or be careful to save files as plain text.
-
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -145,7 +144,6 @@ ATOM     13  H           1      -1.183   0.500  -1.412  1.00  0.00
 For the same reason that we put the loop variable inside double-quotes,
 in case the filename happens to contain any spaces,
 we surround `$1` with double-quotes.
-
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -357,7 +355,7 @@ $ history | tail -n 5 > recent.sh
 
 the last command in the file is the `history` command itself, i.e.,
 the shell has added `history` to the command log before actually
-running it. In fact, the shell *always* adds commands to the log
+running it. In fact, the shell _always_ adds commands to the log
 before running them. Why do you think it does this?
 
 :::::::::::::::  solution
@@ -368,8 +366,6 @@ If a command causes something to crash or hang, it might be useful
 to know what that command was, in order to investigate the problem.
 Were the command only be recorded after running it, we would not
 have a record of the last command run in the event of a crash.
-
-
 
 :::::::::::::::::::::::::
 
@@ -443,7 +439,7 @@ done
 
 The advantage is that this always selects the right files:
 she doesn't have to remember to exclude the 'Z' files.
-The disadvantage is that it *always* selects just those files --- she can't run it on all files
+The disadvantage is that it _always_ selects just those files --- she can't run it on all files
 (including the 'Z' files),
 or on the 'G' or 'H' files her colleagues in Antarctica are producing,
 without editing the script.
@@ -473,7 +469,7 @@ $ bash script.sh '*.pdb' 1 1
 Which of the following outputs would you expect to see?
 
 1. All of the lines between the first and the last lines of each file ending in `.pdb`
-  in the `alkanes` directory
+   in the `alkanes` directory
 2. The first and the last line of each file ending in `.pdb` in the `alkanes` directory
 3. The first and the last line of each file in the `alkanes` directory
 4. An error because of the quotes around `*.pdb`
@@ -495,8 +491,6 @@ $ tail -n 1 cubane.pdb ethane.pdb octane.pdb pentane.pdb propane.pdb
 The shell does not expand `'*.pdb'` because it is enclosed by quote marks.
 As such, the first argument to the script is `'*.pdb'` which gets expanded within the
 script by `head` and `tail`.
-
-
 
 :::::::::::::::::::::::::
 
@@ -541,7 +535,7 @@ wc -l $1/*.$2 | sort -n | tail -n 2 | head -n 1
 The first part of the pipeline, `wc -l $1/*.$2 | sort -n`, counts
 the lines in each file and sorts them numerically (largest last). When
 there's more than one file, `wc` also outputs a final summary line,
-giving the total number of lines across *all* files.  We use `tail -n 2 | head -n 1` to throw away this last line.
+giving the total number of lines across _all_ files.  We use `tail -n 2 | head -n 1` to throw away this last line.
 
 With `wc -l $1/*.$2 | sort -n | tail -n 1` we'll see the final summary
 line: we can build our pipeline up in pieces to be sure we understand
@@ -594,7 +588,7 @@ Script 2 would print the contents of the first 3 files with a `.pdb` file extens
 
 Script 3 would print all the arguments to the script (i.e. all the `.pdb` files),
 followed by `.pdb`.
-`$@` refers to *all* the arguments given to a shell script.
+`$@` refers to _all_ the arguments given to a shell script.
 
 ```output
 cubane.pdb ethane.pdb methane.pdb octane.pdb pentane.pdb propane.pdb.pdb
@@ -646,13 +640,9 @@ In this example, we can see that `echo` isn't printing anything. We have made a 
 in the loop variable name, and the variable `datfile` doesn't exist, hence returning
 an empty string.
 
-
-
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
@@ -664,5 +654,3 @@ an empty string.
 - Letting users decide what files to process is more flexible and more consistent with built-in Unix commands.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-

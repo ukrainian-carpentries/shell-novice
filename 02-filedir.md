@@ -43,7 +43,7 @@ Several commands are frequently used to create, inspect, rename, and delete file
 To start exploring them, we'll go to our open shell window.
 
 First, let's find out where we are by running a command called `pwd`
-(which stands for 'print working directory'). Directories are like *places* — at any time
+(which stands for 'print working directory'). Directories are like _places_ — at any time
 while we are using the shell, we are in exactly one place called
 our **current working directory**. Commands mostly read and write files in the
 current working directory, i.e. 'here', so knowing where you are before running
@@ -79,7 +79,6 @@ or some commands in this lesson will not work as written.
 See [Exploring Other Directories](#exploring-other-directories) for more details
 on the `cd` command.
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 To understand what a 'home directory' is,
@@ -93,7 +92,7 @@ On Nelle's computer, the filesystem looks like this:
 
 ![](fig/filesystem.svg){alt='The file system is made up of a root directory that contains sub-directories titled bin, data, users, and tmp'}
 
-The filesystem looks like an upside down tree. 
+The filesystem looks like an upside down tree.
 The topmost directory  is the **root directory**
 that holds everything else.
 We refer to it using a slash character, `/`, on its own;
@@ -118,20 +117,19 @@ because its name begins with `/`.
 
 Notice that there are two meanings for the `/` character.
 When it appears at the front of a file or directory name,
-it refers to the root directory. When it appears *inside* a path,
+it refers to the root directory. When it appears _inside_ a path,
 it's just a separator.
-
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 Underneath `/Users`,
 we find one directory for each user with an account on Nelle's machine,
-her colleagues *imhotep* and *larry*.
+her colleagues _imhotep_ and _larry_.
 
 ![](fig/home-directories.svg){alt='Like other directories, home directories are sub-directories underneath "/Users" like "/Users/imhotep", "/Users/larry" or"/Users/nelle"'}
 
-The user *imhotep*'s files are stored in `/Users/imhotep`,
-user *larry*'s in `/Users/larry`,
+The user _imhotep_'s files are stored in `/Users/imhotep`,
+user _larry_'s in `/Users/larry`,
 and Nelle's in `/Users/nelle`. Nelle is the user in our
 examples here; therefore, we get `/Users/nelle` as our home directory.
 Typically, when you open a new command prompt, you will be in
@@ -187,7 +185,6 @@ If your screen gets too cluttered, you can clear your terminal using the
 `clear` command. You can still access previous commands using <kbd>↑</kbd>
 and <kbd>↓</kbd> to move line-by-line, or by scrolling in your terminal.
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ### Getting help
@@ -197,16 +194,16 @@ to use a command and what options it accepts ---
 **depending on your environment, you might find that only one of these ways works:**
 
 1. We can pass a `--help` option to any command (available on Linux and Git Bash), for example:
-  
-  ```bash
-  $ ls --help
-  ```
+
+```bash
+$ ls --help
+```
 
 2. We can read its manual with `man` (available on Linux and macOS):
-  
-  ```bash
-  $ man ls
-  ```
+
+```bash
+$ man ls
+```
 
 We'll describe both ways next.
 
@@ -219,7 +216,6 @@ programs on the filesystem. One example is the `cd` (change directory) command.
 If you get a message like `No manual entry for cd`, try `help cd` instead. The
 `help` command is how you get usage information for
 [Bash built-ins](https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html).
-
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -263,6 +259,19 @@ Mandatory arguments to long options are mandatory for short options, too.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
+### When to use short or long options
+
+When options exist as both short and long options:
+
+- Use the short option when typing commands directly into the
+  shell to minimize keystrokes and get your task done faster.
+- Use the long option in scripts to provide clarity.
+  It will be read many times and typed once.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::::  callout
+
 ## Unsupported command-line options
 
 If you try to use an option that is not supported, `ls` and other commands
@@ -296,8 +305,7 @@ or try <kbd>B</kbd> and <kbd>Spacebar</kbd> to skip up and down by a full page.
 To search for a character or word in the `man` pages,
 use <kbd>/</kbd> followed by the character or word you are searching for.
 Sometimes a search will result in multiple hits.
-If so, you can move between hits using <kbd>N</kbd> (for moving forward) and
-<kbd>Shift</kbd>\+<kbd>N</kbd> (for moving backward).
+If so, you can move between hits using <kbd>N</kbd> (for moving forward) and <kbd>Shift</kbd>\+<kbd>N</kbd> (for moving backward).
 
 To **quit** the `man` pages, press <kbd>Q</kbd>.
 
@@ -314,7 +322,6 @@ GNU provides links to its
 [manuals](https://www.gnu.org/manual/manual.html) including the
 [core GNU utilities](https://www.gnu.org/software/coreutils/manual/coreutils.html),
 which covers many commands introduced within this lesson.
-
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -339,8 +346,6 @@ and the time of its last modification. If you use both the `-h` option and the `
 this makes the file size '**h**uman readable', i.e. displaying something like `5.3K`
 instead of `5369`.
 
-
-
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -364,8 +369,6 @@ last changed dates.
 The most recently changed file is listed last when using `-rt`. This
 can be very useful for finding your most recent edits or checking to
 see if a new output file was written.
-
-
 
 :::::::::::::::::::::::::
 
@@ -544,7 +547,6 @@ different programs on your computer. The prefix `.` is used to prevent these
 configuration files from cluttering the terminal when a standard `ls` command
 is used.
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 These three commands are the basic commands for navigating the filesystem on your computer:
@@ -621,16 +623,16 @@ The shell interprets a tilde (`~`) character at the start of a path to
 mean "the current user's home directory". For example, if Nelle's home
 directory is `/Users/nelle`, then `~/data` is equivalent to
 `/Users/nelle/data`. This only works if it is the first character in the
-path; `here/there/~/elsewhere` is *not* `here/there/Users/nelle/elsewhere`.
+path; `here/there/~/elsewhere` is _not_ `here/there/Users/nelle/elsewhere`.
 
 Another shortcut is the `-` (dash) character. `cd` will translate `-` into
-*the previous directory I was in*, which is faster than having to remember,
-then type, the full path.  This is a *very* efficient way of moving
-*back and forth between two directories* -- i.e. if you execute `cd -` twice,
+_the previous directory I was in_, which is faster than having to remember,
+then type, the full path.  This is a _very_ efficient way of moving
+_back and forth between two directories_ -- i.e. if you execute `cd -` twice,
 you end up back in the starting directory.
 
 The difference between `cd ..` and `cd -` is
-that the former brings you *up*, while the latter brings you *back*.
+that the former brings you _up_, while the latter brings you _back_.
 
 ***
 
@@ -655,7 +657,6 @@ $ cd -
 
 you'll see you're back in `~/Desktop/shell-lesson-data`.
 Run `cd -` again and you're back in `~/Desktop/shell-lesson-data/exercise-data/creatures`
-
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -682,17 +683,23 @@ which is `/Users/nelle`?
 ## Solution
 
 1. No: `.` stands for the current directory.
+
 2. No: `/` stands for the root directory.
+
 3. No: Nelle's home directory is `/Users/nelle`.
+
 4. No: this command goes up two levels, i.e. ends in `/Users`.
+
 5. Yes: `~` stands for the user's home directory, in this case `/Users/nelle`.
+
 6. No: this command would navigate into a directory `home` in the current directory
-  if it exists.
+   if it exists.
+
 7. Yes: unnecessarily complicated, but correct.
+
 8. Yes: shortcut to go back to the user's home directory.
+
 9. Yes: goes up one level.
-  
-  
 
 :::::::::::::::::::::::::
 
@@ -716,13 +723,14 @@ what will `ls -F ../backup` display?
 
 ## Solution
 
-1. No: there *is* a directory `backup` in `/Users`.
+1. No: there _is_ a directory `backup` in `/Users`.
+
 2. No: this is the content of `Users/thing/backup`,
-  but with `..`, we asked for one level further up.
+   but with `..`, we asked for one level further up.
+
 3. No: see previous explanation.
+
 4. Yes: `../backup/` refers to `/Users/backup/`.
-  
-  
 
 :::::::::::::::::::::::::
 
@@ -752,11 +760,11 @@ pnas_sub/ pnas_final/ original/
 ## Solution
 
 1. No: `pwd` is not the name of a directory.
+
 2. Yes: `ls` without directory argument lists files and directories
-  in the current directory.
+   in the current directory.
+
 3. Yes: uses the absolute path explicitly.
-  
-  
 
 :::::::::::::::::::::::::
 
@@ -781,7 +789,7 @@ $ ls -F /
 We've already encountered options  which
 either start with a single dash (`-`), known as **short options**,
 or two dashes (`--`), known as **long options**.
-[Options] change the behavior of a command and
+\[Options] change the behavior of a command and
 [Arguments] tell the command what to operate on (e.g. files and directories).
 Sometimes options and arguments are referred to as **parameters**.
 A command can be called with more than one option and more than one argument, but a
@@ -789,7 +797,7 @@ command doesn't always require an argument or an option.
 
 You might sometimes see options being referred to as **switches** or **flags**,
 especially for options that take no argument. In this lesson we will stick with
-using the term *option*.
+using the term _option_.
 
 Each part is separated by spaces. If you omit the space
 between `ls` and `-F` the shell will look for a command called `ls-F`, which
@@ -807,7 +815,7 @@ total 28
  4 animal-counts   4 creatures  12 numbers.txt   4 alkanes   4 writing
 ```
 
-Note that the sizes returned by `ls -s` are in *blocks*.
+Note that the sizes returned by `ls -s` are in _blocks_.
 As these are defined differently for different operating systems,
 you may not obtain the same figures as in the example.
 
@@ -832,18 +840,6 @@ Applications/         System/
 Library/              Users/
 Network/              Volumes/
 ```
-
-
-:::::::::::::::::::::::::::::::::::::::::  callout
-### When to use short or long options
-When options exist as both short and long options:
-
-- Use the short option when typing commands directly into the
-   shell to minimize keystrokes and get your task done faster.
-- Use the long option in scripts to provide clarity.
-  It will be read many times and typed once.
-  
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ### Nelle's Pipeline: Organizing Files
 
@@ -909,10 +905,7 @@ goodiff.sh   goostats.sh
 This is called **tab completion**,
 and we will see it in many other tools as we go on.
 
-
-
 [Arguments]: https://swcarpentry.github.io/shell-novice/reference.html#argument
-
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
@@ -930,5 +923,3 @@ and we will see it in many other tools as we go on.
 - `.` on its own means 'the current directory'; `..` means 'the directory above the current one'.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-

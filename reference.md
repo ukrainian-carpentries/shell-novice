@@ -1,18 +1,18 @@
 ---
-title: 'Summary of Basic Commands'
+title: Summary of Basic Commands
 ---
 
 ## Summary of Basic Commands
 
-| Action       | Files | Folders      | 
+| Action       | Files | Folders      |
 | ------------ | ----- | ------------ |
-| Inspect      | ls    | ls           | 
-| View content | cat   | ls           | 
-| Navigate to  |       | cd           | 
-| Move         | mv    | mv           | 
-| Copy         | cp    | cp -r        | 
-| Create       | nano  | mkdir        | 
-| Delete       | rm    | rmdir, rm -r | 
+| Inspect      | ls    | ls           |
+| View content | cat   | ls           |
+| Navigate to  |       | cd           |
+| Move         | mv    | mv           |
+| Copy         | cp    | cp -r        |
+| Create       | nano  | mkdir        |
+| Delete       | rm    | rmdir, rm -r |
 
 ## Filesystem hierarchy
 
@@ -245,5 +245,3 @@ so that `*.txt` matches all files whose names end in `.txt`.
 - ['Ensuring the longevity of digital information' by Jeff Rothenberg](https://www.clir.org/pubs/archives/ensuring.pdf)
 - [Computer error haikus](https://wiki.c2.com/?ComputerErrorHaiku)
 - [How to name files nicely, by Jenny Bryan](https://speakerdeck.com/jennybc/how-to-name-files)
-
-

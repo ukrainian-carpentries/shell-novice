@@ -86,7 +86,6 @@ typing in our loop. The second prompt, `>`, is different to remind
 us that we haven't finished typing a complete command yet. A semicolon, `;`,
 can be used to separate two commands written on a single line.
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 When the shell sees the keyword `for`,
@@ -127,12 +126,11 @@ used to redirect output.
 Similarly, `$` is used as a shell prompt, but, as we saw earlier,
 it is also used to ask the shell to get the value of a variable.
 
-If the *shell* prints `>` or `$` then it expects you to type something,
+If the _shell_ prints `>` or `$` then it expects you to type something,
 and the symbol is a prompt.
 
-If *you* type `>` or `$` yourself, it is an instruction from you that
+If _you_ type `>` or `$` yourself, it is an instruction from you that
 the shell should redirect output or get the value of a variable.
-
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -163,7 +161,7 @@ $ for temperature in basilisk.dat minotaur.dat unicorn.dat
 ```
 
 it would work exactly the same way.
-*Don't do this.*
+_Don't do this._
 Programs are only useful if people can understand them,
 so meaningless names (like `x`) or misleading names (like `temperature`)
 increase the odds that the program won't do what its readers think it does.
@@ -310,7 +308,6 @@ $ for filename in c*
 4 is the correct answer. `*` matches zero or more characters, so any file name starting with
 the letter c, followed by zero or more other characters will be matched.
 
-
 :::::::::::::::::::::::::
 
 How would the output differ from using this command instead?
@@ -335,8 +332,6 @@ $ for filename in *c*
 4 is the correct answer. `*` matches zero or more characters, so a file name with zero or more
 characters before a letter c and zero or more characters after the letter c will be matched.
 
-
-
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -356,11 +351,11 @@ done
 ```
 
 1. Prints `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb`, `pentane.pdb` and
-  `propane.pdb`, and the text from `propane.pdb` will be saved to a file called `alkanes.pdb`.
+   `propane.pdb`, and the text from `propane.pdb` will be saved to a file called `alkanes.pdb`.
 2. Prints `cubane.pdb`, `ethane.pdb`, and `methane.pdb`, and the text from all three files
-  would be concatenated and saved to a file called `alkanes.pdb`.
+   would be concatenated and saved to a file called `alkanes.pdb`.
 3. Prints `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb`, and `pentane.pdb`,
-  and the text from `propane.pdb` will be saved to a file called `alkanes.pdb`.
+   and the text from `propane.pdb` will be saved to a file called `alkanes.pdb`.
 4. None of the above.
 
 :::::::::::::::  solution
@@ -368,11 +363,9 @@ done
 ## Solution
 
 1. The text from each file in turn gets written to the `alkanes.pdb` file.
-  However, the file gets overwritten on each loop iteration, so the final content of
-  `alkanes.pdb`
-  is the text from the `propane.pdb` file.
-  
-  
+   However, the file gets overwritten on each loop iteration, so the final content of
+   `alkanes.pdb`
+   is the text from the `propane.pdb` file.
 
 :::::::::::::::::::::::::
 
@@ -393,12 +386,12 @@ done
 ```
 
 1. All of the text from `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb`, and
-  `pentane.pdb` would be concatenated and saved to a file called `all.pdb`.
+   `pentane.pdb` would be concatenated and saved to a file called `all.pdb`.
 2. The text from `ethane.pdb` will be saved to a file called `all.pdb`.
 3. All of the text from `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb`, `pentane.pdb`
-  and `propane.pdb` would be concatenated and saved to a file called `all.pdb`.
+   and `propane.pdb` would be concatenated and saved to a file called `all.pdb`.
 4. All of the text from `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb`, `pentane.pdb`
-  and `propane.pdb` would be printed to the screen and saved to a file called `all.pdb`.
+   and `propane.pdb` would be printed to the screen and saved to a file called `all.pdb`.
 
 :::::::::::::::  solution
 
@@ -407,8 +400,6 @@ done
 3 is the correct answer. `>>` appends to a file, rather than overwriting it with the redirected
 output from a command.
 Given the output from the `cat` command has been redirected, nothing is printed to the screen.
-
-
 
 :::::::::::::::::::::::::
 
@@ -570,7 +561,7 @@ cp unicorn.dat original-unicorn.dat
 Since the `cp` command does not normally produce any output, it's hard to check
 that the loop is working correctly. However, we learned earlier how to print strings
 using `echo`, and we can modify the loop to use `echo` to print our commands without
-actually executing them. As such we can check what commands *would be* run in the
+actually executing them. As such we can check what commands _would be_ run in the
 unmodified loop.
 
 The following diagram
@@ -677,7 +668,6 @@ bash goostats.sh $datafile stats-$datafile; done
 We can move to the beginning of a line in the shell by typing <kbd>Ctrl</kbd>\+<kbd>A</kbd>
 and to the end using <kbd>Ctrl</kbd>\+<kbd>E</kbd>.
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 When she runs her program now,
@@ -726,7 +716,6 @@ stats-$datafile; done
 then she can re-run `goostats.sh` on the files simply by typing
 `!459`.
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::  callout
@@ -747,7 +736,6 @@ There are a number of other shortcut commands for getting at the history.
   `bash goostats.sh NENE01729B.txt stats-NENE01729B.txt`, you can type
   `less !$` to look at the file `stats-NENE01729B.txt`, which is
   quicker than doing <kbd>↑</kbd> and editing the command-line.
-  
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -756,7 +744,7 @@ There are a number of other shortcut commands for getting at the history.
 ## Doing a Dry Run
 
 A loop is a way to do many things at once --- or to make many mistakes at
-once if it does the wrong thing. One way to check what a loop *would* do
+once if it does the wrong thing. One way to check what a loop _would_ do
 is to `echo` the commands it would run instead of actually running them.
 
 Suppose we want to preview the commands the following loop will execute
@@ -795,7 +783,7 @@ $ for datafile in *.pdb
 The second version is the one we want to run.
 This prints to screen everything enclosed in the quote marks, expanding the
 loop variable name because we have prefixed it with a dollar sign.
-It also *does not* modify nor create the file `all.pdb`, as the `>>`
+It also _does not_ modify nor create the file `all.pdb`, as the `>>`
 is treated literally as part of a string rather than as a
 redirection instruction.
 
@@ -805,8 +793,6 @@ to the file, `all.pdb`. This file will just contain the list;
 
 Try both versions for yourself to see the output! Be sure to open the
 `all.pdb` file to view its contents.
-
-
 
 :::::::::::::::::::::::::
 
@@ -818,7 +804,7 @@ Try both versions for yourself to see the output! Be sure to open the
 
 Suppose we want to set up a directory structure to organize
 some experiments measuring reaction rate constants with different compounds
-*and* different temperatures.  What would be the
+_and_ different temperatures.  What would be the
 result of the following code:
 
 ```bash
@@ -841,13 +827,9 @@ temperatures, and creates a new directory for each combination.
 
 Try running the code for yourself to see which directories are created!
 
-
-
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
@@ -861,5 +843,3 @@ Try running the code for yourself to see which directories are created!
 - Use `history` to display recent commands, and `![number]` to repeat a command by number.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-

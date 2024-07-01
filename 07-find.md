@@ -31,7 +31,7 @@ It is also the name of a very useful command-line program.
 For our examples,
 we will use a file that contains three haiku taken from a
 [1998 competition](https://web.archive.org/web/19991201042211/http://salon.com/21st/chal/1998/01/26chal.html)
-in *Salon* magazine (Credit to authors Bill Torcaso, Howard Korder, and
+in _Salon_ magazine (Credit to authors Bill Torcaso, Howard Korder, and
 Margaret Segall, respectively. See
 Haiku Error Messsages archived
 [Page 1](https://web.archive.org/web/20000310061355/http://www.salon.com/21st/chal/1998/02/10chal2.html)
@@ -257,8 +257,6 @@ and the presence of absence:
 The correct answer is 3, because the `-w` option looks only for whole-word matches.
 The other options will also match 'of' when part of another word.
 
-
-
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -291,7 +289,6 @@ example, the shell would try to expand it before running `grep`.) The
 `^` in the pattern anchors the match to the start of the line. The `.`
 matches a single character (just like `?` in the shell), while the `o`
 matches an actual 'o'.
-
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -369,7 +366,7 @@ $ bash count-species.sh bear .
 
 ## Little Women
 
-You and your friend, having just finished reading *Little Women* by
+You and your friend, having just finished reading _Little Women_ by
 Louisa May Alcott, are in an argument.  Of the four sisters in the
 book, Jo, Meg, Beth, and Amy, your friend thinks that Jo was the
 most mentioned.  You, however, are certain it was Amy.  Luckily, you
@@ -416,8 +413,6 @@ in chapter titles (e.g. 'MEG GOES TO VANITY FAIR').
 If you wanted to count these as well, you could add the `-i` option for case-insensitivity
 (though in this case, it doesn't affect the answer to which sister is mentioned
 most frequently).
-
-
 
 :::::::::::::::::::::::::
 
@@ -542,7 +537,7 @@ $ find . -name *.txt
 
 We expected it to find all the text files,
 but it only prints out `./numbers.txt`.
-The problem is that the shell expands wildcard characters like `*` *before* commands run.
+The problem is that the shell expands wildcard characters like `*` _before_ commands run.
 Since `*.txt` in the current directory expands to `./numbers.txt`,
 the command we actually ran was:
 
@@ -576,7 +571,6 @@ $ find . -name "*.txt"
 but under normal circumstances,
 `ls` lists everything it can,
 while `find` searches for things with certain properties and shows them.
-
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -635,7 +629,7 @@ $ grep "searching" $(find . -name "*.txt")
 ## Matching and Subtracting
 
 The `-v` option to `grep` inverts pattern matching, so that only lines
-which do *not* match the pattern are printed. Given that, which of
+which do _not_ match the pattern are printed. Given that, which of
 the following commands will find all .dat files in `creatures`
 except `unicorn.dat`?
 Once you have thought about your answer, you can test the commands in the
@@ -661,8 +655,6 @@ We first encountered this in
 
 Option 3 is incorrect because it searches the contents of the files for lines which
 do not match 'unicorn', rather than searching the file names.
-
-
 
 :::::::::::::::::::::::::
 
@@ -690,12 +682,11 @@ When the time comes to do this, don't be too hard on the shell. Many
 modern programming languages have borrowed a lot of
 ideas from it, and imitation is also the sincerest form of praise.
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 The Unix shell is older than most of the people who use it. It has
 survived so long because it is one of the most productive programming
-environments ever created --- maybe even *the* most productive. Its syntax
+environments ever created --- maybe even _the_ most productive. Its syntax
 may be cryptic, but people who have mastered it can experiment with
 different commands interactively, then use what they have learned to
 automate their work. Graphical user interfaces may be easier to use at
@@ -719,16 +710,14 @@ wc -l $(find . -name "*.dat") | sort -n
 ## Solution
 
 1. Find all files with a `.dat` extension recursively from the current directory
+
 2. Count the number of lines each of these files contains
+
 3. Sort the output from step 2. numerically
-  
-  
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
@@ -739,5 +728,3 @@ wc -l $(find . -name "*.dat") | sort -n
 - `$([command])` inserts a command's output in place.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
