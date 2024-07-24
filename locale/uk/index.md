@@ -14,7 +14,7 @@ you to this powerful tool.
 
 ::::::::::::::::::::::::::::::::::::::::::  prereq
 
-## Prerequisites
+## Передумови
 
 This lesson guides you through the basics of file systems and the
 shell. If you have stored files on a computer at all and recognize
