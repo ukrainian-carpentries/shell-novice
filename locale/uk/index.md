@@ -16,14 +16,8 @@ you to this powerful tool.
 
 ## Передумови
 
-This lesson guides you through the basics of file systems and the
-shell. If you have stored files on a computer at all and recognize
-the word "file" and either "directory" or "folder" (two common words
-for the same thing), you're ready for this lesson.
+У цьому уроці ви дізнаєтеся про основи файлових систем та використання терміналу. Якщо ви коли-небудь зберігали файли на комп'ютері та розпізнаєте слово "файл" і "каталог" або "тека" (два загальновживаних слова, що позначають одне й те саме), ви готові до цього уроку.
 
-If you're already comfortable manipulating files and directories,
-searching for files with `grep` and `find`, and writing simple loops
-and scripts, you probably want to explore the next lesson:
-[shell-extras](https://carpentries-incubator.github.io/shell-extras/).
+Якщо ви вже впевнено маніпулюєте файлами та каталогами, шукаєте файли за допомогою команд `grep` і `find`, а також пишете прості цикли та скрипти, вам, ймовірно, буде цікаво перейти до наступного уроку: [shell-extras](https://carpentries-incubator.github.io/shell-extras/).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
