@@ -375,7 +375,7 @@
         
 <section id="aio-01-intro"><p>Content from <a href="01-intro.html">Знайомство з терміналом</a></p>
 <hr>
-<p>Last updated on 2024-07-01 |
+<p>Last updated on 2024-07-26 |
 
         <a href="https://github.com/swcarpentry/shell-novice/edit/main/episodes/01-intro.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 5 minutes</p>
@@ -400,10 +400,10 @@
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Explain how the shell relates to the keyboard, the screen, the
-operating system, and users’ programs.</li>
-<li>Explain when and why command-line interfaces should be used instead
-of graphical interfaces.</li>
+<li>Пояснити, як термінал пов’язаний з клавіатурою, екраном, операційною
+системою та програмами користувача.</li>
+<li>Пояснити, коли та чому інтерфейси командного рядка слід
+використовувати замість графічних інтерфейсів.</li>
 </ul>
 </div>
 </div>
@@ -419,22 +419,23 @@ of graphical interfaces.</li>
 комп’ютерами називається графічний інтерфейс користувача (GUI -
 graphical user interface). За допомогою такого інтерфейсу ми надаємо
 комп’ютеру інструкції, обираючи дію у меню за допомогою миші.</p>
-<p>While the visual aid of a GUI makes it intuitive to learn, this way
-of delivering instructions to a computer scales very poorly. Imagine the
-following task: for a literature search, you have to copy the third line
-of one thousand text files in one thousand different directories and
-paste it into a single file. Using a GUI, you would not only be clicking
-at your desk for several hours, but you could potentially also commit an
-error in the process of completing this repetitive task. This is where
-we take advantage of the Unix shell. The Unix shell is both a
-<strong>command-line interface</strong> (CLI) and a scripting language,
-allowing such repetitive tasks to be done automatically and fast. With
-the proper commands, the shell can repeat tasks with or without some
-modification as many times as we want. Using the shell, the task in the
-literature example can be accomplished in seconds.</p>
+<p>Хоча візуальна допомога графічного інтерфейсу користувача робить
+інтуїтивним його вивчення, такий спосіб надсилання інструкцій до
+комп’ютера дуже погано масштабується. Уявіть наступну задачу: для
+бібліографічного пошуку вам необхідно скопіювати третій рядок з тисячі
+вхідних файлів з тисячі різних директорій та вставити усе це в один
+файл. Using a GUI, you would not only be clicking at your desk for
+several hours, but you could potentially also commit an error in the
+process of completing this repetitive task. Саме тут ми й скористаємося
+перевагами терміналу Unix. The Unix shell is both a <strong>command-line
+interface</strong> (CLI) and a scripting language, allowing such
+repetitive tasks to be done automatically and fast. With the proper
+commands, the shell can repeat tasks with or without some modification
+as many times as we want. З використанням терміналу приклад задачі з
+бібліографічним пошуком може бути вирішений за секунди.</p>
 </div>
 <div class="section level3">
-<h3 id="the-shell">The Shell<a class="anchor" aria-label="anchor" href="#the-shell"></a>
+<h3 id="термінал">Термінал<a class="anchor" aria-label="anchor" href="#%D1%82%D0%B5%D1%80%D0%BC%D1%96%D0%BD%D0%B0%D0%BB"></a>
 </h3>
 <p>The shell is a program where users can type commands. With the shell,
 it’s possible to invoke complicated programs like climate modeling
@@ -563,15 +564,15 @@ repetitive steps of entering file names, so that her computer can work
 while she writes her paper.</p>
 <p>As a bonus, once she has put a processing pipeline together, she will
 be able to use it again whenever she collects more data.</p>
-<p>In order to achieve her task, Nelle needs to know how to:</p>
+<p>Для того, щоб досягти своєї мети, Неллі необхідно знати, як:</p>
 <ul>
-<li>navigate to a file/directory</li>
-<li>create a file/directory</li>
-<li>check the length of a file</li>
-<li>chain commands together</li>
-<li>retrieve a set of files</li>
+<li>перейти до файла/каталогу</li>
+<li>створити файл/каталог</li>
+<li>перевірити довжину файлу</li>
+<li>з’єднати команди разом</li>
+<li>отримати набір файлів</li>
 <li>iterate over files</li>
-<li>run a shell script containing her pipeline</li>
+<li>запустити скрипт, що містить розроблений нею конвеєр</li>
 </ul>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
@@ -582,15 +583,15 @@ be able to use it again whenever she collects more data.</p>
 </h3>
 <div class="callout-content">
 <ul>
-<li>A shell is a program whose primary purpose is to read commands and
-run other programs.</li>
-<li>This lesson uses Bash, the default shell in many implementations of
-Unix.</li>
-<li>Programs can be run in Bash by entering commands at the command-line
-prompt.</li>
-<li>The shell’s main advantages are its high action-to-keystroke ratio,
-its support for automating repetitive tasks, and its capacity to access
-networked machines.</li>
+<li>Термінал - це програма, основним призначенням якої є читання команд
+і запуск інших програм.</li>
+<li>У цьому уроці використовується Bash. Це термінал за замовчуванням у
+багатьох реалізаціях Unix.</li>
+<li>Програми можна запускати у Bash шляхом введення команд у вікні
+командного рядка.</li>
+<li>Основними перевагами терміналу є високе співвідношення кількості дій
+до кількості натискань клавіш, підтримка автоматизації повторюваних
+завдань, а також можливість доступу до віддалених машин.</li>
 <li>A significant challenge when using the shell can be knowing what
 commands need to be run and how to run them.</li>
 </ul>
@@ -4094,7 +4095,7 @@ like a list of numbers or a subset of data.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4165,7 +4166,7 @@ like a list of numbers or a subset of data.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>The first code block gives the same output on each iteration through
 the loop. Bash expands the wildcard <code>*.pdb</code> within the loop
@@ -4240,7 +4241,7 @@ The value of the <code>datafile</code> variable is evaluated using
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>4 is the correct answer. <code>*</code> matches zero or more
 characters, so any file name starting with the letter c, followed by
@@ -4283,7 +4284,7 @@ be listed.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>4 is the correct answer. <code>*</code> matches zero or more
 characters, so a file name with zero or more characters before a letter
@@ -4334,7 +4335,7 @@ will be saved to a file called <code>alkanes.pdb</code>.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>The text from each file in turn gets written to the
@@ -4390,7 +4391,7 @@ file called <code>all.pdb</code>.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6"> Show me the solution </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <p>3 is the correct answer. <code>&gt;&gt;</code> appends to a file,
 rather than overwriting it with the redirected output from a command.
@@ -4802,7 +4803,7 @@ would we want to run?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
   <h4 class="accordion-header" id="headingSolution7"> Show me the solution </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
 <div class="accordion-body">
 <p>The second version is the one we want to run. This prints to screen
 everything enclosed in the quote marks, expanding the loop variable name
@@ -4851,7 +4852,7 @@ following code:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
   <h4 class="accordion-header" id="headingSolution8"> Show me the solution </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
 <div class="accordion-body">
 <p>We have a nested loop, i.e. contained within another loop, so for
 each species in the outer loop, the inner loop (the nested loop)
@@ -6517,8 +6518,8 @@ command.</li>
   "url": "https://swcarpentry.github.io/shell-novice/instructor/aio.html",
   "identifier": "https://swcarpentry.github.io/shell-novice/instructor/aio.html",
   "dateCreated": "2014-10-22",
-  "dateModified": "2024-07-23",
-  "datePublished": "2024-07-23"
+  "dateModified": "2024-07-26",
+  "datePublished": "2024-07-26"
 }
 
   </script><script>
