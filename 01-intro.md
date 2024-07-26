@@ -6,8 +6,8 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain how the shell relates to the keyboard, the screen, the operating system, and users' programs.
-- Explain when and why command-line interfaces should be used instead of graphical interfaces.
+- Пояснити, як термінал пов'язаний з клавіатурою, екраном, операційною системою та програмами користувача.
+- Пояснити, коли та чому інтерфейси командного рядка слід використовувати замість графічних інтерфейсів.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -23,21 +23,21 @@ exercises: 0
 Найбільш поширений спосіб взаємодії з персональними комп’ютерами називається графічний інтерфейс користувача (GUI - graphical user interface).
 За допомогою такого інтерфейсу ми надаємо комп’ютеру інструкції, обираючи дію у меню за допомогою миші.
 
-While the visual aid of a GUI makes it intuitive to learn,
-this way of delivering instructions to a computer scales very poorly.
-Imagine the following task:
-for a literature search, you have to copy the third line of one thousand text files in one thousand
-different directories and paste it into a single file.
+Хоча візуальна допомога графічного інтерфейсу користувача робить інтуїтивним його вивчення,
+такий спосіб надсилання інструкцій до комп'ютера дуже погано масштабується.
+Уявіть наступну задачу:
+для бібліографічного пошуку вам необхідно скопіювати третій рядок з тисячі вхідних файлів з тисячі
+різних директорій та вставити усе це в один файл.
 Using a GUI, you would not only be clicking at your desk for several hours,
 but you could potentially also commit an error in the process of completing this repetitive task.
-This is where we take advantage of the Unix shell.
+Саме тут ми й скористаємося перевагами терміналу Unix.
 The Unix shell is both a **command-line interface** (CLI) and a scripting language,
 allowing such repetitive tasks to be done automatically and fast.
 With the proper commands, the shell can repeat tasks with or without some modification
 as many times as we want.
-Using the shell, the task in the literature example can be accomplished in seconds.
+З використанням терміналу приклад задачі з бібліографічним пошуком може бути вирішений за секунди.
 
-### The Shell
+### Термінал
 
 The shell is a program where users can type commands.
 With the shell, it's possible to invoke complicated programs like climate modeling software
@@ -165,22 +165,23 @@ As a bonus,
 once she has put a processing pipeline together,
 she will be able to use it again whenever she collects more data.
 
-In order to achieve her task, Nelle needs to know how to:
+Для того, щоб досягти своєї мети, Неллі необхідно знати, як:
 
-- navigate to a file/directory
-- create a file/directory
-- check the length of a file
-- chain commands together
-- retrieve a set of files
+- перейти до файла/каталогу
+- створити файл/каталог
+- перевірити довжину файлу
+- з'єднати команди разом
+- отримати набір файлів
 - iterate over files
-- run a shell script containing her pipeline
+- запустити скрипт, що містить розроблений нею конвеєр
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- A shell is a program whose primary purpose is to read commands and run other programs.
-- This lesson uses Bash, the default shell in many implementations of Unix.
-- Programs can be run in Bash by entering commands at the command-line prompt.
-- The shell's main advantages are its high action-to-keystroke ratio, its support for automating repetitive tasks, and its capacity to access networked machines.
+- Термінал - це програма, основним призначенням якої є читання команд і запуск інших програм.
+- У цьому уроці використовується Bash. Це термінал за замовчуванням у багатьох реалізаціях Unix.
+- Програми можна запускати у Bash шляхом введення команд у вікні командного рядка.
+- Основними перевагами терміналу є високе співвідношення кількості дій до кількості натискань клавіш, підтримка автоматизації повторюваних завдань,
+  а також можливість доступу до віддалених машин.
 - A significant challenge when using the shell can be knowing what commands need to be run and how to run them.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
