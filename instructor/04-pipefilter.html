@@ -453,8 +453,7 @@ number of words, respectively.</p>
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="why-isnt-it-doing-anything" class="callout-inner">
-<h3 class="callout-title">Why Isn’t It Doing Anything?<a class="anchor" aria-label="anchor" href="#why-isnt-it-doing-anything"></a>
-</h3>
+<h3 class="callout-title">Why Isn’t It Doing Anything?</h3>
 <div class="callout-content">
 <p>What happens if a command is supposed to process a file, but we don’t
 give it a filename? For example, what if we type:</p>
@@ -476,8 +475,7 @@ keys.</p>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="capturing-output-from-commands">Capturing output from commands<a class="anchor" aria-label="anchor" href="#capturing-output-from-commands"></a>
-<a class="anchor" aria-label="anchor" href="#capturing-output-from-commands"></a></h2>
+<section><h2 class="section-heading" id="capturing-output-from-commands">Capturing output from commands<a class="anchor" aria-label="anchor" href="#capturing-output-from-commands"></a></h2>
 <hr class="half-width"><p>Which of these files contains the fewest lines? It’s an easy question
 to answer when there are only six files, but what if there were 6000?
 Our first step toward a solution is to run the command:</p>
@@ -531,8 +529,7 @@ so <code>cat</code> just shows us what it contains:</p>
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="output-page-by-page" class="callout-inner">
-<h3 class="callout-title">Output Page by Page<a class="anchor" aria-label="anchor" href="#output-page-by-page"></a>
-</h3>
+<h3 class="callout-title">Output Page by Page</h3>
 <div class="callout-content">
 <p>We’ll continue to use <code>cat</code> in this lesson, for
 convenience and consistency, but it has the disadvantage that it always
@@ -544,8 +541,7 @@ screenful by pressing the spacebar, or back one by pressing
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="filtering-output">Filtering output<a class="anchor" aria-label="anchor" href="#filtering-output"></a>
-<a class="anchor" aria-label="anchor" href="#filtering-output"></a></h2>
+</section><section><h2 class="section-heading" id="filtering-output">Filtering output<a class="anchor" aria-label="anchor" href="#filtering-output"></a></h2>
 <hr class="half-width"><p>Next we’ll use the <code>sort</code> command to sort the contents of
 the <code>lengths.txt</code> file. But first we’ll do an exercise to
 learn a little about the sort command:</p>
@@ -554,8 +550,7 @@ learn a little about the sort command:</p>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="what-does-sort--n-do" class="callout-inner">
-<h3 class="callout-title">What Does <code>sort -n</code> Do?<a class="anchor" aria-label="anchor" href="#what-does-sort--n-do"></a>
-</h3>
+<h3 class="callout-title">What Does <code>sort -n</code> Do?</h3>
 <div class="callout-content">
 <p>The file <code>shell-lesson-data/exercise-data/numbers.txt</code>
 contains the following lines:</p>
@@ -594,7 +589,7 @@ instead:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>The <code>-n</code> option specifies a numerical rather than an
 alphanumerical sort.</p>
@@ -649,8 +644,7 @@ lengths of our files ordered from least to greatest, the output of
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="redirecting-to-the-same-file" class="callout-inner">
-<h3 class="callout-title">Redirecting to the same file<a class="anchor" aria-label="anchor" href="#redirecting-to-the-same-file"></a>
-</h3>
+<h3 class="callout-title">Redirecting to the same file</h3>
 <div class="callout-content">
 <p>It’s a very bad idea to try redirecting the output of a command that
 operates on a file to the same file. For example:</p>
@@ -669,8 +663,7 @@ delete the contents of <code>lengths.txt</code>.</p>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="what-does-mean" class="callout-inner">
-<h3 class="callout-title">What Does <code>&gt;&gt;</code> Mean?<a class="anchor" aria-label="anchor" href="#what-does-mean"></a>
-</h3>
+<h3 class="callout-title">What Does <code>&gt;&gt;</code> Mean?</h3>
 <div class="callout-content">
 <p>We have seen the use of <code>&gt;</code>, but there is a similar
 operator <code>&gt;&gt;</code> which works slightly differently. We’ll
@@ -710,7 +703,7 @@ the output files.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>In the first example with <code>&gt;</code>, the string ‘hello’ is
 written to <code>testfile01.txt</code>, but the file gets overwritten
@@ -728,8 +721,7 @@ already exists (i.e. when we run it for the second time).</p>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="appending-data" class="callout-inner">
-<h3 class="callout-title">Appending Data<a class="anchor" aria-label="anchor" href="#appending-data"></a>
-</h3>
+<h3 class="callout-title">Appending Data</h3>
 <div class="callout-content">
 <p>We have already met the <code>head</code> command, which prints lines
 from the start of a file. <code>tail</code> is similar, but prints lines
@@ -761,7 +753,7 @@ After these commands, select the answer that corresponds to the file
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>Option 3 is correct. For option 1 to be correct we would only run the
 <code>head</code> command. For option 2 to be correct we would only run
@@ -773,8 +765,7 @@ doing
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="passing-output-to-another-command">Passing output to another command<a class="anchor" aria-label="anchor" href="#passing-output-to-another-command"></a>
-<a class="anchor" aria-label="anchor" href="#passing-output-to-another-command"></a></h2>
+</section><section><h2 class="section-heading" id="passing-output-to-another-command">Passing output to another command<a class="anchor" aria-label="anchor" href="#passing-output-to-another-command"></a></h2>
 <hr class="half-width"><p>In our example of finding the file with the fewest lines, we are
 using two intermediate files <code>lengths.txt</code> and
 <code>sorted-lengths.txt</code> to store output. This is a confusing way
@@ -799,8 +790,7 @@ output of the command on the left as the input to the command on the
 right.</p>
 <p>This has removed the need for the <code>sorted-lengths.txt</code>
 file.</p>
-</section><section><h2 class="section-heading" id="combining-multiple-commands">Combining multiple commands<a class="anchor" aria-label="anchor" href="#combining-multiple-commands"></a>
-<a class="anchor" aria-label="anchor" href="#combining-multiple-commands"></a></h2>
+</section><section><h2 class="section-heading" id="combining-multiple-commands">Combining multiple commands<a class="anchor" aria-label="anchor" href="#combining-multiple-commands"></a></h2>
 <hr class="half-width"><p>Nothing prevents us from chaining pipes consecutively. We can for
 example send the output of <code>wc</code> directly to
 <code>sort</code>, and then send the resulting output to
@@ -846,8 +836,7 @@ illustrated below:</p>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="piping-commands-together" class="callout-inner">
-<h3 class="callout-title">Piping Commands Together<a class="anchor" aria-label="anchor" href="#piping-commands-together"></a>
-</h3>
+<h3 class="callout-title">Piping Commands Together</h3>
 <div class="callout-content">
 <p>In our current directory, we want to find the 3 files which have the
 least number of lines. Which command listed below would work?</p>
@@ -863,7 +852,7 @@ least number of lines. Which command listed below would work?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>Option 4 is the solution. The pipe character <code>|</code> is used
 to connect the output from one command to the input of another.
@@ -874,8 +863,7 @@ directory!</p>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="tools-designed-to-work-together">Tools designed to work together<a class="anchor" aria-label="anchor" href="#tools-designed-to-work-together"></a>
-<a class="anchor" aria-label="anchor" href="#tools-designed-to-work-together"></a></h2>
+</section><section><h2 class="section-heading" id="tools-designed-to-work-together">Tools designed to work together<a class="anchor" aria-label="anchor" href="#tools-designed-to-work-together"></a></h2>
 <hr class="half-width"><p>This idea of linking programs together is why Unix has been so
 successful. Instead of creating enormous programs that try to do many
 different things, Unix programmers focus on creating lots of simple
@@ -896,8 +884,7 @@ can put those programs into pipes to multiply their power.</p>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="pipe-reading-comprehension" class="callout-inner">
-<h3 class="callout-title">Pipe Reading Comprehension<a class="anchor" aria-label="anchor" href="#pipe-reading-comprehension"></a>
-</h3>
+<h3 class="callout-title">Pipe Reading Comprehension</h3>
 <div class="callout-content">
 <p>A file called <code>animals.csv</code> (in the
 <code>shell-lesson-data/exercise-data/animal-counts</code> folder)
@@ -928,7 +915,7 @@ understanding</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <p>The <code>head</code> command extracts the first 5 lines from
 <code>animals.csv</code>. Then, the last 3 lines are extracted from the
@@ -950,8 +937,7 @@ lines:</p>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="pipe-construction" class="callout-inner">
-<h3 class="callout-title">Pipe Construction<a class="anchor" aria-label="anchor" href="#pipe-construction"></a>
-</h3>
+<h3 class="callout-title">Pipe Construction</h3>
 <div class="callout-content">
 <p>For the file <code>animals.csv</code> from the previous exercise,
 consider the following command:</p>
@@ -992,7 +978,7 @@ duplicates in their names)?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6"> Show me the solution </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb39">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1008,8 +994,7 @@ duplicates in their names)?</p>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="which-pipe" class="callout-inner">
-<h3 class="callout-title">Which Pipe?<a class="anchor" aria-label="anchor" href="#which-pipe"></a>
-</h3>
+<h3 class="callout-title">Which Pipe?</h3>
 <div class="callout-content">
 <p>The file <code>animals.csv</code> contains 8 lines of data formatted
 as follows:</p>
@@ -1041,7 +1026,7 @@ of animal in the file?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
   <h4 class="accordion-header" id="headingSolution7"> Show me the solution </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
 <div class="accordion-body">
 <p>Option 4. is the correct answer. If you have difficulty understanding
 why, try running the commands, or sub-sections of the pipelines (make
@@ -1052,8 +1037,7 @@ directory).</p>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="nelles-pipeline-checking-files">Nelle’s Pipeline: Checking Files<a class="anchor" aria-label="anchor" href="#nelles-pipeline-checking-files"></a>
-<a class="anchor" aria-label="anchor" href="#nelles-pipeline-checking-files"></a></h2>
+</section><section><h2 class="section-heading" id="nelles-pipeline-checking-files">Nelle’s Pipeline: Checking Files<a class="anchor" aria-label="anchor" href="#nelles-pipeline-checking-files"></a></h2>
 <hr class="half-width"><p>Nelle has run her samples through the assay machines and created 17
 files in the <code>north-pacific-gyre</code> directory described
 earlier. As a quick check, starting from the
@@ -1136,8 +1120,7 @@ wildcard expressions <code>NENE*A.txt NENE*B.txt</code>.</p>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="removing-unneeded-files" class="callout-inner">
-<h3 class="callout-title">Removing Unneeded Files<a class="anchor" aria-label="anchor" href="#removing-unneeded-files"></a>
-</h3>
+<h3 class="callout-title">Removing Unneeded Files</h3>
 <div class="callout-content">
 <p>Suppose you want to delete your processed data files, and only keep
 your raw files and processing script to save storage. The raw files end
@@ -1156,7 +1139,7 @@ Which of the following would remove all the processed data files, and
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
   <h4 class="accordion-header" id="headingSolution8"> Show me the solution </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li><p>This would remove <code>.txt</code> files with one-character
 names</p></li>
@@ -1176,8 +1159,7 @@ containing at least one <code>.</code>, including the processed files
 <i class="callout-icon" data-feather="key"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
-</h3>
+<h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul><li>
 <code>wc</code> counts lines, words, and characters in its
@@ -1263,7 +1245,7 @@ single-purpose programs (filters).</li>
   "identifier": "https://swcarpentry.github.io/shell-novice/instructor/04-pipefilter.html",
   "dateCreated": "2014-10-22",
   "dateModified": "2024-07-01",
-  "datePublished": "2024-08-06"
+  "datePublished": "2024-08-13"
 }
 
   </script><script>
