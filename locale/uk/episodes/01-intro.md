@@ -39,7 +39,7 @@ as many times as we want.
 
 ### Термінал
 
-The shell is a program where users can type commands.
+Термінал - це програма, де користувач може вводити команди.
 With the shell, it's possible to invoke complicated programs like climate modeling software
 or simple commands that create an empty directory with only one line of code.
 The most popular Unix shell is Bash (the Bourne Again SHell ---
