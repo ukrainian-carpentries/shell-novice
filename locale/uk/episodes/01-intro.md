@@ -42,21 +42,18 @@ as many times as we want.
 Термінал - це програма, де користувач може вводити команди.
 With the shell, it's possible to invoke complicated programs like climate modeling software
 or simple commands that create an empty directory with only one line of code.
-The most popular Unix shell is Bash (the Bourne Again SHell ---
-so-called because it's derived from a shell written by Stephen Bourne).
+Найбільш популярним терміналом є Bash (the Bourne Again SHell, який отримав таку назву, тому що був розроблений на основі терміналу, написаного Стівеном Борном).
 Bash is the default shell on most modern implementations of Unix and in most packages that provide
 Unix-like tools for Windows.
 Note that 'Git Bash' is a piece of software that enables Windows users to use a Bash like interface
 when interacting with Git.
 
 Using the shell will take some effort and some time to learn.
-While a GUI presents you with choices to select, CLI choices are not automatically presented to you,
-so you must learn a few commands like new vocabulary in a language you're studying.
+У той час як графічний інтерфейс надає вам можливість вибору, команди терміналу не надаються автоматично, тому вам доведеться вивчити кілька команд, як нову лексику у мові, яку ви вивчаєте.
 However, unlike a spoken language, a small number of "words" (i.e. commands) gets you a long way,
 and we'll cover those essential few today.
 
-The grammar of a shell allows you to combine existing tools into powerful
-pipelines and handle large volumes of data automatically. Sequences of
+Граматика терміналу дозволяє комбінувати наявні інструменти у потужні конвеєри та автоматично обробляти великі обсяги даних. Sequences of
 commands can be written into a _script_, improving the reproducibility of
 workflows.
 
@@ -64,8 +61,7 @@ In addition, the command line is often the easiest way to interact with remote m
 and supercomputers.
 Familiarity with the shell is near essential to run a variety of specialized tools and resources
 including high-performance computing systems.
-As clusters and cloud computing systems become more popular for scientific data crunching,
-being able to interact with the shell is becoming a necessary skill.
+Оскільки кластери та хмарні обчислювальні системи стають все більш популярними для обробки наукових даних, вміння взаємодіяти з терміналом стає необхідною навичкою.
 We can build on the command-line skills covered here
 to tackle a wide range of scientific questions and computational challenges.
 
