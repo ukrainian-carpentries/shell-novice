@@ -65,7 +65,7 @@ including high-performance computing systems.
 We can build on the command-line skills covered here
 to tackle a wide range of scientific questions and computational challenges.
 
-Let's get started.
+Отже, почнемо.
 
 When the shell is first opened, you are presented with a **prompt**,
 indicating that the shell is waiting for input.
