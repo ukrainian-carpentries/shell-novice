@@ -1,14 +1,14 @@
 ---
-title: Навігація з файлами та каталогами
+title: Navigating Files and Directories
 teaching: 30
 exercises: 10
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Пояснити подібності та відмінності між файлом і каталогом.
+- Explain the similarities and differences between a file and a directory.
 - Перетворити абсолютний шлях у відносний і навпаки.
-- Створити абсолютні та відносні шляхи, які ідентифікують певні файли та каталоги.
+- Construct absolute and relative paths that identify specific files and directories.
 - Use options and arguments to change the behaviour of a shell command.
 - Demonstrate the use of tab completion and explain its advantages.
 
@@ -17,7 +17,7 @@ exercises: 10
 :::::::::::::::::::::::::::::::::::::::: questions
 
 - How can I move around on my computer?
-- Як я можу побачити, які файли та каталоги у мене є?
+- How can I see what files and directories I have?
 - How can I specify the location of a file or directory on my computer?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
