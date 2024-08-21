@@ -168,21 +168,20 @@ are **files** in the current working directory.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Clearing your terminal
+## Очищення терміналу
 
-If your screen gets too cluttered, you can clear your terminal using the
-`clear` command. You can still access previous commands using <kbd>↑</kbd>
+Якщо екран стає занадто захаращеним, ви можете очистити термінал за допомогою команди `clear`. You can still access previous commands using <kbd>↑</kbd>
 and <kbd>↓</kbd> to move line-by-line, or by scrolling in your terminal.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Getting help
+### Отримання допомоги
 
 `ls` has lots of other **options**. There are two common ways to find out how
 to use a command and what options it accepts ---
 **depending on your environment, you might find that only one of these ways works:**
 
-1. We can pass a `--help` option to any command (available on Linux and Git Bash), for example:
+1. Ми можемо передати команді опцію `--help` (доступну в Linux і Git Bash), наприклад:
 
 ```bash
 $ ls --help
@@ -198,17 +197,16 @@ We'll describe both ways next.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Help for built-in commands
+## Довідка для вбудованих команд
 
-Some commands are built in to the Bash shell, rather than existing as separate
-programs on the filesystem. One example is the `cd` (change directory) command.
+Деякі команди вбудовано в оболонку Bash, а не існують як окремі програми у файловій системі. One example is the `cd` (change directory) command.
 If you get a message like `No manual entry for cd`, try `help cd` instead. The
 `help` command is how you get usage information for
 [Bash built-ins](https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-#### The `--help` option
+#### Опція \`--help'
 
 Most bash commands and programs that people have written to be
 run from within bash, support a `--help` option that displays more
@@ -255,13 +253,13 @@ When options exist as both short and long options:
 - Use the short option when typing commands directly into the
   shell to minimize keystrokes and get your task done faster.
 - Use the long option in scripts to provide clarity.
-  It will be read many times and typed once.
+  Він буде прочитаний багато разів і надрукований один раз.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Unsupported command-line options
+## Непідтримувані параметри командного рядка
 
 If you try to use an option that is not supported, `ls` and other commands
 will usually print an error message similar to:
@@ -277,7 +275,7 @@ Try 'ls --help' for more information.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-#### The `man` command
+#### Команда `man`
 
 The other way to learn about `ls` is to type
 
@@ -293,14 +291,14 @@ you may use <kbd>↑</kbd> and <kbd>↓</kbd> to move line-by-line,
 or try <kbd>b</kbd> and <kbd>Spacebar</kbd> to skip up and down by a full page.
 To search for a character or word in the `man` pages,
 use <kbd>/</kbd> followed by the character or word you are searching for.
-Sometimes a search will result in multiple hits.
+Іноді пошук може призвести до кількох результатів.
 If so, you can move between hits using <kbd>N</kbd> (for moving forward) and <kbd>Shift</kbd>\+<kbd>N</kbd> (for moving backward).
 
-To **quit** the `man` pages, press <kbd>q</kbd>.
+Щоб **вийти** зі сторінок `man`, натисніть <kbd>q</kbd>.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Manual pages on the web
+## Сторінки з інструкціями в Інтернеті
 
 Of course, there is a third way to access help for commands:
 searching the internet via your web browser.
@@ -318,8 +316,7 @@ which covers many commands introduced within this lesson.
 
 ## Exploring More `ls` Options
 
-You can also use two options at the same time. What does the command `ls` do when used
-with the `-l` option? What about if you use both the `-l` and the `-h` option?
+Ви також можете використовувати декілька опцій одночасно. Що робить команда `ls` при використанні з опцією `-l`? What about if you use both the `-l` and the `-h` option?
 
 Some of its output is about properties that we do not cover in this lesson (such
 as file permissions and ownership), but the rest should be useful
@@ -327,13 +324,11 @@ nevertheless.
 
 :::::::::::::::  solution
 
-## Solution
+## Розв'язання
 
 The `-l` option makes `ls` use a **l**ong listing format, showing not only
 the file/directory names but also additional information, such as the file size
-and the time of its last modification. If you use both the `-h` option and the `-l` option,
-this makes the file size '**h**uman readable', i.e. displaying something like `5.3K`
-instead of `5369`.
+and the time of its last modification. Якщо ви використовуєте як `-h`, так і `-l`, це зробить виведення розміру файлу у більш зрозумілому людині вигляді ("**h**uman readable"), тобто покаже щось на кшталт `5.3K` замість `5369`.
 
 :::::::::::::::::::::::::
 
@@ -341,23 +336,18 @@ instead of `5369`.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Listing in Reverse Chronological Order
+## Виведення у зворотному хронологічному порядку
 
-By default, `ls` lists the contents of a directory in alphabetical
-order by name. The command `ls -t` lists items by time of last
-change instead of alphabetically. The command `ls -r` lists the
-contents of a directory in reverse order.
+За замовчуванням `ls` виводить вміст каталогу в алфавітному порядку за іменами елементів. Команда `ls -t` перелічує елементи за часом останньої зміни, а не за алфавітом. Команда `ls -r` виводить вміст каталогу у зворотному порядку.
 Which file is displayed last when you combine the `-t` and `-r` options?
 Hint: You may need to use the `-l` option to see the
 last changed dates.
 
 :::::::::::::::  solution
 
-## Solution
+## Розв'язання
 
-The most recently changed file is listed last when using `-rt`. This
-can be very useful for finding your most recent edits or checking to
-see if a new output file was written.
+The most recently changed file is listed last when using `-rt`. Це може бути дуже корисним для пошуку ваших останніх редагувань або перевірки чи було створено новий вихідний файл.
 
 :::::::::::::::::::::::::
 
