@@ -47,7 +47,7 @@ First, let's find out where we are by running a command called `pwd`
 while we are using the shell, we are in exactly one place called
 our **current working directory**. Commands mostly read and write files in the
 current working directory, i.e. 'here', so knowing where you are before running
-a command is important. `pwd` shows you where you are:
+a command is important. Команда `pwd` покаже вам, де ви знаходитесь:
 
 ```bash
 $ pwd
@@ -63,17 +63,17 @@ which is Nelle's **home directory**:
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Home Directory Variation
+## Варіації домашнього каталогу
 
-The home directory path will look different on different operating systems.
+Розташування домашньої директорії виглядає по-різному в різних операційних системах.
 On Linux, it may look like `/home/nelle`,
 and on Windows, it will be similar to `C:\Documents and Settings\nelle` or
 `C:\Users\nelle`.
-(Note that it may look slightly different for different versions of Windows.)
+(Зауважте, що воно може виглядати дещо інакше для різних версій Windows.)
 In future examples, we've used Mac output as the default - Linux and Windows
 output may differ slightly but should be generally similar.
 
-We will also assume that your `pwd` command returns your user's home directory.
+Ми також припустимо, що ваша команда `pwd` повертає вашу домашню директорію користувача.
 If `pwd` returns something different, you may need to navigate there using `cd`
 or some commands in this lesson will not work as written.
 See [Exploring Other Directories](#exploring-other-directories) for more details
@@ -82,42 +82,32 @@ on the `cd` command.
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 To understand what a 'home directory' is,
-let's have a look at how the file system as a whole is organized.  For the
-sake of this example, we'll be
-illustrating the filesystem on our scientist Nelle's computer.  After this
+let's have a look at how the file system as a whole is organized.  Для цього прикладу ми проілюструємо файлову систему на комп’ютері нашої вченої Неллі.  After this
 illustration, you'll be learning commands to explore your own filesystem,
 which will be constructed in a similar way, but not be exactly identical.
 
-On Nelle's computer, the filesystem looks like this:
+На комп’ютері Неллі файлова система виглядає так:
 
 ![](fig/filesystem.svg){alt='The file system is made up of a root directory that contains sub-directories titled bin, data, users, and tmp'}
 
-The filesystem looks like an upside down tree.
-The topmost directory  is the **root directory**
-that holds everything else.
+Файлова система виглядає як перевернуте дерево.
+Найвищим каталогом є **кореневий каталог**, який містить усе інше.
 We refer to it using a slash character, `/`, on its own;
 this character is the leading slash in `/Users/nelle`.
 
-Inside that directory are several other directories:
-`bin` (which is where some built-in programs are stored),
-`data` (for miscellaneous data files),
-`Users` (where users' personal directories are located),
-`tmp` (for temporary files that don't need to be stored long-term),
-and so on.
+Усередині цього каталогу є кілька інших каталогів: `bin` (в якому зберігаються певні вбудовані програми), `data` (для різноманітних файлів даних), `Users` (де знаходяться особисті директорії користувачів), `tmp` (для файлів тимчасового зберігання) та інші.
 
-We know that our current working directory `/Users/nelle` is stored inside `/Users`
-because `/Users` is the first part of its name.
+Ми знаємо, що наш поточний робочий каталог `/Users/nelle` зберігається всередині каталогу `/Users`, тому що `/Users` є першою частиною його імені.
 Similarly,
 we know that `/Users` is stored inside the root directory `/`
 because its name begins with `/`.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Slashes
+## Символи скісної риски
 
-Notice that there are two meanings for the `/` character.
-When it appears at the front of a file or directory name,
-it refers to the root directory. When it appears _inside_ a path,
+Зверніть увагу, що символ `/` має два значення.
+Коли він з’являється на початку назви файлу чи каталогу, це посилання на кореневу директорію. When it appears _inside_ a path,
 it's just a separator.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -126,12 +116,12 @@ Underneath `/Users`,
 we find one directory for each user with an account on Nelle's machine,
 her colleagues _imhotep_ and _larry_.
 
-![](fig/home-directories.svg){alt='Like other directories, home directories are sub-directories underneath "/Users" like "/Users/imhotep", "/Users/larry" or"/Users/nelle"'}
+![](fig/home-directories.svg){alt='Як і інші каталоги, домашні каталоги є підкаталогами
+"/Users", наприклад "/Users/imhotep", "/Users/larry" або "/Users/nelle"'}
 
 The user _imhotep_'s files are stored in `/Users/imhotep`,
 user _larry_'s in `/Users/larry`,
-and Nelle's in `/Users/nelle`. Nelle is the user in our
-examples here; therefore, we get `/Users/nelle` as our home directory.
+and Nelle's in `/Users/nelle`. Оскільки саме Неллі є користувачем у наших прикладах, тому ми отримуємо `/Users/nelle` як наш домашній каталог.
 Typically, when you open a new command prompt, you will be in
 your home directory to start.
 
@@ -147,15 +137,14 @@ Applications Documents    Library      Music        Public
 Desktop      Downloads    Movies       Pictures
 ```
 
-(Again, your results may be slightly different depending on your operating
-system and how you have customized your filesystem.)
+(Знову ж таки, ваші результати можуть дещо відрізнятися залежно від вашої операційної системи та того, як ви налаштували свою файлову систему.)
 
-`ls` prints the names of the files and directories in the current directory.
+`ls` друкує назви файлів і каталогів у поточному каталозі.
 We can make its output more comprehensible by using the `-F` **option**
 which tells `ls` to classify the output
 by adding a marker to file and directory names to indicate what they are:
 
-- a trailing `/` indicates that this is a directory
+- символ `/` наприкінці назви вказує на те, що це каталог
 - `@` indicates a link
 - `*` indicates an executable
 
