@@ -360,8 +360,7 @@ but we can use it to list the contents of a different directory.
 Let's take a look at our `Desktop` directory by running `ls -F Desktop`,
 i.e.,
 the command `ls` with the `-F` **option** and the [**argument**][Arguments]  `Desktop`.
-The argument `Desktop` tells `ls` that
-we want a listing of something other than our current working directory:
+Аргумент `Desktop` повідомляє `ls`, що ми хочемо отримати список чогось іншого, ніж наш поточний робочий каталог:
 
 ```bash
 $ ls -F Desktop
