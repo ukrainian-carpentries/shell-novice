@@ -378,7 +378,7 @@ Your output should be a list of all the files and sub-directories in your
 Desktop directory, including the `shell-lesson-data` directory you downloaded at
 the [setup for this lesson](../learners/setup.md). (On most systems, the
 contents of the `Desktop` directory in the shell will show up as icons in a graphical
-user interface behind all the open windows. See if this is the case for you.)
+user interface behind all the open windows. Подивіться, чи це ваш випадок.)
 
 Organizing things hierarchically helps us keep track of our work. While it's
 possible to put hundreds of files in our home directory just as it's possible to
