@@ -380,7 +380,7 @@ the [setup for this lesson](../learners/setup.md). (On most systems, the
 contents of the `Desktop` directory in the shell will show up as icons in a graphical
 user interface behind all the open windows. Подивіться, чи це ваш випадок.)
 
-Organizing things hierarchically helps us keep track of our work. While it's
+Ієрархічна організація речей таким чином допомагає нам відстежувати нашу роботу. While it's
 possible to put hundreds of files in our home directory just as it's possible to
 pile hundreds of printed papers on our desk, it's much easier to find things when
 they've been organized into sensibly-named subdirectories.
@@ -388,8 +388,7 @@ they've been organized into sensibly-named subdirectories.
 Now that we know the `shell-lesson-data` directory is located in our Desktop directory, we
 can do two things.
 
-First, using the same strategy as before, we can look at its contents by passing
-a directory name to `ls`:
+По-перше, ми можемо переглянути його вміст, використовуючи ту ж стратегію, що і раніше, передавши ім'я каталогу в `ls`:
 
 ```bash
 $ ls -F Desktop/shell-lesson-data
@@ -405,16 +404,14 @@ our home directory.
 
 The command to change locations is `cd` followed by a
 directory name to change our working directory.
-`cd` stands for 'change directory',
-which is a bit misleading.
-The command doesn't change the directory;
-it changes the shell's current working directory.
+`cd` означає 'змінити каталог' (англ. 'change directory'), що трохи вводить в оману.
+Команда не змінює каталог;
+вона змінює поточний робочий каталог терміналу.
 In other words it changes the shell's settings for what directory we are in.
 The `cd` command is akin to double-clicking a folder in a graphical interface
 to get into that folder.
 
-Let's say we want to move into the `exercise-data` directory we saw above. We can
-use the following series of commands to get there:
+Let's say we want to move into the `exercise-data` directory we saw above. Ми можемо скористатися наступною серією команд, щоб дістатися туди:
 
 ```bash
 $ cd Desktop
@@ -424,10 +421,9 @@ $ cd exercise-data
 
 These commands will move us from our home directory into our Desktop directory, then into
 the `shell-lesson-data` directory, then into the `exercise-data` directory.
-You will notice that `cd` doesn't print anything. This is normal.
+Ви помітите, що команда `cd` нічого не виводить. Це нормально.
 Many shell commands will not output anything to the screen when successfully executed.
-But if we run `pwd` after it, we can see that we are now
-in `/Users/nelle/Desktop/shell-lesson-data/exercise-data`.
+Але якщо ми виконаємо `pwd` після неї, то побачимо, що зараз ми знаходимося у `/Users/nelle/Desktop/shell-lesson-data/exercise-data`.
 
 If we run `ls -F` without arguments now,
 it lists the contents of `/Users/nelle/Desktop/shell-lesson-data/exercise-data`,
@@ -451,7 +447,7 @@ alkanes/  animal-counts/  creatures/  numbers.txt  writing/
 
 We now know how to go down the directory tree (i.e. how to go into a subdirectory),
 but how do we go up (i.e. how do we leave a directory and go into its parent directory)?
-We might try the following:
+Ми можемо спробувати наступне:
 
 ```bash
 $ cd shell-lesson-data
@@ -461,14 +457,14 @@ $ cd shell-lesson-data
 -bash: cd: shell-lesson-data: No such file or directory
 ```
 
-But we get an error! Why is this?
+Але ми отримуємо помилку! Чому?
 
 With our methods so far,
 `cd` can only see sub-directories inside your current directory. There are
 different ways to see directories above your current location; we'll start
 with the simplest.
 
-There is a shortcut in the shell to move up one directory level. It works as follows:
+There is a shortcut in the shell to move up one directory level. Це працює наступним чином:
 
 ```bash
 $ cd ..
@@ -478,8 +474,7 @@ $ cd ..
 "the directory containing this one",
 or more succinctly,
 the **parent** of the current directory.
-Sure enough,
-if we run `pwd` after running `cd ..`, we're back in `/Users/nelle/Desktop/shell-lesson-data`:
+Звичайно, якщо ми запустимо `pwd` після виконання `cd ..`, ми знову у `/Users/nelle/Desktop/shell-lesson-data`:
 
 ```bash
 $ pwd
@@ -489,7 +484,7 @@ $ pwd
 /Users/nelle/Desktop/shell-lesson-data
 ```
 
-The special directory `..` doesn't usually show up when we run `ls`. If we want
+Спеціальний каталог `..` зазвичай не з'являється, коли ми запускаємо `ls`. If we want
 to display it, we can add the `-a` option to `ls -F`:
 
 ```bash
@@ -500,35 +495,24 @@ $ ls -F -a
 ./  ../  exercise-data/  north-pacific-gyre/
 ```
 
-`-a` stands for 'show all' (including hidden files);
-it forces `ls` to show us file and directory names that begin with `.`,
-such as `..` (which, if we're in `/Users/nelle`, refers to the `/Users` directory).
-As you can see,
-it also displays another special directory that's just called `.`,
-which means 'the current working directory'.
-It may seem redundant to have a name for it,
-but we'll see some uses for it soon.
+`-a` означає 'показати все' (англ. show all) (включно з прихованими файлами); ця опція змушує `ls` показувати нам імена файлів і каталогів, які починаються з `.`, наприклад, `..` (яке, якщо ми знаходимося у `/Users/nelle`, вказує на каталог `/Users`).
+Як ви можете бачити, команда також показує ще один спеціальний каталог, який називається `.`, що означає 'поточний робочий каталог'.
+Може здатися, що це дещо надлишково - мати для нього ім'я, але незабаром ми побачимо, як воно може бути використано.
 
-Note that in most command line tools, multiple options can be combined
-with a single `-` and no spaces between the options; `ls -F -a` is
-equivalent to `ls -Fa`.
+Зауважте, що у більшості інструментів командного рядка можна комбінувати декілька параметрів за допомогою одного `-` і без пробілів між параметрами: `ls -F -a` є еквівалентним до `ls -Fa`.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Other Hidden Files
+## Інші приховані файли
 
 In addition to the hidden directories `..` and `.`, you may also see a file
-called `.bash_profile`. This file usually contains shell configuration
-settings. You may also see other files and directories beginning
+called `.bash_profile`. Цей файл зазвичай містить конфігурацію терміналу. You may also see other files and directories beginning
 with `.`. These are usually files and directories that are used to configure
-different programs on your computer. The prefix `.` is used to prevent these
-configuration files from cluttering the terminal when a standard `ls` command
-is used.
+different programs on your computer. Префікс `.` використовується для того, щоб ці конфігураційні файли не захаращували термінал, коли використовується стандартна команда `ls`.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-These three commands are the basic commands for navigating the filesystem on your computer:
-`pwd`, `ls`, and `cd`. Let's explore some variations on those commands. What happens
+Ці три команди є основними командами для навігації по файловій системі на вашому комп'ютері: `pwd`, `ls` і `cd`. Let's explore some variations on those commands. What happens
 if you type `cd` on its own, without giving
 a directory?
 
@@ -536,7 +520,7 @@ a directory?
 $ cd
 ```
 
-How can you check what happened? `pwd` gives us the answer!
+How can you check what happened? Команда `pwd` дає нам відповідь!
 
 ```bash
 $ pwd
@@ -546,22 +530,17 @@ $ pwd
 /Users/nelle
 ```
 
-It turns out that `cd` without an argument will return you to your home directory,
-which is great if you've got lost in your own filesystem.
+Виявляється, `cd` без аргументу поверне вас до домашнього каталогу, що дуже зручно, якщо ви загубилися у власній файловій системі.
 
-Let's try returning to the `exercise-data` directory from before. Last time, we used
-three commands, but we can actually string together the list of directories
-to move to `exercise-data` in one step:
+Let's try returning to the `exercise-data` directory from before. Минулого разу ми використовували три команди, але насправді ми можемо поєднати перелік каталогів для переходу до каталогу `exercise-data` за один крок:
 
 ```bash
 $ cd Desktop/shell-lesson-data/exercise-data
 ```
 
-Check that we've moved to the right place by running `pwd` and `ls -F`.
+Переконайтеся, що ми перемістилися в потрібне місце, виконавши `pwd` і `ls -F`.
 
-If we want to move up one level from the data directory, we could use `cd ..`.  But
-there is another way to move to any directory, regardless of your
-current location.
+If we want to move up one level from the data directory, we could use `cd ..`.  Але існує інший спосіб переміщення до будь-якого каталогу, незалежно від вашого поточного розташування.
 
 So far, when specifying directory names, or even a directory path (as above),
 we have been using **relative paths**.  When you use a relative path with a command
