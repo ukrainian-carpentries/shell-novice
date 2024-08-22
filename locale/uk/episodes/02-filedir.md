@@ -553,10 +553,7 @@ leading slash. The leading `/` tells the computer to follow the path from
 the root of the file system, so it always refers to exactly one directory,
 no matter where we are when we run the command.
 
-This allows us to move to our `shell-lesson-data` directory from anywhere on
-the filesystem (including from inside `exercise-data`). To find the absolute path
-we're looking for, we can use `pwd` and then extract the piece we need
-to move to `shell-lesson-data`.
+Це дає змогу перейти до каталогу `shell-lesson-data` з будь-якого місця у файловій системі (у тому числі з каталогу `exercise-data`). Щоб знайти абсолютний шлях ми можемо скористатися `pwd`, а потім витягти потрібний нам фрагмент, щоб перейти до `shell-lesson-data`.
 
 ```bash
 $ pwd
@@ -570,19 +567,16 @@ $ pwd
 $ cd /Users/nelle/Desktop/shell-lesson-data
 ```
 
-Run `pwd` and `ls -F` to ensure that we're in the directory we expect.
+Виконайте `pwd` і `ls -F`, щоб переконатися, що ми знаходимося в потрібному каталозі.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Two More Shortcuts
+## Ще два скорочення
 
-The shell interprets a tilde (`~`) character at the start of a path to
-mean "the current user's home directory". For example, if Nelle's home
-directory is `/Users/nelle`, then `~/data` is equivalent to
-`/Users/nelle/data`. This only works if it is the first character in the
+Термінал інтерпретує символ тильди (`~`) на початку шляху як "домашній каталог поточного користувача". Наприклад, якщо домашнім каталогом користувача Неллі є каталог `/Users/nelle`, то `~/data` еквівалентно `/Users/nelle/data`. This only works if it is the first character in the
 path; `here/there/~/elsewhere` is _not_ `here/there/Users/nelle/elsewhere`.
 
-Another shortcut is the `-` (dash) character. `cd` will translate `-` into
+Іншим скороченням є символ `-` (тире). `cd` will translate `-` into
 _the previous directory I was in_, which is faster than having to remember,
 then type, the full path.  This is a _very_ efficient way of moving
 _back and forth between two directories_ -- i.e. if you execute `cd -` twice,
@@ -593,33 +587,33 @@ that the former brings you _up_, while the latter brings you _back_.
 
 ***
 
-Try it!
-First navigate to `~/Desktop/shell-lesson-data` (you should already be there).
+Спробуйте!
+Спочатку перейдіть до `~/Desktop/shell-lesson-data` (ви вже маєте бути там).
 
 ```bash
 $ cd ~/Desktop/shell-lesson-data
 ```
 
-Then `cd` into the `exercise-data/creatures` directory
+Потім `cd` у каталог `exercise-data/creatures`
 
 ```bash
 $ cd exercise-data/creatures
 ```
 
-Now if you run
+Тепер, якщо ви виконаєте
 
 ```bash
 $ cd -
 ```
 
-you'll see you're back in `~/Desktop/shell-lesson-data`.
-Run `cd -` again and you're back in `~/Desktop/shell-lesson-data/exercise-data/creatures`
+ви побачите, що повернулися до `~/Desktop/shell-lesson-data`.
+Запустіть `cd -` ще раз і ви повернетесь до `~/Desktop/shell-lesson-data/exercise-data/creatures`
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Absolute vs Relative Paths
+## Абсолютні та відносні шляхи
 
 Starting from `/Users/nelle/data`,
 which of the following commands could Nelle use to navigate to her home directory,
@@ -637,11 +631,11 @@ which is `/Users/nelle`?
 
 :::::::::::::::  solution
 
-## Solution
+## Розв'язання
 
-1. No: `.` stands for the current directory.
+1. Ні: скорочення `.` означає поточний каталог.
 
-2. No: `/` stands for the root directory.
+2. Ні: скорочення `/` означає кореневий каталог.
 
 3. No: Nelle's home directory is `/Users/nelle`.
 
@@ -649,10 +643,9 @@ which is `/Users/nelle`?
 
 5. Yes: `~` stands for the user's home directory, in this case `/Users/nelle`.
 
-6. No: this command would navigate into a directory `home` in the current directory
-   if it exists.
+6. Ні: ця команда виконає перехід до каталогу `home` у поточному каталозі, якщо він існує.
 
-7. Yes: unnecessarily complicated, but correct.
+7. Так: надмірно складна, але правильна.
 
 8. Yes: shortcut to go back to the user's home directory.
 
@@ -666,8 +659,7 @@ which is `/Users/nelle`?
 
 ## Relative Path Resolution
 
-Using the filesystem diagram below, if `pwd` displays `/Users/thing`,
-what will `ls -F ../backup` display?
+Використовуючи наведену нижче схему файлової системи, якщо `pwd` показує `/Users/thing`, що покаже команда `ls -F ../backup`?
 
 1. `../backup: No such file or directory`
 2. `2012-12-01 2013-01-08 2013-01-27`
@@ -678,16 +670,15 @@ what will `ls -F ../backup` display?
 
 :::::::::::::::  solution
 
-## Solution
+## Розв'язання
 
 1. No: there _is_ a directory `backup` in `/Users`.
 
-2. No: this is the content of `Users/thing/backup`,
-   but with `..`, we asked for one level further up.
+2. Ні: це вміст каталогу `Users/thing/backup`, але за допомогою `..` ми просили піднятися на один рівень вище.
 
 3. No: see previous explanation.
 
-4. Yes: `../backup/` refers to `/Users/backup/`.
+4. Так: `../backup/` вказує на `/Users/backup/`.
 
 :::::::::::::::::::::::::
 
@@ -714,9 +705,9 @@ pnas_sub/ pnas_final/ original/
 
 :::::::::::::::  solution
 
-## Solution
+## Розв'язання
 
-1. No: `pwd` is not the name of a directory.
+1. Ні: `pwd` не є назвою каталогу.
 
 2. Yes: `ls` without directory argument lists files and directories
    in the current directory.
@@ -729,8 +720,7 @@ pnas_sub/ pnas_final/ original/
 
 ## General Syntax of a Shell Command
 
-We have now encountered commands, options, and arguments,
-but it is perhaps useful to formalise some terminology.
+Ми вже познайомилися з командами, опціями та аргументами, але, можливо, буде корисно формалізувати деяку термінологію.
 
 Consider the command below as a general example of a command,
 which we will dissect into its component parts:
