@@ -734,8 +734,7 @@ $ ls -F /
 `ls` is the **command**, with an **option** `-F` and an
 **argument** `/`.
 Ми вже зустрічалися з опціями, які починаються з одного тире (`-`), відомі як **короткі варіанти**, або двох тире (`--`), відомі як **довгі варіанти**.
-\[Options] change the behavior of a command and
-[Arguments] tell the command what to operate on (e.g. files and directories).
+\[Параметри] змінюють поведінку команди, а \[Аргументи] вказують команді, над чим вона має працювати (наприклад, над файлами й каталогами).
 Sometimes options and arguments are referred to as **parameters**.
 A command can be called with more than one option and more than one argument, but a
 command doesn't always require an argument or an option.
