@@ -729,13 +729,11 @@ which we will dissect into its component parts:
 $ ls -F /
 ```
 
-![](fig/shell_command_syntax.svg){alt='General syntax of a shell command'}
+![](fig/shell_command_syntax.svg){alt='Загальний синтаксис команди терміналу'}
 
 `ls` is the **command**, with an **option** `-F` and an
 **argument** `/`.
-We've already encountered options  which
-either start with a single dash (`-`), known as **short options**,
-or two dashes (`--`), known as **long options**.
+Ми вже зустрічалися з опціями, які починаються з одного тире (`-`), відомі як **короткі варіанти**, або двох тире (`--`), відомі як **довгі варіанти**.
 \[Options] change the behavior of a command and
 [Arguments] tell the command what to operate on (e.g. files and directories).
 Sometimes options and arguments are referred to as **parameters**.
