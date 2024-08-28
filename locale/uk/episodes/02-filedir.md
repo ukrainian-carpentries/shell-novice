@@ -758,8 +758,7 @@ total 28
 ```
 
 Note that the sizes returned by `ls -s` are in _blocks_.
-As these are defined differently for different operating systems,
-you may not obtain the same figures as in the example.
+Оскільки вони визначаються по-різному для різних операційних систем, ви можете отримати не такі значення, як у прикладі.
 
 ```bash
 $ ls -S exercise-data
@@ -769,8 +768,7 @@ $ ls -S exercise-data
 animal-counts  creatures  alkanes  writing  numbers.txt
 ```
 
-Putting all that together, our command `ls -F /` above gives us a listing
-of files and directories in the root directory `/`.
+Зібравши все це разом, наша команда вище дасть нам список файлів і каталогів у кореневому каталозі `/`.
 An example of the output you might get from the above command is given below:
 
 ```bash
@@ -783,10 +781,9 @@ Library/              Users/
 Network/              Volumes/
 ```
 
-### Nelle's Pipeline: Organizing Files
+### Конвеєр Неллі: Організація файлів
 
-Knowing this much about files and directories,
-Nelle is ready to organize the files that the protein assay machine will create.
+Знаючи так багато про файли та каталоги, Неллі готова впорядкувати файли, які створить машина для аналізу білків.
 
 She creates a directory called `north-pacific-gyre`
 (to remind herself where the data came from),
@@ -799,12 +796,10 @@ such as 'NENE01729A'.
 This ID is what she used in her collection log
 to record the location, time, depth, and other characteristics of the sample,
 so she decides to use it within the filename of each data file.
-Since the output of the assay machine is plain text,
-she will call her files `NENE01729A.txt`, `NENE01812A.txt`, and so on.
-All 1520 files will go into the same directory.
+Оскільки результат роботи аналізатора є звичайним текстом, вона назве свої файли `NENE01729A.txt`, `NENE01812A.txt` і так далі.
+Усі 1520 файлів буде збережено в одному каталозі.
 
-Now in her current directory `shell-lesson-data`,
-Nelle can see what files she has using the command:
+Тепер у її поточному каталозі `shell-lesson-data`, Нелл може побачити, які файли вона має за допомогою цієї команди:
 
 ```bash
 $ ls north-pacific-gyre/
@@ -812,7 +807,7 @@ $ ls north-pacific-gyre/
 
 This command is a lot to type,
 but she can let the shell do most of the work through what is called **tab completion**.
-If she types:
+Якщо вона набере:
 
 ```bash
 $ ls nor
@@ -840,8 +835,7 @@ $ ls north-pacific-gyre/goo
 To see all of those files, she can press <kbd>Tab</kbd> twice more.
 
 ```bash
-ls north-pacific-gyre/goo
-goodiff.sh   goostats.sh
+ls north-pacific-gyre/goo goodiff.sh goostats.sh
 ```
 
 This is called **tab completion**,
@@ -851,16 +845,16 @@ and we will see it in many other tools as we go on.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- The file system is responsible for managing information on the disk.
+- Файлова система відповідає за керування інформацією на диску.
 - Information is stored in files, which are stored in directories (folders).
 - Directories can also store other directories, which then form a directory tree.
-- `pwd` prints the user's current working directory.
+- Команда `pwd` виводить поточний робочий каталог користувача.
 - `ls [path]` prints a listing of a specific file or directory; `ls` on its own lists the current working directory.
-- `cd [path]` changes the current working directory.
-- Most commands take options that begin with a single `-`.
+- Команда `cd [шлях]` змінює поточний робочий каталог.
+- Більшість команд приймають параметри, які починаються з одного символу `-`.
 - Directory names in a path are separated with `/` on Unix, but `\` on Windows.
-- `/` on its own is the root directory of the whole file system.
-- An absolute path specifies a location from the root of the file system.
+- Символ `/` сам по собі є кореневим каталогом усієї файлової системи.
+- Абсолютний шлях вказує на розташування від кореня файлової системи.
 - A relative path specifies a location starting from the current location.
 - `.` on its own means 'the current directory'; `..` means 'the directory above the current one'.
 
