@@ -1,36 +1,34 @@
 ---
-title: Working With Files and Directories
+title: Робота з файлами та каталогами
 teaching: 30
 exercises: 20
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Create a directory hierarchy that matches a given diagram.
-- Create files in that hierarchy using an editor or by copying and renaming existing files.
-- Delete, copy and move specified files and/or directories.
+- Створити ієрархію каталогів, яка відповідає заданій схемі.
+- Створити файли в цій ієрархії за допомогою редактора або шляхом копіювання та перейменування файлів, що вже існують.
+- Видалити, скопіювати та перемістити вказані файли та/або каталоги.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- How can I create, copy, and delete files and directories?
-- How can I edit files?
+- Як я можу створювати, копіювати та видаляти файли і каталоги?
+- Як я можу редагувати файли?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Creating directories
+## Створення каталогів
 
-We now know how to explore files and directories,
-but how do we create them in the first place?
+Тепер ми знаємо, як досліджувати файли та каталоги, але як їх створювати?
 
 In this episode we will learn about creating and moving files and directories,
 using the `exercise-data/writing` directory as an example.
 
-### Step one: see where we are and what we already have
+### Крок перший: подивіться, де ми знаходимося і що вже маємо
 
-We should still be in the `shell-lesson-data` directory on the Desktop,
-which we can check using:
+Ми все ще маємо бути у каталозі `shell-lesson-data` на Робочому столі (англ. Desktop), що ми можемо перевірити за допомогою:
 
 ```bash
 $ pwd
@@ -40,7 +38,7 @@ $ pwd
 /Users/nelle/Desktop/shell-lesson-data
 ```
 
-Next we'll move to the `exercise-data/writing` directory and see what it contains:
+Далі ми перейдемо до каталогу `exercise-data/writing` і подивимося, що у ньому міститься:
 
 ```bash
 $ cd exercise-data/writing/
@@ -48,23 +46,21 @@ $ ls -F
 ```
 
 ```output
-haiku.txt  LittleWomen.txt
+haiku.txt LittleWomen.txt
 ```
 
-### Create a directory
+### Створення каталогу
 
-Let's create a new directory called `thesis` using the command `mkdir thesis`
-(which has no output):
+Створимо новий каталог з назвою `thesis` за допомогою команди `mkdir thesis` (яка не має виводу):
 
 ```bash
 $ mkdir thesis
 ```
 
-As you might guess from its name,
-`mkdir` means 'make directory'.
-Since `thesis` is a relative path
-(i.e., does not have a leading slash, like `/what/ever/thesis`),
-the new directory is created in the current working directory:
+Як ви можете здогадатися з її назви, команда `mkdir` означає 'зробити каталог' (англ. 'make directory').
+Оскільки `thesis` є відносним шляхом
+(тобто не має початкової косої риски, як `/what/ever/thesis`),
+новий каталог буде створено у поточному робочому каталозі:
 
 ```bash
 $ ls -F
@@ -74,7 +70,7 @@ $ ls -F
 haiku.txt  LittleWomen.txt  thesis/
 ```
 
-Since we've just created the `thesis` directory, there's nothing in it yet:
+Оскільки ми щойно створили каталог `thesis`, у ньому ще нічого немає:
 
 ```bash
 $ ls -F thesis
