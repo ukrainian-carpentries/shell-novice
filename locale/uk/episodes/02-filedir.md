@@ -743,9 +743,7 @@ You might sometimes see options being referred to as **switches** or **flags**,
 especially for options that take no argument. In this lesson we will stick with
 using the term _option_.
 
-Each part is separated by spaces. If you omit the space
-between `ls` and `-F` the shell will look for a command called `ls-F`, which
-doesn't exist. Also, capitalization can be important.
+Кожна частина відокремлюється пробілами. Якщо ви пропустите пробіл між `ls` і `-F`, термінал шукатиме команду з назвою `ls-F`, якої не існує. Also, capitalization can be important.
 For example, `ls -s` will display the size of files and directories alongside the names,
 while `ls -S` will sort the files and directories by size, as shown below:
 
