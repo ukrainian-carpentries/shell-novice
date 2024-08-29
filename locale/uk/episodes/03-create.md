@@ -187,11 +187,7 @@ Let's type in a few lines of text.
 
 ![](fig/nano-screenshot.png){alt="screenshot of nano text editor in action with the text It's not publish or perish any more, it's share and thrive"}
 
-Once we're happy with our text, we can press <kbd>Ctrl</kbd>\+<kbd>O</kbd>
-(press the <kbd>Ctrl</kbd> or <kbd>Control</kbd> key and, while
-holding it down, press the <kbd>O</kbd> key) to write our data to disk. We will be asked
-to provide a name for the file that will contain our text. Press <kbd>Return</kbd> to accept
-the suggested default of `draft.txt`.
+Після того, як ми будемо задоволені нашим текстом, ми можемо натиснути <kbd>Ctrl</kbd>\+<kbd>O</kbd> (натисніть клавішу <kbd>Ctrl</kbd> or <kbd>Control</kbd> і, утримуючи її, натиснути клавішу <kbd>O</kbd>), щоб записати наші дані на диск. Нас запитають, до якого файлу ми хочемо зберегти дані. Натисніть клавішу <kbd>Return</kbd>, щоб прийняти запропоновану за замовчуванням назву `draft.txt`.
 
 Once our file is saved, we can use <kbd>Ctrl</kbd>\+<kbd>X</kbd> to quit the editor and
 return to the shell.
@@ -207,19 +203,18 @@ press the <kbd>X</kbd> key, described as any of:
 
 - `Control-X`
 - `Control+X`
-- `Ctrl-X`
+- `Ctrl-C`
 - `Ctrl+X`
 - `^X`
 - `C-x`
 
-In nano, along the bottom of the screen you'll see `^G Get Help ^O WriteOut`.
+У nano, у нижній частині екрана ви побачите `^G Отримати довідку ^O Вивести на екран`.
 This means that you can use `Control-G` to get help and `Control-O` to save your
 file.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-`nano` doesn't leave any output on the screen after it exits,
-but `ls` now shows that we have created a file called `draft.txt`:
+Після завершення роботи команда `nano` не залишає жодних даних на екрані, але `ls` тепер показує, що ми створили файл з назвою `draft.txt`:
 
 ```bash
 $ ls
@@ -231,16 +226,16 @@ draft.txt
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Creating Files a Different Way
+## Створення файлів іншим способом
 
-We have seen how to create text files using the `nano` editor.
-Now, try the following command:
+Ми побачили, як створювати текстові файли за допомогою редактора `nano`.
+Тепер спробуйте виконати наступну команду:
 
 ```bash
 $ touch my_file.txt
 ```
 
-1. What did the `touch` command do?
+1. Що зробила команда `touch`?
    When you look at your current directory using the GUI file explorer,
    does the file show up?
 
