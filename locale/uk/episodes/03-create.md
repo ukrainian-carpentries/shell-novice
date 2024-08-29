@@ -77,8 +77,7 @@ $ ls -F thesis
 ```
 
 Note that `mkdir` is not limited to creating single directories one at a time.
-The `-p` option allows `mkdir` to create a directory with nested subdirectories
-in a single operation:
+Параметр `-p` дозволяє команді `mkdir` створювати каталог із вкладеними підкаталогами за одну операцію:
 
 ```bash
 $ mkdir -p ../project/data ../project/results
