@@ -102,9 +102,9 @@ data/  results/
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Two ways of doing the same thing
+## Два способи зробити одне й те саме
 
-Using the shell to create a directory is no different than using a file explorer.
+Використання терміналу для створення каталогу нічим не відрізняється від використання файлового провідника.
 If you open the current directory using your operating system's graphical file explorer,
 the `thesis` directory will appear there too.
 While the shell and the file explorer are two different ways of interacting with the files,
@@ -120,22 +120,22 @@ Complicated names of files and directories can make your life painful
 when working on the command line. Here we provide a few useful
 tips for the names of your files and directories.
 
-1. Don't use spaces.
+1. Не використовуйте пробіли.
 
 Spaces can make a name more meaningful,
 but since spaces are used to separate arguments on the command line
 it is better to avoid them in names of files and directories.
-You can use `-` or `_` instead (e.g. `north-pacific-gyre/` rather than `north pacific gyre/`).
-To test this out, try typing `mkdir north pacific gyre` and see what directory (or directories!)
-are made when you check with `ls -F`.
+Ви можете використовувати `-` або `_` (наприклад, `north-pacific-gyre/` замість `north pacific gyre/`).
+Щоб перевірити це, спробуйте набрати `mkdir north pacific gyre` і подивіться, який каталог (або каталоги!)
+буде створено при перевірці за допомогою `ls -F`.
 
-2. Don't begin the name with `-` (dash).
+2. Не починайте назву з `-` (тире).
 
-Commands treat names starting with `-` as options.
+Команди розглядають назви, що починаються з `-`, як опції.
 
-3. Stick with letters, numbers, `.` (period or 'full stop'), `-` (dash) and `_` (underscore).
+3. Використовуйте літери, цифри, `.` (крапка), `-` (тире) і `_` (підкреслення).
 
-Many other characters have special meanings on the command line.
+Багато інших символів мають особливе значення у командному рядку.
 We will learn about some of these during this lesson.
 There are special characters that can cause your command to not work as
 expected and can even result in data loss.
@@ -148,16 +148,13 @@ or other special characters, you should surround the name in single
 
 :::::::::::::::::::::::::::::::::::::::::  instructor
 
-Learners can sometimes get trapped within command-line text editors
-such as Vim, Emacs, or Nano. Closing the terminal emulator and opening
+Учні іноді можуть потрапити в пастку текстових редакторів командного рядка, таких як Vim, Emacs або Nano. Closing the terminal emulator and opening
 a new one can be frustrating as learners will have to navigate to the
-correct folder again. Our recommendation to mitigate this problem is that
-instructors should use the same text editor as the learners during workshops
-(in most cases Nano).
+correct folder again. Для пом'якшення цієї проблеми ми радимо викладачам використовувати той самий текстовий редактор, що й учні під час семінарів (у більшості випадків Nano).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Create a text file
+### Створення текстового файлу
 
 Let's change our working directory to `thesis` using `cd`,
 then run a text editor called Nano to create a file called `draft.txt`:
@@ -169,28 +166,20 @@ $ nano draft.txt
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Which Editor?
+## Який редактор?
 
-When we say, '`nano` is a text editor' we really do mean 'text'. It can
-only work with plain character data, not tables, images, or any other
-human-friendly media. We use it in examples because it is one of the
+When we say, '`nano` is a text editor' we really do mean 'text'. Він може працювати лише з простими символьними даними, а не з таблицями, зображеннями чи будь-якими іншими зручними для людини даними. We use it in examples because it is one of the
 least complex text editors. However, because of this trait, it may
 not be powerful enough or flexible enough for the work you need to do
-after this workshop. On Unix systems (such as Linux and macOS),
-many programmers use [Emacs](https://www.gnu.org/software/emacs/) or
-[Vim](https://www.vim.org/) (both of which require more time to learn),
-or a graphical editor such as [Gedit](https://projects.gnome.org/gedit/)
-or [VScode](https://code.visualstudio.com/). On Windows, you may wish to
+after this workshop. У системах Unix (таких як Linux та macOS), багато програмістів використовують [Emacs] (https://www.gnu.org/software/emacs/) або [Vim](https://www.vim.org/) (обидва вимагають більше часу на вивчення), або графічний редактор, такий як [Gedit](https://projects.gnome.org/gedit/). On Windows, you may wish to
 use [Notepad++](https://notepad-plus-plus.org/).  Windows also has a built-in
 editor called `notepad` that can be run from the command line in the same
 way as `nano` for the purposes of this lesson.
 
-No matter what editor you use, you will need to know where it searches
-for and saves files. If you start it from the shell, it will (probably)
+Незалежно від того, яким редактором ви користуєтеся, вам потрібно знати, де він шукає і зберігає файли. If you start it from the shell, it will (probably)
 use your current working directory as its default location. If you use
 your computer's start menu, it may want to save files in your Desktop or
-Documents directory instead. You can change this by navigating to
-another directory the first time you 'Save As...'
+Documents directory instead. Ви можете змінити це, перейшовши до іншого каталогу під час першого виконання команди "Зберегти як...".
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
