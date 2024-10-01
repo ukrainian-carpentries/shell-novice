@@ -7,7 +7,7 @@ exercises: 10
 ::::::::::::::::::::::::::::::::::::::: objectives
 
 - Explain the similarities and differences between a file and a directory.
-- Translate an absolute path into a relative path and vice versa.
+- Перетворити абсолютний шлях у відносний і навпаки.
 - Construct absolute and relative paths that identify specific files and directories.
 - Use options and arguments to change the behaviour of a shell command.
 - Demonstrate the use of tab completion and explain its advantages.
@@ -47,7 +47,7 @@ First, let's find out where we are by running a command called `pwd`
 while we are using the shell, we are in exactly one place called
 our **current working directory**. Commands mostly read and write files in the
 current working directory, i.e. 'here', so knowing where you are before running
-a command is important. `pwd` shows you where you are:
+a command is important. Команда `pwd` покаже вам, де ви знаходитесь:
 
 ```bash
 $ pwd
@@ -63,17 +63,17 @@ which is Nelle's **home directory**:
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Home Directory Variation
+## Варіації домашнього каталогу
 
-The home directory path will look different on different operating systems.
+Розташування домашньої директорії виглядає по-різному в різних операційних системах.
 On Linux, it may look like `/home/nelle`,
 and on Windows, it will be similar to `C:\Documents and Settings\nelle` or
 `C:\Users\nelle`.
-(Note that it may look slightly different for different versions of Windows.)
+(Зауважте, що воно може виглядати дещо інакше для різних версій Windows.)
 In future examples, we've used Mac output as the default - Linux and Windows
 output may differ slightly but should be generally similar.
 
-We will also assume that your `pwd` command returns your user's home directory.
+Ми також припустимо, що ваша команда `pwd` повертає вашу домашню директорію користувача.
 If `pwd` returns something different, you may need to navigate there using `cd`
 or some commands in this lesson will not work as written.
 See [Exploring Other Directories](#exploring-other-directories) for more details
@@ -82,42 +82,32 @@ on the `cd` command.
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 To understand what a 'home directory' is,
-let's have a look at how the file system as a whole is organized.  For the
-sake of this example, we'll be
-illustrating the filesystem on our scientist Nelle's computer.  After this
+let's have a look at how the file system as a whole is organized.  Для цього прикладу ми проілюструємо файлову систему на комп’ютері нашої вченої Неллі.  After this
 illustration, you'll be learning commands to explore your own filesystem,
 which will be constructed in a similar way, but not be exactly identical.
 
-On Nelle's computer, the filesystem looks like this:
+На комп’ютері Неллі файлова система виглядає так:
 
 ![](fig/filesystem.svg){alt='The file system is made up of a root directory that contains sub-directories titled bin, data, users, and tmp'}
 
-The filesystem looks like an upside down tree.
-The topmost directory  is the **root directory**
-that holds everything else.
+Файлова система виглядає як перевернуте дерево.
+Найвищим каталогом є **кореневий каталог**, який містить усе інше.
 We refer to it using a slash character, `/`, on its own;
 this character is the leading slash in `/Users/nelle`.
 
-Inside that directory are several other directories:
-`bin` (which is where some built-in programs are stored),
-`data` (for miscellaneous data files),
-`Users` (where users' personal directories are located),
-`tmp` (for temporary files that don't need to be stored long-term),
-and so on.
+Усередині цього каталогу є кілька інших каталогів: `bin` (в якому зберігаються певні вбудовані програми), `data` (для різноманітних файлів даних), `Users` (де знаходяться особисті директорії користувачів), `tmp` (для файлів тимчасового зберігання) та інші.
 
-We know that our current working directory `/Users/nelle` is stored inside `/Users`
-because `/Users` is the first part of its name.
+Ми знаємо, що наш поточний робочий каталог `/Users/nelle` зберігається всередині каталогу `/Users`, тому що `/Users` є першою частиною його імені.
 Similarly,
 we know that `/Users` is stored inside the root directory `/`
 because its name begins with `/`.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Slashes
+## Символи скісної риски
 
-Notice that there are two meanings for the `/` character.
-When it appears at the front of a file or directory name,
-it refers to the root directory. When it appears _inside_ a path,
+Зверніть увагу, що символ `/` має два значення.
+Коли він з’являється на початку назви файлу чи каталогу, це посилання на кореневу директорію. When it appears _inside_ a path,
 it's just a separator.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -126,12 +116,12 @@ Underneath `/Users`,
 we find one directory for each user with an account on Nelle's machine,
 her colleagues _imhotep_ and _larry_.
 
-![](fig/home-directories.svg){alt='Like other directories, home directories are sub-directories underneath "/Users" like "/Users/imhotep", "/Users/larry" or"/Users/nelle"'}
+![](fig/home-directories.svg){alt='Як і інші каталоги, домашні каталоги є підкаталогами
+"/Users", наприклад "/Users/imhotep", "/Users/larry" або "/Users/nelle"'}
 
 The user _imhotep_'s files are stored in `/Users/imhotep`,
 user _larry_'s in `/Users/larry`,
-and Nelle's in `/Users/nelle`. Nelle is the user in our
-examples here; therefore, we get `/Users/nelle` as our home directory.
+and Nelle's in `/Users/nelle`. Оскільки саме Неллі є користувачем у наших прикладах, тому ми отримуємо `/Users/nelle` як наш домашній каталог.
 Typically, when you open a new command prompt, you will be in
 your home directory to start.
 
@@ -147,15 +137,14 @@ Applications Documents    Library      Music        Public
 Desktop      Downloads    Movies       Pictures
 ```
 
-(Again, your results may be slightly different depending on your operating
-system and how you have customized your filesystem.)
+(Знову ж таки, ваші результати можуть дещо відрізнятися залежно від вашої операційної системи та того, як ви налаштували свою файлову систему.)
 
-`ls` prints the names of the files and directories in the current directory.
+`ls` друкує назви файлів і каталогів у поточному каталозі.
 We can make its output more comprehensible by using the `-F` **option**
 which tells `ls` to classify the output
 by adding a marker to file and directory names to indicate what they are:
 
-- a trailing `/` indicates that this is a directory
+- символ `/` наприкінці назви вказує на те, що це каталог
 - `@` indicates a link
 - `*` indicates an executable
 
@@ -179,21 +168,20 @@ are **files** in the current working directory.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Clearing your terminal
+## Очищення терміналу
 
-If your screen gets too cluttered, you can clear your terminal using the
-`clear` command. You can still access previous commands using <kbd>↑</kbd>
+Якщо екран стає занадто захаращеним, ви можете очистити термінал за допомогою команди `clear`. You can still access previous commands using <kbd>↑</kbd>
 and <kbd>↓</kbd> to move line-by-line, or by scrolling in your terminal.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Getting help
+### Отримання допомоги
 
 `ls` has lots of other **options**. There are two common ways to find out how
 to use a command and what options it accepts ---
 **depending on your environment, you might find that only one of these ways works:**
 
-1. We can pass a `--help` option to any command (available on Linux and Git Bash), for example:
+1. Ми можемо передати команді опцію `--help` (доступну в Linux і Git Bash), наприклад:
 
 ```bash
 $ ls --help
@@ -209,17 +197,16 @@ We'll describe both ways next.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Help for built-in commands
+## Довідка для вбудованих команд
 
-Some commands are built in to the Bash shell, rather than existing as separate
-programs on the filesystem. One example is the `cd` (change directory) command.
+Деякі команди вбудовано в оболонку Bash, а не існують як окремі програми у файловій системі. One example is the `cd` (change directory) command.
 If you get a message like `No manual entry for cd`, try `help cd` instead. The
 `help` command is how you get usage information for
 [Bash built-ins](https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-#### The `--help` option
+#### Опція \`--help'
 
 Most bash commands and programs that people have written to be
 run from within bash, support a `--help` option that displays more
@@ -266,13 +253,13 @@ When options exist as both short and long options:
 - Use the short option when typing commands directly into the
   shell to minimize keystrokes and get your task done faster.
 - Use the long option in scripts to provide clarity.
-  It will be read many times and typed once.
+  Він буде прочитаний багато разів і надрукований один раз.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Unsupported command-line options
+## Непідтримувані параметри командного рядка
 
 If you try to use an option that is not supported, `ls` and other commands
 will usually print an error message similar to:
@@ -288,7 +275,7 @@ Try 'ls --help' for more information.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-#### The `man` command
+#### Команда `man`
 
 The other way to learn about `ls` is to type
 
@@ -301,17 +288,17 @@ of the `ls` command and its options.
 
 To navigate through the `man` pages,
 you may use <kbd>↑</kbd> and <kbd>↓</kbd> to move line-by-line,
-or try <kbd>B</kbd> and <kbd>Spacebar</kbd> to skip up and down by a full page.
+or try <kbd>b</kbd> and <kbd>Spacebar</kbd> to skip up and down by a full page.
 To search for a character or word in the `man` pages,
 use <kbd>/</kbd> followed by the character or word you are searching for.
-Sometimes a search will result in multiple hits.
+Іноді пошук може призвести до кількох результатів.
 If so, you can move between hits using <kbd>N</kbd> (for moving forward) and <kbd>Shift</kbd>\+<kbd>N</kbd> (for moving backward).
 
-To **quit** the `man` pages, press <kbd>Q</kbd>.
+Щоб **вийти** зі сторінок `man`, натисніть <kbd>q</kbd>.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Manual pages on the web
+## Сторінки з інструкціями в Інтернеті
 
 Of course, there is a third way to access help for commands:
 searching the internet via your web browser.
@@ -329,8 +316,7 @@ which covers many commands introduced within this lesson.
 
 ## Exploring More `ls` Options
 
-You can also use two options at the same time. What does the command `ls` do when used
-with the `-l` option? What about if you use both the `-l` and the `-h` option?
+Ви також можете використовувати декілька опцій одночасно. Що робить команда `ls` при використанні з опцією `-l`? What about if you use both the `-l` and the `-h` option?
 
 Some of its output is about properties that we do not cover in this lesson (such
 as file permissions and ownership), but the rest should be useful
@@ -338,13 +324,11 @@ nevertheless.
 
 :::::::::::::::  solution
 
-## Solution
+## Розв'язання
 
 The `-l` option makes `ls` use a **l**ong listing format, showing not only
 the file/directory names but also additional information, such as the file size
-and the time of its last modification. If you use both the `-h` option and the `-l` option,
-this makes the file size '**h**uman readable', i.e. displaying something like `5.3K`
-instead of `5369`.
+and the time of its last modification. Якщо ви використовуєте як `-h`, так і `-l`, це зробить виведення розміру файлу у більш зрозумілому людині вигляді ("**h**uman readable"), тобто покаже щось на кшталт `5.3K` замість `5369`.
 
 :::::::::::::::::::::::::
 
@@ -352,23 +336,18 @@ instead of `5369`.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Listing in Reverse Chronological Order
+## Виведення у зворотному хронологічному порядку
 
-By default, `ls` lists the contents of a directory in alphabetical
-order by name. The command `ls -t` lists items by time of last
-change instead of alphabetically. The command `ls -r` lists the
-contents of a directory in reverse order.
+За замовчуванням `ls` виводить вміст каталогу в алфавітному порядку за іменами елементів. Команда `ls -t` перелічує елементи за часом останньої зміни, а не за алфавітом. Команда `ls -r` виводить вміст каталогу у зворотному порядку.
 Which file is displayed last when you combine the `-t` and `-r` options?
 Hint: You may need to use the `-l` option to see the
 last changed dates.
 
 :::::::::::::::  solution
 
-## Solution
+## Розв'язання
 
-The most recently changed file is listed last when using `-rt`. This
-can be very useful for finding your most recent edits or checking to
-see if a new output file was written.
+The most recently changed file is listed last when using `-rt`. Це може бути дуже корисним для пошуку ваших останніх редагувань або перевірки чи було створено новий вихідний файл.
 
 :::::::::::::::::::::::::
 
@@ -381,8 +360,7 @@ but we can use it to list the contents of a different directory.
 Let's take a look at our `Desktop` directory by running `ls -F Desktop`,
 i.e.,
 the command `ls` with the `-F` **option** and the [**argument**][Arguments]  `Desktop`.
-The argument `Desktop` tells `ls` that
-we want a listing of something other than our current working directory:
+Аргумент `Desktop` повідомляє `ls`, що ми хочемо отримати список чогось іншого, ніж наш поточний робочий каталог:
 
 ```bash
 $ ls -F Desktop
@@ -400,9 +378,9 @@ Your output should be a list of all the files and sub-directories in your
 Desktop directory, including the `shell-lesson-data` directory you downloaded at
 the [setup for this lesson](../learners/setup.md). (On most systems, the
 contents of the `Desktop` directory in the shell will show up as icons in a graphical
-user interface behind all the open windows. See if this is the case for you.)
+user interface behind all the open windows. Подивіться, чи це ваш випадок.)
 
-Organizing things hierarchically helps us keep track of our work. While it's
+Ієрархічна організація речей таким чином допомагає нам відстежувати нашу роботу. While it's
 possible to put hundreds of files in our home directory just as it's possible to
 pile hundreds of printed papers on our desk, it's much easier to find things when
 they've been organized into sensibly-named subdirectories.
@@ -410,8 +388,7 @@ they've been organized into sensibly-named subdirectories.
 Now that we know the `shell-lesson-data` directory is located in our Desktop directory, we
 can do two things.
 
-First, using the same strategy as before, we can look at its contents by passing
-a directory name to `ls`:
+По-перше, ми можемо переглянути його вміст, використовуючи ту ж стратегію, що і раніше, передавши ім'я каталогу в `ls`:
 
 ```bash
 $ ls -F Desktop/shell-lesson-data
@@ -427,16 +404,14 @@ our home directory.
 
 The command to change locations is `cd` followed by a
 directory name to change our working directory.
-`cd` stands for 'change directory',
-which is a bit misleading.
-The command doesn't change the directory;
-it changes the shell's current working directory.
+`cd` означає 'змінити каталог' (англ. 'change directory'), що трохи вводить в оману.
+Команда не змінює каталог;
+вона змінює поточний робочий каталог терміналу.
 In other words it changes the shell's settings for what directory we are in.
 The `cd` command is akin to double-clicking a folder in a graphical interface
 to get into that folder.
 
-Let's say we want to move into the `exercise-data` directory we saw above. We can
-use the following series of commands to get there:
+Let's say we want to move into the `exercise-data` directory we saw above. Ми можемо скористатися наступною серією команд, щоб дістатися туди:
 
 ```bash
 $ cd Desktop
@@ -446,10 +421,9 @@ $ cd exercise-data
 
 These commands will move us from our home directory into our Desktop directory, then into
 the `shell-lesson-data` directory, then into the `exercise-data` directory.
-You will notice that `cd` doesn't print anything. This is normal.
+Ви помітите, що команда `cd` нічого не виводить. Це нормально.
 Many shell commands will not output anything to the screen when successfully executed.
-But if we run `pwd` after it, we can see that we are now
-in `/Users/nelle/Desktop/shell-lesson-data/exercise-data`.
+Але якщо ми виконаємо `pwd` після неї, то побачимо, що зараз ми знаходимося у `/Users/nelle/Desktop/shell-lesson-data/exercise-data`.
 
 If we run `ls -F` without arguments now,
 it lists the contents of `/Users/nelle/Desktop/shell-lesson-data/exercise-data`,
@@ -473,7 +447,7 @@ alkanes/  animal-counts/  creatures/  numbers.txt  writing/
 
 We now know how to go down the directory tree (i.e. how to go into a subdirectory),
 but how do we go up (i.e. how do we leave a directory and go into its parent directory)?
-We might try the following:
+Ми можемо спробувати наступне:
 
 ```bash
 $ cd shell-lesson-data
@@ -483,14 +457,14 @@ $ cd shell-lesson-data
 -bash: cd: shell-lesson-data: No such file or directory
 ```
 
-But we get an error! Why is this?
+Але ми отримуємо помилку! Чому?
 
 With our methods so far,
 `cd` can only see sub-directories inside your current directory. There are
 different ways to see directories above your current location; we'll start
 with the simplest.
 
-There is a shortcut in the shell to move up one directory level. It works as follows:
+There is a shortcut in the shell to move up one directory level. Це працює наступним чином:
 
 ```bash
 $ cd ..
@@ -500,8 +474,7 @@ $ cd ..
 "the directory containing this one",
 or more succinctly,
 the **parent** of the current directory.
-Sure enough,
-if we run `pwd` after running `cd ..`, we're back in `/Users/nelle/Desktop/shell-lesson-data`:
+Звичайно, якщо ми запустимо `pwd` після виконання `cd ..`, ми знову у `/Users/nelle/Desktop/shell-lesson-data`:
 
 ```bash
 $ pwd
@@ -511,7 +484,7 @@ $ pwd
 /Users/nelle/Desktop/shell-lesson-data
 ```
 
-The special directory `..` doesn't usually show up when we run `ls`. If we want
+Спеціальний каталог `..` зазвичай не з'являється, коли ми запускаємо `ls`. If we want
 to display it, we can add the `-a` option to `ls -F`:
 
 ```bash
@@ -522,35 +495,24 @@ $ ls -F -a
 ./  ../  exercise-data/  north-pacific-gyre/
 ```
 
-`-a` stands for 'show all' (including hidden files);
-it forces `ls` to show us file and directory names that begin with `.`,
-such as `..` (which, if we're in `/Users/nelle`, refers to the `/Users` directory).
-As you can see,
-it also displays another special directory that's just called `.`,
-which means 'the current working directory'.
-It may seem redundant to have a name for it,
-but we'll see some uses for it soon.
+`-a` означає 'показати все' (англ. show all) (включно з прихованими файлами); ця опція змушує `ls` показувати нам імена файлів і каталогів, які починаються з `.`, наприклад, `..` (яке, якщо ми знаходимося у `/Users/nelle`, вказує на каталог `/Users`).
+Як ви можете бачити, команда також показує ще один спеціальний каталог, який називається `.`, що означає 'поточний робочий каталог'.
+Може здатися, що це дещо надлишково - мати для нього ім'я, але незабаром ми побачимо, як воно може бути використано.
 
-Note that in most command line tools, multiple options can be combined
-with a single `-` and no spaces between the options; `ls -F -a` is
-equivalent to `ls -Fa`.
+Зауважте, що у більшості інструментів командного рядка можна комбінувати декілька параметрів за допомогою одного `-` і без пробілів між параметрами: `ls -F -a` є еквівалентним до `ls -Fa`.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Other Hidden Files
+## Інші приховані файли
 
 In addition to the hidden directories `..` and `.`, you may also see a file
-called `.bash_profile`. This file usually contains shell configuration
-settings. You may also see other files and directories beginning
+called `.bash_profile`. Цей файл зазвичай містить конфігурацію терміналу. You may also see other files and directories beginning
 with `.`. These are usually files and directories that are used to configure
-different programs on your computer. The prefix `.` is used to prevent these
-configuration files from cluttering the terminal when a standard `ls` command
-is used.
+different programs on your computer. Префікс `.` використовується для того, щоб ці конфігураційні файли не захаращували термінал, коли використовується стандартна команда `ls`.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-These three commands are the basic commands for navigating the filesystem on your computer:
-`pwd`, `ls`, and `cd`. Let's explore some variations on those commands. What happens
+Ці три команди є основними командами для навігації по файловій системі на вашому комп'ютері: `pwd`, `ls` і `cd`. Let's explore some variations on those commands. What happens
 if you type `cd` on its own, without giving
 a directory?
 
@@ -558,7 +520,7 @@ a directory?
 $ cd
 ```
 
-How can you check what happened? `pwd` gives us the answer!
+How can you check what happened? Команда `pwd` дає нам відповідь!
 
 ```bash
 $ pwd
@@ -568,22 +530,17 @@ $ pwd
 /Users/nelle
 ```
 
-It turns out that `cd` without an argument will return you to your home directory,
-which is great if you've got lost in your own filesystem.
+Виявляється, `cd` без аргументу поверне вас до домашнього каталогу, що дуже зручно, якщо ви загубилися у власній файловій системі.
 
-Let's try returning to the `exercise-data` directory from before. Last time, we used
-three commands, but we can actually string together the list of directories
-to move to `exercise-data` in one step:
+Let's try returning to the `exercise-data` directory from before. Минулого разу ми використовували три команди, але насправді ми можемо поєднати перелік каталогів для переходу до каталогу `exercise-data` за один крок:
 
 ```bash
 $ cd Desktop/shell-lesson-data/exercise-data
 ```
 
-Check that we've moved to the right place by running `pwd` and `ls -F`.
+Переконайтеся, що ми перемістилися в потрібне місце, виконавши `pwd` і `ls -F`.
 
-If we want to move up one level from the data directory, we could use `cd ..`.  But
-there is another way to move to any directory, regardless of your
-current location.
+If we want to move up one level from the data directory, we could use `cd ..`.  Але існує інший спосіб переміщення до будь-якого каталогу, незалежно від вашого поточного розташування.
 
 So far, when specifying directory names, or even a directory path (as above),
 we have been using **relative paths**.  When you use a relative path with a command
@@ -596,10 +553,7 @@ leading slash. The leading `/` tells the computer to follow the path from
 the root of the file system, so it always refers to exactly one directory,
 no matter where we are when we run the command.
 
-This allows us to move to our `shell-lesson-data` directory from anywhere on
-the filesystem (including from inside `exercise-data`). To find the absolute path
-we're looking for, we can use `pwd` and then extract the piece we need
-to move to `shell-lesson-data`.
+Це дає змогу перейти до каталогу `shell-lesson-data` з будь-якого місця у файловій системі (у тому числі з каталогу `exercise-data`). Щоб знайти абсолютний шлях ми можемо скористатися `pwd`, а потім витягти потрібний нам фрагмент, щоб перейти до `shell-lesson-data`.
 
 ```bash
 $ pwd
@@ -613,19 +567,16 @@ $ pwd
 $ cd /Users/nelle/Desktop/shell-lesson-data
 ```
 
-Run `pwd` and `ls -F` to ensure that we're in the directory we expect.
+Виконайте `pwd` і `ls -F`, щоб переконатися, що ми знаходимося в потрібному каталозі.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Two More Shortcuts
+## Ще два скорочення
 
-The shell interprets a tilde (`~`) character at the start of a path to
-mean "the current user's home directory". For example, if Nelle's home
-directory is `/Users/nelle`, then `~/data` is equivalent to
-`/Users/nelle/data`. This only works if it is the first character in the
+Термінал інтерпретує символ тильди (`~`) на початку шляху як "домашній каталог поточного користувача". Наприклад, якщо домашнім каталогом користувача Неллі є каталог `/Users/nelle`, то `~/data` еквівалентно `/Users/nelle/data`. This only works if it is the first character in the
 path; `here/there/~/elsewhere` is _not_ `here/there/Users/nelle/elsewhere`.
 
-Another shortcut is the `-` (dash) character. `cd` will translate `-` into
+Іншим скороченням є символ `-` (тире). `cd` will translate `-` into
 _the previous directory I was in_, which is faster than having to remember,
 then type, the full path.  This is a _very_ efficient way of moving
 _back and forth between two directories_ -- i.e. if you execute `cd -` twice,
@@ -636,33 +587,33 @@ that the former brings you _up_, while the latter brings you _back_.
 
 ***
 
-Try it!
-First navigate to `~/Desktop/shell-lesson-data` (you should already be there).
+Спробуйте!
+Спочатку перейдіть до `~/Desktop/shell-lesson-data` (ви вже маєте бути там).
 
 ```bash
 $ cd ~/Desktop/shell-lesson-data
 ```
 
-Then `cd` into the `exercise-data/creatures` directory
+Потім `cd` у каталог `exercise-data/creatures`
 
 ```bash
 $ cd exercise-data/creatures
 ```
 
-Now if you run
+Тепер, якщо ви виконаєте
 
 ```bash
 $ cd -
 ```
 
-you'll see you're back in `~/Desktop/shell-lesson-data`.
-Run `cd -` again and you're back in `~/Desktop/shell-lesson-data/exercise-data/creatures`
+ви побачите, що повернулися до `~/Desktop/shell-lesson-data`.
+Запустіть `cd -` ще раз і ви повернетесь до `~/Desktop/shell-lesson-data/exercise-data/creatures`
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Absolute vs Relative Paths
+## Абсолютні та відносні шляхи
 
 Starting from `/Users/nelle/data`,
 which of the following commands could Nelle use to navigate to her home directory,
@@ -680,11 +631,11 @@ which is `/Users/nelle`?
 
 :::::::::::::::  solution
 
-## Solution
+## Розв'язання
 
-1. No: `.` stands for the current directory.
+1. Ні: скорочення `.` означає поточний каталог.
 
-2. No: `/` stands for the root directory.
+2. Ні: скорочення `/` означає кореневий каталог.
 
 3. No: Nelle's home directory is `/Users/nelle`.
 
@@ -692,10 +643,9 @@ which is `/Users/nelle`?
 
 5. Yes: `~` stands for the user's home directory, in this case `/Users/nelle`.
 
-6. No: this command would navigate into a directory `home` in the current directory
-   if it exists.
+6. Ні: ця команда виконає перехід до каталогу `home` у поточному каталозі, якщо він існує.
 
-7. Yes: unnecessarily complicated, but correct.
+7. Так: надмірно складна, але правильна.
 
 8. Yes: shortcut to go back to the user's home directory.
 
@@ -709,8 +659,7 @@ which is `/Users/nelle`?
 
 ## Relative Path Resolution
 
-Using the filesystem diagram below, if `pwd` displays `/Users/thing`,
-what will `ls -F ../backup` display?
+Використовуючи наведену нижче схему файлової системи, якщо `pwd` показує `/Users/thing`, що покаже команда `ls -F ../backup`?
 
 1. `../backup: No such file or directory`
 2. `2012-12-01 2013-01-08 2013-01-27`
@@ -721,16 +670,15 @@ what will `ls -F ../backup` display?
 
 :::::::::::::::  solution
 
-## Solution
+## Розв'язання
 
 1. No: there _is_ a directory `backup` in `/Users`.
 
-2. No: this is the content of `Users/thing/backup`,
-   but with `..`, we asked for one level further up.
+2. Ні: це вміст каталогу `Users/thing/backup`, але за допомогою `..` ми просили піднятися на один рівень вище.
 
 3. No: see previous explanation.
 
-4. Yes: `../backup/` refers to `/Users/backup/`.
+4. Так: `../backup/` вказує на `/Users/backup/`.
 
 :::::::::::::::::::::::::
 
@@ -757,9 +705,9 @@ pnas_sub/ pnas_final/ original/
 
 :::::::::::::::  solution
 
-## Solution
+## Розв'язання
 
-1. No: `pwd` is not the name of a directory.
+1. Ні: `pwd` не є назвою каталогу.
 
 2. Yes: `ls` without directory argument lists files and directories
    in the current directory.
@@ -772,8 +720,7 @@ pnas_sub/ pnas_final/ original/
 
 ## General Syntax of a Shell Command
 
-We have now encountered commands, options, and arguments,
-but it is perhaps useful to formalise some terminology.
+Ми вже познайомилися з командами, опціями та аргументами, але, можливо, буде корисно формалізувати деяку термінологію.
 
 Consider the command below as a general example of a command,
 which we will dissect into its component parts:
@@ -782,15 +729,12 @@ which we will dissect into its component parts:
 $ ls -F /
 ```
 
-![](fig/shell_command_syntax.svg){alt='General syntax of a shell command'}
+![](fig/shell_command_syntax.svg){alt='Загальний синтаксис команди терміналу'}
 
 `ls` is the **command**, with an **option** `-F` and an
 **argument** `/`.
-We've already encountered options  which
-either start with a single dash (`-`), known as **short options**,
-or two dashes (`--`), known as **long options**.
-\[Options] change the behavior of a command and
-[Arguments] tell the command what to operate on (e.g. files and directories).
+Ми вже зустрічалися з опціями, які починаються з одного тире (`-`), відомі як **короткі варіанти**, або двох тире (`--`), відомі як **довгі варіанти**.
+\[Параметри] змінюють поведінку команди, а \[Аргументи] вказують команді, над чим вона має працювати (наприклад, над файлами й каталогами).
 Sometimes options and arguments are referred to as **parameters**.
 A command can be called with more than one option and more than one argument, but a
 command doesn't always require an argument or an option.
@@ -799,9 +743,7 @@ You might sometimes see options being referred to as **switches** or **flags**,
 especially for options that take no argument. In this lesson we will stick with
 using the term _option_.
 
-Each part is separated by spaces. If you omit the space
-between `ls` and `-F` the shell will look for a command called `ls-F`, which
-doesn't exist. Also, capitalization can be important.
+Кожна частина відокремлюється пробілами. Якщо ви пропустите пробіл між `ls` і `-F`, термінал шукатиме команду з назвою `ls-F`, якої не існує. Also, capitalization can be important.
 For example, `ls -s` will display the size of files and directories alongside the names,
 while `ls -S` will sort the files and directories by size, as shown below:
 
@@ -816,8 +758,7 @@ total 28
 ```
 
 Note that the sizes returned by `ls -s` are in _blocks_.
-As these are defined differently for different operating systems,
-you may not obtain the same figures as in the example.
+Оскільки вони визначаються по-різному для різних операційних систем, ви можете отримати не такі значення, як у прикладі.
 
 ```bash
 $ ls -S exercise-data
@@ -827,8 +768,7 @@ $ ls -S exercise-data
 animal-counts  creatures  alkanes  writing  numbers.txt
 ```
 
-Putting all that together, our command `ls -F /` above gives us a listing
-of files and directories in the root directory `/`.
+Зібравши все це разом, наша команда вище дасть нам список файлів і каталогів у кореневому каталозі `/`.
 An example of the output you might get from the above command is given below:
 
 ```bash
@@ -841,10 +781,9 @@ Library/              Users/
 Network/              Volumes/
 ```
 
-### Nelle's Pipeline: Organizing Files
+### Конвеєр Неллі: Організація файлів
 
-Knowing this much about files and directories,
-Nelle is ready to organize the files that the protein assay machine will create.
+Знаючи так багато про файли та каталоги, Неллі готова впорядкувати файли, які створить машина для аналізу білків.
 
 She creates a directory called `north-pacific-gyre`
 (to remind herself where the data came from),
@@ -857,12 +796,10 @@ such as 'NENE01729A'.
 This ID is what she used in her collection log
 to record the location, time, depth, and other characteristics of the sample,
 so she decides to use it within the filename of each data file.
-Since the output of the assay machine is plain text,
-she will call her files `NENE01729A.txt`, `NENE01812A.txt`, and so on.
-All 1520 files will go into the same directory.
+Оскільки результат роботи аналізатора є звичайним текстом, вона назве свої файли `NENE01729A.txt`, `NENE01812A.txt` і так далі.
+Усі 1520 файлів буде збережено в одному каталозі.
 
-Now in her current directory `shell-lesson-data`,
-Nelle can see what files she has using the command:
+Тепер у її поточному каталозі `shell-lesson-data`, Нелл може побачити, які файли вона має за допомогою цієї команди:
 
 ```bash
 $ ls north-pacific-gyre/
@@ -870,7 +807,7 @@ $ ls north-pacific-gyre/
 
 This command is a lot to type,
 but she can let the shell do most of the work through what is called **tab completion**.
-If she types:
+Якщо вона набере:
 
 ```bash
 $ ls nor
@@ -898,8 +835,7 @@ $ ls north-pacific-gyre/goo
 To see all of those files, she can press <kbd>Tab</kbd> twice more.
 
 ```bash
-ls north-pacific-gyre/goo
-goodiff.sh   goostats.sh
+ls north-pacific-gyre/goo goodiff.sh goostats.sh
 ```
 
 This is called **tab completion**,
@@ -909,16 +845,16 @@ and we will see it in many other tools as we go on.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- The file system is responsible for managing information on the disk.
+- Файлова система відповідає за керування інформацією на диску.
 - Information is stored in files, which are stored in directories (folders).
 - Directories can also store other directories, which then form a directory tree.
-- `pwd` prints the user's current working directory.
+- Команда `pwd` виводить поточний робочий каталог користувача.
 - `ls [path]` prints a listing of a specific file or directory; `ls` on its own lists the current working directory.
-- `cd [path]` changes the current working directory.
-- Most commands take options that begin with a single `-`.
+- Команда `cd [шлях]` змінює поточний робочий каталог.
+- Більшість команд приймають параметри, які починаються з одного символу `-`.
 - Directory names in a path are separated with `/` on Unix, but `\` on Windows.
-- `/` on its own is the root directory of the whole file system.
-- An absolute path specifies a location from the root of the file system.
+- Символ `/` сам по собі є кореневим каталогом усієї файлової системи.
+- Абсолютний шлях вказує на розташування від кореня файлової системи.
 - A relative path specifies a location starting from the current location.
 - `.` on its own means 'the current directory'; `..` means 'the directory above the current one'.
 

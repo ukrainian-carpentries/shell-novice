@@ -1,36 +1,34 @@
 ---
-title: Working With Files and Directories
+title: Робота з файлами та каталогами
 teaching: 30
 exercises: 20
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Create a directory hierarchy that matches a given diagram.
-- Create files in that hierarchy using an editor or by copying and renaming existing files.
-- Delete, copy and move specified files and/or directories.
+- Створити ієрархію каталогів, яка відповідає заданій схемі.
+- Створити файли в цій ієрархії за допомогою редактора або шляхом копіювання та перейменування файлів, що вже існують.
+- Видалити, скопіювати та перемістити вказані файли та/або каталоги.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- How can I create, copy, and delete files and directories?
-- How can I edit files?
+- Як я можу створювати, копіювати та видаляти файли і каталоги?
+- Як я можу редагувати файли?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Creating directories
+## Створення каталогів
 
-We now know how to explore files and directories,
-but how do we create them in the first place?
+Тепер ми знаємо, як досліджувати файли та каталоги, але як їх створювати?
 
 In this episode we will learn about creating and moving files and directories,
 using the `exercise-data/writing` directory as an example.
 
-### Step one: see where we are and what we already have
+### Крок перший: подивіться, де ми знаходимося і що вже маємо
 
-We should still be in the `shell-lesson-data` directory on the Desktop,
-which we can check using:
+Ми все ще маємо бути у каталозі `shell-lesson-data` на Робочому столі (англ. Desktop), що ми можемо перевірити за допомогою:
 
 ```bash
 $ pwd
@@ -40,7 +38,7 @@ $ pwd
 /Users/nelle/Desktop/shell-lesson-data
 ```
 
-Next we'll move to the `exercise-data/writing` directory and see what it contains:
+Далі ми перейдемо до каталогу `exercise-data/writing` і подивимося, що у ньому міститься:
 
 ```bash
 $ cd exercise-data/writing/
@@ -48,23 +46,21 @@ $ ls -F
 ```
 
 ```output
-haiku.txt  LittleWomen.txt
+haiku.txt LittleWomen.txt
 ```
 
-### Create a directory
+### Створення каталогу
 
-Let's create a new directory called `thesis` using the command `mkdir thesis`
-(which has no output):
+Створимо новий каталог з назвою `thesis` за допомогою команди `mkdir thesis` (яка не має виводу):
 
 ```bash
 $ mkdir thesis
 ```
 
-As you might guess from its name,
-`mkdir` means 'make directory'.
-Since `thesis` is a relative path
-(i.e., does not have a leading slash, like `/what/ever/thesis`),
-the new directory is created in the current working directory:
+Як ви можете здогадатися з її назви, команда `mkdir` означає 'зробити каталог' (англ. 'make directory').
+Оскільки `thesis` є відносним шляхом
+(тобто не має початкової косої риски, як `/what/ever/thesis`),
+новий каталог буде створено у поточному робочому каталозі:
 
 ```bash
 $ ls -F
@@ -74,15 +70,14 @@ $ ls -F
 haiku.txt  LittleWomen.txt  thesis/
 ```
 
-Since we've just created the `thesis` directory, there's nothing in it yet:
+Оскільки ми щойно створили каталог `thesis`, у ньому ще нічого немає:
 
 ```bash
 $ ls -F thesis
 ```
 
 Note that `mkdir` is not limited to creating single directories one at a time.
-The `-p` option allows `mkdir` to create a directory with nested subdirectories
-in a single operation:
+Параметр `-p` дозволяє команді `mkdir` створювати каталог із вкладеними підкаталогами за одну операцію:
 
 ```bash
 $ mkdir -p ../project/data ../project/results
@@ -107,9 +102,9 @@ data/  results/
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Two ways of doing the same thing
+## Два способи зробити одне й те саме
 
-Using the shell to create a directory is no different than using a file explorer.
+Використання терміналу для створення каталогу нічим не відрізняється від використання файлового провідника.
 If you open the current directory using your operating system's graphical file explorer,
 the `thesis` directory will appear there too.
 While the shell and the file explorer are two different ways of interacting with the files,
@@ -125,22 +120,22 @@ Complicated names of files and directories can make your life painful
 when working on the command line. Here we provide a few useful
 tips for the names of your files and directories.
 
-1. Don't use spaces.
+1. Не використовуйте пробіли.
 
 Spaces can make a name more meaningful,
 but since spaces are used to separate arguments on the command line
 it is better to avoid them in names of files and directories.
-You can use `-` or `_` instead (e.g. `north-pacific-gyre/` rather than `north pacific gyre/`).
-To test this out, try typing `mkdir north pacific gyre` and see what directory (or directories!)
-are made when you check with `ls -F`.
+Ви можете використовувати `-` або `_` (наприклад, `north-pacific-gyre/` замість `north pacific gyre/`).
+Щоб перевірити це, спробуйте набрати `mkdir north pacific gyre` і подивіться, який каталог (або каталоги!)
+буде створено при перевірці за допомогою `ls -F`.
 
-2. Don't begin the name with `-` (dash).
+2. Не починайте назву з `-` (тире).
 
-Commands treat names starting with `-` as options.
+Команди розглядають назви, що починаються з `-`, як опції.
 
-3. Stick with letters, numbers, `.` (period or 'full stop'), `-` (dash) and `_` (underscore).
+3. Використовуйте літери, цифри, `.` (крапка), `-` (тире) і `_` (підкреслення).
 
-Many other characters have special meanings on the command line.
+Багато інших символів мають особливе значення у командному рядку.
 We will learn about some of these during this lesson.
 There are special characters that can cause your command to not work as
 expected and can even result in data loss.
@@ -153,16 +148,13 @@ or other special characters, you should surround the name in single
 
 :::::::::::::::::::::::::::::::::::::::::  instructor
 
-Learners can sometimes get trapped within command-line text editors
-such as Vim, Emacs, or Nano. Closing the terminal emulator and opening
+Учні іноді можуть потрапити в пастку текстових редакторів командного рядка, таких як Vim, Emacs або Nano. Closing the terminal emulator and opening
 a new one can be frustrating as learners will have to navigate to the
-correct folder again. Our recommendation to mitigate this problem is that
-instructors should use the same text editor as the learners during workshops
-(in most cases Nano).
+correct folder again. Для пом'якшення цієї проблеми ми радимо викладачам використовувати той самий текстовий редактор, що й учні під час семінарів (у більшості випадків Nano).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Create a text file
+### Створення текстового файлу
 
 Let's change our working directory to `thesis` using `cd`,
 then run a text editor called Nano to create a file called `draft.txt`:
@@ -174,28 +166,20 @@ $ nano draft.txt
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Which Editor?
+## Який редактор?
 
-When we say, '`nano` is a text editor' we really do mean 'text'. It can
-only work with plain character data, not tables, images, or any other
-human-friendly media. We use it in examples because it is one of the
+When we say, '`nano` is a text editor' we really do mean 'text'. Він може працювати лише з простими символьними даними, а не з таблицями, зображеннями чи будь-якими іншими зручними для людини даними. We use it in examples because it is one of the
 least complex text editors. However, because of this trait, it may
 not be powerful enough or flexible enough for the work you need to do
-after this workshop. On Unix systems (such as Linux and macOS),
-many programmers use [Emacs](https://www.gnu.org/software/emacs/) or
-[Vim](https://www.vim.org/) (both of which require more time to learn),
-or a graphical editor such as [Gedit](https://projects.gnome.org/gedit/)
-or [VScode](https://code.visualstudio.com/). On Windows, you may wish to
+after this workshop. У системах Unix (таких як Linux та macOS), багато програмістів використовують [Emacs] (https://www.gnu.org/software/emacs/) або [Vim](https://www.vim.org/) (обидва вимагають більше часу на вивчення), або графічний редактор, такий як [Gedit](https://projects.gnome.org/gedit/). On Windows, you may wish to
 use [Notepad++](https://notepad-plus-plus.org/).  Windows also has a built-in
 editor called `notepad` that can be run from the command line in the same
 way as `nano` for the purposes of this lesson.
 
-No matter what editor you use, you will need to know where it searches
-for and saves files. If you start it from the shell, it will (probably)
+Незалежно від того, яким редактором ви користуєтеся, вам потрібно знати, де він шукає і зберігає файли. If you start it from the shell, it will (probably)
 use your current working directory as its default location. If you use
 your computer's start menu, it may want to save files in your Desktop or
-Documents directory instead. You can change this by navigating to
-another directory the first time you 'Save As...'
+Documents directory instead. Ви можете змінити це, перейшовши до іншого каталогу під час першого виконання команди "Зберегти як...".
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -203,11 +187,7 @@ Let's type in a few lines of text.
 
 ![](fig/nano-screenshot.png){alt="screenshot of nano text editor in action with the text It's not publish or perish any more, it's share and thrive"}
 
-Once we're happy with our text, we can press <kbd>Ctrl</kbd>\+<kbd>O</kbd>
-(press the <kbd>Ctrl</kbd> or <kbd>Control</kbd> key and, while
-holding it down, press the <kbd>O</kbd> key) to write our data to disk. We will be asked
-to provide a name for the file that will contain our text. Press <kbd>Return</kbd> to accept
-the suggested default of `draft.txt`.
+Після того, як ми будемо задоволені нашим текстом, ми можемо натиснути <kbd>Ctrl</kbd>\+<kbd>O</kbd> (натисніть клавішу <kbd>Ctrl</kbd> or <kbd>Control</kbd> і, утримуючи її, натиснути клавішу <kbd>O</kbd>), щоб записати наші дані на диск. Нас запитають, до якого файлу ми хочемо зберегти дані. Натисніть клавішу <kbd>Return</kbd>, щоб прийняти запропоновану за замовчуванням назву `draft.txt`.
 
 Once our file is saved, we can use <kbd>Ctrl</kbd>\+<kbd>X</kbd> to quit the editor and
 return to the shell.
@@ -223,19 +203,18 @@ press the <kbd>X</kbd> key, described as any of:
 
 - `Control-X`
 - `Control+X`
-- `Ctrl-X`
+- `Ctrl-C`
 - `Ctrl+X`
 - `^X`
 - `C-x`
 
-In nano, along the bottom of the screen you'll see `^G Get Help ^O WriteOut`.
+У nano, у нижній частині екрана ви побачите `^G Отримати довідку ^O Вивести на екран`.
 This means that you can use `Control-G` to get help and `Control-O` to save your
 file.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-`nano` doesn't leave any output on the screen after it exits,
-but `ls` now shows that we have created a file called `draft.txt`:
+Після завершення роботи команда `nano` не залишає жодних даних на екрані, але `ls` тепер показує, що ми створили файл з назвою `draft.txt`:
 
 ```bash
 $ ls
@@ -247,16 +226,16 @@ draft.txt
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Creating Files a Different Way
+## Створення файлів іншим способом
 
-We have seen how to create text files using the `nano` editor.
-Now, try the following command:
+Ми побачили, як створювати текстові файли за допомогою редактора `nano`.
+Тепер спробуйте виконати наступну команду:
 
 ```bash
 $ touch my_file.txt
 ```
 
-1. What did the `touch` command do?
+1. Що зробила команда `touch`?
    When you look at your current directory using the GUI file explorer,
    does the file show up?
 

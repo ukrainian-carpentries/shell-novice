@@ -39,24 +39,21 @@ as many times as we want.
 
 ### Термінал
 
-The shell is a program where users can type commands.
+Термінал - це програма, де користувач може вводити команди.
 With the shell, it's possible to invoke complicated programs like climate modeling software
 or simple commands that create an empty directory with only one line of code.
-The most popular Unix shell is Bash (the Bourne Again SHell ---
-so-called because it's derived from a shell written by Stephen Bourne).
+Найбільш популярним терміналом є Bash (the Bourne Again SHell, який отримав таку назву, тому що був розроблений на основі терміналу, написаного Стівеном Борном).
 Bash is the default shell on most modern implementations of Unix and in most packages that provide
 Unix-like tools for Windows.
 Note that 'Git Bash' is a piece of software that enables Windows users to use a Bash like interface
 when interacting with Git.
 
 Using the shell will take some effort and some time to learn.
-While a GUI presents you with choices to select, CLI choices are not automatically presented to you,
-so you must learn a few commands like new vocabulary in a language you're studying.
+У той час як графічний інтерфейс надає вам можливість вибору, команди терміналу не надаються автоматично, тому вам доведеться вивчити кілька команд, як нову лексику у мові, яку ви вивчаєте.
 However, unlike a spoken language, a small number of "words" (i.e. commands) gets you a long way,
 and we'll cover those essential few today.
 
-The grammar of a shell allows you to combine existing tools into powerful
-pipelines and handle large volumes of data automatically. Sequences of
+Граматика терміналу дозволяє комбінувати наявні інструменти у потужні конвеєри та автоматично обробляти великі обсяги даних. Sequences of
 commands can be written into a _script_, improving the reproducibility of
 workflows.
 
@@ -64,12 +61,11 @@ In addition, the command line is often the easiest way to interact with remote m
 and supercomputers.
 Familiarity with the shell is near essential to run a variety of specialized tools and resources
 including high-performance computing systems.
-As clusters and cloud computing systems become more popular for scientific data crunching,
-being able to interact with the shell is becoming a necessary skill.
+Оскільки кластери та хмарні обчислювальні системи стають все більш популярними для обробки наукових даних, вміння взаємодіяти з терміналом стає необхідною навичкою.
 We can build on the command-line skills covered here
 to tackle a wide range of scientific questions and computational challenges.
 
-Let's get started.
+Отже, почнемо.
 
 When the shell is first opened, you are presented with a **prompt**,
 indicating that the shell is waiting for input.
@@ -81,18 +77,16 @@ $
 The shell typically uses `$ ` as the prompt, but may use a different symbol.
 In the examples for this lesson, we'll show the prompt as `$ `.
 Most importantly, _do not type the prompt_ when typing commands.
-Only type the command that follows the prompt.
-This rule applies both in these lessons and in lessons from other sources.
+Треба вводити тільки команди, що йдуть за ним.
+Це правило діє як на цих уроках, так і на уроках з інших джерел.
 Also note that after you type a command, you have to press the <kbd>Enter</kbd> key to execute it.
 
 The prompt is followed by a **text cursor**, a character that indicates the position where your
 typing will appear.
-The cursor is usually a flashing or solid block, but it can also be an underscore or a pipe.
-You may have seen it in a text editor program, for example.
+Курсор зазвичай блимає або є суцільним блоком, але він також може бути підкресленням або вертикальною рискою.
+Ви могли його бачити, наприклад, в текстових редакторах.
 
-Note that your prompt might look a little different. In particular, most popular shell
-environments by default put your user name and the host name before the `$`. Such
-a prompt might look like, e.g.:
+Зверніть увагу, що ваш запит може виглядати дещо інакше. Зокрема, більшість популярних середовищ оболонки за замовчуванням вказують ваше ім'я користувача та ім'я хоста перед '$'. Такий запит може виглядати так, наприклад:
 
 ```bash
 nelle@localhost $
@@ -104,7 +98,7 @@ should also not get in your way. The only important item to focus on is the `$ `
 character itself and we will see later why.
 
 So let's try our first command, `ls`, which is short for listing.
-This command will list the contents of the current directory:
+Ця команда покаже зміст поточного каталогу:
 
 ```bash
 $ ls
@@ -117,7 +111,7 @@ Documents   Library     Music       Public
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Command not found
+## Команду не знайдено
 
 If the shell can't find a program whose name is the command you typed, it
 will print an error message such as:
@@ -135,7 +129,7 @@ is not installed.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Nelle's Pipeline: A Typical Problem
+## Конвеєр Неллі: Типова Проблема
 
 Nelle Nemo, a marine biologist,
 has just returned from a six-month survey of the
@@ -144,18 +138,17 @@ where she has been sampling gelatinous marine life in the
 [Great Pacific Garbage Patch](https://en.wikipedia.org/wiki/Great_Pacific_Garbage_Patch).
 She has 1520 samples that she's run through an assay machine to measure the relative abundance
 of 300 proteins.
-She needs to run these 1520 files through an imaginary program called `goostats.sh`.
+Їй потрібно запустити ці 1520 файлів через уявну програму `goostats.sh`, яку вона успадкувала.
 In addition to this huge task, she has to write up results by the end of the month, so her paper
 can appear in a special issue of _Aquatic Goo Letters_.
 
 If Nelle chooses to run `goostats.sh` by hand using a GUI,
 she'll have to select and open a file 1520 times.
-If `goostats.sh` takes 30 seconds to run each file, the whole process will take more than 12 hours
-of Nelle's attention.
+Якщо обробка одного файлу програмою `goostats.sh` триватиме 30 секунд, загальний процес вимагатиме більше ніж 12 годин уваги Неллі.
 With the shell, Nelle can instead assign her computer this mundane task while she focuses
 her attention on writing her paper.
 
-The next few lessons will explore the ways Nelle can achieve this.
+У наступних кількох уроках будуть розглянуті шляхи, яким чином Неллі може цього досягти.
 More specifically,
 the lessons explain how she can use a command shell to run the `goostats.sh` program,
 using loops to automate the repetitive steps of entering file names,
