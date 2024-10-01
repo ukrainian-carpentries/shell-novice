@@ -259,7 +259,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="03-create.html">3. Working With Files and Directories</a>
+        <a href="03-create.html">3. Робота з файлами та каталогами</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -373,7 +373,7 @@
         
 <section id="aio-01-intro"><p>Content from <a href="01-intro.html">Знайомство з терміналом</a></p>
 <hr>
-<p>Last updated on 2024-07-26 |
+<p>Last updated on 2024-10-01 |
 
         <a href="https://github.com/swcarpentry/shell-novice/edit/main/episodes/01-intro.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -434,34 +434,35 @@ as many times as we want. З використанням терміналу пр�
 <div class="section level3">
 <h3 id="термінал">Термінал<a class="anchor" aria-label="anchor" href="#%D1%82%D0%B5%D1%80%D0%BC%D1%96%D0%BD%D0%B0%D0%BB"></a>
 </h3>
-<p>The shell is a program where users can type commands. With the shell,
-it’s possible to invoke complicated programs like climate modeling
-software or simple commands that create an empty directory with only one
-line of code. The most popular Unix shell is Bash (the Bourne Again
-SHell — so-called because it’s derived from a shell written by Stephen
-Bourne). Bash is the default shell on most modern implementations of
-Unix and in most packages that provide Unix-like tools for Windows. Note
-that ‘Git Bash’ is a piece of software that enables Windows users to use
-a Bash like interface when interacting with Git.</p>
-<p>Using the shell will take some effort and some time to learn. While a
-GUI presents you with choices to select, CLI choices are not
-automatically presented to you, so you must learn a few commands like
-new vocabulary in a language you’re studying. However, unlike a spoken
-language, a small number of “words” (i.e. commands) gets you a long way,
-and we’ll cover those essential few today.</p>
-<p>The grammar of a shell allows you to combine existing tools into
-powerful pipelines and handle large volumes of data automatically.
-Sequences of commands can be written into a <em>script</em>, improving
-the reproducibility of workflows.</p>
+<p>Термінал - це програма, де користувач може вводити команди. With the
+shell, it’s possible to invoke complicated programs like climate
+modeling software or simple commands that create an empty directory with
+only one line of code. Найбільш популярним терміналом є Bash (the Bourne
+Again SHell, який отримав таку назву, тому що був розроблений на основі
+терміналу, написаного Стівеном Борном). Bash is the default shell on
+most modern implementations of Unix and in most packages that provide
+Unix-like tools for Windows. Note that ‘Git Bash’ is a piece of software
+that enables Windows users to use a Bash like interface when interacting
+with Git.</p>
+<p>Using the shell will take some effort and some time to learn. У той
+час як графічний інтерфейс надає вам можливість вибору, команди
+терміналу не надаються автоматично, тому вам доведеться вивчити кілька
+команд, як нову лексику у мові, яку ви вивчаєте. However, unlike a
+spoken language, a small number of “words” (i.e. commands) gets you a
+long way, and we’ll cover those essential few today.</p>
+<p>Граматика терміналу дозволяє комбінувати наявні інструменти у потужні
+конвеєри та автоматично обробляти великі обсяги даних. Sequences of
+commands can be written into a <em>script</em>, improving the
+reproducibility of workflows.</p>
 <p>In addition, the command line is often the easiest way to interact
 with remote machines and supercomputers. Familiarity with the shell is
 near essential to run a variety of specialized tools and resources
-including high-performance computing systems. As clusters and cloud
-computing systems become more popular for scientific data crunching,
-being able to interact with the shell is becoming a necessary skill. We
-can build on the command-line skills covered here to tackle a wide range
-of scientific questions and computational challenges.</p>
-<p>Let’s get started.</p>
+including high-performance computing systems. Оскільки кластери та
+хмарні обчислювальні системи стають все більш популярними для обробки
+наукових даних, вміння взаємодіяти з терміналом стає необхідною
+навичкою. We can build on the command-line skills covered here to tackle
+a wide range of scientific questions and computational challenges.</p>
+<p>Отже, почнемо.</p>
 <p>When the shell is first opened, you are presented with a
 <strong>prompt</strong>, indicating that the shell is waiting for
 input.</p>
@@ -473,18 +474,19 @@ input.</p>
 <p>The shell typically uses <code>$</code> as the prompt, but may use a
 different symbol. In the examples for this lesson, we’ll show the prompt
 as <code>$</code>. Most importantly, <em>do not type the prompt</em>
-when typing commands. Only type the command that follows the prompt.
-This rule applies both in these lessons and in lessons from other
-sources. Also note that after you type a command, you have to press the
-<kbd>Enter</kbd> key to execute it.</p>
+when typing commands. Треба вводити тільки команди, що йдуть за ним. Це
+правило діє як на цих уроках, так і на уроках з інших джерел. Also note
+that after you type a command, you have to press the <kbd>Enter</kbd>
+key to execute it.</p>
 <p>The prompt is followed by a <strong>text cursor</strong>, a character
-that indicates the position where your typing will appear. The cursor is
-usually a flashing or solid block, but it can also be an underscore or a
-pipe. You may have seen it in a text editor program, for example.</p>
-<p>Note that your prompt might look a little different. In particular,
-most popular shell environments by default put your user name and the
-host name before the <code>$</code>. Such a prompt might look like,
-e.g.:</p>
+that indicates the position where your typing will appear. Курсор
+зазвичай блимає або є суцільним блоком, але він також може бути
+підкресленням або вертикальною рискою. Ви могли його бачити, наприклад,
+в текстових редакторах.</p>
+<p>Зверніть увагу, що ваш запит може виглядати дещо інакше. Зокрема,
+більшість популярних середовищ оболонки за замовчуванням вказують ваше
+ім’я користувача та ім’я хоста перед ‘$’. Такий запит може виглядати
+так, наприклад:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -496,8 +498,7 @@ on this additional information and it should also not get in your way.
 The only important item to focus on is the <code>$</code> character
 itself and we will see later why.</p>
 <p>So let’s try our first command, <code>ls</code>, which is short for
-listing. This command will list the contents of the current
-directory:</p>
+listing. Ця команда покаже зміст поточного каталогу:</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -509,12 +510,12 @@ directory:</p>
 <pre class="output" tabindex="0"><code>Desktop     Downloads   Movies      Pictures
 Documents   Library     Music       Public</code></pre>
 </div>
-<div id="command-not-found" class="callout">
+<div id="команду-не-знайдено" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="command-not-found" class="callout-inner">
-<h3 class="callout-title">Command not found</h3>
+<div id="команду-не-знайдено" class="callout-inner">
+<h3 class="callout-title">Команду не знайдено</h3>
 <div class="callout-content">
 <p>If the shell can’t find a program whose name is the command you
 typed, it will print an error message such as:</p>
@@ -534,29 +535,29 @@ corresponding to that command is not installed.</p>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="nelles-pipeline-a-typical-problem">Nelle’s Pipeline: A Typical Problem<a class="anchor" aria-label="anchor" href="#nelles-pipeline-a-typical-problem"></a>
+<section><h2 class="section-heading" id="конвеєр-неллі-типова-проблема">Конвеєр Неллі: Типова Проблема<a class="anchor" aria-label="anchor" href="#%D0%BA%D0%BE%D0%BD%D0%B2%D0%B5%D1%94%D1%80-%D0%BD%D0%B5%D0%BB%D0%BB%D1%96-%D1%82%D0%B8%D0%BF%D0%BE%D0%B2%D0%B0-%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC%D0%B0"></a>
 </h2>
 <hr class="half-width">
 <p>Nelle Nemo, a marine biologist, has just returned from a six-month
 survey of the <a href="https://en.wikipedia.org/wiki/North_Pacific_Gyre" class="external-link">North Pacific
 Gyre</a>, where she has been sampling gelatinous marine life in the <a href="https://en.wikipedia.org/wiki/Great_Pacific_Garbage_Patch" class="external-link">Great
 Pacific Garbage Patch</a>. She has 1520 samples that she’s run through
-an assay machine to measure the relative abundance of 300 proteins. She
-needs to run these 1520 files through an imaginary program called
-<code>goostats.sh</code>. In addition to this huge task, she has to
-write up results by the end of the month, so her paper can appear in a
-special issue of <em>Aquatic Goo Letters</em>.</p>
+an assay machine to measure the relative abundance of 300 proteins. Їй
+потрібно запустити ці 1520 файлів через уявну програму
+<code>goostats.sh</code>, яку вона успадкувала. In addition to this huge
+task, she has to write up results by the end of the month, so her paper
+can appear in a special issue of <em>Aquatic Goo Letters</em>.</p>
 <p>If Nelle chooses to run <code>goostats.sh</code> by hand using a GUI,
-she’ll have to select and open a file 1520 times. If
-<code>goostats.sh</code> takes 30 seconds to run each file, the whole
-process will take more than 12 hours of Nelle’s attention. With the
-shell, Nelle can instead assign her computer this mundane task while she
-focuses her attention on writing her paper.</p>
-<p>The next few lessons will explore the ways Nelle can achieve this.
-More specifically, the lessons explain how she can use a command shell
-to run the <code>goostats.sh</code> program, using loops to automate the
-repetitive steps of entering file names, so that her computer can work
-while she writes her paper.</p>
+she’ll have to select and open a file 1520 times. Якщо обробка одного
+файлу програмою <code>goostats.sh</code> триватиме 30 секунд, загальний
+процес вимагатиме більше ніж 12 годин уваги Неллі. With the shell, Nelle
+can instead assign her computer this mundane task while she focuses her
+attention on writing her paper.</p>
+<p>У наступних кількох уроках будуть розглянуті шляхи, яким чином Неллі
+може цього досягти. More specifically, the lessons explain how she can
+use a command shell to run the <code>goostats.sh</code> program, using
+loops to automate the repetitive steps of entering file names, so that
+her computer can work while she writes her paper.</p>
 <p>As a bonus, once she has put a processing pipeline together, she will
 be able to use it again whenever she collects more data.</p>
 <p>Для того, щоб досягти своєї мети, Неллі необхідно знати, як:</p>
@@ -594,7 +595,7 @@ commands need to be run and how to run them.</li>
 </div>
 </section></section><section id="aio-02-filedir"><p>Content from <a href="02-filedir.html">Navigating Files and Directories</a></p>
 <hr>
-<p>Last updated on 2024-07-01 |
+<p>Last updated on 2024-10-01 |
 
         <a href="https://github.com/swcarpentry/shell-novice/edit/main/episodes/02-filedir.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -623,7 +624,7 @@ computer?</li>
 <ul>
 <li>Explain the similarities and differences between a file and a
 directory.</li>
-<li>Translate an absolute path into a relative path and vice versa.</li>
+<li>Перетворити абсолютний шлях у відносний і навпаки.</li>
 <li>Construct absolute and relative paths that identify specific files
 and directories.</li>
 <li>Use options and arguments to change the behaviour of a shell
@@ -649,8 +650,8 @@ Directories are like <em>places</em> — at any time while we are using
 the shell, we are in exactly one place called our <strong>current
 working directory</strong>. Commands mostly read and write files in the
 current working directory, i.e. ‘here’, so knowing where you are before
-running a command is important. <code>pwd</code> shows you where you
-are:</p>
+running a command is important. Команда <code>pwd</code> покаже вам, де
+ви знаходитесь:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -663,60 +664,60 @@ are:</p>
 </div>
 <p>Here, the computer’s response is <code>/Users/nelle</code>, which is
 Nelle’s <strong>home directory</strong>:</p>
-<div id="home-directory-variation" class="callout">
+<div id="варіації-домашнього-каталогу" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="home-directory-variation" class="callout-inner">
-<h3 class="callout-title">Home Directory Variation</h3>
+<div id="варіації-домашнього-каталогу" class="callout-inner">
+<h3 class="callout-title">Варіації домашнього каталогу</h3>
 <div class="callout-content">
-<p>The home directory path will look different on different operating
-systems. On Linux, it may look like <code>/home/nelle</code>, and on
-Windows, it will be similar to
+<p>Розташування домашньої директорії виглядає по-різному в різних
+операційних системах. On Linux, it may look like
+<code>/home/nelle</code>, and on Windows, it will be similar to
 <code>C:\Documents and Settings\nelle</code> or
-<code>C:\Users\nelle</code>. (Note that it may look slightly different
-for different versions of Windows.) In future examples, we’ve used Mac
+<code>C:\Users\nelle</code>. (Зауважте, що воно може виглядати дещо
+інакше для різних версій Windows.) In future examples, we’ve used Mac
 output as the default - Linux and Windows output may differ slightly but
 should be generally similar.</p>
-<p>We will also assume that your <code>pwd</code> command returns your
-user’s home directory. If <code>pwd</code> returns something different,
-you may need to navigate there using <code>cd</code> or some commands in
-this lesson will not work as written. See <a href="#exploring-other-directories">Exploring Other Directories</a> for
+<p>Ми також припустимо, що ваша команда <code>pwd</code> повертає вашу
+домашню директорію користувача. If <code>pwd</code> returns something
+different, you may need to navigate there using <code>cd</code> or some
+commands in this lesson will not work as written. See <a href="#exploring-other-directories">Exploring Other Directories</a> for
 more details on the <code>cd</code> command.</p>
 </div>
 </div>
 </div>
 <p>To understand what a ‘home directory’ is, let’s have a look at how
-the file system as a whole is organized. For the sake of this example,
-we’ll be illustrating the filesystem on our scientist Nelle’s computer.
-After this illustration, you’ll be learning commands to explore your own
+the file system as a whole is organized. Для цього прикладу ми
+проілюструємо файлову систему на комп’ютері нашої вченої Неллі. After
+this illustration, you’ll be learning commands to explore your own
 filesystem, which will be constructed in a similar way, but not be
 exactly identical.</p>
-<p>On Nelle’s computer, the filesystem looks like this:</p>
-<figure><img src="fig/filesystem.svg" alt="The file system is made up of a root directory that contains sub-directories titled bin, data, users, and tmp" class="figure mx-auto d-block"></figure><p>The filesystem looks like an upside down tree. The topmost directory
-is the <strong>root directory</strong> that holds everything else. We
-refer to it using a slash character, <code>/</code>, on its own; this
-character is the leading slash in <code>/Users/nelle</code>.</p>
-<p>Inside that directory are several other directories: <code>bin</code>
-(which is where some built-in programs are stored), <code>data</code>
-(for miscellaneous data files), <code>Users</code> (where users’
-personal directories are located), <code>tmp</code> (for temporary files
-that don’t need to be stored long-term), and so on.</p>
-<p>We know that our current working directory <code>/Users/nelle</code>
-is stored inside <code>/Users</code> because <code>/Users</code> is the
-first part of its name. Similarly, we know that <code>/Users</code> is
-stored inside the root directory <code>/</code> because its name begins
-with <code>/</code>.</p>
-<div id="slashes" class="callout">
+<p>На комп’ютері Неллі файлова система виглядає так:</p>
+<figure><img src="fig/filesystem.svg" alt="The file system is made up of a root directory that contains sub-directories titled bin, data, users, and tmp" class="figure mx-auto d-block"></figure><p>Файлова система виглядає як перевернуте дерево. Найвищим каталогом є
+<strong>кореневий каталог</strong>, який містить усе інше. We refer to
+it using a slash character, <code>/</code>, on its own; this character
+is the leading slash in <code>/Users/nelle</code>.</p>
+<p>Усередині цього каталогу є кілька інших каталогів: <code>bin</code>
+(в якому зберігаються певні вбудовані програми), <code>data</code> (для
+різноманітних файлів даних), <code>Users</code> (де знаходяться особисті
+директорії користувачів), <code>tmp</code> (для файлів тимчасового
+зберігання) та інші.</p>
+<p>Ми знаємо, що наш поточний робочий каталог <code>/Users/nelle</code>
+зберігається всередині каталогу <code>/Users</code>, тому що
+<code>/Users</code> є першою частиною його імені. Similarly, we know
+that <code>/Users</code> is stored inside the root directory
+<code>/</code> because its name begins with <code>/</code>.</p>
+<div id="символи-скісної-риски" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="slashes" class="callout-inner">
-<h3 class="callout-title">Slashes</h3>
+<div id="символи-скісної-риски" class="callout-inner">
+<h3 class="callout-title">Символи скісної риски</h3>
 <div class="callout-content">
-<p>Notice that there are two meanings for the <code>/</code> character.
-When it appears at the front of a file or directory name, it refers to
-the root directory. When it appears <em>inside</em> a path, it’s just a
+<p>Зверніть увагу, що символ <code>/</code> має два значення. Коли він
+з’являється на початку назви файлу чи каталогу, це посилання на кореневу
+директорію. When it appears <em>inside</em> a path, it’s just a
 separator.</p>
 </div>
 </div>
@@ -724,11 +725,11 @@ separator.</p>
 <p>Underneath <code>/Users</code>, we find one directory for each user
 with an account on Nelle’s machine, her colleagues <em>imhotep</em> and
 <em>larry</em>.</p>
-<figure><img src="fig/home-directories.svg" alt='Like other directories, home directories are sub-directories underneath "/Users" like "/Users/imhotep", "/Users/larry" or"/Users/nelle"' class="figure mx-auto d-block"></figure><p>The user <em>imhotep</em>’s files are stored in
+<figure><img src="fig/home-directories.svg" alt='Як і інші каталоги, домашні каталоги є підкаталогами "/Users", наприклад "/Users/imhotep", "/Users/larry" або "/Users/nelle"' class="figure mx-auto d-block"></figure><p>The user <em>imhotep</em>’s files are stored in
 <code>/Users/imhotep</code>, user <em>larry</em>’s in
 <code>/Users/larry</code>, and Nelle’s in <code>/Users/nelle</code>.
-Nelle is the user in our examples here; therefore, we get
-<code>/Users/nelle</code> as our home directory. Typically, when you
+Оскільки саме Неллі є користувачем у наших прикладах, тому ми отримуємо
+<code>/Users/nelle</code> як наш домашній каталог. Typically, when you
 open a new command prompt, you will be in your home directory to
 start.</p>
 <p>Now let’s learn the command that will let us see the contents of our
@@ -745,15 +746,17 @@ own filesystem. We can see what’s in our home directory by running
 <pre class="output" tabindex="0"><code>Applications Documents    Library      Music        Public
 Desktop      Downloads    Movies       Pictures</code></pre>
 </div>
-<p>(Again, your results may be slightly different depending on your
-operating system and how you have customized your filesystem.)</p>
-<p><code>ls</code> prints the names of the files and directories in the
-current directory. We can make its output more comprehensible by using
-the <code>-F</code> <strong>option</strong> which tells <code>ls</code>
-to classify the output by adding a marker to file and directory names to
-indicate what they are:</p>
+<p>(Знову ж таки, ваші результати можуть дещо відрізнятися залежно від
+вашої операційної системи та того, як ви налаштували свою файлову
+систему.)</p>
+<p><code>ls</code> друкує назви файлів і каталогів у поточному каталозі.
+We can make its output more comprehensible by using the <code>-F</code>
+<strong>option</strong> which tells <code>ls</code> to classify the
+output by adding a marker to file and directory names to indicate what
+they are:</p>
 <ul>
-<li>a trailing <code>/</code> indicates that this is a directory</li>
+<li>символ <code>/</code> наприкінці назви вказує на те, що це
+каталог</li>
 <li>
 <code>@</code> indicates a link</li>
 <li>
@@ -776,30 +779,30 @@ Desktop/      Downloads/    Movies/       Pictures/</code></pre>
 <strong>sub-directories</strong>. Any names in the output that don’t
 have a classification symbol are <strong>files</strong> in the current
 working directory.</p>
-<div id="clearing-your-terminal" class="callout">
+<div id="очищення-терміналу" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="clearing-your-terminal" class="callout-inner">
-<h3 class="callout-title">Clearing your terminal</h3>
+<div id="очищення-терміналу" class="callout-inner">
+<h3 class="callout-title">Очищення терміналу</h3>
 <div class="callout-content">
-<p>If your screen gets too cluttered, you can clear your terminal using
-the <code>clear</code> command. You can still access previous commands
-using <kbd>↑</kbd> and <kbd>↓</kbd> to move line-by-line, or by
+<p>Якщо екран стає занадто захаращеним, ви можете очистити термінал за
+допомогою команди <code>clear</code>. You can still access previous
+commands using <kbd>↑</kbd> and <kbd>↓</kbd> to move line-by-line, or by
 scrolling in your terminal.</p>
 </div>
 </div>
 </div>
 <div class="section level3">
-<h3 id="getting-help">Getting help<a class="anchor" aria-label="anchor" href="#getting-help"></a>
+<h3 id="отримання-допомоги">Отримання допомоги<a class="anchor" aria-label="anchor" href="#%D0%BE%D1%82%D1%80%D0%B8%D0%BC%D0%B0%D0%BD%D0%BD%D1%8F-%D0%B4%D0%BE%D0%BF%D0%BE%D0%BC%D0%BE%D0%B3%D0%B8"></a>
 </h3>
 <p><code>ls</code> has lots of other <strong>options</strong>. There are
 two common ways to find out how to use a command and what options it
 accepts — <strong>depending on your environment, you might find that
 only one of these ways works:</strong></p>
 <ol style="list-style-type: decimal">
-<li>We can pass a <code>--help</code> option to any command (available
-on Linux and Git Bash), for example:</li>
+<li>Ми можемо передати команді опцію <code>--help</code> (доступну в
+Linux і Git Bash), наприклад:</li>
 </ol>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -816,16 +819,16 @@ macOS):</li>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">$</span> man ls</span></code></pre>
 </div>
 <p>We’ll describe both ways next.</p>
-<div id="help-for-built-in-commands" class="callout">
+<div id="довідка-для-вбудованих-команд" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="help-for-built-in-commands" class="callout-inner">
-<h3 class="callout-title">Help for built-in commands</h3>
+<div id="довідка-для-вбудованих-команд" class="callout-inner">
+<h3 class="callout-title">Довідка для вбудованих команд</h3>
 <div class="callout-content">
-<p>Some commands are built in to the Bash shell, rather than existing as
-separate programs on the filesystem. One example is the <code>cd</code>
-(change directory) command. If you get a message like
+<p>Деякі команди вбудовано в оболонку Bash, а не існують як окремі
+програми у файловій системі. One example is the <code>cd</code> (change
+directory) command. If you get a message like
 <code>No manual entry for cd</code>, try <code>help cd</code> instead.
 The <code>help</code> command is how you get usage information for <a href="https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html" class="external-link">Bash
 built-ins</a>.</p>
@@ -833,7 +836,7 @@ built-ins</a>.</p>
 </div>
 </div>
 <div class="section level4">
-<h4 id="the---help-option">The <code>--help</code> option<a class="anchor" aria-label="anchor" href="#the---help-option"></a>
+<h4 id="опція-help">Опція `–help’<a class="anchor" aria-label="anchor" href="#%D0%BE%D0%BF%D1%86%D1%96%D1%8F-help"></a>
 </h4>
 <p>Most bash commands and programs that people have written to be run
 from within bash, support a <code>--help</code> option that displays
@@ -883,18 +886,18 @@ Mandatory arguments to long options are mandatory for short options, too.
 <ul>
 <li>Use the short option when typing commands directly into the shell to
 minimize keystrokes and get your task done faster.</li>
-<li>Use the long option in scripts to provide clarity. It will be read
-many times and typed once.</li>
+<li>Use the long option in scripts to provide clarity. Він буде
+прочитаний багато разів і надрукований один раз.</li>
 </ul>
 </div>
 </div>
 </div>
-<div id="unsupported-command-line-options" class="callout">
+<div id="непідтримувані-параметри-командного-рядка" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="unsupported-command-line-options" class="callout-inner">
-<h3 class="callout-title">Unsupported command-line options</h3>
+<div id="непідтримувані-параметри-командного-рядка" class="callout-inner">
+<h3 class="callout-title">Непідтримувані параметри командного рядка</h3>
 <div class="callout-content">
 <p>If you try to use an option that is not supported, <code>ls</code>
 and other commands will usually print an error message similar to:</p>
@@ -914,7 +917,8 @@ Try 'ls --help' for more information.</code></pre>
 </div>
 </div>
 <div class="section level4">
-<h4 id="the-man-command">The <code>man</code> command<a class="anchor" aria-label="anchor" href="#the-man-command"></a>
+<h4 id="команда-man">Команда <code>man</code>
+<a class="anchor" aria-label="anchor" href="#%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0-man"></a>
 </h4>
 <p>The other way to learn about <code>ls</code> is to type</p>
 <div class="codewrapper sourceCode" id="cb13">
@@ -925,21 +929,21 @@ Try 'ls --help' for more information.</code></pre>
 <p>This command will turn your terminal into a page with a description
 of the <code>ls</code> command and its options.</p>
 <p>To navigate through the <code>man</code> pages, you may use
-<kbd>↑</kbd> and <kbd>↓</kbd> to move line-by-line, or try <kbd>B</kbd>
+<kbd>↑</kbd> and <kbd>↓</kbd> to move line-by-line, or try <kbd>b</kbd>
 and <kbd>Spacebar</kbd> to skip up and down by a full page. To search
 for a character or word in the <code>man</code> pages, use <kbd>/</kbd>
-followed by the character or word you are searching for. Sometimes a
-search will result in multiple hits. If so, you can move between hits
+followed by the character or word you are searching for. Іноді пошук
+може призвести до кількох результатів. If so, you can move between hits
 using <kbd>N</kbd> (for moving forward) and
 <kbd>Shift</kbd>+<kbd>N</kbd> (for moving backward).</p>
-<p>To <strong>quit</strong> the <code>man</code> pages, press
-<kbd>Q</kbd>.</p>
-<div id="manual-pages-on-the-web" class="callout">
+<p>Щоб <strong>вийти</strong> зі сторінок <code>man</code>, натисніть
+<kbd>q</kbd>.</p>
+<div id="сторінки-з-інструкціями-в-інтернеті" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="manual-pages-on-the-web" class="callout-inner">
-<h3 class="callout-title">Manual pages on the web</h3>
+<div id="сторінки-з-інструкціями-в-інтернеті" class="callout-inner">
+<h3 class="callout-title">Сторінки з інструкціями в Інтернеті</h3>
 <div class="callout-content">
 <p>Of course, there is a third way to access help for commands:
 searching the internet via your web browser. When using internet search,
@@ -959,9 +963,10 @@ lesson.</p>
 <div id="exploring-more-ls-options" class="callout-inner">
 <h3 class="callout-title">Exploring More <code>ls</code> Options</h3>
 <div class="callout-content">
-<p>You can also use two options at the same time. What does the command
-<code>ls</code> do when used with the <code>-l</code> option? What about
-if you use both the <code>-l</code> and the <code>-h</code> option?</p>
+<p>Ви також можете використовувати декілька опцій одночасно. Що робить
+команда <code>ls</code> при використанні з опцією <code>-l</code>? What
+about if you use both the <code>-l</code> and the <code>-h</code>
+option?</p>
 <p>Some of its output is about properties that we do not cover in this
 lesson (such as file permissions and ownership), but the rest should be
 useful nevertheless.</p>
@@ -971,33 +976,34 @@ useful nevertheless.</p>
 <div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+  <h4 class="accordion-header" id="headingSolution1"> Розв’язання </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>The <code>-l</code> option makes <code>ls</code> use a
 <strong>l</strong>ong listing format, showing not only the
 file/directory names but also additional information, such as the file
-size and the time of its last modification. If you use both the
-<code>-h</code> option and the <code>-l</code> option, this makes the
-file size ‘<strong>h</strong>uman readable’, i.e. displaying something
-like <code>5.3K</code> instead of <code>5369</code>.</p>
+size and the time of its last modification. Якщо ви використовуєте як
+<code>-h</code>, так і <code>-l</code>, це зробить виведення розміру
+файлу у більш зрозумілому людині вигляді (“<strong>h</strong>uman
+readable”), тобто покаже щось на кшталт <code>5.3K</code> замість
+<code>5369</code>.</p>
 </div>
 </div>
 </div>
 </div>
-<div id="listing-in-reverse-chronological-order" class="callout challenge">
+<div id="виведення-у-зворотному-хронологічному-порядку" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="listing-in-reverse-chronological-order" class="callout-inner">
-<h3 class="callout-title">Listing in Reverse Chronological Order</h3>
+<div id="виведення-у-зворотному-хронологічному-порядку" class="callout-inner">
+<h3 class="callout-title">Виведення у зворотному хронологічному порядку</h3>
 <div class="callout-content">
-<p>By default, <code>ls</code> lists the contents of a directory in
-alphabetical order by name. The command <code>ls -t</code> lists items
-by time of last change instead of alphabetically. The command
-<code>ls -r</code> lists the contents of a directory in reverse order.
-Which file is displayed last when you combine the <code>-t</code> and
+<p>За замовчуванням <code>ls</code> виводить вміст каталогу в
+алфавітному порядку за іменами елементів. Команда <code>ls -t</code>
+перелічує елементи за часом останньої зміни, а не за алфавітом. Команда
+<code>ls -r</code> виводить вміст каталогу у зворотному порядку. Which
+file is displayed last when you combine the <code>-t</code> and
 <code>-r</code> options? Hint: You may need to use the <code>-l</code>
 option to see the last changed dates.</p>
 </div>
@@ -1006,13 +1012,13 @@ option to see the last changed dates.</p>
 <div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
+  <h4 class="accordion-header" id="headingSolution2"> Розв’язання </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>The most recently changed file is listed last when using
-<code>-rt</code>. This can be very useful for finding your most recent
-edits or checking to see if a new output file was written.</p>
+<code>-rt</code>. Це може бути дуже корисним для пошуку ваших останніх
+редагувань або перевірки чи було створено новий вихідний файл.</p>
 </div>
 </div>
 </div>
@@ -1027,9 +1033,9 @@ but we can use it to list the contents of a different directory. Let’s
 take a look at our <code>Desktop</code> directory by running
 <code>ls -F Desktop</code>, i.e., the command <code>ls</code> with the
 <code>-F</code> <strong>option</strong> and the <a href="https://swcarpentry.github.io/shell-novice/reference.html#argument" class="external-link"><strong>argument</strong></a>
-<code>Desktop</code>. The argument <code>Desktop</code> tells
-<code>ls</code> that we want a listing of something other than our
-current working directory:</p>
+<code>Desktop</code>. Аргумент <code>Desktop</code> повідомляє
+<code>ls</code>, що ми хочемо отримати список чогось іншого, ніж наш
+поточний робочий каталог:</p>
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1050,17 +1056,17 @@ your Desktop directory, including the <code>shell-lesson-data</code>
 directory you downloaded at the <a href="index.html#setup">setup for this
 lesson</a>. (On most systems, the contents of the <code>Desktop</code>
 directory in the shell will show up as icons in a graphical user
-interface behind all the open windows. See if this is the case for
-you.)</p>
-<p>Organizing things hierarchically helps us keep track of our work.
-While it’s possible to put hundreds of files in our home directory just
-as it’s possible to pile hundreds of printed papers on our desk, it’s
-much easier to find things when they’ve been organized into
-sensibly-named subdirectories.</p>
+interface behind all the open windows. Подивіться, чи це ваш
+випадок.)</p>
+<p>Ієрархічна організація речей таким чином допомагає нам відстежувати
+нашу роботу. While it’s possible to put hundreds of files in our home
+directory just as it’s possible to pile hundreds of printed papers on
+our desk, it’s much easier to find things when they’ve been organized
+into sensibly-named subdirectories.</p>
 <p>Now that we know the <code>shell-lesson-data</code> directory is
 located in our Desktop directory, we can do two things.</p>
-<p>First, using the same strategy as before, we can look at its contents
-by passing a directory name to <code>ls</code>:</p>
+<p>По-перше, ми можемо переглянути його вміст, використовуючи ту ж
+стратегію, що і раніше, передавши ім’я каталогу в <code>ls</code>:</p>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1074,15 +1080,16 @@ by passing a directory name to <code>ls</code>:</p>
 <p>Second, we can actually change our location to a different directory,
 so we are no longer located in our home directory.</p>
 <p>The command to change locations is <code>cd</code> followed by a
-directory name to change our working directory. <code>cd</code> stands
-for ‘change directory’, which is a bit misleading. The command doesn’t
-change the directory; it changes the shell’s current working directory.
-In other words it changes the shell’s settings for what directory we are
-in. The <code>cd</code> command is akin to double-clicking a folder in a
-graphical interface to get into that folder.</p>
+directory name to change our working directory. <code>cd</code> означає
+‘змінити каталог’ (англ. ‘change directory’), що трохи вводить в оману.
+Команда не змінює каталог; вона змінює поточний робочий каталог
+терміналу. In other words it changes the shell’s settings for what
+directory we are in. The <code>cd</code> command is akin to
+double-clicking a folder in a graphical interface to get into that
+folder.</p>
 <p>Let’s say we want to move into the <code>exercise-data</code>
-directory we saw above. We can use the following series of commands to
-get there:</p>
+directory we saw above. Ми можемо скористатися наступною серією команд,
+щоб дістатися туди:</p>
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1092,11 +1099,11 @@ get there:</p>
 </div>
 <p>These commands will move us from our home directory into our Desktop
 directory, then into the <code>shell-lesson-data</code> directory, then
-into the <code>exercise-data</code> directory. You will notice that
-<code>cd</code> doesn’t print anything. This is normal. Many shell
-commands will not output anything to the screen when successfully
-executed. But if we run <code>pwd</code> after it, we can see that we
-are now in
+into the <code>exercise-data</code> directory. Ви помітите, що команда
+<code>cd</code> нічого не виводить. Це нормально. Many shell commands
+will not output anything to the screen when successfully executed. Але
+якщо ми виконаємо <code>pwd</code> після неї, то побачимо, що зараз ми
+знаходимося у
 <code>/Users/nelle/Desktop/shell-lesson-data/exercise-data</code>.</p>
 <p>If we run <code>ls -F</code> without arguments now, it lists the
 contents of
@@ -1124,7 +1131,7 @@ because that’s where we now are:</p>
 </div>
 <p>We now know how to go down the directory tree (i.e. how to go into a
 subdirectory), but how do we go up (i.e. how do we leave a directory and
-go into its parent directory)? We might try the following:</p>
+go into its parent directory)? Ми можемо спробувати наступне:</p>
 <div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1135,13 +1142,13 @@ go into its parent directory)? We might try the following:</p>
 </h3>
 <pre class="error" tabindex="0"><code>-bash: cd: shell-lesson-data: No such file or directory</code></pre>
 </div>
-<p>But we get an error! Why is this?</p>
+<p>Але ми отримуємо помилку! Чому?</p>
 <p>With our methods so far, <code>cd</code> can only see sub-directories
 inside your current directory. There are different ways to see
 directories above your current location; we’ll start with the
 simplest.</p>
-<p>There is a shortcut in the shell to move up one directory level. It
-works as follows:</p>
+<p>There is a shortcut in the shell to move up one directory level. Це
+працює наступним чином:</p>
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1149,8 +1156,8 @@ works as follows:</p>
 </div>
 <p><code>..</code> is a special directory name meaning “the directory
 containing this one”, or more succinctly, the <strong>parent</strong> of
-the current directory. Sure enough, if we run <code>pwd</code> after
-running <code>cd ..</code>, we’re back in
+the current directory. Звичайно, якщо ми запустимо <code>pwd</code>
+після виконання <code>cd ..</code>, ми знову у
 <code>/Users/nelle/Desktop/shell-lesson-data</code>:</p>
 <div class="codewrapper sourceCode" id="cb26">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1162,8 +1169,8 @@ running <code>cd ..</code>, we’re back in
 </h3>
 <pre class="output" tabindex="0"><code>/Users/nelle/Desktop/shell-lesson-data</code></pre>
 </div>
-<p>The special directory <code>..</code> doesn’t usually show up when we
-run <code>ls</code>. If we want to display it, we can add the
+<p>Спеціальний каталог <code>..</code> зазвичай не з’являється, коли ми
+запускаємо <code>ls</code>. If we want to display it, we can add the
 <code>-a</code> option to <code>ls -F</code>:</p>
 <div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1175,38 +1182,39 @@ run <code>ls</code>. If we want to display it, we can add the
 </h3>
 <pre class="output" tabindex="0"><code>./  ../  exercise-data/  north-pacific-gyre/</code></pre>
 </div>
-<p><code>-a</code> stands for ‘show all’ (including hidden files); it
-forces <code>ls</code> to show us file and directory names that begin
-with <code>.</code>, such as <code>..</code> (which, if we’re in
-<code>/Users/nelle</code>, refers to the <code>/Users</code> directory).
-As you can see, it also displays another special directory that’s just
-called <code>.</code>, which means ‘the current working directory’. It
-may seem redundant to have a name for it, but we’ll see some uses for it
-soon.</p>
-<p>Note that in most command line tools, multiple options can be
-combined with a single <code>-</code> and no spaces between the options;
-<code>ls -F -a</code> is equivalent to <code>ls -Fa</code>.</p>
-<div id="other-hidden-files" class="callout">
+<p><code>-a</code> означає ‘показати все’ (англ. show all) (включно з
+прихованими файлами); ця опція змушує <code>ls</code> показувати нам
+імена файлів і каталогів, які починаються з <code>.</code>, наприклад,
+<code>..</code> (яке, якщо ми знаходимося у <code>/Users/nelle</code>,
+вказує на каталог <code>/Users</code>). Як ви можете бачити, команда
+також показує ще один спеціальний каталог, який називається
+<code>.</code>, що означає ‘поточний робочий каталог’. Може здатися, що
+це дещо надлишково - мати для нього ім’я, але незабаром ми побачимо, як
+воно може бути використано.</p>
+<p>Зауважте, що у більшості інструментів командного рядка можна
+комбінувати декілька параметрів за допомогою одного <code>-</code> і без
+пробілів між параметрами: <code>ls -F -a</code> є еквівалентним до
+<code>ls -Fa</code>.</p>
+<div id="інші-приховані-файли" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="other-hidden-files" class="callout-inner">
-<h3 class="callout-title">Other Hidden Files</h3>
+<div id="інші-приховані-файли" class="callout-inner">
+<h3 class="callout-title">Інші приховані файли</h3>
 <div class="callout-content">
 <p>In addition to the hidden directories <code>..</code> and
 <code>.</code>, you may also see a file called
-<code>.bash_profile</code>. This file usually contains shell
-configuration settings. You may also see other files and directories
-beginning with <code>.</code>. These are usually files and directories
-that are used to configure different programs on your computer. The
-prefix <code>.</code> is used to prevent these configuration files from
-cluttering the terminal when a standard <code>ls</code> command is
-used.</p>
+<code>.bash_profile</code>. Цей файл зазвичай містить конфігурацію
+терміналу. You may also see other files and directories beginning with
+<code>.</code>. These are usually files and directories that are used to
+configure different programs on your computer. Префікс <code>.</code>
+використовується для того, щоб ці конфігураційні файли не захаращували
+термінал, коли використовується стандартна команда <code>ls</code>.</p>
 </div>
 </div>
 </div>
-<p>These three commands are the basic commands for navigating the
-filesystem on your computer: <code>pwd</code>, <code>ls</code>, and
+<p>Ці три команди є основними командами для навігації по файловій
+системі на вашому комп’ютері: <code>pwd</code>, <code>ls</code> і
 <code>cd</code>. Let’s explore some variations on those commands. What
 happens if you type <code>cd</code> on its own, without giving a
 directory?</p>
@@ -1215,8 +1223,8 @@ directory?</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="ex">$</span> cd</span></code></pre>
 </div>
-<p>How can you check what happened? <code>pwd</code> gives us the
-answer!</p>
+<p>How can you check what happened? Команда <code>pwd</code> дає нам
+відповідь!</p>
 <div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1227,23 +1235,23 @@ answer!</p>
 </h3>
 <pre class="output" tabindex="0"><code>/Users/nelle</code></pre>
 </div>
-<p>It turns out that <code>cd</code> without an argument will return you
-to your home directory, which is great if you’ve got lost in your own
-filesystem.</p>
+<p>Виявляється, <code>cd</code> без аргументу поверне вас до домашнього
+каталогу, що дуже зручно, якщо ви загубилися у власній файловій
+системі.</p>
 <p>Let’s try returning to the <code>exercise-data</code> directory from
-before. Last time, we used three commands, but we can actually string
-together the list of directories to move to <code>exercise-data</code>
-in one step:</p>
+before. Минулого разу ми використовували три команди, але насправді ми
+можемо поєднати перелік каталогів для переходу до каталогу
+<code>exercise-data</code> за один крок:</p>
 <div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a><span class="ex">$</span> cd Desktop/shell-lesson-data/exercise-data</span></code></pre>
 </div>
-<p>Check that we’ve moved to the right place by running <code>pwd</code>
-and <code>ls -F</code>.</p>
+<p>Переконайтеся, що ми перемістилися в потрібне місце, виконавши
+<code>pwd</code> і <code>ls -F</code>.</p>
 <p>If we want to move up one level from the data directory, we could use
-<code>cd ..</code>. But there is another way to move to any directory,
-regardless of your current location.</p>
+<code>cd ..</code>. Але існує інший спосіб переміщення до будь-якого
+каталогу, незалежно від вашого поточного розташування.</p>
 <p>So far, when specifying directory names, or even a directory path (as
 above), we have been using <strong>relative paths</strong>. When you use
 a relative path with a command like <code>ls</code> or <code>cd</code>,
@@ -1255,11 +1263,11 @@ which is indicated by a leading slash. The leading <code>/</code> tells
 the computer to follow the path from the root of the file system, so it
 always refers to exactly one directory, no matter where we are when we
 run the command.</p>
-<p>This allows us to move to our <code>shell-lesson-data</code>
-directory from anywhere on the filesystem (including from inside
-<code>exercise-data</code>). To find the absolute path we’re looking
-for, we can use <code>pwd</code> and then extract the piece we need to
-move to <code>shell-lesson-data</code>.</p>
+<p>Це дає змогу перейти до каталогу <code>shell-lesson-data</code> з
+будь-якого місця у файловій системі (у тому числі з каталогу
+<code>exercise-data</code>). Щоб знайти абсолютний шлях ми можемо
+скористатися <code>pwd</code>, а потім витягти потрібний нам фрагмент,
+щоб перейти до <code>shell-lesson-data</code>.</p>
 <div class="codewrapper sourceCode" id="cb34">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1275,64 +1283,65 @@ move to <code>shell-lesson-data</code>.</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" tabindex="-1"></a><span class="ex">$</span> cd /Users/nelle/Desktop/shell-lesson-data</span></code></pre>
 </div>
-<p>Run <code>pwd</code> and <code>ls -F</code> to ensure that we’re in
-the directory we expect.</p>
-<div id="two-more-shortcuts" class="callout">
+<p>Виконайте <code>pwd</code> і <code>ls -F</code>, щоб переконатися, що
+ми знаходимося в потрібному каталозі.</p>
+<div id="ще-два-скорочення" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="two-more-shortcuts" class="callout-inner">
-<h3 class="callout-title">Two More Shortcuts</h3>
+<div id="ще-два-скорочення" class="callout-inner">
+<h3 class="callout-title">Ще два скорочення</h3>
 <div class="callout-content">
-<p>The shell interprets a tilde (<code>~</code>) character at the start
-of a path to mean “the current user’s home directory”. For example, if
-Nelle’s home directory is <code>/Users/nelle</code>, then
-<code>~/data</code> is equivalent to <code>/Users/nelle/data</code>.
-This only works if it is the first character in the path;
+<p>Термінал інтерпретує символ тильди (<code>~</code>) на початку шляху
+як “домашній каталог поточного користувача”. Наприклад, якщо домашнім
+каталогом користувача Неллі є каталог <code>/Users/nelle</code>, то
+<code>~/data</code> еквівалентно <code>/Users/nelle/data</code>. This
+only works if it is the first character in the path;
 <code>here/there/~/elsewhere</code> is <em>not</em>
 <code>here/there/Users/nelle/elsewhere</code>.</p>
-<p>Another shortcut is the <code>-</code> (dash) character.
-<code>cd</code> will translate <code>-</code> into <em>the previous
-directory I was in</em>, which is faster than having to remember, then
-type, the full path. This is a <em>very</em> efficient way of moving
-<em>back and forth between two directories</em> – i.e. if you execute
-<code>cd -</code> twice, you end up back in the starting directory.</p>
+<p>Іншим скороченням є символ <code>-</code> (тире). <code>cd</code>
+will translate <code>-</code> into <em>the previous directory I was
+in</em>, which is faster than having to remember, then type, the full
+path. This is a <em>very</em> efficient way of moving <em>back and forth
+between two directories</em> – i.e. if you execute <code>cd -</code>
+twice, you end up back in the starting directory.</p>
 <p>The difference between <code>cd ..</code> and <code>cd -</code> is
 that the former brings you <em>up</em>, while the latter brings you
 <em>back</em>.</p>
 <hr>
-<p>Try it! First navigate to <code>~/Desktop/shell-lesson-data</code>
-(you should already be there).</p>
+<p>Спробуйте! Спочатку перейдіть до
+<code>~/Desktop/shell-lesson-data</code> (ви вже маєте бути там).</p>
 <div class="codewrapper sourceCode" id="cb37">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" tabindex="-1"></a><span class="ex">$</span> cd ~/Desktop/shell-lesson-data</span></code></pre>
 </div>
-<p>Then <code>cd</code> into the <code>exercise-data/creatures</code>
-directory</p>
+<p>Потім <code>cd</code> у каталог
+<code>exercise-data/creatures</code></p>
 <div class="codewrapper sourceCode" id="cb38">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" tabindex="-1"></a><span class="ex">$</span> cd exercise-data/creatures</span></code></pre>
 </div>
-<p>Now if you run</p>
+<p>Тепер, якщо ви виконаєте</p>
 <div class="codewrapper sourceCode" id="cb39">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" tabindex="-1"></a><span class="ex">$</span> cd <span class="at">-</span></span></code></pre>
 </div>
-<p>you’ll see you’re back in <code>~/Desktop/shell-lesson-data</code>.
-Run <code>cd -</code> again and you’re back in
+<p>ви побачите, що повернулися до
+<code>~/Desktop/shell-lesson-data</code>. Запустіть <code>cd -</code> ще
+раз і ви повернетесь до
 <code>~/Desktop/shell-lesson-data/exercise-data/creatures</code></p>
 </div>
 </div>
 </div>
-<div id="absolute-vs-relative-paths" class="callout challenge">
+<div id="абсолютні-та-відносні-шляхи" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="absolute-vs-relative-paths" class="callout-inner">
-<h3 class="callout-title">Absolute vs Relative Paths</h3>
+<div id="абсолютні-та-відносні-шляхи" class="callout-inner">
+<h3 class="callout-title">Абсолютні та відносні шляхи</h3>
 <div class="callout-content">
 <p>Starting from <code>/Users/nelle/data</code>, which of the following
 commands could Nelle use to navigate to her home directory, which is
@@ -1354,21 +1363,21 @@ commands could Nelle use to navigate to her home directory, which is
 <div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
-  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
+  <h4 class="accordion-header" id="headingSolution3"> Розв’язання </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
-<li><p>No: <code>.</code> stands for the current directory.</p></li>
-<li><p>No: <code>/</code> stands for the root directory.</p></li>
+<li><p>Ні: скорочення <code>.</code> означає поточний каталог.</p></li>
+<li><p>Ні: скорочення <code>/</code> означає кореневий каталог.</p></li>
 <li><p>No: Nelle’s home directory is <code>/Users/nelle</code>.</p></li>
 <li><p>No: this command goes up two levels, i.e. ends in
 <code>/Users</code>.</p></li>
 <li><p>Yes: <code>~</code> stands for the user’s home directory, in this
 case <code>/Users/nelle</code>.</p></li>
-<li><p>No: this command would navigate into a directory
-<code>home</code> in the current directory if it exists.</p></li>
-<li><p>Yes: unnecessarily complicated, but correct.</p></li>
+<li><p>Ні: ця команда виконає перехід до каталогу <code>home</code> у
+поточному каталозі, якщо він існує.</p></li>
+<li><p>Так: надмірно складна, але правильна.</p></li>
 <li><p>Yes: shortcut to go back to the user’s home directory.</p></li>
 <li><p>Yes: goes up one level.</p></li>
 </ol>
@@ -1383,9 +1392,9 @@ case <code>/Users/nelle</code>.</p></li>
 <div id="relative-path-resolution" class="callout-inner">
 <h3 class="callout-title">Relative Path Resolution</h3>
 <div class="callout-content">
-<p>Using the filesystem diagram below, if <code>pwd</code> displays
-<code>/Users/thing</code>, what will <code>ls -F ../backup</code>
-display?</p>
+<p>Використовуючи наведену нижче схему файлової системи, якщо
+<code>pwd</code> показує <code>/Users/thing</code>, що покаже команда
+<code>ls -F ../backup</code>?</p>
 <ol style="list-style-type: decimal">
 <li><code>../backup: No such file or directory</code></li>
 <li><code>2012-12-01 2013-01-08 2013-01-27</code></li>
@@ -1399,17 +1408,18 @@ display?</p>
 <div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
-  <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
+  <h4 class="accordion-header" id="headingSolution4"> Розв’язання </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><p>No: there <em>is</em> a directory <code>backup</code> in
 <code>/Users</code>.</p></li>
-<li><p>No: this is the content of <code>Users/thing/backup</code>, but
-with <code>..</code>, we asked for one level further up.</p></li>
+<li><p>Ні: це вміст каталогу <code>Users/thing/backup</code>, але за
+допомогою <code>..</code> ми просили піднятися на один рівень
+вище.</p></li>
 <li><p>No: see previous explanation.</p></li>
-<li><p>Yes: <code>../backup/</code> refers to
+<li><p>Так: <code>../backup/</code> вказує на
 <code>/Users/backup/</code>.</p></li>
 </ol>
 </div>
@@ -1444,12 +1454,12 @@ following output:</p>
 <div id="accordionSolution5" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
-  <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
+  <h4 class="accordion-header" id="headingSolution5"> Розв’язання </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
-<li><p>No: <code>pwd</code> is not the name of a directory.</p></li>
+<li><p>Ні: <code>pwd</code> не є назвою каталогу.</p></li>
 <li><p>Yes: <code>ls</code> without directory argument lists files and
 directories in the current directory.</p></li>
 <li><p>Yes: uses the absolute path explicitly.</p></li>
@@ -1462,8 +1472,8 @@ directories in the current directory.</p></li>
 <section><h2 class="section-heading" id="general-syntax-of-a-shell-command">General Syntax of a Shell Command<a class="anchor" aria-label="anchor" href="#general-syntax-of-a-shell-command"></a>
 </h2>
 <hr class="half-width">
-<p>We have now encountered commands, options, and arguments, but it is
-perhaps useful to formalise some terminology.</p>
+<p>Ми вже познайомилися з командами, опціями та аргументами, але,
+можливо, буде корисно формалізувати деяку термінологію.</p>
 <p>Consider the command below as a general example of a command, which
 we will dissect into its component parts:</p>
 <div class="codewrapper sourceCode" id="cb41">
@@ -1471,13 +1481,13 @@ we will dissect into its component parts:</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-F</span> /</span></code></pre>
 </div>
-<figure><img src="fig/shell_command_syntax.svg" alt="General syntax of a shell command" class="figure mx-auto d-block"></figure><p><code>ls</code> is the <strong>command</strong>, with an
+<figure><img src="fig/shell_command_syntax.svg" alt="Загальний синтаксис команди терміналу" class="figure mx-auto d-block"></figure><p><code>ls</code> is the <strong>command</strong>, with an
 <strong>option</strong> <code>-F</code> and an <strong>argument</strong>
-<code>/</code>. We’ve already encountered options which either start
-with a single dash (<code>-</code>), known as <strong>short
-options</strong>, or two dashes (<code>--</code>), known as <strong>long
-options</strong>. [Options] change the behavior of a command and <a href="https://swcarpentry.github.io/shell-novice/reference.html#argument" class="external-link">Arguments</a>
-tell the command what to operate on (e.g. files and directories).
+<code>/</code>. Ми вже зустрічалися з опціями, які починаються з одного
+тире (<code>-</code>), відомі як <strong>короткі варіанти</strong>, або
+двох тире (<code>--</code>), відомі як <strong>довгі варіанти</strong>.
+[Параметри] змінюють поведінку команди, а [Аргументи] вказують команді,
+над чим вона має працювати (наприклад, над файлами й каталогами).
 Sometimes options and arguments are referred to as
 <strong>parameters</strong>. A command can be called with more than one
 option and more than one argument, but a command doesn’t always require
@@ -1486,10 +1496,10 @@ an argument or an option.</p>
 <strong>switches</strong> or <strong>flags</strong>, especially for
 options that take no argument. In this lesson we will stick with using
 the term <em>option</em>.</p>
-<p>Each part is separated by spaces. If you omit the space between
-<code>ls</code> and <code>-F</code> the shell will look for a command
-called <code>ls-F</code>, which doesn’t exist. Also, capitalization can
-be important. For example, <code>ls -s</code> will display the size of
+<p>Кожна частина відокремлюється пробілами. Якщо ви пропустите пробіл
+між <code>ls</code> і <code>-F</code>, термінал шукатиме команду з
+назвою <code>ls-F</code>, якої не існує. Also, capitalization can be
+important. For example, <code>ls -s</code> will display the size of
 files and directories alongside the names, while <code>ls -S</code> will
 sort the files and directories by size, as shown below:</p>
 <div class="codewrapper sourceCode" id="cb42">
@@ -1505,9 +1515,9 @@ sort the files and directories by size, as shown below:</p>
  4 animal-counts   4 creatures  12 numbers.txt   4 alkanes   4 writing</code></pre>
 </div>
 <p>Note that the sizes returned by <code>ls -s</code> are in
-<em>blocks</em>. As these are defined differently for different
-operating systems, you may not obtain the same figures as in the
-example.</p>
+<em>blocks</em>. Оскільки вони визначаються по-різному для різних
+операційних систем, ви можете отримати не такі значення, як у
+прикладі.</p>
 <div class="codewrapper sourceCode" id="cb44">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1518,10 +1528,9 @@ example.</p>
 </h3>
 <pre class="output" tabindex="0"><code>animal-counts  creatures  alkanes  writing  numbers.txt</code></pre>
 </div>
-<p>Putting all that together, our command <code>ls -F /</code> above
-gives us a listing of files and directories in the root directory
-<code>/</code>. An example of the output you might get from the above
-command is given below:</p>
+<p>Зібравши все це разом, наша команда вище дасть нам список файлів і
+каталогів у кореневому каталозі <code>/</code>. An example of the output
+you might get from the above command is given below:</p>
 <div class="codewrapper sourceCode" id="cb46">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1535,10 +1544,10 @@ Library/              Users/
 Network/              Volumes/</code></pre>
 </div>
 <div class="section level3">
-<h3 id="nelles-pipeline-organizing-files">Nelle’s Pipeline: Organizing Files<a class="anchor" aria-label="anchor" href="#nelles-pipeline-organizing-files"></a>
+<h3 id="конвеєр-неллі-організація-файлів">Конвеєр Неллі: Організація файлів<a class="anchor" aria-label="anchor" href="#%D0%BA%D0%BE%D0%BD%D0%B2%D0%B5%D1%94%D1%80-%D0%BD%D0%B5%D0%BB%D0%BB%D1%96-%D0%BE%D1%80%D0%B3%D0%B0%D0%BD%D1%96%D0%B7%D0%B0%D1%86%D1%96%D1%8F-%D1%84%D0%B0%D0%B9%D0%BB%D1%96%D0%B2"></a>
 </h3>
-<p>Knowing this much about files and directories, Nelle is ready to
-organize the files that the protein assay machine will create.</p>
+<p>Знаючи так багато про файли та каталоги, Неллі готова впорядкувати
+файли, які створить машина для аналізу білків.</p>
 <p>She creates a directory called <code>north-pacific-gyre</code> (to
 remind herself where the data came from), which will contain the data
 files from the assay machine and her data processing scripts.</p>
@@ -1546,20 +1555,20 @@ files from the assay machine and her data processing scripts.</p>
 convention with a unique ten-character ID, such as ‘NENE01729A’. This ID
 is what she used in her collection log to record the location, time,
 depth, and other characteristics of the sample, so she decides to use it
-within the filename of each data file. Since the output of the assay
-machine is plain text, she will call her files
-<code>NENE01729A.txt</code>, <code>NENE01812A.txt</code>, and so on. All
-1520 files will go into the same directory.</p>
-<p>Now in her current directory <code>shell-lesson-data</code>, Nelle
-can see what files she has using the command:</p>
+within the filename of each data file. Оскільки результат роботи
+аналізатора є звичайним текстом, вона назве свої файли
+<code>NENE01729A.txt</code>, <code>NENE01812A.txt</code> і так далі. Усі
+1520 файлів буде збережено в одному каталозі.</p>
+<p>Тепер у її поточному каталозі <code>shell-lesson-data</code>, Нелл
+може побачити, які файли вона має за допомогою цієї команди:</p>
 <div class="codewrapper sourceCode" id="cb48">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb48-1"><a href="#cb48-1" tabindex="-1"></a><span class="ex">$</span> ls north-pacific-gyre/</span></code></pre>
 </div>
 <p>This command is a lot to type, but she can let the shell do most of
-the work through what is called <strong>tab completion</strong>. If she
-types:</p>
+the work through what is called <strong>tab completion</strong>. Якщо
+вона набере:</p>
 <div class="codewrapper sourceCode" id="cb49">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1588,8 +1597,7 @@ more.</p>
 <div class="codewrapper sourceCode" id="cb52">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb52-1"><a href="#cb52-1" tabindex="-1"></a><span class="fu">ls</span> north-pacific-gyre/goo</span>
-<span id="cb52-2"><a href="#cb52-2" tabindex="-1"></a><span class="ex">goodiff.sh</span>   goostats.sh</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb52-1"><a href="#cb52-1" tabindex="-1"></a><span class="fu">ls</span> north-pacific-gyre/goo goodiff.sh goostats.sh</span></code></pre>
 </div>
 <p>This is called <strong>tab completion</strong>, and we will see it in
 many other tools as we go on.</p>
@@ -1601,29 +1609,26 @@ many other tools as we go on.</p>
 <h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
-<li>The file system is responsible for managing information on the
-disk.</li>
+<li>Файлова система відповідає за керування інформацією на диску.</li>
 <li>Information is stored in files, which are stored in directories
 (folders).</li>
 <li>Directories can also store other directories, which then form a
 directory tree.</li>
-<li>
-<code>pwd</code> prints the user’s current working directory.</li>
+<li>Команда <code>pwd</code> виводить поточний робочий каталог
+користувача.</li>
 <li>
 <code>ls [path]</code> prints a listing of a specific file or
 directory; <code>ls</code> on its own lists the current working
 directory.</li>
-<li>
-<code>cd [path]</code> changes the current working directory.</li>
-<li>Most commands take options that begin with a single
-<code>-</code>.</li>
+<li>Команда <code>cd [шлях]</code> змінює поточний робочий каталог.</li>
+<li>Більшість команд приймають параметри, які починаються з одного
+символу <code>-</code>.</li>
 <li>Directory names in a path are separated with <code>/</code> on Unix,
 but <code>\</code> on Windows.</li>
-<li>
-<code>/</code> on its own is the root directory of the whole file
-system.</li>
-<li>An absolute path specifies a location from the root of the file
-system.</li>
+<li>Символ <code>/</code> сам по собі є кореневим каталогом усієї
+файлової системи.</li>
+<li>Абсолютний шлях вказує на розташування від кореня файлової
+системи.</li>
 <li>A relative path specifies a location starting from the current
 location.</li>
 <li>
@@ -1634,9 +1639,9 @@ location.</li>
 </div>
 </div>
 </div>
-</section></section><section id="aio-03-create"><p>Content from <a href="03-create.html">Working With Files and Directories</a></p>
+</section></section><section id="aio-03-create"><p>Content from <a href="03-create.html">Робота з файлами та каталогами</a></p>
 <hr>
-<p>Last updated on 2024-07-01 |
+<p>Last updated on 2024-10-01 |
 
         <a href="https://github.com/swcarpentry/shell-novice/edit/main/episodes/03-create.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1650,8 +1655,8 @@ location.</li>
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>How can I create, copy, and delete files and directories?</li>
-<li>How can I edit files?</li>
+<li>Як я можу створювати, копіювати та видаляти файли і каталоги?</li>
+<li>Як я можу редагувати файли?</li>
 </ul>
 </div>
 </div>
@@ -1661,29 +1666,31 @@ location.</li>
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Create a directory hierarchy that matches a given diagram.</li>
-<li>Create files in that hierarchy using an editor or by copying and
-renaming existing files.</li>
-<li>Delete, copy and move specified files and/or directories.</li>
+<li>Створити ієрархію каталогів, яка відповідає заданій схемі.</li>
+<li>Створити файли в цій ієрархії за допомогою редактора або шляхом
+копіювання та перейменування файлів, що вже існують.</li>
+<li>Видалити, скопіювати та перемістити вказані файли та/або
+каталоги.</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="creating-directories">Creating directories<a class="anchor" aria-label="anchor" href="#creating-directories"></a>
+<section><h2 class="section-heading" id="створення-каталогів">Створення каталогів<a class="anchor" aria-label="anchor" href="#%D1%81%D1%82%D0%B2%D0%BE%D1%80%D0%B5%D0%BD%D0%BD%D1%8F-%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3%D1%96%D0%B2"></a>
 </h2>
 <hr class="half-width">
-<p>We now know how to explore files and directories, but how do we
-create them in the first place?</p>
+<p>Тепер ми знаємо, як досліджувати файли та каталоги, але як їх
+створювати?</p>
 <p>In this episode we will learn about creating and moving files and
 directories, using the <code>exercise-data/writing</code> directory as
 an example.</p>
 <div class="section level3">
-<h3 id="step-one-see-where-we-are-and-what-we-already-have">Step one: see where we are and what we already have<a class="anchor" aria-label="anchor" href="#step-one-see-where-we-are-and-what-we-already-have"></a>
+<h3 id="крок-перший-подивіться-де-ми-знаходимося-і-що-вже-маємо">Крок перший: подивіться, де ми знаходимося і що вже маємо<a class="anchor" aria-label="anchor" href="#%D0%BA%D1%80%D0%BE%D0%BA-%D0%BF%D0%B5%D1%80%D1%88%D0%B8%D0%B9-%D0%BF%D0%BE%D0%B4%D0%B8%D0%B2%D1%96%D1%82%D1%8C%D1%81%D1%8F-%D0%B4%D0%B5-%D0%BC%D0%B8-%D0%B7%D0%BD%D0%B0%D1%85%D0%BE%D0%B4%D0%B8%D0%BC%D0%BE%D1%81%D1%8F-%D1%96-%D1%89%D0%BE-%D0%B2%D0%B6%D0%B5-%D0%BC%D0%B0%D1%94%D0%BC%D0%BE"></a>
 </h3>
-<p>We should still be in the <code>shell-lesson-data</code> directory on
-the Desktop, which we can check using:</p>
+<p>Ми все ще маємо бути у каталозі <code>shell-lesson-data</code> на
+Робочому столі (англ. Desktop), що ми можемо перевірити за
+допомогою:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1694,8 +1701,8 @@ the Desktop, which we can check using:</p>
 </h3>
 <pre class="output" tabindex="0"><code>/Users/nelle/Desktop/shell-lesson-data</code></pre>
 </div>
-<p>Next we’ll move to the <code>exercise-data/writing</code> directory
-and see what it contains:</p>
+<p>Далі ми перейдемо до каталогу <code>exercise-data/writing</code> і
+подивимося, що у ньому міститься:</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1705,23 +1712,24 @@ and see what it contains:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>haiku.txt  LittleWomen.txt</code></pre>
+<pre class="output" tabindex="0"><code>haiku.txt LittleWomen.txt</code></pre>
 </div>
 </div>
 <div class="section level3">
-<h3 id="create-a-directory">Create a directory<a class="anchor" aria-label="anchor" href="#create-a-directory"></a>
+<h3 id="створення-каталогу">Створення каталогу<a class="anchor" aria-label="anchor" href="#%D1%81%D1%82%D0%B2%D0%BE%D1%80%D0%B5%D0%BD%D0%BD%D1%8F-%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3%D1%83"></a>
 </h3>
-<p>Let’s create a new directory called <code>thesis</code> using the
-command <code>mkdir thesis</code> (which has no output):</p>
+<p>Створимо новий каталог з назвою <code>thesis</code> за допомогою
+команди <code>mkdir thesis</code> (яка не має виводу):</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">$</span> mkdir thesis</span></code></pre>
 </div>
-<p>As you might guess from its name, <code>mkdir</code> means ‘make
-directory’. Since <code>thesis</code> is a relative path (i.e., does not
-have a leading slash, like <code>/what/ever/thesis</code>), the new
-directory is created in the current working directory:</p>
+<p>Як ви можете здогадатися з її назви, команда <code>mkdir</code>
+означає ‘зробити каталог’ (англ. ‘make directory’). Оскільки
+<code>thesis</code> є відносним шляхом (тобто не має початкової косої
+риски, як <code>/what/ever/thesis</code>), новий каталог буде створено у
+поточному робочому каталозі:</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1732,17 +1740,17 @@ directory is created in the current working directory:</p>
 </h3>
 <pre class="output" tabindex="0"><code>haiku.txt  LittleWomen.txt  thesis/</code></pre>
 </div>
-<p>Since we’ve just created the <code>thesis</code> directory, there’s
-nothing in it yet:</p>
+<p>Оскільки ми щойно створили каталог <code>thesis</code>, у ньому ще
+нічого немає:</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-F</span> thesis</span></code></pre>
 </div>
 <p>Note that <code>mkdir</code> is not limited to creating single
-directories one at a time. The <code>-p</code> option allows
-<code>mkdir</code> to create a directory with nested subdirectories in a
-single operation:</p>
+directories one at a time. Параметр <code>-p</code> дозволяє команді
+<code>mkdir</code> створювати каталог із вкладеними підкаталогами за
+одну операцію:</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1767,19 +1775,19 @@ data/  results/
 
 ../project/results:</code></pre>
 </div>
-<div id="two-ways-of-doing-the-same-thing" class="callout">
+<div id="два-способи-зробити-одне-й-те-саме" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="two-ways-of-doing-the-same-thing" class="callout-inner">
-<h3 class="callout-title">Two ways of doing the same thing</h3>
+<div id="два-способи-зробити-одне-й-те-саме" class="callout-inner">
+<h3 class="callout-title">Два способи зробити одне й те саме</h3>
 <div class="callout-content">
-<p>Using the shell to create a directory is no different than using a
-file explorer. If you open the current directory using your operating
-system’s graphical file explorer, the <code>thesis</code> directory will
-appear there too. While the shell and the file explorer are two
-different ways of interacting with the files, the files and directories
-themselves are the same.</p>
+<p>Використання терміналу для створення каталогу нічим не відрізняється
+від використання файлового провідника. If you open the current directory
+using your operating system’s graphical file explorer, the
+<code>thesis</code> directory will appear there too. While the shell and
+the file explorer are two different ways of interacting with the files,
+the files and directories themselves are the same.</p>
 </div>
 </div>
 </div>
@@ -1794,24 +1802,26 @@ themselves are the same.</p>
 when working on the command line. Here we provide a few useful tips for
 the names of your files and directories.</p>
 <ol style="list-style-type: decimal">
-<li>Don’t use spaces.</li>
+<li>Не використовуйте пробіли.</li>
 </ol>
 <p>Spaces can make a name more meaningful, but since spaces are used to
 separate arguments on the command line it is better to avoid them in
-names of files and directories. You can use <code>-</code> or
-<code>_</code> instead (e.g. <code>north-pacific-gyre/</code> rather
-than <code>north pacific gyre/</code>). To test this out, try typing
-<code>mkdir north pacific gyre</code> and see what directory (or
-directories!) are made when you check with <code>ls -F</code>.</p>
+names of files and directories. Ви можете використовувати <code>-</code>
+або <code>_</code> (наприклад, <code>north-pacific-gyre/</code> замість
+<code>north pacific gyre/</code>). Щоб перевірити це, спробуйте набрати
+<code>mkdir north pacific gyre</code> і подивіться, який каталог (або
+каталоги!) буде створено при перевірці за допомогою
+<code>ls -F</code>.</p>
 <ol start="2" style="list-style-type: decimal">
-<li>Don’t begin the name with <code>-</code> (dash).</li>
+<li>Не починайте назву з <code>-</code> (тире).</li>
 </ol>
-<p>Commands treat names starting with <code>-</code> as options.</p>
+<p>Команди розглядають назви, що починаються з <code>-</code>, як
+опції.</p>
 <ol start="3" style="list-style-type: decimal">
-<li>Stick with letters, numbers, <code>.</code> (period or ‘full stop’),
-<code>-</code> (dash) and <code>_</code> (underscore).</li>
+<li>Використовуйте літери, цифри, <code>.</code> (крапка),
+<code>-</code> (тире) і <code>_</code> (підкреслення).</li>
 </ol>
-<p>Many other characters have special meanings on the command line. We
+<p>Багато інших символів мають особливе значення у командному рядку. We
 will learn about some of these during this lesson. There are special
 characters that can cause your command to not work as expected and can
 even result in data loss.</p>
@@ -1825,7 +1835,7 @@ single <a href="https://www.gnu.org/software/bash/manual/html_node/Quoting.html"
 
 </div>
 <div class="section level3">
-<h3 id="create-a-text-file">Create a text file<a class="anchor" aria-label="anchor" href="#create-a-text-file"></a>
+<h3 id="створення-текстового-файлу">Створення текстового файлу<a class="anchor" aria-label="anchor" href="#%D1%81%D1%82%D0%B2%D0%BE%D1%80%D0%B5%D0%BD%D0%BD%D1%8F-%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE-%D1%84%D0%B0%D0%B9%D0%BB%D1%83"></a>
 </h3>
 <p>Let’s change our working directory to <code>thesis</code> using
 <code>cd</code>, then run a text editor called Nano to create a file
@@ -1836,41 +1846,44 @@ called <code>draft.txt</code>:</p>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="ex">$</span> cd thesis</span>
 <span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="ex">$</span> nano draft.txt</span></code></pre>
 </div>
-<div id="which-editor" class="callout">
+<div id="який-редактор" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="which-editor" class="callout-inner">
-<h3 class="callout-title">Which Editor?</h3>
+<div id="який-редактор" class="callout-inner">
+<h3 class="callout-title">Який редактор?</h3>
 <div class="callout-content">
 <p>When we say, ‘<code>nano</code> is a text editor’ we really do mean
-‘text’. It can only work with plain character data, not tables, images,
-or any other human-friendly media. We use it in examples because it is
-one of the least complex text editors. However, because of this trait,
-it may not be powerful enough or flexible enough for the work you need
-to do after this workshop. On Unix systems (such as Linux and macOS),
-many programmers use <a href="https://www.gnu.org/software/emacs/" class="external-link">Emacs</a> or <a href="https://www.vim.org/" class="external-link">Vim</a> (both of which require more time to
-learn), or a graphical editor such as <a href="https://projects.gnome.org/gedit/" class="external-link">Gedit</a> or <a href="https://code.visualstudio.com/" class="external-link">VScode</a>. On Windows, you may
+‘text’. Він може працювати лише з простими символьними даними, а не з
+таблицями, зображеннями чи будь-якими іншими зручними для людини даними.
+We use it in examples because it is one of the least complex text
+editors. However, because of this trait, it may not be powerful enough
+or flexible enough for the work you need to do after this workshop. У
+системах Unix (таких як Linux та macOS), багато програмістів
+використовують [Emacs] (<a href="https://www.gnu.org/software/emacs/" class="external-link uri">https://www.gnu.org/software/emacs/</a>) або <a href="https://www.vim.org/" class="external-link">Vim</a> (обидва вимагають більше часу на
+вивчення), або графічний редактор, такий як <a href="https://projects.gnome.org/gedit/" class="external-link">Gedit</a>. On Windows, you may
 wish to use <a href="https://notepad-plus-plus.org/" class="external-link">Notepad++</a>.
 Windows also has a built-in editor called <code>notepad</code> that can
 be run from the command line in the same way as <code>nano</code> for
 the purposes of this lesson.</p>
-<p>No matter what editor you use, you will need to know where it
-searches for and saves files. If you start it from the shell, it will
-(probably) use your current working directory as its default location.
-If you use your computer’s start menu, it may want to save files in your
-Desktop or Documents directory instead. You can change this by
-navigating to another directory the first time you ‘Save As…’</p>
+<p>Незалежно від того, яким редактором ви користуєтеся, вам потрібно
+знати, де він шукає і зберігає файли. If you start it from the shell, it
+will (probably) use your current working directory as its default
+location. If you use your computer’s start menu, it may want to save
+files in your Desktop or Documents directory instead. Ви можете змінити
+це, перейшовши до іншого каталогу під час першого виконання команди
+“Зберегти як…”.</p>
 </div>
 </div>
 </div>
 <p>Let’s type in a few lines of text.</p>
-<figure><img src="fig/nano-screenshot.png" alt="screenshot of nano text editor in action with the text It's not publish or perish any more, it's share and thrive" class="figure mx-auto d-block"></figure><p>Once we’re happy with our text, we can press
-<kbd>Ctrl</kbd>+<kbd>O</kbd> (press the <kbd>Ctrl</kbd> or
-<kbd>Control</kbd> key and, while holding it down, press the
-<kbd>O</kbd> key) to write our data to disk. We will be asked to provide
-a name for the file that will contain our text. Press <kbd>Return</kbd>
-to accept the suggested default of <code>draft.txt</code>.</p>
+<figure><img src="fig/nano-screenshot.png" alt="screenshot of nano text editor in action with the text It's not publish or perish any more, it's share and thrive" class="figure mx-auto d-block"></figure><p>Після того, як ми будемо задоволені нашим текстом, ми можемо
+натиснути <kbd>Ctrl</kbd>+<kbd>O</kbd> (натисніть клавішу
+<kbd>Ctrl</kbd> or <kbd>Control</kbd> і, утримуючи її, натиснути клавішу
+<kbd>O</kbd>), щоб записати наші дані на диск. Нас запитають, до якого
+файлу ми хочемо зберегти дані. Натисніть клавішу <kbd>Return</kbd>, щоб
+прийняти запропоновану за замовчуванням назву
+<code>draft.txt</code>.</p>
 <p>Once our file is saved, we can use <kbd>Ctrl</kbd>+<kbd>X</kbd> to
 quit the editor and return to the shell.</p>
 <div id="control-ctrl-or-key" class="callout">
@@ -1887,21 +1900,21 @@ holding it down, press the <kbd>X</kbd> key, described as any of:</p>
 <ul>
 <li><code>Control-X</code></li>
 <li><code>Control+X</code></li>
-<li><code>Ctrl-X</code></li>
+<li><code>Ctrl-C</code></li>
 <li><code>Ctrl+X</code></li>
 <li><code>^X</code></li>
 <li><code>C-x</code></li>
 </ul>
-<p>In nano, along the bottom of the screen you’ll see
-<code>^G Get Help ^O WriteOut</code>. This means that you can use
-<code>Control-G</code> to get help and <code>Control-O</code> to save
-your file.</p>
+<p>У nano, у нижній частині екрана ви побачите
+<code>^G Отримати довідку ^O Вивести на екран</code>. This means that
+you can use <code>Control-G</code> to get help and
+<code>Control-O</code> to save your file.</p>
 </div>
 </div>
 </div>
-<p><code>nano</code> doesn’t leave any output on the screen after it
-exits, but <code>ls</code> now shows that we have created a file called
-<code>draft.txt</code>:</p>
+<p>Після завершення роботи команда <code>nano</code> не залишає жодних
+даних на екрані, але <code>ls</code> тепер показує, що ми створили файл
+з назвою <code>draft.txt</code>:</p>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1912,22 +1925,22 @@ exits, but <code>ls</code> now shows that we have created a file called
 </h3>
 <pre class="output" tabindex="0"><code><span><span class="va">draft.txt</span></span></code></pre>
 </div>
-<div id="creating-files-a-different-way" class="callout challenge">
+<div id="створення-файлів-іншим-способом" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="creating-files-a-different-way" class="callout-inner">
-<h3 class="callout-title">Creating Files a Different Way</h3>
+<div id="створення-файлів-іншим-способом" class="callout-inner">
+<h3 class="callout-title">Створення файлів іншим способом</h3>
 <div class="callout-content">
-<p>We have seen how to create text files using the <code>nano</code>
-editor. Now, try the following command:</p>
+<p>Ми побачили, як створювати текстові файли за допомогою редактора
+<code>nano</code>. Тепер спробуйте виконати наступну команду:</p>
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="ex">$</span> touch my_file.txt</span></code></pre>
 </div>
 <ol style="list-style-type: decimal">
-<li><p>What did the <code>touch</code> command do? When you look at your
+<li><p>Що зробила команда <code>touch</code>? When you look at your
 current directory using the GUI file explorer, does the file show
 up?</p></li>
 <li><p>Use <code>ls -l</code> to inspect the files. How large is
@@ -1964,12 +1977,12 @@ text file to be used by such programs.</p></li>
 </div>
 </div>
 </div>
-<div id="creating-files-a-different-way" class="callout discussion">
+<div id="створення-файлів-іншим-способом" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
-<div id="creating-files-a-different-way" class="callout-inner">
-<h3 class="callout-title">Creating Files a Different Way<em>
+<div id="створення-файлів-іншим-способом" class="callout-inner">
+<h3 class="callout-title">Створення файлів іншим способом<em>
 (continued)</em>
 </h3>
 <div class="callout-content">
@@ -3161,7 +3174,7 @@ instead:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>The <code>-n</code> option specifies a numerical rather than an
 alphanumerical sort.</p>
@@ -3275,7 +3288,7 @@ the output files.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>In the first example with <code>&gt;</code>, the string ‘hello’ is
 written to <code>testfile01.txt</code>, but the file gets overwritten
@@ -3327,7 +3340,7 @@ After these commands, select the answer that corresponds to the file
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>Option 3 is correct. For option 1 to be correct we would only run the
 <code>head</code> command. For option 2 to be correct we would only run
@@ -3432,7 +3445,7 @@ least number of lines. Which command listed below would work?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>Option 4 is the solution. The pipe character <code>|</code> is used
 to connect the output from one command to the input of another.
@@ -3497,7 +3510,7 @@ understanding</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <p>The <code>head</code> command extracts the first 5 lines from
 <code>animals.csv</code>. Then, the last 3 lines are extracted from the
@@ -3560,7 +3573,7 @@ duplicates in their names)?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6"> Show me the solution </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb39">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3610,7 +3623,7 @@ of animal in the file?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
   <h4 class="accordion-header" id="headingSolution7"> Show me the solution </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
 <div class="accordion-body">
 <p>Option 4. is the correct answer. If you have difficulty understanding
 why, try running the commands, or sub-sections of the pipelines (make
@@ -3727,7 +3740,7 @@ Which of the following would remove all the processed data files, and
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
   <h4 class="accordion-header" id="headingSolution8"> Show me the solution </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><p>This would remove <code>.txt</code> files with one-character
@@ -5103,7 +5116,7 @@ each of those files separately.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5169,7 +5182,7 @@ this?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>If a command causes something to crash or hang, it might be useful to
 know what that command was, in order to investigate the problem. Were
@@ -5293,7 +5306,7 @@ directory</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>The correct answer is 2.</p>
 <p>The special variables <code>$1</code>, <code>$2</code> and
@@ -5346,7 +5359,7 @@ lines.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb40">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5415,7 +5428,7 @@ three scripts would do when run as <code>bash script1.sh *.pdb</code>,
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Solutions </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <p>In each case, the shell expands the wildcard in <code>*.pdb</code>
 before passing the resulting list of file names as arguments to the
@@ -5483,7 +5496,7 @@ error?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6"> Show me the solution </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <p>The <code>-x</code> option causes <code>bash</code> to run in debug
 mode. This prints out each command as it is run, which will help you to
@@ -5812,7 +5825,7 @@ Miscellaneous:
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>The correct answer is 3, because the <code>-w</code> option looks
 only for whole-word matches. The other options will also match ‘of’ when
@@ -5910,7 +5923,7 @@ one field in a line.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <pre class="source"><code>grep -w $1 -r $2 | cut -d : -f 2 | cut -d , -f 1,3 &gt; $1.txt</code></pre>
 <p>Actually, you can swap the order of the two cut commands and it still
@@ -5957,7 +5970,7 @@ speed.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Solutions </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <pre class="source"><code>for sis in Jo Meg Beth Amy
 do
@@ -6225,7 +6238,7 @@ you have thought about your answer, you can test the commands in the
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>Option 1 is correct. Putting the match expression in quotes prevents
 the shell expanding it, so it gets passed to the <code>find</code>
@@ -6300,7 +6313,7 @@ Comprehension</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><p>Find all files with a <code>.dat</code> extension recursively
