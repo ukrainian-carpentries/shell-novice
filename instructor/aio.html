@@ -375,7 +375,7 @@
         
 <section id="aio-01-intro"><p>Content from <a href="01-intro.html">Знайомство з терміналом</a></p>
 <hr>
-<p>Last updated on 2024-10-01 |
+<p>Last updated on 2024-12-05 |
 
         <a href="https://github.com/swcarpentry/shell-novice/edit/main/episodes/01-intro.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 5 minutes</p>
@@ -390,7 +390,7 @@
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>What is a command shell and why would I use one?</li>
+<li>Що таке командний термінал і навіщо його використовувати?</li>
 </ul>
 </div>
 </div>
@@ -424,84 +424,90 @@ graphical user interface). За допомогою такого інтерфей
 комп’ютера дуже погано масштабується. Уявіть наступну задачу: для
 бібліографічного пошуку вам необхідно скопіювати третій рядок з тисячі
 вхідних файлів з тисячі різних директорій та вставити усе це в один
-файл. Using a GUI, you would not only be clicking at your desk for
-several hours, but you could potentially also commit an error in the
-process of completing this repetitive task. Саме тут ми й скористаємося
-перевагами терміналу Unix. The Unix shell is both a <strong>command-line
-interface</strong> (CLI) and a scripting language, allowing such
-repetitive tasks to be done automatically and fast. With the proper
-commands, the shell can repeat tasks with or without some modification
-as many times as we want. З використанням терміналу приклад задачі з
-бібліографічним пошуком може бути вирішений за секунди.</p>
+файл. Використовуючи графічний інтерфейс, ви б не тільки клацали мишею
+на свому робочому місці декілька годин, але й могли б потенційно також
+внести помилку в процесі виконання монотонної задачі. Саме тут ми й
+скористаємося перевагами терміналу Unix. Термінал Unix - це одночасно
+<strong>інтерфейс командного рядка</strong> (англ. “Command-Line
+Interface”, CLI) та скриптова мова програмування, яка дозволяє
+виконувати подібні повторювані задачі автоматично та швидко. За
+допомогою відповідних команд термінал може повторювати задачі із певними
+змінами або без них стільки разів, скільки ми бажаємо. З використанням
+терміналу приклад задачі з бібліографічним пошуком може бути вирішений
+за секунди.</p>
 </div>
 <div class="section level3">
 <h3 id="термінал">Термінал<a class="anchor" aria-label="anchor" href="#%D1%82%D0%B5%D1%80%D0%BC%D1%96%D0%BD%D0%B0%D0%BB"></a>
 </h3>
-<p>Термінал - це програма, де користувач може вводити команди. With the
-shell, it’s possible to invoke complicated programs like climate
-modeling software or simple commands that create an empty directory with
-only one line of code. Найбільш популярним терміналом є Bash (the Bourne
-Again SHell, який отримав таку назву, тому що був розроблений на основі
-терміналу, написаного Стівеном Борном). Bash is the default shell on
-most modern implementations of Unix and in most packages that provide
-Unix-like tools for Windows. Note that ‘Git Bash’ is a piece of software
-that enables Windows users to use a Bash like interface when interacting
-with Git.</p>
-<p>Using the shell will take some effort and some time to learn. У той
-час як графічний інтерфейс надає вам можливість вибору, команди
-терміналу не надаються автоматично, тому вам доведеться вивчити кілька
-команд, як нову лексику у мові, яку ви вивчаєте. However, unlike a
-spoken language, a small number of “words” (i.e. commands) gets you a
-long way, and we’ll cover those essential few today.</p>
+<p>Термінал - це програма, де користувач може вводити команди. За
+допомогою терміналу можна запускати складні програми, такі як програмне
+забезпечення для моделювання клімату, або прості команди, які створюють
+пустий каталог, командами, які займають лише один рядок. Найбільш
+популярним терміналом є Bash (the Bourne Again SHell, який отримав таку
+назву, тому що був розроблений на основі терміналу, написаного Стівеном
+Борном). Bash є терміналом за замовчуванням у більшості сучасних
+реалізацій Unix та у більшості пакетів, які надають Unix-подібні
+інструменти для Windows. Зауважте, що ‘Git Bash’ — це частина
+програмного забезпечення, яка дозволяє користувачам Windows
+використовувати інтерфейс, подібний до Bash, при взаємодії з Git.</p>
+<p>Щоб користуватися терміналом, потрібно докласти певних зусиль і
+витратити час на його вивчення. У той час як графічний інтерфейс надає
+вам можливість вибору, команди терміналу не надаються автоматично, тому
+вам доведеться вивчити кілька команд, як нову лексику у мові, яку ви
+вивчаєте. Однак, на відміну від розмовної мови, невелика кількість
+“слів” (тобто команд) принесе вам неймовірну користь, і сьогодні ми
+розглянемо кілька найважливіших з них.</p>
 <p>Граматика терміналу дозволяє комбінувати наявні інструменти у потужні
-конвеєри та автоматично обробляти великі обсяги даних. Sequences of
-commands can be written into a <em>script</em>, improving the
-reproducibility of workflows.</p>
-<p>In addition, the command line is often the easiest way to interact
-with remote machines and supercomputers. Familiarity with the shell is
-near essential to run a variety of specialized tools and resources
-including high-performance computing systems. Оскільки кластери та
-хмарні обчислювальні системи стають все більш популярними для обробки
-наукових даних, вміння взаємодіяти з терміналом стає необхідною
-навичкою. We can build on the command-line skills covered here to tackle
-a wide range of scientific questions and computational challenges.</p>
+конвеєри та автоматично обробляти великі обсяги даних. Послідовності
+команд можуть бути записані у <em>скрипт</em>, покращуючи
+відтворюваність послідовностей дій.</p>
+<p>Крім того, командний рядок часто є найпростішим способом взаємодії з
+віддаленими машинами та суперкомп’ютерами. Ознайомлення з терміналом є
+майже необхідним для запуску різноманітних спеціалізованих інструментів
+і ресурсів, у тому числі надпродуктивних обчислювальних систем. Оскільки
+кластери та хмарні обчислювальні системи стають все більш популярними
+для обробки наукових даних, вміння взаємодіяти з терміналом стає
+необхідною навичкою. Ми можемо розвивати навички роботи з командним
+рядком, описані тут, для вирішення широкого спектра наукових питань і
+обчислювальних проблем.</p>
 <p>Отже, почнемо.</p>
-<p>When the shell is first opened, you are presented with a
-<strong>prompt</strong>, indicating that the shell is waiting for
-input.</p>
+<p>Коли термінал тільки відкрито, вам пропонується запит (англ.
+<strong>prompt</strong>), яке вказує на те, що термінал очікує на
+введення команд.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span></span></code></pre>
 </div>
-<p>The shell typically uses <code>$</code> as the prompt, but may use a
-different symbol. In the examples for this lesson, we’ll show the prompt
-as <code>$</code>. Most importantly, <em>do not type the prompt</em>
-when typing commands. Треба вводити тільки команди, що йдуть за ним. Це
-правило діє як на цих уроках, так і на уроках з інших джерел. Also note
-that after you type a command, you have to press the <kbd>Enter</kbd>
-key to execute it.</p>
-<p>The prompt is followed by a <strong>text cursor</strong>, a character
-that indicates the position where your typing will appear. Курсор
-зазвичай блимає або є суцільним блоком, але він також може бути
-підкресленням або вертикальною рискою. Ви могли його бачити, наприклад,
-в текстових редакторах.</p>
-<p>Зверніть увагу, що ваш запит може виглядати дещо інакше. Зокрема,
-більшість популярних середовищ оболонки за замовчуванням вказують ваше
-ім’я користувача та ім’я хоста перед ‘$’. Такий запит може виглядати
-так, наприклад:</p>
+<p>Термінал зазвичай використовує символ <code>$</code> як запрошення,
+але може використовувати й інші символи. У прикладах до цього уроку ми
+використовуватимемо запрошення <code>$</code>. Найважливіше: під час
+введення команд <em>запрошення вводити не треба</em>. Треба вводити
+тільки команди, що йдуть за ним. Це правило діє як на цих уроках, так і
+на уроках з інших джерел. Також зауважте, що після введення команди, вам
+потрібно натиснути клавішу <kbd>Enter</kbd> для її виконання.</p>
+<p>За запрошенням йде <strong>текстовий курсор</strong> - символ, який
+позначає позицію, де ви будете вводити текст. Курсор зазвичай блимає або
+є суцільним блоком, але він також може бути підкресленням або
+вертикальною рискою. Ви могли його бачити, наприклад, в текстових
+редакторах.</p>
+<p>Зверніть увагу, що ваше запрошення може виглядати дещо інакше.
+Зокрема, більшість популярних середовищ оболонки за замовчуванням
+вказують ваше ім’я користувача та ім’я хоста перед ‘$’. Таке запрошення
+може виглядати, наприклад, так:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">nelle@localhost</span> $</span></code></pre>
 </div>
-<p>The prompt might even include more than this. Do not worry if your
-prompt is not just a short <code>$</code>. This lesson does not depend
-on this additional information and it should also not get in your way.
-The only important item to focus on is the <code>$</code> character
-itself and we will see later why.</p>
-<p>So let’s try our first command, <code>ls</code>, which is short for
-listing. Ця команда покаже зміст поточного каталогу:</p>
+<p>Запрошення може містити навіть ще більше інформації. Не хвилюйтеся,
+якщо ваше запрошення - це не просто коротке ’<span class="math inline">\('. Цей урок не залежить від цієї додаткової
+інформації, та вона також не повинна вам заважати. Єдиним важливим
+елементом, на якому слід зосередитися, є сам символ `\)</span>`, і ми
+побачимо пізніше, чому.</p>
+<p>Отже, спробуймо нашу першу команду, <code>ls</code> (походить від
+англійського слова “listing”). Ця команда покаже зміст поточного
+каталогу:</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -520,8 +526,8 @@ Documents   Library     Music       Public</code></pre>
 <div id="команду-не-знайдено" class="callout-inner">
 <h3 class="callout-title">Команду не знайдено</h3>
 <div class="callout-content">
-<p>If the shell can’t find a program whose name is the command you
-typed, it will print an error message such as:</p>
+<p>Якщо термінал не може знайти програму, назву якої ви ввели, він
+виведе на екран наступне повідомлення про помилку:</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -532,8 +538,8 @@ typed, it will print an error message such as:</p>
 </h3>
 <pre class="output" tabindex="0"><code>ks: command not found</code></pre>
 </div>
-<p>This might happen if the command was mis-typed or if the program
-corresponding to that command is not installed.</p>
+<p>Це може трапитися, якщо при наборі команди була допущена помилка або
+якщо програма, що відповідає набраній команді, не встановлена.</p>
 </div>
 </div>
 </div>
@@ -541,28 +547,31 @@ corresponding to that command is not installed.</p>
 <section><h2 class="section-heading" id="конвеєр-неллі-типова-проблема">Конвеєр Неллі: Типова Проблема<a class="anchor" aria-label="anchor" href="#%D0%BA%D0%BE%D0%BD%D0%B2%D0%B5%D1%94%D1%80-%D0%BD%D0%B5%D0%BB%D0%BB%D1%96-%D1%82%D0%B8%D0%BF%D0%BE%D0%B2%D0%B0-%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC%D0%B0"></a>
 </h2>
 <hr class="half-width">
-<p>Nelle Nemo, a marine biologist, has just returned from a six-month
-survey of the <a href="https://en.wikipedia.org/wiki/North_Pacific_Gyre" class="external-link">North Pacific
-Gyre</a>, where she has been sampling gelatinous marine life in the <a href="https://en.wikipedia.org/wiki/Great_Pacific_Garbage_Patch" class="external-link">Great
-Pacific Garbage Patch</a>. She has 1520 samples that she’s run through
-an assay machine to measure the relative abundance of 300 proteins. Їй
-потрібно запустити ці 1520 файлів через уявну програму
-<code>goostats.sh</code>, яку вона успадкувала. In addition to this huge
-task, she has to write up results by the end of the month, so her paper
-can appear in a special issue of <em>Aquatic Goo Letters</em>.</p>
-<p>If Nelle chooses to run <code>goostats.sh</code> by hand using a GUI,
-she’ll have to select and open a file 1520 times. Якщо обробка одного
-файлу програмою <code>goostats.sh</code> триватиме 30 секунд, загальний
-процес вимагатиме більше ніж 12 годин уваги Неллі. With the shell, Nelle
-can instead assign her computer this mundane task while she focuses her
-attention on writing her paper.</p>
+<p>Неллі Немо (Nelle Nemo), морський біолог, щойно повернулась із
+шестимісячного дослідження <a href="https://uk.wikipedia.org/wiki/%D0%9F%D1%96%D0%B2%D0%BD%D1%96%D1%87%D0%BD%D0%BE%D1%82%D0%B8%D1%85%D0%BE%D0%BE%D0%BA%D0%B5%D0%B0%D0%BD%D1%81%D1%8C%D0%BA%D0%B0_%D1%82%D0%B5%D1%87%D1%96%D1%8F" class="external-link">Північного
+тихоокеанського кругообігу (North Pacific Gyre)</a>, де вона збирала
+зразки драглистих морських організмів у <a href="https://uk.wikipedia.org/wiki/%D0%92%D0%B5%D0%BB%D0%B8%D0%BA%D0%B0_%D1%82%D0%B8%D1%85%D0%BE%D0%BE%D0%BA%D0%B5%D0%B0%D0%BD%D1%81%D1%8C%D0%BA%D0%B0_%D1%81%D0%BC%D1%96%D1%82%D1%82%D1%94%D0%B2%D0%B0_%D0%BF%D0%BB%D1%8F%D0%BC%D0%B0" class="external-link">Великій
+тихоокеанській сміттєвій плямі</a>. Вона має 1520 зразків, які вона
+пропускає через аналізатор, щоб виміряти відносну кількість 300 білків.
+Їй потрібно запустити ці 1520 файлів через уявну програму
+<code>goostats.sh</code>, яку вона успадкувала. Окрім цього величезного
+завдання, вона має написати результати до кінця місяця, щоб її робота
+могла з’явитися у спеціальному випуску <em>Aquatic Goo Letters</em>.</p>
+<p>Якщо Неллі вирішить запустити <code>goostats.sh</code> вручну за
+допомогою графічного інтерфейсу, їй доведеться вибирати та відкривати
+файли 1520 разів. Якщо обробка одного файлу програмою
+<code>goostats.sh</code> триватиме 30 секунд, загальний процес
+вимагатиме більше ніж 12 годин уваги Неллі. За допомогою терміналу,
+Неллі може замість цього доручити своєму комп’ютеру цю рутинну роботу в
+той час, коли вона фокусує свою увагу на написанні статті.</p>
 <p>У наступних кількох уроках будуть розглянуті шляхи, яким чином Неллі
-може цього досягти. More specifically, the lessons explain how she can
-use a command shell to run the <code>goostats.sh</code> program, using
-loops to automate the repetitive steps of entering file names, so that
-her computer can work while she writes her paper.</p>
-<p>As a bonus, once she has put a processing pipeline together, she will
-be able to use it again whenever she collects more data.</p>
+може цього досягти. Зокрема, на уроках пояснюється, як вона може
+використовувати термінал для запуску програми <code>goostats.sh</code>,
+використовуючи цикли для автоматизації повторюваних кроків введення імен
+файлів, щоб її комп’ютер міг працювати, поки вона пише свою наукову
+роботу.</p>
+<p>Як бонус, після того, як вона створить конвеєр, вона зможе
+використовувати його повторно, коли вона збере більше даних.</p>
 <p>Для того, щоб досягти своєї мети, Неллі необхідно знати, як:</p>
 <ul>
 <li>перейти до файла/каталогу</li>
@@ -570,7 +579,7 @@ be able to use it again whenever she collects more data.</p>
 <li>перевірити довжину файлу</li>
 <li>з’єднати команди разом</li>
 <li>отримати набір файлів</li>
-<li>iterate over files</li>
+<li>по черзі виконати дії над кожним файлом з набору</li>
 <li>запустити скрипт, що містить розроблений нею конвеєр</li>
 </ul>
 <div id="keypoints1" class="callout keypoints">
@@ -590,15 +599,15 @@ be able to use it again whenever she collects more data.</p>
 <li>Основними перевагами терміналу є високе співвідношення кількості дій
 до кількості натискань клавіш, підтримка автоматизації повторюваних
 завдань, а також можливість доступу до віддалених машин.</li>
-<li>A significant challenge when using the shell can be knowing what
-commands need to be run and how to run them.</li>
+<li>Дуже важлива навичка при використанні оболонки - це вміння доречно
+використовувати текстові команди.</li>
 </ul>
 </div>
 </div>
 </div>
 </section></section><section id="aio-02-filedir"><p>Content from <a href="02-filedir.html">Navigating Files and Directories</a></p>
 <hr>
-<p>Last updated on 2024-10-01 |
+<p>Last updated on 2024-12-05 |
 
         <a href="https://github.com/swcarpentry/shell-novice/edit/main/episodes/02-filedir.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 40 minutes</p>
@@ -626,15 +635,14 @@ computer?</li>
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Explain the similarities and differences between a file and a
-directory.</li>
+<li>Пояснити подібності та відмінності між файлом і каталогом.</li>
 <li>Перетворити абсолютний шлях у відносний і навпаки.</li>
-<li>Construct absolute and relative paths that identify specific files
-and directories.</li>
-<li>Use options and arguments to change the behaviour of a shell
-command.</li>
-<li>Demonstrate the use of tab completion and explain its
-advantages.</li>
+<li>Створити абсолютні та відносні шляхи, які ідентифікують певні файли
+та каталоги.</li>
+<li>Використати опції та аргументи для зміни поведінки команд у
+терміналі.</li>
+<li>Продемонструвати використання табуляції для автоматичного доповнення
+та пояснити його переваги.</li>
 </ul>
 </div>
 </div>
@@ -646,7 +654,7 @@ advantages.</li>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
 <div class="accordion-body">
 <p>Introducing and navigating the filesystem in the shell (covered in <a href="02-filedir.html">Navigating Files and Directories</a> section) can
 be confusing. You may have both terminal and GUI file explorer open side
@@ -656,21 +664,21 @@ using terminal to navigate the system.</p>
 </div>
 </div>
 </div>
-<p>The part of the operating system responsible for managing files and
-directories is called the <strong>file system</strong>. It organizes our
-data into files, which hold information, and directories (also called
-‘folders’), which hold files or other directories.</p>
-<p>Several commands are frequently used to create, inspect, rename, and
-delete files and directories. To start exploring them, we’ll go to our
-open shell window.</p>
-<p>First, let’s find out where we are by running a command called
-<code>pwd</code> (which stands for ‘print working directory’).
-Directories are like <em>places</em> — at any time while we are using
-the shell, we are in exactly one place called our <strong>current
-working directory</strong>. Commands mostly read and write files in the
-current working directory, i.e. ‘here’, so knowing where you are before
-running a command is important. Команда <code>pwd</code> покаже вам, де
-ви знаходитесь:</p>
+<p>Частина операційної системи, яка відповідає за роботу з файлами та
+каталогами, називається <strong>файловою системою</strong>. It organizes
+our data into files, which hold information, and directories (also
+called ‘folders’), which hold files or other directories.</p>
+<p>Для створення, перевірки, перейменування та видалення файлів і
+каталогів зазвичай використовується декілька команд. Щоб розглянути їх,
+перейдемо до нашого відкритого вікна терміналу.</p>
+<p>По-перше, дізнаймося, де ми знаходимося, запустивши команду
+<code>pwd</code> (англ. ‘print working directory’ - надрукувати робочий
+каталог). Directories are like <em>places</em> — at any time while we
+are using the shell, we are in exactly one place called our
+<strong>current working directory</strong>. Commands mostly read and
+write files in the current working directory, i.e. ‘here’, so knowing
+where you are before running a command is important. Команда
+<code>pwd</code> покаже вам, де ви знаходитесь:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -681,8 +689,8 @@ running a command is important. Команда <code>pwd</code> покаже в�
 </h3>
 <pre class="output" tabindex="0"><code>/Users/nelle</code></pre>
 </div>
-<p>Here, the computer’s response is <code>/Users/nelle</code>, which is
-Nelle’s <strong>home directory</strong>:</p>
+<p>У наведеному прикладі комп’ютер відповів <code>/Users/nelle</code>,
+що є <strong>домашнім каталогом</strong> Неллі:</p>
 <div id="варіації-домашнього-каталогу" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -690,10 +698,10 @@ Nelle’s <strong>home directory</strong>:</p>
 <div id="варіації-домашнього-каталогу" class="callout-inner">
 <h3 class="callout-title">Варіації домашнього каталогу</h3>
 <div class="callout-content">
-<p>Розташування домашньої директорії виглядає по-різному в різних
-операційних системах. On Linux, it may look like
-<code>/home/nelle</code>, and on Windows, it will be similar to
-<code>C:\Documents and Settings\nelle</code> or
+<p>Розташування домашнього каталогу виглядає по-різному в різних
+операційних системах. В Linux воно може виглядати як
+<code>/home/nelle</code>, а у Windows воно буде схоже на
+<code>C:\Documents and Settings\nelle</code> чи
 <code>C:\Users\nelle</code>. (Зауважте, що воно може виглядати дещо
 інакше для різних версій Windows.) In future examples, we’ve used Mac
 output as the default - Linux and Windows output may differ slightly but
@@ -706,14 +714,14 @@ more details on the <code>cd</code> command.</p>
 </div>
 </div>
 </div>
-<p>To understand what a ‘home directory’ is, let’s have a look at how
-the file system as a whole is organized. Для цього прикладу ми
-проілюструємо файлову систему на комп’ютері нашої вченої Неллі. After
-this illustration, you’ll be learning commands to explore your own
+<p>Для того, щоб зрозуміти, що таке ‘домашній каталог’, розглянемо як
+організована файлова система в цілому. For the sake of this example,
+we’ll be illustrating the filesystem on our scientist Nelle’s computer.
+After this illustration, you’ll be learning commands to explore your own
 filesystem, which will be constructed in a similar way, but not be
 exactly identical.</p>
 <p>На комп’ютері Неллі файлова система виглядає так:</p>
-<figure><img src="../fig/filesystem.svg" alt="The file system is made up of a root directory that contains sub-directories titled bin, data, users, and tmp" class="figure mx-auto d-block"></figure><p>Файлова система виглядає як перевернуте дерево. Найвищим каталогом є
+<figure><img src="../fig/filesystem.svg" alt="Файлова система складається з кореневого каталогу, який містить підкаталоги з назвами bin, data, users та tmp" class="figure mx-auto d-block"></figure><p>Файлова система виглядає як перевернуте дерево. Найвищим каталогом є
 <strong>кореневий каталог</strong>, який містить усе інше. We refer to
 it using a slash character, <code>/</code>, on its own; this character
 is the leading slash in <code>/Users/nelle</code>.</p>
@@ -724,9 +732,10 @@ is the leading slash in <code>/Users/nelle</code>.</p>
 зберігання) та інші.</p>
 <p>Ми знаємо, що наш поточний робочий каталог <code>/Users/nelle</code>
 зберігається всередині каталогу <code>/Users</code>, тому що
-<code>/Users</code> є першою частиною його імені. Similarly, we know
-that <code>/Users</code> is stored inside the root directory
-<code>/</code> because its name begins with <code>/</code>.</p>
+<code>/Users</code> є першою частиною його імені. Відповідно, нам
+відомо, що каталог <code>/Users</code> зберігається всередині кореневої
+директорії <code>/</code>, бо його ім’я розпочинається з символу
+<code>/</code>.</p>
 <div id="символи-скісної-риски" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -736,24 +745,24 @@ that <code>/Users</code> is stored inside the root directory
 <div class="callout-content">
 <p>Зверніть увагу, що символ <code>/</code> має два значення. Коли він
 з’являється на початку назви файлу чи каталогу, це посилання на кореневу
-директорію. When it appears <em>inside</em> a path, it’s just a
-separator.</p>
+директорію. Коли він використовується <em>всередині</em> шляху, це лише
+роздільник.</p>
 </div>
 </div>
 </div>
 <p>Underneath <code>/Users</code>, we find one directory for each user
 with an account on Nelle’s machine, her colleagues <em>imhotep</em> and
 <em>larry</em>.</p>
-<figure><img src="../fig/home-directories.svg" alt='Як і інші каталоги, домашні каталоги є підкаталогами "/Users", наприклад "/Users/imhotep", "/Users/larry" або "/Users/nelle"' class="figure mx-auto d-block"></figure><p>The user <em>imhotep</em>’s files are stored in
-<code>/Users/imhotep</code>, user <em>larry</em>’s in
-<code>/Users/larry</code>, and Nelle’s in <code>/Users/nelle</code>.
+<figure><img src="../fig/home-directories.svg" alt='Як і інші каталоги, домашні каталоги є підкаталогами "/Users", наприклад "/Users/imhotep", "/Users/larry" або "/Users/nelle"' class="figure mx-auto d-block"></figure><p>Файли користувача <em>imhotep</em> зберігаються в директорії
+<code>/Users/imhotep</code>, користувача <em>larry</em> - в
+<code>/Users/larry</code>, і Неллі - в <code>/Users/nelle</code>.
 Оскільки саме Неллі є користувачем у наших прикладах, тому ми отримуємо
 <code>/Users/nelle</code> як наш домашній каталог. Typically, when you
 open a new command prompt, you will be in your home directory to
 start.</p>
-<p>Now let’s learn the command that will let us see the contents of our
-own filesystem. We can see what’s in our home directory by running
-<code>ls</code>:</p>
+<p>Тепер розглянемо команду, яка дозволить нам бачити вміст нашої
+власної файлової системи. Ми можемо побачити, що знаходиться у нашому
+домашньому каталозі, запустивши <code>ls</code>:</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -769,20 +778,18 @@ Desktop      Downloads    Movies       Pictures</code></pre>
 вашої операційної системи та того, як ви налаштували свою файлову
 систему.)</p>
 <p><code>ls</code> друкує назви файлів і каталогів у поточному каталозі.
-We can make its output more comprehensible by using the <code>-F</code>
-<strong>option</strong> which tells <code>ls</code> to classify the
-output by adding a marker to file and directory names to indicate what
-they are:</p>
+Ми можемо зробити його вивід більш зрозумілим за допомогою
+<strong>опції</strong> <code>-F</code>, яка вказує <code>ls</code>
+класифікувати вивід, додаючи маркер до імен файлів і каталогів, щоб
+вказати, що вони собою являють:</p>
 <ul>
-<li>символ <code>/</code> наприкінці назви вказує на те, що це
-каталог</li>
-<li>
-<code>@</code> indicates a link</li>
-<li>
-<code>*</code> indicates an executable</li>
+<li>a trailing <code>/</code> indicates that this is a directory</li>
+<li>символ <code>@</code> вказує на посилання</li>
+<li>символ <code>*</code> вказує на виконуваний файл</li>
 </ul>
-<p>Depending on your shell’s default settings, the shell might also use
-colors to indicate whether each entry is a file or directory.</p>
+<p>Залежно від налаштувань терміналу за замовчуванням, він також може
+використовувати кольори для позначення файлів та каталогів, щоб краще їх
+розрізняти.</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -794,16 +801,16 @@ colors to indicate whether each entry is a file or directory.</p>
 <pre class="output" tabindex="0"><code>Applications/ Documents/    Library/      Music/        Public/
 Desktop/      Downloads/    Movies/       Pictures/</code></pre>
 </div>
-<p>Here, we can see that the home directory contains only
-<strong>sub-directories</strong>. Any names in the output that don’t
-have a classification symbol are <strong>files</strong> in the current
-working directory.</p>
-<div id="очищення-терміналу" class="callout">
+<p>В наведеному прикладі ми бачимо, що наш домашній каталог містить лише
+<strong>підкаталоги</strong>. Any names in the output that don’t have a
+classification symbol are <strong>files</strong> in the current working
+directory.</p>
+<div id="clearing-your-terminal" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="очищення-терміналу" class="callout-inner">
-<h3 class="callout-title">Очищення терміналу</h3>
+<div id="clearing-your-terminal" class="callout-inner">
+<h3 class="callout-title">Clearing your terminal</h3>
 <div class="callout-content">
 <p>Якщо екран стає занадто захаращеним, ви можете очистити термінал за
 допомогою команди <code>clear</code>. You can still access previous
@@ -997,7 +1004,7 @@ useful nevertheless.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Розв’язання </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>The <code>-l</code> option makes <code>ls</code> use a
 <strong>l</strong>ong listing format, showing not only the
@@ -1033,7 +1040,7 @@ option to see the last changed dates.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Розв’язання </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>The most recently changed file is listed last when using
 <code>-rt</code>. Це може бути дуже корисним для пошуку ваших останніх
@@ -1384,7 +1391,7 @@ commands could Nelle use to navigate to her home directory, which is
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Розв’язання </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><p>Ні: скорочення <code>.</code> означає поточний каталог.</p></li>
@@ -1429,7 +1436,7 @@ case <code>/Users/nelle</code>.</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Розв’язання </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><p>No: there <em>is</em> a directory <code>backup</code> in
@@ -1475,7 +1482,7 @@ following output:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Розв’язання </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><p>Ні: <code>pwd</code> не є назвою каталогу.</p></li>
@@ -4045,7 +4052,7 @@ like a list of numbers or a subset of data.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4115,7 +4122,7 @@ like a list of numbers or a subset of data.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>The first code block gives the same output on each iteration through
 the loop. Bash expands the wildcard <code>*.pdb</code> within the loop
@@ -4189,7 +4196,7 @@ The value of the <code>datafile</code> variable is evaluated using
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>4 is the correct answer. <code>*</code> matches zero or more
 characters, so any file name starting with the letter c, followed by
@@ -4232,7 +4239,7 @@ be listed.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>4 is the correct answer. <code>*</code> matches zero or more
 characters, so a file name with zero or more characters before a letter
@@ -4282,7 +4289,7 @@ will be saved to a file called <code>alkanes.pdb</code>.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>The text from each file in turn gets written to the
@@ -4337,7 +4344,7 @@ file called <code>all.pdb</code>.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6"> Show me the solution </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <p>3 is the correct answer. <code>&gt;&gt;</code> appends to a file,
 rather than overwriting it with the redirected output from a command.
@@ -4743,7 +4750,7 @@ would we want to run?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
   <h4 class="accordion-header" id="headingSolution7"> Show me the solution </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <p>The second version is the one we want to run. This prints to screen
 everything enclosed in the quote marks, expanding the loop variable name
@@ -4791,7 +4798,7 @@ following code:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
   <h4 class="accordion-header" id="headingSolution8"> Show me the solution </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
 <div class="accordion-body">
 <p>We have a nested loop, i.e. contained within another loop, so for
 each species in the outer loop, the inner loop (the nested loop)
@@ -5155,7 +5162,7 @@ each of those files separately.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5221,7 +5228,7 @@ this?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>If a command causes something to crash or hang, it might be useful to
 know what that command was, in order to investigate the problem. Were
@@ -5345,7 +5352,7 @@ directory</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>The correct answer is 2.</p>
 <p>The special variables <code>$1</code>, <code>$2</code> and
@@ -5398,7 +5405,7 @@ lines.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb40">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5467,7 +5474,7 @@ three scripts would do when run as <code>bash script1.sh *.pdb</code>,
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Solutions </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <p>In each case, the shell expands the wildcard in <code>*.pdb</code>
 before passing the resulting list of file names as arguments to the
@@ -5535,7 +5542,7 @@ error?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6"> Show me the solution </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <p>The <code>-x</code> option causes <code>bash</code> to run in debug
 mode. This prints out each command as it is run, which will help you to
@@ -6415,7 +6422,7 @@ command.</li>
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/main" class="external-link">sandpaper (0.16.10)</a>, <a href="https://github.com/carpentries/pegboard/tree/main" class="external-link">pegboard (0.7.7)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.5" class="external-link">varnish (1.0.5)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/main" class="external-link">sandpaper (0.16.10.9000)</a>, <a href="https://github.com/carpentries/pegboard/tree/main" class="external-link">pegboard (0.7.7)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.5" class="external-link">varnish (1.0.5)</a></p>
 			</div>
 		</footer>
 </div> <!-- / div.container -->
@@ -6438,8 +6445,8 @@ command.</li>
   "url": "https://swcarpentry.github.io/shell-novice/instructor/aio.html",
   "identifier": "https://swcarpentry.github.io/shell-novice/instructor/aio.html",
   "dateCreated": "2014-10-22",
-  "dateModified": "2024-12-03",
-  "datePublished": "2024-12-03"
+  "dateModified": "2024-12-05",
+  "datePublished": "2024-12-05"
 }
 
   </script><script>
