@@ -6,11 +6,11 @@ exercises: 10
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain the similarities and differences between a file and a directory.
+- Пояснити подібності та відмінності між файлом і каталогом.
 - Перетворити абсолютний шлях у відносний і навпаки.
-- Construct absolute and relative paths that identify specific files and directories.
-- Use options and arguments to change the behaviour of a shell command.
-- Demonstrate the use of tab completion and explain its advantages.
+- Створити абсолютні та відносні шляхи, які ідентифікують певні файли та каталоги.
+- Використати опції та аргументи для зміни поведінки команд у терміналі.
+- Продемонструвати використання табуляції для автоматичного доповнення та пояснити його переваги.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -32,18 +32,16 @@ structure while they're using terminal to navigate the system.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-The part of the operating system responsible for managing files and directories
-is called the **file system**.
+Частина операційної системи, яка відповідає за роботу з файлами та каталогами, називається **файловою системою**.
 It organizes our data into files,
 which hold information,
 and directories (also called 'folders'),
 which hold files or other directories.
 
-Several commands are frequently used to create, inspect, rename, and delete files and directories.
-To start exploring them, we'll go to our open shell window.
+Для створення, перевірки, перейменування та видалення файлів і каталогів зазвичай використовується декілька команд.
+Щоб розглянути їх, перейдемо до нашого відкритого вікна терміналу.
 
-First, let's find out where we are by running a command called `pwd`
-(which stands for 'print working directory'). Directories are like _places_ — at any time
+По-перше, дізнаймося, де ми знаходимося, запустивши команду `pwd` (англ. 'print working directory' - надрукувати робочий каталог). Directories are like _places_ — at any time
 while we are using the shell, we are in exactly one place called
 our **current working directory**. Commands mostly read and write files in the
 current working directory, i.e. 'here', so knowing where you are before running
@@ -57,18 +55,14 @@ $ pwd
 /Users/nelle
 ```
 
-Here,
-the computer's response is `/Users/nelle`,
-which is Nelle's **home directory**:
+У наведеному прикладі комп'ютер відповів `/Users/nelle`, що є **домашнім каталогом** Неллі:
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
 ## Варіації домашнього каталогу
 
-Розташування домашньої директорії виглядає по-різному в різних операційних системах.
-On Linux, it may look like `/home/nelle`,
-and on Windows, it will be similar to `C:\Documents and Settings\nelle` or
-`C:\Users\nelle`.
+Розташування домашнього каталогу виглядає по-різному в різних операційних системах.
+В Linux воно може виглядати як `/home/nelle`, а у Windows воно буде схоже на `C:\Documents and Settings\nelle` чи `C:\Users\nelle`.
 (Зауважте, що воно може виглядати дещо інакше для різних версій Windows.)
 In future examples, we've used Mac output as the default - Linux and Windows
 output may differ slightly but should be generally similar.
@@ -81,14 +75,15 @@ on the `cd` command.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-To understand what a 'home directory' is,
-let's have a look at how the file system as a whole is organized.  Для цього прикладу ми проілюструємо файлову систему на комп’ютері нашої вченої Неллі.  After this
+Для того, щоб зрозуміти, що таке 'домашній каталог', розглянемо як організована файлова система в цілому.  For the
+sake of this example, we'll be
+illustrating the filesystem on our scientist Nelle's computer.  After this
 illustration, you'll be learning commands to explore your own filesystem,
 which will be constructed in a similar way, but not be exactly identical.
 
 На комп’ютері Неллі файлова система виглядає так:
 
-![](fig/filesystem.svg){alt='The file system is made up of a root directory that contains sub-directories titled bin, data, users, and tmp'}
+![](fig/filesystem.svg){alt='Файлова система складається з кореневого каталогу, який містить підкаталоги з назвами bin, data, users та tmp'}
 
 Файлова система виглядає як перевернуте дерево.
 Найвищим каталогом є **кореневий каталог**, який містить усе інше.
@@ -98,17 +93,14 @@ this character is the leading slash in `/Users/nelle`.
 Усередині цього каталогу є кілька інших каталогів: `bin` (в якому зберігаються певні вбудовані програми), `data` (для різноманітних файлів даних), `Users` (де знаходяться особисті директорії користувачів), `tmp` (для файлів тимчасового зберігання) та інші.
 
 Ми знаємо, що наш поточний робочий каталог `/Users/nelle` зберігається всередині каталогу `/Users`, тому що `/Users` є першою частиною його імені.
-Similarly,
-we know that `/Users` is stored inside the root directory `/`
-because its name begins with `/`.
+Відповідно, нам відомо, що каталог `/Users` зберігається всередині кореневої директорії `/`, бо його ім'я розпочинається з символу `/`.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
 ## Символи скісної риски
 
 Зверніть увагу, що символ `/` має два значення.
-Коли він з’являється на початку назви файлу чи каталогу, це посилання на кореневу директорію. When it appears _inside_ a path,
-it's just a separator.
+Коли він з’являється на початку назви файлу чи каталогу, це посилання на кореневу директорію. Коли він використовується _всередині_ шляху, це лише роздільник.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -119,14 +111,11 @@ her colleagues _imhotep_ and _larry_.
 ![](fig/home-directories.svg){alt='Як і інші каталоги, домашні каталоги є підкаталогами
 "/Users", наприклад "/Users/imhotep", "/Users/larry" або "/Users/nelle"'}
 
-The user _imhotep_'s files are stored in `/Users/imhotep`,
-user _larry_'s in `/Users/larry`,
-and Nelle's in `/Users/nelle`. Оскільки саме Неллі є користувачем у наших прикладах, тому ми отримуємо `/Users/nelle` як наш домашній каталог.
+Файли користувача _imhotep_ зберігаються в директорії `/Users/imhotep`, користувача _larry_ - в `/Users/larry`, і Неллі - в `/Users/nelle`. Оскільки саме Неллі є користувачем у наших прикладах, тому ми отримуємо `/Users/nelle` як наш домашній каталог.
 Typically, when you open a new command prompt, you will be in
 your home directory to start.
 
-Now let's learn the command that will let us see the contents of our
-own filesystem.  We can see what's in our home directory by running `ls`:
+Тепер розглянемо команду, яка дозволить нам бачити вміст нашої власної файлової системи.  Ми можемо побачити, що знаходиться у нашому домашньому каталозі, запустивши `ls`:
 
 ```bash
 $ ls
@@ -140,17 +129,13 @@ Desktop      Downloads    Movies       Pictures
 (Знову ж таки, ваші результати можуть дещо відрізнятися залежно від вашої операційної системи та того, як ви налаштували свою файлову систему.)
 
 `ls` друкує назви файлів і каталогів у поточному каталозі.
-We can make its output more comprehensible by using the `-F` **option**
-which tells `ls` to classify the output
-by adding a marker to file and directory names to indicate what they are:
+Ми можемо зробити його вивід більш зрозумілим за допомогою **опції** `-F`, яка вказує `ls` класифікувати вивід, додаючи маркер до імен файлів і каталогів, щоб вказати, що вони собою являють:
 
-- символ `/` наприкінці назви вказує на те, що це каталог
-- `@` indicates a link
-- `*` indicates an executable
+- a trailing `/` indicates that this is a directory
+- символ `@` вказує на посилання
+- символ `*` вказує на виконуваний файл
 
-Depending on your shell's default settings,
-the shell might also use colors to indicate whether each entry is a file or
-directory.
+Залежно від налаштувань терміналу за замовчуванням, він також може використовувати кольори для позначення файлів та каталогів, щоб краще їх розрізняти.
 
 ```bash
 $ ls -F
@@ -161,14 +146,13 @@ Applications/ Documents/    Library/      Music/        Public/
 Desktop/      Downloads/    Movies/       Pictures/
 ```
 
-Here,
-we can see that the home directory contains only **sub-directories**.
+В наведеному прикладі ми бачимо, що наш домашній каталог містить лише **підкаталоги**.
 Any names in the output that don't have a classification symbol
 are **files** in the current working directory.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Очищення терміналу
+## Clearing your terminal
 
 Якщо екран стає занадто захаращеним, ви можете очистити термінал за допомогою команди `clear`. You can still access previous commands using <kbd>↑</kbd>
 and <kbd>↓</kbd> to move line-by-line, or by scrolling in your terminal.
