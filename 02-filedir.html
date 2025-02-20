@@ -325,7 +325,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Navigating Files and Directories</h1>
-        <p>Last updated on 2025-01-28 |
+        <p>Last updated on 2025-02-20 |
 
         <a href="https://github.com/swcarpentry/shell-novice/edit/main/episodes/02-filedir.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -458,9 +458,9 @@ is the leading slash in <code>/Users/nelle</code>.</p>
 <p>Underneath <code>/Users</code>, we find one directory for each user
 with an account on Nelle’s machine, her colleagues <em>imhotep</em> and
 <em>larry</em>.</p>
-<figure><img src="fig/home-directories.svg" alt='Як і інші каталоги, домашні каталоги є підкаталогами "/Users", наприклад "/Users/imhotep", "/Users/larry" або "/Users/nelle"' class="figure mx-auto d-block"></figure><p>Файли користувача <em>imhotep</em> зберігаються в директорії
-<code>/Users/imhotep</code>, користувача <em>larry</em> - в
-<code>/Users/larry</code>, і Неллі - в <code>/Users/nelle</code>.
+<figure><img src="fig/home-directories.svg" alt='Як і інші каталоги, домашні каталоги є підкаталогами "/Users", наприклад "/Users/imhotep", "/Users/larry" або "/Users/nelle"' class="figure mx-auto d-block"></figure><p>The user <em>imhotep</em>’s files are stored in
+<code>/Users/imhotep</code>, user <em>larry</em>’s in
+<code>/Users/larry</code>, and Nelle’s in <code>/Users/nelle</code>.
 Оскільки саме Неллі є користувачем у наших прикладах, тому ми отримуємо
 <code>/Users/nelle</code> як наш домашній каталог. Typically, when you
 open a new command prompt, you will be in your home directory to
@@ -516,18 +516,19 @@ directory.</p>
 <h3 class="callout-title">Clearing your terminal</h3>
 <div class="callout-content">
 <p>Якщо екран стає занадто захаращеним, ви можете очистити термінал за
-допомогою команди <code>clear</code>. You can still access previous
-commands using <kbd>↑</kbd> and <kbd>↓</kbd> to move line-by-line, or by
-scrolling in your terminal.</p>
+допомогою команди <code>clear</code>. Ви все ще можете отримати доступ
+до попередніх команд за допомогою клавіш <kbd>↑</kbd> та <kbd>↓</kbd>
+для переміщення по рядках, або за допомогою прокрутки у вашому
+терміналі.</p>
 </div>
 </div>
 </div>
 <div class="section level3">
 <h3 id="отримання-допомоги">Отримання допомоги<a class="anchor" aria-label="anchor" href="#%D0%BE%D1%82%D1%80%D0%B8%D0%BC%D0%B0%D0%BD%D0%BD%D1%8F-%D0%B4%D0%BE%D0%BF%D0%BE%D0%BC%D0%BE%D0%B3%D0%B8"></a></h3>
-<p><code>ls</code> has lots of other <strong>options</strong>. There are
-two common ways to find out how to use a command and what options it
-accepts — <strong>depending on your environment, you might find that
-only one of these ways works:</strong></p>
+<p>У <code>ls</code> є багато інших опцій. Існує два поширених способи
+дізнатися, як використовувати команду і які параметри вона приймає —
+<strong>залежно від вашого середовища, ви можете виявити, що працює лише
+один із цих способів:</strong></p>
 <ol style="list-style-type: decimal"><li>Ми можемо передати команді опцію <code>--help</code> (доступну в
 Linux і Git Bash), наприклад:</li>
 </ol><div class="codewrapper sourceCode" id="cb7">
@@ -542,7 +543,7 @@ macOS):</li>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">$</span> man ls</span></code></pre>
 </div>
-<p>We’ll describe both ways next.</p>
+<p>Далі ми роздивимось обидва способи.</p>
 <div id="довідка-для-вбудованих-команд" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -551,19 +552,20 @@ macOS):</li>
 <h3 class="callout-title">Довідка для вбудованих команд</h3>
 <div class="callout-content">
 <p>Деякі команди вбудовано в оболонку Bash, а не існують як окремі
-програми у файловій системі. One example is the <code>cd</code> (change
-directory) command. If you get a message like
-<code>No manual entry for cd</code>, try <code>help cd</code> instead.
-The <code>help</code> command is how you get usage information for <a href="https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html" class="external-link">Bash
-built-ins</a>.</p>
+програми у файловій системі. Одним із прикладів є команда
+<code>cd</code> (зміна каталогу). Якщо після команди <code>man cd</code>
+ви отримуєте повідомлення на кшталт <code>No manual entry for cd</code>,
+спробуйте натомість <code>help cd</code>. За допомогою команди
+<code>help</code> ви можете отримати інформацію про використання <a href="https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html" class="external-link">вбудованих
+команд Bash</a>.</p>
 </div>
 </div>
 </div>
 <div class="section level4">
 <h4 id="опція-help">Опція `–help’<a class="anchor" aria-label="anchor" href="#%D0%BE%D0%BF%D1%86%D1%96%D1%8F-help"></a></h4>
-<p>Most bash commands and programs that people have written to be run
-from within bash, support a <code>--help</code> option that displays
-more information on how to use the command or program.</p>
+<p>Більшість команд bash і програм, написаних людьми для запуску з bash,
+підтримують опцію <code>--help</code>, яка виводить додаткову інформацію
+про те, як користуватися відповідною командою або програмою.</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -598,18 +600,19 @@ Mandatory arguments to long options are mandatory for short options, too.
   -F, --classify             append indicator (one of */=&gt;@|) to entries
 ...        ...        ...</code></pre>
 </div>
-<div id="when-to-use-short-or-long-options" class="callout">
+<div id="коли-використовувати-короткі-або-довгі-опції" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="when-to-use-short-or-long-options" class="callout-inner">
-<h3 class="callout-title">When to use short or long options</h3>
+<div id="коли-використовувати-короткі-або-довгі-опції" class="callout-inner">
+<h3 class="callout-title">Коли використовувати короткі або довгі опції</h3>
 <div class="callout-content">
-<p>When options exist as both short and long options:</p>
-<ul><li>Use the short option when typing commands directly into the shell to
-minimize keystrokes and get your task done faster.</li>
-<li>Use the long option in scripts to provide clarity. Він буде
-прочитаний багато разів і надрукований один раз.</li>
+<p>Коли існують як короткі, так і довгі опції:</p>
+<ul><li>Використовуйте коротку під час введення команд безпосередньо в
+термінал, щоб мінімізувати натискання клавіш і швидше виконувати
+завдання.</li>
+<li>Use the long option in scripts to provide clarity. It will be read
+many times and typed once.</li>
 </ul></div>
 </div>
 </div>
@@ -620,8 +623,9 @@ minimize keystrokes and get your task done faster.</li>
 <div id="непідтримувані-параметри-командного-рядка" class="callout-inner">
 <h3 class="callout-title">Непідтримувані параметри командного рядка</h3>
 <div class="callout-content">
-<p>If you try to use an option that is not supported, <code>ls</code>
-and other commands will usually print an error message similar to:</p>
+<p>Якщо ви спробуєте використати параметр, який не підтримується
+терміналом, <code>ls</code> та інші команди зазвичай виводитимуть
+повідомлення про помилку, схоже на:</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -640,7 +644,7 @@ Try 'ls --help' for more information.</code></pre>
 <div class="section level4">
 <h4 id="команда-man">Команда <code>man</code>
 <a class="anchor" aria-label="anchor" href="#%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0-man"></a></h4>
-<p>The other way to learn about <code>ls</code> is to type</p>
+<p>Інший спосіб дізнатися про <code>ls</code> - ввести</p>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -648,14 +652,15 @@ Try 'ls --help' for more information.</code></pre>
 </div>
 <p>This command will turn your terminal into a page with a description
 of the <code>ls</code> command and its options.</p>
-<p>To navigate through the <code>man</code> pages, you may use
-<kbd>↑</kbd> and <kbd>↓</kbd> to move line-by-line, or try <kbd>b</kbd>
-and <kbd>Spacebar</kbd> to skip up and down by a full page. To search
-for a character or word in the <code>man</code> pages, use <kbd>/</kbd>
-followed by the character or word you are searching for. Іноді пошук
-може призвести до кількох результатів. If so, you can move between hits
-using <kbd>N</kbd> (for moving forward) and
-<kbd>Shift</kbd>+<kbd>N</kbd> (for moving backward).</p>
+<p>Для навігації сторінками <code>man</code> ви можете використовувати
+<kbd>↑</kbd> і <kbd>↓</kbd> для переміщення по рядках, або спробувати
+<kbd>b</kbd> і <kbd>Spacebar</kbd> для переходу вгору і вниз на цілу
+сторінку. Для пошуку символу або слова на сторінках <code>man</code>,
+використовуйте клавішу <kbd>/</kbd> та слідом введіть символ або слово,
+яке ви шукаєте. Іноді пошук може призвести до кількох результатів. У
+такому випадку ви можете переміщатися між результатами за допомогою
+клавіш <kbd>N</kbd> (для переходу вперед) та
+<kbd>Shift</kbd>+<kbd>N</kbd> (для переходу назад).</p>
 <p>Щоб <strong>вийти</strong> зі сторінок <code>man</code>, натисніть
 <kbd>q</kbd>.</p>
 <div id="сторінки-з-інструкціями-в-інтернеті" class="callout">
@@ -666,9 +671,9 @@ using <kbd>N</kbd> (for moving forward) and
 <h3 class="callout-title">Сторінки з інструкціями в Інтернеті</h3>
 <div class="callout-content">
 <p>Of course, there is a third way to access help for commands:
-searching the internet via your web browser. When using internet search,
-including the phrase <code>unix man page</code> in your search query
-will help to find relevant results.</p>
+searching the internet via your web browser. Якщо ви скористаєтеся
+пошуком в Інтернеті, додання до запиту фрази <code>unix man page</code>
+дозволить отримати більш доречні результати.</p>
 <p>GNU provides links to its <a href="https://www.gnu.org/manual/manual.html" class="external-link">manuals</a> including the
 <a href="https://www.gnu.org/software/coreutils/manual/coreutils.html" class="external-link">core
 GNU utilities</a>, which covers many commands introduced within this
@@ -1311,8 +1316,8 @@ many other tools as we go on.</p>
 <h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul><li>Файлова система відповідає за керування інформацією на диску.</li>
-<li>Information is stored in files, which are stored in directories
-(folders).</li>
+<li>Інформація зберігається у файлах, які зберігаються в каталогах
+(теках).</li>
 <li>Directories can also store other directories, which then form a
 directory tree.</li>
 <li>Команда <code>pwd</code> виводить поточний робочий каталог
@@ -1324,8 +1329,8 @@ directory.</li>
 <li>Команда <code>cd [шлях]</code> змінює поточний робочий каталог.</li>
 <li>Більшість команд приймають параметри, які починаються з одного
 символу <code>-</code>.</li>
-<li>Directory names in a path are separated with <code>/</code> on Unix,
-but <code>\</code> on Windows.</li>
+<li>Назви каталогів в шляху розділяються символами <code>/</code> в
+Unix, але <code>\\</code> в Windows.</li>
 <li>Символ <code>/</code> сам по собі є кореневим каталогом усієї
 файлової системи.</li>
 <li>Абсолютний шлях вказує на розташування від кореня файлової
@@ -1374,7 +1379,7 @@ but <code>\</code> on Windows.</li>
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/main" class="external-link">sandpaper (0.16.11)</a>, <a href="https://github.com/carpentries/pegboard/tree/main" class="external-link">pegboard (0.7.7)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.5" class="external-link">varnish (1.0.5)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/main" class="external-link">sandpaper (0.16.11)</a>, <a href="https://github.com/carpentries/pegboard/tree/main" class="external-link">pegboard (0.7.8)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.5" class="external-link">varnish (1.0.5)</a></p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -1396,8 +1401,8 @@ but <code>\</code> on Windows.</li>
   "url": "https://swcarpentry.github.io/shell-novice/02-filedir.html",
   "identifier": "https://swcarpentry.github.io/shell-novice/02-filedir.html",
   "dateCreated": "2014-10-22",
-  "dateModified": "2025-01-28",
-  "datePublished": "2025-02-18"
+  "dateModified": "2025-02-20",
+  "datePublished": "2025-02-20"
 }
 
   </script><script>
