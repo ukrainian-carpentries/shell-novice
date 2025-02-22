@@ -375,7 +375,7 @@
         
 <section id="aio-01-intro"><p>Content from <a href="01-intro.html">Знайомство з терміналом</a></p>
 <hr>
-<p>Last updated on 2024-12-05 |
+<p>Last updated on 2025-02-22 |
 
         <a href="https://github.com/swcarpentry/shell-novice/edit/main/episodes/01-intro.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 5 minutes</p>
@@ -501,10 +501,10 @@ Interface”, CLI) та скриптова мова програмування, 
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">nelle@localhost</span> $</span></code></pre>
 </div>
 <p>Запрошення може містити навіть ще більше інформації. Не хвилюйтеся,
-якщо ваше запрошення - це не просто коротке ’<span class="math inline">\('. Цей урок не залежить від цієї додаткової
-інформації, та вона також не повинна вам заважати. Єдиним важливим
-елементом, на якому слід зосередитися, є сам символ `\)</span>`, і ми
-побачимо пізніше, чому.</p>
+якщо ваше запрошення - це не просто коротке <code>$</code>. Цей урок не
+залежить від цієї додаткової інформації, та вона також не повинна вам
+заважати. Єдиним важливим елементом, на якому слід зосередитися, є сам
+символ <code>$</code>, і ми побачимо пізніше, чому.</p>
 <p>Отже, спробуймо нашу першу команду, <code>ls</code> (походить від
 англійського слова “listing”). Ця команда покаже зміст поточного
 каталогу:</p>
@@ -607,7 +607,7 @@ Documents   Library     Music       Public</code></pre>
 </div>
 </section></section><section id="aio-02-filedir"><p>Content from <a href="02-filedir.html">Navigating Files and Directories</a></p>
 <hr>
-<p>Last updated on 2025-02-20 |
+<p>Last updated on 2025-02-22 |
 
         <a href="https://github.com/swcarpentry/shell-novice/edit/main/episodes/02-filedir.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 40 minutes</p>
@@ -976,28 +976,28 @@ of the <code>ls</code> command and its options.</p>
 <div id="сторінки-з-інструкціями-в-інтернеті" class="callout-inner">
 <h3 class="callout-title">Сторінки з інструкціями в Інтернеті</h3>
 <div class="callout-content">
-<p>Of course, there is a third way to access help for commands:
-searching the internet via your web browser. Якщо ви скористаєтеся
+<p>Звісно, є й третій спосіб отримати доступ до довідки для команд:
+пошук в інтернеті за допомогою веббраузера. Якщо ви скористаєтеся
 пошуком в Інтернеті, додання до запиту фрази <code>unix man page</code>
 дозволить отримати більш доречні результати.</p>
-<p>GNU provides links to its <a href="https://www.gnu.org/manual/manual.html" class="external-link">manuals</a> including the
-<a href="https://www.gnu.org/software/coreutils/manual/coreutils.html" class="external-link">core
-GNU utilities</a>, which covers many commands introduced within this
-lesson.</p>
+<p>GNU надає посилання на свої <a href="http://www.gnu.org/manual/manual.html" class="external-link">посібники</a>, зокрема на
+<a href="http://www.gnu.org/software/coreutils/manual/coreutils.html" class="external-link">основні
+утиліти GNU</a>, які охоплюють багато команд, представлених у цьому
+уроці.</p>
 </div>
 </div>
 </div>
-<div id="exploring-more-ls-options" class="callout challenge">
+<div id="вивчення-інших-опцій-ls" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="exploring-more-ls-options" class="callout-inner">
-<h3 class="callout-title">Exploring More <code>ls</code> Options</h3>
+<div id="вивчення-інших-опцій-ls" class="callout-inner">
+<h3 class="callout-title">Вивчення інших опцій <code>ls</code>
+</h3>
 <div class="callout-content">
 <p>Ви також можете використовувати декілька опцій одночасно. Що робить
-команда <code>ls</code> при використанні з опцією <code>-l</code>? What
-about if you use both the <code>-l</code> and the <code>-h</code>
-option?</p>
+команда <code>ls</code> при використанні з опцією <code>-l</code>? А
+якщо ви використовуєте <code>-l</code> та <code>-h</code> одночасно?</p>
 <p>Some of its output is about properties that we do not cover in this
 lesson (such as file permissions and ownership), but the rest should be
 useful nevertheless.</p>
@@ -1007,14 +1007,14 @@ useful nevertheless.</p>
 <div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1"> Розв’язання </h4>
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
 <div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
-<p>The <code>-l</code> option makes <code>ls</code> use a
-<strong>l</strong>ong listing format, showing not only the
-file/directory names but also additional information, such as the file
-size and the time of its last modification. Якщо ви використовуєте як
+<p>Опція <code>-l</code> змушує <code>ls</code> використовувати довгий
+(англ. <strong>l</strong>ong) формат виводу, показуючи не лише назви
+файлів/директорій, але й додаткову інформацію, таку як розмір файлу і
+час його останньої модифікації. Якщо ви використовуєте як
 <code>-h</code>, так і <code>-l</code>, це зробить виведення розміру
 файлу у більш зрозумілому людині вигляді (“<strong>h</strong>uman
 readable”), тобто покаже щось на кшталт <code>5.3K</code> замість
@@ -1033,10 +1033,10 @@ readable”), тобто покаже щось на кшталт <code>5.3K</cod
 <p>За замовчуванням <code>ls</code> виводить вміст каталогу в
 алфавітному порядку за іменами елементів. Команда <code>ls -t</code>
 перелічує елементи за часом останньої зміни, а не за алфавітом. Команда
-<code>ls -r</code> виводить вміст каталогу у зворотному порядку. Which
-file is displayed last when you combine the <code>-t</code> and
-<code>-r</code> options? Hint: You may need to use the <code>-l</code>
-option to see the last changed dates.</p>
+<code>ls -r</code> виводить вміст каталогу у зворотному порядку. Який
+файл буде показано останнім при комбінації опцій <code>-t</code> і
+<code>-r</code>? Підказка: Вам потрібно скористатися опцією
+<code>-l</code>, щоб переглянути дати останніх змін.</p>
 </div>
 </div>
 </div>
@@ -1047,9 +1047,9 @@ option to see the last changed dates.</p>
 </button>
 <div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
-<p>The most recently changed file is listed last when using
-<code>-rt</code>. Це може бути дуже корисним для пошуку ваших останніх
-редагувань або перевірки чи було створено новий вихідний файл.</p>
+<p>При використанні <code>-rt</code> останній змінений файл є останнім у
+списку. Це може бути дуже корисним для пошуку ваших останніх редагувань
+або перевірки чи було створено новий вихідний файл.</p>
 </div>
 </div>
 </div>
@@ -1059,11 +1059,11 @@ option to see the last changed dates.</p>
 <div class="section level3">
 <h3 id="exploring-other-directories">Exploring Other Directories<a class="anchor" aria-label="anchor" href="#exploring-other-directories"></a>
 </h3>
-<p>Not only can we use <code>ls</code> on the current working directory,
-but we can use it to list the contents of a different directory. Let’s
-take a look at our <code>Desktop</code> directory by running
-<code>ls -F Desktop</code>, i.e., the command <code>ls</code> with the
-<code>-F</code> <strong>option</strong> and the <a href="https://swcarpentry.github.io/shell-novice/reference.html#argument" class="external-link"><strong>argument</strong></a>
+<p>Ми можемо використовувати <code>ls</code> не лише у поточному
+робочому каталозі, але й для виведення вмісту іншого каталогу.
+Подивимося на наш каталог <code>Desktop</code> (робочий стіл), виконавши
+<code>ls -F Desktop</code>, тобто, команду <code>ls</code> з
+<strong>опцією</strong> <code>-F</code> і <a href="https://swcarpentry.github.io/shell-novice/reference.html#argument" class="external-link"><strong>аргументом</strong></a>
 <code>Desktop</code>. Аргумент <code>Desktop</code> повідомляє
 <code>ls</code>, що ми хочемо отримати список чогось іншого, ніж наш
 поточний робочий каталог:</p>
@@ -1077,8 +1077,8 @@ take a look at our <code>Desktop</code> directory by running
 </h3>
 <pre class="output" tabindex="0"><code>shell-lesson-data/</code></pre>
 </div>
-<p>Note that if a directory named <code>Desktop</code> does not exist in
-your current working directory, this command will return an error.
+<p>Зауважте, що якщо у вашому поточному робочому каталозі не існує
+каталогу з назвою <code>Desktop</code>, ця команда поверне помилку.
 Typically, a <code>Desktop</code> directory exists in your home
 directory, which we assume is the current working directory of your bash
 shell.</p>
@@ -1094,8 +1094,8 @@ interface behind all the open windows. Подивіться, чи це ваш
 directory just as it’s possible to pile hundreds of printed papers on
 our desk, it’s much easier to find things when they’ve been organized
 into sensibly-named subdirectories.</p>
-<p>Now that we know the <code>shell-lesson-data</code> directory is
-located in our Desktop directory, we can do two things.</p>
+<p>Тепер, коли ми знаємо, що каталог <code>shell-lesson-data</code>
+знаходиться у каталозі Desktop, ми можемо зробити дві речі.</p>
 <p>По-перше, ми можемо переглянути його вміст, використовуючи ту ж
 стратегію, що і раніше, передавши ім’я каталогу в <code>ls</code>:</p>
 <div class="codewrapper sourceCode" id="cb16">
@@ -1108,19 +1108,19 @@ located in our Desktop directory, we can do two things.</p>
 </h3>
 <pre class="output" tabindex="0"><code>exercise-data/  north-pacific-gyre/</code></pre>
 </div>
-<p>Second, we can actually change our location to a different directory,
-so we are no longer located in our home directory.</p>
+<p>По-друге, ми можемо змінити наше місцезнаходження на інший каталог,
+щоб ми більше не знаходилися в нашому домашньому каталозі.</p>
 <p>The command to change locations is <code>cd</code> followed by a
 directory name to change our working directory. <code>cd</code> означає
 ‘змінити каталог’ (англ. ‘change directory’), що трохи вводить в оману.
-Команда не змінює каталог; вона змінює поточний робочий каталог
-терміналу. In other words it changes the shell’s settings for what
-directory we are in. The <code>cd</code> command is akin to
-double-clicking a folder in a graphical interface to get into that
-folder.</p>
-<p>Let’s say we want to move into the <code>exercise-data</code>
-directory we saw above. Ми можемо скористатися наступною серією команд,
-щоб дістатися туди:</p>
+The command doesn’t change the directory; it changes the shell’s current
+working directory. Іншими словами, вона змінює налаштування терміналу
+щодо того, в якому каталозі ми знаходимося. Команда <code>cd</code>
+подібна до подвійного клацання по каталогу в графічному інтерфейсі, щоб
+потрапити до нього.</p>
+<p>Припустимо, нам треба перейти до каталогу <code>exercise-data</code>,
+який ми бачили вище. Ми можемо скористатися наступною серією команд, щоб
+дістатися туди:</p>
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1128,18 +1128,17 @@ directory we saw above. Ми можемо скористатися наступ�
 <span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a><span class="ex">$</span> cd shell-lesson-data</span>
 <span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a><span class="ex">$</span> cd exercise-data</span></code></pre>
 </div>
-<p>These commands will move us from our home directory into our Desktop
-directory, then into the <code>shell-lesson-data</code> directory, then
-into the <code>exercise-data</code> directory. Ви помітите, що команда
-<code>cd</code> нічого не виводить. Це нормально. Many shell commands
-will not output anything to the screen when successfully executed. Але
-якщо ми виконаємо <code>pwd</code> після неї, то побачимо, що зараз ми
-знаходимося у
+<p>Ці команди перемістять нас з домашнього каталогу до Desktop, потім до
+<code>shell-lesson-data</code>, а потім до <code>exercise-data</code>.
+Ви помітите, що команда <code>cd</code> нічого не виводить. Це
+нормально. Багато команд терміналу нічого не виводять на екран після
+успішного виконання. Але якщо ми виконаємо <code>pwd</code> після неї,
+то побачимо, що зараз ми знаходимося у
 <code>/Users/nelle/Desktop/shell-lesson-data/exercise-data</code>.</p>
-<p>If we run <code>ls -F</code> without arguments now, it lists the
-contents of
-<code>/Users/nelle/Desktop/shell-lesson-data/exercise-data</code>,
-because that’s where we now are:</p>
+<p>Тепер, якщо ми виконаємо команду <code>ls -F</code> без аргументів,
+вона виведе вміст
+<code>/Users/nelle/Desktop/shell-lesson-data/exercise-data</code>, тому
+що саме там ми зараз знаходимося:</p>
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1175,20 +1174,19 @@ go into its parent directory)? Ми можемо спробувати насту
 </div>
 <p>Але ми отримуємо помилку! Чому?</p>
 <p>With our methods so far, <code>cd</code> can only see sub-directories
-inside your current directory. There are different ways to see
-directories above your current location; we’ll start with the
-simplest.</p>
-<p>There is a shortcut in the shell to move up one directory level. Це
-працює наступним чином:</p>
+inside your current directory. Існують різні способи перегляду
+батьківських каталогів; ми почнемо з найпростішого.</p>
+<p>У терміналі є скорочення для переходу на один рівень каталогу вгору.
+Це працює наступним чином:</p>
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="ex">$</span> cd ..</span></code></pre>
 </div>
-<p><code>..</code> is a special directory name meaning “the directory
-containing this one”, or more succinctly, the <strong>parent</strong> of
-the current directory. Звичайно, якщо ми запустимо <code>pwd</code>
-після виконання <code>cd ..</code>, ми знову у
+<p><code>..</code> - це спеціальне ім’я каталогу, що означає “каталог,
+що містить поточний”, або більш стисло, <strong>батько</strong>
+поточного каталогу. Звичайно, якщо ми запустимо <code>pwd</code> після
+виконання <code>cd ..</code>, ми знову у
 <code>/Users/nelle/Desktop/shell-lesson-data</code>:</p>
 <div class="codewrapper sourceCode" id="cb26">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1201,8 +1199,8 @@ the current directory. Звичайно, якщо ми запустимо <code>
 <pre class="output" tabindex="0"><code>/Users/nelle/Desktop/shell-lesson-data</code></pre>
 </div>
 <p>Спеціальний каталог <code>..</code> зазвичай не з’являється, коли ми
-запускаємо <code>ls</code>. If we want to display it, we can add the
-<code>-a</code> option to <code>ls -F</code>:</p>
+запускаємо <code>ls</code>. Якщо ми хочемо побачити його, ми можемо
+додати опцію <code>-a</code> до <code>ls -F</code>:</p>
 <div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -4058,7 +4056,7 @@ like a list of numbers or a subset of data.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4128,7 +4126,7 @@ like a list of numbers or a subset of data.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>The first code block gives the same output on each iteration through
 the loop. Bash expands the wildcard <code>*.pdb</code> within the loop
@@ -4202,7 +4200,7 @@ The value of the <code>datafile</code> variable is evaluated using
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>4 is the correct answer. <code>*</code> matches zero or more
 characters, so any file name starting with the letter c, followed by
@@ -4245,7 +4243,7 @@ be listed.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>4 is the correct answer. <code>*</code> matches zero or more
 characters, so a file name with zero or more characters before a letter
@@ -4295,7 +4293,7 @@ will be saved to a file called <code>alkanes.pdb</code>.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>The text from each file in turn gets written to the
@@ -4350,7 +4348,7 @@ file called <code>all.pdb</code>.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6"> Show me the solution </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <p>3 is the correct answer. <code>&gt;&gt;</code> appends to a file,
 rather than overwriting it with the redirected output from a command.
@@ -4757,7 +4755,7 @@ would we want to run?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
   <h4 class="accordion-header" id="headingSolution7"> Show me the solution </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <p>The second version is the one we want to run. This prints to screen
 everything enclosed in the quote marks, expanding the loop variable name
@@ -4805,7 +4803,7 @@ following code:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
   <h4 class="accordion-header" id="headingSolution8"> Show me the solution </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
 <div class="accordion-body">
 <p>We have a nested loop, i.e. contained within another loop, so for
 each species in the outer loop, the inner loop (the nested loop)
@@ -5169,7 +5167,7 @@ each of those files separately.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5235,7 +5233,7 @@ this?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>If a command causes something to crash or hang, it might be useful to
 know what that command was, in order to investigate the problem. Were
@@ -5359,7 +5357,7 @@ directory</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>The correct answer is 2.</p>
 <p>The special variables <code>$1</code>, <code>$2</code> and
@@ -5412,7 +5410,7 @@ lines.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb40">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5481,7 +5479,7 @@ three scripts would do when run as <code>bash script1.sh *.pdb</code>,
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Solutions </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <p>In each case, the shell expands the wildcard in <code>*.pdb</code>
 before passing the resulting list of file names as arguments to the
@@ -5549,7 +5547,7 @@ error?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6"> Show me the solution </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <p>The <code>-x</code> option causes <code>bash</code> to run in debug
 mode. This prints out each command as it is run, which will help you to
@@ -6429,7 +6427,7 @@ command.</li>
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/main" class="external-link">sandpaper (0.16.11)</a>, <a href="https://github.com/carpentries/pegboard/tree/main" class="external-link">pegboard (0.7.8)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.5" class="external-link">varnish (1.0.5)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/main" class="external-link">sandpaper (0.16.11)</a>, <a href="https://github.com/carpentries/pegboard/tree/main" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.5" class="external-link">varnish (1.0.5)</a></p>
 			</div>
 		</footer>
 </div> <!-- / div.container -->
@@ -6452,8 +6450,8 @@ command.</li>
   "url": "https://swcarpentry.github.io/shell-novice/instructor/aio.html",
   "identifier": "https://swcarpentry.github.io/shell-novice/instructor/aio.html",
   "dateCreated": "2014-10-22",
-  "dateModified": "2025-02-20",
-  "datePublished": "2025-02-20"
+  "dateModified": "2025-02-22",
+  "datePublished": "2025-02-22"
 }
 
   </script><script>
