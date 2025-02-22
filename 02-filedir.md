@@ -270,22 +270,18 @@ of the `ls` command and its options.
 
 ## Сторінки з інструкціями в Інтернеті
 
-Of course, there is a third way to access help for commands:
-searching the internet via your web browser.
+Звісно, є й третій спосіб отримати доступ до довідки для команд: пошук в інтернеті за допомогою веббраузера.
 Якщо ви скористаєтеся пошуком в Інтернеті, додання до запиту фрази `unix man page` дозволить отримати більш доречні результати.
 
-GNU provides links to its
-[manuals](https://www.gnu.org/manual/manual.html) including the
-[core GNU utilities](https://www.gnu.org/software/coreutils/manual/coreutils.html),
-which covers many commands introduced within this lesson.
+GNU надає посилання на свої [посібники](http://www.gnu.org/manual/manual.html), зокрема на [основні утиліти GNU](http://www.gnu.org/software/coreutils/manual/coreutils.html), які охоплюють багато команд, представлених у цьому уроці.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Exploring More `ls` Options
+## Вивчення інших опцій `ls`
 
-Ви також можете використовувати декілька опцій одночасно. Що робить команда `ls` при використанні з опцією `-l`? What about if you use both the `-l` and the `-h` option?
+Ви також можете використовувати декілька опцій одночасно. Що робить команда `ls` при використанні з опцією `-l`? А якщо ви використовуєте `-l` та `-h` одночасно?
 
 Some of its output is about properties that we do not cover in this lesson (such
 as file permissions and ownership), but the rest should be useful
@@ -293,11 +289,9 @@ nevertheless.
 
 :::::::::::::::  solution
 
-## Розв'язання
+## Solution
 
-The `-l` option makes `ls` use a **l**ong listing format, showing not only
-the file/directory names but also additional information, such as the file size
-and the time of its last modification. Якщо ви використовуєте як `-h`, так і `-l`, це зробить виведення розміру файлу у більш зрозумілому людині вигляді ("**h**uman readable"), тобто покаже щось на кшталт `5.3K` замість `5369`.
+Опція `-l` змушує `ls` використовувати довгий (англ. **l**ong) формат виводу, показуючи не лише назви файлів/директорій, але й додаткову інформацію, таку як розмір файлу і час його останньої модифікації. Якщо ви використовуєте як `-h`, так і `-l`, це зробить виведення розміру файлу у більш зрозумілому людині вигляді ("**h**uman readable"), тобто покаже щось на кшталт `5.3K` замість `5369`.
 
 :::::::::::::::::::::::::
 
@@ -308,15 +302,14 @@ and the time of its last modification. Якщо ви використовуєт�
 ## Виведення у зворотному хронологічному порядку
 
 За замовчуванням `ls` виводить вміст каталогу в алфавітному порядку за іменами елементів. Команда `ls -t` перелічує елементи за часом останньої зміни, а не за алфавітом. Команда `ls -r` виводить вміст каталогу у зворотному порядку.
-Which file is displayed last when you combine the `-t` and `-r` options?
-Hint: You may need to use the `-l` option to see the
-last changed dates.
+Який файл буде показано останнім при комбінації опцій `-t` і `-r`?
+Підказка: Вам потрібно скористатися опцією `-l`, щоб переглянути дати останніх змін.
 
 :::::::::::::::  solution
 
 ## Розв'язання
 
-The most recently changed file is listed last when using `-rt`. Це може бути дуже корисним для пошуку ваших останніх редагувань або перевірки чи було створено новий вихідний файл.
+При використанні `-rt` останній змінений файл є останнім у списку. Це може бути дуже корисним для пошуку ваших останніх редагувань або перевірки чи було створено новий вихідний файл.
 
 :::::::::::::::::::::::::
 
@@ -324,11 +317,8 @@ The most recently changed file is listed last when using `-rt`. Це може б
 
 ### Exploring Other Directories
 
-Not only can we use `ls` on the current working directory,
-but we can use it to list the contents of a different directory.
-Let's take a look at our `Desktop` directory by running `ls -F Desktop`,
-i.e.,
-the command `ls` with the `-F` **option** and the [**argument**][Arguments]  `Desktop`.
+Ми можемо використовувати `ls` не лише у поточному робочому каталозі, але й для виведення вмісту іншого каталогу.
+Подивимося на наш каталог `Desktop` (робочий стіл), виконавши `ls -F Desktop`, тобто, команду `ls` з **опцією** `-F` і [**аргументом**][Arguments] `Desktop`.
 Аргумент `Desktop` повідомляє `ls`, що ми хочемо отримати список чогось іншого, ніж наш поточний робочий каталог:
 
 ```bash
@@ -339,8 +329,7 @@ $ ls -F Desktop
 shell-lesson-data/
 ```
 
-Note that if a directory named `Desktop` does not exist in your current working directory,
-this command will return an error. Typically, a `Desktop` directory exists in your
+Зауважте, що якщо у вашому поточному робочому каталозі не існує каталогу з назвою `Desktop`, ця команда поверне помилку. Typically, a `Desktop` directory exists in your
 home directory, which we assume is the current working directory of your bash shell.
 
 Your output should be a list of all the files and sub-directories in your
@@ -354,8 +343,7 @@ possible to put hundreds of files in our home directory just as it's possible to
 pile hundreds of printed papers on our desk, it's much easier to find things when
 they've been organized into sensibly-named subdirectories.
 
-Now that we know the `shell-lesson-data` directory is located in our Desktop directory, we
-can do two things.
+Тепер, коли ми знаємо, що каталог `shell-lesson-data` знаходиться у каталозі Desktop, ми можемо зробити дві речі.
 
 По-перше, ми можемо переглянути його вміст, використовуючи ту ж стратегію, що і раніше, передавши ім'я каталогу в `ls`:
 
@@ -367,20 +355,17 @@ $ ls -F Desktop/shell-lesson-data
 exercise-data/  north-pacific-gyre/
 ```
 
-Second, we can actually change our location to a different directory, so
-we are no longer located in
-our home directory.
+По-друге, ми можемо змінити наше місцезнаходження на інший каталог, щоб ми більше не знаходилися в нашому домашньому каталозі.
 
 The command to change locations is `cd` followed by a
 directory name to change our working directory.
 `cd` означає 'змінити каталог' (англ. 'change directory'), що трохи вводить в оману.
-Команда не змінює каталог;
-вона змінює поточний робочий каталог терміналу.
-In other words it changes the shell's settings for what directory we are in.
-The `cd` command is akin to double-clicking a folder in a graphical interface
-to get into that folder.
+The command doesn't change the directory;
+it changes the shell's current working directory.
+Іншими словами, вона змінює налаштування терміналу щодо того, в якому каталозі ми знаходимося.
+Команда `cd` подібна до подвійного клацання по каталогу в графічному інтерфейсі, щоб потрапити до нього.
 
-Let's say we want to move into the `exercise-data` directory we saw above. Ми можемо скористатися наступною серією команд, щоб дістатися туди:
+Припустимо, нам треба перейти до каталогу `exercise-data`, який ми бачили вище. Ми можемо скористатися наступною серією команд, щоб дістатися туди:
 
 ```bash
 $ cd Desktop
@@ -388,15 +373,12 @@ $ cd shell-lesson-data
 $ cd exercise-data
 ```
 
-These commands will move us from our home directory into our Desktop directory, then into
-the `shell-lesson-data` directory, then into the `exercise-data` directory.
+Ці команди перемістять нас з домашнього каталогу до Desktop, потім до `shell-lesson-data`, а потім до `exercise-data`.
 Ви помітите, що команда `cd` нічого не виводить. Це нормально.
-Many shell commands will not output anything to the screen when successfully executed.
+Багато команд терміналу нічого не виводять на екран після успішного виконання.
 Але якщо ми виконаємо `pwd` після неї, то побачимо, що зараз ми знаходимося у `/Users/nelle/Desktop/shell-lesson-data/exercise-data`.
 
-If we run `ls -F` without arguments now,
-it lists the contents of `/Users/nelle/Desktop/shell-lesson-data/exercise-data`,
-because that's where we now are:
+Тепер, якщо ми виконаємо команду `ls -F` без аргументів, вона виведе вміст `/Users/nelle/Desktop/shell-lesson-data/exercise-data`, тому що саме там ми зараз знаходимося:
 
 ```bash
 $ pwd
@@ -429,20 +411,15 @@ $ cd shell-lesson-data
 Але ми отримуємо помилку! Чому?
 
 With our methods so far,
-`cd` can only see sub-directories inside your current directory. There are
-different ways to see directories above your current location; we'll start
-with the simplest.
+`cd` can only see sub-directories inside your current directory. Існують різні способи перегляду батьківських каталогів; ми почнемо з найпростішого.
 
-There is a shortcut in the shell to move up one directory level. Це працює наступним чином:
+У терміналі є скорочення для переходу на один рівень каталогу вгору. Це працює наступним чином:
 
 ```bash
 $ cd ..
 ```
 
-`..` is a special directory name meaning
-"the directory containing this one",
-or more succinctly,
-the **parent** of the current directory.
+`..` - це спеціальне ім'я каталогу, що означає "каталог, що містить поточний", або більш стисло, **батько** поточного каталогу.
 Звичайно, якщо ми запустимо `pwd` після виконання `cd ..`, ми знову у `/Users/nelle/Desktop/shell-lesson-data`:
 
 ```bash
@@ -453,8 +430,7 @@ $ pwd
 /Users/nelle/Desktop/shell-lesson-data
 ```
 
-Спеціальний каталог `..` зазвичай не з'являється, коли ми запускаємо `ls`. If we want
-to display it, we can add the `-a` option to `ls -F`:
+Спеціальний каталог `..` зазвичай не з'являється, коли ми запускаємо `ls`. Якщо ми хочемо побачити його, ми можемо додати опцію `-a` до `ls -F`:
 
 ```bash
 $ ls -F -a
