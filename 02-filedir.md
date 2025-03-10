@@ -227,7 +227,7 @@ Mandatory arguments to long options are mandatory for short options, too.
 
 - Використовуйте коротку під час введення команд безпосередньо в термінал, щоб мінімізувати натискання клавіш і швидше виконувати завдання.
 - Use the long option in scripts to provide clarity.
-  It will be read many times and typed once.
+ It will be read many times and typed once.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -283,13 +283,11 @@ GNU надає посилання на свої [посібники](http://www.
 
 Ви також можете використовувати декілька опцій одночасно. Що робить команда `ls` при використанні з опцією `-l`? А якщо ви використовуєте `-l` та `-h` одночасно?
 
-Some of its output is about properties that we do not cover in this lesson (such
-as file permissions and ownership), but the rest should be useful
-nevertheless.
+Деякі з результатів виконання команди стосуються властивостей, які ми не розглядаємо у цьому семінарі (наприклад, права доступу до файлів та їх власники), але решта все одно буде корисною.
 
 :::::::::::::::  solution
 
-## Solution
+## Розв'язок
 
 Опція `-l` змушує `ls` використовувати довгий (англ. **l**ong) формат виводу, показуючи не лише назви файлів/директорій, але й додаткову інформацію, таку як розмір файлу і час його останньої модифікації. Якщо ви використовуєте як `-h`, так і `-l`, це зробить виведення розміру файлу у більш зрозумілому людині вигляді ("**h**uman readable"), тобто покаже щось на кшталт `5.3K` замість `5369`.
 
@@ -338,10 +336,7 @@ the [setup for this lesson](../learners/setup.md). (On most systems, the
 contents of the `Desktop` directory in the shell will show up as icons in a graphical
 user interface behind all the open windows. Подивіться, чи це ваш випадок.)
 
-Ієрархічна організація речей таким чином допомагає нам відстежувати нашу роботу. While it's
-possible to put hundreds of files in our home directory just as it's possible to
-pile hundreds of printed papers on our desk, it's much easier to find things when
-they've been organized into sensibly-named subdirectories.
+Ієрархічна організація речей таким чином допомагає нам відстежувати нашу роботу. Хоча у нашому домашньому каталозі можна зберігати сотні файлів, так само як і сотні паперових документів на робочому столі, набагато легше знаходити речі, коли вони організовані у підкаталоги з розумними назвами.
 
 Тепер, коли ми знаємо, що каталог `shell-lesson-data` знаходиться у каталозі Desktop, ми можемо зробити дві речі.
 
@@ -655,7 +650,7 @@ pnas_sub/ pnas_final/ original/
 1. Ні: `pwd` не є назвою каталогу.
 
 2. Yes: `ls` without directory argument lists files and directories
-   in the current directory.
+ in the current directory.
 
 3. Yes: uses the absolute path explicitly.
 
@@ -804,3 +799,5 @@ and we will see it in many other tools as we go on.
 - `.` on its own means 'the current directory'; `..` means 'the directory above the current one'.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
