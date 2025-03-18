@@ -71,11 +71,7 @@ on the `cd` command.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Для того, щоб зрозуміти, що таке 'домашній каталог', розглянемо як організована файлова система в цілому.  For the
-sake of this example, we'll be
-illustrating the filesystem on our scientist Nelle's computer.  After this
-illustration, you'll be learning commands to explore your own filesystem,
-which will be constructed in a similar way, but not be exactly identical.
+Для того, щоб зрозуміти, що таке 'домашній каталог', розглянемо як організована файлова система в цілому.  Для цього прикладу ми проілюструємо файлову систему на комп’ютері морського біолога Неллі.  Після цього прикладу ви вивчатимете команди для дослідження власної файлової системи, яка буде побудована подібним чином, але не буде абсолютно ідентичною.
 
 На комп’ютері Неллі файлова система виглядає так:
 
