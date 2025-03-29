@@ -604,7 +604,7 @@ which is `/Users/nelle`?
 
 2. Ні: це вміст каталогу `Users/thing/backup`, але за допомогою `..` ми просили піднятися на один рівень вище.
 
-3. No: see previous explanation.
+3. Ні: див. попереднє пояснення.
 
 4. Так: `../backup/` вказує на `/Users/backup/`.
 
