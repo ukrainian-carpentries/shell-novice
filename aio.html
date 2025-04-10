@@ -604,7 +604,7 @@ Documents   Library     Music       Public</code></pre>
 </div>
 </section></section><section id="aio-02-filedir"><p>Content from <a href="02-filedir.html">Navigating Files and Directories</a></p>
 <hr>
-<p>Last updated on 2025-03-10 |
+<p>Last updated on 2025-04-10 |
 
         <a href="https://github.com/swcarpentry/shell-novice/edit/main/episodes/02-filedir.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -618,10 +618,10 @@ Documents   Library     Music       Public</code></pre>
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>How can I move around on my computer?</li>
+<li>Як я можу пересуватися по файловій системі на моєму комп’ютері?</li>
 <li>How can I see what files and directories I have?</li>
-<li>How can I specify the location of a file or directory on my
-computer?</li>
+<li>Як я можу вказати, де знаходиться файл або каталог на моєму
+комп’ютері?</li>
 </ul>
 </div>
 </div>
@@ -696,11 +696,11 @@ more details on the <code>cd</code> command.</p>
 </div>
 </div>
 <p>Для того, щоб зрозуміти, що таке ‘домашній каталог’, розглянемо як
-організована файлова система в цілому. For the sake of this example,
-we’ll be illustrating the filesystem on our scientist Nelle’s computer.
-After this illustration, you’ll be learning commands to explore your own
-filesystem, which will be constructed in a similar way, but not be
-exactly identical.</p>
+організована файлова система в цілому. Для цього прикладу ми
+проілюструємо файлову систему на комп’ютері морського біолога Неллі.
+Після цього прикладу ви вивчатимете команди для дослідження власної
+файлової системи, яка буде побудована подібним чином, але не буде
+абсолютно ідентичною.</p>
 <p>На комп’ютері Неллі файлова система виглядає так:</p>
 <figure><img src="fig/filesystem.svg" alt="Файлова система складається з кореневого каталогу, який містить підкаталоги з назвами bin, data, users та tmp" class="figure mx-auto d-block"></figure><p>Файлова система виглядає як перевернуте дерево. Найвищим каталогом є
 <strong>кореневий каталог</strong>, який містить усе інше. We refer to
@@ -734,13 +734,13 @@ is the leading slash in <code>/Users/nelle</code>.</p>
 <p>Underneath <code>/Users</code>, we find one directory for each user
 with an account on Nelle’s machine, her colleagues <em>imhotep</em> and
 <em>larry</em>.</p>
-<figure><img src="fig/home-directories.svg" alt='Як і інші каталоги, домашні каталоги є підкаталогами "/Users", наприклад "/Users/imhotep", "/Users/larry" або "/Users/nelle"' class="figure mx-auto d-block"></figure><p>The user <em>imhotep</em>’s files are stored in
-<code>/Users/imhotep</code>, user <em>larry</em>’s in
-<code>/Users/larry</code>, and Nelle’s in <code>/Users/nelle</code>.
+<figure><img src="fig/home-directories.svg" alt='Як і інші каталоги, домашні каталоги є підкаталогами "/Users", наприклад "/Users/imhotep", "/Users/larry" або "/Users/nelle"' class="figure mx-auto d-block"></figure><p>Файли користувача <em>imhotep</em> зберігаються в каталозі
+<code>/Users/imhotep</code>, користувача <em>larry</em> - в
+<code>/Users/larry</code>, і Неллі - в <code>/Users/nelle</code>.
 Оскільки саме Неллі є користувачем у наших прикладах, тому ми отримуємо
-<code>/Users/nelle</code> як наш домашній каталог. Typically, when you
-open a new command prompt, you will be in your home directory to
-start.</p>
+<code>/Users/nelle</code> як наш домашній каталог. Зазвичай, коли ви
+відкриваєте нове вікно терміналу, ви опиняєтесь у своєму домашньому
+каталозі.</p>
 <p>Тепер розглянемо команду, яка дозволить нам бачити вміст нашої
 власної файлової системи. Ми можемо побачити, що знаходиться у нашому
 домашньому каталозі, запустивши <code>ls</code>:</p>
@@ -764,7 +764,8 @@ Desktop      Downloads    Movies       Pictures</code></pre>
 класифікувати вивід, додаючи маркер до імен файлів і каталогів, щоб
 вказати, що вони собою являють:</p>
 <ul>
-<li>a trailing <code>/</code> indicates that this is a directory</li>
+<li>символ <code>/</code> наприкінці імені вказує на те, що це
+каталог</li>
 <li>символ <code>@</code> вказує на посилання</li>
 <li>символ <code>*</code> вказує на виконуваний файл</li>
 </ul>
@@ -786,12 +787,12 @@ Desktop/      Downloads/    Movies/       Pictures/</code></pre>
 <strong>підкаталоги</strong>. Any names in the output that don’t have a
 classification symbol are <strong>files</strong> in the current working
 directory.</p>
-<div id="clearing-your-terminal" class="callout">
+<div id="як-очистити-термінал" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="clearing-your-terminal" class="callout-inner">
-<h3 class="callout-title">Clearing your terminal</h3>
+<div id="як-очистити-термінал" class="callout-inner">
+<h3 class="callout-title">Як очистити термінал</h3>
 <div class="callout-content">
 <p>Якщо екран стає занадто захаращеним, ви можете очистити термінал за
 допомогою команди <code>clear</code>. Ви все ще можете отримати доступ
@@ -937,8 +938,8 @@ Try 'ls --help' for more information.</code></pre>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="ex">$</span> man ls</span></code></pre>
 </div>
-<p>This command will turn your terminal into a page with a description
-of the <code>ls</code> command and its options.</p>
+<p>Ця команда виведе у вашому терміналі сторінку з описом команди
+<code>ls</code> та її опцій.</p>
 <p>Для навігації сторінками <code>man</code> ви можете використовувати
 <kbd>↑</kbd> і <kbd>↓</kbd> для переміщення по рядках, або спробувати
 <kbd>b</kbd> і <kbd>Spacebar</kbd> для переходу вгору і вниз на цілу
@@ -1038,7 +1039,7 @@ readable”), тобто покаже щось на кшталт <code>5.3K</cod
 </div>
 </div>
 <div class="section level3">
-<h3 id="exploring-other-directories">Exploring Other Directories<a class="anchor" aria-label="anchor" href="#exploring-other-directories"></a>
+<h3 id="перегляд-інших-каталогів">Перегляд інших каталогів<a class="anchor" aria-label="anchor" href="#%D0%BF%D0%B5%D1%80%D0%B5%D0%B3%D0%BB%D1%8F%D0%B4-%D1%96%D0%BD%D1%88%D0%B8%D1%85-%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3%D1%96%D0%B2"></a>
 </h3>
 <p>Ми можемо використовувати <code>ls</code> не лише у поточному
 робочому каталозі, але й для виведення вмісту іншого каталогу.
@@ -1060,16 +1061,16 @@ readable”), тобто покаже щось на кшталт <code>5.3K</cod
 </div>
 <p>Зауважте, що якщо у вашому поточному робочому каталозі не існує
 каталогу з назвою <code>Desktop</code>, ця команда поверне помилку.
-Typically, a <code>Desktop</code> directory exists in your home
-directory, which we assume is the current working directory of your bash
-shell.</p>
-<p>Your output should be a list of all the files and sub-directories in
-your Desktop directory, including the <code>shell-lesson-data</code>
-directory you downloaded at the <a href="index.html#setup">setup for this
-lesson</a>. (On most systems, the contents of the <code>Desktop</code>
-directory in the shell will show up as icons in a graphical user
-interface behind all the open windows. Подивіться, чи це ваш
-випадок.)</p>
+Зазвичай, підкаталог <code>Desktop</code> існує у вашому домашньому
+каталозі, який ми вважаємо поточним робочим каталогом вашого терміналу
+bash.</p>
+<p>На виході ви маєте отримати список усіх файлів і підкаталогів у
+вашому каталозі Desktop, включно з каталогом
+<code>shell-lesson-data</code>, який ви завантажили за посиланням під
+час <a href="index.html#setup">налаштувань для цього уроку</a>. (On most
+systems, the contents of the <code>Desktop</code> directory in the shell
+will show up as icons in a graphical user interface behind all the open
+windows. Подивіться, чи це ваш випадок.)</p>
 <p>Ієрархічна організація речей таким чином допомагає нам відстежувати
 нашу роботу. Хоча у нашому домашньому каталозі можна зберігати сотні
 файлів, так само як і сотні паперових документів на робочому столі,
@@ -1154,9 +1155,10 @@ go into its parent directory)? Ми можемо спробувати насту
 <pre class="error" tabindex="0"><code>-bash: cd: shell-lesson-data: No such file or directory</code></pre>
 </div>
 <p>Але ми отримуємо помилку! Чому?</p>
-<p>With our methods so far, <code>cd</code> can only see sub-directories
-inside your current directory. Існують різні способи перегляду
-батьківських каталогів; ми почнемо з найпростішого.</p>
+<p>За допомогою поки що знайомих нам методів, <code>cd</code> може
+бачити лише підкаталоги у вашому поточному каталозі. Існують різні
+способи перегляду батьківських каталогів; ми почнемо з
+найпростішого.</p>
 <p>У терміналі є скорочення для переходу на один рівень каталогу вгору.
 Це працює наступним чином:</p>
 <div class="codewrapper sourceCode" id="cb25">
@@ -1428,7 +1430,7 @@ case <code>/Users/nelle</code>.</p></li>
 <li><p>Ні: це вміст каталогу <code>Users/thing/backup</code>, але за
 допомогою <code>..</code> ми просили піднятися на один рівень
 вище.</p></li>
-<li><p>No: see previous explanation.</p></li>
+<li><p>Ні: див. попереднє пояснення.</p></li>
 <li><p>Так: <code>../backup/</code> вказує на
 <code>/Users/backup/</code>.</p></li>
 </ol>
@@ -1650,7 +1652,7 @@ Unix, але <code>\\</code> в Windows.</li>
 </div>
 </section></section><section id="aio-03-create"><p>Content from <a href="03-create.html">Робота з файлами та каталогами</a></p>
 <hr>
-<p>Last updated on 2025-03-10 |
+<p>Last updated on 2025-04-10 |
 
         <a href="https://github.com/swcarpentry/shell-novice/edit/main/episodes/03-create.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1886,13 +1888,12 @@ files in your Desktop or Documents directory instead. Ви можете змін
 </div>
 </div>
 <p>Let’s type in a few lines of text.</p>
-<figure><img src="fig/nano-screenshot.png" alt="screenshot of nano text editor in action with the text It's not publish or perish any more, it's share and thrive" class="figure mx-auto d-block"></figure><p>Після того, як ми будемо задоволені нашим текстом, ми можемо
-натиснути <kbd>Ctrl</kbd>+<kbd>O</kbd> (натисніть клавішу
-<kbd>Ctrl</kbd> or <kbd>Control</kbd> і, утримуючи її, натиснути клавішу
-<kbd>O</kbd>), щоб записати наші дані на диск. Нас запитають, до якого
-файлу ми хочемо зберегти дані. Натисніть клавішу <kbd>Return</kbd>, щоб
-прийняти запропоновану за замовчуванням назву
-<code>draft.txt</code>.</p>
+<figure><img src="fig/nano-screenshot.png" alt="screenshot of nano text editor in action with the text It's not publish or perish any more, it's share and thrive" class="figure mx-auto d-block"></figure><p>Once we’re happy with our text, we can press
+<kbd>Ctrl</kbd>+<kbd>O</kbd> (press the <kbd>Ctrl</kbd> or
+<kbd>Control</kbd> key and, while holding it down, press the
+<kbd>O</kbd> key) to write our data to disk. We will be asked to provide
+a name for the file that will contain our text. Press <kbd>Return</kbd>
+to accept the suggested default of <code>draft.txt</code>.</p>
 <p>Once our file is saved, we can use <kbd>Ctrl</kbd>+<kbd>X</kbd> to
 quit the editor and return to the shell.</p>
 <div id="control-ctrl-or-key" class="callout">
@@ -4018,7 +4019,7 @@ like a list of numbers or a subset of data.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4088,7 +4089,7 @@ like a list of numbers or a subset of data.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>The first code block gives the same output on each iteration through
 the loop. Bash expands the wildcard <code>*.pdb</code> within the loop
@@ -4162,7 +4163,7 @@ The value of the <code>datafile</code> variable is evaluated using
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>4 is the correct answer. <code>*</code> matches zero or more
 characters, so any file name starting with the letter c, followed by
@@ -4205,7 +4206,7 @@ be listed.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>4 is the correct answer. <code>*</code> matches zero or more
 characters, so a file name with zero or more characters before a letter
@@ -4255,7 +4256,7 @@ will be saved to a file called <code>alkanes.pdb</code>.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>The text from each file in turn gets written to the
@@ -4310,7 +4311,7 @@ file called <code>all.pdb</code>.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6"> Show me the solution </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <p>3 is the correct answer. <code>&gt;&gt;</code> appends to a file,
 rather than overwriting it with the redirected output from a command.
@@ -4717,7 +4718,7 @@ would we want to run?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
   <h4 class="accordion-header" id="headingSolution7"> Show me the solution </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <p>The second version is the one we want to run. This prints to screen
 everything enclosed in the quote marks, expanding the loop variable name
@@ -4765,7 +4766,7 @@ following code:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
   <h4 class="accordion-header" id="headingSolution8"> Show me the solution </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
 <div class="accordion-body">
 <p>We have a nested loop, i.e. contained within another loop, so for
 each species in the outer loop, the inner loop (the nested loop)
@@ -5837,7 +5838,7 @@ Miscellaneous:
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>The correct answer is 3, because the <code>-w</code> option looks
 only for whole-word matches. The other options will also match ‘of’ when
@@ -5935,7 +5936,7 @@ one field in a line.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <pre class="source"><code>grep -w $1 -r $2 | cut -d : -f 2 | cut -d , -f 1,3 &gt; $1.txt</code></pre>
 <p>Actually, you can swap the order of the two cut commands and it still
@@ -5982,7 +5983,7 @@ speed.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Solutions </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <pre class="source"><code>for sis in Jo Meg Beth Amy
 do
@@ -6250,7 +6251,7 @@ you have thought about your answer, you can test the commands in the
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>Option 1 is correct. Putting the match expression in quotes prevents
 the shell expanding it, so it gets passed to the <code>find</code>
@@ -6325,7 +6326,7 @@ Comprehension</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><p>Find all files with a <code>.dat</code> extension recursively
@@ -6410,8 +6411,8 @@ command.</li>
   "url": "https://swcarpentry.github.io/shell-novice/aio.html",
   "identifier": "https://swcarpentry.github.io/shell-novice/aio.html",
   "dateCreated": "2014-10-22",
-  "dateModified": "2025-04-08",
-  "datePublished": "2025-04-08"
+  "dateModified": "2025-04-10",
+  "datePublished": "2025-04-10"
 }
 
   </script><script>
