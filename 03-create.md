@@ -187,7 +187,11 @@ Let's type in a few lines of text.
 
 ![](fig/nano-screenshot.png){alt="screenshot of nano text editor in action with the text It's not publish or perish any more, it's share and thrive"}
 
-Після того, як ми будемо задоволені нашим текстом, ми можемо натиснути <kbd>Ctrl</kbd>\+<kbd>O</kbd> (натисніть клавішу <kbd>Ctrl</kbd> or <kbd>Control</kbd> і, утримуючи її, натиснути клавішу <kbd>O</kbd>), щоб записати наші дані на диск. Нас запитають, до якого файлу ми хочемо зберегти дані. Натисніть клавішу <kbd>Return</kbd>, щоб прийняти запропоновану за замовчуванням назву `draft.txt`.
+Once we're happy with our text, we can press <kbd>Ctrl</kbd>\+<kbd>O</kbd>
+(press the <kbd>Ctrl</kbd> or <kbd>Control</kbd> key and, while
+holding it down, press the <kbd>O</kbd> key) to write our data to disk. We will be asked
+to provide a name for the file that will contain our text. Press <kbd>Return</kbd> to accept
+the suggested default of `draft.txt`.
 
 Once our file is saved, we can use <kbd>Ctrl</kbd>\+<kbd>X</kbd> to quit the editor and
 return to the shell.

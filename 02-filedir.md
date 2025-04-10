@@ -16,9 +16,9 @@ exercises: 10
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- How can I move around on my computer?
+- Як я можу пересуватися по файловій системі на моєму комп'ютері?
 - How can I see what files and directories I have?
-- How can I specify the location of a file or directory on my computer?
+- Як я можу вказати, де знаходиться файл або каталог на моєму комп'ютері?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -71,11 +71,7 @@ on the `cd` command.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Для того, щоб зрозуміти, що таке 'домашній каталог', розглянемо як організована файлова система в цілому.  For the
-sake of this example, we'll be
-illustrating the filesystem on our scientist Nelle's computer.  After this
-illustration, you'll be learning commands to explore your own filesystem,
-which will be constructed in a similar way, but not be exactly identical.
+Для того, щоб зрозуміти, що таке 'домашній каталог', розглянемо як організована файлова система в цілому.  Для цього прикладу ми проілюструємо файлову систему на комп’ютері морського біолога Неллі.  Після цього прикладу ви вивчатимете команди для дослідження власної файлової системи, яка буде побудована подібним чином, але не буде абсолютно ідентичною.
 
 На комп’ютері Неллі файлова система виглядає так:
 
@@ -107,11 +103,8 @@ her colleagues _imhotep_ and _larry_.
 ![](fig/home-directories.svg){alt='Як і інші каталоги, домашні каталоги є підкаталогами
 "/Users", наприклад "/Users/imhotep", "/Users/larry" або "/Users/nelle"'}
 
-The user _imhotep_'s files are stored in `/Users/imhotep`,
-user _larry_'s in `/Users/larry`,
-and Nelle's in `/Users/nelle`. Оскільки саме Неллі є користувачем у наших прикладах, тому ми отримуємо `/Users/nelle` як наш домашній каталог.
-Typically, when you open a new command prompt, you will be in
-your home directory to start.
+Файли користувача _imhotep_ зберігаються в каталозі `/Users/imhotep`, користувача _larry_ - в `/Users/larry`, і Неллі - в `/Users/nelle`. Оскільки саме Неллі є користувачем у наших прикладах, тому ми отримуємо `/Users/nelle` як наш домашній каталог.
+Зазвичай, коли ви відкриваєте нове вікно терміналу, ви опиняєтесь у своєму домашньому каталозі.
 
 Тепер розглянемо команду, яка дозволить нам бачити вміст нашої власної файлової системи.  Ми можемо побачити, що знаходиться у нашому домашньому каталозі, запустивши `ls`:
 
@@ -129,7 +122,7 @@ Desktop      Downloads    Movies       Pictures
 `ls` друкує назви файлів і каталогів у поточному каталозі.
 Ми можемо зробити його вивід більш зрозумілим за допомогою **опції** `-F`, яка вказує `ls` класифікувати вивід, додаючи маркер до імен файлів і каталогів, щоб вказати, що вони собою являють:
 
-- a trailing `/` indicates that this is a directory
+- символ `/` наприкінці імені вказує на те, що це каталог
 - символ `@` вказує на посилання
 - символ `*` вказує на виконуваний файл
 
@@ -150,7 +143,7 @@ are **files** in the current working directory.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Clearing your terminal
+## Як очистити термінал
 
 Якщо екран стає занадто захаращеним, ви можете очистити термінал за допомогою команди `clear`. Ви все ще можете отримати доступ до попередніх команд за допомогою клавіш <kbd>↑</kbd> та <kbd>↓</kbd> для переміщення по рядках, або за допомогою прокрутки у вашому терміналі.
 
@@ -256,8 +249,7 @@ Try 'ls --help' for more information.
 $ man ls
 ```
 
-This command will turn your terminal into a page with a description
-of the `ls` command and its options.
+Ця команда виведе у вашому терміналі сторінку з описом команди `ls` та її опцій.
 
 Для навігації сторінками `man` ви можете використовувати <kbd>↑</kbd> і <kbd>↓</kbd> для переміщення по рядках, або спробувати <kbd>b</kbd> і <kbd>Spacebar</kbd> для переходу вгору і вниз на цілу сторінку.
 Для пошуку символу або слова на сторінках `man`, використовуйте клавішу <kbd>/</kbd> та слідом введіть символ або слово, яке ви шукаєте.
@@ -313,7 +305,7 @@ GNU надає посилання на свої [посібники](http://www.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Exploring Other Directories
+### Перегляд інших каталогів
 
 Ми можемо використовувати `ls` не лише у поточному робочому каталозі, але й для виведення вмісту іншого каталогу.
 Подивимося на наш каталог `Desktop` (робочий стіл), виконавши `ls -F Desktop`, тобто, команду `ls` з **опцією** `-F` і [**аргументом**][Arguments] `Desktop`.
@@ -327,12 +319,9 @@ $ ls -F Desktop
 shell-lesson-data/
 ```
 
-Зауважте, що якщо у вашому поточному робочому каталозі не існує каталогу з назвою `Desktop`, ця команда поверне помилку. Typically, a `Desktop` directory exists in your
-home directory, which we assume is the current working directory of your bash shell.
+Зауважте, що якщо у вашому поточному робочому каталозі не існує каталогу з назвою `Desktop`, ця команда поверне помилку. Зазвичай, підкаталог `Desktop` існує у вашому домашньому каталозі, який ми вважаємо поточним робочим каталогом вашого терміналу bash.
 
-Your output should be a list of all the files and sub-directories in your
-Desktop directory, including the `shell-lesson-data` directory you downloaded at
-the [setup for this lesson](../learners/setup.md). (On most systems, the
+На виході ви маєте отримати список усіх файлів і підкаталогів у вашому каталозі Desktop, включно з каталогом `shell-lesson-data`, який ви завантажили за посиланням під час [налаштувань для цього уроку](../learners/setup.md). (On most systems, the
 contents of the `Desktop` directory in the shell will show up as icons in a graphical
 user interface behind all the open windows. Подивіться, чи це ваш випадок.)
 
@@ -405,8 +394,7 @@ $ cd shell-lesson-data
 
 Але ми отримуємо помилку! Чому?
 
-With our methods so far,
-`cd` can only see sub-directories inside your current directory. Існують різні способи перегляду батьківських каталогів; ми почнемо з найпростішого.
+За допомогою поки що знайомих нам методів, `cd` може бачити лише підкаталоги у вашому поточному каталозі. Існують різні способи перегляду батьківських каталогів; ми почнемо з найпростішого.
 
 У терміналі є скорочення для переходу на один рівень каталогу вгору. Це працює наступним чином:
 
@@ -616,7 +604,7 @@ which is `/Users/nelle`?
 
 2. Ні: це вміст каталогу `Users/thing/backup`, але за допомогою `..` ми просили піднятися на один рівень вище.
 
-3. No: see previous explanation.
+3. Ні: див. попереднє пояснення.
 
 4. Так: `../backup/` вказує на `/Users/backup/`.
 
