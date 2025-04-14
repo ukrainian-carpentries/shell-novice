@@ -9,7 +9,7 @@
 #incubator: The Carpentries Incubator
 carpentry: 'swc'
 #Overall title for pages.
-title: 'The Unix Shell'
+title: 'Командний рядок Unix'
 #Date the lesson was created (YYYY-MM-DD, this is empty by default)
 created: '2014-10-22'
 #Comma-separated list of keywords for the lesson
