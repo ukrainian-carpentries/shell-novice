@@ -23,8 +23,7 @@ exercises: 20
 
 Тепер ми знаємо, як досліджувати файли та каталоги, але як їх створювати?
 
-In this episode we will learn about creating and moving files and directories,
-using the `exercise-data/writing` directory as an example.
+У цьому уроці ми дізнаємося про створення та переміщення файлів і каталогів на прикладі каталогу `exercise-data/writing`.
 
 ### Крок перший: подивіться, де ми знаходимося і що вже маємо
 
@@ -76,7 +75,7 @@ haiku.txt  LittleWomen.txt  thesis/
 $ ls -F thesis
 ```
 
-Note that `mkdir` is not limited to creating single directories one at a time.
+Зауважте, що команда `mkdir` не тільки створює окремі каталоги по одному за раз.
 Параметр `-p` дозволяє команді `mkdir` створювати каталог із вкладеними підкаталогами за одну операцію:
 
 ```bash
