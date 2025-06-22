@@ -211,7 +211,7 @@ Mandatory arguments to long options are mandatory for short options, too.
 
 - Використовуйте коротку під час введення команд безпосередньо в термінал, щоб мінімізувати натискання клавіш і швидше виконувати завдання.
 - Use the long option in scripts to provide clarity.
- It will be read many times and typed once.
+  It will be read many times and typed once.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -424,22 +424,17 @@ $ ls -F -a
 
 ## Інші приховані файли
 
-In addition to the hidden directories `..` and `.`, you may also see a file
-called `.bash_profile`. Цей файл зазвичай містить конфігурацію терміналу. You may also see other files and directories beginning
-with `.`. These are usually files and directories that are used to configure
-different programs on your computer. Префікс `.` використовується для того, щоб ці конфігураційні файли не захаращували термінал, коли використовується стандартна команда `ls`.
+Крім прихованих каталогів `..` та `.`, ви також можете побачити файл з назвою `.bash_profile`. Цей файл зазвичай містить конфігурацію терміналу. Ви також можете зустріти інші файли й каталоги, які починаються з символу `.`. Зазвичай це конфігураційні файли та каталоги, які використовуються різними програмами на вашому комп’ютері для налаштування. Префікс `.` використовується для того, щоб ці конфігураційні файли не захаращували термінал, коли використовується стандартна команда `ls`.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Ці три команди є основними командами для навігації по файловій системі на вашому комп'ютері: `pwd`, `ls` і `cd`. Let's explore some variations on those commands. What happens
-if you type `cd` on its own, without giving
-a directory?
+Ці три команди є основними командами для навігації по файловій системі на вашому комп'ютері: `pwd`, `ls` і `cd`. Розгляньмо деякі варіації цих команд. Що станеться якщо ви введете команду `cd` саму по собі, не зазначаючи каталог?
 
 ```bash
 $ cd
 ```
 
-How can you check what happened? Команда `pwd` дає нам відповідь!
+Як перевірити, що сталося? Команда `pwd` дає нам відповідь!
 
 ```bash
 $ pwd
@@ -451,7 +446,7 @@ $ pwd
 
 Виявляється, `cd` без аргументу поверне вас до домашнього каталогу, що дуже зручно, якщо ви загубилися у власній файловій системі.
 
-Let's try returning to the `exercise-data` directory from before. Минулого разу ми використовували три команди, але насправді ми можемо поєднати перелік каталогів для переходу до каталогу `exercise-data` за один крок:
+Спробуємо повернутися до каталогу `exercise-data`. Минулого разу ми використовували три команди, але насправді ми можемо поєднати перелік каталогів для переходу до каталогу `exercise-data` за один крок:
 
 ```bash
 $ cd Desktop/shell-lesson-data/exercise-data
@@ -461,16 +456,9 @@ $ cd Desktop/shell-lesson-data/exercise-data
 
 If we want to move up one level from the data directory, we could use `cd ..`.  Але існує інший спосіб переміщення до будь-якого каталогу, незалежно від вашого поточного розташування.
 
-So far, when specifying directory names, or even a directory path (as above),
-we have been using **relative paths**.  When you use a relative path with a command
-like `ls` or `cd`, it tries to find that location from where we are,
-rather than from the root of the file system.
+Дотепер, ми використовували **відносні шляхи** для вказування назви каталогів або навіть шляхів до каталогів (як описано вище).  Він повідомляє таким командам, як ls або cd, знайти каталог на основі нашої поточної позиції у файловій системі, а не з кореня файлової системи.
 
-However, it is possible to specify the **absolute path** to a directory by
-including its entire path from the root directory, which is indicated by a
-leading slash. The leading `/` tells the computer to follow the path from
-the root of the file system, so it always refers to exactly one directory,
-no matter where we are when we run the command.
+Однак ми також можемо використовувати **абсолютні шляхи**, які вказують повне розташування каталогу, починаючи від кореневого каталогу, який позначається символом скісної риски (/). Символ `/` на початку абсолютного шляху вказує комп'ютеру слідувати шляхом від кореня файлової системи, тому шлях інтерпретується однаково, незалежно від нашого поточного каталогу.
 
 Це дає змогу перейти до каталогу `shell-lesson-data` з будь-якого місця у файловій системі (у тому числі з каталогу `exercise-data`). Щоб знайти абсолютний шлях ми можемо скористатися `pwd`, а потім витягти потрібний нам фрагмент, щоб перейти до `shell-lesson-data`.
 
@@ -492,14 +480,9 @@ $ cd /Users/nelle/Desktop/shell-lesson-data
 
 ## Ще два скорочення
 
-Термінал інтерпретує символ тильди (`~`) на початку шляху як "домашній каталог поточного користувача". Наприклад, якщо домашнім каталогом користувача Неллі є каталог `/Users/nelle`, то `~/data` еквівалентно `/Users/nelle/data`. This only works if it is the first character in the
-path; `here/there/~/elsewhere` is _not_ `here/there/Users/nelle/elsewhere`.
+Термінал інтерпретує символ тильди (`~`) на початку шляху як "домашній каталог поточного користувача". Наприклад, якщо домашнім каталогом користувача Неллі є каталог `/Users/nelle`, то `~/data` еквівалентно `/Users/nelle/data`. Це працює лише у випадку, якщо це перший символ у шляху: `here/there/~/elsewhere` _не_ є`here/there/Users/nelle/elsewhere`.
 
-Іншим скороченням є символ `-` (тире). `cd` will translate `-` into
-_the previous directory I was in_, which is faster than having to remember,
-then type, the full path.  This is a _very_ efficient way of moving
-_back and forth between two directories_ -- i.e. if you execute `cd -` twice,
-you end up back in the starting directory.
+Іншим скороченням є символ `-` (тире). `cd` інтерпретує `-` як _попередній каталог, у якому я був_, що є швидше, ніж запам'ятовувати, а потім набирати повний шлях.  Це _дуже_ ефективний спосіб переміщення _між двома каталогами_ - тобто, якщо ви виконаєте `cd -` двічі, це повертає вас до початкового каталогу.
 
 The difference between `cd ..` and `cd -` is
 that the former brings you _up_, while the latter brings you _back_.
@@ -574,11 +557,11 @@ $ cd -
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Relative Path Resolution
+## Завдання відносного шляху
 
 Використовуючи наведену нижче схему файлової системи, якщо `pwd` показує `/Users/thing`, що покаже команда `ls -F ../backup`?
 
-1. `../backup: No such file or directory`
+1. `../backup: No such file or directory (не існує такого файлу або каталогу)`
 2. `2012-12-01 2013-01-08 2013-01-27`
 3. `2012-12-01/ 2013-01-08/ 2013-01-27/`
 4. `original/ pnas_final/ pnas_sub/`
@@ -627,7 +610,7 @@ pnas_sub/ pnas_final/ original/
 1. Ні: `pwd` не є назвою каталогу.
 
 2. Yes: `ls` without directory argument lists files and directories
- in the current directory.
+  in the current directory.
 
 3. Yes: uses the absolute path explicitly.
 
