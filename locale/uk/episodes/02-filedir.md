@@ -150,7 +150,7 @@ are **files** in the current working directory.
 $ ls --help
 ```
 
-2. We can read its manual with `man` (available on Linux and macOS):
+2. Ми можемо переглянути інструкцію до використання команди за допомогою `man` (доступної на Linux і macOS), наприклад:
 
 ```bash
 $ man ls
@@ -712,15 +712,13 @@ $ ls north-pacific-gyre/
 
 Повторне натискання клавіші <kbd>Tab</kbd> нічого не дасть, оскільки існує декілька варіантів; якщо натиснути <kbd>Tab</kbd> двічі, буде показано список усіх відповідних файлів.
 
-If Nelle then presses <kbd>G</kbd> and then presses <kbd>Tab</kbd> again,
-the shell will append 'goo' since all files that start with 'g' share
-the first three characters 'goo'.
+Якщо Неллі потім натисне ще<kbd>G</kbd> і знову <kbd>Tab</kbd>, оболонка додасть 'goo', оскільки всі файли, що починаються з 'g', мають спільні перші три символи 'goo'.
 
 ```bash
 $ ls north-pacific-gyre/goo
 ```
 
-To see all of those files, she can press <kbd>Tab</kbd> twice more.
+Щоб побачити всі ці файли, вона може натиснути клавішу <kbd>Tab</kbd> ще двічі.
 
 ```bash
 ls north-pacific-gyre/goo goodiff.sh goostats.sh
@@ -738,13 +736,13 @@ and we will see it in many other tools as we go on.
 - Directories can also store other directories, which then form a directory tree.
 - Команда `pwd` виводить поточний робочий каталог користувача.
 - `ls [path]` prints a listing of a specific file or directory; `ls` on its own lists the current working directory.
-- Команда `cd [шлях]` змінює поточний робочий каталог.
+- `cd [path]` changes the current working directory.
 - Більшість команд приймають параметри, які починаються з одного символу `-`.
-- Назви каталогів в шляху розділяються символами `/` в Unix, але `\\` в Windows.
-- Символ `/` сам по собі є кореневим каталогом усієї файлової системи.
-- Абсолютний шлях вказує на розташування від кореня файлової системи.
-- Відносний шлях вказує на розташування, починаючи з поточного.
-- `.` on its own means 'the current directory'; `..` means 'the directory above the current one'.
+- Назви каталогів в шляху розділяються символами `/` в Unix, але `\` в Windows.
+- `/` on its own is the root directory of the whole file system.
+- An absolute path specifies a location from the root of the file system.
+- A relative path specifies a location starting from the current location.
+- Символ `.` сам по собі означає 'поточний каталог'; `..` означає 'батьківський каталог' (той, що знаходиться над поточним каталогом).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
