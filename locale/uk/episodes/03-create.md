@@ -113,7 +113,7 @@ the files and directories themselves are the same.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Good names for files and directories
+## Доречні імена для файлів і каталогів
 
 Complicated names of files and directories can make your life painful
 when working on the command line. Here we provide a few useful
@@ -467,11 +467,7 @@ $ ls thesis thesis_backup
 ```
 
 ```output
-thesis:
-quotations.txt
-
-thesis_backup:
-quotations.txt
+thesis: quotations.txt thesis_backup: quotations.txt
 ```
 
 It is important to include the `-r` flag. If you want to copy a directory and you omit this option
@@ -638,7 +634,7 @@ $ rm thesis
 ```
 
 ```error
-rm: cannot remove 'thesis': Is a directory
+rm: cannot remove `thesis': Is a directory
 ```
 
 This happens because `rm` by default only works on files, not directories.
@@ -918,7 +914,7 @@ $ ls analyzed
 ```
 
 ```output
-fructose.dat    sucrose.dat
+fructose.dat sucrose.dat
 ```
 
 :::::::::::::::  solution
