@@ -566,13 +566,13 @@ $ cd -
 3. `2012-12-01/ 2013-01-08/ 2013-01-27/`
 4. `original/ pnas_final/ pnas_sub/`
 
-![](fig/filesystem-challenge.svg){alt='A directory tree below the Users directory where "/Users" contains the directories "backup" and "thing"; "/Users/backup" contains "original","pnas\_final" and "pnas\_sub"; "/Users/thing" contains "backup"; and"/Users/thing/backup" contains "2012-12-01", "2013-01-08" and"2013-01-27"'}
+![](fig/filesystem-challenge.svg){alt='Дерево каталогів під каталогом Users, де "/Users" містить каталоги "backup" та "thing"; "/Users/backup" містить "original", "pnas\_final" та "pnas\_sub"; "/Users/thing" містить "backup"; та "/Users/thing/backup" містить "2012-12-01", "2013-01-08" та "2013-01-27"'}
 
 :::::::::::::::  solution
 
 ## Розв'язання
 
-1. No: there _is_ a directory `backup` in `/Users`.
+1. Ні: у каталозі`/Users` існує підкаталог `backup`.
 
 2. Ні: це вміст каталогу `Users/thing/backup`, але за допомогою `..` ми просили піднятися на один рівень вище.
 
@@ -586,7 +586,7 @@ $ cd -
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## `ls` Reading Comprehension
+## Розуміння команди `ls`
 
 Using the filesystem diagram below,
 if `pwd` displays `/Users/backup`,
@@ -597,7 +597,7 @@ what command(s) will result in the following output:
 pnas_sub/ pnas_final/ original/
 ```
 
-![](fig/filesystem-challenge.svg){alt='A directory tree below the Users directory where "/Users" contains the directories "backup" and "thing"; "/Users/backup" contains "original","pnas\_final" and "pnas\_sub"; "/Users/thing" contains "backup"; and"/Users/thing/backup" contains "2012-12-01", "2013-01-08" and"2013-01-27"'}
+![](fig/filesystem-challenge.svg){alt='Дерево каталогів під каталогом Users, де "/Users" містить каталоги "backup" та "thing"; "/Users/backup" містить "original", "pnas_final" та "pnas_sub"; "/Users/thing" містить "backup"; та "/Users/thing/backup" містить "2012-12-01", "2013-01-08" та "2013-01-27"'}
 
 1. `ls pwd`
 2. `ls -r -F`
@@ -605,14 +605,13 @@ pnas_sub/ pnas_final/ original/
 
 :::::::::::::::  solution
 
-## Розв'язання
+## Відповідь
 
 1. Ні: `pwd` не є назвою каталогу.
 
-2. Yes: `ls` without directory argument lists files and directories
-  in the current directory.
+2. Так: команда `ls` без аргументу перелічує файли й каталоги у поточному каталозі.
 
-3. Yes: uses the absolute path explicitly.
+3. Так: чітко використовує абсолютний шлях.
 
 :::::::::::::::::::::::::
 
@@ -622,8 +621,7 @@ pnas_sub/ pnas_final/ original/
 
 Ми вже познайомилися з командами, опціями та аргументами, але, можливо, буде корисно формалізувати деяку термінологію.
 
-Consider the command below as a general example of a command,
-which we will dissect into its component parts:
+Розглянемо команду нижче як приклад і розберемо її на складові частини:
 
 ```bash
 $ ls -F /
@@ -631,17 +629,16 @@ $ ls -F /
 
 ![](fig/shell_command_syntax.svg){alt='Загальний синтаксис команди терміналу'}
 
-`ls` is the **command**, with an **option** `-F` and an
-**argument** `/`.
+`ls` - це **команда**, з **опцією** `-F` та **аргументом** `/`.
 Ми вже зустрічалися з опціями, які починаються з одного тире (`-`), відомі як **короткі варіанти**, або двох тире (`--`), відомі як **довгі варіанти**.
-\[Параметри] змінюють поведінку команди, а \[Аргументи] вказують команді, над чим вона має працювати (наприклад, над файлами й каталогами).
-Sometimes options and arguments are referred to as **parameters**.
+\[Options] change the behavior of a command and
+[Arguments] tell the command what to operate on (e.g. files and directories).
+Іноді опції та аргументи називають **параметрами**.
 A command can be called with more than one option and more than one argument, but a
 command doesn't always require an argument or an option.
 
 You might sometimes see options being referred to as **switches** or **flags**,
-especially for options that take no argument. In this lesson we will stick with
-using the term _option_.
+especially for options that take no argument. У цьому уроці ми будемо дотримуватися терміну _опція_.
 
 Кожна частина відокремлюється пробілами. Якщо ви пропустите пробіл між `ls` і `-F`, термінал шукатиме команду з назвою `ls-F`, якої не існує. Also, capitalization can be important.
 For example, `ls -s` will display the size of files and directories alongside the names,
@@ -657,7 +654,7 @@ total 28
  4 animal-counts   4 creatures  12 numbers.txt   4 alkanes   4 writing
 ```
 
-Note that the sizes returned by `ls -s` are in _blocks_.
+Зверніть увагу, що розміри, які повертає команда `ls -s`, подано у _блоках_.
 Оскільки вони визначаються по-різному для різних операційних систем, ви можете отримати не такі значення, як у прикладі.
 
 ```bash
@@ -668,8 +665,9 @@ $ ls -S exercise-data
 animal-counts  creatures  alkanes  writing  numbers.txt
 ```
 
-Зібравши все це разом, наша команда вище дасть нам список файлів і каталогів у кореневому каталозі `/`.
-An example of the output you might get from the above command is given below:
+Putting all that together, our command `ls -F /` above gives us a listing
+of files and directories in the root directory `/`.
+Нижче наведено приклад результату, який ви можете отримати від цієї команди:
 
 ```bash
 $ ls -F /
@@ -685,21 +683,14 @@ Network/              Volumes/
 
 Знаючи так багато про файли та каталоги, Неллі готова впорядкувати файли, які створить машина для аналізу білків.
 
-She creates a directory called `north-pacific-gyre`
-(to remind herself where the data came from),
-which will contain the data files from the assay machine
-and her data processing scripts.
+Вона створює каталог під назвою `north-pacific-gyre` (щоб нагадати собі, звідки взялися дані), який міститиме файли даних з аналітичної машини та її скрипти для обробки даних.
 
-Each of her physical samples is labelled according to her lab's convention
-with a unique ten-character ID,
-such as 'NENE01729A'.
-This ID is what she used in her collection log
-to record the location, time, depth, and other characteristics of the sample,
-so she decides to use it within the filename of each data file.
+Кожному фізичному зразку присвоюється унікальний десятисимвольний ідентифікатор, наприклад 'NENE01729A', згідно з затвердженими в лабораторії правилами.
+Оскільки цей ідентифікатор вона використовує у своєму журналі для документування таких деталей, як місцезнаходження, часу і глибини, то вона додає його до імен своїх файлів даних.
 Оскільки результат роботи аналізатора є звичайним текстом, вона назве свої файли `NENE01729A.txt`, `NENE01812A.txt` і так далі.
 Усі 1520 файлів буде збережено в одному каталозі.
 
-Тепер у її поточному каталозі `shell-lesson-data`, Нелл може побачити, які файли вона має за допомогою цієї команди:
+Тепер у її поточному каталозі `shell-lesson-data`, Неллі може побачити, які файли вона має за допомогою цієї команди:
 
 ```bash
 $ ls north-pacific-gyre/
@@ -713,16 +704,13 @@ but she can let the shell do most of the work through what is called **tab compl
 $ ls nor
 ```
 
-and then presses <kbd>Tab</kbd> (the tab key on her keyboard),
-the shell automatically completes the directory name for her:
+а потім натисне клавішу <kbd>Tab</kbd> (клавішу табуляції на її клавіатурі), то термінал автоматично доповнить назву каталогу для неї:
 
 ```bash
 $ ls north-pacific-gyre/
 ```
 
-Pressing <kbd>Tab</kbd> again does nothing,
-since there are multiple possibilities;
-pressing <kbd>Tab</kbd> twice brings up a list of all the files.
+Повторне натискання клавіші <kbd>Tab</kbd> нічого не дасть, оскільки існує декілька варіантів; якщо натиснути <kbd>Tab</kbd> двічі, буде показано список усіх відповідних файлів.
 
 If Nelle then presses <kbd>G</kbd> and then presses <kbd>Tab</kbd> again,
 the shell will append 'goo' since all files that start with 'g' share
