@@ -20,7 +20,7 @@ life_cycle: 'stable'
 #License of the lesson materials (recommended CC-BY 4.0)
 license: 'CC-BY 4.0'
 #Link to the source repository for this lesson
-source: 'https://github.com/swcarpentry/shell-novice'
+source: 'https://github.com/ukrainian-carpentries/shell-novice'
 #Default branch of your lesson
 branch: 'main'
 #Who to contact if there are any issues
@@ -58,6 +58,6 @@ profiles:
 #Customisation ---------------------------------------------
 #This space below is where custom yaml items (e.g. pinning
 #sandpaper and varnish versions) should live
-url: 'https://swcarpentry.github.io/shell-novice'
+url: 'https://ukrainian-carpentries.github.io/shell-novice'
 analytics: carpentries
-lang: en
+lang: uk
