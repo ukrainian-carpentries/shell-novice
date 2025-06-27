@@ -25,7 +25,7 @@ exercises: 20
 
 У цьому уроці ми дізнаємося про створення та переміщення файлів і каталогів на прикладі каталогу `exercise-data/writing`.
 
-### Крок перший: подивіться, де ми знаходимося і що вже маємо
+### Step one: see where we are and what we already have
 
 Ми все ще маємо бути у каталозі `shell-lesson-data` на Робочому столі (англ. Desktop), що ми можемо перевірити за допомогою:
 
@@ -56,7 +56,7 @@ haiku.txt LittleWomen.txt
 $ mkdir thesis
 ```
 
-Як ви можете здогадатися з її назви, команда `mkdir` означає 'зробити каталог' (англ. 'make directory').
+Як ви можете здогадатися з її назви, команда `mkdir` означає 'створити каталог' (англ. 'make directory').
 Оскільки `thesis` є відносним шляхом
 (тобто не має початкової косої риски, як `/what/ever/thesis`),
 новий каталог буде створено у поточному робочому каталозі:
@@ -82,9 +82,8 @@ $ ls -F thesis
 $ mkdir -p ../project/data ../project/results
 ```
 
-The `-R` option to the `ls` command will list all nested subdirectories within a directory.
-Let's use `ls -FR` to recursively list the new directory hierarchy we just created in the
-`project` directory:
+Параметр `-R` з командою `ls` покаже усі вкладені підкаталоги у каталозі.
+Скористаймось `ls -FR` для рекурсивного зображення нової ієрархії каталогів, яку ми щойно створили у каталозі `project`:
 
 ```bash
 $ ls -FR ../project
@@ -104,10 +103,8 @@ data/  results/
 ## Два способи зробити одне й те саме
 
 Використання терміналу для створення каталогу нічим не відрізняється від використання файлового провідника.
-If you open the current directory using your operating system's graphical file explorer,
-the `thesis` directory will appear there too.
-While the shell and the file explorer are two different ways of interacting with the files,
-the files and directories themselves are the same.
+Якщо ви зараз відкриєте поточний каталог за допомогою графічного провідника файлів вашої операційної системи, там також з'явиться каталог `thesis`.
+Хоча термінал і файловий провідник - це два різні способи взаємодії з файлами, самі файли й каталоги одні й ті ж самі.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -115,39 +112,33 @@ the files and directories themselves are the same.
 
 ## Доречні імена для файлів і каталогів
 
-Complicated names of files and directories can make your life painful
-when working on the command line. Here we provide a few useful
-tips for the names of your files and directories.
+Використання надто складних імен для файлів і каталогів може ускладнити роботу в командному рядку. Ось кілька корисних порад щодо вибору ефективних імен.
 
 1. Не використовуйте пробіли.
 
-Spaces can make a name more meaningful,
-but since spaces are used to separate arguments on the command line
-it is better to avoid them in names of files and directories.
+Пробіли можуть зробити назву більш змістовною, але оскільки вони використовуються для відокремлення аргументів у командному рядку, краще уникати їх у назвах файлів і каталогів.
 Ви можете використовувати `-` або `_` (наприклад, `north-pacific-gyre/` замість `north pacific gyre/`).
 Щоб перевірити це, спробуйте набрати `mkdir north pacific gyre` і подивіться, який каталог (або каталоги!)
-буде створено при перевірці за допомогою `ls -F`.
+буде створено, перевірив це за допомогою `ls -F`.
 
 2. Не починайте назву з `-` (тире).
 
 Команди розглядають назви, що починаються з `-`, як опції.
 
-3. Використовуйте літери, цифри, `.` (крапка), `-` (тире) і `_` (підкреслення).
+3. Використовуйте літери, цифри, `.` (крапку), `-` (тире) і `_` (підкреслення).
 
 Багато інших символів мають особливе значення у командному рядку.
-We will learn about some of these during this lesson.
-There are special characters that can cause your command to not work as
-expected and can even result in data loss.
+Деякі з них ми розглянемо у цьому уроці.
+Існують спеціальні символи, які можуть спричинити неправильну роботу команди й навіть призвести до втрати даних.
 
-If you need to refer to names of files or directories that have spaces
-or other special characters, you should surround the name in single
-[quotes](https://www.gnu.org/software/bash/manual/html_node/Quoting.html) (`''`).
+Якщо вам потрібно звернутися до назв файлів або каталогів, які містять пробіли чи інші спеціальні символи, вам слід узяти назву в одинарні [лапки](https://www.gnu.org/software/bash/manual/html_node/Quoting.html) (`''`).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::  instructor
 
-Учні іноді можуть потрапити в пастку текстових редакторів командного рядка, таких як Vim, Emacs або Nano. Closing the terminal emulator and opening
+Learners can sometimes get trapped within command-line text editors
+such as Vim, Emacs, or Nano. Closing the terminal emulator and opening
 a new one can be frustrating as learners will have to navigate to the
 correct folder again. Для пом'якшення цієї проблеми ми радимо викладачам використовувати той самий текстовий редактор, що й учні під час семінарів (у більшості випадків Nano).
 
@@ -155,8 +146,7 @@ correct folder again. Для пом'якшення цієї проблеми м�
 
 ### Створення текстового файлу
 
-Let's change our working directory to `thesis` using `cd`,
-then run a text editor called Nano to create a file called `draft.txt`:
+Перейдімо до каталогу `thesis` за допомогою `cd`, а потім запустимо текстовий редактор Nano та створимо файл з назвою `draft.txt`:
 
 ```bash
 $ cd thesis
@@ -165,41 +155,33 @@ $ nano draft.txt
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Який редактор?
+## Який редактор використовувати?
 
-When we say, '`nano` is a text editor' we really do mean 'text'. Він може працювати лише з простими символьними даними, а не з таблицями, зображеннями чи будь-якими іншими зручними для людини даними. We use it in examples because it is one of the
-least complex text editors. However, because of this trait, it may
-not be powerful enough or flexible enough for the work you need to do
-after this workshop. У системах Unix (таких як Linux та macOS), багато програмістів використовують [Emacs] (https://www.gnu.org/software/emacs/) або [Vim](https://www.vim.org/) (обидва вимагають більше часу на вивчення), або графічний редактор, такий як [Gedit](https://projects.gnome.org/gedit/). On Windows, you may wish to
-use [Notepad++](https://notepad-plus-plus.org/).  Windows also has a built-in
-editor called `notepad` that can be run from the command line in the same
-way as `nano` for the purposes of this lesson.
+When we say, '`nano` is a text editor' we really do mean 'text'. It can
+only work with plain character data, not tables, images, or any other
+human-friendly media. Ми використовуємо його у прикладах, оскільки це один із найпростіших текстових редакторів. Однак, через це він може виявитися недостатньо потужним або гнучким для складніших завдань, які вам потрібно буде виконати після завершення цього семінару. On Unix systems (such as Linux and macOS),
+many programmers use [Emacs](https://www.gnu.org/software/emacs/) or
+[Vim](https://www.vim.org/) (both of which require more time to learn),
+or a graphical editor such as [Gedit](https://projects.gnome.org/gedit/)
+or [VScode](https://code.visualstudio.com/). У Windows, можливо, ви захочете скористатися [Notepad++](https://notepad-plus-plus.org/).  Операційна система Windows також має вбудований редактор з назвою `notepad`, який можна запустити з командного рядка так само, як і `nano` для цього семінару.
 
-Незалежно від того, яким редактором ви користуєтеся, вам потрібно знати, де він шукає і зберігає файли. If you start it from the shell, it will (probably)
-use your current working directory as its default location. If you use
-your computer's start menu, it may want to save files in your Desktop or
-Documents directory instead. Ви можете змінити це, перейшовши до іншого каталогу під час першого виконання команди "Зберегти як...".
+Незалежно від того, яким редактором ви користуєтеся, вам потрібно знати, де він шукає і зберігає файли. Якщо ви запускаєте його з термінала, він (імовірно) використовуватиме ваш поточний робочий каталог як розташування за замовчуванням. Однак, якщо ви використовуєте меню "Пуск" вашого комп'ютера, файли за замовчуванням можуть зберігатися замість цього на робочому столі або в каталозі "Документи" (Documents). Ви можете змінити це, перейшовши до іншого каталогу під час першого виконання команди "Зберегти як..." ("Save As...").
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Let's type in a few lines of text.
+Наберемо кілька рядків тексту.
 
-![](fig/nano-screenshot.png){alt="screenshot of nano text editor in action with the text It's not publish or perish any more, it's share and thrive"}
+![](fig/nano-screenshot.png){alt="Скриншот текстового редактора nano в дії з текстом "У минулому це було - публікуй чи зникни, а наразі стало - ділися та процвітай"}
 
-Once we're happy with our text, we can press <kbd>Ctrl</kbd>\+<kbd>O</kbd>
-(press the <kbd>Ctrl</kbd> or <kbd>Control</kbd> key and, while
-holding it down, press the <kbd>O</kbd> key) to write our data to disk. We will be asked
-to provide a name for the file that will contain our text. Press <kbd>Return</kbd> to accept
-the suggested default of `draft.txt`.
+Як тільки ми будемо задоволені нашим текстом, нам треба використати комбінацію <kbd>Ctrl</kbd>\+<kbd>O</kbd> (утримуючи клавішу <kbd>Ctrl</kbd> or <kbd>Control</kbd>, натисніть клавішу <kbd>O</kbd>), щоб зберегти наші дані на диск. Потім нам буде запропоновано вказати ім’я файлу, у якому зберігатиметься наш текст. Натисніть <kbd>Return</kbd>, щоб прийняти запропоновану за замовчуванням назву `draft.txt`.
 
-Once our file is saved, we can use <kbd>Ctrl</kbd>\+<kbd>X</kbd> to quit the editor and
-return to the shell.
+Як тільки файл було збережено, скористаємось комбінацією клавіш <kbd>Ctrl</kbd>\+<kbd>X</kbd>, щоб вийти з редактора і повернутися до термінала.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Control, Ctrl, or ^ Key
+## Клавіша Control, Ctrl або ^
 
-The Control key is also called the 'Ctrl' key. There are various ways
+Клавіші Control також називається клавішею 'Ctrl'. There are various ways
 in which using the Control key may be described. For example, you may
 see an instruction to press the <kbd>Control</kbd> key and, while holding it down,
 press the <kbd>X</kbd> key, described as any of:
