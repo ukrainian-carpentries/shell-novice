@@ -1,5 +1,5 @@
 ---
-title: Loops
+title: Цикли
 teaching: 40
 exercises: 10
 ---
