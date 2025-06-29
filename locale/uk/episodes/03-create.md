@@ -182,20 +182,17 @@ or [VScode](https://code.visualstudio.com/). У Windows, можливо, ви з
 ## Клавіша Control, Ctrl або ^
 
 Клавіші Control також називається клавішею 'Ctrl'. There are various ways
-in which using the Control key may be described. For example, you may
-see an instruction to press the <kbd>Control</kbd> key and, while holding it down,
-press the <kbd>X</kbd> key, described as any of:
+in which using the Control key may be described. Наприклад, ви можете побачити вказівку натиснути клавішу <kbd>Control</kbd> і, утримуючи її натиснутою, потім натиснути клавішу <kbd>X</kbd>, описану будь-яким з наступних способів:
 
 - `Control-X`
 - `Control+X`
-- `Ctrl-C`
+- `Ctrl-X`
 - `Ctrl+X`
 - `^X`
 - `C-x`
 
-У nano, у нижній частині екрана ви побачите `^G Отримати довідку ^O Вивести на екран`.
-This means that you can use `Control-G` to get help and `Control-O` to save your
-file.
+У nano, у нижній частині екрана ви побачите `^G Get Help ^O WriteOut`.
+Це означає, що ви можете скористатися `Control-G` для отримання довідки й `Control-O` для збереження вашого файлу.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
