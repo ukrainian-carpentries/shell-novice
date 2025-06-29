@@ -227,7 +227,7 @@ $ touch my_file.txt
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
 1. The `touch` command generates a new file called `my_file.txt` in
   your current directory.  You
@@ -251,7 +251,7 @@ $ touch my_file.txt
 To avoid confusion later on,
 we suggest removing the file you've just created before proceeding with the rest
 of the episode, otherwise future outputs may vary from those given in the lesson.
-To do this, use the following command:
+Для цього скористайтеся наступною командою:
 
 ```bash
 $ rm my_file.txt
