@@ -279,10 +279,7 @@ bytes; it's up to us and our programs to interpret those bytes
 according to the rules for plain text files, PDF documents, configuration
 files, images, and so on.
 
-Naming a PNG image of a whale as `whale.mp3` doesn't somehow
-magically turn it into a recording of whale song, though it _might_
-cause the operating system to associate the file with a music player
-program. In this case, if someone double-clicked `whale.mp3` in a file
+Якщо ви назвете зображення кита у форматі PNG як `whale.mp3`, це не перетворить його якимось чарівним чином на запис пісні кита, хоча це _може_ змусити операційну систему спробувати відкрити його за допомогою музичного плеєра. In this case, if someone double-clicked `whale.mp3` in a file
 explorer program, the music player will automatically (and erroneously)
 attempt to open the `whale.mp3` file.
 
