@@ -518,19 +518,18 @@ $ ls
 
 ## Відповідь
 
-We start in the `/Users/jamie/data` directory, and create a new folder called `recombined`.
-The second line moves (`mv`) the file `proteins.dat` to the new folder (`recombined`).
-The third line makes a copy of the file we just moved.
-The tricky part here is where the file was copied to.
-Recall that `..` means 'go up a level', so the copied file is now in `/Users/jamie`.
-Notice that `..` is interpreted with respect to the current working
-directory, **not** with respect to the location of the file being copied.
-So, the only thing that will show using ls (in `/Users/jamie/data`) is the recombined folder.
+Ми розпочинаємо роботу в каталозі `/Users/jamie/data` і створюємо нову папку з назвою `recombined`.
+Другий рядок переміщує (`mv`) файл `proteins.dat` до нового каталогу (`recombined`).
+Третій рядок робить копію файлу, який ми щойно перемістили.
+Складність полягає у тому, куди саме було скопійовано цей файл.
+Нагадаємо, що `..` означає "піднятися на рівень вище", тому скопійований файл тепер знаходиться у `/Users/jamie`.
+Зверніть увагу, що `..` інтерпретується відносно поточного робочого каталогу, а **не** відносно розташування файлу, який копіюється.
+Отже, єдине, що буде показано за допомогою команди `ls` (у каталозі `/Users/jamie/data`) - це каталог `recombined`.
 
-1. No, see explanation above.  `proteins-saved.dat` is located at `/Users/jamie`
-2. Yes
-3. No, see explanation above.  `proteins.dat` is located at `/Users/jamie/data/recombined`
-4. No, see explanation above.  `proteins-saved.dat` is located at `/Users/jamie`
+1. Ні, див. пояснення вище.  Каталог `proteins-saved.dat` розташовано у каталозі `/Users/jamie`
+2. Так
+3. Ні, див. пояснення вище.  Файл `proteins.dat` знаходиться в каталозі `/Users/jamie/data/recombined`
+4. Ні, див. пояснення вище.  Файл `proteins-saved.dat` знаходиться в каталозі `/Users/jamie`
 
 :::::::::::::::::::::::::
 
@@ -538,9 +537,9 @@ So, the only thing that will show using ls (in `/Users/jamie/data`) is the recom
 
 ## Removing files and directories
 
-Returning to the `shell-lesson-data/exercise-data/writing` directory,
-let's tidy up this directory by removing the `quotes.txt` file we created.
-The Unix command we'll use for this is `rm` (short for 'remove'):
+Повертаючись до каталогу `shell-lesson-data/exercise-data/writing`,
+давайте почистимо цей каталог, видаливши створений нами файл `quotes.txt`.
+Для цього ми скористаємося командою Unix `rm` (скорочення від англ. `remove` - видаляти):
 
 ```bash
 $ rm quotes.txt
@@ -579,7 +578,7 @@ Why would we want this protection when using `rm`?
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
 ```output
 rm: remove regular file 'thesis_backup/quotations.txt'? y
@@ -640,7 +639,7 @@ $ mkdir backup
 $ cp creatures/minotaur.dat creatures/unicorn.dat backup/
 ```
 
-In the example below, what does `cp` do when given three or more file names?
+Що робить команда `cp` у наведеному нижче прикладі, коли їй задано три або більше імен файлів?
 
 ```bash
 $ cd creatures
@@ -657,7 +656,7 @@ $ cp minotaur.dat unicorn.dat basilisk.dat
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
 If given more than one file name followed by a directory name
 (i.e. the destination directory must be the last argument),
@@ -725,7 +724,7 @@ produce this output?
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
 The solution is `3.`
 
@@ -839,7 +838,7 @@ The resulting directory structure should look like this
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
 ```bash
 $ cp *calibration.txt backup/calibration
@@ -888,7 +887,7 @@ fructose.dat sucrose.dat
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
 ```bash
 mv *.dat analyzed
@@ -959,7 +958,7 @@ $ mkdir raw processed
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
 The first two sets of commands achieve this objective.
 The first set uses relative paths to create the top-level directory before
