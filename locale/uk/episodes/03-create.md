@@ -320,13 +320,12 @@ quotes.txt
 
 One must be careful when specifying the target file name, since `mv` will
 silently overwrite any existing file with the same name, which could
-lead to data loss. By default, `mv` will not ask for confirmation before overwriting files.
-However, an additional option, `mv -i` (or `mv --interactive`), will cause `mv` to request
-such confirmation.
+lead to data loss. За замовчуванням `mv` не запитуватиме підтвердження перед перезаписом файлів.
+Однак додатковий параметр `mv -i` (або `mv --interactive`) змусить `mv` запросити таке підтвердження.
 
 Note that `mv` also works on directories.
 
-Let's move `quotes.txt` into the current working directory.
+Перемістимо `quotes.txt` до поточного робочого каталогу.
 We use `mv` once again,
 but this time we'll use just the name of a directory as the second argument
 to tell `mv` that we want to keep the filename
