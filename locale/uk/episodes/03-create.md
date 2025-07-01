@@ -457,8 +457,7 @@ cp: -r not specified; omitting directory 'thesis'
 
 Припустімо, що ви створили у поточному каталозі простий текстовий файл, який містить список статистичних тестів, які вам знадобляться для аналізу ваших даних, і назвали його `statstics.txt`
 
-After creating and saving this file you realize you misspelled the filename! You want to
-correct the mistake, which of the following commands could you use to do so?
+Після створення і збереження цього файлу ви зрозуміли, що неправильно написали назву файлу! Ви хочете виправити помилку. Яку з наведених нижче команд ви можете використати для цього?
 
 1. `cp statstics.txt statistics.txt`
 2. `mv statstics.txt statistics.txt`
@@ -467,9 +466,9 @@ correct the mistake, which of the following commands could you use to do so?
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
-1. No.  While this would create a file with the correct name,
+1. Ні.  While this would create a file with the correct name,
   the incorrectly named file still exists in the directory
   and would need to be deleted.
 2. Yes, this would work to rename the file.
