@@ -468,14 +468,12 @@ cp: -r not specified; omitting directory 'thesis'
 
 ## Відповідь
 
-1. Ні.  While this would create a file with the correct name,
-  the incorrectly named file still exists in the directory
-  and would need to be deleted.
+1. Ні.  Хоча це створить файл з правильною назвою, неправильно названий файл все одно існуватиме у каталозі, і його потрібно буде видалити.
 2. Yes, this would work to rename the file.
-3. No, the period(.) indicates where to move the file, but does not provide a new file name;
+3. Ні, крапка (.) indicates where to move the file, but does not provide a new file name;
   identical file names
   cannot be created.
-4. No, the period(.) indicates where to copy the file, but does not provide a new file name;
+4. Ні, крапка (.) indicates where to copy the file, but does not provide a new file name;
   identical file names cannot be created.
 
 :::::::::::::::::::::::::
@@ -518,7 +516,7 @@ $ ls
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
 We start in the `/Users/jamie/data` directory, and create a new folder called `recombined`.
 The second line moves (`mv`) the file `proteins.dat` to the new folder (`recombined`).
