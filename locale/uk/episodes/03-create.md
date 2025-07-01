@@ -326,13 +326,9 @@ lead to data loss. За замовчуванням `mv` не запитуват�
 Note that `mv` also works on directories.
 
 Перемістимо `quotes.txt` до поточного робочого каталогу.
-We use `mv` once again,
-but this time we'll use just the name of a directory as the second argument
-to tell `mv` that we want to keep the filename
-but put the file somewhere new.
-(This is why the command is called 'move'.)
-In this case,
-the directory name we use is the special directory name `.` that we mentioned earlier.
+Знову скористаємося `mv`, але цього разу ми використаємо лише назву каталогу як другий аргумент щоб повідомити `mv`, що ми хочемо зберегти назву файлу, але перемістити файл у нове місце.
+(Ось чому команда називається 'перемістити'.)
+У цьому випадку ми використовуємо спеціальну назву `.` поточного каталогу, про яку ми згадували раніше.
 
 ```bash
 $ mv thesis/quotes.txt .
@@ -376,8 +372,7 @@ quotes.txt
 
 ## Moving Files to a new folder
 
-After running the following commands,
-Jamie realizes that she put the files `sucrose.dat` and `maltose.dat` into the wrong folder.
+Після виконання наступних команд Джеймі зрозуміла, що помістила файли `sucrose.dat` та `maltose.dat` не до того каталогу.
 The files should have been placed in the `raw` folder.
 
 ```bash
@@ -397,7 +392,7 @@ $ mv sucrose.dat maltose.dat ____/____
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
 ```bash
 $ mv sucrose.dat maltose.dat ../raw
@@ -442,11 +437,14 @@ $ ls thesis thesis_backup
 ```
 
 ```output
-thesis: quotations.txt thesis_backup: quotations.txt
+thesis:
+quotations.txt
+
+thesis_backup:
+quotations.txt
 ```
 
-It is important to include the `-r` flag. If you want to copy a directory and you omit this option
-you will see a message that the directory has been omitted because `-r not specified`.
+It is important to include the `-r` flag. Якщо ви хочете скопіювати каталог і не вкажете цей параметр ви побачите повідомлення про те, що каталог було пропущено, оскільки `-r` не вказано.
 
 ```bash
 $ cp thesis thesis_backup
@@ -457,8 +455,7 @@ cp: -r not specified; omitting directory 'thesis'
 
 ## Renaming Files
 
-Suppose that you created a plain-text file in your current directory to contain a list of the
-statistical tests you will need to do to analyze your data, and named it `statstics.txt`
+Припустімо, що ви створили у поточному каталозі простий текстовий файл, який містить список статистичних тестів, які вам знадобляться для аналізу ваших даних, і назвали його `statstics.txt`
 
 After creating and saving this file you realize you misspelled the filename! You want to
 correct the mistake, which of the following commands could you use to do so?
