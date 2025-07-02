@@ -691,8 +691,7 @@ Wildcards can be used in combination with each other. Наприклад, `???an
 
 Коли термінал бачить символ підстановки, він розгортає його для створення списку відповідних імен файлів _до_ запуску команди, яку було введено.
 Як виняток, якщо вираз підстановки не відповідає жодному файлу, Bash передасть вираз як аргумент до команди, якою вона є. Наприклад, введення `ls *.pdf` у каталозі `proteins` (який містить лише файли з іменами, що закінчуються на `.pdb`) призведе до повідомлення про те, що не існує файлу з назвою `*.pdf`.
-Втім, зазвичай команди на кшталт `wc` і `ls` показують списки імен файлів, які відповідають цим виразам, але не самим символам підстановки. It is the shell, not the other programs, that expands
-the wildcards.
+Втім, зазвичай команди на кшталт `wc` і `ls` показують списки імен файлів, які відповідають цим виразам, але не самим символам підстановки. Саме термінал, а не інші програми, виконує розкриття символів підстановки.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -700,8 +699,7 @@ the wildcards.
 
 ## List filenames matching a pattern
 
-When run in the `alkanes` directory, which `ls` command(s) will
-produce this output?
+При виконанні в каталозі `alkanes`, яка з команд `ls` видасть наступний результат?
 
 `ethane.pdb   methane.pdb`
 
@@ -714,23 +712,18 @@ produce this output?
 
 ## Відповідь
 
-The solution is `3.`
+Відповіддю є `3.`
 
-`1.` shows all files whose names contain zero or more characters (`*`)
-followed by the letter `t`,
-then zero or more characters (`*`) followed by `ane.pdb`.
-This gives `ethane.pdb  methane.pdb  octane.pdb  pentane.pdb`.
+`1.` показує всі файли, назви яких починаюьться з нуля або більше символів (`*`), за якими йде літера `t`, потім нуль або більше символів (`*`) і далі `ane.pdb`.
+Це дасть `ethane.pdb methane.pdb octane.pdb pentane.pdb`.
 
-`2.` shows all files whose names start with zero or more characters (`*`) followed by
-the letter `t`,
-then a single character (`?`), then `ne.` followed by zero or more characters (`*`).
-This will give us `octane.pdb` and `pentane.pdb` but doesn't match anything
-which ends in `thane.pdb`.
+`2.` показує всі файли, назви яких починаються з нуля або більше символів (`*`), за якими йде літера `t`, потім один будь-який символ (`?`), потім `ne.` і далі нуль або більше символів (`*`).
+Це дасть нам `octane.pdb` і `pentane.pdb`, але не збігається ні з чим, що закінчується на `thane.pdb`.
 
 `3.` fixes the problems of option 2 by matching two characters (`??`) between `t` and `ne`.
-This is the solution.
+Це і є рішення.
 
-`4.` only shows files starting with `ethane.`.
+`4.` показує лише файли, що починаються з `ethane.`.
 
 :::::::::::::::::::::::::
 
@@ -766,8 +759,7 @@ the datasets:
 ```
 
 Before heading off to another field trip, she wants to back up her data and
-send some datasets to her colleague Bob. Sam uses the following commands
-to get the job done:
+send some datasets to her colleague Bob. Саманта використовує наступні команди щоб виконати цю роботу:
 
 ```bash
 $ cp *dataset* backup/datasets
@@ -776,7 +768,7 @@ $ cp 2015-____-____ send_to_bob/all_november_files/
 $ cp ____ send_to_bob/all_datasets_created_on_a_23rd/
 ```
 
-Help Sam by filling in the blanks.
+Допоможіть Саманті, заповнивши пропуски.
 
 The resulting directory structure should look like this
 
