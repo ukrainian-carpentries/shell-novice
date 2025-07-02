@@ -834,8 +834,7 @@ $ cp *-23-dataset* send_to_bob/all_datasets_created_on_a_23rd/
 
 ## Organizing Directories and Files
 
-Jamie is working on a project, and she sees that her files aren't very well
-organized:
+Джеймі працює над проєктом і бачить, що її файли не дуже добре впорядковані:
 
 ```bash
 $ ls -F
@@ -873,7 +872,7 @@ fructose.dat sucrose.dat
 mv *.dat analyzed
 ```
 
-Jamie needs to move her files `fructose.dat` and `sucrose.dat` to the `analyzed` directory.
+Джеймі потрібно перемістити файли `fructose.dat` та `sucrose.dat` до каталогу `analyzed`.
 The shell will expand \*.dat to match all .dat files in the current directory.
 The `mv` command then moves the list of .dat files to the 'analyzed' directory.
 
@@ -961,15 +960,15 @@ as the 'data' directory.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- `cp [old] [new]` copies a file.
-- `mkdir [path]` creates a new directory.
-- `mv [old] [new]` moves (renames) a file or directory.
-- `rm [path]` removes (deletes) a file.
+- `cp [old] [new]` копіює файл.
+- `mkdir [path]` створює новий каталог.
+- `mv [old] [new]` переміщує (перейменовує) файл або каталог.
+- `rm [path]` вилучає (видаляє) файл.
 - `*` matches zero or more characters in a filename, so `*.txt` matches all files ending in `.txt`.
-- `?` matches any single character in a filename, so `?.txt` matches `a.txt` but not `any.txt`.
-- Use of the Control key may be described in many ways, including `Ctrl-X`, `Control-X`, and `^X`.
+- `?` відповідає будь-якому одному символу у назві файлу, тому `?.txt` відповідає `a.txt`, але не `any.txt`.
+- Використання клавіші Control можна описати різними способами, зокрема `Ctrl-X`, `Control-X` та `^X`.
 - The shell does not have a trash bin: once something is deleted, it's really gone.
-- Most files' names are `something.extension`. The extension isn't required, and doesn't guarantee anything, but is normally used to indicate the type of data in the file.
+- Most files' names are `something.extension`. Розширення не є обов'язковим і нічого не гарантує, але зазвичай використовується для позначення типу даних у файлі.
 - Depending on the type of work you do, you may need a more powerful text editor than Nano.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
