@@ -680,30 +680,18 @@ cp: target 'basilisk.dat' is not a directory
 ## Wildcards
 
 `*` is a **wildcard**, which represents zero or more other characters.
-Let's consider the `shell-lesson-data/exercise-data/alkanes` directory:
-`*.pdb` represents `ethane.pdb`, `propane.pdb`, and every
-file that ends with '.pdb'. On the other hand, `p*.pdb` only represents
+Розглянемо каталог `shell-lesson-data/exercise-data/proteins`: `*.pdb` відповідає `ethane.pdb`, `propane.pdb` і кожному файлу, який закінчується на '.pdb'. On the other hand, `p*.pdb` only represents
 `pentane.pdb` and `propane.pdb`, because the 'p' at the front can only
 represent filenames that begin with the letter 'p'.
 
-`?` is also a wildcard, but it represents exactly one character.
-So `?ethane.pdb` could represent `methane.pdb` whereas
-`*ethane.pdb` represents both `ethane.pdb` and `methane.pdb`.
+Символ `?` також є символом підстановки, але він відповідає рівно одному будь-якому символу.
+Отже, `?ethane.pdb` буде відповідати `methane.pdb`, тоді як `*ethane.pdb` відповідає як `ethane.pdb`, так і `methane.pdb`.
 
-Wildcards can be used in combination with each other. For example,
-`???ane.pdb` indicates three characters followed by `ane.pdb`,
-giving `cubane.pdb  ethane.pdb  octane.pdb`.
+Wildcards can be used in combination with each other. Наприклад, `???ane.pdb` відповідає трьом символам, за якими слідує `ane.pdb`, що дає `cubane.pdb ethane.pdb octane.pdb`.
 
-When the shell sees a wildcard, it expands the wildcard to create a
-list of matching filenames _before_ running the preceding command.
-As an exception, if a wildcard expression does not match
-any file, Bash will pass the expression as an argument to the command
-as it is. For example, typing `ls *.pdf` in the `alkanes` directory
-(which contains only files with names ending with `.pdb`) results in
-an error message that there is no file called `*.pdf`.
-However, generally commands like `wc` and `ls` see the lists of
-file names matching these expressions, but not the wildcards
-themselves. It is the shell, not the other programs, that expands
+Коли термінал бачить символ підстановки, він розгортає його для створення списку відповідних імен файлів _до_ запуску команди, яку було введено.
+Як виняток, якщо вираз підстановки не відповідає жодному файлу, Bash передасть вираз як аргумент до команди, якою вона є. Наприклад, введення `ls *.pdf` у каталозі `proteins` (який містить лише файли з іменами, що закінчуються на `.pdb`) призведе до повідомлення про те, що не існує файлу з назвою `*.pdf`.
+Втім, зазвичай команди на кшталт `wc` і `ls` показують списки імен файлів, які відповідають цим виразам, але не самим символам підстановки. It is the shell, not the other programs, that expands
 the wildcards.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
