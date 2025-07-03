@@ -1,5 +1,5 @@
 ---
-title: "Licenses"
+title: "Ліцензії"
 ---
 
 ## Навчальні матеріали
@@ -30,28 +30,16 @@ title: "Licenses"
 
 Якщо не зазначено інше, приклади програм та інше програмне забезпечення надані Software Carpentry та Data Carpentry, доступні згідно з [ліцензією MIT][mit-license], схваленою [OSI][osi].
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of
-this software and associated documentation files (the "Software"), to deal in
-the Software without restriction, including without limitation the rights to
-use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
-of the Software, and to permit persons to whom the Software is furnished to do
-so, subject to the following conditions:
+Дозвіл надається безкоштовно будь-якій особі, яка отримує копію цього програмного забезпечення та пов'язаних з ним файлів документації ("Програмне забезпечення"). Їм дозволено без обмежень використовувати, копіювати, модифікувати, публікувати, розповсюджувати, субліцензувати та/або продавати копії Програмного забезпечення. Крім того, вони можуть надавати дозволи іншим особам, яким надано Програмне забезпечення, робити те ж саме, відповідно до наступних умов:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+Наведене вище повідомлення про авторські права та цей дозвіл мають міститися в усіх копіях або значних частинах Програмного забезпечення.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+ПРОГРАМНЕ ЗАБЕЗПЕЧЕННЯ НАДАЄТЬСЯ "ЯК Є", БЕЗ БУДЬ-ЯКИХ ГАРАНТІЙ, ЯВНИХ АБО НЕЯВНИХ, ВКЛЮЧАЮЧИ, АЛЕ НЕ ОБМЕЖУЮЧИСЬ ГАРАНТІЯМИ ПРИДАТНОСТІ ДЛЯ ПРОДАЖУ, ПРИДАТНОСТІ ДЛЯ ПЕВНОЇ МЕТИ ТА НЕПОРУШЕННЯ АВТОРСЬКИХ ПРАВ. ЗА ЖОДНИХ ОБСТАВИН АВТОРИ АБО ВЛАСНИКИ АВТОРСЬКИХ ПРАВ НЕ НЕСУТЬ ВІДПОВІДАЛЬНОСТІ ЗА БУДЬ-ЯКІ ПРЕТЕНЗІЇ, ЗБИТКИ АБО ІНШУ ВІДПОВІДАЛЬНІСТЬ, ЧИ ТО В РАМКАХ, ДОГОВОРУ, ДЕЛІКТУ АБО ІНШИМ ЧИНОМ, ЩО ВИНИКАЮТЬ З, ВНАСЛІДОК АБО У ЗВ'ЯЗКУ З ПРОГРАМНИМ ЗАБЕЗПЕЧЕННЯМ, ЙОГО ВИКОРИСТАННЯМ АБО ІНШИМИ ОПЕРАЦІЯМИ З ПРОГРАМНИМ ЗАБЕЗПЕЧЕННЯМ.
 
-## Trademark
+## Торговельна марка
 
-"The Carpentries", "Software Carpentry", "Data Carpentry", and "Library
-Carpentry" and their respective logos are registered trademarks of [The Carpentries, Inc.](https://carpentries.org).
+"The Carpentries", "Software Carpentry", "Data Carpentry", "Library
+Carpentry" та їхні відповідні логотипи є зареєстрованими торговими марками [The Carpentries, Inc.][carpentries].
 
 [cc-by-human]: https://creativecommons.org/licenses/by/4.0/
 [cc-by-legal]: https://creativecommons.org/licenses/by/4.0/legalcode
