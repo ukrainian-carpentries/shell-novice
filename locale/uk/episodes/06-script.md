@@ -203,8 +203,8 @@ $ nano middle.sh
 ```
 
 ```source
-# Select lines from the middle of a file.
-# Usage: bash middle.sh filename end_line num_lines
+# Виділення рядків з середини файлу.
+# Використання: bash middle.sh filename end_line num_lines
 head -n "$2" "$1" | tail -n "$3"
 ```
 
@@ -219,7 +219,7 @@ What if we want to process many files in a single pipeline?
 For example, if we want to sort our `.pdb` files by length, we would type:
 
 ```bash
-$ wc -l *.pdb | sort -n
+$ wc -l .pdb | sort -n
 ```
 
 because `wc -l` lists the number of lines in the files
@@ -245,13 +245,13 @@ $ nano sorted.sh
 ```
 
 ```source
-# Sort files by their length.
-# Usage: bash sorted.sh one_or_more_filenames
+# Сортування файлів за їх розміром.
+# Використання: bash sorted.sh one_or_more_filenames
 wc -l "$@" | sort -n
 ```
 
 ```bash
-$ bash sorted.sh *.pdb ../creatures/*.dat
+$ bash sorted.sh .pdb ../creatures/ .dat
 ```
 
 ```output
@@ -412,7 +412,7 @@ She saves this in a file called `do-stats.sh`
 so that she can now re-do the first stage of her analysis by typing:
 
 ```bash
-$ bash do-stats.sh NENE*A.txt NENE*B.txt
+$ bash do-stats.sh NENE A.txt NENE B.txt
 ```
 
 She can also do this:
