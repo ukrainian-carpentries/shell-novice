@@ -325,7 +325,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Shell Scripts</h1>
-        <p>Останнє оновлення 2025-03-10 |
+        <p>Останнє оновлення 2025-07-04 |
 
         <a href="https://github.com/ukrainian-carpentries/shell-novice/edit/main/episodes/06-script.md" class="external-link">Редагувати цю сторінку <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -555,8 +555,8 @@ top:</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="ex">$</span> nano middle.sh</span></code></pre>
 </div>
-<pre class="source"><code># Select lines from the middle of a file.
-# Usage: bash middle.sh filename end_line num_lines
+<pre class="source"><code># Виділення рядків з середини файлу.
+# Використання: bash middle.sh filename end_line num_lines
 head -n "$2" "$1" | tail -n "$3"</code></pre>
 <p>A comment starts with a <code>#</code> character and runs to the end
 of the line. The computer ignores comments, but they’re invaluable for
@@ -570,7 +570,7 @@ would type:</p>
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="ex">$</span> wc <span class="at">-l</span> <span class="pp">*</span>.pdb <span class="kw">|</span> <span class="fu">sort</span> <span class="at">-n</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="ex">$</span> wc <span class="at">-l</span> .pdb <span class="kw">|</span> <span class="fu">sort</span> <span class="at">-n</span></span></code></pre>
 </div>
 <p>because <code>wc -l</code> lists the number of lines in the files
 (recall that <code>wc</code> stands for ‘word count’, adding the
@@ -592,13 +592,13 @@ inside double-quotes to handle the case of arguments containing spaces
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="ex">$</span> nano sorted.sh</span></code></pre>
 </div>
-<pre class="source"><code># Sort files by their length.
-# Usage: bash sorted.sh one_or_more_filenames
+<pre class="source"><code># Сортування файлів за їх розміром.
+# Використання: bash sorted.sh one_or_more_filenames
 wc -l "$@" | sort -n</code></pre>
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="ex">$</span> bash sorted.sh <span class="pp">*</span>.pdb ../creatures/<span class="pp">*</span>.dat</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="ex">$</span> bash sorted.sh .pdb ../creatures/ .dat</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -650,7 +650,7 @@ each of those files separately.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Показати відповіді </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -716,7 +716,7 @@ this?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Показати відповіді </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>If a command causes something to crash or hang, it might be useful to
 know what that command was, in order to investigate the problem. Were
@@ -764,7 +764,7 @@ can now re-do the first stage of her analysis by typing:</p>
 <div class="codewrapper sourceCode" id="cb32">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="ex">$</span> bash do-stats.sh NENE<span class="pp">*</span>A.txt NENE<span class="pp">*</span>B.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="ex">$</span> bash do-stats.sh NENE A.txt NENE B.txt</span></code></pre>
 </div>
 <p>She can also do this:</p>
 <div class="codewrapper sourceCode" id="cb33">
@@ -836,7 +836,7 @@ directory</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Показати відповіді </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>The correct answer is 2.</p>
 <p>The special variables <code>$1</code>, <code>$2</code> and
@@ -889,7 +889,7 @@ lines.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Показати відповіді </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb40">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -958,7 +958,7 @@ three scripts would do when run as <code>bash script1.sh *.pdb</code>,
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Solutions </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <p>In each case, the shell expands the wildcard in <code>*.pdb</code>
 before passing the resulting list of file names as arguments to the
@@ -1026,7 +1026,7 @@ error?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6"> Показати відповіді </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <p>The <code>-x</code> option causes <code>bash</code> to run in debug
 mode. This prints out each command as it is run, which will help you to
@@ -1120,7 +1120,7 @@ consistent with built-in Unix commands.</li>
   "url": "https://ukrainian-carpentries.github.io/shell-novice/instructor/06-script.html",
   "identifier": "https://ukrainian-carpentries.github.io/shell-novice/instructor/06-script.html",
   "dateCreated": "2014-10-22",
-  "dateModified": "2025-03-10",
+  "dateModified": "2025-07-04",
   "datePublished": "2025-07-04"
 }
 

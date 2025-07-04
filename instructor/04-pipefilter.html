@@ -330,7 +330,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Pipes and Filters</h1>
-        <p>Останнє оновлення 2025-03-10 |
+        <p>Останнє оновлення 2025-07-04 |
 
         <a href="https://github.com/ukrainian-carpentries/shell-novice/edit/main/episodes/04-pipefilter.md" class="external-link">Редагувати цю сторінку <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -400,7 +400,7 @@ ethane.pdb    octane.pdb     propane.pdb</code></pre>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>20  156 1158 cubane.pdb</code></pre>
+<pre class="output" tabindex="0"><code>20 156 1158 cubane.pdb</code></pre>
 </div>
 <p><code>wc</code> is the ‘word count’ command: it counts the number of
 lines, words, and characters in files (returning the values in that
@@ -432,7 +432,7 @@ output shows only the number of lines per file:</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">$</span> wc <span class="at">-l</span> <span class="pp">*</span>.pdb</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">$</span> wc <span class="at">-l</span> .pdb</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -632,7 +632,7 @@ command called <code>head</code> to get the first few lines in
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>  9  methane.pdb</code></pre>
+<pre class="output" tabindex="0"><code>  9 methane.pdb</code></pre>
 </div>
 <p>Using <code>-n 1</code> with <code>head</code> tells it that we only
 want the first line of the file; <code>-n 20</code> would get the first
@@ -782,7 +782,7 @@ together:</p>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>  9  methane.pdb</code></pre>
+<pre class="output" tabindex="0"><code>  9 methane.pdb</code></pre>
 </div>
 <p>The vertical bar, <code>|</code>, between the two commands is called
 a <strong>pipe</strong>. It tells the shell that we want to use the
@@ -800,7 +800,7 @@ example send the output of <code>wc</code> directly to
 <div class="codewrapper sourceCode" id="cb30">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="ex">$</span> wc <span class="at">-l</span> <span class="pp">*</span>.pdb <span class="kw">|</span> <span class="fu">sort</span> <span class="at">-n</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="ex">$</span> wc <span class="at">-l</span> .pdb <span class="kw">|</span> <span class="fu">sort</span> <span class="at">-n</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -823,7 +823,7 @@ example send the output of <code>wc</code> directly to
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>   9  methane.pdb</code></pre>
+<pre class="output" tabindex="0"><code>   9 methane.pdb</code></pre>
 </div>
 <p>This is exactly like a mathematician nesting functions like
 <em>log(3x)</em> and saying ‘the log of three times <em>x</em>’. In our
@@ -1106,7 +1106,7 @@ information. To find others like it, she does this:</p>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>NENE01971Z.txt    NENE02040Z.txt</code></pre>
+<pre class="output" tabindex="0"><code>NENE01971Z.txt NENE02040Z.txt</code></pre>
 </div>
 <p>Sure enough, when she checks the log on her laptop, there’s no depth
 recorded for either of those samples. Since it’s too late to get the
@@ -1246,7 +1246,7 @@ single-purpose programs (filters).</li>
   "url": "https://ukrainian-carpentries.github.io/shell-novice/instructor/04-pipefilter.html",
   "identifier": "https://ukrainian-carpentries.github.io/shell-novice/instructor/04-pipefilter.html",
   "dateCreated": "2014-10-22",
-  "dateModified": "2025-03-10",
+  "dateModified": "2025-07-04",
   "datePublished": "2025-07-04"
 }
 
