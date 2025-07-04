@@ -44,7 +44,7 @@ $ wc cubane.pdb
 ```
 
 ```output
-20  156 1158 cubane.pdb
+20 156 1158 cubane.pdb
 ```
 
 `wc` is the 'word count' command:
@@ -74,7 +74,7 @@ If we run `wc -l` instead of just `wc`,
 the output shows only the number of lines per file:
 
 ```bash
-$ wc -l *.pdb
+$ wc -l .pdb
 ```
 
 ```output
@@ -255,7 +255,7 @@ $ head -n 1 sorted-lengths.txt
 ```
 
 ```output
-  9  methane.pdb
+  9 methane.pdb
 ```
 
 Using `-n 1` with `head` tells it that
@@ -379,7 +379,7 @@ $ sort -n lengths.txt | head -n 1
 ```
 
 ```output
-  9  methane.pdb
+  9 methane.pdb
 ```
 
 The vertical bar, `|`, between the two commands is called a **pipe**.
@@ -399,7 +399,7 @@ This removes the need for any intermediate files.
 We'll start by using a pipe to send the output of `wc` to `sort`:
 
 ```bash
-$ wc -l *.pdb | sort -n
+$ wc -l .pdb | sort -n
 ```
 
 ```output
@@ -419,7 +419,7 @@ $ wc -l *.pdb | sort -n | head -n 1
 ```
 
 ```output
-   9  methane.pdb
+   9 methane.pdb
 ```
 
 This is exactly like a mathematician nesting functions like _log(3x)_
@@ -679,7 +679,7 @@ $ ls *Z.txt
 ```
 
 ```output
-NENE01971Z.txt    NENE02040Z.txt
+NENE01971Z.txt NENE02040Z.txt
 ```
 
 Sure enough,
@@ -716,11 +716,11 @@ and _only_ the processed data files?
 2. This is the correct answer
 
 3. The shell would expand `*` to match everything in the current directory,
- so the command would try to remove all matched files and an additional
- file called `.txt`
+  so the command would try to remove all matched files and an additional
+  file called `.txt`
 
 4. The shell expands `*.*` to match all filenames containing at least one
- `.`, including the processed files (`.txt`) _and_ raw files (`.dat`)
+  `.`, including the processed files (`.txt`) _and_ raw files (`.dat`)
 
 :::::::::::::::::::::::::
 
