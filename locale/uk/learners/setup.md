@@ -51,8 +51,8 @@ try an online search for: Unix shell [your computer model] [your operating syste
 
 Computers with Windows operating systems do not automatically have a Unix Shell program
 installed.
-In this lesson, we encourage you to use an emulator included in [Git for Windows][install_shell],
-which gives you access to both Bash shell commands and Git.
+У цьому уроці ми рекомендуємо вам скористатися емулятором, що входить до складу [Git for Windows][install_shell],
+який надає доступ як до команд оболонки Bash, так і до Git'у.
 
 Once installed, you can open a terminal by running the program Git Bash from the Windows start
 menu.
