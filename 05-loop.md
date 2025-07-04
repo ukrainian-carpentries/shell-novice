@@ -1,5 +1,5 @@
 ---
-title: Loops
+title: Цикли
 teaching: 40
 exercises: 10
 ---
@@ -509,7 +509,7 @@ but also save a version of the original files. We want to copy the original file
 files named `original-basilisk.dat` and `original-unicorn.dat`, for example. We can't use:
 
 ```bash
-$ cp *.dat original-*.dat
+$ cp .dat original- .dat
 ```
 
 because that would expand to:
@@ -596,11 +596,10 @@ $ for datafile in NENE*A.txt NENE*B.txt
 
 ```output
 NENE01729A.txt
+NENE01729B.txt
 NENE01736A.txt
-NENE01751A.txt
-
 ...
-NENE02040B.txt
+NENE02043A.txt
 NENE02043B.txt
 ```
 
@@ -618,10 +617,10 @@ $ for datafile in NENE*A.txt NENE*B.txt
 
 ```output
 NENE01729A.txt stats-NENE01729A.txt
-NENE01736A.txt stats-NENE01729A.txt
-NENE01751A.txt stats-NENE01729A.txt
+NENE01729B.txt stats-NENE01729B.txt
+NENE01736A.txt stats-NENE01736A.txt
 ...
-NENE02040B.txt stats-NENE02040B.txt
+NENE02043A.txt stats-NENE02043A.txt
 NENE02043B.txt stats-NENE02043B.txt
 ```
 
@@ -638,14 +637,14 @@ the shell redisplays the whole loop on one line
 (using semi-colons to separate the pieces):
 
 ```bash
-$ for datafile in NENE*A.txt NENE*B.txt; do echo $datafile stats-$datafile; done
+$ for datafile in NENE A.txt NENE B.txt; do echo $datafile stats-$datafile; done
 ```
 
 Using the <kbd>←</kbd>,
 Nelle navigates to the `echo` command and changes it to `bash goostats.sh`:
 
 ```bash
-$ for datafile in NENE*A.txt NENE*B.txt; do bash goostats.sh $datafile stats-$datafile; done
+$ for datafile in NENE A.txt NENE B.txt; do bash goostats.sh $datafile stats-$datafile; done
 ```
 
 When she presses <kbd>Enter</kbd>,
@@ -762,7 +761,7 @@ What is the difference between the two loops below, and which one would we
 want to run?
 
 ```bash
-# Version 1
+# Варіант 1
 $ for datafile in *.pdb
 > do
 >     echo cat $datafile >> all.pdb
@@ -770,7 +769,7 @@ $ for datafile in *.pdb
 ```
 
 ```bash
-# Version 2
+# Варіант 2
 $ for datafile in *.pdb
 > do
 >     echo "cat $datafile >> all.pdb"
