@@ -1,5 +1,5 @@
 ---
-title: Pipes and Filters
+title: Канали та фільтри
 teaching: 25
 exercises: 10
 ---
