@@ -15,8 +15,8 @@ exercises: 10
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- How can I combine existing commands to produce a desired output?
-- How can I show only part of the output?
+- Як я можу комбінувати команди, що вже існують, щоб робити нові речі?
+- Як відобразити лише частину виведених даних?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
