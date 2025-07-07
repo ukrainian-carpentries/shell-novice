@@ -126,10 +126,10 @@ The greater than symbol, `>`, tells the shell to **redirect** the command's outp
 file instead of printing it to the screen. This command prints no screen output, because
 everything that `wc` would have printed has gone into the file `lengths.txt` instead.
 If the file doesn't exist prior to issuing the command, the shell will create the file.
-If the file exists already, it will be silently overwritten, which may lead to data loss.
+Якщо файл вже існує, він буде непомітно перезаписаний, що може призвести до втрати даних.
 Thus, **redirect** commands require caution.
 
-`ls lengths.txt` confirms that the file exists:
+Команда `ls lengths.txt` підтверджує, що файл існує:
 
 ```bash
 $ ls lengths.txt
