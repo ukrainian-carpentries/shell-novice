@@ -95,20 +95,19 @@ only the number of characters or the number of words, respectively.
 ## Why Isn't It Doing Anything?
 
 What happens if a command is supposed to process a file, but we
-don't give it a filename? For example, what if we type:
+don't give it a filename? Наприклад, що буде, якщо ми наберемо:
 
 ```bash
 $ wc -l
 ```
 
-but don't type `*.pdb` (or anything else) after the command?
+але не будемо вводити `*.pdb` (або щось інше) після цієї команди?
 Since it doesn't have any filenames, `wc` assumes it is supposed to
 process input given at the command prompt, so it just sits there and waits
 for us to give it some data interactively. From the outside, though, all we
 see is it sitting there, and the command doesn't appear to do anything.
 
-If you make this kind of mistake, you can escape out of this state by
-holding down the control key (<kbd>Ctrl</kbd>) and pressing the letter <kbd>C</kbd> once: <kbd>Ctrl</kbd>\+<kbd>C</kbd>. Then release both keys.
+Якщо ви припустилися такої помилки, ви можете вийти з цього стану, утримуючи клавішу control (<kbd>Ctrl</kbd>), та один раз натиснувши клавішу <kbd>C</kbd>: <kbd>Ctrl</kbd>\+<kbd>C</kbd>. Потім відпустіть обидві клавіші.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
