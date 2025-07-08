@@ -165,7 +165,7 @@ $ cat lengths.txt
 
 We'll continue to use `cat` in this lesson, for convenience and consistency,
 but it has the disadvantage that it always dumps the whole file onto your screen.
-More useful in practice is the command `less` (e.g. `less lengths.txt`).
+Більш корисною на практиці є команда `less` (наприклад, `less lengths.txt`).
 This displays a screenful of the file, and then stops.
 You can go forward one screenful by pressing the spacebar,
 or back one by pressing `b`.  Press `q` to quit.
@@ -215,7 +215,7 @@ Explain why `-n` has this effect.
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
 The `-n` option specifies a numerical rather than an alphanumerical sort.
 
