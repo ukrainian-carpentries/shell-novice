@@ -276,9 +276,7 @@ to the same file. For example:
 $ sort -n lengths.txt > lengths.txt
 ```
 
-Doing something like this may give you
-incorrect results and/or delete
-the contents of `lengths.txt`.
+Виконання таких дій може надати вам некоректні результати та/або видалити вміст файлу `lengths.txt`.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -288,7 +286,7 @@ the contents of `lengths.txt`.
 
 We have seen the use of `>`, but there is a similar operator `>>`
 which works slightly differently.
-We'll learn about the differences between these two operators by printing some strings.
+Ми дізнаємося про відмінності між цими двома операторами, надрукувавши кілька рядків.
 We can use the `echo` command to print strings e.g.
 
 ```bash
