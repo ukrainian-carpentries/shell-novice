@@ -251,7 +251,7 @@ wc -l "$@" | sort -n
 ```
 
 ```bash
-$ bash sorted.sh .pdb ../creatures/ .dat
+$ bash sorted.sh *.pdb ../creatures/*.dat
 ```
 
 ```output
@@ -412,7 +412,7 @@ She saves this in a file called `do-stats.sh`
 so that she can now re-do the first stage of her analysis by typing:
 
 ```bash
-$ bash do-stats.sh NENE A.txt NENE B.txt
+$ bash do-stats.sh NENE*A.txt NENE*B.txt
 ```
 
 She can also do this:

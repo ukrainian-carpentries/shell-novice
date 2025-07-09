@@ -75,7 +75,7 @@ For a Mac computer running macOS Mojave or earlier releases, the default Unix Sh
 For a Mac computer running macOS Catalina or later releases, the default Unix Shell is Zsh.
 Your default shell is available via the Terminal program within your Utilities folder.
 
-To open Terminal, try one or both of the following:
+Щоб відкрити Термінал, спробуйте один або обидва з наведених нижче способів:
 
 - In Finder, select the Go menu, then select Utilities.
   Locate Terminal in the Utilities folder and open it.
