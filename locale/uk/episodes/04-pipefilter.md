@@ -297,7 +297,7 @@ $ echo The echo command prints text
 The echo command prints text
 ```
 
-Now test the commands below to reveal the difference between the two operators:
+Тепер протестуйте наведені нижче команди, щоб виявити різницю між цими двома операторами:
 
 ```bash
 $ echo hello > testfile01.txt
@@ -309,11 +309,11 @@ and:
 $ echo hello >> testfile02.txt
 ```
 
-Hint: Try executing each command twice in a row and then examining the output files.
+Підказка: Спробуйте виконати кожну команду двічі поспіль, а потім переглянути вихідні файли.
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
 In the first example with `>`, the string 'hello' is written to `testfile01.txt`,
 but the file gets overwritten each time we run the command.
@@ -334,7 +334,7 @@ but appends the string to the file if it already exists
 We have already met the `head` command, which prints lines from the start of a file.
 `tail` is similar, but prints lines from the end of a file instead.
 
-Consider the file `shell-lesson-data/exercise-data/animal-counts/animals.csv`.
+Розглянемо файл `shell-lesson-data/exercise-data/animal-counts/animals.csv`.
 After these commands, select the answer that
 corresponds to the file `animals-subset.csv`:
 
@@ -343,20 +343,19 @@ $ head -n 3 animals.csv > animals-subset.csv
 $ tail -n 2 animals.csv >> animals-subset.csv
 ```
 
-1. The first three lines of `animals.csv`
-2. The last two lines of `animals.csv`
-3. The first three lines and the last two lines of `animals.csv`
-4. The second and third lines of `animals.csv`
+1. Перші три рядки файлу `animals.csv`
+2. Останні два рядки файлу `animals.csv`
+3. Перші три рядки та останні два рядки файлу `animals.csv`
+4. Другий і третій рядки файлу `animals.csv`
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
-Option 3 is correct.
-For option 1 to be correct we would only run the `head` command.
-For option 2 to be correct we would only run the `tail` command.
-For option 4 to be correct we would have to pipe the output of `head` into `tail -n 2`
-by doing `head -n 3 animals.csv | tail -n 2 > animals-subset.csv`
+Варіант 3 є правильним.
+Щоб варіант 1 був правильним, потрібно виконати лише команду `head`.
+Щоб варіант 2 був правильним, нам слід виконати лише команду `tail`.
+Щоб варіант 4 був коректним, нам слід передати вивід команди `head` у команду `tail -n 2` виконавши `head -n 3 animals.csv | tail -n 2 > animals-subset.csv`
 
 :::::::::::::::::::::::::
 
