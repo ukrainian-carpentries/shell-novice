@@ -444,8 +444,8 @@ The redirection and pipes used in the last few commands are illustrated below:
 
 Варіант 4 є рішенням.
 Символ каналу `|` використовується для під'єднання виводу однієї команди до входу іншої.
-`>` is used to redirect standard output to a file.
-Try it in the `shell-lesson-data/exercise-data/alkanes` directory!
+Символ `>` використовується для перенаправлення стандартного виводу до файлу.
+Спробуйте це у каталозі `shell-lesson-data/exercise-data/proteins`!
 
 :::::::::::::::::::::::::
 
