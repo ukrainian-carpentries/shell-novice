@@ -395,7 +395,7 @@ This removes the need for any intermediate files.
 We'll start by using a pipe to send the output of `wc` to `sort`:
 
 ```bash
-$ wc -l .pdb | sort -n
+$ wc -l *.pdb | sort -n
 ```
 
 ```output
@@ -425,14 +425,13 @@ the algorithm is 'head of sort of line count of `*.pdb`'.
 
 The redirection and pipes used in the last few commands are illustrated below:
 
-![](fig/redirects-and-pipes.svg){alt='Redirects and Pipes of different commands: "wc -l \*.pdb" will direct theoutput to the shell. "wc -l \*.pdb > lengths" will direct output to the file"lengths". "wc -l \*.pdb | sort -n | head -n 1" will build a pipeline where theoutput of the "wc" command is the input to the "sort" command, the output ofthe "sort" command is the input to the "head" command and the output of the"head" command is directed to the shell'}
+![](fig/redirects-and-pipes.svg){alt='Перенаправлення та канали різних команд: "wc -l \*.pdb" перенаправить виведення до терміналу. "wc -l \*.pdb > lengths" will direct output to the file"lengths". "wc -l \*.pdb | sort -n | head -n 1" will build a pipeline where theoutput of the "wc" command is the input to the "sort" command, the output ofthe "sort" command is the input to the "head" command and the output of the"head" command is directed to the shell'}
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
 ## Piping Commands Together
 
-In our current directory, we want to find the 3 files which have the least number of
-lines. Which command listed below would work?
+У нашому поточному каталозі ми хочемо знайти 3 файли, які мають найменшу кількість рядків. Яка з наведених нижче команд підійде для цього?
 
 1. `wc -l * > sort -n > head -n 3`
 2. `wc -l * | sort -n | head -n 1-3`
@@ -441,11 +440,10 @@ lines. Which command listed below would work?
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
-Option 4 is the solution.
-The pipe character `|` is used to connect the output from one command to
-the input of another.
+Варіант 4 є рішенням.
+Символ каналу `|` використовується для під'єднання виводу однієї команди до входу іншої.
 `>` is used to redirect standard output to a file.
 Try it in the `shell-lesson-data/exercise-data/alkanes` directory!
 
