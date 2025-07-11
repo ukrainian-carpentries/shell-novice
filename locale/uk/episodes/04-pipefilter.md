@@ -461,7 +461,7 @@ This programming model is called 'pipes and filters'.
 We've already seen pipes;
 a **filter** is a program like `wc` or `sort`
 that transforms a stream of input into a stream of output.
-Almost all of the standard Unix tools can work this way.
+Майже всі стандартні інструменти Unix можуть працювати таким чином.
 Unless told to do otherwise,
 they read from standard input,
 do something with what they've read,
@@ -477,8 +477,7 @@ so that you and other people can put those programs into pipes to multiply their
 
 ## Pipe Reading Comprehension
 
-A file called `animals.csv` (in the `shell-lesson-data/exercise-data/animal-counts` folder)
-contains the following data:
+Файл з назвою `animals.csv` (у каталозі `shell-lesson-data/exercise-data/animal-counts`) містить наступні дані:
 
 ```source
 2012-11-05,deer,5
