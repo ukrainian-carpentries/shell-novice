@@ -497,18 +497,18 @@ Note, the `sort -r` command sorts in reverse order.
 $ cat animals.csv | head -n 5 | tail -n 3 | sort -r > final.txt
 ```
 
-Hint: build the pipeline up one command at a time to test your understanding
+Підказка: створюйте конвеєр по одній команді за раз, щоб перевіряти своє розуміння
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
-The `head` command extracts the first 5 lines from `animals.csv`.
+Команда `head` виділяє перші 5 рядків з файлу `animals.csv`.
 Then, the last 3 lines are extracted from the previous 5 by using the `tail` command.
-With the `sort -r` command those 3 lines are sorted in reverse order.
-Finally, the output is redirected to a file: `final.txt`.
+За допомогою команди `sort -r` ці 3 рядки сортуються у зворотному порядку.
+І нарешті, результат перенаправляється до файлу `final.txt`.
 The content of this file can be checked by executing `cat final.txt`.
-The file should contain the following lines:
+Файл повинен містити наступні рядки:
 
 ```source
 2012-11-06,rabbit,19
