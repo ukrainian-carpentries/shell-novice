@@ -524,18 +524,17 @@ The content of this file can be checked by executing `cat final.txt`.
 
 ## Pipe Construction
 
-For the file `animals.csv` from the previous exercise, consider the following command:
+Для файлу `animals.csv` з попередньої вправи розглянемо наступну команду:
 
 ```bash
 $ cut -d , -f 2 animals.csv
 ```
 
-The `cut` command is used to remove or 'cut out' certain sections of each line in the file,
-and `cut` expects the lines to be separated into columns by a <kbd>Tab</kbd> character.
+Команда `cut` використовується для видалення або 'вирізання' певних частин кожного рядка у файлі. Вона очікує, що рядки буде розділено на стовпчики символом <kbd>Tab</kbd>.
 A character used in this way is called a **delimiter**.
 In the example above we use the `-d` option to specify the comma as our delimiter character.
 We have also used the `-f` option to specify that we want to extract the second field (column).
-This gives the following output:
+Це призведе до наступного результату:
 
 ```output
 deer
@@ -555,7 +554,7 @@ names)?
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
 ```bash
 $ cut -d , -f 2 animals.csv | sort | uniq
@@ -569,7 +568,7 @@ $ cut -d , -f 2 animals.csv | sort | uniq
 
 ## Which Pipe?
 
-The file `animals.csv` contains 8 lines of data formatted as follows:
+Файл `animals.csv` містить 8 рядків даних, відформатованих наступним чином:
 
 ```output
 2012-11-05,deer,5
