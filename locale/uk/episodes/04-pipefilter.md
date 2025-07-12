@@ -592,12 +592,10 @@ the total count of each type of animal in the file?
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
-Option 4. is the correct answer.
-If you have difficulty understanding why, try running the commands, or sub-sections of
-the pipelines (make sure you are in the `shell-lesson-data/exercise-data/animal-counts`
-directory).
+Варіант 4. Це правильна відповідь.
+Якщо вам важко зрозуміти, чому, спробуйте виконати команди або фрагменти конвеєру (перед цим переконайтеся, що ви перебуваєте у каталозі `shell-lesson-data/exercise-data/animal-counts`).
 
 :::::::::::::::::::::::::
 
@@ -640,13 +638,11 @@ $ wc -l *.txt | sort -n | head -n 5
  300 NENE01751A.txt
 ```
 
-Whoops: one of the files is 60 lines shorter than the others.
-When she goes back and checks it,
-she sees that she did that assay at 8:00 on a Monday morning --- someone
-was probably in using the machine on the weekend,
-and she forgot to reset it.
-Before re-running that sample,
-she checks to see if any files have too much data:
+Ого - несподіванка! Один з файлів на 60 рядків коротший за інші.
+Коли вона повертається до цього файлу та перевіряє його,
+вона бачить, що зробила цей аналіз о 8:00 ранку в понеділок --- хтось, можливо, користувався машиною на вихідних,
+і вона забула її перезавантажити.
+Перед тим, як повторно проаналізувати цей зразок, вона перевіряє, чи є файли, що містять забагато даних:
 
 ```bash
 $ wc -l *.txt | sort -n | tail -n 5
@@ -671,7 +667,7 @@ $ ls *Z.txt
 ```
 
 ```output
-NENE01971Z.txt NENE02040Z.txt
+NENE01971Z.txt    NENE02040Z.txt
 ```
 
 Sure enough,
