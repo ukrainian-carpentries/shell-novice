@@ -686,7 +686,7 @@ so instead, she'll have to be careful later on to select files using the wildcar
 
 Suppose you want to delete your processed data files, and only keep
 your raw files and processing script to save storage.
-The raw files end in `.dat` and the processed files end in `.txt`.
+Вихідні файли закінчуються на `.dat`, а оброблені файли закінчуються на `.txt`.
 Which of the following would remove all the processed data files,
 and _only_ the processed data files?
 
@@ -697,11 +697,11 @@ and _only_ the processed data files?
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
-1. This would remove `.txt` files with one-character names
+1. Це призведе до вилучення файлів `.txt` з односимвольними назвами
 
-2. This is the correct answer
+2. Це правильна відповідь
 
 3. The shell would expand `*` to match everything in the current directory,
   so the command would try to remove all matched files and an additional
@@ -716,9 +716,9 @@ and _only_ the processed data files?
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- `wc` counts lines, words, and characters in its inputs.
-- `cat` displays the contents of its inputs.
-- `sort` sorts its inputs.
+- `wc` підраховує рядки, слова та символи у своїх вхідних даних.
+- `cat` виводить вміст своїх вхідних даних.
+- `sort` сортує вхідні дані.
 - `head` displays the first 10 lines of its input by default without additional arguments.
 - `tail` displays the last 10 lines of its input by default without additional arguments.
 - `command > [file]` redirects a command's output to a file (overwriting any existing content).
