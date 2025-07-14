@@ -25,7 +25,7 @@ exercises: 20
 
 У цьому уроці ми дізнаємося про створення та переміщення файлів і каталогів на прикладі каталогу `exercise-data/writing`.
 
-### Step one: see where we are and what we already have
+### Крок перший: подивимось, де ми знаходимося і що вже маємо
 
 Ми все ще маємо бути у каталозі `shell-lesson-data` на Робочому столі (англ. Desktop), що ми можемо перевірити за допомогою:
 
@@ -138,9 +138,7 @@ data/  results/
 :::::::::::::::::::::::::::::::::::::::::  instructor
 
 Learners can sometimes get trapped within command-line text editors
-such as Vim, Emacs, or Nano. Closing the terminal emulator and opening
-a new one can be frustrating as learners will have to navigate to the
-correct folder again. Для пом'якшення цієї проблеми ми радимо викладачам використовувати той самий текстовий редактор, що й учні під час семінарів (у більшості випадків Nano).
+such as Vim, Emacs, or Nano. Закриття терміналу та відкриття нового вікна може бути незручним, оскільки учням доведеться знову переходити до потрібного каталогу. Для пом'якшення цієї проблеми ми радимо викладачам використовувати той самий текстовий редактор, що й учні під час семінарів (у більшості випадків Nano).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -157,13 +155,9 @@ $ nano draft.txt
 
 ## Який редактор використовувати?
 
-When we say, '`nano` is a text editor' we really do mean 'text'. It can
+Коли ми говоримо, що '`nano` - це текстовий редактор', ми дійсно маємо на увазі 'текстовий'. It can
 only work with plain character data, not tables, images, or any other
-human-friendly media. Ми використовуємо його у прикладах, оскільки це один із найпростіших текстових редакторів. Однак, через це він може виявитися недостатньо потужним або гнучким для складніших завдань, які вам потрібно буде виконати після завершення цього семінару. On Unix systems (such as Linux and macOS),
-many programmers use [Emacs](https://www.gnu.org/software/emacs/) or
-[Vim](https://www.vim.org/) (both of which require more time to learn),
-or a graphical editor such as [Gedit](https://projects.gnome.org/gedit/)
-or [VScode](https://code.visualstudio.com/). У Windows, можливо, ви захочете скористатися [Notepad++](https://notepad-plus-plus.org/).  Операційна система Windows також має вбудований редактор з назвою `notepad`, який можна запустити з командного рядка так само, як і `nano` для цього семінару.
+human-friendly media. Ми використовуємо його у прикладах, оскільки це один із найпростіших текстових редакторів. Однак, через це він може виявитися недостатньо потужним або гнучким для складніших завдань, які вам потрібно буде виконати після завершення цього семінару. У системах Unix (таких як Linux та macOS), багато програмістів використовують [Emacs] (https://www.gnu.org/software/emacs/) чи [Vim](https://www.vim.org/) (обидва вимагають більше часу на вивчення), або графічний редактор, такий як [Gedit](https://projects.gnome.org/gedit/) чи [VScode](https://code.visualstudio.com/). У Windows, можливо, ви захочете скористатися [Notepad++](https://notepad-plus-plus.org/).  Операційна система Windows також має вбудований редактор з назвою `notepad`, який можна запустити з командного рядка так само, як і `nano` для цього семінару.
 
 Незалежно від того, яким редактором ви користуєтеся, вам потрібно знати, де він шукає і зберігає файли. Якщо ви запускаєте його з термінала, він (імовірно) використовуватиме ваш поточний робочий каталог як розташування за замовчуванням. Однак, якщо ви використовуєте меню "Пуск" вашого комп'ютера, файли за замовчуванням можуть зберігатися замість цього на робочому столі або в каталозі "Документи" (Documents). Ви можете змінити це, перейшовши до іншого каталогу під час першого виконання команди "Зберегти як..." ("Save As...").
 
@@ -181,8 +175,7 @@ or [VScode](https://code.visualstudio.com/). У Windows, можливо, ви з
 
 ## Клавіша Control, Ctrl або ^
 
-Клавіші Control також називається клавішею 'Ctrl'. There are various ways
-in which using the Control key may be described. Наприклад, ви можете побачити вказівку натиснути клавішу <kbd>Control</kbd> і, утримуючи її натиснутою, потім натиснути клавішу <kbd>X</kbd>, описану будь-яким з наступних способів:
+Клавіші Control також називається клавішею 'Ctrl'. Існує декілька способів, якими може бути описане використання клавіші Control. Наприклад, ви можете побачити вказівку натиснути клавішу <kbd>Control</kbd> і, утримуючи її натиснутою, потім натиснути клавішу <kbd>X</kbd>, описану будь-яким з наступних способів:
 
 - `Control-X`
 - `Control+X`
@@ -221,7 +214,7 @@ $ touch my_file.txt
   When you look at your current directory using the GUI file explorer,
   does the file show up?
 
-2. Use `ls -l` to inspect the files.  How large is `my_file.txt`?
+2. Скористуйтеся `ls -l` для перегляду файлів.  Який розмір має файл `my_file.txt`?
 
 3. When might you want to create a file this way?
 
