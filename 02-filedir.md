@@ -53,8 +53,7 @@ $ pwd
 Розташування домашнього каталогу виглядає по-різному в різних операційних системах.
 В Linux воно може виглядати як `/home/nelle`, а у Windows воно буде схоже на `C:\Documents and Settings\nelle` чи `C:\Users\nelle`.
 (Зауважте, що воно може виглядати дещо інакше для різних версій Windows.)
-In future examples, we've used Mac output as the default - Linux and Windows
-output may differ slightly but should be generally similar.
+У наведених нижче прикладах ми використовували результати у тому вигляді, у якому вони виглядають у macOS. Хоча вихідні дані Linux і Windows можуть дещо відрізнятися, загалом вони мають бути схожими.
 
 Ми також припустимо, що ваша команда `pwd` повертає вашу домашню директорію користувача.
 Якщо команда `pwd` повертає щось інше, вам доведеться перейти у ваш домашній каталог за допомогою команди `cd`, інакше деякі команди в цьому уроці не будуть працювати належним чином.
@@ -87,9 +86,7 @@ this character is the leading slash in `/Users/nelle`.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Underneath `/Users`,
-we find one directory for each user with an account on Nelle's machine,
-her colleagues _imhotep_ and _larry_.
+На комп'ютері Неллі, у каталозі `/Users` є підкаталог для кожного користувача з обліковим записом, наприклад: для її колег _imhotep_ та _larry_.
 
 ![](fig/home-directories.svg){alt='Як і інші каталоги, домашні каталоги є підкаталогами
 "/Users", наприклад "/Users/imhotep", "/Users/larry" або "/Users/nelle"'}
@@ -129,8 +126,7 @@ Desktop/      Downloads/    Movies/       Pictures/
 ```
 
 В наведеному прикладі ми бачимо, що наш домашній каталог містить лише **підкаталоги**.
-Any names in the output that don't have a classification symbol
-are **files** in the current working directory.
+Будь-які імена у вихідних даних, які не мають символу класифікації, є **файлами**, розташованими в поточному робочому каталозі.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
@@ -210,7 +206,7 @@ Mandatory arguments to long options are mandatory for short options, too.
 Коли існують як короткі, так і довгі опції:
 
 - Використовуйте коротку під час введення команд безпосередньо в термінал, щоб мінімізувати натискання клавіш і швидше виконувати завдання.
-- Use the long option in scripts to provide clarity.
+- Використовуйте довгу опцію у скриптах для наочності.
   It will be read many times and typed once.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -332,11 +328,10 @@ exercise-data/  north-pacific-gyre/
 
 По-друге, ми можемо змінити наше місцезнаходження на інший каталог, щоб ми більше не знаходилися в нашому домашньому каталозі.
 
-The command to change locations is `cd` followed by a
-directory name to change our working directory.
+Командою для зміни каталогів є `cd`, після якої йде назва каталогу, до якого ви хочете перейти. Це оновить поточний робочий каталог.
 `cd` означає 'змінити каталог' (англ. 'change directory'), що трохи вводить в оману.
-The command doesn't change the directory;
-it changes the shell's current working directory.
+Команда не змінює сам каталог;
+вона змінює поточний робочий каталог у терміналі.
 Іншими словами, вона змінює налаштування терміналу щодо того, в якому каталозі ми знаходимося.
 Команда `cd` подібна до подвійного клацання по каталогу в графічному інтерфейсі, щоб потрапити до нього.
 
@@ -371,8 +366,7 @@ $ ls -F
 alkanes/  animal-counts/  creatures/  numbers.txt  writing/
 ```
 
-We now know how to go down the directory tree (i.e. how to go into a subdirectory),
-but how do we go up (i.e. how do we leave a directory and go into its parent directory)?
+Тепер ми знаємо, як рухатися вниз по дереву каталогів (тобто, як перейти до підкаталогу), але як рухатися вгору (тобто, як вийти з каталогу і перейти до його батьківського каталогу)?
 Ми можемо спробувати наступне:
 
 ```bash
@@ -454,7 +448,7 @@ $ cd Desktop/shell-lesson-data/exercise-data
 
 Переконайтеся, що ми перемістилися в потрібне місце, виконавши `pwd` і `ls -F`.
 
-If we want to move up one level from the data directory, we could use `cd ..`.  Але існує інший спосіб переміщення до будь-якого каталогу, незалежно від вашого поточного розташування.
+Щоб перейти на один рівень вище від каталогу даних, ми можемо використати `cd ..`.  Але існує інший спосіб переміщення до будь-якого каталогу, незалежно від вашого поточного розташування.
 
 Дотепер, ми використовували **відносні шляхи** для вказування назви каталогів або навіть шляхів до каталогів (як описано вище).  Він повідомляє таким командам, як ls або cd, знайти каталог на основі нашої поточної позиції у файловій системі, а не з кореня файлової системи.
 
@@ -588,10 +582,7 @@ $ cd -
 
 ## Розуміння команди `ls`
 
-Using the filesystem diagram below,
-if `pwd` displays `/Users/backup`,
-and `-r` tells `ls` to display things in reverse order,
-what command(s) will result in the following output:
+Звертаючись до діаграми файлової системи нижче, якщо `pwd` повертає `/Users/backup`, а параметр `-r` у команді `ls` змінює порядок виведення результатів, яка (які) команда (команди) призведе до наступного результату:
 
 ```output
 pnas_sub/ pnas_final/ original/
@@ -631,8 +622,7 @@ $ ls -F /
 
 `ls` - це **команда**, з **опцією** `-F` та **аргументом** `/`.
 Ми вже зустрічалися з опціями, які починаються з одного тире (`-`), відомі як **короткі варіанти**, або двох тире (`--`), відомі як **довгі варіанти**.
-\[Options] change the behavior of a command and
-[Arguments] tell the command what to operate on (e.g. files and directories).
+\[Опції] змінюють поведінку команди, а \[аргументи] вказують команді, над чим вона має працювати (наприклад, над файлами й каталогами).
 Іноді опції та аргументи називають **параметрами**.
 A command can be called with more than one option and more than one argument, but a
 command doesn't always require an argument or an option.
