@@ -25,7 +25,7 @@ exercises: 20
 
 У цьому уроці ми дізнаємося про створення та переміщення файлів і каталогів на прикладі каталогу `exercise-data/writing`.
 
-### Step one: see where we are and what we already have
+### Крок перший: подивимось, де ми знаходимося і що вже маємо
 
 Ми все ще маємо бути у каталозі `shell-lesson-data` на Робочому столі (англ. Desktop), що ми можемо перевірити за допомогою:
 
@@ -137,10 +137,7 @@ data/  results/
 
 :::::::::::::::::::::::::::::::::::::::::  instructor
 
-Learners can sometimes get trapped within command-line text editors
-such as Vim, Emacs, or Nano. Closing the terminal emulator and opening
-a new one can be frustrating as learners will have to navigate to the
-correct folder again. Для пом'якшення цієї проблеми ми радимо викладачам використовувати той самий текстовий редактор, що й учні під час семінарів (у більшості випадків Nano).
+Початківці іноді не знають, як вийти з таких редакторів, як Vim, Emacs чи Nano. Закриття терміналу та відкриття нового вікна може бути незручним, оскільки учням доведеться знову переходити до потрібного каталогу. Для пом'якшення цієї проблеми ми радимо викладачам використовувати той самий текстовий редактор, що й учні під час семінарів (у більшості випадків Nano).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -157,13 +154,7 @@ $ nano draft.txt
 
 ## Який редактор використовувати?
 
-When we say, '`nano` is a text editor' we really do mean 'text'. It can
-only work with plain character data, not tables, images, or any other
-human-friendly media. Ми використовуємо його у прикладах, оскільки це один із найпростіших текстових редакторів. Однак, через це він може виявитися недостатньо потужним або гнучким для складніших завдань, які вам потрібно буде виконати після завершення цього семінару. On Unix systems (such as Linux and macOS),
-many programmers use [Emacs](https://www.gnu.org/software/emacs/) or
-[Vim](https://www.vim.org/) (both of which require more time to learn),
-or a graphical editor such as [Gedit](https://projects.gnome.org/gedit/)
-or [VScode](https://code.visualstudio.com/). У Windows, можливо, ви захочете скористатися [Notepad++](https://notepad-plus-plus.org/).  Операційна система Windows також має вбудований редактор з назвою `notepad`, який можна запустити з командного рядка так само, як і `nano` для цього семінару.
+Коли ми говоримо, що '`nano` - це текстовий редактор', ми дійсно маємо на увазі 'текстовий'. У ньому неможливо переглядати або редагувати таблиці, зображення чи будь-які інші зручні для сприйняття людиною дані. Ми використовуємо його у прикладах, оскільки це один із найпростіших текстових редакторів. Однак, через це він може виявитися недостатньо потужним або гнучким для складніших завдань, які вам потрібно буде виконати після завершення цього семінару. У системах Unix (таких як Linux та macOS), багато програмістів використовують [Emacs] (https://www.gnu.org/software/emacs/) чи [Vim](https://www.vim.org/) (обидва вимагають більше часу на вивчення), або графічний редактор, такий як [Gedit](https://projects.gnome.org/gedit/) чи [VScode](https://code.visualstudio.com/). У Windows, можливо, ви захочете скористатися [Notepad++](https://notepad-plus-plus.org/).  Операційна система Windows також має вбудований редактор з назвою `notepad`, який можна запустити з командного рядка так само, як і `nano` для цього семінару.
 
 Незалежно від того, яким редактором ви користуєтеся, вам потрібно знати, де він шукає і зберігає файли. Якщо ви запускаєте його з термінала, він (імовірно) використовуватиме ваш поточний робочий каталог як розташування за замовчуванням. Однак, якщо ви використовуєте меню "Пуск" вашого комп'ютера, файли за замовчуванням можуть зберігатися замість цього на робочому столі або в каталозі "Документи" (Documents). Ви можете змінити це, перейшовши до іншого каталогу під час першого виконання команди "Зберегти як..." ("Save As...").
 
@@ -181,8 +172,7 @@ or [VScode](https://code.visualstudio.com/). У Windows, можливо, ви з
 
 ## Клавіша Control, Ctrl або ^
 
-Клавіші Control також називається клавішею 'Ctrl'. There are various ways
-in which using the Control key may be described. Наприклад, ви можете побачити вказівку натиснути клавішу <kbd>Control</kbd> і, утримуючи її натиснутою, потім натиснути клавішу <kbd>X</kbd>, описану будь-яким з наступних способів:
+Клавіші Control також називається клавішею 'Ctrl'. Існує декілька способів, якими може бути описане використання клавіші Control. Наприклад, ви можете побачити вказівку натиснути клавішу <kbd>Control</kbd> і, утримуючи її натиснутою, потім натиснути клавішу <kbd>X</kbd>, описану будь-яким з наступних способів:
 
 - `Control-X`
 - `Control+X`
@@ -218,39 +208,27 @@ $ touch my_file.txt
 ```
 
 1. Що зробила команда `touch`?
-  When you look at your current directory using the GUI file explorer,
-  does the file show up?
+  Якщо ви відкриєте поточний каталог у файловому провіднику, чи видно в ньому цей файл?
 
-2. Use `ls -l` to inspect the files.  How large is `my_file.txt`?
+2. Скористуйтеся `ls -l` для перегляду файлів.  Який розмір має файл `my_file.txt`?
 
-3. When might you want to create a file this way?
+3. У яких випадках доцільно створювати файл саме таким чином?
 
 :::::::::::::::  solution
 
 ## Відповідь
 
-1. The `touch` command generates a new file called `my_file.txt` in
-  your current directory.  You
-  can observe this newly generated file by typing `ls` at the
-  command line prompt.  `my_file.txt` can also be viewed in your
-  GUI file explorer.
+1. Команда `touch` створює новий файл з назвою `my_file.txt` у вашому поточному каталозі.  Щоб переконатися, що файл створено, скористайтеся командою `ls`.  Файл `my_file.txt` також можна переглянути у вашому графічному провіднику файлів.
 
-2. When you inspect the file with `ls -l`, note that the size of
-  `my_file.txt` is 0 bytes.  In other words, it contains no data.
-  If you open `my_file.txt` using your text editor it is blank.
+2. Коли ви перевіряєте файл за допомогою `ls -l`, зверніть увагу, що розмір `my_file.txt` — 0 байт.  Це означає, що файл порожній.
+  Якщо відкрити його в редакторі, ви не знайдете в ньому жодного вмісту.
 
-3. Some programs do not generate output files themselves, but
-  instead require that empty files have already been generated.
-  When the program is run, it searches for an existing file to
-  populate with its output.  The touch command allows you to
-  efficiently generate a blank text file to be used by such
-  programs.
+3. Іноді програми не генерують вихідні файли автоматично, а потребують, щоб порожні файли були створені заздалегідь.
+  Потім під час виконання програма шукає наявний файл, щоб заповнити його своїми даними.  За допомогою команди `touch` можна ефективно створити порожній текстовий файл для подальшого використання такими програмами.
 
 :::::::::::::::::::::::::
 
-To avoid confusion later on,
-we suggest removing the file you've just created before proceeding with the rest
-of the episode, otherwise future outputs may vary from those given in the lesson.
+Щоб уникнути плутанини пізніше, радимо видалити створений файл перед продовженням епізоду, інакше майбутні результати можуть відрізнятися від наведених в уроці.
 Для цього скористайтеся наступною командою:
 
 ```bash
@@ -261,12 +239,9 @@ $ rm my_file.txt
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## What's In A Name?
+## Що ховається в імені?
 
-You may have noticed that all of Nelle's files are named 'something dot
-something', and in this part of the lesson, we always used the extension
-`.txt`.  This is just a convention; we can call a file `mythesis` or
-almost anything else we want. However, most people use two-part names
+Ви, мабуть, помітили, що всі файли Неллі називаються 'щось крапка щось', і у цій частині уроку ми завжди використовували розширення `.txt`.  Це лише умовність: ми можемо назвати файл `mythesis` або майже як завгодно. However, most people use two-part names
 most of the time to help them (and their programs) tell different kinds
 of files apart. The second part of such a name is called the
 **filename extension** and indicates

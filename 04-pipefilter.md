@@ -276,9 +276,7 @@ to the same file. For example:
 $ sort -n lengths.txt > lengths.txt
 ```
 
-Doing something like this may give you
-incorrect results and/or delete
-the contents of `lengths.txt`.
+Виконання таких дій може надати вам некоректні результати та/або видалити вміст файлу `lengths.txt`.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -288,7 +286,7 @@ the contents of `lengths.txt`.
 
 We have seen the use of `>`, but there is a similar operator `>>`
 which works slightly differently.
-We'll learn about the differences between these two operators by printing some strings.
+Ми дізнаємося про відмінності між цими двома операторами, надрукувавши кілька рядків.
 We can use the `echo` command to print strings e.g.
 
 ```bash
@@ -299,7 +297,7 @@ $ echo The echo command prints text
 The echo command prints text
 ```
 
-Now test the commands below to reveal the difference between the two operators:
+Тепер протестуйте наведені нижче команди, щоб виявити різницю між цими двома операторами:
 
 ```bash
 $ echo hello > testfile01.txt
@@ -311,11 +309,11 @@ and:
 $ echo hello >> testfile02.txt
 ```
 
-Hint: Try executing each command twice in a row and then examining the output files.
+Підказка: Спробуйте виконати кожну команду двічі поспіль, а потім переглянути вихідні файли.
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
 In the first example with `>`, the string 'hello' is written to `testfile01.txt`,
 but the file gets overwritten each time we run the command.
@@ -336,7 +334,7 @@ but appends the string to the file if it already exists
 We have already met the `head` command, which prints lines from the start of a file.
 `tail` is similar, but prints lines from the end of a file instead.
 
-Consider the file `shell-lesson-data/exercise-data/animal-counts/animals.csv`.
+Розглянемо файл `shell-lesson-data/exercise-data/animal-counts/animals.csv`.
 After these commands, select the answer that
 corresponds to the file `animals-subset.csv`:
 
@@ -345,20 +343,19 @@ $ head -n 3 animals.csv > animals-subset.csv
 $ tail -n 2 animals.csv >> animals-subset.csv
 ```
 
-1. The first three lines of `animals.csv`
-2. The last two lines of `animals.csv`
-3. The first three lines and the last two lines of `animals.csv`
-4. The second and third lines of `animals.csv`
+1. Перші три рядки файлу `animals.csv`
+2. Останні два рядки файлу `animals.csv`
+3. Перші три рядки та останні два рядки файлу `animals.csv`
+4. Другий і третій рядки файлу `animals.csv`
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
-Option 3 is correct.
-For option 1 to be correct we would only run the `head` command.
-For option 2 to be correct we would only run the `tail` command.
-For option 4 to be correct we would have to pipe the output of `head` into `tail -n 2`
-by doing `head -n 3 animals.csv | tail -n 2 > animals-subset.csv`
+Варіант 3 є правильним.
+Щоб варіант 1 був правильним, потрібно виконати лише команду `head`.
+Щоб варіант 2 був правильним, нам слід виконати лише команду `tail`.
+Щоб варіант 4 був коректним, нам слід передати вивід команди `head` у команду `tail -n 2` виконавши `head -n 3 animals.csv | tail -n 2 > animals-subset.csv`
 
 :::::::::::::::::::::::::
 
@@ -398,7 +395,7 @@ This removes the need for any intermediate files.
 We'll start by using a pipe to send the output of `wc` to `sort`:
 
 ```bash
-$ wc -l .pdb | sort -n
+$ wc -l *.pdb | sort -n
 ```
 
 ```output
@@ -428,14 +425,13 @@ the algorithm is 'head of sort of line count of `*.pdb`'.
 
 The redirection and pipes used in the last few commands are illustrated below:
 
-![](fig/redirects-and-pipes.svg){alt='Redirects and Pipes of different commands: "wc -l \*.pdb" will direct theoutput to the shell. "wc -l \*.pdb > lengths" will direct output to the file"lengths". "wc -l \*.pdb | sort -n | head -n 1" will build a pipeline where theoutput of the "wc" command is the input to the "sort" command, the output ofthe "sort" command is the input to the "head" command and the output of the"head" command is directed to the shell'}
+![](fig/redirects-and-pipes.svg){alt='Перенаправлення та канали різних команд: "wc -l \*.pdb" перенаправить виведення до терміналу. "wc -l \*.pdb > lengths" will direct output to the file"lengths". "wc -l \*.pdb | sort -n | head -n 1" will build a pipeline where theoutput of the "wc" command is the input to the "sort" command, the output ofthe "sort" command is the input to the "head" command and the output of the"head" command is directed to the shell'}
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
 ## Piping Commands Together
 
-In our current directory, we want to find the 3 files which have the least number of
-lines. Which command listed below would work?
+У нашому поточному каталозі ми хочемо знайти 3 файли, які мають найменшу кількість рядків. Яка з наведених нижче команд підійде для цього?
 
 1. `wc -l * > sort -n > head -n 3`
 2. `wc -l * | sort -n | head -n 1-3`
@@ -444,13 +440,12 @@ lines. Which command listed below would work?
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
-Option 4 is the solution.
-The pipe character `|` is used to connect the output from one command to
-the input of another.
-`>` is used to redirect standard output to a file.
-Try it in the `shell-lesson-data/exercise-data/alkanes` directory!
+Варіант 4 є рішенням.
+Символ каналу `|` використовується для під'єднання виводу однієї команди до входу іншої.
+Символ `>` використовується для перенаправлення стандартного виводу до файлу.
+Спробуйте це у каталозі `shell-lesson-data/exercise-data/proteins`!
 
 :::::::::::::::::::::::::
 
@@ -466,7 +461,7 @@ This programming model is called 'pipes and filters'.
 We've already seen pipes;
 a **filter** is a program like `wc` or `sort`
 that transforms a stream of input into a stream of output.
-Almost all of the standard Unix tools can work this way.
+Майже всі стандартні інструменти Unix можуть працювати таким чином.
 Unless told to do otherwise,
 they read from standard input,
 do something with what they've read,
@@ -482,8 +477,7 @@ so that you and other people can put those programs into pipes to multiply their
 
 ## Pipe Reading Comprehension
 
-A file called `animals.csv` (in the `shell-lesson-data/exercise-data/animal-counts` folder)
-contains the following data:
+Файл з назвою `animals.csv` (у каталозі `shell-lesson-data/exercise-data/animal-counts`) містить наступні дані:
 
 ```source
 2012-11-05,deer,5
@@ -503,18 +497,18 @@ Note, the `sort -r` command sorts in reverse order.
 $ cat animals.csv | head -n 5 | tail -n 3 | sort -r > final.txt
 ```
 
-Hint: build the pipeline up one command at a time to test your understanding
+Підказка: створюйте конвеєр по одній команді за раз, щоб перевіряти своє розуміння
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
-The `head` command extracts the first 5 lines from `animals.csv`.
+Команда `head` виділяє перші 5 рядків з файлу `animals.csv`.
 Then, the last 3 lines are extracted from the previous 5 by using the `tail` command.
-With the `sort -r` command those 3 lines are sorted in reverse order.
-Finally, the output is redirected to a file: `final.txt`.
+За допомогою команди `sort -r` ці 3 рядки сортуються у зворотному порядку.
+І нарешті, результат перенаправляється до файлу `final.txt`.
 The content of this file can be checked by executing `cat final.txt`.
-The file should contain the following lines:
+Файл повинен містити наступні рядки:
 
 ```source
 2012-11-06,rabbit,19
@@ -530,18 +524,17 @@ The file should contain the following lines:
 
 ## Pipe Construction
 
-For the file `animals.csv` from the previous exercise, consider the following command:
+Для файлу `animals.csv` з попередньої вправи розглянемо наступну команду:
 
 ```bash
 $ cut -d , -f 2 animals.csv
 ```
 
-The `cut` command is used to remove or 'cut out' certain sections of each line in the file,
-and `cut` expects the lines to be separated into columns by a <kbd>Tab</kbd> character.
+Команда `cut` використовується для видалення або 'вирізання' певних частин кожного рядка у файлі. Вона очікує, що рядки буде розділено на стовпчики символом <kbd>Tab</kbd>.
 A character used in this way is called a **delimiter**.
 In the example above we use the `-d` option to specify the comma as our delimiter character.
 We have also used the `-f` option to specify that we want to extract the second field (column).
-This gives the following output:
+Це призведе до наступного результату:
 
 ```output
 deer
@@ -561,7 +554,7 @@ names)?
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
 ```bash
 $ cut -d , -f 2 animals.csv | sort | uniq
@@ -575,7 +568,7 @@ $ cut -d , -f 2 animals.csv | sort | uniq
 
 ## Which Pipe?
 
-The file `animals.csv` contains 8 lines of data formatted as follows:
+Файл `animals.csv` містить 8 рядків даних, відформатованих наступним чином:
 
 ```output
 2012-11-05,deer,5
@@ -599,12 +592,10 @@ the total count of each type of animal in the file?
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
-Option 4. is the correct answer.
-If you have difficulty understanding why, try running the commands, or sub-sections of
-the pipelines (make sure you are in the `shell-lesson-data/exercise-data/animal-counts`
-directory).
+Варіант 4. Це правильна відповідь.
+Якщо вам важко зрозуміти, чому, спробуйте виконати команди або фрагменти конвеєру (перед цим переконайтеся, що ви перебуваєте у каталозі `shell-lesson-data/exercise-data/animal-counts`).
 
 :::::::::::::::::::::::::
 
@@ -647,13 +638,11 @@ $ wc -l *.txt | sort -n | head -n 5
  300 NENE01751A.txt
 ```
 
-Whoops: one of the files is 60 lines shorter than the others.
-When she goes back and checks it,
-she sees that she did that assay at 8:00 on a Monday morning --- someone
-was probably in using the machine on the weekend,
-and she forgot to reset it.
-Before re-running that sample,
-she checks to see if any files have too much data:
+Ого - несподіванка! Один з файлів на 60 рядків коротший за інші.
+Коли вона повертається до цього файлу та перевіряє його,
+вона бачить, що зробила цей аналіз о 8:00 ранку в понеділок --- хтось, можливо, користувався машиною на вихідних,
+і вона забула її перезавантажити.
+Перед тим, як повторно проаналізувати цей зразок, вона перевіряє, чи є файли, що містять забагато даних:
 
 ```bash
 $ wc -l *.txt | sort -n | tail -n 5
@@ -678,7 +667,7 @@ $ ls *Z.txt
 ```
 
 ```output
-NENE01971Z.txt NENE02040Z.txt
+NENE01971Z.txt    NENE02040Z.txt
 ```
 
 Sure enough,
@@ -697,7 +686,7 @@ so instead, she'll have to be careful later on to select files using the wildcar
 
 Suppose you want to delete your processed data files, and only keep
 your raw files and processing script to save storage.
-The raw files end in `.dat` and the processed files end in `.txt`.
+Вихідні файли закінчуються на `.dat`, а оброблені файли закінчуються на `.txt`.
 Which of the following would remove all the processed data files,
 and _only_ the processed data files?
 
@@ -708,11 +697,11 @@ and _only_ the processed data files?
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
-1. This would remove `.txt` files with one-character names
+1. Це призведе до вилучення файлів `.txt` з односимвольними назвами
 
-2. This is the correct answer
+2. Це правильна відповідь
 
 3. The shell would expand `*` to match everything in the current directory,
   so the command would try to remove all matched files and an additional
@@ -727,13 +716,13 @@ and _only_ the processed data files?
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- `wc` counts lines, words, and characters in its inputs.
-- `cat` displays the contents of its inputs.
-- `sort` sorts its inputs.
+- `wc` підраховує рядки, слова та символи у своїх вхідних даних.
+- `cat` виводить вміст своїх вхідних даних.
+- `sort` сортує вхідні дані.
 - `head` displays the first 10 lines of its input by default without additional arguments.
 - `tail` displays the last 10 lines of its input by default without additional arguments.
 - `command > [file]` redirects a command's output to a file (overwriting any existing content).
-- `command >> [file]` appends a command's output to a file.
+- `command >> [file]` додає вивід команди до файлу.
 - `[first] | [second]` is a pipeline: the output of the first command is used as the input to the second.
 - The best way to use the shell is to use pipes to combine simple single-purpose programs (filters).
 
