@@ -329,7 +329,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Робота з файлами та каталогами</h1>
-        <p>Останнє оновлення 2025-07-04 |
+        <p>Останнє оновлення 2025-07-14 |
 
         <a href="https://github.com/ukrainian-carpentries/shell-novice/edit/main/episodes/03-create.md" class="external-link">Редагувати цю сторінку <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -375,7 +375,7 @@
 <p>У цьому уроці ми дізнаємося про створення та переміщення файлів і
 каталогів на прикладі каталогу <code>exercise-data/writing</code>.</p>
 <div class="section level3">
-<h3 id="step-one-see-where-we-are-and-what-we-already-have">Step one: see where we are and what we already have<a class="anchor" aria-label="anchor" href="#step-one-see-where-we-are-and-what-we-already-have"></a></h3>
+<h3 id="крок-перший-подивимось-де-ми-знаходимося-і-що-вже-маємо">Крок перший: подивимось, де ми знаходимося і що вже маємо<a class="anchor" aria-label="anchor" href="#%D0%BA%D1%80%D0%BE%D0%BA-%D0%BF%D0%B5%D1%80%D1%88%D0%B8%D0%B9-%D0%BF%D0%BE%D0%B4%D0%B8%D0%B2%D0%B8%D0%BC%D0%BE%D1%81%D1%8C-%D0%B4%D0%B5-%D0%BC%D0%B8-%D0%B7%D0%BD%D0%B0%D1%85%D0%BE%D0%B4%D0%B8%D0%BC%D0%BE%D1%81%D1%8F-%D1%96-%D1%89%D0%BE-%D0%B2%D0%B6%D0%B5-%D0%BC%D0%B0%D1%94%D0%BC%D0%BE"></a></h3>
 <p>Ми все ще маємо бути у каталозі <code>shell-lesson-data</code> на
 Робочому столі (англ. Desktop), що ми можемо перевірити за
 допомогою:</p>
@@ -519,12 +519,12 @@ data/  results/
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Примітка для викладача </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
 <div class="accordion-body">
-<p>Learners can sometimes get trapped within command-line text editors
-such as Vim, Emacs, or Nano. Closing the terminal emulator and opening a
-new one can be frustrating as learners will have to navigate to the
-correct folder again. Для пом’якшення цієї проблеми ми радимо викладачам
+<p>Початківці іноді не знають, як вийти з таких редакторів, як Vim,
+Emacs чи Nano. Закриття терміналу та відкриття нового вікна може бути
+незручним, оскільки учням доведеться знову переходити до потрібного
+каталогу. Для пом’якшення цієї проблеми ми радимо викладачам
 використовувати той самий текстовий редактор, що й учні під час
 семінарів (у більшості випадків Nano).</p>
 </div>
@@ -550,14 +550,16 @@ correct folder again. Для пом’якшення цієї проблеми �
 <div id="який-редактор-використовувати" class="callout-inner">
 <h3 class="callout-title">Який редактор використовувати?</h3>
 <div class="callout-content">
-<p>When we say, ‘<code>nano</code> is a text editor’ we really do mean
-‘text’. It can only work with plain character data, not tables, images,
-or any other human-friendly media. Ми використовуємо його у прикладах,
-оскільки це один із найпростіших текстових редакторів. Однак, через це
-він може виявитися недостатньо потужним або гнучким для складніших
-завдань, які вам потрібно буде виконати після завершення цього семінару.
-On Unix systems (such as Linux and macOS), many programmers use <a href="https://www.gnu.org/software/emacs/" class="external-link">Emacs</a> or <a href="https://www.vim.org/" class="external-link">Vim</a> (both of which require more time to
-learn), or a graphical editor such as <a href="https://projects.gnome.org/gedit/" class="external-link">Gedit</a> or <a href="https://code.visualstudio.com/" class="external-link">VScode</a>. У Windows, можливо, ви
+<p>Коли ми говоримо, що ‘<code>nano</code> - це текстовий редактор’, ми
+дійсно маємо на увазі ‘текстовий’. У ньому неможливо переглядати або
+редагувати таблиці, зображення чи будь-які інші зручні для сприйняття
+людиною дані. Ми використовуємо його у прикладах, оскільки це один із
+найпростіших текстових редакторів. Однак, через це він може виявитися
+недостатньо потужним або гнучким для складніших завдань, які вам
+потрібно буде виконати після завершення цього семінару. У системах Unix
+(таких як Linux та macOS), багато програмістів використовують [Emacs]
+(<a href="https://www.gnu.org/software/emacs/" class="external-link uri">https://www.gnu.org/software/emacs/</a>) чи <a href="https://www.vim.org/" class="external-link">Vim</a> (обидва вимагають більше часу на
+вивчення), або графічний редактор, такий як <a href="https://projects.gnome.org/gedit/" class="external-link">Gedit</a> чи <a href="https://code.visualstudio.com/" class="external-link">VScode</a>. У Windows, можливо, ви
 захочете скористатися <a href="https://notepad-plus-plus.org/" class="external-link">Notepad++</a>. Операційна система
 Windows також має вбудований редактор з назвою <code>notepad</code>,
 який можна запустити з командного рядка так само, як і <code>nano</code>
@@ -594,11 +596,11 @@ Windows також має вбудований редактор з назвою 
 <div id="клавіша-control-ctrl-або" class="callout-inner">
 <h3 class="callout-title">Клавіша Control, Ctrl або ^</h3>
 <div class="callout-content">
-<p>Клавіші Control також називається клавішею ‘Ctrl’. There are various
-ways in which using the Control key may be described. Наприклад, ви
-можете побачити вказівку натиснути клавішу <kbd>Control</kbd> і,
-утримуючи її натиснутою, потім натиснути клавішу <kbd>X</kbd>, описану
-будь-яким з наступних способів:</p>
+<p>Клавіші Control також називається клавішею ‘Ctrl’. Існує декілька
+способів, якими може бути описане використання клавіші Control.
+Наприклад, ви можете побачити вказівку натиснути клавішу
+<kbd>Control</kbd> і, утримуючи її натиснутою, потім натиснути клавішу
+<kbd>X</kbd>, описану будь-яким з наступних способів:</p>
 <ul><li><code>Control-X</code></li>
 <li><code>Control+X</code></li>
 <li><code>Ctrl-X</code></li>
@@ -639,12 +641,12 @@ ways in which using the Control key may be described. Наприклад, ви
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="ex">$</span> touch my_file.txt</span></code></pre>
 </div>
-<ol style="list-style-type: decimal"><li><p>Що зробила команда <code>touch</code>? When you look at your
-current directory using the GUI file explorer, does the file show
-up?</p></li>
-<li><p>Use <code>ls -l</code> to inspect the files. How large is
-<code>my_file.txt</code>?</p></li>
-<li><p>When might you want to create a file this way?</p></li>
+<ol style="list-style-type: decimal"><li><p>Що зробила команда <code>touch</code>? Якщо ви відкриєте поточний
+каталог у файловому провіднику, чи видно в ньому цей файл?</p></li>
+<li><p>Скористуйтеся <code>ls -l</code> для перегляду файлів. Який
+розмір має файл <code>my_file.txt</code>?</p></li>
+<li><p>У яких випадках доцільно створювати файл саме таким
+чином?</p></li>
 </ol></div>
 </div>
 </div>
@@ -653,22 +655,23 @@ up?</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Відповідь </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
-<ol style="list-style-type: decimal"><li><p>The <code>touch</code> command generates a new file called
-<code>my_file.txt</code> in your current directory. You can observe this
-newly generated file by typing <code>ls</code> at the command line
-prompt. <code>my_file.txt</code> can also be viewed in your GUI file
-explorer.</p></li>
-<li><p>When you inspect the file with <code>ls -l</code>, note that the
-size of <code>my_file.txt</code> is 0 bytes. In other words, it contains
-no data. If you open <code>my_file.txt</code> using your text editor it
-is blank.</p></li>
-<li><p>Some programs do not generate output files themselves, but
-instead require that empty files have already been generated. When the
-program is run, it searches for an existing file to populate with its
-output. The touch command allows you to efficiently generate a blank
-text file to be used by such programs.</p></li>
+<ol style="list-style-type: decimal"><li><p>Команда <code>touch</code> створює новий файл з назвою
+<code>my_file.txt</code> у вашому поточному каталозі. Щоб переконатися,
+що файл створено, скористайтеся командою <code>ls</code>. Файл
+<code>my_file.txt</code> також можна переглянути у вашому графічному
+провіднику файлів.</p></li>
+<li><p>Коли ви перевіряєте файл за допомогою <code>ls -l</code>,
+зверніть увагу, що розмір <code>my_file.txt</code> — 0 байт. Це означає,
+що файл порожній. Якщо відкрити його в редакторі, ви не знайдете в ньому
+жодного вмісту.</p></li>
+<li><p>Іноді програми не генерують вихідні файли автоматично, а
+потребують, щоб порожні файли були створені заздалегідь. Потім під час
+виконання програма шукає наявний файл, щоб заповнити його своїми даними.
+За допомогою команди <code>touch</code> можна ефективно створити
+порожній текстовий файл для подальшого використання такими
+програмами.</p></li>
 </ol></div>
 </div>
 </div>
@@ -682,10 +685,9 @@ text file to be used by such programs.</p></li>
 (continued)</em>
 </h3>
 <div class="callout-content">
-<p>To avoid confusion later on, we suggest removing the file you’ve just
-created before proceeding with the rest of the episode, otherwise future
-outputs may vary from those given in the lesson. Для цього скористайтеся
-наступною командою:</p>
+<p>Щоб уникнути плутанини пізніше, радимо видалити створений файл перед
+продовженням епізоду, інакше майбутні результати можуть відрізнятися від
+наведених в уроці. Для цього скористайтеся наступною командою:</p>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -694,22 +696,22 @@ outputs may vary from those given in the lesson. Для цього скорис�
 </div>
 </div>
 </div>
-<div id="whats-in-a-name" class="callout">
+<div id="що-ховається-в-імені" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="whats-in-a-name" class="callout-inner">
-<h3 class="callout-title">What’s In A Name?</h3>
+<div id="що-ховається-в-імені" class="callout-inner">
+<h3 class="callout-title">Що ховається в імені?</h3>
 <div class="callout-content">
-<p>You may have noticed that all of Nelle’s files are named ‘something
-dot something’, and in this part of the lesson, we always used the
-extension <code>.txt</code>. This is just a convention; we can call a
-file <code>mythesis</code> or almost anything else we want. However,
-most people use two-part names most of the time to help them (and their
-programs) tell different kinds of files apart. The second part of such a
-name is called the <strong>filename extension</strong> and indicates
-what type of data the file holds: <code>.txt</code> signals a plain text
-file, <code>.pdf</code> indicates a PDF document, <code>.cfg</code> is a
+<p>Ви, мабуть, помітили, що всі файли Неллі називаються ‘щось крапка
+щось’, і у цій частині уроку ми завжди використовували розширення
+<code>.txt</code>. Це лише умовність: ми можемо назвати файл
+<code>mythesis</code> або майже як завгодно. However, most people use
+two-part names most of the time to help them (and their programs) tell
+different kinds of files apart. The second part of such a name is called
+the <strong>filename extension</strong> and indicates what type of data
+the file holds: <code>.txt</code> signals a plain text file,
+<code>.pdf</code> indicates a PDF document, <code>.cfg</code> is a
 configuration file full of parameters for some program or other,
 <code>.png</code> is a PNG image, and so on.</p>
 <p>This is just a convention, albeit an important one. Files merely
@@ -855,7 +857,7 @@ folder (i.e. the one she forgot to put them in)</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Відповідь </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb30">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -944,7 +946,7 @@ once:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Відповідь </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>Ні. Хоча це створить файл з правильною назвою, неправильно названий
 файл все одно існуватиме у каталозі, і його потрібно буде видалити.</li>
@@ -1006,7 +1008,7 @@ sequence shown below?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Відповідь </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>Ми розпочинаємо роботу в каталозі <code>/Users/jamie/data</code> і
 створюємо нову папку з назвою <code>recombined</code>. Другий рядок
@@ -1092,7 +1094,7 @@ protection when using <code>rm</code>?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Відповідь </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1183,7 +1185,7 @@ filenames and a directory name?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6"> Відповідь </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <p>If given more than one file name followed by a directory name
 (i.e. the destination directory must be the last argument),
@@ -1264,7 +1266,7 @@ at the front can only represent filenames that begin with the letter
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
   <h4 class="accordion-header" id="headingSolution7"> Відповідь </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <p>Відповіддю є <code>3.</code></p>
 <p><code>1.</code> показує всі файли, назви яких починаюьться з нуля або
@@ -1385,7 +1387,7 @@ data and send some datasets to her colleague Bob. Саманта викорис�
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
   <h4 class="accordion-header" id="headingSolution8"> Відповідь </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb57">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1449,7 +1451,7 @@ output shown?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution9" aria-expanded="false" aria-controls="collapseSolution9">
   <h4 class="accordion-header" id="headingSolution9"> Відповідь </h4>
 </button>
-<div id="collapseSolution9" class="accordion-collapse collapse" aria-labelledby="headingSolution9" data-bs-parent="#accordionSolution9">
+<div id="collapseSolution9" class="accordion-collapse collapse" data-bs-parent="#accordionSolution9" aria-labelledby="headingSolution9">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb64">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1537,7 +1539,7 @@ What would the other commands do?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution10" aria-expanded="false" aria-controls="collapseSolution10">
   <h4 class="accordion-header" id="headingSolution10"> Відповідь </h4>
 </button>
-<div id="collapseSolution10" class="accordion-collapse collapse" aria-labelledby="headingSolution10" data-bs-parent="#accordionSolution10">
+<div id="collapseSolution10" class="accordion-collapse collapse" data-bs-parent="#accordionSolution10" aria-labelledby="headingSolution10">
 <div class="accordion-body">
 <p>The first two sets of commands achieve this objective. The first set
 uses relative paths to create the top-level directory before the
@@ -1651,8 +1653,8 @@ text editor than Nano.</li>
   "url": "https://ukrainian-carpentries.github.io/shell-novice/instructor/03-create.html",
   "identifier": "https://ukrainian-carpentries.github.io/shell-novice/instructor/03-create.html",
   "dateCreated": "2014-10-22",
-  "dateModified": "2025-07-04",
-  "datePublished": "2025-07-09"
+  "dateModified": "2025-07-14",
+  "datePublished": "2025-07-14"
 }
 
   </script><script>

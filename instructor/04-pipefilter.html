@@ -330,7 +330,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Канали та фільтри</h1>
-        <p>Останнє оновлення 2025-07-09 |
+        <p>Останнє оновлення 2025-07-14 |
 
         <a href="https://github.com/ukrainian-carpentries/shell-novice/edit/main/episodes/04-pipefilter.md" class="external-link">Редагувати цю сторінку <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -587,7 +587,9 @@ instead:</p>
 <div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1"> Відповідь </h4>
+  <h4 class="accordion-header" id="headingSolution1">
+  Відповідь
+  </h4>
 </button>
 <div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
@@ -653,8 +655,8 @@ operates on a file to the same file. For example:</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="ex">$</span> sort <span class="at">-n</span> lengths.txt <span class="op">&gt;</span> lengths.txt</span></code></pre>
 </div>
-<p>Doing something like this may give you incorrect results and/or
-delete the contents of <code>lengths.txt</code>.</p>
+<p>Виконання таких дій може надати вам некоректні результати та/або
+видалити вміст файлу <code>lengths.txt</code>.</p>
 </div>
 </div>
 </div>
@@ -666,9 +668,9 @@ delete the contents of <code>lengths.txt</code>.</p>
 <h3 class="callout-title">What Does <code>&gt;&gt;</code> Mean?</h3>
 <div class="callout-content">
 <p>We have seen the use of <code>&gt;</code>, but there is a similar
-operator <code>&gt;&gt;</code> which works slightly differently. We’ll
-learn about the differences between these two operators by printing some
-strings. We can use the <code>echo</code> command to print strings
+operator <code>&gt;&gt;</code> which works slightly differently. Ми
+дізнаємося про відмінності між цими двома операторами, надрукувавши
+кілька рядків. We can use the <code>echo</code> command to print strings
 e.g.</p>
 <div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -680,8 +682,8 @@ e.g.</p>
 </h3>
 <pre class="output" tabindex="0"><code>The echo command prints text</code></pre>
 </div>
-<p>Now test the commands below to reveal the difference between the two
-operators:</p>
+<p>Тепер протестуйте наведені нижче команди, щоб виявити різницю між
+цими двома операторами:</p>
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -693,15 +695,17 @@ operators:</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="ex">$</span> echo hello <span class="op">&gt;&gt;</span> testfile02.txt</span></code></pre>
 </div>
-<p>Hint: Try executing each command twice in a row and then examining
-the output files.</p>
+<p>Підказка: Спробуйте виконати кожну команду двічі поспіль, а потім
+переглянути вихідні файли.</p>
 </div>
 </div>
 </div>
 <div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2"> Показати відповіді </h4>
+  <h4 class="accordion-header" id="headingSolution2">
+  Відповідь
+  </h4>
 </button>
 <div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
@@ -726,7 +730,7 @@ already exists (i.e. when we run it for the second time).</p>
 <p>We have already met the <code>head</code> command, which prints lines
 from the start of a file. <code>tail</code> is similar, but prints lines
 from the end of a file instead.</p>
-<p>Consider the file
+<p>Розглянемо файл
 <code>shell-lesson-data/exercise-data/animal-counts/animals.csv</code>.
 After these commands, select the answer that corresponds to the file
 <code>animals-subset.csv</code>:</p>
@@ -736,14 +740,14 @@ After these commands, select the answer that corresponds to the file
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="ex">$</span> head <span class="at">-n</span> 3 animals.csv <span class="op">&gt;</span> animals-subset.csv</span>
 <span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a><span class="ex">$</span> tail <span class="at">-n</span> 2 animals.csv <span class="op">&gt;&gt;</span> animals-subset.csv</span></code></pre>
 </div>
-<ol style="list-style-type: decimal"><li>The first three lines of <code>animals.csv</code>
+<ol style="list-style-type: decimal"><li>Перші три рядки файлу <code>animals.csv</code>
 </li>
-<li>The last two lines of <code>animals.csv</code>
+<li>Останні два рядки файлу <code>animals.csv</code>
 </li>
-<li>The first three lines and the last two lines of
+<li>Перші три рядки та останні два рядки файлу
 <code>animals.csv</code>
 </li>
-<li>The second and third lines of <code>animals.csv</code>
+<li>Другий і третій рядки файлу <code>animals.csv</code>
 </li>
 </ol></div>
 </div>
@@ -751,15 +755,17 @@ After these commands, select the answer that corresponds to the file
 <div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
-  <h4 class="accordion-header" id="headingSolution3"> Показати відповіді </h4>
+  <h4 class="accordion-header" id="headingSolution3">
+  Відповідь
+  </h4>
 </button>
 <div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
-<p>Option 3 is correct. For option 1 to be correct we would only run the
-<code>head</code> command. For option 2 to be correct we would only run
-the <code>tail</code> command. For option 4 to be correct we would have
-to pipe the output of <code>head</code> into <code>tail -n 2</code> by
-doing
+<p>Варіант 3 є правильним. Щоб варіант 1 був правильним, потрібно
+виконати лише команду <code>head</code>. Щоб варіант 2 був правильним,
+нам слід виконати лише команду <code>tail</code>. Щоб варіант 4 був
+коректним, нам слід передати вивід команди <code>head</code> у команду
+<code>tail -n 2</code> виконавши
 <code>head -n 3 animals.csv | tail -n 2 &gt; animals-subset.csv</code></p>
 </div>
 </div>
@@ -800,7 +806,7 @@ example send the output of <code>wc</code> directly to
 <div class="codewrapper sourceCode" id="cb30">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="ex">$</span> wc <span class="at">-l</span> .pdb <span class="kw">|</span> <span class="fu">sort</span> <span class="at">-n</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="ex">$</span> wc <span class="at">-l</span> <span class="pp">*</span>.pdb <span class="kw">|</span> <span class="fu">sort</span> <span class="at">-n</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -831,15 +837,16 @@ case, the algorithm is ‘head of sort of line count of
 <code>*.pdb</code>’.</p>
 <p>The redirection and pipes used in the last few commands are
 illustrated below:</p>
-<figure><img src="../fig/redirects-and-pipes.svg" alt='Redirects and Pipes of different commands: "wc -l *.pdb" will direct theoutput to the shell. "wc -l *.pdb &gt; lengths" will direct output to the file"lengths". "wc -l *.pdb | sort -n | head -n 1" will build a pipeline where theoutput of the "wc" command is the input to the "sort" command, the output ofthe "sort" command is the input to the "head" command and the output of the"head" command is directed to the shell' class="figure mx-auto d-block"></figure><div id="piping-commands-together" class="callout challenge">
+<figure><img src="../fig/redirects-and-pipes.svg" alt='Перенаправлення та канали різних команд: "wc -l *.pdb" перенаправить виведення до терміналу. "wc -l *.pdb &gt; lengths" will direct output to the file"lengths". "wc -l *.pdb | sort -n | head -n 1" will build a pipeline where theoutput of the "wc" command is the input to the "sort" command, the output ofthe "sort" command is the input to the "head" command and the output of the"head" command is directed to the shell' class="figure mx-auto d-block"></figure><div id="piping-commands-together" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="piping-commands-together" class="callout-inner">
 <h3 class="callout-title">Piping Commands Together</h3>
 <div class="callout-content">
-<p>In our current directory, we want to find the 3 files which have the
-least number of lines. Which command listed below would work?</p>
+<p>У нашому поточному каталозі ми хочемо знайти 3 файли, які мають
+найменшу кількість рядків. Яка з наведених нижче команд підійде для
+цього?</p>
 <ol style="list-style-type: decimal"><li><code>wc -l * &gt; sort -n &gt; head -n 3</code></li>
 <li><code>wc -l * | sort -n | head -n 1-3</code></li>
 <li><code>wc -l * | head -n 3 | sort -n</code></li>
@@ -850,15 +857,17 @@ least number of lines. Which command listed below would work?</p>
 <div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
-  <h4 class="accordion-header" id="headingSolution4"> Показати відповіді </h4>
+  <h4 class="accordion-header" id="headingSolution4">
+  Відповідь
+  </h4>
 </button>
 <div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
-<p>Option 4 is the solution. The pipe character <code>|</code> is used
-to connect the output from one command to the input of another.
-<code>&gt;</code> is used to redirect standard output to a file. Try it
-in the <code>shell-lesson-data/exercise-data/alkanes</code>
-directory!</p>
+<p>Варіант 4 є рішенням. Символ каналу <code>|</code> використовується
+для під’єднання виводу однієї команди до входу іншої. Символ
+<code>&gt;</code> використовується для перенаправлення стандартного
+виводу до файлу. Спробуйте це у каталозі
+<code>shell-lesson-data/exercise-data/proteins</code>!</p>
 </div>
 </div>
 </div>
@@ -871,9 +880,9 @@ tools that each do one job well, and that work well with each other.
 This programming model is called ‘pipes and filters’. We’ve already seen
 pipes; a <strong>filter</strong> is a program like <code>wc</code> or
 <code>sort</code> that transforms a stream of input into a stream of
-output. Almost all of the standard Unix tools can work this way. Unless
-told to do otherwise, they read from standard input, do something with
-what they’ve read, and write to standard output.</p>
+output. Майже всі стандартні інструменти Unix можуть працювати таким
+чином. Unless told to do otherwise, they read from standard input, do
+something with what they’ve read, and write to standard output.</p>
 <p>The key is that any program that reads lines of text from standard
 input and writes lines of text to standard output can be combined with
 every other program that behaves this way as well. You can <em>and
@@ -886,9 +895,9 @@ can put those programs into pipes to multiply their power.</p>
 <div id="pipe-reading-comprehension" class="callout-inner">
 <h3 class="callout-title">Pipe Reading Comprehension</h3>
 <div class="callout-content">
-<p>A file called <code>animals.csv</code> (in the
-<code>shell-lesson-data/exercise-data/animal-counts</code> folder)
-contains the following data:</p>
+<p>Файл з назвою <code>animals.csv</code> (у каталозі
+<code>shell-lesson-data/exercise-data/animal-counts</code>) містить
+наступні дані:</p>
 <pre class="source"><code>2012-11-05,deer,5
 2012-11-05,rabbit,22
 2012-11-05,raccoon,7
@@ -905,26 +914,27 @@ reverse order.</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" tabindex="-1"></a><span class="ex">$</span> cat animals.csv <span class="kw">|</span> <span class="fu">head</span> <span class="at">-n</span> 5 <span class="kw">|</span> <span class="fu">tail</span> <span class="at">-n</span> 3 <span class="kw">|</span> <span class="fu">sort</span> <span class="at">-r</span> <span class="op">&gt;</span> final.txt</span></code></pre>
 </div>
-<p>Hint: build the pipeline up one command at a time to test your
-understanding</p>
+<p>Підказка: створюйте конвеєр по одній команді за раз, щоб перевіряти
+своє розуміння</p>
 </div>
 </div>
 </div>
 <div id="accordionSolution5" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
-  <h4 class="accordion-header" id="headingSolution5"> Показати відповіді </h4>
+  <h4 class="accordion-header" id="headingSolution5">
+  Відповідь
+  </h4>
 </button>
 <div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
-<p>The <code>head</code> command extracts the first 5 lines from
+<p>Команда <code>head</code> виділяє перші 5 рядків з файлу
 <code>animals.csv</code>. Then, the last 3 lines are extracted from the
-previous 5 by using the <code>tail</code> command. With the
-<code>sort -r</code> command those 3 lines are sorted in reverse order.
-Finally, the output is redirected to a file: <code>final.txt</code>. The
-content of this file can be checked by executing
-<code>cat final.txt</code>. The file should contain the following
-lines:</p>
+previous 5 by using the <code>tail</code> command. За допомогою команди
+<code>sort -r</code> ці 3 рядки сортуються у зворотному порядку. І
+нарешті, результат перенаправляється до файлу <code>final.txt</code>.
+The content of this file can be checked by executing
+<code>cat final.txt</code>. Файл повинен містити наступні рядки:</p>
 <pre class="source"><code>2012-11-06,rabbit,19
 2012-11-06,deer,2
 2012-11-05,raccoon,7</code></pre>
@@ -939,21 +949,21 @@ lines:</p>
 <div id="pipe-construction" class="callout-inner">
 <h3 class="callout-title">Pipe Construction</h3>
 <div class="callout-content">
-<p>For the file <code>animals.csv</code> from the previous exercise,
-consider the following command:</p>
+<p>Для файлу <code>animals.csv</code> з попередньої вправи розглянемо
+наступну команду:</p>
 <div class="codewrapper sourceCode" id="cb37">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" tabindex="-1"></a><span class="ex">$</span> cut <span class="at">-d</span> , <span class="at">-f</span> 2 animals.csv</span></code></pre>
 </div>
-<p>The <code>cut</code> command is used to remove or ‘cut out’ certain
-sections of each line in the file, and <code>cut</code> expects the
-lines to be separated into columns by a <kbd>Tab</kbd> character. A
-character used in this way is called a <strong>delimiter</strong>. In
-the example above we use the <code>-d</code> option to specify the comma
-as our delimiter character. We have also used the <code>-f</code> option
-to specify that we want to extract the second field (column). This gives
-the following output:</p>
+<p>Команда <code>cut</code> використовується для видалення або
+‘вирізання’ певних частин кожного рядка у файлі. Вона очікує, що рядки
+буде розділено на стовпчики символом <kbd>Tab</kbd>. A character used in
+this way is called a <strong>delimiter</strong>. In the example above we
+use the <code>-d</code> option to specify the comma as our delimiter
+character. We have also used the <code>-f</code> option to specify that
+we want to extract the second field (column). Це призведе до наступного
+результату:</p>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -976,7 +986,9 @@ duplicates in their names)?</p>
 <div id="accordionSolution6" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
-  <h4 class="accordion-header" id="headingSolution6"> Показати відповіді </h4>
+  <h4 class="accordion-header" id="headingSolution6">
+  Відповідь
+  </h4>
 </button>
 <div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
@@ -996,8 +1008,8 @@ duplicates in their names)?</p>
 <div id="which-pipe" class="callout-inner">
 <h3 class="callout-title">Which Pipe?</h3>
 <div class="callout-content">
-<p>The file <code>animals.csv</code> contains 8 lines of data formatted
-as follows:</p>
+<p>Файл <code>animals.csv</code> містить 8 рядків даних, відформатованих
+наступним чином:</p>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1024,15 +1036,16 @@ of animal in the file?</p>
 <div id="accordionSolution7" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
-  <h4 class="accordion-header" id="headingSolution7"> Показати відповіді </h4>
+  <h4 class="accordion-header" id="headingSolution7">
+  Відповідь
+  </h4>
 </button>
 <div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
-<p>Option 4. is the correct answer. If you have difficulty understanding
-why, try running the commands, or sub-sections of the pipelines (make
-sure you are in the
-<code>shell-lesson-data/exercise-data/animal-counts</code>
-directory).</p>
+<p>Варіант 4. Це правильна відповідь. Якщо вам важко зрозуміти, чому,
+спробуйте виконати команди або фрагменти конвеєру (перед цим
+переконайтеся, що ви перебуваєте у каталозі
+<code>shell-lesson-data/exercise-data/animal-counts</code>).</p>
 </div>
 </div>
 </div>
@@ -1075,11 +1088,12 @@ earlier. As a quick check, starting from the
  300 NENE01736A.txt
  300 NENE01751A.txt</code></pre>
 </div>
-<p>Whoops: one of the files is 60 lines shorter than the others. When
-she goes back and checks it, she sees that she did that assay at 8:00 on
-a Monday morning — someone was probably in using the machine on the
-weekend, and she forgot to reset it. Before re-running that sample, she
-checks to see if any files have too much data:</p>
+<p>Ого - несподіванка! Один з файлів на 60 рядків коротший за інші. Коли
+вона повертається до цього файлу та перевіряє його, вона бачить, що
+зробила цей аналіз о 8:00 ранку в понеділок — хтось, можливо,
+користувався машиною на вихідних, і вона забула її перезавантажити.
+Перед тим, як повторно проаналізувати цей зразок, вона перевіряє, чи є
+файли, що містять забагато даних:</p>
 <div class="codewrapper sourceCode" id="cb45">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1106,7 +1120,7 @@ information. To find others like it, she does this:</p>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>NENE01971Z.txt NENE02040Z.txt</code></pre>
+<pre class="output" tabindex="0"><code>NENE01971Z.txt    NENE02040Z.txt</code></pre>
 </div>
 <p>Sure enough, when she checks the log on her laptop, there’s no depth
 recorded for either of those samples. Since it’s too late to get the
@@ -1123,10 +1137,10 @@ wildcard expressions <code>NENE*A.txt NENE*B.txt</code>.</p>
 <h3 class="callout-title">Removing Unneeded Files</h3>
 <div class="callout-content">
 <p>Suppose you want to delete your processed data files, and only keep
-your raw files and processing script to save storage. The raw files end
-in <code>.dat</code> and the processed files end in <code>.txt</code>.
-Which of the following would remove all the processed data files, and
-<em>only</em> the processed data files?</p>
+your raw files and processing script to save storage. Вихідні файли
+закінчуються на <code>.dat</code>, а оброблені файли закінчуються на
+<code>.txt</code>. Which of the following would remove all the processed
+data files, and <em>only</em> the processed data files?</p>
 <ol style="list-style-type: decimal"><li><code>rm ?.txt</code></li>
 <li><code>rm *.txt</code></li>
 <li><code>rm * .txt</code></li>
@@ -1137,13 +1151,15 @@ Which of the following would remove all the processed data files, and
 <div id="accordionSolution8" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
-  <h4 class="accordion-header" id="headingSolution8"> Показати відповіді </h4>
+  <h4 class="accordion-header" id="headingSolution8">
+  Відповідь
+  </h4>
 </button>
 <div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
 <div class="accordion-body">
-<ol style="list-style-type: decimal"><li><p>This would remove <code>.txt</code> files with one-character
-names</p></li>
-<li><p>This is the correct answer</p></li>
+<ol style="list-style-type: decimal"><li><p>Це призведе до вилучення файлів <code>.txt</code> з
+односимвольними назвами</p></li>
+<li><p>Це правильна відповідь</p></li>
 <li><p>The shell would expand <code>*</code> to match everything in the
 current directory, so the command would try to remove all matched files
 and an additional file called <code>.txt</code></p></li>
@@ -1162,12 +1178,12 @@ containing at least one <code>.</code>, including the processed files
 <h3 class="callout-title">Ключові моменти</h3>
 <div class="callout-content">
 <ul><li>
-<code>wc</code> counts lines, words, and characters in its
-inputs.</li>
+<code>wc</code> підраховує рядки, слова та символи у своїх вхідних
+даних.</li>
 <li>
-<code>cat</code> displays the contents of its inputs.</li>
+<code>cat</code> виводить вміст своїх вхідних даних.</li>
 <li>
-<code>sort</code> sorts its inputs.</li>
+<code>sort</code> сортує вхідні дані.</li>
 <li>
 <code>head</code> displays the first 10 lines of its input by
 default without additional arguments.</li>
@@ -1178,8 +1194,8 @@ without additional arguments.</li>
 <code>command &gt; [file]</code> redirects a command’s output to a
 file (overwriting any existing content).</li>
 <li>
-<code>command &gt;&gt; [file]</code> appends a command’s output to a
-file.</li>
+<code>command &gt;&gt; [file]</code> додає вивід команди до
+файлу.</li>
 <li>
 <code>[first] | [second]</code> is a pipeline: the output of the
 first command is used as the input to the second.</li>
@@ -1246,8 +1262,8 @@ single-purpose programs (filters).</li>
   "url": "https://ukrainian-carpentries.github.io/shell-novice/instructor/04-pipefilter.html",
   "identifier": "https://ukrainian-carpentries.github.io/shell-novice/instructor/04-pipefilter.html",
   "dateCreated": "2014-10-22",
-  "dateModified": "2025-07-09",
-  "datePublished": "2025-07-09"
+  "dateModified": "2025-07-14",
+  "datePublished": "2025-07-14"
 }
 
   </script><script>
