@@ -222,11 +222,9 @@ $ touch my_file.txt
 
 ## Відповідь
 
-1. The `touch` command generates a new file called `my_file.txt` in
-  your current directory.  You
+1. Команда `touch` створює новий файл з назвою `my_file.txt` у вашому поточному каталозі.  You
   can observe this newly generated file by typing `ls` at the
-  command line prompt.  `my_file.txt` can also be viewed in your
-  GUI file explorer.
+  command line prompt.  Файл `my_file.txt` також можна переглянути у вашому графічному провіднику файлів.
 
 2. When you inspect the file with `ls -l`, note that the size of
   `my_file.txt` is 0 bytes.  In other words, it contains no data.
@@ -235,9 +233,7 @@ $ touch my_file.txt
 3. Some programs do not generate output files themselves, but
   instead require that empty files have already been generated.
   When the program is run, it searches for an existing file to
-  populate with its output.  The touch command allows you to
-  efficiently generate a blank text file to be used by such
-  programs.
+  populate with its output.  За допомогою команди `touch` можна ефективно створити порожній текстовий файл для подальшого використання такими програмами.
 
 :::::::::::::::::::::::::
 
@@ -254,12 +250,11 @@ $ rm my_file.txt
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## What's In A Name?
+## Що ховається в імені?
 
 You may have noticed that all of Nelle's files are named 'something dot
 something', and in this part of the lesson, we always used the extension
-`.txt`.  This is just a convention; we can call a file `mythesis` or
-almost anything else we want. However, most people use two-part names
+`.txt`.  Це лише умовність: ми можемо назвати файл `mythesis` або майже як завгодно. However, most people use two-part names
 most of the time to help them (and their programs) tell different kinds
 of files apart. The second part of such a name is called the
 **filename extension** and indicates
