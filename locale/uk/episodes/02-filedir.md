@@ -307,9 +307,7 @@ shell-lesson-data/
 
 Зауважте, що якщо у вашому поточному робочому каталозі не існує каталогу з назвою `Desktop`, ця команда поверне помилку. Зазвичай, підкаталог `Desktop` існує у вашому домашньому каталозі, який ми вважаємо поточним робочим каталогом вашого терміналу bash.
 
-На виході ви маєте отримати список усіх файлів і підкаталогів у вашому каталозі Desktop, включно з каталогом `shell-lesson-data`, який ви завантажили за посиланням під час [налаштувань для цього уроку](../learners/setup.md). (On most systems, the
-contents of the `Desktop` directory in the shell will show up as icons in a graphical
-user interface behind all the open windows. Подивіться, чи це ваш випадок.)
+На виході ви маєте отримати список усіх файлів і підкаталогів у вашому каталозі Desktop, включно з каталогом `shell-lesson-data`, який ви завантажили за посиланням під час [налаштувань для цього уроку](../learners/setup.md). (На більшості систем вміст каталогу `Desktop` в терміналі можна побачити на екрані у вигляді піктограм, якщо згорнути або закрити усі вікна у графічному інтерфейсі користувача. Подивіться, чи це ваш випадок.)
 
 Ієрархічна організація речей таким чином допомагає нам відстежувати нашу роботу. Хоча у нашому домашньому каталозі можна зберігати сотні файлів, так само як і сотні паперових документів на робочому столі, набагато легше знаходити речі, коли вони організовані у підкаталоги з розумними назвами.
 
@@ -629,7 +627,7 @@ command doesn't always require an argument or an option.
 You might sometimes see options being referred to as **switches** or **flags**,
 especially for options that take no argument. У цьому уроці ми будемо дотримуватися терміну _опція_.
 
-Кожна частина відокремлюється пробілами. Якщо ви пропустите пробіл між `ls` і `-F`, термінал шукатиме команду з назвою `ls-F`, якої не існує. Also, capitalization can be important.
+Кожна частина відокремлюється пробілами. Якщо ви пропустите пробіл між `ls` і `-F`, термінал шукатиме команду з назвою `ls-F`, якої не існує. Також, параметри чутливі до регістру.
 For example, `ls -s` will display the size of files and directories alongside the names,
 while `ls -S` will sort the files and directories by size, as shown below:
 
@@ -713,8 +711,7 @@ $ ls north-pacific-gyre/goo
 ls north-pacific-gyre/goo goodiff.sh goostats.sh
 ```
 
-This is called **tab completion**,
-and we will see it in many other tools as we go on.
+Ця функція відома як **автодоповнення табуляцією**, і ми зустрінемо її у багатьох інших інструментах протягом цього уроку.
 
 [Arguments]: https://swcarpentry.github.io/shell-novice/reference.html#argument
 
