@@ -621,15 +621,12 @@ $ ls -F /
 Ми вже зустрічалися з опціями, які починаються з одного тире (`-`), відомі як **короткі варіанти**, або двох тире (`--`), відомі як **довгі варіанти**.
 \[Опції] змінюють поведінку команди, а \[аргументи] вказують команді, над чим вона має працювати (наприклад, над файлами й каталогами).
 Іноді опції та аргументи називають **параметрами**.
-A command can be called with more than one option and more than one argument, but a
-command doesn't always require an argument or an option.
+Команда може сприймати кілька параметрів і аргументів, але вона не завжди вимагає їх.
 
-You might sometimes see options being referred to as **switches** or **flags**,
-especially for options that take no argument. У цьому уроці ми будемо дотримуватися терміну _опція_.
+Опції також іноді називають **перемикачами** або **прапорцями**, особливо якщо вони не приймають аргументів. У цьому уроці ми будемо дотримуватися терміну _опція_.
 
 Кожна частина відокремлюється пробілами. Якщо ви пропустите пробіл між `ls` і `-F`, термінал шукатиме команду з назвою `ls-F`, якої не існує. Також, параметри чутливі до регістру.
-For example, `ls -s` will display the size of files and directories alongside the names,
-while `ls -S` will sort the files and directories by size, as shown below:
+Наприклад, `ls -s` покаже розміри файлів та каталогів поряд з їхніми назвами., а `ls -S` відсортує файли та каталоги за розміром, як показано нижче:
 
 ```bash
 $ cd ~/Desktop/shell-lesson-data
@@ -652,8 +649,7 @@ $ ls -S exercise-data
 animal-counts  creatures  alkanes  writing  numbers.txt
 ```
 
-Putting all that together, our command `ls -F /` above gives us a listing
-of files and directories in the root directory `/`.
+Зібравши все це разом, команда `ls -F /` вище дасть нам список файлів і каталогів у кореневому каталозі `/`.
 Нижче наведено приклад результату, який ви можете отримати від цієї команди:
 
 ```bash
@@ -683,8 +679,7 @@ Network/              Volumes/
 $ ls north-pacific-gyre/
 ```
 
-This command is a lot to type,
-but she can let the shell do most of the work through what is called **tab completion**.
+Ця команда вимагає багато друку, але Неллі може мінімізувати зусилля, використовуючи **табуляцію**, що дозволяє терміналу автоматично завершувати команди та імена файлів.
 Якщо вона набере:
 
 ```bash
