@@ -180,7 +180,7 @@ How would you write a loop that echoes all 10 numbers from 0 to 9?
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
 ```bash
 $ for loop_variable in 0 1 2 3 4 5 6 7 8 9
@@ -239,7 +239,7 @@ Why do these two loops give different outputs?
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
 The first code block gives the same output on each iteration through
 the loop.
@@ -302,7 +302,7 @@ $ for filename in c*
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
 4 is the correct answer. `*` matches zero or more characters, so any file name starting with
 the letter c, followed by zero or more other characters will be matched.
@@ -326,7 +326,7 @@ $ for filename in *c*
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
 4 is the correct answer. `*` matches zero or more characters, so a file name with zero or more
 characters before a letter c and zero or more characters after the letter c will be matched.
@@ -359,7 +359,7 @@ done
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
 1. The text from each file in turn gets written to the `alkanes.pdb` file.
   However, the file gets overwritten on each loop iteration, so the final content of
@@ -394,7 +394,7 @@ done
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
 3 is the correct answer. `>>` appends to a file, rather than overwriting it with the redirected
 output from a command.
@@ -777,7 +777,7 @@ $ for datafile in *.pdb
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
 The second version is the one we want to run.
 This prints to screen everything enclosed in the quote marks, expanding the
@@ -818,7 +818,7 @@ $ for species in cubane ethane methane
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
 We have a nested loop, i.e. contained within another loop, so for each species
 in the outer loop, the inner loop (the nested loop) iterates over the list of
