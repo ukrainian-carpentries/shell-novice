@@ -298,7 +298,7 @@ to print a list of the unique species appearing in each of those files separatel
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
 ```bash
 # Script to find unique species in csv files where species is the second data field
@@ -360,7 +360,7 @@ before running them. Why do you think it does this?
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
 If a command causes something to crash or hang, it might be useful
 to know what that command was, in order to investigate the problem.
@@ -476,7 +476,7 @@ Which of the following outputs would you expect to see?
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
 The correct answer is 2.
 
@@ -520,7 +520,7 @@ $ bash longest.sh shell-lesson-data/exercise-data/writing txt
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
 ```bash
 # Shell script which takes two arguments:
@@ -575,7 +575,7 @@ echo $@.pdb
 
 :::::::::::::::  solution
 
-## Solutions
+## Відповідь
 
 In each case, the shell expands the wildcard in `*.pdb` before passing the resulting
 list of file names as arguments to the script.
@@ -632,7 +632,7 @@ Which line is responsible for the error?
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
 The `-x` option causes `bash` to run in debug mode.
 This prints out each command as it is run, which will help you to locate errors.
