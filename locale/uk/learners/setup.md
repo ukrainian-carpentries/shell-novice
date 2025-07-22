@@ -76,16 +76,15 @@ Your default shell is available via the Terminal program within your Utilities f
 
 - In Finder, select the Go menu, then select Utilities.
   Locate Terminal in the Utilities folder and open it.
-- Use the Mac 'Spotlight' computer search function.
-  Search for: `Terminal` and press <kbd>Return</kbd>.
+- Скористайтеся функцією пошуку 'Spotlight'.
+  Знайдіть `Terminal` і натисніть <kbd>Return</kbd>.
 
 To check if your machine is set up to use something other than Bash,
 type `echo $SHELL` in your terminal window.
 
-If your machine is set up to use something other than Bash,
-you can run it by opening a terminal and typing `bash`.
+Якщо ваш комп'ютер налаштований на використання чогось іншого, ніж Bash, ви можете запустити Bash, відкривши термінал і набравши `bash`.
 
-[How to Use Terminal on a Mac][mac-terminal]
+[Як користуватися терміналом на Mac][mac-terminal]
 
 ::::::::::::
 
@@ -93,7 +92,7 @@ you can run it by opening a terminal and typing `bash`.
 
 ### Linux {#linux}
 
-The default Unix Shell for Linux operating systems is usually Bash.
+Стандартним терміналом Unix для операційних систем Linux зазвичай є Bash.
 On most versions of Linux, it is accessible by running the
 [Gnome Terminal][gnome-terminal] or [KDE Konsole][kde-konsole] or [xterm],
 which can be found via the applications menu or the search bar.
