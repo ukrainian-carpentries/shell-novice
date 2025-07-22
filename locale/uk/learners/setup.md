@@ -7,11 +7,11 @@ title: Налаштування
 You need to download some files to follow this lesson.
 
 1. Download [shell-lesson-data.zip][zip-file] and move the file to your Desktop.
-2. Unzip/extract the file.
-  **Let your instructor know if you need help with this step**.
-  You should end up with a new folder called **`shell-lesson-data`** on your Desktop.
+2. Розархівуйте файл.
+  **Зверніться до інструктора, якщо вам потрібна допомога на цьому етапі**.
+  На вашому робочому столі має з'явитися новий каталог з назвою **`shell-lesson-data`**.
 
-## Install software
+## Інсталяція програмного забезпечення
 
 If you do not already have the shell software installed, you will need to
 [download and install][install_shell] it.
