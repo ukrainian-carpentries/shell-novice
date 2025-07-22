@@ -13,28 +13,27 @@ You need to download some files to follow this lesson.
 
 ## Інсталяція програмного забезпечення
 
-If you do not already have the shell software installed, you will need to
-[download and install][install_shell] it.
+Якщо у вас ще не встановлено програму-термінал, вам потрібно [завантажити та встановити][install_shell] її.
 
-## Open a new shell
+## Відкриття нового терміналу
 
-After installing the software
+Після встановлення програмного забезпечення
 
-3. Open a terminal.
+3. Відкрийте термінал.
   If you're not sure how to open a terminal on your operating system, see the instructions below.
-4. In the terminal type `cd` then press the <kbd>Return</kbd> key.
+4. У терміналі введіть `cd` і натисніть клавішу <kbd>Return</kbd>.
   This step will make sure you start with your home folder as your working directory.
 
-In the lesson, you will find out how to access the data files in this folder.
+У цьому уроці ви дізнаєтеся, як отримати доступ до файлів даних у цьому каталозі.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Where to type commands: How to open a new shell
+## Як відкрити новий термінал у вашій операційній системі
 
 The shell is a program that enables us to send commands to the computer and receive output.
-It is also referred to as the terminal or command line.
+Її також називають оболонкою або командним рядком.
 
-Some computers include a default Unix Shell program.
+На деяких комп'ютерах встановлено програму Unix Shell за замовчуванням.
 The steps below describe some methods for identifying and opening
 a Unix Shell program if you already have one installed.
 There are also options for identifying and downloading a Unix Shell program,
@@ -54,16 +53,14 @@ installed.
 У цьому уроці ми рекомендуємо вам скористатися емулятором, що входить до складу [Git for Windows][install_shell],
 який надає доступ як до команд оболонки Bash, так і до Git'у.
 
-Once installed, you can open a terminal by running the program Git Bash from the Windows start
-menu.
+Після встановлення ви можете відкрити термінал, запустивши програму Git Bash зі стартового меню Windows.
 
-**For advanced users:**
+**Для досвідчених користувачів:**
 
 As an alternative to Git for Windows you may wish to [Install the Windows Subsystem for Linux][wsl]
 which gives access to a Bash shell command-line tool in Windows 10 and above.
 
-Please note that commands in the Windows Subsystem for Linux (WSL) may differ slightly
-from those shown in the lesson or presented in the workshop.
+Зверніть увагу, що команди у підсистемі Windows для Linux (WSL) можуть дещо відрізнятися від тих, що показані в уроці або представлені на семінарі.
 
 ::::::::::::
 
