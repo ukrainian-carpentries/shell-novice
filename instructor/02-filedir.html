@@ -375,7 +375,7 @@
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Примітка для викладача </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
 <div class="accordion-body">
 <p>Ознайомлення та навігація з файловою системою у терміналі (про яку
 йдеться у розділі <a href="02-filedir.html">Навігація файлами та
@@ -418,6 +418,7 @@
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Виноска</span>
 <div id="варіації-домашнього-каталогу" class="callout-inner">
 <h3 class="callout-title">Варіації домашнього каталогу</h3>
 <div class="callout-content">
@@ -466,6 +467,7 @@ macOS. Хоча вихідні дані Linux і Windows можуть дещо �
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Виноска</span>
 <div id="символи-скісної-риски" class="callout-inner">
 <h3 class="callout-title">Символи скісної риски</h3>
 <div class="callout-content">
@@ -534,6 +536,7 @@ Desktop/      Downloads/    Movies/       Pictures/</code></pre>
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Виноска</span>
 <div id="як-очистити-термінал" class="callout-inner">
 <h3 class="callout-title">Як очистити термінал</h3>
 <div class="callout-content">
@@ -570,6 +573,7 @@ Linux і Git Bash), наприклад:</li>
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Виноска</span>
 <div id="довідка-для-вбудованих-команд" class="callout-inner">
 <h3 class="callout-title">Довідка для вбудованих команд</h3>
 <div class="callout-content">
@@ -626,8 +630,10 @@ Mandatory arguments to long options are mandatory for short options, too.
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Виноска</span>
 <div id="коли-використовувати-короткі-або-довгі-опції" class="callout-inner">
-<h3 class="callout-title">Коли використовувати короткі або довгі опції</h3>
+<h3 class="callout-title">Коли використовувати короткі або довгі
+опції</h3>
 <div class="callout-content">
 <p>Коли існують як короткі, так і довгі опції:</p>
 <ul><li>Використовуйте коротку під час введення команд безпосередньо в
@@ -642,6 +648,7 @@ many times and typed once.</li>
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Виноска</span>
 <div id="непідтримувані-параметри-командного-рядка" class="callout-inner">
 <h3 class="callout-title">Непідтримувані параметри командного рядка</h3>
 <div class="callout-content">
@@ -689,6 +696,7 @@ Try 'ls --help' for more information.</code></pre>
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Виноска</span>
 <div id="сторінки-з-інструкціями-в-інтернеті" class="callout-inner">
 <h3 class="callout-title">Сторінки з інструкціями в Інтернеті</h3>
 <div class="callout-content">
@@ -707,6 +715,7 @@ Try 'ls --help' for more information.</code></pre>
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Вправа</span>
 <div id="вивчення-інших-опцій-ls" class="callout-inner">
 <h3 class="callout-title">Вивчення інших опцій <code>ls</code>
 </h3>
@@ -725,7 +734,7 @@ Try 'ls --help' for more information.</code></pre>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Розв’язок </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Опція <code>-l</code> змушує <code>ls</code> використовувати довгий
 (англ. <strong>l</strong>ong) формат виводу, показуючи не лише назви
@@ -743,8 +752,10 @@ readable”), тобто покаже щось на кшталт <code>5.3K</cod
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Вправа</span>
 <div id="виведення-у-зворотному-хронологічному-порядку" class="callout-inner">
-<h3 class="callout-title">Виведення у зворотному хронологічному порядку</h3>
+<h3 class="callout-title">Виведення у зворотному хронологічному
+порядку</h3>
 <div class="callout-content">
 <p>За замовчуванням <code>ls</code> виводить вміст каталогу в
 алфавітному порядку за іменами елементів. Команда <code>ls -t</code>
@@ -761,7 +772,7 @@ readable”), тобто покаже щось на кшталт <code>5.3K</cod
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Розв’язання </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>При використанні <code>-rt</code> останній змінений файл є останнім у
 списку. Це може бути дуже корисним для пошуку ваших останніх редагувань
@@ -945,6 +956,7 @@ directory’), що трохи вводить в оману. Команда не
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Виноска</span>
 <div id="інші-приховані-файли" class="callout-inner">
 <h3 class="callout-title">Інші приховані файли</h3>
 <div class="callout-content">
@@ -1035,6 +1047,7 @@ directory’), що трохи вводить в оману. Команда не
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Виноска</span>
 <div id="ще-два-скорочення" class="callout-inner">
 <h3 class="callout-title">Ще два скорочення</h3>
 <div class="callout-content">
@@ -1085,6 +1098,7 @@ that the former brings you <em>up</em>, while the latter brings you
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Вправа</span>
 <div id="абсолютні-та-відносні-шляхи" class="callout-inner">
 <h3 class="callout-title">Абсолютні та відносні шляхи</h3>
 <div class="callout-content">
@@ -1108,7 +1122,7 @@ that the former brings you <em>up</em>, while the latter brings you
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Розв’язання </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li><p>Ні: скорочення <code>.</code> означає поточний каталог.</p></li>
 <li><p>Ні: скорочення <code>/</code> означає кореневий каталог.</p></li>
@@ -1133,6 +1147,7 @@ that the former brings you <em>up</em>, while the latter brings you
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Вправа</span>
 <div id="завдання-відносного-шляху" class="callout-inner">
 <h3 class="callout-title">Завдання відносного шляху</h3>
 <div class="callout-content">
@@ -1151,7 +1166,7 @@ that the former brings you <em>up</em>, while the latter brings you
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Розв’язання </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li><p>Ні: у каталозі<code>/Users</code> існує підкаталог
 <code>backup</code>.</p></li>
@@ -1169,6 +1184,7 @@ that the former brings you <em>up</em>, while the latter brings you
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Вправа</span>
 <div id="розуміння-команди-ls" class="callout-inner">
 <h3 class="callout-title">Розуміння команди <code>ls</code>
 </h3>
@@ -1193,7 +1209,7 @@ that the former brings you <em>up</em>, while the latter brings you
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Відповідь </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li><p>Ні: <code>pwd</code> не є назвою каталогу.</p></li>
 <li><p>Так: команда <code>ls</code> без аргументу перелічує файли й
@@ -1338,8 +1354,8 @@ many other tools as we go on.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
+<span class="callout-header">Ключові моменти</span>
 <div class="callout-inner">
-<h3 class="callout-title">Ключові моменти</h3>
 <div class="callout-content">
 <ul><li>Файлова система відповідає за керування інформацією на диску.</li>
 <li>Інформація зберігається у файлах, які зберігаються в каталогах
@@ -1431,7 +1447,7 @@ location.</li>
   "identifier": "https://ukrainian-carpentries.github.io/shell-novice/instructor/02-filedir.html",
   "dateCreated": "2014-10-22",
   "dateModified": "2025-07-15",
-  "datePublished": "2025-07-29"
+  "datePublished": "2025-08-05"
 }
 
   </script><script>
