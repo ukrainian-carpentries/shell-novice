@@ -4,9 +4,9 @@ title: Налаштування
 
 ## Download files
 
-You need to download some files to follow this lesson.
+Для роботи з цим уроком вам необхідно попередньо завантажити деякі файли.
 
-1. Download [shell-lesson-data.zip][zip-file] and move the file to your Desktop.
+1. Завантажте [shell-lesson-data.zip][zip-file] і перенесіть цей файл на робочий стіл.
 2. Розархівуйте файл.
   **Зверніться до інструктора, якщо вам потрібна допомога на цьому етапі**.
   На вашому робочому столі має з'явитися новий каталог з назвою **`shell-lesson-data`**.
@@ -20,9 +20,9 @@ You need to download some files to follow this lesson.
 Після встановлення програмного забезпечення
 
 3. Відкрийте термінал.
-  If you're not sure how to open a terminal on your operating system, see the instructions below.
+  Якщо не знаєте, як відкрити термінал у вашій операційній системі, скористайтеся наведеними нижче інструкціями.
 4. У терміналі введіть `cd` і натисніть клавішу <kbd>Return</kbd>.
-  This step will make sure you start with your home folder as your working directory.
+  Цей крок гарантує, що ви почнете з вашого домашнього каталогу як з робочого каталогу.
 
 У цьому уроці ви дізнаєтеся, як отримати доступ до файлів даних у цьому каталозі.
 
@@ -30,17 +30,15 @@ You need to download some files to follow this lesson.
 
 ## Як відкрити новий термінал у вашій операційній системі
 
-The shell is a program that enables us to send commands to the computer and receive output.
+Термінал - це програма для введення команд і отримання результатів від комп’ютера.
 Її також називають оболонкою або командним рядком.
 
 На деяких комп'ютерах встановлено програму Unix Shell за замовчуванням.
-The steps below describe some methods for identifying and opening
-a Unix Shell program if you already have one installed.
+Наведені нижче кроки допоможуть вам визначити, чи є вона у вашій системі, та як її запустити.
 There are also options for identifying and downloading a Unix Shell program,
 a Linux/UNIX emulator, or a program to access a Unix Shell on a server.
 
-If none of the options below address your circumstances,
-try an online search for: Unix shell [your computer model] [your operating system].
+Якщо жоден із наведених нижче варіантів не підходить для вашої ситуації, спробуйте пошукати в інтернеті з ключовими словами: Unix shell [модель вашого комп'ютера] [ваша операційна система].
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -48,8 +46,7 @@ try an online search for: Unix shell [your computer model] [your operating syste
 
 ### Windows {#windows}
 
-Computers with Windows operating systems do not automatically have a Unix Shell program
-installed.
+Комп'ютери з операційною системою Windows не мають заздалегідь встановленої програми Unix Shell.
 У цьому уроці ми рекомендуємо вам скористатися емулятором, що входить до складу [Git for Windows][install_shell],
 який надає доступ як до команд оболонки Bash, так і до Git'у.
 
@@ -57,8 +54,7 @@ installed.
 
 **Для досвідчених користувачів:**
 
-As an alternative to Git for Windows you may wish to [Install the Windows Subsystem for Linux][wsl]
-which gives access to a Bash shell command-line tool in Windows 10 and above.
+Замість Git для Windows ви можете [встановити підсистему Windows для Linux (WSL)][wsl], що дозволяє працювати з Bash shell у Windows версії 10 і вище.
 
 Зверніть увагу, що команди у підсистемі Windows для Linux (WSL) можуть дещо відрізнятися від тих, що показані в уроці або представлені на семінарі.
 
