@@ -296,7 +296,7 @@ $ mv thesis/quotes.txt .
 ```
 
 The effect is to move the file from the directory it was in to the current working directory.
-`ls` now shows us that `thesis` is empty:
+Тепер `ls` показує нам, що каталог thesis\` порожній:
 
 ```bash
 $ ls thesis
