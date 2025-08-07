@@ -66,17 +66,16 @@ a Linux/UNIX emulator, or a program to access a Unix Shell on a server.
 
 For a Mac computer running macOS Mojave or earlier releases, the default Unix Shell is Bash.
 For a Mac computer running macOS Catalina or later releases, the default Unix Shell is Zsh.
-Your default shell is available via the Terminal program within your Utilities folder.
+Відкрити їх можна через програму "Terminal" у каталозі "Utilities".
 
 Щоб відкрити Термінал, спробуйте один або обидва з наведених нижче способів:
 
-- In Finder, select the Go menu, then select Utilities.
-  Locate Terminal in the Utilities folder and open it.
+- У Finder натисніть меню "Go", а потім виберіть "Utilities".
+  Знайдіть програму "Terminal" у каталозі "Utilities" і відкрийте її.
 - Скористайтеся функцією пошуку 'Spotlight'.
   Знайдіть `Terminal` і натисніть <kbd>Return</kbd>.
 
-To check if your machine is set up to use something other than Bash,
-type `echo $SHELL` in your terminal window.
+Щоб дізнатися, яка саме оболонка використовується за замовчуванням, введіть у терміналі команду `echo $SHELL`.
 
 Якщо ваш комп'ютер налаштований на використання чогось іншого, ніж Bash, ви можете запустити Bash, відкривши термінал і набравши `bash`.
 
