@@ -325,7 +325,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Навігація по файловій системі</h1>
-        <p>Останнє оновлення 2025-07-15 |
+        <p>Останнє оновлення 2025-08-07 |
 
         <a href="https://github.com/ukrainian-carpentries/shell-novice/edit/main/episodes/02-filedir.md" class="external-link">Редагувати цю сторінку <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -639,8 +639,8 @@ Mandatory arguments to long options are mandatory for short options, too.
 <ul><li>Використовуйте коротку під час введення команд безпосередньо в
 термінал, щоб мінімізувати натискання клавіш і швидше виконувати
 завдання.</li>
-<li>Використовуйте довгу опцію у скриптах для наочності. It will be read
-many times and typed once.</li>
+<li>Використовуйте довгу опцію у скриптах для наочності. Вона буде
+надрукована лише один раз, але прочитана багато разів.</li>
 </ul></div>
 </div>
 </div>
@@ -811,10 +811,10 @@ bash.</p>
 <p>На виході ви маєте отримати список усіх файлів і підкаталогів у
 вашому каталозі Desktop, включно з каталогом
 <code>shell-lesson-data</code>, який ви завантажили за посиланням під
-час <a href="index.html#setup">налаштувань для цього уроку</a>. (On most
-systems, the contents of the <code>Desktop</code> directory in the shell
-will show up as icons in a graphical user interface behind all the open
-windows. Подивіться, чи це ваш випадок.)</p>
+час <a href="index.html#setup">налаштувань для цього уроку</a>. (На більшості
+систем вміст каталогу <code>Desktop</code> в терміналі можна побачити на
+екрані у вигляді піктограм, якщо згорнути або закрити усі вікна у
+графічному інтерфейсі користувача. Подивіться, чи це ваш випадок.)</p>
 <p>Ієрархічна організація речей таким чином допомагає нам відстежувати
 нашу роботу. Хоча у нашому домашньому каталозі можна зберігати сотні
 файлів, так само як і сотні паперових документів на робочому столі,
@@ -1064,9 +1064,9 @@ directory’), що трохи вводить в оману. Команда не
 шлях. Це <em>дуже</em> ефективний спосіб переміщення <em>між двома
 каталогами</em> - тобто, якщо ви виконаєте <code>cd -</code> двічі, це
 повертає вас до початкового каталогу.</p>
-<p>The difference between <code>cd ..</code> and <code>cd -</code> is
-that the former brings you <em>up</em>, while the latter brings you
-<em>back</em>.</p>
+<p>Різниця між <code>cd ..</code> і <code>cd -</code> полягає в тому, що
+перший переміщується на один рівень <em>вище</em> в ієрархії каталогів,
+а другий повертає вас <em>назад</em>.</p>
 <hr><p>Спробуйте! Спочатку перейдіть до
 <code>~/Desktop/shell-lesson-data</code> (ви вже маєте бути там).</p>
 <div class="codewrapper sourceCode" id="cb37">
@@ -1237,19 +1237,18 @@ that the former brings you <em>up</em>, while the latter brings you
 двох тире (<code>--</code>), відомі як <strong>довгі варіанти</strong>.
 [Опції] змінюють поведінку команди, а [аргументи] вказують команді, над
 чим вона має працювати (наприклад, над файлами й каталогами). Іноді
-опції та аргументи називають <strong>параметрами</strong>. A command can
-be called with more than one option and more than one argument, but a
-command doesn’t always require an argument or an option.</p>
-<p>You might sometimes see options being referred to as
-<strong>switches</strong> or <strong>flags</strong>, especially for
-options that take no argument. У цьому уроці ми будемо дотримуватися
-терміну <em>опція</em>.</p>
+опції та аргументи називають <strong>параметрами</strong>. Команда може
+сприймати кілька параметрів і аргументів, але вона не завжди вимагає
+їх.</p>
+<p>Опції також іноді називають <strong>перемикачами</strong> або
+<strong>прапорцями</strong>, особливо якщо вони не приймають аргументів.
+У цьому уроці ми будемо дотримуватися терміну <em>опція</em>.</p>
 <p>Кожна частина відокремлюється пробілами. Якщо ви пропустите пробіл
 між <code>ls</code> і <code>-F</code>, термінал шукатиме команду з
-назвою <code>ls-F</code>, якої не існує. Also, capitalization can be
-important. For example, <code>ls -s</code> will display the size of
-files and directories alongside the names, while <code>ls -S</code> will
-sort the files and directories by size, as shown below:</p>
+назвою <code>ls-F</code>, якої не існує. Також, параметри чутливі до
+регістру. Наприклад, <code>ls -s</code> покаже розміри файлів та
+каталогів поряд з їхніми назвами., а <code>ls -S</code> відсортує файли
+та каталоги за розміром, як показано нижче:</p>
 <div class="codewrapper sourceCode" id="cb42">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1276,10 +1275,10 @@ sort the files and directories by size, as shown below:</p>
 </h3>
 <pre class="output" tabindex="0"><code>animal-counts  creatures  alkanes  writing  numbers.txt</code></pre>
 </div>
-<p>Putting all that together, our command <code>ls -F /</code> above
-gives us a listing of files and directories in the root directory
-<code>/</code>. Нижче наведено приклад результату, який ви можете
-отримати від цієї команди:</p>
+<p>Зібравши все це разом, команда <code>ls -F /</code> вище дасть нам
+список файлів і каталогів у кореневому каталозі <code>/</code>. Нижче
+наведено приклад результату, який ви можете отримати від цієї
+команди:</p>
 <div class="codewrapper sourceCode" id="cb46">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1314,9 +1313,9 @@ Network/              Volumes/</code></pre>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb48-1"><a href="#cb48-1" tabindex="-1"></a><span class="ex">$</span> ls north-pacific-gyre/</span></code></pre>
 </div>
-<p>This command is a lot to type, but she can let the shell do most of
-the work through what is called <strong>tab completion</strong>. Якщо
-вона набере:</p>
+<p>Ця команда вимагає багато друку, але Неллі може мінімізувати зусилля,
+використовуючи <strong>табуляцію</strong>, що дозволяє терміналу
+автоматично завершувати команди та імена файлів. Якщо вона набере:</p>
 <div class="codewrapper sourceCode" id="cb49">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1348,8 +1347,8 @@ the work through what is called <strong>tab completion</strong>. Якщо
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb52-1"><a href="#cb52-1" tabindex="-1"></a><span class="fu">ls</span> north-pacific-gyre/goo goodiff.sh goostats.sh</span></code></pre>
 </div>
-<p>This is called <strong>tab completion</strong>, and we will see it in
-many other tools as we go on.</p>
+<p>Ця функція відома як <strong>автодоповнення табуляцією</strong>, і ми
+зустрінемо її у багатьох інших інструментах протягом цього уроку.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -1360,27 +1359,24 @@ many other tools as we go on.</p>
 <ul><li>Файлова система відповідає за керування інформацією на диску.</li>
 <li>Інформація зберігається у файлах, які зберігаються в каталогах
 (теках).</li>
-<li>Directories can also store other directories, which then form a
-directory tree.</li>
+<li>Каталоги також можуть зберігати інші підкаталоги, які таким чином
+створюють дерево каталогів.</li>
 <li>Команда <code>pwd</code> виводить поточний робочий каталог
 користувача.</li>
-<li>
-<code>ls [path]</code> prints a listing of a specific file or
-directory; <code>ls</code> on its own lists the current working
-directory.</li>
-<li>
-<code>cd [path]</code> changes the current working directory.</li>
+<li>Команда <code>ls [path]</code> виводить список з певного файлу або
+каталогу; команда <code>ls</code> сама по собі виводить список поточного
+робочого каталогу.</li>
+<li>Команда <code>cd [path]</code> змінює поточний робочий каталог.</li>
 <li>Більшість команд приймають параметри, які починаються з одного
 символу <code>-</code>.</li>
 <li>Назви каталогів в шляху розділяються символами <code>/</code> в
 Unix, але <code>\</code> в Windows.</li>
-<li>
-<code>/</code> on its own is the root directory of the whole file
-system.</li>
-<li>An absolute path specifies a location from the root of the file
-system.</li>
-<li>A relative path specifies a location starting from the current
-location.</li>
+<li>Символ <code>/</code> сам по собі зазначає кореневий каталог усієї
+файлової системи.</li>
+<li>Абсолютний шлях вказує на розташування відносно кореня файлової
+системи.</li>
+<li>Відносний шлях вказує на розташування, починаючи з поточного
+каталогу.</li>
 <li>Символ <code>.</code> сам по собі означає ‘поточний каталог’;
 <code>..</code> означає ‘батьківський каталог’ (той, що знаходиться над
 поточним каталогом).</li>
@@ -1424,7 +1420,7 @@ location.</li>
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Шаблон ліцензовано за <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a>. Автори шаблону: <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Створено за допомогою <a href="https://github.com/carpentries/sandpaper/tree/main" class="external-link">sandpaper (0.16.13.9000)</a>, <a href="https://github.com/carpentries/pegboard/tree/main" class="external-link">pegboard (0.7.9)</a> та <a href="https://github.com/carpentries/varnish/tree/1.0.6" class="external-link">varnish (1.0.6)</a></p>
+        <p>Створено за допомогою <a href="https://github.com/carpentries/sandpaper/tree/main" class="external-link">sandpaper (0.17.0)</a>, <a href="https://github.com/carpentries/pegboard/tree/main" class="external-link">pegboard (0.7.9)</a> та <a href="https://github.com/carpentries/varnish/tree/1.0.7" class="external-link">varnish (1.0.7)</a></p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -1446,8 +1442,8 @@ location.</li>
   "url": "https://ukrainian-carpentries.github.io/shell-novice/instructor/02-filedir.html",
   "identifier": "https://ukrainian-carpentries.github.io/shell-novice/instructor/02-filedir.html",
   "dateCreated": "2014-10-22",
-  "dateModified": "2025-07-15",
-  "datePublished": "2025-08-05"
+  "dateModified": "2025-08-07",
+  "datePublished": "2025-08-07"
 }
 
   </script><script>
