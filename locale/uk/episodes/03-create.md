@@ -243,20 +243,15 @@ $ rm my_file.txt
 
 Ви, мабуть, помітили, що всі файли Неллі називаються 'щось крапка щось', і у цій частині уроку ми завжди використовували розширення `.txt`.  Це лише умовність: ми можемо назвати файл `mythesis` або майже як завгодно. Однак, більшість людей здебільшого використовують назви, що складаються з двох частин для того, щоб допомогти їм (і їхнім програмам) розрізняти різні типи файлів. Друга частина такого імені називається розширенням файлу і вказує тип даних у файлі: `.txt` вказує на простий текстовий файл, `.pdf` вказує на PDF-документ, `.cfg` - це конфігураційний файл з параметрами для тієї чи іншої програми, `.png` - зображення у форматі PNG, і так далі.
 
-This is just a convention, albeit an important one. Files merely contain
-bytes; it's up to us and our programs to interpret those bytes
-according to the rules for plain text files, PDF documents, configuration
-files, images, and so on.
+Це лише умовність, хоча й важлива. Файли містять лише байти: це ми та наші програми будемо їх відповідно інтерпретувати — як текст, PDF-документи, конфігураційні файли, зображення тощо.
 
-Якщо ви назвете зображення кита у форматі PNG як `whale.mp3`, це не перетворить його якимось чарівним чином на запис пісні кита, хоча це _може_ змусити операційну систему спробувати відкрити його за допомогою музичного плеєра. In this case, if someone double-clicked `whale.mp3` in a file
-explorer program, the music player will automatically (and erroneously)
-attempt to open the `whale.mp3` file.
+Якщо ви назвете зображення кита у форматі PNG як `whale.mp3`, це не перетворить його якимось чарівним чином на запис пісні кита, хоча це _може_ змусити операційну систему спробувати відкрити його за допомогою музичного плеєра. У цьому випадку, якщо хтось двічі клацне на файлі `whale.mp3` у файловому провіднику, музичний програвач автоматично (і помилково) спробує відкрити файл `whale.mp3`.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Moving files and directories
 
-Returning to the `shell-lesson-data/exercise-data/writing` directory,
+Повернемося до каталогу `shell-lesson-data/exercise-data/writing`:
 
 ```bash
 $ cd ~/Desktop/shell-lesson-data/exercise-data/writing
@@ -271,11 +266,8 @@ which is short for 'move':
 $ mv thesis/draft.txt thesis/quotes.txt
 ```
 
-The first argument tells `mv` what we're 'moving',
-while the second is where it's to go.
-In this case,
-we're moving `thesis/draft.txt` to `thesis/quotes.txt`,
-which has the same effect as renaming the file.
+Перший аргумент говорить `mv`, що ми "переміщаємо", а другий - куди саме.
+У цьому випадку ми переміщуємо `thesis/draft.txt` до `thesis/quotes.txt`, що має той самий ефект, що і перейменування файлу.
 Sure enough,
 `ls` shows us that `thesis` now contains one file called `quotes.txt`:
 
@@ -292,7 +284,7 @@ silently overwrite any existing file with the same name, which could
 lead to data loss. За замовчуванням `mv` не запитуватиме підтвердження перед перезаписом файлів.
 Однак додатковий параметр `mv -i` (або `mv --interactive`) змусить `mv` запросити таке підтвердження.
 
-Note that `mv` also works on directories.
+Зверніть увагу, що `mv` також працює з каталогами.
 
 Перемістимо `quotes.txt` до поточного робочого каталогу.
 Знову скористаємося `mv`, але цього разу ми використаємо лише назву каталогу як другий аргумент щоб повідомити `mv`, що ми хочемо зберегти назву файлу, але перемістити файл у нове місце.
