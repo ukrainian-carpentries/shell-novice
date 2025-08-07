@@ -241,9 +241,7 @@ $ rm my_file.txt
 
 ## Що ховається в імені?
 
-Ви, мабуть, помітили, що всі файли Неллі називаються 'щось крапка щось', і у цій частині уроку ми завжди використовували розширення `.txt`.  Це лише умовність: ми можемо назвати файл `mythesis` або майже як завгодно. However, most people use two-part names
-most of the time to help them (and their programs) tell different kinds
-of files apart. The second part of such a name is called the
+Ви, мабуть, помітили, що всі файли Неллі називаються 'щось крапка щось', і у цій частині уроку ми завжди використовували розширення `.txt`.  Це лише умовність: ми можемо назвати файл `mythesis` або майже як завгодно. Однак, більшість людей здебільшого використовують назви, що складаються з двох частин для того, щоб допомогти їм (і їхнім програмам) розрізняти різні типи файлів. The second part of such a name is called the
 **filename extension** and indicates
 what type of data the file holds: `.txt` signals a plain text file, `.pdf`
 indicates a PDF document, `.cfg` is a configuration file full of parameters

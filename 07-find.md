@@ -252,7 +252,7 @@ and the presence of absence:
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
 The correct answer is 3, because the `-w` option looks only for whole-word matches.
 The other options will also match 'of' when part of another word.
@@ -342,7 +342,7 @@ An example of such a file is provided in
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
 ```source
 grep -w $1 -r $2 | cut -d : -f 2 | cut -d , -f 1,3 > $1.txt
@@ -384,7 +384,7 @@ yielding the correct result, elegance, readability, and speed.
 
 :::::::::::::::  solution
 
-## Solutions
+## Відповідь
 
 ```source
 for sis in Jo Meg Beth Amy
@@ -642,7 +642,7 @@ Once you have thought about your answer, you can test the commands in the
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
 Option 1 is correct. Putting the match expression in quotes prevents the shell
 expanding it, so it gets passed to the `find` command.
@@ -707,7 +707,7 @@ wc -l $(find . -name "*.dat") | sort -n
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
 1. Find all files with a `.dat` extension recursively from the current directory
 
