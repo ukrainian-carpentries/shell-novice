@@ -2,7 +2,7 @@
 title: Налаштування
 ---
 
-## Download files
+## Завантаження файлів
 
 Для роботи з цим уроком вам необхідно попередньо завантажити деякі файли.
 
@@ -35,8 +35,7 @@ title: Налаштування
 
 На деяких комп'ютерах встановлено програму Unix Shell за замовчуванням.
 Наведені нижче кроки допоможуть вам визначити, чи є вона у вашій системі, та як її запустити.
-There are also options for identifying and downloading a Unix Shell program,
-a Linux/UNIX emulator, or a program to access a Unix Shell on a server.
+Існують і інші шляхи пошуку та завантаження Unix Shell, емулятора Linux/UNIX або програми для підключення до Unix Shell на віддаленому сервері.
 
 Якщо жоден із наведених нижче варіантів не підходить для вашої ситуації, спробуйте пошукати в інтернеті з ключовими словами: Unix shell [модель вашого комп'ютера] [ваша операційна система].
 
@@ -64,8 +63,8 @@ a Linux/UNIX emulator, or a program to access a Unix Shell on a server.
 
 ### MacOS {#macos}
 
-For a Mac computer running macOS Mojave or earlier releases, the default Unix Shell is Bash.
-For a Mac computer running macOS Catalina or later releases, the default Unix Shell is Zsh.
+На комп'ютерах Mac із macOS Mojave або ранішими версіями, стандартним терміналом Unix є Bash.
+На комп'ютерах Mac з macOS Catalina або пізніших версій стандартним терміналом Unix є Zsh.
 Відкрити їх можна через програму "Terminal" у каталозі "Utilities".
 
 Щоб відкрити Термінал, спробуйте один або обидва з наведених нижче способів:
@@ -88,11 +87,8 @@ For a Mac computer running macOS Catalina or later releases, the default Unix Sh
 ### Linux {#linux}
 
 Стандартним терміналом Unix для операційних систем Linux зазвичай є Bash.
-On most versions of Linux, it is accessible by running the
-[Gnome Terminal][gnome-terminal] or [KDE Konsole][kde-konsole] or [xterm],
-which can be found via the applications menu or the search bar.
-If your machine is set up to use something other than Bash,
-you can run it by opening a terminal and typing `bash`.
+У більшості версій Linux доступ до Bash можна отримати через термінали, такі як [Gnome Terminal][gnome-terminal], [KDE Konsole][kde-konsole] або [xterm][xterm], які можна знайти за допомогою меню програм або рядка пошуку.
+Якщо за замовчуванням використовується інша оболонка, просто відкрийте термінал і наберіть `bash`, щоб запустити Bash.
 
 ::::::::::::
 
