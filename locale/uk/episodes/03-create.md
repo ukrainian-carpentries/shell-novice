@@ -300,8 +300,7 @@ $ ls thesis
 $
 ```
 
-Alternatively, we can confirm the file `quotes.txt` is no longer present in the `thesis` directory
-by explicitly trying to list it:
+Крім того, ми можемо переконатися, що файл `quotes.txt` більше не присутній у каталозі `thesis`, спробувавши показати інформацію про нього:
 
 ```bash
 $ ls thesis/quotes.txt
