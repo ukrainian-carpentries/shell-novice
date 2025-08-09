@@ -257,10 +257,7 @@ $ rm my_file.txt
 $ cd ~/Desktop/shell-lesson-data/exercise-data/writing
 ```
 
-In our `thesis` directory we have a file `draft.txt`
-which isn't a particularly informative name,
-so let's change the file's name using `mv`,
-which is short for 'move':
+У нашому каталозі `thesis` є файл `draft.txt`, з не надто інформативною назвою, тому змінімо назву файлу за допомогою команди `mv`, що є скороченням від 'move' (з англ. - 'переміщати'):
 
 ```bash
 $ mv thesis/draft.txt thesis/quotes.txt
@@ -268,8 +265,7 @@ $ mv thesis/draft.txt thesis/quotes.txt
 
 Перший аргумент говорить `mv`, що ми "переміщаємо", а другий - куди саме.
 У цьому випадку ми переміщуємо `thesis/draft.txt` до `thesis/quotes.txt`, що має той самий ефект, що і перейменування файлу.
-Sure enough,
-`ls` shows us that `thesis` now contains one file called `quotes.txt`:
+Після цього `ls` підтверджує, що `thesis` тепер містить один файл з назвою `quotes.txt`:
 
 ```bash
 $ ls thesis
@@ -279,9 +275,7 @@ $ ls thesis
 quotes.txt
 ```
 
-One must be careful when specifying the target file name, since `mv` will
-silently overwrite any existing file with the same name, which could
-lead to data loss. За замовчуванням `mv` не запитуватиме підтвердження перед перезаписом файлів.
+Слід бути обережним, вказуючи ім'я цільового файлу, оскільки `mv` приховано перезапише будь-який наявний файл з такою самою назвою, а це може призвести до втрати даних. За замовчуванням `mv` не запитуватиме підтвердження перед перезаписом файлів.
 Однак додатковий параметр `mv -i` (або `mv --interactive`) змусить `mv` запросити таке підтвердження.
 
 Зверніть увагу, що `mv` також працює з каталогами.
@@ -295,7 +289,7 @@ lead to data loss. За замовчуванням `mv` не запитуват�
 $ mv thesis/quotes.txt .
 ```
 
-The effect is to move the file from the directory it was in to the current working directory.
+Наслідком цього буде переміщення файлу з початкового каталогу до поточного робочого каталогу.
 Тепер `ls` показує нам, що каталог thesis\` порожній:
 
 ```bash
