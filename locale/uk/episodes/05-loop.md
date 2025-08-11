@@ -284,8 +284,7 @@ propane.pdb
 
 ## Limiting Sets of Files
 
-What would be the output of running the following loop in the
-`shell-lesson-data/exercise-data/alkanes` directory?
+Що буде виведено у результаті виконання наступного циклу в каталозі `shell-lesson-data/exercise-data/alkanes`?
 
 ```bash
 $ for filename in c*
@@ -294,16 +293,16 @@ $ for filename in c*
 > done
 ```
 
-1. No files are listed.
-2. All files are listed.
-3. Only `cubane.pdb`, `octane.pdb` and `pentane.pdb` are listed.
-4. Only `cubane.pdb` is listed.
+1. Жодної назви файлу не буде виведено.
+2. Будуть перелічені всі файли.
+3. Будуть перелічені лише `cubane.pdb`, `octane.pdb` та `pentane.pdb`.
+4. Буде виведено лише `cubane.pdb`.
 
 :::::::::::::::  solution
 
 ## Відповідь
 
-4 is the correct answer. `*` matches zero or more characters, so any file name starting with
+4 - правильна відповідь. `*` matches zero or more characters, so any file name starting with
 the letter c, followed by zero or more other characters will be matched.
 
 :::::::::::::::::::::::::
@@ -327,7 +326,7 @@ $ for filename in *c*
 
 ## Відповідь
 
-4 is the correct answer. `*` matches zero or more characters, so a file name with zero or more
+4 - правильна відповідь. `*` matches zero or more characters, so a file name with zero or more
 characters before a letter c and zero or more characters after the letter c will be matched.
 
 :::::::::::::::::::::::::
@@ -383,21 +382,18 @@ do
 done
 ```
 
-1. All of the text from `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb`, and
-  `pentane.pdb` would be concatenated and saved to a file called `all.pdb`.
-2. The text from `ethane.pdb` will be saved to a file called `all.pdb`.
-3. All of the text from `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb`, `pentane.pdb`
-  and `propane.pdb` would be concatenated and saved to a file called `all.pdb`.
-4. All of the text from `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb`, `pentane.pdb`
-  and `propane.pdb` would be printed to the screen and saved to a file called `all.pdb`.
+1. Весь текст з файлів `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb` та `pentane.pdb` буде об'єднано і збережено у файлі з назвою `all.pdb`.
+2. Текст з файлу `ethane.pdb` буде збережено до файлу з назвою `all.pdb`.
+3. Весь текст з файлів `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb`, `pentane.pdb` та `propane.pdb` буде об'єднано та збережено у файл з назвою `all.pdb`.
+4. Весь текст з файлів `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb`, `pentane.pdb` та `propane.pdb` буде виведено на екран і збережено у файлі з назвою `all.pdb`.
 
 :::::::::::::::  solution
 
 ## Відповідь
 
-3 is the correct answer. `>>` appends to a file, rather than overwriting it with the redirected
+3 - правильна відповідь. `>>` appends to a file, rather than overwriting it with the redirected
 output from a command.
-Given the output from the `cat` command has been redirected, nothing is printed to the screen.
+Оскільки вивід команди `cat` було перенаправлено, на екран нічого не буде виведено.
 
 :::::::::::::::::::::::::
 
