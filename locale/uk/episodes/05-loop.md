@@ -235,18 +235,17 @@ $ for datafile in *.pdb
 > done
 ```
 
-Why do these two loops give different outputs?
+Чому ці два цикли дають різні результати?
 
 :::::::::::::::  solution
 
 ## Відповідь
 
-The first code block gives the same output on each iteration through
-the loop.
+Перший блок коду дає однаковий результат на кожній ітерації циклу.
 Bash expands the wildcard `*.pdb` within the loop body (as well as
 before the loop starts) to match all files ending in `.pdb`
 and then lists them using `ls`.
-The expanded loop would look like this:
+Розширений цикл матиме такий вигляд:
 
 ```bash
 $ for datafile in cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
