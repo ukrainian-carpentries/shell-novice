@@ -324,10 +324,10 @@ quotes.txt
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Moving Files to a new folder
+## Переміщення файлів до нового каталогу
 
 Після виконання наступних команд Джеймі зрозуміла, що помістила файли `sucrose.dat` та `maltose.dat` не до того каталогу.
-The files should have been placed in the `raw` folder.
+Файли потрібно було помістити у каталог `raw`.
 
 ```bash
 $ ls -F
@@ -337,8 +337,7 @@ fructose.dat glucose.dat maltose.dat sucrose.dat
 $ cd analyzed
 ```
 
-Fill in the blanks to move these files to the `raw/` folder
-(i.e. the one she forgot to put them in)
+Заповніть пропуски, щоб перемістити ці файли до каталогу `raw/` (тобто туди, куди вона забула їх помістити)
 
 ```bash
 $ mv sucrose.dat maltose.dat ____/____
