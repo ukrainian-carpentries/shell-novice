@@ -455,7 +455,7 @@ Spaces are used to separate the elements of the list
 that we are going to loop over. If one of those elements
 contains a space character, we need to surround it with
 quotes, and do the same thing to our loop variable.
-Suppose our data files are named:
+Припустимо, що наші файли даних мають імена:
 
 ```source
 red dragon.dat
@@ -471,7 +471,7 @@ $ for filename in "red dragon.dat" "purple unicorn.dat"
 > done
 ```
 
-It is simpler to avoid using spaces (or other special characters) in filenames.
+Простіше уникати використання пробілів (або інших спеціальних символів) у назвах файлів.
 
 The files above don't exist, so if we run the above code, the `head` command will be unable
 to find them; however, the error message returned will show the name of the files it is
