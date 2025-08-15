@@ -483,8 +483,7 @@ head: cannot open ‘purple unicorn.dat' for reading: No such file or directory
 ```
 
 Try removing the quotes around `$filename` in the loop above to see the effect of the quote
-marks on spaces. Note that we get a result from the loop command for unicorn.dat
-when we run this code in the `creatures` directory:
+marks on spaces. Зверніть увагу, що ми отримуємо результат команди циклу для `unicorn.dat` коли ми запускаємо цей код у каталозі `creatures`:
 
 ```output
 head: cannot open ‘red' for reading: No such file or directory
@@ -499,11 +498,10 @@ CAAGTGTTCC
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 We would like to modify each of the files in `shell-lesson-data/exercise-data/creatures`,
-but also save a version of the original files. We want to copy the original files to new
-files named `original-basilisk.dat` and `original-unicorn.dat`, for example. We can't use:
+but also save a version of the original files. Наприклад, ми хочемо скопіювати оригінальні файли до нових файлів з назвами `original-basilisk.dat` та `original-unicorn.dat`. We can't use:
 
 ```bash
-$ cp .dat original- .dat
+$ cp *.dat original-*.dat
 ```
 
 because that would expand to:
@@ -522,7 +520,7 @@ This problem arises when `cp` receives more than two inputs. When this happens, 
 last input to be a directory where it can copy all the files it was passed. Since there is
 no directory named `original-*.dat` in the `creatures` directory, we get an error.
 
-Instead, we can use a loop:
+Замість цього ми можемо використати цикл:
 
 ```bash
 $ for filename in *.dat
