@@ -243,41 +243,29 @@ $ rm my_file.txt
 
 Ви, мабуть, помітили, що всі файли Неллі називаються 'щось крапка щось', і у цій частині уроку ми завжди використовували розширення `.txt`.  Це лише умовність: ми можемо назвати файл `mythesis` або майже як завгодно. Однак, більшість людей здебільшого використовують назви, що складаються з двох частин для того, щоб допомогти їм (і їхнім програмам) розрізняти різні типи файлів. Друга частина такого імені називається розширенням файлу і вказує тип даних у файлі: `.txt` вказує на простий текстовий файл, `.pdf` вказує на PDF-документ, `.cfg` - це конфігураційний файл з параметрами для тієї чи іншої програми, `.png` - зображення у форматі PNG, і так далі.
 
-This is just a convention, albeit an important one. Files merely contain
-bytes; it's up to us and our programs to interpret those bytes
-according to the rules for plain text files, PDF documents, configuration
-files, images, and so on.
+Це лише умовність, хоча й важлива. Файли містять лише байти: це ми та наші програми будемо їх відповідно інтерпретувати — як текст, PDF-документи, конфігураційні файли, зображення тощо.
 
-Якщо ви назвете зображення кита у форматі PNG як `whale.mp3`, це не перетворить його якимось чарівним чином на запис пісні кита, хоча це _може_ змусити операційну систему спробувати відкрити його за допомогою музичного плеєра. In this case, if someone double-clicked `whale.mp3` in a file
-explorer program, the music player will automatically (and erroneously)
-attempt to open the `whale.mp3` file.
+Якщо ви назвете зображення кита у форматі PNG як `whale.mp3`, це не перетворить його якимось чарівним чином на запис пісні кита, хоча це _може_ змусити операційну систему спробувати відкрити його за допомогою музичного плеєра. У цьому випадку, якщо хтось двічі клацне на файлі `whale.mp3` у файловому провіднику, музичний програвач автоматично (і помилково) спробує відкрити файл `whale.mp3`.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Moving files and directories
 
-Returning to the `shell-lesson-data/exercise-data/writing` directory,
+Повернемося до каталогу `shell-lesson-data/exercise-data/writing`:
 
 ```bash
 $ cd ~/Desktop/shell-lesson-data/exercise-data/writing
 ```
 
-In our `thesis` directory we have a file `draft.txt`
-which isn't a particularly informative name,
-so let's change the file's name using `mv`,
-which is short for 'move':
+У нашому каталозі `thesis` є файл `draft.txt`, з не надто інформативною назвою, тому змінімо назву файлу за допомогою команди `mv`, що є скороченням від 'move' (з англ. - 'переміщати'):
 
 ```bash
 $ mv thesis/draft.txt thesis/quotes.txt
 ```
 
-The first argument tells `mv` what we're 'moving',
-while the second is where it's to go.
-In this case,
-we're moving `thesis/draft.txt` to `thesis/quotes.txt`,
-which has the same effect as renaming the file.
-Sure enough,
-`ls` shows us that `thesis` now contains one file called `quotes.txt`:
+Перший аргумент говорить `mv`, що ми "переміщаємо", а другий - куди саме.
+У цьому випадку ми переміщуємо `thesis/draft.txt` до `thesis/quotes.txt`, що має той самий ефект, що і перейменування файлу.
+Після цього `ls` підтверджує, що `thesis` тепер містить один файл з назвою `quotes.txt`:
 
 ```bash
 $ ls thesis
@@ -287,12 +275,10 @@ $ ls thesis
 quotes.txt
 ```
 
-One must be careful when specifying the target file name, since `mv` will
-silently overwrite any existing file with the same name, which could
-lead to data loss. За замовчуванням `mv` не запитуватиме підтвердження перед перезаписом файлів.
+Слід бути обережним, вказуючи ім'я цільового файлу, оскільки `mv` приховано перезапише будь-який наявний файл з такою самою назвою, а це може призвести до втрати даних. За замовчуванням `mv` не запитуватиме підтвердження перед перезаписом файлів.
 Однак додатковий параметр `mv -i` (або `mv --interactive`) змусить `mv` запросити таке підтвердження.
 
-Note that `mv` also works on directories.
+Зверніть увагу, що `mv` також працює з каталогами.
 
 Перемістимо `quotes.txt` до поточного робочого каталогу.
 Знову скористаємося `mv`, але цього разу ми використаємо лише назву каталогу як другий аргумент щоб повідомити `mv`, що ми хочемо зберегти назву файлу, але перемістити файл у нове місце.
@@ -303,8 +289,8 @@ Note that `mv` also works on directories.
 $ mv thesis/quotes.txt .
 ```
 
-The effect is to move the file from the directory it was in to the current working directory.
-`ls` now shows us that `thesis` is empty:
+Наслідком цього буде переміщення файлу з початкового каталогу до поточного робочого каталогу.
+Тепер `ls` показує нам, що каталог thesis\` порожній:
 
 ```bash
 $ ls thesis
@@ -314,8 +300,7 @@ $ ls thesis
 $
 ```
 
-Alternatively, we can confirm the file `quotes.txt` is no longer present in the `thesis` directory
-by explicitly trying to list it:
+Крім того, ми можемо переконатися, що файл `quotes.txt` більше не присутній у каталозі `thesis`, спробувавши показати інформацію про нього:
 
 ```bash
 $ ls thesis/quotes.txt
@@ -325,9 +310,9 @@ $ ls thesis/quotes.txt
 ls: cannot access 'thesis/quotes.txt': No such file or directory
 ```
 
-`ls` with a filename or directory as an argument only lists the requested file or directory.
-If the file given as the argument doesn't exist, the shell returns an error as we saw above.
-We can use this to see that `quotes.txt` is now present in our current directory:
+Команда `ls`, якщо вказати ім’я файлу або каталогу як аргумент, виводить лише список запитуваних файлів або каталогів.
+Якщо вказаного файлу не існує, термінал поверне помилку — як ми вже бачили раніше.
+Таким чином ми можемо перевірити, що файл `quotes.txt` тепер знаходиться у поточному каталозі:
 
 ```bash
 $ ls quotes.txt
@@ -339,10 +324,10 @@ quotes.txt
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Moving Files to a new folder
+## Переміщення файлів до нового каталогу
 
 Після виконання наступних команд Джеймі зрозуміла, що помістила файли `sucrose.dat` та `maltose.dat` не до того каталогу.
-The files should have been placed in the `raw` folder.
+Файли потрібно було помістити у каталог `raw`.
 
 ```bash
 $ ls -F
@@ -352,8 +337,7 @@ fructose.dat glucose.dat maltose.dat sucrose.dat
 $ cd analyzed
 ```
 
-Fill in the blanks to move these files to the `raw/` folder
-(i.e. the one she forgot to put them in)
+Заповніть пропуски, щоб перемістити ці файли до каталогу `raw/` (тобто туди, куди вона забула їх помістити)
 
 ```bash
 $ mv sucrose.dat maltose.dat ____/____
@@ -367,8 +351,7 @@ $ mv sucrose.dat maltose.dat ____/____
 $ mv sucrose.dat maltose.dat ../raw
 ```
 
-Recall that `..` refers to the parent directory (i.e. one above the current directory)
-and that `.` refers to the current directory.
+Пам'ятайте, що `..` вказує на батьківський каталог (тобто на каталог рівнем вище поточного), а `.` вказує на поточний каталог.
 
 :::::::::::::::::::::::::
 
