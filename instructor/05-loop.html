@@ -325,7 +325,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Цикли</h1>
-        <p>Останнє оновлення 2025-08-07 |
+        <p>Останнє оновлення 2025-08-15 |
 
         <a href="https://github.com/ukrainian-carpentries/shell-novice/edit/main/episodes/05-loop.md" class="external-link">Редагувати цю сторінку <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -549,7 +549,7 @@ like a list of numbers or a subset of data.</p>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -611,7 +611,7 @@ like a list of numbers or a subset of data.</p>
 <span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a><span class="op">&gt;</span>     ls <span class="va">$datafile</span></span>
 <span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a><span class="op">&gt;</span> done</span></code></pre>
 </div>
-<p>Why do these two loops give different outputs?</p>
+<p>Чому ці два цикли дають різні результати?</p>
 </div>
 </div>
 </div>
@@ -622,13 +622,13 @@ like a list of numbers or a subset of data.</p>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
-<p>The first code block gives the same output on each iteration through
-the loop. Bash expands the wildcard <code>*.pdb</code> within the loop
-body (as well as before the loop starts) to match all files ending in
-<code>.pdb</code> and then lists them using <code>ls</code>. The
-expanded loop would look like this:</p>
+<p>Перший блок коду дає однаковий результат на кожній ітерації циклу.
+Bash expands the wildcard <code>*.pdb</code> within the loop body (as
+well as before the loop starts) to match all files ending in
+<code>.pdb</code> and then lists them using <code>ls</code>. Розширений
+цикл матиме такий вигляд:</p>
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -672,8 +672,8 @@ The value of the <code>datafile</code> variable is evaluated using
 <div id="limiting-sets-of-files" class="callout-inner">
 <h3 class="callout-title">Limiting Sets of Files</h3>
 <div class="callout-content">
-<p>What would be the output of running the following loop in the
-<code>shell-lesson-data/exercise-data/alkanes</code> directory?</p>
+<p>Що буде виведено у результаті виконання наступного циклу в каталозі
+<code>shell-lesson-data/exercise-data/alkanes</code>?</p>
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -682,11 +682,11 @@ The value of the <code>datafile</code> variable is evaluated using
 <span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a><span class="op">&gt;</span>     ls <span class="va">$filename</span></span>
 <span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a><span class="op">&gt;</span> done</span></code></pre>
 </div>
-<ol style="list-style-type: decimal"><li>No files are listed.</li>
-<li>All files are listed.</li>
-<li>Only <code>cubane.pdb</code>, <code>octane.pdb</code> and
-<code>pentane.pdb</code> are listed.</li>
-<li>Only <code>cubane.pdb</code> is listed.</li>
+<ol style="list-style-type: decimal"><li>Жодної назви файлу не буде виведено.</li>
+<li>Будуть перелічені всі файли.</li>
+<li>Будуть перелічені лише <code>cubane.pdb</code>,
+<code>octane.pdb</code> та <code>pentane.pdb</code>.</li>
+<li>Буде виведено лише <code>cubane.pdb</code>.</li>
 </ol></div>
 </div>
 </div>
@@ -697,9 +697,9 @@ The value of the <code>datafile</code> variable is evaluated using
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
-<p>4 is the correct answer. <code>*</code> matches zero or more
+<p>4 - правильна відповідь. <code>*</code> matches zero or more
 characters, so any file name starting with the letter c, followed by
 zero or more other characters will be matched.</p>
 </div>
@@ -741,9 +741,9 @@ be listed.</li>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
-<p>4 is the correct answer. <code>*</code> matches zero or more
+<p>4 - правильна відповідь. <code>*</code> matches zero or more
 characters, so a file name with zero or more characters before a letter
 c and zero or more characters after the letter c will be matched.</p>
 </div>
@@ -792,7 +792,7 @@ will be saved to a file called <code>alkanes.pdb</code>.</li>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>The text from each file in turn gets written to the
 <code>alkanes.pdb</code> file. However, the file gets overwritten on
@@ -820,22 +820,22 @@ directory, what would be the output of the following loop?</p>
 <span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a>    <span class="fu">cat</span> <span class="va">$datafile</span> <span class="op">&gt;&gt;</span> all.pdb</span>
 <span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
 </div>
-<ol style="list-style-type: decimal"><li>All of the text from <code>cubane.pdb</code>,
+<ol style="list-style-type: decimal"><li>Весь текст з файлів <code>cubane.pdb</code>,
 <code>ethane.pdb</code>, <code>methane.pdb</code>,
-<code>octane.pdb</code>, and <code>pentane.pdb</code> would be
-concatenated and saved to a file called <code>all.pdb</code>.</li>
-<li>The text from <code>ethane.pdb</code> will be saved to a file called
+<code>octane.pdb</code> та <code>pentane.pdb</code> буде об’єднано і
+збережено у файлі з назвою <code>all.pdb</code>.</li>
+<li>Текст з файлу <code>ethane.pdb</code> буде збережено до файлу з
+назвою <code>all.pdb</code>.</li>
+<li>Весь текст з файлів <code>cubane.pdb</code>,
+<code>ethane.pdb</code>, <code>methane.pdb</code>,
+<code>octane.pdb</code>, <code>pentane.pdb</code> та
+<code>propane.pdb</code> буде об’єднано та збережено у файл з назвою
 <code>all.pdb</code>.</li>
-<li>All of the text from <code>cubane.pdb</code>,
+<li>Весь текст з файлів <code>cubane.pdb</code>,
 <code>ethane.pdb</code>, <code>methane.pdb</code>,
-<code>octane.pdb</code>, <code>pentane.pdb</code> and
-<code>propane.pdb</code> would be concatenated and saved to a file
-called <code>all.pdb</code>.</li>
-<li>All of the text from <code>cubane.pdb</code>,
-<code>ethane.pdb</code>, <code>methane.pdb</code>,
-<code>octane.pdb</code>, <code>pentane.pdb</code> and
-<code>propane.pdb</code> would be printed to the screen and saved to a
-file called <code>all.pdb</code>.</li>
+<code>octane.pdb</code>, <code>pentane.pdb</code> та
+<code>propane.pdb</code> буде виведено на екран і збережено у файлі з
+назвою <code>all.pdb</code>.</li>
 </ol></div>
 </div>
 </div>
@@ -846,12 +846,12 @@ file called <code>all.pdb</code>.</li>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
-<p>3 is the correct answer. <code>&gt;&gt;</code> appends to a file,
+<p>3 - правильна відповідь. <code>&gt;&gt;</code> appends to a file,
 rather than overwriting it with the redirected output from a command.
-Given the output from the <code>cat</code> command has been redirected,
-nothing is printed to the screen.</p>
+Оскільки вивід команди <code>cat</code> було перенаправлено, на екран
+нічого не буде виведено.</p>
 </div>
 </div>
 </div>
@@ -1254,7 +1254,7 @@ would we want to run?</p>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <p>The second version is the one we want to run. This prints to screen
 everything enclosed in the quote marks, expanding the loop variable name
@@ -1305,7 +1305,7 @@ following code:</p>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
 <div class="accordion-body">
 <p>We have a nested loop, i.e. contained within another loop, so for
 each species in the outer loop, the inner loop (the nested loop)
@@ -1401,8 +1401,8 @@ entered commands.</li>
   "url": "https://ukrainian-carpentries.github.io/shell-novice/instructor/05-loop.html",
   "identifier": "https://ukrainian-carpentries.github.io/shell-novice/instructor/05-loop.html",
   "dateCreated": "2014-10-22",
-  "dateModified": "2025-08-07",
-  "datePublished": "2025-08-12"
+  "dateModified": "2025-08-15",
+  "datePublished": "2025-08-15"
 }
 
   </script><script>

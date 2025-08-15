@@ -1676,7 +1676,7 @@ Unix, але <code>\</code> в Windows.</li>
 </div>
 </section></section><section id="aio-03-create"><p>Content from <a href="03-create.html">Робота з файлами та каталогами</a></p>
 <hr>
-<p>Останнє оновлення 2025-08-07 |
+<p>Останнє оновлення 2025-08-15 |
 
         <a href="https://github.com/ukrainian-carpentries/shell-novice/edit/main/episodes/03-create.md" class="external-link">Редагувати цю сторінку <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -2002,7 +2002,7 @@ Windows також має вбудований редактор з назвою 
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Відповідь </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><p>Команда <code>touch</code> створює новий файл з назвою
@@ -2065,17 +2065,16 @@ Windows також має вбудований редактор з назвою 
 <code>.pdf</code> вказує на PDF-документ, <code>.cfg</code> - це
 конфігураційний файл з параметрами для тієї чи іншої програми,
 <code>.png</code> - зображення у форматі PNG, і так далі.</p>
-<p>This is just a convention, albeit an important one. Files merely
-contain bytes; it’s up to us and our programs to interpret those bytes
-according to the rules for plain text files, PDF documents,
-configuration files, images, and so on.</p>
+<p>Це лише умовність, хоча й важлива. Файли містять лише байти: це ми та
+наші програми будемо їх відповідно інтерпретувати — як текст,
+PDF-документи, конфігураційні файли, зображення тощо.</p>
 <p>Якщо ви назвете зображення кита у форматі PNG як
 <code>whale.mp3</code>, це не перетворить його якимось чарівним чином на
 запис пісні кита, хоча це <em>може</em> змусити операційну систему
-спробувати відкрити його за допомогою музичного плеєра. In this case, if
-someone double-clicked <code>whale.mp3</code> in a file explorer
-program, the music player will automatically (and erroneously) attempt
-to open the <code>whale.mp3</code> file.</p>
+спробувати відкрити його за допомогою музичного плеєра. У цьому випадку,
+якщо хтось двічі клацне на файлі <code>whale.mp3</code> у файловому
+провіднику, музичний програвач автоматично (і помилково) спробує
+відкрити файл <code>whale.mp3</code>.</p>
 </div>
 </div>
 </div>
@@ -2083,27 +2082,27 @@ to open the <code>whale.mp3</code> file.</p>
 </section><section><h2 class="section-heading" id="moving-files-and-directories">Moving files and directories<a class="anchor" aria-label="anchor" href="#moving-files-and-directories"></a>
 </h2>
 <hr class="half-width">
-<p>Returning to the <code>shell-lesson-data/exercise-data/writing</code>
-directory,</p>
+<p>Повернемося до каталогу
+<code>shell-lesson-data/exercise-data/writing</code>:</p>
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="ex">$</span> cd ~/Desktop/shell-lesson-data/exercise-data/writing</span></code></pre>
 </div>
-<p>In our <code>thesis</code> directory we have a file
-<code>draft.txt</code> which isn’t a particularly informative name, so
-let’s change the file’s name using <code>mv</code>, which is short for
-‘move’:</p>
+<p>У нашому каталозі <code>thesis</code> є файл <code>draft.txt</code>,
+з не надто інформативною назвою, тому змінімо назву файлу за допомогою
+команди <code>mv</code>, що є скороченням від ‘move’ (з англ. -
+‘переміщати’):</p>
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="ex">$</span> mv thesis/draft.txt thesis/quotes.txt</span></code></pre>
 </div>
-<p>The first argument tells <code>mv</code> what we’re ‘moving’, while
-the second is where it’s to go. In this case, we’re moving
-<code>thesis/draft.txt</code> to <code>thesis/quotes.txt</code>, which
-has the same effect as renaming the file. Sure enough, <code>ls</code>
-shows us that <code>thesis</code> now contains one file called
+<p>Перший аргумент говорить <code>mv</code>, що ми “переміщаємо”, а
+другий - куди саме. У цьому випадку ми переміщуємо
+<code>thesis/draft.txt</code> до <code>thesis/quotes.txt</code>, що має
+той самий ефект, що і перейменування файлу. Після цього <code>ls</code>
+підтверджує, що <code>thesis</code> тепер містить один файл з назвою
 <code>quotes.txt</code>:</p>
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2115,13 +2114,14 @@ shows us that <code>thesis</code> now contains one file called
 </h3>
 <pre class="output" tabindex="0"><code><span><span class="va">quotes.txt</span></span></code></pre>
 </div>
-<p>One must be careful when specifying the target file name, since
-<code>mv</code> will silently overwrite any existing file with the same
-name, which could lead to data loss. За замовчуванням <code>mv</code> не
-запитуватиме підтвердження перед перезаписом файлів. Однак додатковий
-параметр <code>mv -i</code> (або <code>mv --interactive</code>) змусить
-<code>mv</code> запросити таке підтвердження.</p>
-<p>Note that <code>mv</code> also works on directories.</p>
+<p>Слід бути обережним, вказуючи ім’я цільового файлу, оскільки
+<code>mv</code> приховано перезапише будь-який наявний файл з такою
+самою назвою, а це може призвести до втрати даних. За замовчуванням
+<code>mv</code> не запитуватиме підтвердження перед перезаписом файлів.
+Однак додатковий параметр <code>mv -i</code> (або
+<code>mv --interactive</code>) змусить <code>mv</code> запросити таке
+підтвердження.</p>
+<p>Зверніть увагу, що <code>mv</code> також працює з каталогами.</p>
 <p>Перемістимо <code>quotes.txt</code> до поточного робочого каталогу.
 Знову скористаємося <code>mv</code>, але цього разу ми використаємо лише
 назву каталогу як другий аргумент щоб повідомити <code>mv</code>, що ми
@@ -2134,9 +2134,9 @@ name, which could lead to data loss. За замовчуванням <code>mv</c
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="ex">$</span> mv thesis/quotes.txt .</span></code></pre>
 </div>
-<p>The effect is to move the file from the directory it was in to the
-current working directory. <code>ls</code> now shows us that
-<code>thesis</code> is empty:</p>
+<p>Наслідком цього буде переміщення файлу з початкового каталогу до
+поточного робочого каталогу. Тепер <code>ls</code> показує нам, що
+каталог thesis` порожній:</p>
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2147,9 +2147,9 @@ current working directory. <code>ls</code> now shows us that
 </h3>
 <pre class="output" tabindex="0"><code>$</code></pre>
 </div>
-<p>Alternatively, we can confirm the file <code>quotes.txt</code> is no
-longer present in the <code>thesis</code> directory by explicitly trying
-to list it:</p>
+<p>Крім того, ми можемо переконатися, що файл <code>quotes.txt</code>
+більше не присутній у каталозі <code>thesis</code>, спробувавши показати
+інформацію про нього:</p>
 <div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2160,11 +2160,11 @@ to list it:</p>
 </h3>
 <pre class="error" tabindex="0"><code>ls: cannot access 'thesis/quotes.txt': No such file or directory</code></pre>
 </div>
-<p><code>ls</code> with a filename or directory as an argument only
-lists the requested file or directory. If the file given as the argument
-doesn’t exist, the shell returns an error as we saw above. We can use
-this to see that <code>quotes.txt</code> is now present in our current
-directory:</p>
+<p>Команда <code>ls</code>, якщо вказати ім’я файлу або каталогу як
+аргумент, виводить лише список запитуваних файлів або каталогів. Якщо
+вказаного файлу не існує, термінал поверне помилку — як ми вже бачили
+раніше. Таким чином ми можемо перевірити, що файл
+<code>quotes.txt</code> тепер знаходиться у поточному каталозі:</p>
 <div class="codewrapper sourceCode" id="cb26">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2175,18 +2175,17 @@ directory:</p>
 </h3>
 <pre class="output" tabindex="0"><code><span><span class="va">quotes.txt</span></span></code></pre>
 </div>
-<div id="moving-files-to-a-new-folder" class="callout challenge">
+<div id="переміщення-файлів-до-нового-каталогу" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Вправа</span>
-<div id="moving-files-to-a-new-folder" class="callout-inner">
-<h3 class="callout-title">Moving Files to a new folder</h3>
+<div id="переміщення-файлів-до-нового-каталогу" class="callout-inner">
+<h3 class="callout-title">Переміщення файлів до нового каталогу</h3>
 <div class="callout-content">
 <p>Після виконання наступних команд Джеймі зрозуміла, що помістила файли
 <code>sucrose.dat</code> та <code>maltose.dat</code> не до того
-каталогу. The files should have been placed in the <code>raw</code>
-folder.</p>
+каталогу. Файли потрібно було помістити у каталог <code>raw</code>.</p>
 <div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2196,8 +2195,8 @@ folder.</p>
 <span id="cb28-4"><a href="#cb28-4" tabindex="-1"></a><span class="ex">fructose.dat</span> glucose.dat maltose.dat sucrose.dat</span>
 <span id="cb28-5"><a href="#cb28-5" tabindex="-1"></a><span class="ex">$</span> cd analyzed</span></code></pre>
 </div>
-<p>Fill in the blanks to move these files to the <code>raw/</code>
-folder (i.e. the one she forgot to put them in)</p>
+<p>Заповніть пропуски, щоб перемістити ці файли до каталогу
+<code>raw/</code> (тобто туди, куди вона забула їх помістити)</p>
 <div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2211,16 +2210,16 @@ folder (i.e. the one she forgot to put them in)</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Відповідь </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb30">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="ex">$</span> mv sucrose.dat maltose.dat ../raw</span></code></pre>
 </div>
-<p>Recall that <code>..</code> refers to the parent directory (i.e. one
-above the current directory) and that <code>.</code> refers to the
-current directory.</p>
+<p>Пам’ятайте, що <code>..</code> вказує на батьківський каталог (тобто
+на каталог рівнем вище поточного), а <code>.</code> вказує на поточний
+каталог.</p>
 </div>
 </div>
 </div>
@@ -2305,7 +2304,7 @@ once:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Відповідь </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>Ні. Хоча це створить файл з правильною назвою, неправильно названий
@@ -2372,7 +2371,7 @@ sequence shown below?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Відповідь </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>Ми розпочинаємо роботу в каталозі <code>/Users/jamie/data</code> і
 створюємо нову папку з назвою <code>recombined</code>. Другий рядок
@@ -2464,7 +2463,7 @@ protection when using <code>rm</code>?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Відповідь </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2558,7 +2557,7 @@ filenames and a directory name?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6"> Відповідь </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <p>If given more than one file name followed by a directory name
 (i.e. the destination directory must be the last argument),
@@ -2644,7 +2643,7 @@ at the front can only represent filenames that begin with the letter
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
   <h4 class="accordion-header" id="headingSolution7"> Відповідь </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <p>Відповіддю є <code>3.</code></p>
 <p><code>1.</code> показує всі файли, назви яких починаюьться з нуля або
@@ -2766,7 +2765,7 @@ data and send some datasets to her colleague Bob. Саманта викорис�
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
   <h4 class="accordion-header" id="headingSolution8"> Відповідь </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb57">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2831,7 +2830,7 @@ output shown?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution9" aria-expanded="false" aria-controls="collapseSolution9">
   <h4 class="accordion-header" id="headingSolution9"> Відповідь </h4>
 </button>
-<div id="collapseSolution9" class="accordion-collapse collapse" aria-labelledby="headingSolution9" data-bs-parent="#accordionSolution9">
+<div id="collapseSolution9" class="accordion-collapse collapse" data-bs-parent="#accordionSolution9" aria-labelledby="headingSolution9">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb64">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2920,7 +2919,7 @@ What would the other commands do?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution10" aria-expanded="false" aria-controls="collapseSolution10">
   <h4 class="accordion-header" id="headingSolution10"> Відповідь </h4>
 </button>
-<div id="collapseSolution10" class="accordion-collapse collapse" aria-labelledby="headingSolution10" data-bs-parent="#accordionSolution10">
+<div id="collapseSolution10" class="accordion-collapse collapse" data-bs-parent="#accordionSolution10" aria-labelledby="headingSolution10">
 <div class="accordion-body">
 <p>The first two sets of commands achieve this objective. The first set
 uses relative paths to create the top-level directory before the
@@ -3244,7 +3243,7 @@ instead:</p>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>The <code>-n</code> option specifies a numerical rather than an
 alphanumerical sort.</p>
@@ -3362,7 +3361,7 @@ e.g.</p>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>In the first example with <code>&gt;</code>, the string ‘hello’ is
 written to <code>testfile01.txt</code>, but the file gets overwritten
@@ -3417,7 +3416,7 @@ After these commands, select the answer that corresponds to the file
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>Варіант 3 є правильним. Щоб варіант 1 був правильним, потрібно
 виконати лише команду <code>head</code>. Щоб варіант 2 був правильним,
@@ -3526,7 +3525,7 @@ illustrated below:</p>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>Варіант 4 є рішенням. Символ каналу <code>|</code> використовується
 для під’єднання виводу однієї команди до входу іншої. Символ
@@ -3594,7 +3593,7 @@ reverse order.</p>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <p>Команда <code>head</code> виділяє перші 5 рядків з файлу
 <code>animals.csv</code>. Then, the last 3 lines are extracted from the
@@ -3659,7 +3658,7 @@ duplicates in their names)?</p>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb39">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3712,7 +3711,7 @@ of animal in the file?</p>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <p>Варіант 4. Це правильна відповідь. Якщо вам важко зрозуміти, чому,
 спробуйте виконати команди або фрагменти конвеєру (перед цим
@@ -3832,7 +3831,7 @@ data files, and <em>only</em> the processed data files?</p>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><p>Це призведе до вилучення файлів <code>.txt</code> з
@@ -3887,7 +3886,7 @@ single-purpose programs (filters).</li>
 </div>
 </section></section><section id="aio-05-loop"><p>Content from <a href="05-loop.html">Цикли</a></p>
 <hr>
-<p>Останнє оновлення 2025-08-07 |
+<p>Останнє оновлення 2025-08-15 |
 
         <a href="https://github.com/ukrainian-carpentries/shell-novice/edit/main/episodes/05-loop.md" class="external-link">Редагувати цю сторінку <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -4107,7 +4106,7 @@ like a list of numbers or a subset of data.</p>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4169,7 +4168,7 @@ like a list of numbers or a subset of data.</p>
 <span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a><span class="op">&gt;</span>     ls <span class="va">$datafile</span></span>
 <span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a><span class="op">&gt;</span> done</span></code></pre>
 </div>
-<p>Why do these two loops give different outputs?</p>
+<p>Чому ці два цикли дають різні результати?</p>
 </div>
 </div>
 </div>
@@ -4180,13 +4179,13 @@ like a list of numbers or a subset of data.</p>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
-<p>The first code block gives the same output on each iteration through
-the loop. Bash expands the wildcard <code>*.pdb</code> within the loop
-body (as well as before the loop starts) to match all files ending in
-<code>.pdb</code> and then lists them using <code>ls</code>. The
-expanded loop would look like this:</p>
+<p>Перший блок коду дає однаковий результат на кожній ітерації циклу.
+Bash expands the wildcard <code>*.pdb</code> within the loop body (as
+well as before the loop starts) to match all files ending in
+<code>.pdb</code> and then lists them using <code>ls</code>. Розширений
+цикл матиме такий вигляд:</p>
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -4230,8 +4229,8 @@ The value of the <code>datafile</code> variable is evaluated using
 <div id="limiting-sets-of-files" class="callout-inner">
 <h3 class="callout-title">Limiting Sets of Files</h3>
 <div class="callout-content">
-<p>What would be the output of running the following loop in the
-<code>shell-lesson-data/exercise-data/alkanes</code> directory?</p>
+<p>Що буде виведено у результаті виконання наступного циклу в каталозі
+<code>shell-lesson-data/exercise-data/alkanes</code>?</p>
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -4241,11 +4240,11 @@ The value of the <code>datafile</code> variable is evaluated using
 <span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a><span class="op">&gt;</span> done</span></code></pre>
 </div>
 <ol style="list-style-type: decimal">
-<li>No files are listed.</li>
-<li>All files are listed.</li>
-<li>Only <code>cubane.pdb</code>, <code>octane.pdb</code> and
-<code>pentane.pdb</code> are listed.</li>
-<li>Only <code>cubane.pdb</code> is listed.</li>
+<li>Жодної назви файлу не буде виведено.</li>
+<li>Будуть перелічені всі файли.</li>
+<li>Будуть перелічені лише <code>cubane.pdb</code>,
+<code>octane.pdb</code> та <code>pentane.pdb</code>.</li>
+<li>Буде виведено лише <code>cubane.pdb</code>.</li>
 </ol>
 </div>
 </div>
@@ -4257,9 +4256,9 @@ The value of the <code>datafile</code> variable is evaluated using
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
-<p>4 is the correct answer. <code>*</code> matches zero or more
+<p>4 - правильна відповідь. <code>*</code> matches zero or more
 characters, so any file name starting with the letter c, followed by
 zero or more other characters will be matched.</p>
 </div>
@@ -4303,9 +4302,9 @@ be listed.</li>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
-<p>4 is the correct answer. <code>*</code> matches zero or more
+<p>4 - правильна відповідь. <code>*</code> matches zero or more
 characters, so a file name with zero or more characters before a letter
 c and zero or more characters after the letter c will be matched.</p>
 </div>
@@ -4356,7 +4355,7 @@ will be saved to a file called <code>alkanes.pdb</code>.</li>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>The text from each file in turn gets written to the
@@ -4387,22 +4386,22 @@ directory, what would be the output of the following loop?</p>
 <span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
 </div>
 <ol style="list-style-type: decimal">
-<li>All of the text from <code>cubane.pdb</code>,
+<li>Весь текст з файлів <code>cubane.pdb</code>,
 <code>ethane.pdb</code>, <code>methane.pdb</code>,
-<code>octane.pdb</code>, and <code>pentane.pdb</code> would be
-concatenated and saved to a file called <code>all.pdb</code>.</li>
-<li>The text from <code>ethane.pdb</code> will be saved to a file called
+<code>octane.pdb</code> та <code>pentane.pdb</code> буде об’єднано і
+збережено у файлі з назвою <code>all.pdb</code>.</li>
+<li>Текст з файлу <code>ethane.pdb</code> буде збережено до файлу з
+назвою <code>all.pdb</code>.</li>
+<li>Весь текст з файлів <code>cubane.pdb</code>,
+<code>ethane.pdb</code>, <code>methane.pdb</code>,
+<code>octane.pdb</code>, <code>pentane.pdb</code> та
+<code>propane.pdb</code> буде об’єднано та збережено у файл з назвою
 <code>all.pdb</code>.</li>
-<li>All of the text from <code>cubane.pdb</code>,
+<li>Весь текст з файлів <code>cubane.pdb</code>,
 <code>ethane.pdb</code>, <code>methane.pdb</code>,
-<code>octane.pdb</code>, <code>pentane.pdb</code> and
-<code>propane.pdb</code> would be concatenated and saved to a file
-called <code>all.pdb</code>.</li>
-<li>All of the text from <code>cubane.pdb</code>,
-<code>ethane.pdb</code>, <code>methane.pdb</code>,
-<code>octane.pdb</code>, <code>pentane.pdb</code> and
-<code>propane.pdb</code> would be printed to the screen and saved to a
-file called <code>all.pdb</code>.</li>
+<code>octane.pdb</code>, <code>pentane.pdb</code> та
+<code>propane.pdb</code> буде виведено на екран і збережено у файлі з
+назвою <code>all.pdb</code>.</li>
 </ol>
 </div>
 </div>
@@ -4414,12 +4413,12 @@ file called <code>all.pdb</code>.</li>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
-<p>3 is the correct answer. <code>&gt;&gt;</code> appends to a file,
+<p>3 - правильна відповідь. <code>&gt;&gt;</code> appends to a file,
 rather than overwriting it with the redirected output from a command.
-Given the output from the <code>cat</code> command has been redirected,
-nothing is printed to the screen.</p>
+Оскільки вивід команди <code>cat</code> було перенаправлено, на екран
+нічого не буде виведено.</p>
 </div>
 </div>
 </div>
@@ -4828,7 +4827,7 @@ would we want to run?</p>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <p>The second version is the one we want to run. This prints to screen
 everything enclosed in the quote marks, expanding the loop variable name
@@ -4879,7 +4878,7 @@ following code:</p>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
 <div class="accordion-body">
 <p>We have a nested loop, i.e. contained within another loop, so for
 each species in the outer loop, the inner loop (the nested loop)
@@ -5247,7 +5246,7 @@ each of those files separately.</p>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5317,7 +5316,7 @@ this?</p>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>If a command causes something to crash or hang, it might be useful to
 know what that command was, in order to investigate the problem. Were
@@ -5444,7 +5443,7 @@ directory</li>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>The correct answer is 2.</p>
 <p>The special variables <code>$1</code>, <code>$2</code> and
@@ -5501,7 +5500,7 @@ lines.</p>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb40">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5573,7 +5572,7 @@ three scripts would do when run as <code>bash script1.sh *.pdb</code>,
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <p>In each case, the shell expands the wildcard in <code>*.pdb</code>
 before passing the resulting list of file names as arguments to the
@@ -5644,7 +5643,7 @@ error?</p>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <p>The <code>-x</code> option causes <code>bash</code> to run in debug
 mode. This prints out each command as it is run, which will help you to
@@ -5976,7 +5975,7 @@ Miscellaneous:
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>The correct answer is 3, because the <code>-w</code> option looks
 only for whole-word matches. The other options will also match ‘of’ when
@@ -6078,7 +6077,7 @@ one field in a line.</p>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <pre class="source"><code>grep -w $1 -r $2 | cut -d : -f 2 | cut -d , -f 1,3 &gt; $1.txt</code></pre>
 <p>Actually, you can swap the order of the two cut commands and it still
@@ -6128,7 +6127,7 @@ speed.</p>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <pre class="source"><code>for sis in Jo Meg Beth Amy
 do
@@ -6400,7 +6399,7 @@ you have thought about your answer, you can test the commands in the
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>Option 1 is correct. Putting the match expression in quotes prevents
 the shell expanding it, so it gets passed to the <code>find</code>
@@ -6479,7 +6478,7 @@ Comprehension</h3>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><p>Find all files with a <code>.dat</code> extension recursively
@@ -6564,8 +6563,8 @@ command.</li>
   "url": "https://ukrainian-carpentries.github.io/shell-novice/aio.html",
   "identifier": "https://ukrainian-carpentries.github.io/shell-novice/aio.html",
   "dateCreated": "2014-10-22",
-  "dateModified": "2025-08-12",
-  "datePublished": "2025-08-12"
+  "dateModified": "2025-08-15",
+  "datePublished": "2025-08-15"
 }
 
   </script><script>
