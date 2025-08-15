@@ -310,9 +310,9 @@ $ ls thesis/quotes.txt
 ls: cannot access 'thesis/quotes.txt': No such file or directory
 ```
 
-`ls` with a filename or directory as an argument only lists the requested file or directory.
-If the file given as the argument doesn't exist, the shell returns an error as we saw above.
-We can use this to see that `quotes.txt` is now present in our current directory:
+Команда `ls`, якщо вказати ім’я файлу або каталогу як аргумент, виводить лише список запитуваних файлів або каталогів.
+Якщо вказаного файлу не існує, термінал поверне помилку — як ми вже бачили раніше.
+Таким чином ми можемо перевірити, що файл `quotes.txt` тепер знаходиться у поточному каталозі:
 
 ```bash
 $ ls quotes.txt
@@ -351,8 +351,7 @@ $ mv sucrose.dat maltose.dat ____/____
 $ mv sucrose.dat maltose.dat ../raw
 ```
 
-Recall that `..` refers to the parent directory (i.e. one above the current directory)
-and that `.` refers to the current directory.
+Пам'ятайте, що `..` вказує на батьківський каталог (тобто на каталог рівнем вище поточного), а `.` вказує на поточний каталог.
 
 :::::::::::::::::::::::::
 
