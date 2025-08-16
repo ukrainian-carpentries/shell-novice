@@ -575,7 +575,7 @@ Since she's still learning how to use the shell,
 she decides to build up the required commands in stages.
 Her first step is to make sure that she can select the right input files --- remember,
 these are ones whose names end in 'A' or 'B', rather than 'Z'.
-Moving to the `north-pacific-gyre` directory, Nelle types:
+Переходячи до каталогу `north-pacific-gyre`, Неллі вводить:
 
 ```bash
 $ cd
@@ -636,7 +636,7 @@ Using the <kbd>←</kbd>,
 Nelle navigates to the `echo` command and changes it to `bash goostats.sh`:
 
 ```bash
-$ for datafile in NENE A.txt NENE B.txt; do bash goostats.sh $datafile stats-$datafile; done
+$ for datafile in NENE*A.txt NENE*B.txt; do bash goostats.sh $datafile stats-$datafile; done
 ```
 
 When she presses <kbd>Enter</kbd>,
