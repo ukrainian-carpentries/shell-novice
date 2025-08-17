@@ -690,7 +690,7 @@ so she decides to get some coffee and catch up on her reading.
 Another way to repeat previous work is to use the `history` command to
 get a list of the last few hundred commands that have been executed, and
 then to use `!123` (where '123' is replaced by the command number) to
-repeat one of those commands. For example, if Nelle types this:
+repeat one of those commands. Наприклад, якщо Неллі набере наступне:
 
 ```bash
 $ history | tail -n 5
