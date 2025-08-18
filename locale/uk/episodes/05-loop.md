@@ -821,13 +821,13 @@ Try running the code for yourself to see which directories are created!
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- A `for` loop repeats commands once for every thing in a list.
+- Цикл `for` повторює команди один раз для кожного елемента списку.
 - Every `for` loop needs a variable to refer to the thing it is currently operating on.
-- Use `$name` to expand a variable (i.e., get its value). `${name}` can also be used.
+- Use `$name` to expand a variable (i.e., get its value). Також можна використовувати `${name}`.
 - Do not use spaces, quotes, or wildcard characters such as '\*' or '?' in filenames, as it complicates variable expansion.
 - Give files consistent names that are easy to match with wildcard patterns to make it easy to select them for looping.
 - Use the up-arrow key to scroll up through previous commands to edit and repeat them.
-- Use <kbd>Ctrl</kbd>\+<kbd>R</kbd> to search through the previously entered commands.
+- Використовуйте <kbd>Ctrl</kbd>\+<kbd>R</kbd> для пошуку попередньо введених команд.
 - Use `history` to display recent commands, and `![number]` to repeat a command by number.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
