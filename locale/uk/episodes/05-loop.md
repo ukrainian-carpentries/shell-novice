@@ -721,9 +721,8 @@ There are a number of other shortcut commands for getting at the history.
   Press <kbd>Ctrl</kbd>\+<kbd>R</kbd> one or more additional times to search for earlier matches.
   You can then use the left and right arrow keys to choose that line and edit
   it then hit <kbd>Return</kbd> to run the command.
-- `!!` retrieves the immediately preceding command
-  (you may or may not find this more convenient than using <kbd>↑</kbd>)
-- `!$` retrieves the last word of the last command.
+- `!!` повертає безпосередньо попередню команду (ви можете знайти це більш зручним, ніж використання <kbd>↑</kbd>)
+- `!$` повертає останнє слово останньої команди.
   That's useful more often than you might expect: after
   `bash goostats.sh NENE01729B.txt stats-NENE01729B.txt`, you can type
   `less !$` to look at the file `stats-NENE01729B.txt`, which is
