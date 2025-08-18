@@ -795,8 +795,7 @@ Try both versions for yourself to see the output! Be sure to open the
 
 Suppose we want to set up a directory structure to organize
 some experiments measuring reaction rate constants with different compounds
-_and_ different temperatures.  What would be the
-result of the following code:
+_and_ different temperatures.  Яким буде результат виконання наступного коду:
 
 ```bash
 $ for species in cubane ethane methane
@@ -812,9 +811,7 @@ $ for species in cubane ethane methane
 
 ## Відповідь
 
-We have a nested loop, i.e. contained within another loop, so for each species
-in the outer loop, the inner loop (the nested loop) iterates over the list of
-temperatures, and creates a new directory for each combination.
+Ми маємо вкладений цикл, тобто такий, що міститься в іншому циклі, тому для кожного значення змінної `species` у зовнішньому циклі внутрішній цикл (вкладений цикл) перебирає список температур і створює новий каталог для кожної комбінації.
 
 Try running the code for yourself to see which directories are created!
 
