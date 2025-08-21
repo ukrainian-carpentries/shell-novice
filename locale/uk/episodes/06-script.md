@@ -211,15 +211,13 @@ head -n "$2" "$1" | tail -n "$3"
 A comment starts with a `#` character and runs to the end of the line.
 The computer ignores comments,
 but they're invaluable for helping people (including your future self) understand and use scripts.
-The only caveat is that each time you modify the script,
-you should check that the comment is still accurate. An explanation that sends
-the reader in the wrong direction is worse than none at all.
+Єдине застереження полягає у тому, що кожного разу, коли ви змінюєте скрипт, ви повинні перевіряти, що коментар все ще правильний. Пояснення, яке спрямовує читача в неправильному напрямку, гірше, ніж його відсутність.
 
 What if we want to process many files in a single pipeline?
 For example, if we want to sort our `.pdb` files by length, we would type:
 
 ```bash
-$ wc -l .pdb | sort -n
+$ wc -l *.pdb | sort -n
 ```
 
 because `wc -l` lists the number of lines in the files
