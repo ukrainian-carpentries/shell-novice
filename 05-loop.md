@@ -455,7 +455,7 @@ Spaces are used to separate the elements of the list
 that we are going to loop over. If one of those elements
 contains a space character, we need to surround it with
 quotes, and do the same thing to our loop variable.
-Suppose our data files are named:
+Припустимо, що наші файли даних мають імена:
 
 ```source
 red dragon.dat
@@ -471,7 +471,7 @@ $ for filename in "red dragon.dat" "purple unicorn.dat"
 > done
 ```
 
-It is simpler to avoid using spaces (or other special characters) in filenames.
+Простіше уникати використання пробілів (або інших спеціальних символів) у назвах файлів.
 
 The files above don't exist, so if we run the above code, the `head` command will be unable
 to find them; however, the error message returned will show the name of the files it is
@@ -483,8 +483,7 @@ head: cannot open ‘purple unicorn.dat' for reading: No such file or directory
 ```
 
 Try removing the quotes around `$filename` in the loop above to see the effect of the quote
-marks on spaces. Note that we get a result from the loop command for unicorn.dat
-when we run this code in the `creatures` directory:
+marks on spaces. Зверніть увагу, що ми отримуємо результат команди циклу для `unicorn.dat` коли ми запускаємо цей код у каталозі `creatures`:
 
 ```output
 head: cannot open ‘red' for reading: No such file or directory
@@ -499,11 +498,10 @@ CAAGTGTTCC
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 We would like to modify each of the files in `shell-lesson-data/exercise-data/creatures`,
-but also save a version of the original files. We want to copy the original files to new
-files named `original-basilisk.dat` and `original-unicorn.dat`, for example. We can't use:
+but also save a version of the original files. Наприклад, ми хочемо скопіювати оригінальні файли до нових файлів з назвами `original-basilisk.dat` та `original-unicorn.dat`. We can't use:
 
 ```bash
-$ cp .dat original- .dat
+$ cp *.dat original-*.dat
 ```
 
 because that would expand to:
@@ -522,7 +520,7 @@ This problem arises when `cp` receives more than two inputs. When this happens, 
 last input to be a directory where it can copy all the files it was passed. Since there is
 no directory named `original-*.dat` in the `creatures` directory, we get an error.
 
-Instead, we can use a loop:
+Замість цього ми можемо використати цикл:
 
 ```bash
 $ for filename in *.dat
@@ -577,7 +575,7 @@ Since she's still learning how to use the shell,
 she decides to build up the required commands in stages.
 Her first step is to make sure that she can select the right input files --- remember,
 these are ones whose names end in 'A' or 'B', rather than 'Z'.
-Moving to the `north-pacific-gyre` directory, Nelle types:
+Переходячи до каталогу `north-pacific-gyre`, Неллі вводить:
 
 ```bash
 $ cd
@@ -638,7 +636,7 @@ Using the <kbd>←</kbd>,
 Nelle navigates to the `echo` command and changes it to `bash goostats.sh`:
 
 ```bash
-$ for datafile in NENE A.txt NENE B.txt; do bash goostats.sh $datafile stats-$datafile; done
+$ for datafile in NENE*A.txt NENE*B.txt; do bash goostats.sh $datafile stats-$datafile; done
 ```
 
 When she presses <kbd>Enter</kbd>,
@@ -692,7 +690,7 @@ so she decides to get some coffee and catch up on her reading.
 Another way to repeat previous work is to use the `history` command to
 get a list of the last few hundred commands that have been executed, and
 then to use `!123` (where '123' is replaced by the command number) to
-repeat one of those commands. For example, if Nelle types this:
+repeat one of those commands. Наприклад, якщо Неллі набере наступне:
 
 ```bash
 $ history | tail -n 5
@@ -723,9 +721,8 @@ There are a number of other shortcut commands for getting at the history.
   Press <kbd>Ctrl</kbd>\+<kbd>R</kbd> one or more additional times to search for earlier matches.
   You can then use the left and right arrow keys to choose that line and edit
   it then hit <kbd>Return</kbd> to run the command.
-- `!!` retrieves the immediately preceding command
-  (you may or may not find this more convenient than using <kbd>↑</kbd>)
-- `!$` retrieves the last word of the last command.
+- `!!` повертає безпосередньо попередню команду (ви можете знайти це більш зручним, ніж використання <kbd>↑</kbd>)
+- `!$` повертає останнє слово останньої команди.
   That's useful more often than you might expect: after
   `bash goostats.sh NENE01729B.txt stats-NENE01729B.txt`, you can type
   `less !$` to look at the file `stats-NENE01729B.txt`, which is
@@ -798,8 +795,7 @@ Try both versions for yourself to see the output! Be sure to open the
 
 Suppose we want to set up a directory structure to organize
 some experiments measuring reaction rate constants with different compounds
-_and_ different temperatures.  What would be the
-result of the following code:
+_and_ different temperatures.  Яким буде результат виконання наступного коду:
 
 ```bash
 $ for species in cubane ethane methane
@@ -815,9 +811,7 @@ $ for species in cubane ethane methane
 
 ## Відповідь
 
-We have a nested loop, i.e. contained within another loop, so for each species
-in the outer loop, the inner loop (the nested loop) iterates over the list of
-temperatures, and creates a new directory for each combination.
+Ми маємо вкладений цикл, тобто такий, що міститься в іншому циклі, тому для кожного значення змінної `species` у зовнішньому циклі внутрішній цикл (вкладений цикл) перебирає список температур і створює новий каталог для кожної комбінації.
 
 Try running the code for yourself to see which directories are created!
 
@@ -827,13 +821,13 @@ Try running the code for yourself to see which directories are created!
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- A `for` loop repeats commands once for every thing in a list.
+- Цикл `for` повторює команди один раз для кожного елемента списку.
 - Every `for` loop needs a variable to refer to the thing it is currently operating on.
-- Use `$name` to expand a variable (i.e., get its value). `${name}` can also be used.
+- Use `$name` to expand a variable (i.e., get its value). Також можна використовувати `${name}`.
 - Do not use spaces, quotes, or wildcard characters such as '\*' or '?' in filenames, as it complicates variable expansion.
 - Give files consistent names that are easy to match with wildcard patterns to make it easy to select them for looping.
 - Use the up-arrow key to scroll up through previous commands to edit and repeat them.
-- Use <kbd>Ctrl</kbd>\+<kbd>R</kbd> to search through the previously entered commands.
+- Використовуйте <kbd>Ctrl</kbd>\+<kbd>R</kbd> для пошуку попередньо введених команд.
 - Use `history` to display recent commands, and `![number]` to repeat a command by number.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
