@@ -269,7 +269,7 @@ $ bash sorted.sh *.pdb ../creatures/*.dat
 
 ## List Unique Species
 
-Leah has several hundred data files, each of which is formatted like this:
+Лія має кілька сотень файлів даних, кожен з яких відформатований наступним чином:
 
 ```source
 2013-11-05,deer,5
