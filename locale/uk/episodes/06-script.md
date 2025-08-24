@@ -345,15 +345,13 @@ we have a completely accurate record of how we created that figure.
 
 ## Why Record Commands in the History Before Running Them?
 
-If you run the command:
+Якщо виконати команду:
 
 ```bash
 $ history | tail -n 5 > recent.sh
 ```
 
-the last command in the file is the `history` command itself, i.e.,
-the shell has added `history` to the command log before actually
-running it. In fact, the shell _always_ adds commands to the log
+останньою командою у файлі є сама команда `history`, тобто, термінал додав `history` до журналу команд перед тим, як фактично її виконав. In fact, the shell _always_ adds commands to the log
 before running them. Why do you think it does this?
 
 :::::::::::::::  solution
