@@ -448,27 +448,25 @@ Of course, this introduces another tradeoff between flexibility and complexity.
 
 ## Variables in Shell Scripts
 
-In the `alkanes` directory, imagine you have a shell script called `script.sh` containing the
-following commands:
+Уявіть, що у каталозі `alkanes` у вас є скрипт з назвою `script.sh`, який містить наступні команди:
 
 ```bash
 head -n $2 $1
 tail -n $3 $1
 ```
 
-While you are in the `alkanes` directory, you type the following command:
+Перебуваючи у каталозі `alkanes`, ви вводите наступну команду:
 
 ```bash
 $ bash script.sh '*.pdb' 1 1
 ```
 
-Which of the following outputs would you expect to see?
+Які з наведених нижче результатів ви очікуєте побачити?
 
-1. All of the lines between the first and the last lines of each file ending in `.pdb`
-   in the `alkanes` directory
-2. The first and the last line of each file ending in `.pdb` in the `alkanes` directory
-3. The first and the last line of each file in the `alkanes` directory
-4. An error because of the quotes around `*.pdb`
+1. Усі рядки між першим та останнім рядками кожного файлу, що закінчується на `.pdb` у каталозі `alkanes`
+2. Перший та останній рядок кожного файлу, що закінчується на `.pdb` у каталозі `alkanes`
+3. Перший та останній рядок кожного файлу в каталозі `alkanes`
+4. Помилку через лапки навколо `*.pdb`
 
 :::::::::::::::  solution
 
@@ -485,8 +483,7 @@ $ tail -n 1 cubane.pdb ethane.pdb octane.pdb pentane.pdb propane.pdb
 ```
 
 The shell does not expand `'*.pdb'` because it is enclosed by quote marks.
-As such, the first argument to the script is `'*.pdb'` which gets expanded within the
-script by `head` and `tail`.
+Таким чином, першим аргументом скрипту є `'*.pdb'`, який буде розгорнуто у скрипті за допомогою `head` і `tail`.
 
 :::::::::::::::::::::::::
 
