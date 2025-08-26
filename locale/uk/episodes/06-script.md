@@ -493,17 +493,13 @@ The shell does not expand `'*.pdb'` because it is enclosed by quote marks.
 
 ## Find the Longest File With a Given Extension
 
-Write a shell script called `longest.sh` that takes the name of a
-directory and a filename extension as its arguments, and prints
-out the name of the file with the most lines in that directory
-with that extension. For example:
+Напишіть сценарій терміналу з назвою `longest.sh`, який отримує в якості аргументів ім'я каталогу і розширення імені файлу як аргументи, і виводить назву файлу з найбільшою кількістю рядків у цьому каталозі з цим розширенням. For example:
 
 ```bash
 $ bash longest.sh shell-lesson-data/exercise-data/alkanes pdb
 ```
 
-would print the name of the `.pdb` file in `shell-lesson-data/exercise-data/alkanes` that has
-the most lines.
+виведе назву файлу `.pdb` у каталозі `shell-lesson-data/exercise-data/proteins`, який має найбільшу кількість рядків.
 
 Feel free to test your script on another directory e.g.
 
@@ -528,7 +524,7 @@ wc -l $1/*.$2 | sort -n | tail -n 2 | head -n 1
 The first part of the pipeline, `wc -l $1/*.$2 | sort -n`, counts
 the lines in each file and sorts them numerically (largest last). When
 there's more than one file, `wc` also outputs a final summary line,
-giving the total number of lines across _all_ files.  We use `tail -n 2 | head -n 1` to throw away this last line.
+giving the total number of lines across _all_ files.  Ми використовуємо `tail -n 2 | head -n 1`, щоб відкинути цей останній рядок.
 
 With `wc -l $1/*.$2 | sort -n | tail -n 1` we'll see the final summary
 line: we can build our pipeline up in pieces to be sure we understand
