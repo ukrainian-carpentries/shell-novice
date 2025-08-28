@@ -269,7 +269,7 @@ $ bash sorted.sh *.pdb ../creatures/*.dat
 
 ## List Unique Species
 
-Leah has several hundred data files, each of which is formatted like this:
+Лія має кілька сотень файлів даних, кожен з яких відформатований наступним чином:
 
 ```source
 2013-11-05,deer,5
@@ -345,15 +345,13 @@ we have a completely accurate record of how we created that figure.
 
 ## Why Record Commands in the History Before Running Them?
 
-If you run the command:
+Якщо виконати команду:
 
 ```bash
 $ history | tail -n 5 > recent.sh
 ```
 
-the last command in the file is the `history` command itself, i.e.,
-the shell has added `history` to the command log before actually
-running it. In fact, the shell _always_ adds commands to the log
+останньою командою у файлі є сама команда `history`, тобто, термінал додав `history` до журналу команд перед тим, як фактично її виконав. In fact, the shell _always_ adds commands to the log
 before running them. Why do you think it does this?
 
 :::::::::::::::  solution
@@ -450,27 +448,25 @@ Of course, this introduces another tradeoff between flexibility and complexity.
 
 ## Variables in Shell Scripts
 
-In the `alkanes` directory, imagine you have a shell script called `script.sh` containing the
-following commands:
+Уявіть, що у каталозі `alkanes` у вас є скрипт з назвою `script.sh`, який містить наступні команди:
 
 ```bash
 head -n $2 $1
 tail -n $3 $1
 ```
 
-While you are in the `alkanes` directory, you type the following command:
+Перебуваючи у каталозі `alkanes`, ви вводите наступну команду:
 
 ```bash
 $ bash script.sh '*.pdb' 1 1
 ```
 
-Which of the following outputs would you expect to see?
+Які з наведених нижче результатів ви очікуєте побачити?
 
-1. All of the lines between the first and the last lines of each file ending in `.pdb`
-   in the `alkanes` directory
-2. The first and the last line of each file ending in `.pdb` in the `alkanes` directory
-3. The first and the last line of each file in the `alkanes` directory
-4. An error because of the quotes around `*.pdb`
+1. Усі рядки між першим та останнім рядками кожного файлу, що закінчується на `.pdb` у каталозі `alkanes`
+2. Перший та останній рядок кожного файлу, що закінчується на `.pdb` у каталозі `alkanes`
+3. Перший та останній рядок кожного файлу в каталозі `alkanes`
+4. Помилку через лапки навколо `*.pdb`
 
 :::::::::::::::  solution
 
@@ -487,8 +483,7 @@ $ tail -n 1 cubane.pdb ethane.pdb octane.pdb pentane.pdb propane.pdb
 ```
 
 The shell does not expand `'*.pdb'` because it is enclosed by quote marks.
-As such, the first argument to the script is `'*.pdb'` which gets expanded within the
-script by `head` and `tail`.
+Таким чином, першим аргументом скрипту є `'*.pdb'`, який буде розгорнуто у скрипті за допомогою `head` і `tail`.
 
 :::::::::::::::::::::::::
 
@@ -498,17 +493,13 @@ script by `head` and `tail`.
 
 ## Find the Longest File With a Given Extension
 
-Write a shell script called `longest.sh` that takes the name of a
-directory and a filename extension as its arguments, and prints
-out the name of the file with the most lines in that directory
-with that extension. For example:
+Напишіть сценарій терміналу з назвою `longest.sh`, який отримує в якості аргументів ім'я каталогу і розширення імені файлу як аргументи, і виводить назву файлу з найбільшою кількістю рядків у цьому каталозі з цим розширенням. For example:
 
 ```bash
 $ bash longest.sh shell-lesson-data/exercise-data/alkanes pdb
 ```
 
-would print the name of the `.pdb` file in `shell-lesson-data/exercise-data/alkanes` that has
-the most lines.
+виведе назву файлу `.pdb` у каталозі `shell-lesson-data/exercise-data/proteins`, який має найбільшу кількість рядків.
 
 Feel free to test your script on another directory e.g.
 
@@ -533,7 +524,7 @@ wc -l $1/*.$2 | sort -n | tail -n 2 | head -n 1
 The first part of the pipeline, `wc -l $1/*.$2 | sort -n`, counts
 the lines in each file and sorts them numerically (largest last). When
 there's more than one file, `wc` also outputs a final summary line,
-giving the total number of lines across _all_ files.  We use `tail -n 2 | head -n 1` to throw away this last line.
+giving the total number of lines across _all_ files.  Ми використовуємо `tail -n 2 | head -n 1`, щоб відкинути цей останній рядок.
 
 With `wc -l $1/*.$2 | sort -n | tail -n 1` we'll see the final summary
 line: we can build our pipeline up in pieces to be sure we understand
