@@ -359,11 +359,8 @@ $ mv sucrose.dat maltose.dat ../raw
 
 ## Копіювання файлів і каталогів
 
-The `cp` command works very much like `mv`,
-except it copies a file instead of moving it.
-We can check that it did the right thing using `ls`
-with two paths as arguments --- like most Unix commands,
-`ls` can be given multiple paths at once:
+Команда `cp` працює майже так само, як і `mv`, але замість переміщення копіює файл.
+Ми можемо перевірити результат за допомогою `ls` з двома шляхами у ролі параметрів, адже `ls` та більшість команд Unix здатні приймати декілька аргументів одночасно:
 
 ```bash
 $ cp quotes.txt thesis/quotations.txt
@@ -492,7 +489,7 @@ $ ls
 $ rm quotes.txt
 ```
 
-We can confirm the file has gone using `ls`:
+Ми можемо перевірити видалення файлу за допомогою `ls`:
 
 ```bash
 $ ls quotes.txt
@@ -506,13 +503,7 @@ ls: cannot access 'quotes.txt': No such file or directory
 
 ## Видалення - це назавжди
 
-The Unix shell doesn't have a trash bin that we can recover deleted
-files from (though most graphical interfaces to Unix do).  Instead,
-when we delete files, they are unlinked from the file system so that
-their storage space on disk can be recycled. Tools for finding and
-recovering deleted files do exist, but there's no guarantee they'll
-work in any particular situation, since the computer may recycle the
-file's disk space right away.
+В терміналі Unix немає кошика для відновлення видалених файлів (хоча у більшості графічних інтерфейсів Unix він є).  Натомість коли ми видаляємо файли, вони від'єднуються від файлової системи, щоб їх місце на диску можна було використати повторно. Інструменти для пошуку та відновлення видалених файлів існують, але вони не гарантують успішного відновлення, оскільки комп'ютер може відразу перезаписати місце, яке займав файл.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -532,7 +523,7 @@ rm: remove regular file 'thesis_backup/quotations.txt'? y
 ```
 
 Параметр `-i` призведе до окремого запиту перед (кожним) вилученням (використовуйте <kbd>Y</kbd> для підтвердження вилучення або <kbd>N</kbd>, щоб зберегти файл).
-The Unix shell doesn't have a trash bin, so all the files removed will disappear forever.
+У командному терміналі Unix немає кошика, тому видалені файли зникнуть назавжди.
 By using the `-i` option, we have the chance to check that we are deleting only the files
 that we want to remove.
 
@@ -622,9 +613,9 @@ cp: target 'basilisk.dat' is not a directory
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Wildcards
+## Символи підстановки
 
-`*` is a **wildcard**, which represents zero or more other characters.
+Символ `*` - це **символ підстановки** (wildcard), який відповідає нулю або більшій кількості будь-яких символів.
 Розглянемо каталог `shell-lesson-data/exercise-data/proteins`: `*.pdb` відповідає `ethane.pdb`, `propane.pdb` і кожному файлу, який закінчується на '.pdb'. On the other hand, `p*.pdb` only represents
 `pentane.pdb` and `propane.pdb`, because the 'p' at the front can only
 represent filenames that begin with the letter 'p'.
@@ -642,7 +633,7 @@ Wildcards can be used in combination with each other. Наприклад, `???an
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## List filenames matching a pattern
+## Отримання переліку імен файлів, що відповідають шаблону
 
 При виконанні в каталозі `alkanes`, яка з команд `ls` видасть наступний результат?
 
@@ -665,7 +656,7 @@ Wildcards can be used in combination with each other. Наприклад, `???an
 `2.` показує всі файли, назви яких починаються з нуля або більше символів (`*`), за якими йде літера `t`, потім один будь-який символ (`?`), потім `ne.` і далі нуль або більше символів (`*`).
 Це дасть нам `octane.pdb` і `pentane.pdb`, але не збігається ні з чим, що закінчується на `thane.pdb`.
 
-`3.` fixes the problems of option 2 by matching two characters (`??`) between `t` and `ne`.
+`3.` виправляє проблеми варіанта 2, вимагаючи два символи (`??`) між `t` і `ne`.
 Це і є рішення.
 
 `4.` показує лише файли, що починаються з `ethane.`.
@@ -676,10 +667,9 @@ Wildcards can be used in combination with each other. Наприклад, `???an
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## More on Wildcards
+## Більше про символи підстановки
 
-Sam has a directory containing calibration data, datasets, and descriptions of
-the datasets:
+Саманта має каталог, який містить дані калібрування, набори даних та їх описи:
 
 ```bash
 .
@@ -715,7 +705,7 @@ $ cp ____ send_to_bob/all_datasets_created_on_a_23rd/
 
 Допоможіть Саманті, заповнивши пропуски.
 
-The resulting directory structure should look like this
+Отримана структура каталогів повинна виглядати наступним чином:
 
 ```bash
 .
@@ -777,7 +767,7 @@ $ cp *-23-dataset* send_to_bob/all_datasets_created_on_a_23rd/
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Organizing Directories and Files
+## Упорядкування каталогів і файлів
 
 Джеймі працює над проєктом і бачить, що її файли не дуже добре впорядковані:
 
@@ -789,8 +779,7 @@ $ ls -F
 analyzed/  fructose.dat    raw/   sucrose.dat
 ```
 
-The `fructose.dat` and `sucrose.dat` files contain output from her data
-analysis. What command(s) covered in this lesson does she need to run
+Файли `fructose.dat` та `sucrose.dat` містять результати її аналізу. What command(s) covered in this lesson does she need to run
 so that the commands below will produce the output shown?
 
 ```bash
@@ -827,7 +816,7 @@ The `mv` command then moves the list of .dat files to the 'analyzed' directory.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Reproduce a folder structure
+## Відтворення структури каталогів
 
 You're starting a new experiment and would like to duplicate the directory
 structure from your previous experiment so you can add new data.
@@ -845,8 +834,8 @@ so that your final directory structure looks like this:
    └── raw
 ```
 
-Which of the following set of commands would achieve this objective?
-What would the other commands do?
+Який з наведених нижче наборів команд досягне цієї мети?
+Що зроблять інші команди?
 
 ```bash
 $ mkdir 2016-05-20
@@ -884,20 +873,16 @@ $ mkdir raw processed
 
 ## Відповідь
 
-The first two sets of commands achieve this objective.
-The first set uses relative paths to create the top-level directory before
-the subdirectories.
+Перші два набори команд досягають цієї мети.
+Перший набір використовує відносні шляхи для створення каталогу верхнього рівня перед створенням підкаталогів.
 
-The third set of commands will give an error because the default behavior of `mkdir`
-won't create a subdirectory of a non-existent directory:
-the intermediate level folders must be created first.
+Третій набір команд призведе до помилки, оскільки поведінка `mkdir` за замовчуванням не створює підкаталог в каталозі, що не існує: спочатку мають бути створені каталоги проміжних рівнів.
 
-The fourth set of commands achieve this objective. Remember, the `-p` option,
+Четвертий набір команд теж досягає цієї мети. Remember, the `-p` option,
 followed by a path of one or more
 directories, will cause `mkdir` to create any intermediate subdirectories as required.
 
-The final set of commands generates the 'raw' and 'processed' directories at the same level
-as the 'data' directory.
+Останній набір команд створить каталоги 'raw' і 'processed' на тому ж рівні, що і каталог 'data'.
 
 :::::::::::::::::::::::::
 
@@ -909,11 +894,11 @@ as the 'data' directory.
 - `mkdir [path]` створює новий каталог.
 - `mv [old] [new]` переміщує (перейменовує) файл або каталог.
 - `rm [path]` вилучає (видаляє) файл.
-- `*` matches zero or more characters in a filename, so `*.txt` matches all files ending in `.txt`.
+- `*` відповідає нулю або більшій кількості символів в імені файлу, тому `*.txt` відповідає всім файлам, імена яких закінчуються на `.txt`.
 - `?` відповідає будь-якому одному символу у назві файлу, тому `?.txt` відповідає `a.txt`, але не `any.txt`.
 - Використання клавіші Control можна описати різними способами, зокрема `Ctrl-X`, `Control-X` та `^X`.
 - The shell does not have a trash bin: once something is deleted, it's really gone.
-- Most files' names are `something.extension`. Розширення не є обов'язковим і нічого не гарантує, але зазвичай використовується для позначення типу даних у файлі.
+- Більшість файлів мають назву на кшталт "щось.розширення". Розширення не є обов'язковим і нічого не гарантує, але зазвичай використовується для позначення типу даних у файлі.
 - Depending on the type of work you do, you may need a more powerful text editor than Nano.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
