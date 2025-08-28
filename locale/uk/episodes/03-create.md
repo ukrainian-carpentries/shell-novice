@@ -524,8 +524,7 @@ rm: remove regular file 'thesis_backup/quotations.txt'? y
 
 Параметр `-i` призведе до окремого запиту перед (кожним) вилученням (використовуйте <kbd>Y</kbd> для підтвердження вилучення або <kbd>N</kbd>, щоб зберегти файл).
 У командному терміналі Unix немає кошика, тому видалені файли зникнуть назавжди.
-By using the `-i` option, we have the chance to check that we are deleting only the files
-that we want to remove.
+Використання опції `-i` дає можливість перевірити, що ми видаляємо лише обрані файли.
 
 :::::::::::::::::::::::::
 
@@ -543,32 +542,26 @@ rm: cannot remove `thesis': Is a directory
 
 Це відбувається тому, що команда `rm` за замовчуванням працює лише з файлами, а не з каталогами.
 
-`rm` can remove a directory _and all its contents_ if we use the
-recursive option `-r`, and it will do so _without any confirmation prompts_:
+Команда `rm` може видалити каталог і весь його вміст, якщо додати рекурсивний параметр `-r`, і це станеться без жодних запитів на підтвердження:
 
 ```bash
 $ rm -r thesis
 ```
 
-Given that there is no way to retrieve files deleted using the shell,
-`rm -r` _should be used with great caution_
-(you might consider adding the interactive option `rm -r -i`).
+Оскільки файли, видалені за допомогою терміналу не відновлюються, команду `rm -r` слід застосовувати з великою обережністю (ви можете додати інтерактивну опцію `rm -r -i`).
 
 ## Операції з декількома файлами та каталогами
 
-Oftentimes one needs to copy or move several files at once.
-This can be done by providing a list of individual filenames,
-or specifying a naming pattern using wildcards. Wildcards are
-special characters that can be used to represent unknown characters
-or sets of characters when navigating the Unix file system.
+Час від часу нам знадобиться скопіювати або перемістити кілька файлів одночасно.
+Для цього треба надати список імен окремих файлів, або вказати шаблон імен за допомогою символів підстановки. Це символи, які можна використовувати для представлення невідомих символів або груп символів під час навігації по файловій системі Unix.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Copy with Multiple Filenames
+## Копіювання кількох файлів водночас
 
-For this exercise, you can test the commands in the `shell-lesson-data/exercise-data` directory.
+Для цієї вправи ви можете випробувати команди у каталозі `shell-lesson-data/exercise-data`.
 
-In the example below, what does `cp` do when given several filenames and a directory name?
+Що робить команда `cp` у наведеному нижче прикладі, коли їй надано декілька імен файлів і назву каталогу?
 
 ```bash
 $ mkdir backup
@@ -594,12 +587,9 @@ $ cp minotaur.dat unicorn.dat basilisk.dat
 
 ## Відповідь
 
-If given more than one file name followed by a directory name
-(i.e. the destination directory must be the last argument),
-`cp` copies the files to the named directory.
+Якщо надано декілька імен файлів та ім'я каталогу (каталог призначення має бути останнім аргументом), команда `cp` копіює файли до вказаного каталогу.
 
-If given three file names, `cp` throws an error such as the one below,
-because it is expecting a directory name as the last argument.
+Якщо надано тільки три імені файлів, то `cp` видасть помилку, подібну до наведеної нижче, бо останній аргумент повинен бути ім'ям каталогу.
 
 ```error
 cp: target 'basilisk.dat' is not a directory
@@ -609,21 +599,19 @@ cp: target 'basilisk.dat' is not a directory
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Using wildcards for accessing multiple files at once
+### Використання символів підстановки для роботи з кількома файлами одночасно
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
 ## Символи підстановки
 
 Символ `*` - це **символ підстановки** (wildcard), який відповідає нулю або більшій кількості будь-яких символів.
-Розглянемо каталог `shell-lesson-data/exercise-data/proteins`: `*.pdb` відповідає `ethane.pdb`, `propane.pdb` і кожному файлу, який закінчується на '.pdb'. On the other hand, `p*.pdb` only represents
-`pentane.pdb` and `propane.pdb`, because the 'p' at the front can only
-represent filenames that begin with the letter 'p'.
+Розглянемо каталог `shell-lesson-data/exercise-data/proteins`: `*.pdb` відповідає `ethane.pdb`, `propane.pdb` і кожному файлу, який закінчується на '.pdb'. З іншого боку, `p*.pdb` підходить тільки для файлів `pentane.pdb` і `propane.pdb`, оскільки початкова літера 'p' лише збігається з назвами файлів, які починаються з літери 'p'.
 
 Символ `?` також є символом підстановки, але він відповідає рівно одному будь-якому символу.
 Отже, `?ethane.pdb` буде відповідати `methane.pdb`, тоді як `*ethane.pdb` відповідає як `ethane.pdb`, так і `methane.pdb`.
 
-Wildcards can be used in combination with each other. Наприклад, `???ane.pdb` відповідає трьом символам, за якими слідує `ane.pdb`, що дає `cubane.pdb ethane.pdb octane.pdb`.
+Символи підстановки можна використовувати разом, комбінуючи їх у шаблонах. Наприклад, `???ane.pdb` відповідає трьом символам, за якими слідує `ane.pdb`, що дає `cubane.pdb ethane.pdb octane.pdb`.
 
 Коли термінал бачить символ підстановки, він розгортає його для створення списку відповідних імен файлів _до_ запуску команди, яку було введено.
 Як виняток, якщо вираз підстановки не відповідає жодному файлу, Bash передасть вираз як аргумент до команди, якою вона є. Наприклад, введення `ls *.pdf` у каталозі `proteins` (який містить лише файли з іменами, що закінчуються на `.pdb`) призведе до повідомлення про те, що не існує файлу з назвою `*.pdf`.
@@ -693,8 +681,7 @@ Wildcards can be used in combination with each other. Наприклад, `???an
     └── all_november_files
 ```
 
-Before heading off to another field trip, she wants to back up her data and
-send some datasets to her colleague Bob. Саманта використовує наступні команди щоб виконати цю роботу:
+Перед тим, як вирушити на чергову польову подорож, вона хоче створити резервну копію даних і надіслати деякі набори своєму колезі Бобу. Саманта використовує наступні команди щоб виконати цю роботу:
 
 ```bash
 $ cp *dataset* backup/datasets
@@ -779,8 +766,7 @@ $ ls -F
 analyzed/  fructose.dat    raw/   sucrose.dat
 ```
 
-Файли `fructose.dat` та `sucrose.dat` містять результати її аналізу. What command(s) covered in this lesson does she need to run
-so that the commands below will produce the output shown?
+Файли `fructose.dat` та `sucrose.dat` містять результати її аналізу. Яку (які) команду (команди), розглянуту (розглянуті) у цьому уроці, їй потрібно виконати, щоб наведені нижче команди вивели результати наведені нижче?
 
 ```bash
 $ ls -F
@@ -807,8 +793,8 @@ mv *.dat analyzed
 ```
 
 Джеймі потрібно перемістити файли `fructose.dat` та `sucrose.dat` до каталогу `analyzed`.
-The shell will expand \*.dat to match all .dat files in the current directory.
-The `mv` command then moves the list of .dat files to the 'analyzed' directory.
+Термінал розгорне шаблон \*.dat до переліку усіх файлів .dat у поточному каталозі.
+Команда `mv` перемістить ці файли .dat до каталогу 'analyzed'.
 
 :::::::::::::::::::::::::
 
@@ -818,14 +804,9 @@ The `mv` command then moves the list of .dat files to the 'analyzed' directory.
 
 ## Відтворення структури каталогів
 
-You're starting a new experiment and would like to duplicate the directory
-structure from your previous experiment so you can add new data.
+Ви починаєте новий експеримент і бажаєте продублювати структуру каталогів з попереднього експерименту, щоб потім додати нові дані.
 
-Assume that the previous experiment is in a folder called `2016-05-18`,
-which contains a `data` folder that in turn contains folders named `raw` and
-`processed` that contain data files.  The goal is to copy the folder structure
-of the `2016-05-18` folder into a folder called `2016-05-20`
-so that your final directory structure looks like this:
+Припустимо, що попередній експеримент знаходиться у каталозі з назвою `2016-05-18`, який містить каталог `data`, який аналогічно містить каталоги `raw` і `processed` у яких містяться файли даних.  Мета полягає у копіюванні структури `2016-05-18` до каталогу `2016-05-20` таким чином, щоб ваша фінальна структура виглядала наступним чином:
 
 ```output
 2016-05-20/
@@ -878,9 +859,7 @@ $ mkdir raw processed
 
 Третій набір команд призведе до помилки, оскільки поведінка `mkdir` за замовчуванням не створює підкаталог в каталозі, що не існує: спочатку мають бути створені каталоги проміжних рівнів.
 
-Четвертий набір команд теж досягає цієї мети. Remember, the `-p` option,
-followed by a path of one or more
-directories, will cause `mkdir` to create any intermediate subdirectories as required.
+Четвертий набір команд теж досягає цієї мети. Пам'ятайте, що опція `-p`, після якої вказується шлях до одного або декількох каталогів, змусить `mkdir` створити будь-які проміжні підкаталоги за потреби.
 
 Останній набір команд створить каталоги 'raw' і 'processed' на тому ж рівні, що і каталог 'data'.
 
@@ -897,8 +876,8 @@ directories, will cause `mkdir` to create any intermediate subdirectories as req
 - `*` відповідає нулю або більшій кількості символів в імені файлу, тому `*.txt` відповідає всім файлам, імена яких закінчуються на `.txt`.
 - `?` відповідає будь-якому одному символу у назві файлу, тому `?.txt` відповідає `a.txt`, але не `any.txt`.
 - Використання клавіші Control можна описати різними способами, зокрема `Ctrl-X`, `Control-X` та `^X`.
-- The shell does not have a trash bin: once something is deleted, it's really gone.
+- В терміналі немає кошика для сміття: як тільки щось видалено - його неможливо відновити.
 - Більшість файлів мають назву на кшталт "щось.розширення". Розширення не є обов'язковим і нічого не гарантує, але зазвичай використовується для позначення типу даних у файлі.
-- Depending on the type of work you do, you may need a more powerful text editor than Nano.
+- Залежно від типу вашої роботи вам може знадобитися потужніший ніж Nano текстовий редактор.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
