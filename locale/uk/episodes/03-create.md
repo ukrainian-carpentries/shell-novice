@@ -374,15 +374,13 @@ $ ls quotes.txt thesis/quotations.txt
 quotes.txt   thesis/quotations.txt
 ```
 
-We can also copy a directory and all its contents by using the
-[recursive](https://en.wikipedia.org/wiki/Recursion) option `-r`,
-e.g. to back up a directory:
+Ми також можемо скопіювати каталог і весь його вміст за допомогою [рекурсивної](https://uk.wikipedia.org/wiki/Рекурсія) опції `-r`, наприклад, для створення резервної копії каталогу:
 
 ```bash
 $ cp -r thesis thesis_backup
 ```
 
-We can check the result by listing the contents of both the `thesis` and `thesis_backup` directory:
+Ми можемо перевірити результат, переглянувши вміст каталогів `thesis` та `thesis_backup`:
 
 ```bash
 $ ls thesis thesis_backup
@@ -396,7 +394,7 @@ thesis_backup:
 quotations.txt
 ```
 
-It is important to include the `-r` flag. Якщо ви хочете скопіювати каталог і не вкажете цей параметр ви побачите повідомлення про те, що каталог було пропущено, оскільки `-r` не вказано.
+Важливо додати опцію `-r`. Якщо ви хочете скопіювати каталог і не вкажете цей параметр ви побачите повідомлення про те, що каталог було пропущено, оскільки `-r` не вказано.
 
 ```bash
 $ cp thesis thesis_backup
@@ -405,7 +403,7 @@ cp: -r not specified; omitting directory 'thesis'
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Renaming Files
+## Перейменування файлів
 
 Припустімо, що ви створили у поточному каталозі простий текстовий файл, який містить список статистичних тестів, які вам знадобляться для аналізу ваших даних, і назвали його `statstics.txt`
 
@@ -421,12 +419,9 @@ cp: -r not specified; omitting directory 'thesis'
 ## Відповідь
 
 1. Ні.  Хоча це створить файл з правильною назвою, неправильно названий файл все одно існуватиме у каталозі, і його потрібно буде видалити.
-2. Yes, this would work to rename the file.
-3. Ні, крапка (.) indicates where to move the file, but does not provide a new file name;
-   identical file names
-   cannot be created.
-4. Ні, крапка (.) indicates where to copy the file, but does not provide a new file name;
-   identical file names cannot be created.
+2. Так, це спрацює для перейменування файлу.
+3. Ні, крапка (.) вказує, куди перемістити файл, але не надає нового імені файлу; файли з однаковими іменами не можуть бути створені.
+4. Ні, крапка (.) вказує, куди скопіювати файл, але не надає нового імені файлу; файли з однаковими іменами не можуть бути створені.
 
 :::::::::::::::::::::::::
 
@@ -434,9 +429,9 @@ cp: -r not specified; omitting directory 'thesis'
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Moving and Copying
+## Переміщення та копіювання
 
-What is the output of the closing `ls` command in the sequence shown below?
+Що виводить остання команда `ls` у наведеній нижче послідовності?
 
 ```bash
 $ pwd
@@ -487,7 +482,7 @@ $ ls
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Removing files and directories
+## Видалення файлів і каталогів
 
 Повертаючись до каталогу `shell-lesson-data/exercise-data/writing`,
 давайте почистимо цей каталог, видаливши створений нами файл `quotes.txt`.
@@ -509,7 +504,7 @@ ls: cannot access 'quotes.txt': No such file or directory
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Deleting Is Forever
+## Видалення - це назавжди
 
 The Unix shell doesn't have a trash bin that we can recover deleted
 files from (though most graphical interfaces to Unix do).  Instead,
@@ -523,10 +518,10 @@ file's disk space right away.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Using `rm` Safely
+## Безпечне використання `rm`
 
-What happens when we execute `rm -i thesis_backup/quotations.txt`?
-Why would we want this protection when using `rm`?
+Що відбувається, коли ми виконуємо `rm -i thesis_backup/quotations.txt`?
+Навіщо нам може бути потрібен цей захист при використанні `rm`?
 
 :::::::::::::::  solution
 
@@ -536,8 +531,7 @@ Why would we want this protection when using `rm`?
 rm: remove regular file 'thesis_backup/quotations.txt'? y
 ```
 
-The `-i` option will prompt before (every) removal (use <kbd>Y</kbd> to confirm deletion
-or <kbd>N</kbd> to keep the file).
+Параметр `-i` призведе до окремого запиту перед (кожним) вилученням (використовуйте <kbd>Y</kbd> для підтвердження вилучення або <kbd>N</kbd>, щоб зберегти файл).
 The Unix shell doesn't have a trash bin, so all the files removed will disappear forever.
 By using the `-i` option, we have the chance to check that we are deleting only the files
 that we want to remove.
@@ -546,8 +540,7 @@ that we want to remove.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-If we try to remove the `thesis` directory using `rm thesis`,
-we get an error message:
+Якщо ми спробуємо видалити каталог `thesis` за допомогою `rm thesis`, ми отримаємо повідомлення про помилку:
 
 ```bash
 $ rm thesis
@@ -557,7 +550,7 @@ $ rm thesis
 rm: cannot remove `thesis': Is a directory
 ```
 
-This happens because `rm` by default only works on files, not directories.
+Це відбувається тому, що команда `rm` за замовчуванням працює лише з файлами, а не з каталогами.
 
 `rm` can remove a directory _and all its contents_ if we use the
 recursive option `-r`, and it will do so _without any confirmation prompts_:
@@ -570,7 +563,7 @@ Given that there is no way to retrieve files deleted using the shell,
 `rm -r` _should be used with great caution_
 (you might consider adding the interactive option `rm -r -i`).
 
-## Operations with multiple files and directories
+## Операції з декількома файлами та каталогами
 
 Oftentimes one needs to copy or move several files at once.
 This can be done by providing a list of individual filenames,
