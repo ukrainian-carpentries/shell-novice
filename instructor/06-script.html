@@ -325,7 +325,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Shell Scripts</h1>
-        <p>Останнє оновлення 2025-08-22 |
+        <p>Останнє оновлення 2025-08-28 |
 
         <a href="https://github.com/ukrainian-carpentries/shell-novice/edit/main/episodes/06-script.md" class="external-link">Редагувати цю сторінку <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -625,8 +625,8 @@ wc -l "$@" | sort -n</code></pre>
 <div id="list-unique-species" class="callout-inner">
 <h3 class="callout-title">List Unique Species</h3>
 <div class="callout-content">
-<p>Leah has several hundred data files, each of which is formatted like
-this:</p>
+<p>Лія має кілька сотень файлів даних, кожен з яких відформатований
+наступним чином:</p>
 <pre class="source"><code>2013-11-05,deer,5
 2013-11-05,rabbit,22
 2013-11-05,raccoon,7
@@ -656,7 +656,7 @@ each of those files separately.</p>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -705,17 +705,16 @@ how we created that figure.</p>
 <h3 class="callout-title">Why Record Commands in the History Before
 Running Them?</h3>
 <div class="callout-content">
-<p>If you run the command:</p>
+<p>Якщо виконати команду:</p>
 <div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="ex">$</span> history <span class="kw">|</span> <span class="fu">tail</span> <span class="at">-n</span> 5 <span class="op">&gt;</span> recent.sh</span></code></pre>
 </div>
-<p>the last command in the file is the <code>history</code> command
-itself, i.e., the shell has added <code>history</code> to the command
-log before actually running it. In fact, the shell <em>always</em> adds
-commands to the log before running them. Why do you think it does
-this?</p>
+<p>останньою командою у файлі є сама команда <code>history</code>,
+тобто, термінал додав <code>history</code> до журналу команд перед тим,
+як фактично її виконав. In fact, the shell <em>always</em> adds commands
+to the log before running them. Why do you think it does this?</p>
 </div>
 </div>
 </div>
@@ -726,7 +725,7 @@ this?</p>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>If a command causes something to crash or hang, it might be useful to
 know what that command was, in order to investigate the problem. Were
@@ -814,30 +813,32 @@ between flexibility and complexity.</p>
 <div id="variables-in-shell-scripts" class="callout-inner">
 <h3 class="callout-title">Variables in Shell Scripts</h3>
 <div class="callout-content">
-<p>In the <code>alkanes</code> directory, imagine you have a shell
-script called <code>script.sh</code> containing the following
-commands:</p>
+<p>Уявіть, що у каталозі <code>alkanes</code> у вас є скрипт з назвою
+<code>script.sh</code>, який містить наступні команди:</p>
 <div class="codewrapper sourceCode" id="cb35">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" tabindex="-1"></a><span class="fu">head</span> <span class="at">-n</span> <span class="va">$2</span> <span class="va">$1</span></span>
 <span id="cb35-2"><a href="#cb35-2" tabindex="-1"></a><span class="fu">tail</span> <span class="at">-n</span> <span class="va">$3</span> <span class="va">$1</span></span></code></pre>
 </div>
-<p>While you are in the <code>alkanes</code> directory, you type the
-following command:</p>
+<p>Перебуваючи у каталозі <code>alkanes</code>, ви вводите наступну
+команду:</p>
 <div class="codewrapper sourceCode" id="cb36">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" tabindex="-1"></a><span class="ex">$</span> bash script.sh <span class="st">'*.pdb'</span> 1 1</span></code></pre>
 </div>
-<p>Which of the following outputs would you expect to see?</p>
-<ol style="list-style-type: decimal"><li>All of the lines between the first and the last lines of each file
-ending in <code>.pdb</code> in the <code>alkanes</code> directory</li>
-<li>The first and the last line of each file ending in <code>.pdb</code>
-in the <code>alkanes</code> directory</li>
-<li>The first and the last line of each file in the <code>alkanes</code>
-directory</li>
-<li>An error because of the quotes around <code>*.pdb</code>
+<p>Які з наведених нижче результатів ви очікуєте побачити?</p>
+<ol style="list-style-type: decimal"><li>Усі рядки між першим та останнім рядками кожного файлу, що
+закінчується на <code>.pdb</code> у каталозі <code>alkanes</code>
+</li>
+<li>Перший та останній рядок кожного файлу, що закінчується на
+<code>.pdb</code> у каталозі <code>alkanes</code>
+</li>
+<li>Перший та останній рядок кожного файлу в каталозі
+<code>alkanes</code>
+</li>
+<li>Помилку через лапки навколо <code>*.pdb</code>
 </li>
 </ol></div>
 </div>
@@ -849,7 +850,7 @@ directory</li>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>The correct answer is 2.</p>
 <p>The special variables <code>$1</code>, <code>$2</code> and
@@ -862,9 +863,9 @@ script, such that the commands run are:</p>
 <span id="cb37-2"><a href="#cb37-2" tabindex="-1"></a><span class="ex">$</span> tail <span class="at">-n</span> 1 cubane.pdb ethane.pdb octane.pdb pentane.pdb propane.pdb</span></code></pre>
 </div>
 <p>The shell does not expand <code>'*.pdb'</code> because it is enclosed
-by quote marks. As such, the first argument to the script is
-<code>'*.pdb'</code> which gets expanded within the script by
-<code>head</code> and <code>tail</code>.</p>
+by quote marks. Таким чином, першим аргументом скрипту є
+<code>'*.pdb'</code>, який буде розгорнуто у скрипті за допомогою
+<code>head</code> і <code>tail</code>.</p>
 </div>
 </div>
 </div>
@@ -878,18 +879,18 @@ by quote marks. As such, the first argument to the script is
 <h3 class="callout-title">Find the Longest File With a Given
 Extension</h3>
 <div class="callout-content">
-<p>Write a shell script called <code>longest.sh</code> that takes the
-name of a directory and a filename extension as its arguments, and
-prints out the name of the file with the most lines in that directory
-with that extension. For example:</p>
+<p>Напишіть сценарій терміналу з назвою <code>longest.sh</code>, який
+отримує в якості аргументів ім’я каталогу і розширення імені файлу як
+аргументи, і виводить назву файлу з найбільшою кількістю рядків у цьому
+каталозі з цим розширенням. For example:</p>
 <div class="codewrapper sourceCode" id="cb38">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" tabindex="-1"></a><span class="ex">$</span> bash longest.sh shell-lesson-data/exercise-data/alkanes pdb</span></code></pre>
 </div>
-<p>would print the name of the <code>.pdb</code> file in
-<code>shell-lesson-data/exercise-data/alkanes</code> that has the most
-lines.</p>
+<p>виведе назву файлу <code>.pdb</code> у каталозі
+<code>shell-lesson-data/exercise-data/proteins</code>, який має
+найбільшу кількість рядків.</p>
 <p>Feel free to test your script on another directory e.g.</p>
 <div class="codewrapper sourceCode" id="cb39">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -906,7 +907,7 @@ lines.</p>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb40">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -923,8 +924,8 @@ lines.</p>
 counts the lines in each file and sorts them numerically (largest last).
 When there’s more than one file, <code>wc</code> also outputs a final
 summary line, giving the total number of lines across <em>all</em>
-files. We use <code>tail -n 2 | head -n 1</code> to throw away this last
-line.</p>
+files. Ми використовуємо <code>tail -n 2 | head -n 1</code>, щоб
+відкинути цей останній рядок.</p>
 <p>With <code>wc -l $1/*.$2 | sort -n | tail -n 1</code> we’ll see the
 final summary line: we can build our pipeline up in pieces to be sure we
 understand the output.</p>
@@ -978,7 +979,7 @@ three scripts would do when run as <code>bash script1.sh *.pdb</code>,
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <p>In each case, the shell expands the wildcard in <code>*.pdb</code>
 before passing the resulting list of file names as arguments to the
@@ -1049,7 +1050,7 @@ error?</p>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <p>The <code>-x</code> option causes <code>bash</code> to run in debug
 mode. This prints out each command as it is run, which will help you to
@@ -1143,8 +1144,8 @@ consistent with built-in Unix commands.</li>
   "url": "https://ukrainian-carpentries.github.io/shell-novice/instructor/06-script.html",
   "identifier": "https://ukrainian-carpentries.github.io/shell-novice/instructor/06-script.html",
   "dateCreated": "2014-10-22",
-  "dateModified": "2025-08-22",
-  "datePublished": "2025-08-26"
+  "dateModified": "2025-08-28",
+  "datePublished": "2025-08-28"
 }
 
   </script><script>
