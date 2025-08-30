@@ -354,7 +354,7 @@ $ tail -n 2 animals.csv >> animals-subset.csv
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Passing output to another command
+## Передача виводу іншій команді
 
 In our example of finding the file with the fewest lines,
 we are using two intermediate files `lengths.txt` and `sorted-lengths.txt` to store output.
@@ -371,21 +371,21 @@ $ sort -n lengths.txt | head -n 1
   9 methane.pdb
 ```
 
-The vertical bar, `|`, between the two commands is called a **pipe**.
+Вертикальна риска `|` між двома командами називається **каналом** (pipe).
 It tells the shell that we want to use
 the output of the command on the left
 as the input to the command on the right.
 
-This has removed the need for the `sorted-lengths.txt` file.
+Це усуває необхідність у файлі `sorted-lengths.txt`.
 
-## Combining multiple commands
+## Поєднання декількох команд
 
-Nothing prevents us from chaining pipes consecutively.
+Ніщо не заважає нам з'єднувати канали послідовно.
 We can for example send the output of `wc` directly to `sort`,
 and then send the resulting output to `head`.
-This removes the need for any intermediate files.
+Це усуває необхідність у будь-яких проміжних файлах.
 
-We'll start by using a pipe to send the output of `wc` to `sort`:
+Ми почнемо з використання каналу для надсилання виводу `wc` до `sort`:
 
 ```bash
 $ wc -l *.pdb | sort -n
