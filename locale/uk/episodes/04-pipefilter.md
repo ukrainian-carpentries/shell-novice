@@ -23,8 +23,7 @@ exercises: 10
 Now that we know a few basic commands,
 we can finally look at the shell's most powerful feature:
 the ease with which it lets us combine existing programs in new ways.
-We'll start with the directory `shell-lesson-data/exercise-data/alkanes`
-that contains six files describing some simple organic molecules.
+Ми почнемо з каталогу `shell-lesson-data/exercise-data/proteins`, який містить шість файлів, що описують деякі прості органічні молекули.
 The `.pdb` extension indicates that these files are in Protein Data Bank format,
 a simple text format that specifies the type and position of each atom in the molecule.
 
@@ -37,7 +36,7 @@ cubane.pdb    methane.pdb    pentane.pdb
 ethane.pdb    octane.pdb     propane.pdb
 ```
 
-Let's run an example command:
+Запустимо наприклад цю команду:
 
 ```bash
 $ wc cubane.pdb
@@ -68,7 +67,7 @@ $ wc *.pdb
  107  819  6081  total
 ```
 
-Note that `wc *.pdb` also shows the total number of all lines in the last line of the output.
+Зверніть увагу, що `wc *.pdb` в останньому рядку свого виводу також показує загальну кількість усіх рядків у перелічених файлах.
 
 If we run `wc -l` instead of just `wc`,
 the output shows only the number of lines per file:
@@ -92,7 +91,7 @@ only the number of characters or the number of words, respectively.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Why Isn't It Doing Anything?
+## Чому нічого не відбувається?
 
 What happens if a command is supposed to process a file, but we
 don't give it a filename? Наприклад, що буде, якщо ми наберемо:
@@ -111,23 +110,23 @@ see is it sitting there, and the command doesn't appear to do anything.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Capturing output from commands
+## Перехоплення виводу з команд
 
 Which of these files contains the fewest lines?
 It's an easy question to answer when there are only six files,
 but what if there were 6000?
-Our first step toward a solution is to run the command:
+Наш перший крок до пошуку рішення - це запуск наступної команди:
 
 ```bash
 $ wc -l *.pdb > lengths.txt
 ```
 
-The greater than symbol, `>`, tells the shell to **redirect** the command's output to a
-file instead of printing it to the screen. This command prints no screen output, because
+Символ 'більше ніж', тобто `>`, вказує терміналу **перенаправити** вивід команди
+до файлу замість виведення його на екран. This command prints no screen output, because
 everything that `wc` would have printed has gone into the file `lengths.txt` instead.
 If the file doesn't exist prior to issuing the command, the shell will create the file.
 Якщо файл вже існує, він буде непомітно перезаписаний, що може призвести до втрати даних.
-Thus, **redirect** commands require caution.
+Таким чином, **перенаправлення** команд вимагає обережності.
 
 Команда `ls lengths.txt` підтверджує, що файл існує:
 
@@ -139,7 +138,7 @@ $ ls lengths.txt
 lengths.txt
 ```
 
-We can now send the content of `lengths.txt` to the screen using `cat lengths.txt`.
+Тепер ми можемо вивести вміст файлу `lengths.txt` на екран за допомогою команди `cat lengths.txt`.
 The `cat` command gets its name from 'concatenate' i.e. join together,
 and it prints the contents of files one after another.
 There's only one file in this case,
@@ -161,27 +160,26 @@ $ cat lengths.txt
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Output Page by Page
+## Виведення сторінки за сторінкою
 
 We'll continue to use `cat` in this lesson, for convenience and consistency,
 but it has the disadvantage that it always dumps the whole file onto your screen.
 Більш корисною на практиці є команда `less` (наприклад, `less lengths.txt`).
-This displays a screenful of the file, and then stops.
-You can go forward one screenful by pressing the spacebar,
-or back one by pressing `b`.  Press `q` to quit.
+Вона виводить стільки вмісту файлу, скільки вміщується в одному екрані, а потім робить паузу.
+Ви можете перейти на один екран вперед, натиснувши пробіл, або на один екран назад, натиснувши клавішу `b`.  Щоб вийти з перегляду вмісту файлу, натисніть `q`.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Filtering output
+## Фільтрування виводу
 
-Next we'll use the `sort` command to sort the contents of the `lengths.txt` file.
+Далі ми скористаємося командою `sort` для сортування вмісту файлу `lengths.txt`.
 But first we'll do an exercise to learn a little about the sort command:
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## What Does `sort -n` Do?
+## Що робить `sort -n`?
 
-The file `shell-lesson-data/exercise-data/numbers.txt` contains the following lines:
+Файл `shell-lesson-data/exercise-data/numbers.txt` містить наступні рядки:
 
 ```source
 10
@@ -191,7 +189,7 @@ The file `shell-lesson-data/exercise-data/numbers.txt` contains the following li
 6
 ```
 
-If we run `sort` on this file, the output is:
+Якщо ми виконаємо команду `sort` для цього файлу, то отримаємо наступне:
 
 ```output
 10
@@ -201,7 +199,7 @@ If we run `sort` on this file, the output is:
 6
 ```
 
-If we run `sort -n` on the same file, we get this instead:
+Якщо ми виконаємо команду `sort -n` для того ж файлу, то замість цього ми отримаємо наступне:
 
 ```output
 2
@@ -211,13 +209,13 @@ If we run `sort -n` on the same file, we get this instead:
 22
 ```
 
-Explain why `-n` has this effect.
+Поясніть, чому `-n` має такий ефект.
 
 :::::::::::::::  solution
 
 ## Відповідь
 
-The `-n` option specifies a numerical rather than an alphanumerical sort.
+Опція `-n` задає числове, а не алфавітно-цифрове сортування.
 
 :::::::::::::::::::::::::
 
@@ -225,8 +223,7 @@ The `-n` option specifies a numerical rather than an alphanumerical sort.
 
 We will also use the `-n` option to specify that the sort is
 numerical instead of alphanumerical.
-This does _not_ change the file;
-instead, it sends the sorted result to the screen:
+Це _не змінить_ файл; натомість відсортований результат буде виведено на екран:
 
 ```bash
 $ sort -n lengths.txt
@@ -261,16 +258,15 @@ Using `-n 1` with `head` tells it that
 we only want the first line of the file;
 `-n 20` would get the first 20,
 and so on.
-Since `sorted-lengths.txt` contains the lengths of our files ordered from least to greatest,
-the output of `head` must be the file with the fewest lines.
+Оскільки файл `sorted-lengths.txt` містить довжини наших файлів, впорядковані від найменшої до найбільшої, виведенням `head` має бути файл з найменшою кількістю рядків.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Redirecting to the same file
+## Перенаправлення до того ж самого файлу
 
 It's a very bad idea to try redirecting
 the output of a command that operates on a file
-to the same file. For example:
+to the same file. Наприклад:
 
 ```bash
 $ sort -n lengths.txt > lengths.txt
@@ -282,12 +278,12 @@ $ sort -n lengths.txt > lengths.txt
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## What Does `>>` Mean?
+## Що означає `>>`?
 
 We have seen the use of `>`, but there is a similar operator `>>`
 which works slightly differently.
 Ми дізнаємося про відмінності між цими двома операторами, надрукувавши кілька рядків.
-We can use the `echo` command to print strings e.g.
+Для виведення рядків ми можемо скористатися командою `echo`, наприклад:
 
 ```bash
 $ echo The echo command prints text
@@ -303,7 +299,7 @@ The echo command prints text
 $ echo hello > testfile01.txt
 ```
 
-and:
+та:
 
 ```bash
 $ echo hello >> testfile02.txt
@@ -318,10 +314,7 @@ $ echo hello >> testfile02.txt
 In the first example with `>`, the string 'hello' is written to `testfile01.txt`,
 but the file gets overwritten each time we run the command.
 
-We see from the second example that the `>>` operator also writes 'hello' to a file
-(in this case `testfile02.txt`),
-but appends the string to the file if it already exists
-(i.e. when we run it for the second time).
+З другого прикладу ми бачимо, що оператор `>>` також записує рядок 'hello' у файл (у цьому випадку `testfile02.txt`), але додає рядок до файлу, якщо останній вже існує (тобто, коли ми запускаємо його вдруге).
 
 :::::::::::::::::::::::::
 
