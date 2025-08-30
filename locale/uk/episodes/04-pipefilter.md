@@ -6,10 +6,10 @@ exercises: 10
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain the advantage of linking commands with pipes and filters.
+- Зрозуміти перевагу поєднання команд за допомогою каналів та фільтрів.
 - Combine sequences of commands to get new output
-- Redirect a command's output to a file.
-- Explain what usually happens if a program or pipeline isn't given any input to process.
+- Навчитись перенаправляти вивід команди до файлу.
+- Зрозуміти, що зазвичай відбувається, якщо програмі або конвеєру не надається жодних вхідних даних для обробки.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -704,11 +704,11 @@ and _only_ the processed data files?
 2. Це правильна відповідь
 
 3. The shell would expand `*` to match everything in the current directory,
-  so the command would try to remove all matched files and an additional
-  file called `.txt`
+   so the command would try to remove all matched files and an additional
+   file called `.txt`
 
 4. The shell expands `*.*` to match all filenames containing at least one
-  `.`, including the processed files (`.txt`) _and_ raw files (`.dat`)
+   `.`, including the processed files (`.txt`) _and_ raw files (`.dat`)
 
 :::::::::::::::::::::::::
 
