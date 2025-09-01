@@ -22,8 +22,7 @@ exercises: 10
 
 Тепер, після ознайомлення з основними командами, ми можемо нарешті розглянути найпотужнішу функцію терміналу: здатність комбінувати наявні програми різними способами.
 Ми почнемо з каталогу `shell-lesson-data/exercise-data/proteins`, який містить шість файлів, що описують деякі прості органічні молекули.
-The `.pdb` extension indicates that these files are in Protein Data Bank format,
-a simple text format that specifies the type and position of each atom in the molecule.
+Розширення `.pdb` вказує на те, що ці файли мають формат Protein Data Bank - простий текстовий формат, який визначає тип і положення кожного атома в молекулі.
 
 ```bash
 $ ls
@@ -47,8 +46,7 @@ $ wc cubane.pdb
 `wc` - команда для підрахунку слів (англ. 'word count'):
 вона рахує кількість рядків, слів і символів у файлах (повертаючи значення в такому порядку зліва направо).
 
-If we run the command `wc *.pdb`, the `*` in `*.pdb` matches zero or more characters,
-so the shell turns `*.pdb` into a list of all `.pdb` files in the current directory:
+Якщо ми виконаємо команду `wc *.pdb`, то символ `*` у `*.pdb` відповідає будь-якій кількості символів (включаючи пустий рядок), тож термінал перетворить `*.pdb` на перелік усіх файлів з розширенням `.pdb` у поточному каталозі:
 
 ```bash
 $ wc *.pdb
@@ -66,8 +64,7 @@ $ wc *.pdb
 
 Зверніть увагу, що `wc *.pdb` в останньому рядку свого виводу також показує загальну кількість усіх рядків у перелічених файлах.
 
-If we run `wc -l` instead of just `wc`,
-the output shows only the number of lines per file:
+Якщо ми виконаємо `wc -l` замість просто `wc`, то виводитиметься лише кількість рядків у файлах:
 
 ```bash
 $ wc -l .pdb
@@ -83,25 +80,20 @@ $ wc -l .pdb
  107  total
 ```
 
-The `-m` and `-w` options can also be used with the `wc` command to show
-only the number of characters or the number of words, respectively.
+Параметри `-m` та `-w` з командою `wc` дозволяють показувати тільки кількість символів або тільки кількість слів у файлах.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
 ## Чому нічого не відбувається?
 
-What happens if a command is supposed to process a file, but we
-don't give it a filename? Наприклад, що буде, якщо ми наберемо:
+Що станеться, коли команді, яка має обробляти файл, не надати його назву? Наприклад, що буде, якщо ми наберемо:
 
 ```bash
 $ wc -l
 ```
 
 але не будемо вводити `*.pdb` (або щось інше) після цієї команди?
-Since it doesn't have any filenames, `wc` assumes it is supposed to
-process input given at the command prompt, so it just sits there and waits
-for us to give it some data interactively. From the outside, though, all we
-see is it sitting there, and the command doesn't appear to do anything.
+Оскільки команда не отримала жодних назв файлів, `wc` вважає, що треба обробляти введені дані з командного рядка, тому вона просто очікує, поки ми надамо їй якісь дані інтерактивно. Ззовні, однак, це виглядає так, ніби команда нічого не робить.
 
 Якщо ви припустилися такої помилки, ви можете вийти з цього стану, утримуючи клавішу control (<kbd>Ctrl</kbd>), та один раз натиснувши клавішу <kbd>C</kbd>: <kbd>Ctrl</kbd>\+<kbd>C</kbd>. Потім відпустіть обидві клавіші.
 
@@ -109,9 +101,8 @@ see is it sitting there, and the command doesn't appear to do anything.
 
 ## Перехоплення виводу з команд
 
-Which of these files contains the fewest lines?
-It's an easy question to answer when there are only six files,
-but what if there were 6000?
+Який з цих файлів містить найменшу кількість рядків?
+Це легко визначити, коли файлів лише шість, але що робити, якщо їх 6000?
 Наш перший крок до пошуку рішення - це запуск наступної команди:
 
 ```bash
@@ -121,7 +112,7 @@ $ wc -l *.pdb > lengths.txt
 Символ 'більше ніж', тобто `>`, вказує терміналу **перенаправити** вивід команди
 до файлу замість виведення його на екран. This command prints no screen output, because
 everything that `wc` would have printed has gone into the file `lengths.txt` instead.
-If the file doesn't exist prior to issuing the command, the shell will create the file.
+Якщо файлу не існувало до виконання команди, його буде створено.
 Якщо файл вже існує, він буде непомітно перезаписаний, що може призвести до втрати даних.
 Таким чином, **перенаправлення** команд вимагає обережності.
 
@@ -136,10 +127,8 @@ lengths.txt
 ```
 
 Тепер ми можемо вивести вміст файлу `lengths.txt` на екран за допомогою команди `cat lengths.txt`.
-The `cat` command gets its name from 'concatenate' i.e. join together,
-and it prints the contents of files one after another.
-There's only one file in this case,
-so `cat` just shows us what it contains:
+Назва команди `cat` походить від слова 'concatenate', тобто об'єднувати, і вона виводить вміст файлів один за одним.
+У цьому випадку є лише один файл, тому `cat` просто виводить нам його вміст:
 
 ```bash
 $ cat lengths.txt
@@ -159,8 +148,7 @@ $ cat lengths.txt
 
 ## Виведення сторінки за сторінкою
 
-We'll continue to use `cat` in this lesson, for convenience and consistency,
-but it has the disadvantage that it always dumps the whole file onto your screen.
+У цьому уроці, для зручності та послідовності ми й надалі використовуватимемо команду `cat`, але її недолік полягає в тому, що вона завжди показує весь файл одразу.
 Більш корисною на практиці є команда `less` (наприклад, `less lengths.txt`).
 Вона виводить стільки вмісту файлу, скільки вміщується в одному екрані, а потім робить паузу.
 Ви можете перейти на один екран вперед, натиснувши пробіл, або на один екран назад, натиснувши клавішу `b`.  Щоб вийти з перегляду вмісту файлу, натисніть `q`.
@@ -170,7 +158,7 @@ but it has the disadvantage that it always dumps the whole file onto your screen
 ## Фільтрування виводу
 
 Далі ми скористаємося командою `sort` для сортування вмісту файлу `lengths.txt`.
-But first we'll do an exercise to learn a little about the sort command:
+Але спершу виконаємо вправу, щоб трохи ознайомитися з командою `sort`:
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
@@ -218,8 +206,7 @@ But first we'll do an exercise to learn a little about the sort command:
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-We will also use the `-n` option to specify that the sort is
-numerical instead of alphanumerical.
+Ми також використовуватимемо опцію `-n`, щоб задати числове сортування замість алфавітно-цифрового.
 Це _не змінить_ файл; натомість відсортований результат буде виведено на екран:
 
 ```bash
@@ -236,11 +223,8 @@ $ sort -n lengths.txt
 107  total
 ```
 
-We can put the sorted list of lines in another temporary file called `sorted-lengths.txt`
-by putting `> sorted-lengths.txt` after the command,
-just as we used `> lengths.txt` to put the output of `wc` into `lengths.txt`.
-Once we've done that,
-we can run another command called `head` to get the first few lines in `sorted-lengths.txt`:
+Ми можемо записати відсортований список рядків в інший тимчасовий файл з назвою `sorted-lengths.txt`, додавши `> sorted-lengths.txt` після команди, так само як ми використовували `> lengths.txt`, щоб записати вивід `wc` у `lengths.txt`.
+Потім можна скористатися командою `head`, щоб отримати перші кілька рядків у `sorted-lengths.txt`:
 
 ```bash
 $ sort -n lengths.txt > sorted-lengths.txt
@@ -251,19 +235,14 @@ $ head -n 1 sorted-lengths.txt
   9 methane.pdb
 ```
 
-Using `-n 1` with `head` tells it that
-we only want the first line of the file;
-`-n 20` would get the first 20,
-and so on.
+Використання `-n 1` з `head` вказує команді, що нам потрібен лише перший рядок файлу; `-n 20` поверне перші 20 тощо.
 Оскільки файл `sorted-lengths.txt` містить довжини наших файлів, впорядковані від найменшої до найбільшої, виведенням `head` має бути файл з найменшою кількістю рядків.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
 ## Перенаправлення до того ж самого файлу
 
-It's a very bad idea to try redirecting
-the output of a command that operates on a file
-to the same file. Наприклад:
+Намагатися перенаправити вивід команди, яка працює з файлом, у той самий файл — дуже погана ідея. Наприклад:
 
 ```bash
 $ sort -n lengths.txt > lengths.txt
@@ -277,8 +256,7 @@ $ sort -n lengths.txt > lengths.txt
 
 ## Що означає `>>`?
 
-We have seen the use of `>`, but there is a similar operator `>>`
-which works slightly differently.
+Ми вже розглядали оператор `>`, але ще існує схожий оператор `>>`, який працює трохи інакше.
 Ми дізнаємося про відмінності між цими двома операторами, надрукувавши кілька рядків.
 Для виведення рядків ми можемо скористатися командою `echo`, наприклад:
 
@@ -308,8 +286,7 @@ $ echo hello >> testfile02.txt
 
 ## Відповідь
 
-In the first example with `>`, the string 'hello' is written to `testfile01.txt`,
-but the file gets overwritten each time we run the command.
+У першому прикладі з `>` рядок 'hello' записується до файлу `testfile01.txt`, але файл перезаписується кожного разу, коли ми запускаємо команду.
 
 З другого прикладу ми бачимо, що оператор `>>` також записує рядок 'hello' у файл (у цьому випадку `testfile02.txt`), але додає рядок до файлу, якщо останній вже існує (тобто, коли ми запускаємо його вдруге).
 
@@ -319,14 +296,13 @@ but the file gets overwritten each time we run the command.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Appending Data
+## Додавання даних у кінець файлу
 
-We have already met the `head` command, which prints lines from the start of a file.
-`tail` is similar, but prints lines from the end of a file instead.
+Ми вже знайомі з командою `head`, яка виводить рядки з початку файлу.
+Команда `tail` схожа на неї, але виводить рядки з кінця файлу.
 
 Розглянемо файл `shell-lesson-data/exercise-data/animal-counts/animals.csv`.
-After these commands, select the answer that
-corresponds to the file `animals-subset.csv`:
+Після виконання цих команд оберіть відповідь, яка відповідає вмісту файлу `animals-subset.csv`:
 
 ```bash
 $ head -n 3 animals.csv > animals-subset.csv
@@ -353,12 +329,9 @@ $ tail -n 2 animals.csv >> animals-subset.csv
 
 ## Передача виводу іншій команді
 
-In our example of finding the file with the fewest lines,
-we are using two intermediate files `lengths.txt` and `sorted-lengths.txt` to store output.
-This is a confusing way to work because
-even once you understand what `wc`, `sort`, and `head` do,
-those intermediate files make it hard to follow what's going on.
-We can make it easier to understand by running `sort` and `head` together:
+У нашому прикладі для пошуку файлу з найменшою кількістю рядків, ми використовуємо два проміжні файли `lengths.txt` та `sorted-lengths.txt` для зберігання результатів.
+Такий підхід може збивати з пантелику, оскільки навіть зрозумівши як працюють `wc`, `sort` і `head`, ці проміжні файли ускладнюють відстеження всього процесу.
+Щоб легше було зрозуміти, можна одночасно виконати `sort` і `head`:
 
 ```bash
 $ sort -n lengths.txt | head -n 1
@@ -369,17 +342,14 @@ $ sort -n lengths.txt | head -n 1
 ```
 
 Вертикальна риска `|` між двома командами називається **каналом** (pipe).
-It tells the shell that we want to use
-the output of the command on the left
-as the input to the command on the right.
+Вона вказує терміналу, що вивід команди ліворуч слід використати як вхідні дані для команди праворуч.
 
 Це усуває необхідність у файлі `sorted-lengths.txt`.
 
 ## Поєднання декількох команд
 
 Ніщо не заважає нам з'єднувати канали послідовно.
-We can for example send the output of `wc` directly to `sort`,
-and then send the resulting output to `head`.
+Наприклад, ми можемо надсилати вивід `wc` безпосередньо до `sort`, а потім результат — до `head`.
 Це усуває необхідність у будь-яких проміжних файлах.
 
 Ми почнемо з використання каналу для надсилання виводу `wc` до `sort`:
