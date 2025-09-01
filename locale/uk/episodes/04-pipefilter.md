@@ -7,7 +7,7 @@ exercises: 10
 ::::::::::::::::::::::::::::::::::::::: objectives
 
 - Зрозуміти перевагу поєднання команд за допомогою каналів та фільтрів.
-- Combine sequences of commands to get new output
+- Навчитись комбінувати послідовності команд для отримання нового результату
 - Навчитись перенаправляти вивід команди до файлу.
 - Зрозуміти, що зазвичай відбувається, якщо програмі або конвеєру не надається жодних вхідних даних для обробки.
 
@@ -20,9 +20,7 @@ exercises: 10
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Now that we know a few basic commands,
-we can finally look at the shell's most powerful feature:
-the ease with which it lets us combine existing programs in new ways.
+Тепер, після ознайомлення з основними командами, ми можемо нарешті розглянути найпотужнішу функцію терміналу: здатність комбінувати наявні програми різними способами.
 Ми почнемо з каталогу `shell-lesson-data/exercise-data/proteins`, який містить шість файлів, що описують деякі прості органічні молекули.
 The `.pdb` extension indicates that these files are in Protein Data Bank format,
 a simple text format that specifies the type and position of each atom in the molecule.
@@ -46,9 +44,8 @@ $ wc cubane.pdb
 20 156 1158 cubane.pdb
 ```
 
-`wc` is the 'word count' command:
-it counts the number of lines, words, and characters in files (returning the values
-in that order from left to right).
+`wc` - команда для підрахунку слів (англ. 'word count'):
+вона рахує кількість рядків, слів і символів у файлах (повертаючи значення в такому порядку зліва направо).
 
 If we run the command `wc *.pdb`, the `*` in `*.pdb` matches zero or more characters,
 so the shell turns `*.pdb` into a list of all `.pdb` files in the current directory:
