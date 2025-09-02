@@ -377,10 +377,8 @@ $ wc -l *.pdb | sort -n | head -n 1
    9 methane.pdb
 ```
 
-This is exactly like a mathematician nesting functions like _log(3x)_
-and saying 'the log of three times _x_'.
-In our case,
-the algorithm is 'head of sort of line count of `*.pdb`'.
+Це подібне тому, як в математиці ми розглядаємо складні функції на кшталт _log(3x)_ і кажемо 'логарифм трьох x\*'.
+У нашому випадку, обчислюється 'head від sort від підрахунку кількості рядків у файлах `*.pdb`'.
 
 The redirection and pipes used in the last few commands are illustrated below:
 
