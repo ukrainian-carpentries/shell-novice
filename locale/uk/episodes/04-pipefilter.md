@@ -382,11 +382,11 @@ $ wc -l *.pdb | sort -n | head -n 1
 
 The redirection and pipes used in the last few commands are illustrated below:
 
-![](fig/redirects-and-pipes.svg){alt='Перенаправлення та канали різних команд: "wc -l \*.pdb" перенаправить виведення до терміналу. "wc -l \*.pdb > lengths" will direct output to the file"lengths". "wc -l \*.pdb | sort -n | head -n 1" will build a pipeline where theoutput of the "wc" command is the input to the "sort" command, the output ofthe "sort" command is the input to the "head" command and the output of the"head" command is directed to the shell'}
+![](fig/redirects-and-pipes.svg){alt='Перенаправлення та канали різних команд: "wc -l \*.pdb" перенаправить виведення до терміналу. "wc -l \*.pdb lengths" спрямує вивід до файлу "lengths". "wc -l \*.pdb | sort -n | head -n 1" will build a pipeline where theoutput of the "wc" command is the input to the "sort" command, the output ofthe "sort" command is the input to the "head" command and the output of the"head" command is directed to the shell'}
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Piping Commands Together
+## З'єднання команд у конвеєр
 
 У нашому поточному каталозі ми хочемо знайти 3 файли, які мають найменшу кількість рядків. Яка з наведених нижче команд підійде для цього?
 
@@ -410,7 +410,7 @@ The redirection and pipes used in the last few commands are illustrated below:
 
 ## Tools designed to work together
 
-This idea of linking programs together is why Unix has been so successful.
+Представлена вище можливість комбінування програм є причиною успіху Unix.
 Instead of creating enormous programs that try to do many different things,
 Unix programmers focus on creating lots of simple tools that each do one job well,
 and that work well with each other.
