@@ -448,7 +448,7 @@ so that you and other people can put those programs into pipes to multiply their
 ```
 
 What text passes through each of the pipes and the final redirect in the pipeline below?
-Note, the `sort -r` command sorts in reverse order.
+Зауважте, що команда `sort -r` сортує у зворотному порядку.
 
 ```bash
 $ cat animals.csv | head -n 5 | tail -n 3 | sort -r > final.txt
@@ -461,10 +461,10 @@ $ cat animals.csv | head -n 5 | tail -n 3 | sort -r > final.txt
 ## Відповідь
 
 Команда `head` виділяє перші 5 рядків з файлу `animals.csv`.
-Then, the last 3 lines are extracted from the previous 5 by using the `tail` command.
+Потім останні 3 рядки виділяються з попередніх 5 за допомогою команди `tail`.
 За допомогою команди `sort -r` ці 3 рядки сортуються у зворотному порядку.
 І нарешті, результат перенаправляється до файлу `final.txt`.
-The content of this file can be checked by executing `cat final.txt`.
+Вміст цього файлу можна перевірити, виконавши команду `cat final.txt`.
 Файл повинен містити наступні рядки:
 
 ```source
@@ -479,7 +479,7 @@ The content of this file can be checked by executing `cat final.txt`.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Pipe Construction
+## Конструювання каналу
 
 Для файлу `animals.csv` з попередньої вправи розглянемо наступну команду:
 
@@ -488,8 +488,8 @@ $ cut -d , -f 2 animals.csv
 ```
 
 Команда `cut` використовується для видалення або 'вирізання' певних частин кожного рядка у файлі. Вона очікує, що рядки буде розділено на стовпчики символом <kbd>Tab</kbd>.
-A character used in this way is called a **delimiter**.
-In the example above we use the `-d` option to specify the comma as our delimiter character.
+Символ, який використовується таким чином, називається **роздільником**.
+У наведеному вище прикладі ми використали опцію `-d`, щоб вказати кому як роздільник.
 We have also used the `-f` option to specify that we want to extract the second field (column).
 Це призведе до наступного результату:
 
@@ -504,10 +504,8 @@ rabbit
 bear
 ```
 
-The `uniq` command filters out adjacent matching lines in a file.
-How could you extend this pipeline (using `uniq` and another command) to find
-out what animals the file contains (without any duplicates in their
-names)?
+Команда `uniq` відфільтровує сусідні однакові рядки у файлі.
+Як можна розширити цей конвеєр (за допомогою `uniq` та інших команд), щоб з'ясувати, назви яких тварин містяться у файлі (без повторень у їхніх назвах)?
 
 :::::::::::::::  solution
 
@@ -535,8 +533,7 @@ $ cut -d , -f 2 animals.csv | sort | uniq
 ...
 ```
 
-The `uniq` command has a `-c` option which gives a count of the
-number of times a line occurs in its input.  Assuming your current
+Команда `uniq` має опцію `-c`, яка підраховує кількість разів, коли рядок зʼявляється у вхідних даних.  Assuming your current
 directory is `shell-lesson-data/exercise-data/animal-counts`,
 what command would you use to produce a table that shows
 the total count of each type of animal in the file?
