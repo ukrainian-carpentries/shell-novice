@@ -555,18 +555,18 @@ the total count of each type of animal in the file?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Nelle's Pipeline: Checking Files
+## Конвеєр Неллі: перевірка файлів
 
 Nelle has run her samples through the assay machines
 and created 17 files in the `north-pacific-gyre` directory described earlier.
-As a quick check, starting from the `shell-lesson-data` directory, Nelle types:
+Для швидкої перевірки, вона переходить у каталог `shell-lesson-data` та набирає:
 
 ```bash
 $ cd north-pacific-gyre
 $ wc -l *.txt
 ```
 
-The output is 18 lines that look like this:
+На виході вона отримує 18 рядків, які виглядають наступним чином:
 
 ```output
 300 NENE01729A.txt
@@ -578,7 +578,7 @@ The output is 18 lines that look like this:
 ... ...
 ```
 
-Now she types this:
+Тепер вона набирає наступне:
 
 ```bash
 $ wc -l *.txt | sort -n | head -n 5
@@ -611,10 +611,8 @@ $ wc -l *.txt | sort -n | tail -n 5
 ```
 
 Those numbers look good --- but what's that 'Z' doing there in the third-to-last line?
-All of her samples should be marked 'A' or 'B';
-by convention,
-her lab uses 'Z' to indicate samples with missing information.
-To find others like it, she does this:
+Всі її зразки мають бути позначені 'A' або 'B'; за попередньою домовленістю її лабораторія використовує 'Z' для позначення зразків з недостатньою інформацією.
+Щоб знайти інші подібні зразки, вона робить наступне:
 
 ```bash
 $ ls *Z.txt
@@ -636,7 +634,7 @@ so instead, she'll have to be careful later on to select files using the wildcar
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Removing Unneeded Files
+## Видалення непотрібних файлів
 
 Suppose you want to delete your processed data files, and only keep
 your raw files and processing script to save storage.
@@ -673,11 +671,11 @@ and _only_ the processed data files?
 - `wc` підраховує рядки, слова та символи у своїх вхідних даних.
 - `cat` виводить вміст своїх вхідних даних.
 - `sort` сортує вхідні дані.
-- `head` displays the first 10 lines of its input by default without additional arguments.
-- `tail` displays the last 10 lines of its input by default without additional arguments.
-- `command > [file]` redirects a command's output to a file (overwriting any existing content).
+- `head` за замовчуванням (тобто без додаткових аргументів) виводить перші 10 рядків вхідних даних.
+- `tail` за замовчуванням (тобто без додаткових аргументів) виводить останні 10 рядків вхідних даних.
+- `command > [file]` перенаправляє вивід команди у файл (перезаписуючи будь-який наявний вміст цього файлу, якщо файл вже існує).
 - `command >> [file]` додає вивід команди до файлу.
-- `[first] | [second]` is a pipeline: the output of the first command is used as the input to the second.
+- `[first] | [second]` є конвеєром: вихід першої команди використовується як вхідні дані для другої.
 - The best way to use the shell is to use pipes to combine simple single-purpose programs (filters).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
