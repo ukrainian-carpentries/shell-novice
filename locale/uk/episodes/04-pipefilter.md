@@ -367,7 +367,7 @@ $ wc -l *.pdb | sort -n
  107 total
 ```
 
-We can then send that output through another pipe, to `head`, so that the full pipeline becomes:
+Потім ми можемо передати цей вивід через інший канал до `head`, отже повний конвеєр буде мати наступний вигляд:
 
 ```bash
 $ wc -l *.pdb | sort -n | head -n 1
@@ -380,9 +380,9 @@ $ wc -l *.pdb | sort -n | head -n 1
 Це подібне тому, як в математиці ми розглядаємо складні функції на кшталт _log(3x)_ і кажемо 'логарифм трьох x\*'.
 У нашому випадку, обчислюється 'head від sort від підрахунку кількості рядків у файлах `*.pdb`'.
 
-The redirection and pipes used in the last few commands are illustrated below:
+Перенаправлення та канали, використані в останніх кількох командах, проілюстровані нижче:
 
-![](fig/redirects-and-pipes.svg){alt='Перенаправлення та канали різних команд: "wc -l \*.pdb" перенаправить виведення до терміналу. "wc -l \*.pdb lengths" спрямує вивід до файлу "lengths". "wc -l \*.pdb | sort -n | head -n 1" will build a pipeline where theoutput of the "wc" command is the input to the "sort" command, the output ofthe "sort" command is the input to the "head" command and the output of the"head" command is directed to the shell'}
+![](fig/redirects-and-pipes.svg){alt='Перенаправлення та канали різних команд: "wc -l \*.pdb" перенаправить виведення до терміналу. "wc -l \*.pdb lengths" спрямує вивід до файлу "lengths". "wc -l \*.pdb | sort -n | head -n 1" побудує конвеєр, де вихід команди "wc" передається як вхідні дані до "sort", вихід команди "sort" є входом для команди "head", а результат команди "head" буде спрямовано до терміналу'}
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
@@ -408,31 +408,21 @@ The redirection and pipes used in the last few commands are illustrated below:
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Tools designed to work together
+## Інструменти, створені для співробітництва
 
 Представлена вище можливість комбінування програм є причиною успіху Unix.
-Instead of creating enormous programs that try to do many different things,
-Unix programmers focus on creating lots of simple tools that each do one job well,
-and that work well with each other.
-This programming model is called 'pipes and filters'.
-We've already seen pipes;
-a **filter** is a program like `wc` or `sort`
-that transforms a stream of input into a stream of output.
+Замість створення величезних програми, які намагаються робити багато різних речей, розробники Unix зосередилися на створенні численних простих інструментів, кожен з яких добре виконує одну роботу і при цьому чудово взаємодіє з іншими.
+Ця модель програмування називається 'канали та фільтри'.
+Ми вже бачили приклад **каналів**; а **фільтри** — це програми на кшталт `wc` або `sort`, які перетворюють потік вхідних даних у потік вихідних.
 Майже всі стандартні інструменти Unix можуть працювати таким чином.
-Unless told to do otherwise,
-they read from standard input,
-do something with what they've read,
-and write to standard output.
+Якщо їм не вказано робити інше, такі програми читають дані зі стандартного вводу, виконують з ними певні дії та записують результат у стандартний вивід.
 
-The key is that any program that reads lines of text from standard input
-and writes lines of text to standard output
-can be combined with every other program that behaves this way as well.
-You can _and should_ write your programs this way
-so that you and other people can put those programs into pipes to multiply their power.
+Головне полягає в тому, що будь-яка програма, яка зчитує рядки тексту зі стандартного вводу і записує їх у стандартний вивід, може бути об'єднана з будь-якою іншою програмою, яка працює так само.
+Ви можете _і повинні_ писати свої програми таким чином, щоб ви та інші люди могли з’єднувати їх через канали і тим самим суттєво збільшуючи їхню потужність.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Pipe Reading Comprehension
+## Розуміння роботи з каналами
 
 Файл з назвою `animals.csv` (у каталозі `shell-lesson-data/exercise-data/animal-counts`) містить наступні дані:
 
@@ -447,7 +437,7 @@ so that you and other people can put those programs into pipes to multiply their
 2012-11-07,bear,1
 ```
 
-What text passes through each of the pipes and the final redirect in the pipeline below?
+Який текст проходить через кожен із каналів та фінальне перенаправлення у конвеєрі нижче?
 Зауважте, що команда `sort -r` сортує у зворотному порядку.
 
 ```bash
@@ -490,7 +480,7 @@ $ cut -d , -f 2 animals.csv
 Команда `cut` використовується для видалення або 'вирізання' певних частин кожного рядка у файлі. Вона очікує, що рядки буде розділено на стовпчики символом <kbd>Tab</kbd>.
 Символ, який використовується таким чином, називається **роздільником**.
 У наведеному вище прикладі ми використали опцію `-d`, щоб вказати кому як роздільник.
-We have also used the `-f` option to specify that we want to extract the second field (column).
+Ми також використали опцію `-f`, щоб зазначити, що ми хочемо вилучити друге поле (стовпчик).
 Це призведе до наступного результату:
 
 ```output
@@ -521,7 +511,7 @@ $ cut -d , -f 2 animals.csv | sort | uniq
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Which Pipe?
+## Який з каналів використати?
 
 Файл `animals.csv` містить 8 рядків даних, відформатованих наступним чином:
 
@@ -533,10 +523,7 @@ $ cut -d , -f 2 animals.csv | sort | uniq
 ...
 ```
 
-Команда `uniq` має опцію `-c`, яка підраховує кількість разів, коли рядок зʼявляється у вхідних даних.  Assuming your current
-directory is `shell-lesson-data/exercise-data/animal-counts`,
-what command would you use to produce a table that shows
-the total count of each type of animal in the file?
+Команда `uniq` має опцію `-c`, яка підраховує кількість разів, коли рядок зʼявляється у вхідних даних.  Припускаючи що ваш поточний каталог має назву `shell-lesson-data/exercise-data/animal-counts`, яку команду слід використати, щоб створити таблицю у файлі з підрахунком загальної кількості тварин кожного типу?
 
 1. `sort animals.csv | uniq -c`
 2. `sort -t, -k2,2 animals.csv | uniq -c`
@@ -557,8 +544,7 @@ the total count of each type of animal in the file?
 
 ## Конвеєр Неллі: перевірка файлів
 
-Nelle has run her samples through the assay machines
-and created 17 files in the `north-pacific-gyre` directory described earlier.
+Неллі обробила свої зразки в аналізаторах і створила 17 файлів в каталозі `north-pacific-gyre`, описаному раніше.
 Для швидкої перевірки, вона переходить у каталог `shell-lesson-data` та набирає:
 
 ```bash
@@ -610,7 +596,7 @@ $ wc -l *.txt | sort -n | tail -n 5
 5040 total
 ```
 
-Those numbers look good --- but what's that 'Z' doing there in the third-to-last line?
+Ці цифри мають сенс --- але що робить ця 'Z' у другому рядку?
 Всі її зразки мають бути позначені 'A' або 'B'; за попередньою домовленістю її лабораторія використовує 'Z' для позначення зразків з недостатньою інформацією.
 Щоб знайти інші подібні зразки, вона робить наступне:
 
@@ -622,11 +608,8 @@ $ ls *Z.txt
 NENE01971Z.txt    NENE02040Z.txt
 ```
 
-Sure enough,
-when she checks the log on her laptop,
-there's no depth recorded for either of those samples.
-Since it's too late to get the information any other way,
-she must exclude those two files from her analysis.
+Справді, коли вона перевіряє файл журналу на своєму ноутбуці, то виявляється, що глибина не була записана для жодного з цих зразків.
+Оскільки отримати цю інформацію іншим способом вже неможливо, їй доведеться виключити ці два файли з аналізу.
 She could delete them using `rm`,
 but there are actually some analyses she might do later where depth doesn't matter,
 so instead, she'll have to be careful later on to select files using the wildcard expressions
@@ -636,11 +619,9 @@ so instead, she'll have to be careful later on to select files using the wildcar
 
 ## Видалення непотрібних файлів
 
-Suppose you want to delete your processed data files, and only keep
-your raw files and processing script to save storage.
+Припустимо, ви хочете видалити файли з обробленими даними й зберегти лише вихідні файли та скрипт обробки для економії місця у сховищі.
 Вихідні файли закінчуються на `.dat`, а оброблені файли закінчуються на `.txt`.
-Which of the following would remove all the processed data files,
-and _only_ the processed data files?
+Яка з наведених нижче команд видалить усі оброблені файли даних і _тільки_ їх?
 
 1. `rm ?.txt`
 2. `rm *.txt`
@@ -655,12 +636,9 @@ and _only_ the processed data files?
 
 2. Це правильна відповідь
 
-3. The shell would expand `*` to match everything in the current directory,
-   so the command would try to remove all matched files and an additional
-   file called `.txt`
+3. Термінал розширить шаблон `*` до переліку усіх файлів у поточному каталозі, таким чином, команда спробує видалити всі знайдені файли та додатковий файл з назвою \`.txt'
 
-4. The shell expands `*.*` to match all filenames containing at least one
-   `.`, including the processed files (`.txt`) _and_ raw files (`.dat`)
+4. Термінал розширює `*.*` до переліку усіх файлів, назви яких містять принаймні одну крапку (`.`), включно з обробленими файлами (`.txt`), _і_ вихідними файлами (`.dat`)
 
 :::::::::::::::::::::::::
 
@@ -676,7 +654,7 @@ and _only_ the processed data files?
 - `command > [file]` перенаправляє вивід команди у файл (перезаписуючи будь-який наявний вміст цього файлу, якщо файл вже існує).
 - `command >> [file]` додає вивід команди до файлу.
 - `[first] | [second]` є конвеєром: вихід першої команди використовується як вхідні дані для другої.
-- The best way to use the shell is to use pipes to combine simple single-purpose programs (filters).
+- Найкращий спосіб використання терміналу - це комбінування простих однозадачних програм (фільтрів) за допомогою каналів.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
