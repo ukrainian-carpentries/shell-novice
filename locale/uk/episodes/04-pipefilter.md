@@ -610,10 +610,7 @@ NENE01971Z.txt    NENE02040Z.txt
 
 Справді, коли вона перевіряє файл журналу на своєму ноутбуці, то виявляється, що глибина не була записана для жодного з цих зразків.
 Оскільки отримати цю інформацію іншим способом вже неможливо, їй доведеться виключити ці два файли з аналізу.
-She could delete them using `rm`,
-but there are actually some analyses she might do later where depth doesn't matter,
-so instead, she'll have to be careful later on to select files using the wildcard expressions
-`NENE*A.txt NENE*B.txt`.
+Вона може видалити їх за допомогою `rm`, але деякі подальші аналізи даних не вимагатимуть інформації про глибину, тому їй буде потрібно обережно обирати файли за допомогою шаблонів `NENE*A.txt NENE*B.txt`.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
