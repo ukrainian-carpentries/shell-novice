@@ -603,20 +603,20 @@ do
 done
 ```
 
-When you run it from the `north-pacific-gyre` directory:
+Якщо ви запускаєте його з каталогу `north-pacific-gyre`:
 
 ```bash
 $ bash do-errors.sh NENE*A.txt NENE*B.txt
 ```
 
-the output is blank.
-To figure out why, re-run the script using the `-x` option:
+програма нічого не виводить.
+Щоб з'ясувати причину, перезапустіть скрипт з опцією `-x`:
 
 ```bash
 $ bash -x do-errors.sh NENE*A.txt NENE*B.txt
 ```
 
-What is the output showing you?
+Що показує вивід?
 Which line is responsible for the error?
 
 :::::::::::::::  solution
@@ -636,7 +636,7 @@ an empty string.
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - Save commands in files (usually called shell scripts) for re-use.
-- `bash [filename]` runs the commands saved in a file.
+- `bash [ім'я файлу]` виконує команди, збережені у відповідному файлі.
 - `$@` refers to all of a shell script's command-line arguments.
 - `$1`, `$2`, etc., refer to the first command-line argument, the second command-line argument, etc.
 - Place variables in quotes if the values might have spaces in them.
