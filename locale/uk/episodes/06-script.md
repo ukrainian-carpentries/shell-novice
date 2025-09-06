@@ -545,12 +545,12 @@ Explain what each of the following three scripts would do when run as
 `bash script1.sh *.pdb`, `bash script2.sh *.pdb`, and `bash script3.sh *.pdb` respectively.
 
 ```bash
-# Script 1
+# Скрипт 1
 echo *.*
 ```
 
 ```bash
-# Script 2
+# Скрипт 2
 for filename in $1 $2 $3
 do
     cat $filename
@@ -558,7 +558,7 @@ done
 ```
 
 ```bash
-# Script 3
+# Скрипт 3
 echo $@.pdb
 ```
 
