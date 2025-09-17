@@ -325,7 +325,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Shell Scripts</h1>
-        <p>Останнє оновлення 2025-08-28 |
+        <p>Останнє оновлення 2025-09-17 |
 
         <a href="https://github.com/ukrainian-carpentries/shell-novice/edit/main/episodes/06-script.md" class="external-link">Редагувати цю сторінку <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -951,13 +951,13 @@ three scripts would do when run as <code>bash script1.sh *.pdb</code>,
 <div class="codewrapper sourceCode" id="cb41">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" tabindex="-1"></a><span class="co"># Script 1</span></span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" tabindex="-1"></a><span class="co"># Скрипт 1</span></span>
 <span id="cb41-2"><a href="#cb41-2" tabindex="-1"></a><span class="bu">echo</span> <span class="pp">*</span>.<span class="pp">*</span></span></code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb42">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" tabindex="-1"></a><span class="co"># Script 2</span></span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" tabindex="-1"></a><span class="co"># Скрипт 2</span></span>
 <span id="cb42-2"><a href="#cb42-2" tabindex="-1"></a><span class="cf">for</span> filename <span class="kw">in</span> <span class="va">$1</span> <span class="va">$2</span> <span class="va">$3</span></span>
 <span id="cb42-3"><a href="#cb42-3" tabindex="-1"></a><span class="cf">do</span></span>
 <span id="cb42-4"><a href="#cb42-4" tabindex="-1"></a>    <span class="fu">cat</span> <span class="va">$filename</span></span>
@@ -966,7 +966,7 @@ three scripts would do when run as <code>bash script1.sh *.pdb</code>,
 <div class="codewrapper sourceCode" id="cb43">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" tabindex="-1"></a><span class="co"># Script 3</span></span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" tabindex="-1"></a><span class="co"># Скрипт 3</span></span>
 <span id="cb43-2"><a href="#cb43-2" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$@</span>.pdb</span></code></pre>
 </div>
 </div>
@@ -1024,22 +1024,21 @@ directory:</p>
 <span id="cb45-5"><a href="#cb45-5" tabindex="-1"></a>    <span class="fu">bash</span> goostats.sh <span class="va">$datafile</span> stats-<span class="va">$datafile</span></span>
 <span id="cb45-6"><a href="#cb45-6" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
 </div>
-<p>When you run it from the <code>north-pacific-gyre</code>
-directory:</p>
+<p>Якщо ви запускаєте його з каталогу
+<code>north-pacific-gyre</code>:</p>
 <div class="codewrapper sourceCode" id="cb46">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb46-1"><a href="#cb46-1" tabindex="-1"></a><span class="ex">$</span> bash do-errors.sh NENE<span class="pp">*</span>A.txt NENE<span class="pp">*</span>B.txt</span></code></pre>
 </div>
-<p>the output is blank. To figure out why, re-run the script using the
-<code>-x</code> option:</p>
+<p>програма нічого не виводить. Щоб з’ясувати причину, перезапустіть
+скрипт з опцією <code>-x</code>:</p>
 <div class="codewrapper sourceCode" id="cb47">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb47-1"><a href="#cb47-1" tabindex="-1"></a><span class="ex">$</span> bash <span class="at">-x</span> do-errors.sh NENE<span class="pp">*</span>A.txt NENE<span class="pp">*</span>B.txt</span></code></pre>
 </div>
-<p>What is the output showing you? Which line is responsible for the
-error?</p>
+<p>Що показує вивід? Which line is responsible for the error?</p>
 </div>
 </div>
 </div>
@@ -1072,7 +1071,8 @@ empty string.</p>
 <ul><li>Save commands in files (usually called shell scripts) for
 re-use.</li>
 <li>
-<code>bash [filename]</code> runs the commands saved in a file.</li>
+<code>bash [ім'я файлу]</code> виконує команди, збережені у
+відповідному файлі.</li>
 <li>
 <code>$@</code> refers to all of a shell script’s command-line
 arguments.</li>
@@ -1144,8 +1144,8 @@ consistent with built-in Unix commands.</li>
   "url": "https://ukrainian-carpentries.github.io/shell-novice/instructor/06-script.html",
   "identifier": "https://ukrainian-carpentries.github.io/shell-novice/instructor/06-script.html",
   "dateCreated": "2014-10-22",
-  "dateModified": "2025-08-28",
-  "datePublished": "2025-09-16"
+  "dateModified": "2025-09-17",
+  "datePublished": "2025-09-17"
 }
 
   </script><script>
