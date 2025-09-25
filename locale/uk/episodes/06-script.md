@@ -1,5 +1,5 @@
 ---
-title: Shell Scripts
+title: Скрипти командної оболонки
 teaching: 30
 exercises: 15
 ---
@@ -7,7 +7,7 @@ exercises: 15
 ::::::::::::::::::::::::::::::::::::::: objectives
 
 - Write a shell script that runs a command or series of commands for a fixed set of files.
-- Run a shell script from the command line.
+- Запустити скрипт командної оболонки з термінала.
 - Write a shell script that operates on a set of files defined by the user on the command line.
 - Create pipelines that include shell scripts you, and others, have written.
 
