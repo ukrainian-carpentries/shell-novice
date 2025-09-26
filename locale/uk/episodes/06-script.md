@@ -19,21 +19,15 @@ exercises: 15
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-We are finally ready to see what makes the shell such a powerful programming environment.
-We are going to take the commands we repeat frequently and save them in files
-so that we can re-run all those operations again later by typing a single command.
+Нарешті ми готові дізнатися, чому оболонка є таким потужним середовищем програмування.
+Ми збираємося зібрати та зберегти у файлах часто використовувані команди, щоб пізніше можна було виконати всі ці дії одночасно, набравши лише одну команду.
 For historical reasons,
 a bunch of commands saved in a file is usually called a **shell script**,
 but make no mistake --- these are actually small programs.
 
-Not only will writing shell scripts make your work faster, but also you won't have to retype
-the same commands over and over again. It will also make it more accurate (fewer chances for
-typos) and more reproducible. If you come back to your work later (or if someone else finds
-your work and wants to build on it), you will be able to reproduce the same results simply
-by running your script, rather than having to remember or retype a long list of commands.
+Написання командних скриптів не тільки прискорить вашу роботу, а й дозволить уникнути постійного повторного введення тих самих команд. Крім того, це підвищить якість вашої роботи (зменшить ризик друкарських помилок) і полегшить її відтворення. Якщо ви повернетеся до своєї роботи пізніше (або якщо хтось знайде вашу роботу і захоче її використати), відтворити ті ж результати можна буде просто запустивши скрипт, без потреби пригадувати та повторно вводити довгий перелік команд.
 
-Let's start by going back to `alkanes/` and creating a new file, `middle.sh` which will
-become our shell script:
+Спершу повернемося до каталогу `alkanes/` і створимо новий файл `middle.sh`, який стане нашим скриптом терміналу:
 
 ```bash
 $ cd alkanes
@@ -42,21 +36,19 @@ $ nano middle.sh
 
 Команда `nano middle.sh` відкриває файл `middle.sh` у текстовому редакторі 'nano' (який запускається у терміналі).
 Якщо файл не існує, його буде створено.
-We can use the text editor to directly edit the file by inserting the following line:
+Ми можемо скористатися текстовим редактором для безпосереднього редагування файлу, додавши до нього наступний рядок:
 
 ```source
 head -n 15 octane.pdb | tail -n 5
 ```
 
-Це варіант каналу, який ми побудували раніше: він вибирає рядки 11-15 файлу `octane.pdb`. Remember, we are _not_ running it as a command just yet;
-we are only incorporating the commands in a file.
+Це варіант каналу, який ми побудували раніше: він вибирає рядки 11-15 файлу `octane.pdb`. Пам'ятайте, ми поки _не запускаємо_ його як команду: ми лише записуємо команди у файл.
 
-Then we save the file (`Ctrl-O` in nano) and exit the text editor (`Ctrl-X` in nano).
+Потім ми зберігаємо файл (`Ctrl-O` у nano) і виходимо з текстового редактора (`Ctrl-X` у nano).
 Переконайтеся, що в каталозі `alkanes` тепер міститься файл з назвою `middle.sh`.
 
-Once we have saved the file,
-we can ask the shell to execute the commands it contains.
-Our shell is called `bash`, so we run the following command:
+Після того, як ми зберегли файл, ми можемо дати оболонці команду виконати його вміст.
+Оскільки термінал називається `bash`, ми виконаємо наступну команду:
 
 ```bash
 $ bash middle.sh
@@ -70,8 +62,7 @@ ATOM     12  H           1      -3.009  -0.741  -1.467  1.00  0.00
 ATOM     13  H           1      -3.172  -1.337   0.206  1.00  0.00
 ```
 
-Sure enough,
-our script's output is exactly what we would get if we ran that pipeline directly.
+Дійсно, результат роботи скрипту збігається з тим, що ми отримали б, запустивши конвеєр напряму у терміналі.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
