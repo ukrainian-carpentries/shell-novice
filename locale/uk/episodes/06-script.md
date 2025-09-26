@@ -6,9 +6,9 @@ exercises: 15
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Write a shell script that runs a command or series of commands for a fixed set of files.
+- Написати скрипт командної оболонки, який виконує одну або декілька команд для заздалегідь визначеного набору файлів.
 - Запустити скрипт командної оболонки з термінала.
-- Write a shell script that operates on a set of files defined by the user on the command line.
+- Написати скрипт командної оболонки, який обробляє файли, вказані користувачем у командному рядку.
 - Create pipelines that include shell scripts you, and others, have written.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
