@@ -295,7 +295,7 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="06-script.html">6. Shell Scripts</a>
+        <a href="06-script.html">6. Скрипти командної оболонки</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -1004,7 +1004,7 @@ Try 'ls --help' for more information.</code></pre>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Розв’язок </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Опція <code>-l</code> змушує <code>ls</code> використовувати довгий
 (англ. <strong>l</strong>ong) формат виводу, показуючи не лише назви
@@ -1042,7 +1042,7 @@ readable”), тобто покаже щось на кшталт <code>5.3K</cod
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Розв’язання </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>При використанні <code>-rt</code> останній змінений файл є останнім у
 списку. Це може бути дуже корисним для пошуку ваших останніх редагувань
@@ -1396,7 +1396,7 @@ directory’), що трохи вводить в оману. Команда не
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Розв’язання </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><p>Ні: скорочення <code>.</code> означає поточний каталог.</p></li>
@@ -1445,7 +1445,7 @@ directory’), що трохи вводить в оману. Команда не
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Розв’язання </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><p>Ні: у каталозі<code>/Users</code> існує підкаталог
@@ -1492,7 +1492,7 @@ directory’), що трохи вводить в оману. Команда не
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Відповідь </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><p>Ні: <code>pwd</code> не є назвою каталогу.</p></li>
@@ -4930,9 +4930,9 @@ and repeat them.</li>
 </div>
 </div>
 </div>
-</section></section><section id="aio-06-script"><p>Content from <a href="06-script.html">Shell Scripts</a></p>
+</section></section><section id="aio-06-script"><p>Content from <a href="06-script.html">Скрипти командної оболонки</a></p>
 <hr>
-<p>Останнє оновлення 2025-09-17 |
+<p>Останнє оновлення 2025-09-26 |
 
         <a href="https://github.com/ukrainian-carpentries/shell-novice/edit/main/episodes/06-script.md" class="external-link">Редагувати цю сторінку <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -4958,7 +4958,7 @@ and repeat them.</li>
 <ul>
 <li>Write a shell script that runs a command or series of commands for a
 fixed set of files.</li>
-<li>Run a shell script from the command line.</li>
+<li>Запустити скрипт командної оболонки з термінала.</li>
 <li>Write a shell script that operates on a set of files defined by the
 user on the command line.</li>
 <li>Create pipelines that include shell scripts you, and others, have
@@ -4991,19 +4991,19 @@ file, <code>middle.sh</code> which will become our shell script:</p>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span> cd alkanes</span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="ex">$</span> nano middle.sh</span></code></pre>
 </div>
-<p>The command <code>nano middle.sh</code> opens the file
-<code>middle.sh</code> within the text editor ‘nano’ (which runs within
-the shell). If the file does not exist, it will be created. We can use
-the text editor to directly edit the file by inserting the following
+<p>Команда <code>nano middle.sh</code> відкриває файл
+<code>middle.sh</code> у текстовому редакторі ‘nano’ (який запускається
+у терміналі). Якщо файл не існує, його буде створено. We can use the
+text editor to directly edit the file by inserting the following
 line:</p>
 <pre class="source"><code>head -n 15 octane.pdb | tail -n 5</code></pre>
-<p>This is a variation on the pipe we constructed earlier, which selects
-lines 11-15 of the file <code>octane.pdb</code>. Remember, we are
-<em>not</em> running it as a command just yet; we are only incorporating
-the commands in a file.</p>
+<p>Це варіант каналу, який ми побудували раніше: він вибирає рядки 11-15
+файлу <code>octane.pdb</code>. Remember, we are <em>not</em> running it
+as a command just yet; we are only incorporating the commands in a
+file.</p>
 <p>Then we save the file (<code>Ctrl-O</code> in nano) and exit the text
-editor (<code>Ctrl-X</code> in nano). Check that the directory
-<code>alkanes</code> now contains a file called
+editor (<code>Ctrl-X</code> in nano). Переконайтеся, що в каталозі
+<code>alkanes</code> тепер міститься файл з назвою
 <code>middle.sh</code>.</p>
 <p>Once we have saved the file, we can ask the shell to execute the
 commands it contains. Our shell is called <code>bash</code>, so we run
@@ -6577,8 +6577,8 @@ command.</li>
   "url": "https://ukrainian-carpentries.github.io/shell-novice/aio.html",
   "identifier": "https://ukrainian-carpentries.github.io/shell-novice/aio.html",
   "dateCreated": "2014-10-22",
-  "dateModified": "2025-09-23",
-  "datePublished": "2025-09-23"
+  "dateModified": "2025-09-26",
+  "datePublished": "2025-09-26"
 }
 
   </script><script>
