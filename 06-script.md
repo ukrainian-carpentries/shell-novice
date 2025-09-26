@@ -1,5 +1,5 @@
 ---
-title: Shell Scripts
+title: Скрипти командної оболонки
 teaching: 30
 exercises: 15
 ---
@@ -7,7 +7,7 @@ exercises: 15
 ::::::::::::::::::::::::::::::::::::::: objectives
 
 - Write a shell script that runs a command or series of commands for a fixed set of files.
-- Run a shell script from the command line.
+- Запустити скрипт командної оболонки з термінала.
 - Write a shell script that operates on a set of files defined by the user on the command line.
 - Create pipelines that include shell scripts you, and others, have written.
 
@@ -40,21 +40,19 @@ $ cd alkanes
 $ nano middle.sh
 ```
 
-The command `nano middle.sh` opens the file `middle.sh` within the text editor 'nano'
-(which runs within the shell).
-If the file does not exist, it will be created.
+Команда `nano middle.sh` відкриває файл `middle.sh` у текстовому редакторі 'nano' (який запускається у терміналі).
+Якщо файл не існує, його буде створено.
 We can use the text editor to directly edit the file by inserting the following line:
 
 ```source
 head -n 15 octane.pdb | tail -n 5
 ```
 
-This is a variation on the pipe we constructed earlier, which selects lines 11-15 of
-the file `octane.pdb`. Remember, we are _not_ running it as a command just yet;
+Це варіант каналу, який ми побудували раніше: він вибирає рядки 11-15 файлу `octane.pdb`. Remember, we are _not_ running it as a command just yet;
 we are only incorporating the commands in a file.
 
 Then we save the file (`Ctrl-O` in nano) and exit the text editor (`Ctrl-X` in nano).
-Check that the directory `alkanes` now contains a file called `middle.sh`.
+Переконайтеся, що в каталозі `alkanes` тепер міститься файл з назвою `middle.sh`.
 
 Once we have saved the file,
 we can ask the shell to execute the commands it contains.
