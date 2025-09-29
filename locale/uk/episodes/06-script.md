@@ -98,7 +98,7 @@ head -n 15 "$1" | tail -n 5
 
 Inside a shell script,
 `$1` means 'the first filename (or other argument) on the command line'.
-We can now run our script like this:
+Тепер ми можемо запустити наш скрипт наступним чином для того ж самого файлу:
 
 ```bash
 $ bash middle.sh octane.pdb
