@@ -9,7 +9,7 @@ exercises: 15
 - Написати скрипт командної оболонки, який виконує одну або декілька команд для заздалегідь визначеного набору файлів.
 - Запустити скрипт командної оболонки з термінала.
 - Написати скрипт командної оболонки, який обробляє файли, вказані користувачем у командному рядку.
-- Create pipelines that include shell scripts you, and others, have written.
+- Створити конвеєри, що використовують скрипти оболонки, створені вами та іншими користувачами.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -66,7 +66,7 @@ ATOM     13  H           1      -3.172  -1.337   0.206  1.00  0.00
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Text vs. Whatever
+## Текст або будь-що інше?
 
 We usually call programs like Microsoft Word or LibreOffice Writer "text
 editors", but we need to be a bit more careful when it comes to
@@ -90,7 +90,7 @@ Instead, let's edit `middle.sh` and make it more versatile:
 $ nano middle.sh
 ```
 
-Now, within "nano", replace the text `octane.pdb` with the special variable called `$1`:
+Тепер у "nano" замініть текст `octane.pdb` на спеціальну змінну з назвою `$1`:
 
 ```source
 head -n 15 "$1" | tail -n 5
