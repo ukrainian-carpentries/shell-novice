@@ -21,9 +21,7 @@ exercises: 15
 
 Нарешті ми готові дізнатися, чому оболонка є таким потужним середовищем програмування.
 Ми збираємося зібрати та зберегти у файлах часто використовувані команди, щоб пізніше можна було виконати всі ці дії одночасно, набравши лише одну команду.
-For historical reasons,
-a bunch of commands saved in a file is usually called a **shell script**,
-but make no mistake --- these are actually small programs.
+З історичних причин скопійовані в файл команди зазвичай називають командним скриптом, скриптом командної оболонки, або скриптом терміналу, але не помиляйтеся: це насправді невеликі програми.
 
 Написання командних скриптів не тільки прискорить вашу роботу, а й дозволить уникнути постійного повторного введення тих самих команд. Крім того, це підвищить якість вашої роботи (зменшить ризик друкарських помилок) і полегшить її відтворення. Якщо ви повернетеся до своєї роботи пізніше (або якщо хтось знайде вашу роботу і захоче її використати), відтворити ті ж результати можна буде просто запустивши скрипт, без потреби пригадувати та повторно вводити довгий перелік команд.
 
@@ -68,23 +66,16 @@ ATOM     13  H           1      -3.172  -1.337   0.206  1.00  0.00
 
 ## Текст або будь-що інше?
 
-We usually call programs like Microsoft Word or LibreOffice Writer "text
-editors", but we need to be a bit more careful when it comes to
-programming. By default, Microsoft Word uses `.docx` files to store not
-only text, but also formatting information about fonts, headings, and so
-on. This extra information isn't stored as characters and doesn't mean
+Зазвичай ми називаємо "текстовими редакторами" програми на кшталт Microsoft Word або LibreOffice Writer, але коли мова йде про програмування, потрібно бути трохи обережнішими. За замовчуванням, Microsoft Word зберігає у файлах `.docx` не лише текст, але й інформацію про форматування: шрифти, заголовки тощо. This extra information isn't stored as characters and doesn't mean
 anything to tools like `head`, which expects input files to contain
 nothing but the letters, digits, and punctuation on a standard computer
-keyboard. When editing programs, therefore, you must either use a plain
-text editor or be careful to save files as plain text.
+keyboard. Отже, редагуючи програми, вам слід користуватися текстовим редактором, який працює зі звичайним текстом, або подбати про те, щоб файли зберігалися у форматі звичайного тексту.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-What if we want to select lines from an arbitrary file?
-We could edit `middle.sh` each time to change the filename,
-but that would probably take longer than typing the command out again
-in the shell and executing it with a new file name.
-Instead, let's edit `middle.sh` and make it more versatile:
+Що робити, якщо потрібно вибрати рядки з будь-якого файлу?
+Ми могли б щоразу редагувати `middle.sh` для зміни імені файлу, але це, ймовірно, зайняло б більше часу, ніж повторне введення й виконання команди у терміналі з новим ім’ям.
+Натомість відредагуймо `middle.sh` і зробимо його більш універсальним:
 
 ```bash
 $ nano middle.sh
@@ -96,8 +87,7 @@ $ nano middle.sh
 head -n 15 "$1" | tail -n 5
 ```
 
-Inside a shell script,
-`$1` means 'the first filename (or other argument) on the command line'.
+У командному скрипті змінна `$1` позначає перший аргумент командного рядка -- перше ім'я файлу (або інший аргумент).
 Тепер ми можемо запустити наш скрипт наступним чином для того ж самого файлу:
 
 ```bash
@@ -112,7 +102,7 @@ ATOM     12  H           1      -3.009  -0.741  -1.467  1.00  0.00
 ATOM     13  H           1      -3.172  -1.337   0.206  1.00  0.00
 ```
 
-or on a different file like this:
+або ж запустити з іншим файлом ось так, вказавши його імʼя подібним чином:
 
 ```bash
 $ bash middle.sh pentane.pdb
