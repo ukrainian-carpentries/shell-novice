@@ -1,5 +1,5 @@
 ---
-title: Finding Things
+title: Пошук з командного рядка
 teaching: 25
 exercises: 20
 ---
