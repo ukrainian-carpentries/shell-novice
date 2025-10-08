@@ -17,12 +17,11 @@ exercises: 10
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- How can I perform the same actions on many different files?
+- Як виконати одні й ті ж дії над різними файлами?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-**Loops** are a programming construct which allow us to repeat a command or set of commands
-for each item in a list.
+**Цикли** - це конструкції програмування, які дозволяють повторити команду або набір команд для кожного елемента у списку.
 As such they are key to productivity improvements through automation.
 Similar to wildcards and tab completion, using loops also reduces the
 amount of typing required (and hence reduces the number of typing mistakes).
@@ -348,11 +347,11 @@ done
 ```
 
 1. Prints `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb`, `pentane.pdb` and
-  `propane.pdb`, and the text from `propane.pdb` will be saved to a file called `alkanes.pdb`.
+   `propane.pdb`, and the text from `propane.pdb` will be saved to a file called `alkanes.pdb`.
 2. Prints `cubane.pdb`, `ethane.pdb`, and `methane.pdb`, and the text from all three files
-  would be concatenated and saved to a file called `alkanes.pdb`.
+   would be concatenated and saved to a file called `alkanes.pdb`.
 3. Prints `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb`, and `pentane.pdb`,
-  and the text from `propane.pdb` will be saved to a file called `alkanes.pdb`.
+   and the text from `propane.pdb` will be saved to a file called `alkanes.pdb`.
 4. None of the above.
 
 :::::::::::::::  solution
@@ -360,9 +359,9 @@ done
 ## Відповідь
 
 1. The text from each file in turn gets written to the `alkanes.pdb` file.
-  However, the file gets overwritten on each loop iteration, so the final content of
-  `alkanes.pdb`
-  is the text from the `propane.pdb` file.
+   However, the file gets overwritten on each loop iteration, so the final content of
+   `alkanes.pdb`
+   is the text from the `propane.pdb` file.
 
 :::::::::::::::::::::::::
 
