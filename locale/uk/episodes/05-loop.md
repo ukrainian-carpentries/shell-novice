@@ -22,12 +22,11 @@ exercises: 10
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 **Цикли** - це конструкції програмування, які дозволяють повторити команду або набір команд для кожного елемента у списку.
-As such they are key to productivity improvements through automation.
+Таким чином, автоматизація виконання повторюваних дій суттєво підвищує ефективність.
 Similar to wildcards and tab completion, using loops also reduces the
 amount of typing required (and hence reduces the number of typing mistakes).
 
-Suppose we have several hundred genome data files named `basilisk.dat`, `minotaur.dat`, and
-`unicorn.dat`.
+Припустимо, у нас є кілька сотень файлів даних, які містять інформацію про геноми та мають імена на кшталт `basilisk.dat`, `minotaur.dat` та `unicorn.dat`.
 For this example, we'll use the `exercise-data/creatures` directory which only has three
 example files,
 but the principles can be applied to many many more files at once.
