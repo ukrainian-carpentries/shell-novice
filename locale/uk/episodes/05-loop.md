@@ -80,8 +80,7 @@ CLASSIFICATION: equus monoceros
 
 The shell prompt changes from `$` to `>` and back again as we were
 typing in our loop. The second prompt, `>`, is different to remind
-us that we haven't finished typing a complete command yet. A semicolon, `;`,
-can be used to separate two commands written on a single line.
+us that we haven't finished typing a complete command yet. Крапка з комою `;` використовується для розділення двох команд, написаних в одному рядку.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
