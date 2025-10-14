@@ -146,7 +146,7 @@ $ for x in basilisk.dat minotaur.dat unicorn.dat
 > done
 ```
 
-or:
+або:
 
 ```bash
 $ for temperature in basilisk.dat minotaur.dat unicorn.dat
@@ -155,7 +155,7 @@ $ for temperature in basilisk.dat minotaur.dat unicorn.dat
 > done
 ```
 
-it would work exactly the same way.
+це спрацювало б точно так само.
 _Don't do this._
 Programs are only useful if people can understand them,
 so meaningless names (like `x`) or misleading names (like `temperature`)
@@ -170,9 +170,9 @@ or a subset of data.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Write your own loop
+## Напишіть свій власний цикл
 
-How would you write a loop that echoes all 10 numbers from 0 to 9?
+Як би ви написали цикл, який друкує всі 10 чисел від 0 до 9?
 
 :::::::::::::::  solution
 
@@ -204,16 +204,16 @@ $ for loop_variable in 0 1 2 3 4 5 6 7 8 9
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Variables in Loops
+## Змінні в циклах
 
-This exercise refers to the `shell-lesson-data/exercise-data/alkanes` directory.
+Ця вправа стосується каталогу `shell-lesson-data/exercise-data/alkanes`.
 `ls *.pdb` gives the following output:
 
 ```output
 cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
 ```
 
-What is the output of the following code?
+Що виведе наступний код?
 
 ```bash
 $ for datafile in *.pdb
