@@ -95,16 +95,16 @@ The `$` tells the shell interpreter to treat
 the variable as a variable name and substitute its value in its place,
 rather than treat it as text or an external command.
 
-In this example, the list is three filenames: `basilisk.dat`, `minotaur.dat`, and `unicorn.dat`.
-Кожного разу, коли цикл повторюється, ми спочатку використовуємо `echo` для друку значення, яке зараз містить змінна `$filename`. This is not necessary for the result, but beneficial for us here to
+У цьому прикладі список складається з трьох файлів: `basilisk.dat`, `minotaur.dat` та `unicorn.dat`.
+Each time the loop iterates, we first use `echo` to print the value that the variable
+`$filename` currently holds. This is not necessary for the result, but beneficial for us here to
 have an easier time to follow along.
 Далі ми виконаємо команду `head` для файлу, на який зараз посилається `$filename`.
 The first time through the loop, `$filename` is `basilisk.dat`.
 The interpreter runs the command `head` on `basilisk.dat`
 and pipes the first two lines to the `tail` command,
 which then prints the second line of `basilisk.dat`.
-For the second iteration, `$filename` becomes
-`minotaur.dat`. This time, the shell runs `head` on `minotaur.dat`
+Для другої ітерації `$filename` стає `minotaur.dat`. This time, the shell runs `head` on `minotaur.dat`
 and pipes the first two lines to the `tail` command,
 which then prints the second line of `minotaur.dat`.
 For the third iteration, `$filename` becomes
@@ -114,7 +114,7 @@ Since the list was only three items, the shell exits the `for` loop.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Same Symbols, Different Meanings
+## Однакові символи, різні значення
 
 Here we see `>` being used as a shell prompt, whereas `>` is also
 used to redirect output.
@@ -132,7 +132,7 @@ the shell should redirect output or get the value of a variable.
 When using variables it is also
 possible to put the names into curly braces to clearly delimit the variable
 name: `$filename` is equivalent to `${filename}`, but is different from
-`${file}name`. You may find this notation in other people's programs.
+`${file}name`. Ви можете побачити таку форму запису в інших програмах.
 
 We have called the variable in this loop `filename`
 in order to make its purpose clearer to human readers.
