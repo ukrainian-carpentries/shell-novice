@@ -45,17 +45,17 @@ We'll use a loop to solve this problem, but first let's look at the general form
 using the pseudo-code below:
 
 ```bash
-# The word "for" indicates the start of a "For-loop" command
+# Слово "for" вказує на початок команди для виконання циклу "For"
 for thing in list_of_things 
-#The word "do" indicates the start of job execution list
+# Слово "do" вказує на початок списку завдань для виконання
 do 
-    # Indentation within the loop is not required, but aids legibility
+    # Відступи всередині циклу не є обов'язковими, але сприяють розбірливості
     operation_using/command $thing 
-# The word "done" indicates the end of a loop
+# Слово "done" вказує на кінець циклу
 done  
 ```
 
-and we can apply this to our example like this:
+У такому разі, ми можемо застосувати це до нашого прикладу наступним чином:
 
 ```bash
 $ for filename in basilisk.dat minotaur.dat unicorn.dat
