@@ -33,16 +33,15 @@ but the principles can be applied to many many more files at once.
 
 The structure of these files is the same: the common name, classification, and updated date are
 presented on the first three lines, with DNA sequences on the following lines.
-Let's look at the files:
+Погляньмо, що містять ці файли:
 
 ```bash
 $ head -n 5 basilisk.dat minotaur.dat unicorn.dat
 ```
 
 Для кожного виду ми хотіли б надрукувати його класифікацію, яка наведена у другому рядку відповідного файлу.
-For each file, we would need to execute the command `head -n 2` and pipe this to `tail -n 1`.
-We'll use a loop to solve this problem, but first let's look at the general form of a loop,
-using the pseudo-code below:
+Для кожного файлу нам потрібно виконати команду `head -n 2` і передати її результат через канал до команди `tail -n 1`.
+Скористаймося циклом, щоб уникнути цю проблему, але спочатку розгляньмо загальну форму циклу, використовуючи наведений нижче псевдокод:
 
 ```bash
 # Слово "for" вказує на початок команди для виконання циклу "For"
@@ -76,7 +75,7 @@ CLASSIFICATION: equus monoceros
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Follow the Prompt
+## Слідкуйте за підказками командного рядка
 
 The shell prompt changes from `$` to `>` and back again as we were
 typing in our loop. The second prompt, `>`, is different to remind
@@ -84,60 +83,40 @@ us that we haven't finished typing a complete command yet. Крапка з ко�
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-When the shell sees the keyword `for`,
-it knows to repeat a command (or group of commands) once for each item in a list.
+Коли термінал бачить ключове слово `for`, він розуміє, що потрібно повторити команду (або групу команд) для кожного елемента зі списку.
 Each time the loop runs (called an iteration), an item in the list is assigned in sequence to
 the **variable**, and the commands inside the loop are executed, before moving on to
 the next item in the list.
-Inside the loop,
-we call for the variable's value by putting `$` in front of it.
-The `$` tells the shell interpreter to treat
-the variable as a variable name and substitute its value in its place,
-rather than treat it as text or an external command.
+Усередині циклу ми звертаємося до значення змінної, додаючи `$` перед її іменем.
+Символ `$` повідомляє інтерпретатор командного рядка, що далі йде назва змінної, тож слід підставити її значення, а не сприймати запис як текст чи назву команди.
 
 У цьому прикладі список складається з трьох файлів: `basilisk.dat`, `minotaur.dat` та `unicorn.dat`.
 Each time the loop iterates, we first use `echo` to print the value that the variable
-`$filename` currently holds. This is not necessary for the result, but beneficial for us here to
-have an easier time to follow along.
+`$filename` currently holds. Це не обов'язково робити, але допомагає нам слідкувати за виконанням програми.
 Далі ми виконаємо команду `head` для файлу, на який зараз посилається `$filename`.
-The first time through the loop, `$filename` is `basilisk.dat`.
-The interpreter runs the command `head` on `basilisk.dat`
-and pipes the first two lines to the `tail` command,
-which then prints the second line of `basilisk.dat`.
-Для другої ітерації `$filename` стає `minotaur.dat`. This time, the shell runs `head` on `minotaur.dat`
-and pipes the first two lines to the `tail` command,
-which then prints the second line of `minotaur.dat`.
-For the third iteration, `$filename` becomes
-`unicorn.dat`, so the shell runs the `head` command on that file,
-and `tail` on the output of that.
-Since the list was only three items, the shell exits the `for` loop.
+При першому проходженні циклу `$filename` має значення `basilisk.dat`.
+Інтерпретатор виконує команду `head` над `basilisk.dat` і передає перші два рядки команді `tail`, яка виводить другий рядок цього файлу.
+Для другої ітерації `$filename` стає `minotaur.dat`. Цього разу термінал виконує команду `head` над `minotaur.dat` і передає перші два рядки команді `tail`, яка виводить другий рядок `minotaur.dat`.
+На третій ітерації `$filename` стає `unicorn.dat`, тому термінал виконує команду `head` для цього файлу, і `tail` обробляє результат.
+Оскільки список містив лише три елементи, оболонка закінчує цикл `for`.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
 ## Однакові символи, різні значення
 
-Here we see `>` being used as a shell prompt, whereas `>` is also
-used to redirect output.
-Similarly, `$` is used as a shell prompt, but, as we saw earlier,
-it is also used to ask the shell to get the value of a variable.
+Тут ми бачимо, що символ `>` використовується як запрошення командного рядка, але `>` також застосовується для перенаправлення виводу.
+Аналогічно, символ `$` діє як запрошення оболонки, але, як ми бачили раніше, його функція теж може полягати в отриманні значення змінної.
 
-If the _shell_ prints `>` or `$` then it expects you to type something,
-and the symbol is a prompt.
+Якщо _термінал_ друкує `>` або `$`, то він очікує від вас введення команди й цей символ є підказкою.
 
-If _you_ type `>` or `$` yourself, it is an instruction from you that
-the shell should redirect output or get the value of a variable.
+Якщо _ви_ вводите ` >` або `$` самостійно, це означає, що ви даєте команду оболонці перенаправити вивід або отримати значення змінної.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-When using variables it is also
-possible to put the names into curly braces to clearly delimit the variable
-name: `$filename` is equivalent to `${filename}`, but is different from
-`${file}name`. Ви можете побачити таку форму запису в інших програмах.
+При використанні змінних також можна брати їхні імена у фігурні дужки, щоб чітко відокремити імена змінних: `$filename` еквівалентно `${filename}`, але відрізняється від `${file}name`. Ви можете побачити таку форму запису в інших програмах.
 
-We have called the variable in this loop `filename`
-in order to make its purpose clearer to human readers.
-The shell itself doesn't care what the variable is called;
-if we wrote this loop as:
+Ми назвали змінну у цьому циклі `filename` (ім'я файлу), щоб її призначення було зрозуміліше для читачів.
+Самій оболонці байдуже, як називається змінна; якби ми написали цей цикл так:
 
 ```bash
 $ for x in basilisk.dat minotaur.dat unicorn.dat
@@ -156,17 +135,11 @@ $ for temperature in basilisk.dat minotaur.dat unicorn.dat
 ```
 
 це спрацювало б точно так само.
-_Don't do this._
-Programs are only useful if people can understand them,
-so meaningless names (like `x`) or misleading names (like `temperature`)
-increase the odds that the program won't do what its readers think it does.
+_Але не робіть цього._ Програми корисні лише тоді, коли люди можуть їх розуміти, тому беззмістовні (наприклад, `x`) або оманливі (наприклад, `temperature`) назви підвищують ймовірність того, що програма поводитиметься не так, як очікують читачі.
 
-In the above examples, the variables (`thing`, `filename`, `x` and `temperature`)
-could have been given any other name, as long as it is meaningful to both the person
-writing the code and the person reading it.
+У наведених вище прикладах змінним (`thing`, `filename`, `x` та `temperature`) можна було б призначити будь-які інші імена, аби вони були зрозумілими як автору коду, так і його читачу.
 
-Note also that loops can be used for other things than filenames, like a list of numbers
-or a subset of data.
+Також майте на увазі, що цикли можна використовувати не лише для імен файлів, а й для списків чисел або підмножини даних.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
@@ -207,7 +180,7 @@ $ for loop_variable in 0 1 2 3 4 5 6 7 8 9
 ## Змінні в циклах
 
 Ця вправа стосується каталогу `shell-lesson-data/exercise-data/alkanes`.
-`ls *.pdb` gives the following output:
+Команда `ls *.pdb` дає такий результат:
 
 ```output
 cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
@@ -222,7 +195,7 @@ $ for datafile in *.pdb
 > done
 ```
 
-Now, what is the output of the following code?
+А цей?
 
 ```bash
 $ for datafile in *.pdb
