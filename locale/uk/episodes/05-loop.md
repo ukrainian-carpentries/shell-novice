@@ -23,16 +23,14 @@ exercises: 10
 
 **Цикли** - це конструкції програмування, які дозволяють повторити команду або набір команд для кожного елемента у списку.
 Таким чином, автоматизація виконання повторюваних дій суттєво підвищує ефективність.
-Similar to wildcards and tab completion, using loops also reduces the
-amount of typing required (and hence reduces the number of typing mistakes).
+Подібно до шаблонів і автодоповнення, цикли допомагають зменшити кількість вручну набраного тексту (а отже, зменшують кількість помилок).
 
 Припустимо, у нас є кілька сотень файлів даних, які містять інформацію про геноми та мають імена на кшталт `basilisk.dat`, `minotaur.dat` та `unicorn.dat`.
 For this example, we'll use the `exercise-data/creatures` directory which only has three
 example files,
 but the principles can be applied to many many more files at once.
 
-The structure of these files is the same: the common name, classification, and updated date are
-presented on the first three lines, with DNA sequences on the following lines.
+Ці файли мають однакову структуру: перші три рядки містять назву виду, його класифікацію та дату оновлення, а у наступних рядках наведені послідовності ДНК.
 Погляньмо, що містять ці файли:
 
 ```bash
@@ -77,16 +75,13 @@ CLASSIFICATION: equus monoceros
 
 ## Слідкуйте за підказками командного рядка
 
-The shell prompt changes from `$` to `>` and back again as we were
-typing in our loop. The second prompt, `>`, is different to remind
+Під час введення нашого циклу запрошення термінала змінювалося з `$` на `>` та назад. The second prompt, `>`, is different to remind
 us that we haven't finished typing a complete command yet. Крапка з комою `;` використовується для розділення двох команд, написаних в одному рядку.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 Коли термінал бачить ключове слово `for`, він розуміє, що потрібно повторити команду (або групу команд) для кожного елемента зі списку.
-Each time the loop runs (called an iteration), an item in the list is assigned in sequence to
-the **variable**, and the commands inside the loop are executed, before moving on to
-the next item in the list.
+Кожного разу, коли цикл виконується (цей процес називається **ітерацією**), елемент списку послідовно присвоюється **змінній** та виконуються команди всередині циклу, після чого цикл переходить до наступного елементу списку.
 Усередині циклу ми звертаємося до значення змінної, додаючи `$` перед її іменем.
 Символ `$` повідомляє інтерпретатор командного рядка, що далі йде назва змінної, тож слід підставити її значення, а не сприймати запис як текст чи назву команди.
 
@@ -249,7 +244,7 @@ propane.pdb
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Limiting Sets of Files
+## Обмеження наборів файлів
 
 Що буде виведено у результаті виконання наступного циклу в каталозі `shell-lesson-data/exercise-data/alkanes`?
 
@@ -269,8 +264,7 @@ $ for filename in c*
 
 ## Відповідь
 
-4 - правильна відповідь. `*` matches zero or more characters, so any file name starting with
-the letter c, followed by zero or more other characters will be matched.
+4 - правильна відповідь. Символ `*` відповідає нулю або більшій кількості символів, тому будь-яке ім'я файлу, що починається з літери 'c', за якою йдуть нуль або більша кількість символів, буде відповідати шаблону `c*`.
 
 :::::::::::::::::::::::::
 
@@ -283,18 +277,17 @@ $ for filename in *c*
 > done
 ```
 
-1. The same files would be listed.
-2. All the files are listed this time.
-3. No files are listed this time.
-4. The files `cubane.pdb` and `octane.pdb` will be listed.
+1. Будуть перелічені ті ж самі файли.
+2. Цього разу будуть перелічені всі файли.
+3. Цього разу не буде виведено жодного файлу.
+4. Будуть перелічені файли `cubane.pdb` та `octane.pdb`.
 5. Only the file `octane.pdb` will be listed.
 
 :::::::::::::::  solution
 
 ## Відповідь
 
-4 - правильна відповідь. `*` matches zero or more characters, so a file name with zero or more
-characters before a letter c and zero or more characters after the letter c will be matched.
+4 - правильна відповідь. Символ `* ` відповідає нулю або більшій кількості символів, тому всі імена файлів з нулем або більшою кількістю символів перед літерою 'c' або після літери 'c' будуть відповідати шаблону `*c*`.
 
 :::::::::::::::::::::::::
 
@@ -304,7 +297,7 @@ characters before a letter c and zero or more characters after the letter c will
 
 ## Saving to a File in a Loop - Part One
 
-In the `shell-lesson-data/exercise-data/alkanes` directory, what is the effect of this loop?
+В каталозі `shell-lesson-data/exercise-data/alkanes `, яким буде результат роботи цього циклу?
 
 ```bash
 for alkanes in *.pdb
@@ -314,22 +307,17 @@ do
 done
 ```
 
-1. Prints `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb`, `pentane.pdb` and
-   `propane.pdb`, and the text from `propane.pdb` will be saved to a file called `alkanes.pdb`.
-2. Prints `cubane.pdb`, `ethane.pdb`, and `methane.pdb`, and the text from all three files
-   would be concatenated and saved to a file called `alkanes.pdb`.
-3. Prints `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb`, and `pentane.pdb`,
-   and the text from `propane.pdb` will be saved to a file called `alkanes.pdb`.
+1. Буде виведено `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb`, `pentane.pdb` та `propane.pdb`, а текст з файлу `propane.pdb` буде збережено у файлі з назвою `alkanes.pdb`.
+2. Буде виведено `cubane.pdb`, `ethane.pdb` та `methane.pdb`, а текст з усіх трьох файлів буде об'єднано і збережено у файлі з назвою `alkanes.pdb`.
+3. Буде виведено `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb` та `pentane.pdb`, а текст з файлу `propane.pdb` буде збережено у файлі з назвою `alkanes.pdb`.
 4. None of the above.
 
 :::::::::::::::  solution
 
 ## Відповідь
 
-1. The text from each file in turn gets written to the `alkanes.pdb` file.
-   However, the file gets overwritten on each loop iteration, so the final content of
-   `alkanes.pdb`
-   is the text from the `propane.pdb` file.
+1. Текст з кожного файлу по черзі буде записуватися у файл `alkanes.pdb`.
+   Однак, файл буде перезаписуватися на кожній ітерації циклу, тому остаточний вміст `alkanes.pdb' буде збігатися з текстом з файлу `propane.pdb\`.
 
 :::::::::::::::::::::::::
 
