@@ -211,9 +211,7 @@ $ for datafile in *.pdb
 ## Відповідь
 
 Перший блок коду дає однаковий результат на кожній ітерації циклу.
-Bash expands the wildcard `*.pdb` within the loop body (as well as
-before the loop starts) to match all files ending in `.pdb`
-and then lists them using `ls`.
+Bash розгортає шаблон `*.pdb` в тілі циклу (а також перед початком циклу), щоб знайти всі файли, що закінчуються на `.pdb`, а потім виводить їх список за допомогою `ls`.
 Розширений цикл матиме такий вигляд:
 
 ```bash
