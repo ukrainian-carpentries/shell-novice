@@ -327,8 +327,7 @@ done
 
 ## Saving to a File in a Loop - Part Two
 
-Also in the `shell-lesson-data/exercise-data/alkanes` directory,
-what would be the output of the following loop?
+У тому ж каталозі `shell-lesson-data/exercise-data/alkanes `, що буде виведено у наступному циклі?
 
 ```bash
 for datafile in *.pdb
@@ -354,8 +353,8 @@ output from a command.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Let's continue with our example in the `shell-lesson-data/exercise-data/creatures` directory.
-Here's a slightly more complicated loop:
+Для наступного прикладу перейдемо у каталог `shell-lesson-data/exercise-data/creatures`.
+Тут цикл трохи складніший:
 
 ```bash
 $ for filename in *.dat
@@ -368,14 +367,14 @@ $ for filename in *.dat
 The shell starts by expanding `*.dat` to create the list of files it will process.
 The **loop body**
 then executes two commands for each of those files.
-The first command, `echo`, prints its command-line arguments to standard output.
-For example:
+Перша команда, `echo`, виводить свої аргументи на стандартний вивід (тобто, на standard output).
+Наприклад:
 
 ```bash
 $ echo hello there
 ```
 
-prints:
+друкує:
 
 ```output
 hello there
