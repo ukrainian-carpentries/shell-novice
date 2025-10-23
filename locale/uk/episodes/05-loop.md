@@ -380,10 +380,8 @@ $ echo hello there
 hello there
 ```
 
-In this case,
-since the shell expands `$filename` to be the name of a file,
-`echo $filename` prints the name of the file.
-Note that we can't write this as:
+У цьому випадку, оскільки термінал підставить до `$filename` імʼя файлу, `echo $filename` виведе ім'я файлу.
+Зауважте, що ми не можемо написати це як:
 
 ```bash
 $ for filename in *.dat
@@ -403,12 +401,9 @@ from whatever file is being processed
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Spaces in Names
+## Пробіли в іменах
 
-Spaces are used to separate the elements of the list
-that we are going to loop over. If one of those elements
-contains a space character, we need to surround it with
-quotes, and do the same thing to our loop variable.
+Пробіли використовуються для відокремлення елементів списку, які ми будемо перебирати у циклі. Якщо один з цих елементів містить пробіл, нам потрібно взяти його в лапки та зробити те ж саме зі змінною циклу.
 Припустимо, що наші файли даних мають імена:
 
 ```source
@@ -416,7 +411,7 @@ red dragon.dat
 purple unicorn.dat
 ```
 
-To loop over these files, we would need to add double quotes like so:
+Щоб переглянути ці файли у циклі, нам потрібно додати подвійні лапки, ось так:
 
 ```bash
 $ for filename in "red dragon.dat" "purple unicorn.dat"
@@ -436,8 +431,7 @@ head: cannot open ‘red dragon.dat' for reading: No such file or directory
 head: cannot open ‘purple unicorn.dat' for reading: No such file or directory
 ```
 
-Try removing the quotes around `$filename` in the loop above to see the effect of the quote
-marks on spaces. Зверніть увагу, що ми отримуємо результат команди циклу для `unicorn.dat` коли ми запускаємо цей код у каталозі `creatures`:
+Спробуйте видалити лапки навколо `$filename` у наведеному вище циклі, щоб побачити ефект лапок на назвах з пробілами. Зверніть увагу, що ми отримуємо результат команди циклу для `unicorn.dat` коли ми запускаємо цей код у каталозі `creatures`:
 
 ```output
 head: cannot open ‘red' for reading: No such file or directory
