@@ -452,7 +452,7 @@ but also save a version of the original files. Наприклад, ми хоче
 $ cp *.dat original-*.dat
 ```
 
-because that would expand to:
+тому що це буде розширено до:
 
 ```bash
 $ cp basilisk.dat minotaur.dat unicorn.dat original-*.dat
