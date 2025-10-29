@@ -242,7 +242,7 @@
 
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
-        <ul><li><a href="#nelles-pipeline-processing-files">Nelle’s Pipeline: Processing Files</a></li>
+        <ul><li><a href="#%D0%BA%D0%BE%D0%BD%D0%B2%D0%B5%D1%94%D1%80-%D0%BD%D0%B5%D0%BB%D0%BB%D1%96-%D0%BE%D0%B1%D1%80%D0%BE%D0%B1%D0%BA%D0%B0-%D1%84%D0%B0%D0%B9%D0%BB%D1%96%D0%B2">Конвеєр Неллі: Обробка файлів</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -553,7 +553,7 @@ CLASSIFICATION: equus monoceros</code></pre>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -626,7 +626,7 @@ CLASSIFICATION: equus monoceros</code></pre>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Перший блок коду дає однаковий результат на кожній ітерації циклу.
 Bash розгортає шаблон <code>*.pdb</code> в тілі циклу (а також перед
@@ -701,7 +701,7 @@ cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb</code>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>4 - правильна відповідь. Символ <code>*</code> відповідає нулю або
 більшій кількості символів, тому будь-яке ім’я файлу, що починається з
@@ -747,7 +747,7 @@ cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb</code>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>4 - правильна відповідь. Символ <code>*</code> відповідає нулю або
 більшій кількості символів, тому всі імена файлів з нулем або більшою
@@ -800,7 +800,7 @@ cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb</code>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>Текст з кожного файлу по черзі буде записуватися у файл
 <code>alkanes.pdb</code>. Однак, файл буде перезаписуватися на кожній
@@ -856,7 +856,7 @@ cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb</code>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <p>3 - правильна відповідь. Оператор <code>&gt;&gt;</code> додає дані до
 файлу, а не перезаписує його вміст перенаправленням виводу команди.
@@ -991,10 +991,10 @@ CAAGTGTTCC
 <pre class="error" tabindex="0"><code>cp: target `original-*.dat' is not a directory</code></pre>
 </div>
 <p>Ця проблема виникає, коли команда <code>cp</code> отримує більше ніж
-два вхідних аргументи. When this happens, it expects the last input to
-be a directory where it can copy all the files it was passed. Since
-there is no directory named <code>original-*.dat</code> in the
-<code>creatures</code> directory, we get an error.</p>
+два вхідних аргументи. Коли це відбувається, вона очікує, що останнім
+вхідним параметром буде каталог, куди вона зможе скопіювати всі файли,
+які їй було передано. Оскільки у каталозі <code>creatures</code> немає
+каталогу з назвою <code>original-*.dat</code>, ми отримаємо помилку.</p>
 <p>Замість цього ми можемо використати цикл:</p>
 <div class="codewrapper sourceCode" id="cb30">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1004,40 +1004,39 @@ there is no directory named <code>original-*.dat</code> in the
 <span id="cb30-3"><a href="#cb30-3" tabindex="-1"></a><span class="op">&gt;</span>     cp <span class="va">$filename</span> original-<span class="va">$filename</span></span>
 <span id="cb30-4"><a href="#cb30-4" tabindex="-1"></a><span class="op">&gt;</span> done</span></code></pre>
 </div>
-<p>This loop runs the <code>cp</code> command once for each filename.
-The first time, when <code>$filename</code> expands to
-<code>basilisk.dat</code>, the shell executes:</p>
+<p>Цей цикл виконує команду <code>cp</code> один раз для кожного імені
+файлу. Перший раз, коли змінна <code>$filename</code> має значення
+<code>basilisk.dat</code>, термінал виконує:</p>
 <div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a><span class="fu">cp</span> basilisk.dat original-basilisk.dat</span></code></pre>
 </div>
-<p>The second time, the command is:</p>
+<p>Вдруге, буде виконана наступна команда:</p>
 <div class="codewrapper sourceCode" id="cb32">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="fu">cp</span> minotaur.dat original-minotaur.dat</span></code></pre>
 </div>
-<p>The third and last time, the command is:</p>
+<p>В останній раз, команда буде такою:</p>
 <div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a><span class="fu">cp</span> unicorn.dat original-unicorn.dat</span></code></pre>
 </div>
-<p>Since the <code>cp</code> command does not normally produce any
-output, it’s hard to check that the loop is working correctly. However,
-we learned earlier how to print strings using <code>echo</code>, and we
-can modify the loop to use <code>echo</code> to print our commands
-without actually executing them. As such we can check what commands
-<em>would be</em> run in the unmodified loop.</p>
-<p>The following diagram shows what happens when the modified loop is
-executed and demonstrates how the judicious use of <code>echo</code> is
-a good debugging technique.</p>
-<figure><img src="../fig/shell_script_for_loop_flow_chart.svg" alt='The for loop "for filename in .dat; do echo cp $filename original-$filename;done" will successively assign the names of all ".dat" files in your currentdirectory to the variable "$filename" and then execute the command. With thefiles "basilisk.dat", "minotaur.dat" and "unicorn.dat" in the current directorythe loop will successively call the echo command three times and print threelines: "cp basislisk.dat original-basilisk.dat", then "cp minotaur.datoriginal-minotaur.dat" and finally "cp unicorn.datoriginal-unicorn.dat"' class="figure mx-auto d-block"></figure><section><h2 class="section-heading" id="nelles-pipeline-processing-files">Nelle’s Pipeline: Processing Files<a class="anchor" aria-label="anchor" href="#nelles-pipeline-processing-files"></a></h2>
-<hr class="half-width"><p>Nelle is now ready to process her data files using
-<code>goostats.sh</code> — a shell script written by her supervisor.
-This calculates some statistics from a protein sample file and takes two
-arguments:</p>
+<p>Оскільки команда <code>cp</code> зазвичай не виводить жодного
+результату, важко перевірити що цикл працює правильно. Однак ми
+дізналися, як виводити рядки за допомогою <code>echo</code>. Це допоможе
+нам перевірити, які команди виконувалися б у циклі без їх фактичного
+виконання.</p>
+<p>Наступна діаграма показує, що відбувається при виконанні зміненого
+циклу, і демонструє, як доречне використання <code>echo</code> може
+допомагати у програмуванні.</p>
+<figure><img src="../fig/shell_script_for_loop_flow_chart.svg" alt='Цикл for "for filename in .dat; do echo cp $filename original-$filename; done" послідовно присвоїть імена всіх ".dat" файлів у вашому поточному каталозі змінній "$filename" та (для кожного значення) виконає команду. Для файлів "basilisk.dat", "minotaur.dat" та "unicorn.dat" в поточному каталозі цикл тричі послідовно викличе команду echo і виведе три рядки: "cp basislisk.dat original-basilisk.dat", потім "cp minotaur.dat original-minotaur.dat" та нарешті "cp unicorn.dat original-unicorn.dat"' class="figure mx-auto d-block"></figure><section><h2 class="section-heading" id="конвеєр-неллі-обробка-файлів">Конвеєр Неллі: Обробка файлів<a class="anchor" aria-label="anchor" href="#%D0%BA%D0%BE%D0%BD%D0%B2%D0%B5%D1%94%D1%80-%D0%BD%D0%B5%D0%BB%D0%BB%D1%96-%D0%BE%D0%B1%D1%80%D0%BE%D0%B1%D0%BA%D0%B0-%D1%84%D0%B0%D0%B9%D0%BB%D1%96%D0%B2"></a></h2>
+<hr class="half-width"><p>Тепер Неллі готова обробити свої файли даних, використовуючи
+<code>goostats.sh</code> — скрипт командної оболонки, який був написаний
+її керівником. Він розраховує деякі статистичні параметри для зразка
+білка, і приймає два аргументи:</p>
 <ol style="list-style-type: decimal"><li>an input file (containing the raw data)</li>
 <li>an output file (to store the calculated statistics)</li>
 </ol><p>Since she’s still learning how to use the shell, she decides to build
@@ -1266,7 +1265,7 @@ would we want to run?</p>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <p>The second version is the one we want to run. This prints to screen
 everything enclosed in the quote marks, expanding the loop variable name
@@ -1317,7 +1316,7 @@ experiments measuring reaction rate constants with different compounds
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
 <div class="accordion-body">
 <p>Ми маємо вкладений цикл, тобто такий, що міститься в іншому циклі,
 тому для кожного значення змінної <code>species</code> у зовнішньому
