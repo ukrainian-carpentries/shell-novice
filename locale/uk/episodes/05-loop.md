@@ -449,9 +449,7 @@ $ cp basilisk.dat minotaur.dat unicorn.dat original-*.dat
 cp: target `original-*.dat' is not a directory
 ```
 
-Ця проблема виникає, коли команда `cp` отримує більше ніж два вхідних аргументи. When this happens, it expects the
-last input to be a directory where it can copy all the files it was passed. Since there is
-no directory named `original-*.dat` in the `creatures` directory, we get an error.
+Ця проблема виникає, коли команда `cp` отримує більше ніж два вхідних аргументи. Коли це відбувається, вона очікує, що останнім вхідним параметром буде каталог, куди вона зможе скопіювати всі файли, які їй було передано. Оскільки у каталозі `creatures` немає каталогу з назвою `original-*.dat`, ми отримаємо помилку.
 
 Замість цього ми можемо використати цикл:
 
@@ -462,44 +460,34 @@ $ for filename in *.dat
 > done
 ```
 
-This loop runs the `cp` command once for each filename.
-The first time,
-when `$filename` expands to `basilisk.dat`,
-the shell executes:
+Цей цикл виконує команду `cp` один раз для кожного імені файлу.
+Перший раз, коли змінна `$filename` має значення `basilisk.dat`, термінал виконує:
 
 ```bash
 cp basilisk.dat original-basilisk.dat
 ```
 
-The second time, the command is:
+Вдруге, буде виконана наступна команда:
 
 ```bash
 cp minotaur.dat original-minotaur.dat
 ```
 
-The third and last time, the command is:
+В останній раз, команда буде такою:
 
 ```bash
 cp unicorn.dat original-unicorn.dat
 ```
 
-Since the `cp` command does not normally produce any output, it's hard to check
-that the loop is working correctly. However, we learned earlier how to print strings
-using `echo`, and we can modify the loop to use `echo` to print our commands without
-actually executing them. As such we can check what commands _would be_ run in the
-unmodified loop.
+Оскільки команда `cp` зазвичай не виводить жодного результату, важко перевірити що цикл працює правильно. Однак ми дізналися, як виводити рядки за допомогою `echo`. Це допоможе нам перевірити, які команди виконувалися б у циклі без їх фактичного виконання.
 
-The following diagram
-shows what happens when the modified loop is executed and demonstrates how the
-judicious use of `echo` is a good debugging technique.
+Наступна діаграма показує, що відбувається при виконанні зміненого циклу, і демонструє, як доречне використання `echo` може допомагати у програмуванні.
 
-![](fig/shell_script_for_loop_flow_chart.svg){alt='The for loop "for filename in .dat; do echo cp $filename original-$filename;done" will successively assign the names of all ".dat" files in your currentdirectory to the variable "$filename" and then execute the command. With thefiles "basilisk.dat", "minotaur.dat" and "unicorn.dat" in the current directorythe loop will successively call the echo command three times and print threelines: "cp basislisk.dat original-basilisk.dat", then "cp minotaur.datoriginal-minotaur.dat" and finally "cp unicorn.datoriginal-unicorn.dat"'}
+![](fig/shell_script_for_loop_flow_chart.svg){alt='Цикл for "for filename in .dat; do echo cp $filename original-$filename; done" послідовно присвоїть імена всіх ".dat" файлів у вашому поточному каталозі змінній "$filename" та (для кожного значення) виконає команду. Для файлів "basilisk.dat", "minotaur.dat" та "unicorn.dat" в поточному каталозі цикл тричі послідовно викличе команду echo і виведе три рядки: "cp basislisk.dat original-basilisk.dat", потім "cp minotaur.dat original-minotaur.dat" та нарешті "cp unicorn.dat original-unicorn.dat"'}
 
-## Nelle's Pipeline: Processing Files
+## Конвеєр Неллі: Обробка файлів
 
-Nelle is now ready to process her data files using `goostats.sh` ---
-a shell script written by her supervisor. This calculates some statistics from a
-protein sample file and takes two arguments:
+Тепер Неллі готова обробити свої файли даних, використовуючи `goostats.sh` --- скрипт командної оболонки, який був написаний її керівником. Він розраховує деякі статистичні параметри для зразка білка, і приймає два аргументи:
 
 1. an input file (containing the raw data)
 2. an output file (to store the calculated statistics)
