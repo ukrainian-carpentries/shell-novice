@@ -26,9 +26,7 @@ exercises: 10
 Подібно до шаблонів і автодоповнення, цикли допомагають зменшити кількість вручну набраного тексту (а отже, зменшують кількість помилок).
 
 Припустимо, у нас є кілька сотень файлів даних, які містять інформацію про геноми та мають імена на кшталт `basilisk.dat`, `minotaur.dat` та `unicorn.dat`.
-For this example, we'll use the `exercise-data/creatures` directory which only has three
-example files,
-but the principles can be applied to many many more files at once.
+Для наступного прикладу ми використаємо каталог `exercise-data/creatures`, який містить лише три зразкові файли, але ті ж самі методи можна застосувати до значно більшої кількості файлів одночасно.
 
 Ці файли мають однакову структуру: перші три рядки містять назву виду, його класифікацію та дату оновлення, а у наступних рядках наведені послідовності ДНК.
 Погляньмо, що містять ці файли:
@@ -75,8 +73,7 @@ CLASSIFICATION: equus monoceros
 
 ## Слідкуйте за підказками командного рядка
 
-Під час введення нашого циклу запрошення термінала змінювалося з `$` на `>` та назад. The second prompt, `>`, is different to remind
-us that we haven't finished typing a complete command yet. Крапка з комою `;` використовується для розділення двох команд, написаних в одному рядку.
+Під час введення нашого циклу запрошення термінала змінювалося з `$` на `>` та назад. Друге запрошення (`>`) відрізняється, щоб нагадати нам, що ми ще не завершили введення повної команди. Крапка з комою `;` використовується для розділення двох команд, написаних в одному рядку.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -86,8 +83,7 @@ us that we haven't finished typing a complete command yet. Крапка з ко�
 Символ `$` повідомляє інтерпретатор командного рядка, що далі йде назва змінної, тож слід підставити її значення, а не сприймати запис як текст чи назву команди.
 
 У цьому прикладі список складається з трьох файлів: `basilisk.dat`, `minotaur.dat` та `unicorn.dat`.
-Each time the loop iterates, we first use `echo` to print the value that the variable
-`$filename` currently holds. Це не обов'язково робити, але допомагає нам слідкувати за виконанням програми.
+Кожного разу, коли цикл повторюється, ми спочатку використовуємо `echo` для друку значення, яке наразі зберігає змінна `$filename`. Це не обов'язково робити, але допомагає нам слідкувати за виконанням програми.
 Далі ми виконаємо команду `head` для файлу, на який зараз посилається `$filename`.
 При першому проходженні циклу `$filename` має значення `basilisk.dat`.
 Інтерпретатор виконує команду `head` над `basilisk.dat` і передає перші два рядки команді `tail`, яка виводить другий рядок цього файлу.
@@ -225,9 +221,8 @@ cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
 cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
 ```
 
-The second code block lists a different file on each loop iteration.
-The value of the `datafile` variable is evaluated using `$datafile`,
-and then listed using `ls`.
+Другий блок коду працює з іншим файлом під час кожної ітерації циклу.
+Значення змінної `datafile` отримується за допомогою `$datafile`, а потім виводиться командою `ls`.
 
 ```output
 cubane.pdb
@@ -268,7 +263,7 @@ $ for filename in c*
 
 :::::::::::::::::::::::::
 
-How would the output differ from using this command instead?
+Як зміниться результат, якщо замість цього скористатися ось цією командою?
 
 ```bash
 $ for filename in *c*
@@ -281,7 +276,7 @@ $ for filename in *c*
 2. Цього разу будуть перелічені всі файли.
 3. Цього разу не буде виведено жодного файлу.
 4. Будуть перелічені файли `cubane.pdb` та `octane.pdb`.
-5. Only the file `octane.pdb` will be listed.
+5. Буде перелічено лише файл `octane.pdb`.
 
 :::::::::::::::  solution
 
@@ -295,7 +290,7 @@ $ for filename in *c*
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Saving to a File in a Loop - Part One
+## Як зберігати результати в файл під час виконання циклу - частина перша
 
 В каталозі `shell-lesson-data/exercise-data/alkanes `, яким буде результат роботи цього циклу?
 
@@ -310,7 +305,7 @@ done
 1. Буде виведено `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb`, `pentane.pdb` та `propane.pdb`, а текст з файлу `propane.pdb` буде збережено у файлі з назвою `alkanes.pdb`.
 2. Буде виведено `cubane.pdb`, `ethane.pdb` та `methane.pdb`, а текст з усіх трьох файлів буде об'єднано і збережено у файлі з назвою `alkanes.pdb`.
 3. Буде виведено `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb` та `pentane.pdb`, а текст з файлу `propane.pdb` буде збережено у файлі з назвою `alkanes.pdb`.
-4. None of the above.
+4. Жоден із наведених варіантів.
 
 :::::::::::::::  solution
 
@@ -325,7 +320,7 @@ done
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Saving to a File in a Loop - Part Two
+## Як зберігати результати в файл під час виконання циклу - частина друга
 
 У тому ж каталозі `shell-lesson-data/exercise-data/alkanes `, що буде виведено у наступному циклі?
 
@@ -345,8 +340,7 @@ done
 
 ## Відповідь
 
-3 - правильна відповідь. `>>` appends to a file, rather than overwriting it with the redirected
-output from a command.
+3 - правильна відповідь. Оператор `>>` додає дані до файлу, а не перезаписує його вміст перенаправленням виводу команди.
 Оскільки вивід команди `cat` було перенаправлено, на екран нічого не буде виведено.
 
 :::::::::::::::::::::::::
@@ -364,9 +358,8 @@ $ for filename in *.dat
 > done
 ```
 
-The shell starts by expanding `*.dat` to create the list of files it will process.
-The **loop body**
-then executes two commands for each of those files.
+Термінал розпочинає роботу з розгортання `*.dat`, щоб створити список файлів для подальшої обробки.
+**Тіло циклу** виконує дві команди для кожного з них.
 Перша команда, `echo`, виводить свої аргументи на стандартний вивід (тобто, на standard output).
 Наприклад:
 
@@ -391,13 +384,8 @@ $ for filename in *.dat
 > done
 ```
 
-because then the first time through the loop,
-when `$filename` expanded to `basilisk.dat`, the shell would try to run `basilisk.dat` as
-a program.
-Finally,
-the `head` and `tail` combination selects lines 81-100
-from whatever file is being processed
-(assuming the file has at least 100 lines).
+тому що під час першої ітерації циклу, коли `$filename` буде замінено на `basilisk.dat`, термінал спробує запустити `basilisk.dat` як програму.
+Нарешті, комбінація `head` і `tail` виділить рядки 81-100 з будь-якого файлу, що наразі обробляється (за умови, що у відповідному файлі є принаймні 100 рядків).
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
@@ -422,9 +410,7 @@ $ for filename in "red dragon.dat" "purple unicorn.dat"
 
 Простіше уникати використання пробілів (або інших спеціальних символів) у назвах файлів.
 
-The files above don't exist, so if we run the above code, the `head` command will be unable
-to find them; however, the error message returned will show the name of the files it is
-expecting:
+Вищевказані файли не існують, тому під час виконання цього коду команда `head` не зможе знайти їх; однак у повідомленні про помилку буде вказано, які саме файли вона намагалась відкрити:
 
 ```error
 head: cannot open ‘red dragon.dat' for reading: No such file or directory
@@ -445,8 +431,7 @@ CAAGTGTTCC
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-We would like to modify each of the files in `shell-lesson-data/exercise-data/creatures`,
-but also save a version of the original files. Наприклад, ми хочемо скопіювати оригінальні файли до нових файлів з назвами `original-basilisk.dat` та `original-unicorn.dat`. We can't use:
+Ми хочемо змінити кожен з файлів у `shell-lesson-data/exercise-data/creatures`, але при цьому зберегти оригінальні версії файлів. Наприклад, ми хочемо скопіювати оригінальні файли до нових файлів з назвами `original-basilisk.dat` та `original-unicorn.dat`. Ми не можемо використати:
 
 ```bash
 $ cp *.dat original-*.dat
@@ -464,7 +449,7 @@ $ cp basilisk.dat minotaur.dat unicorn.dat original-*.dat
 cp: target `original-*.dat' is not a directory
 ```
 
-This problem arises when `cp` receives more than two inputs. When this happens, it expects the
+Ця проблема виникає, коли команда `cp` отримує більше ніж два вхідних аргументи. When this happens, it expects the
 last input to be a directory where it can copy all the files it was passed. Since there is
 no directory named `original-*.dat` in the `creatures` directory, we get an error.
 
