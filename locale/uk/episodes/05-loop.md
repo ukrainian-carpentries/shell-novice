@@ -458,7 +458,7 @@ $ cp *.dat original-*.dat
 $ cp basilisk.dat minotaur.dat unicorn.dat original-*.dat
 ```
 
-This wouldn't back up our files, instead we get an error:
+Це не створить резервну копію наших файлів, натомість ми отримаємо помилку:
 
 ```error
 cp: target `original-*.dat' is not a directory
