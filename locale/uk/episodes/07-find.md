@@ -16,29 +16,26 @@ exercises: 20
 :::::::::::::::::::::::::::::::::::::::: questions
 
 - How can I find files?
-- How can I find things in files?
+- Як знайти щось у файлах?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-In the same way that many of us now use 'Google' as a
-verb meaning 'to find', Unix programmers often use the
-word 'grep'.
-'grep' is a contraction of 'global/regular expression/print',
-a common sequence of operations in early Unix text editors.
-It is also the name of a very useful command-line program.
+Так само, як багато хто з нас зараз використовує 'Google' як
+дієслово, що означає 'шукати', Unix-програмісти часто використовують
+слово 'grep'.
+'grep' - це скорочення від 'global/regular expression/print' (з англ. 'глобальний/регулярний вираз/друк'), поширена послідовність операцій у ранніх текстових редакторах Unix.
+Це також назва дуже корисної програми командного рядка.
 
-`grep` finds and prints lines in files that match a pattern.
-For our examples,
-we will use a file that contains three haiku taken from a
-[1998 competition](https://web.archive.org/web/19991201042211/http://salon.com/21st/chal/1998/01/26chal.html)
-in _Salon_ magazine (Credit to authors Bill Torcaso, Howard Korder, and
-Margaret Segall, respectively. See
-Haiku Error Messsages archived
-[Page 1](https://web.archive.org/web/20000310061355/http://www.salon.com/21st/chal/1998/02/10chal2.html)
-and
-[Page 2](https://web.archive.org/web/20000229135138/http://www.salon.com/21st/chal/1998/02/10chal3.html)
-.). For this set of examples,
-we're going to be working in the writing subdirectory:
+`grep` шукає і виводить рядки у файлах, які відповідають шаблону.
+У нашому прикладі ми використаємо файл, який містить три хайку, взяті з
+[конкурсу 1998 року](https://web.archive.org/web/19991201042211/http://salon.com/21st/chal/1998/01/26chal.html)
+в журналі _Salon_ (авторство належить Біллу Торкасо (Bill Torcaso), Говарду Кордеру (Howard Korder) та
+Маргарет Сігал (Margaret Segall), відповідно. Див.
+Haiku Error Messages в архіві
+[Сторінка 1] (https://web.archive.org/web/20000310061355/http://www.salon.com/21st/chal/1998/02/10chal2.html)
+та
+[Сторінка 2](https://web.archive.org/web/20000229135138/http://www.salon.com/21st/chal/1998/02/10chal3.html)
+.). Для цього набору прикладів ми будемо працювати у підкаталозі writing:
 
 ```bash
 $ cd
@@ -115,8 +112,8 @@ The Tao that is seen
 Note that a 'word boundary' includes the start and end of a line, so not
 just letters surrounded by spaces.
 Sometimes we don't
-want to search for a single word, but a phrase. We can also do this with
-`grep` by putting the phrase in quotes.
+want to search for a single word, but a phrase. Це також легко зробити за допомогою
+`grep`, взявши фразу в лапки.
 
 ```bash
 $ grep -w "is not" haiku.txt
@@ -254,7 +251,7 @@ and the presence of absence:
 
 ## Відповідь
 
-The correct answer is 3, because the `-w` option looks only for whole-word matches.
+Правильна відповідь 3, тому що опція `-w` шукає збіги лише між цілими словами.
 The other options will also match 'of' when part of another word.
 
 :::::::::::::::::::::::::
@@ -296,8 +293,7 @@ matches an actual 'o'.
 
 ## Tracking a Species
 
-Leah has several hundred
-data files saved in one directory, each of which is formatted like this:
+Лея має кілька сотень файлів даних, збережених в одному каталозі, кожен з яких відформатовано таким чином:
 
 ```source
 2012-11-05,deer,5
@@ -313,7 +309,7 @@ data files saved in one directory, each of which is formatted like this:
 She wants to write a shell script that takes a species as the first command-line argument
 and a directory as the second argument. The script should return one file called `<species>.txt`
 containing a list of dates and the number of that species seen on each date.
-For example using the data shown above, `rabbit.txt` would contain:
+Наприклад, використовуючи дані, показані вище, `rabbit.txt` буде містити:
 
 ```source
 2012-11-05,22
