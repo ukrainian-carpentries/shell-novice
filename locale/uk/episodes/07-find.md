@@ -627,8 +627,7 @@ The `-v` option to `grep` inverts pattern matching, so that only lines
 which do _not_ match the pattern are printed. Given that, which of
 the following commands will find all .dat files in `creatures`
 except `unicorn.dat`?
-Once you have thought about your answer, you can test the commands in the
-`shell-lesson-data/exercise-data` directory.
+Після того, як ви обміркуєте свою відповідь, ви можете протестувати команди у каталогу `shell-lesson-data/exercise-data`.
 
 1. `find creatures -name "*.dat" | grep -v unicorn`
 2. `find creatures -name *.dat | grep -v unicorn`
@@ -639,14 +638,13 @@ Once you have thought about your answer, you can test the commands in the
 
 ## Відповідь
 
-Option 1 is correct. Putting the match expression in quotes prevents the shell
+Варіант 1 правильний. Putting the match expression in quotes prevents the shell
 expanding it, so it gets passed to the `find` command.
 
 Option 2 also works in this instance because the shell tries to expand `*.dat`
 but there are no `*.dat` files in the current directory,
 so the wildcard expression gets passed to `find`.
-We first encountered this in
-[episode 3](03-create.md).
+Вперше ми зіткнулися з цим у [епізоді 3](03-create.md).
 
 Option 3 is incorrect because it searches the contents of the files for lines which
 do not match 'unicorn', rather than searching the file names.
@@ -673,7 +671,7 @@ formulas?
 
 A last option is to recognize that the shell and text processing have
 their limits, and to use another programming language.
-When the time comes to do this, don't be too hard on the shell. Many
+Коли прийде час це зробити, не будьте надто суворими до термінала. Many
 modern programming languages have borrowed a lot of
 ideas from it, and imitation is also the sincerest form of praise.
 
@@ -708,7 +706,7 @@ wc -l $(find . -name "*.dat") | sort -n
 
 2. Count the number of lines each of these files contains
 
-3. Sort the output from step 2. numerically
+3. Sort the output from step 2. за числовим значенням
 
 :::::::::::::::::::::::::
 
@@ -716,7 +714,7 @@ wc -l $(find . -name "*.dat") | sort -n
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- `find` finds files with specific properties that match patterns.
+- `find` шукає файли з певними властивостями, які відповідають шаблонам.
 - `grep` selects lines in files that match patterns.
 - `--help` is an option supported by many bash commands, and programs that can be run from within Bash, to display more information on how to use these commands or programs.
 - `man [command]` displays the manual page for a given command.
