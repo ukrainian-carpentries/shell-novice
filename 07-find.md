@@ -7,38 +7,35 @@ exercises: 20
 ::::::::::::::::::::::::::::::::::::::: objectives
 
 - Use `grep` to select lines from text files that match simple patterns.
-- Use `find` to find files and directories whose names match simple patterns.
-- Use the output of one command as the command-line argument(s) to another command.
-- Explain what is meant by 'text' and 'binary' files, and why many common tools don't handle the latter well.
+- Використати `find` для пошуку файлів і каталогів, назви яких відповідають простим шаблонам.
+- Використати вихідні дані однієї команди як аргумент(и) командного рядка для іншої команди.
+- Пояснити, що мається на увазі під 'текстовими' та 'бінарними' файлами, і чому багато поширених інструментів погано працюють з останніми.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
 - How can I find files?
-- How can I find things in files?
+- Як знайти щось у файлах?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-In the same way that many of us now use 'Google' as a
-verb meaning 'to find', Unix programmers often use the
-word 'grep'.
-'grep' is a contraction of 'global/regular expression/print',
-a common sequence of operations in early Unix text editors.
-It is also the name of a very useful command-line program.
+Так само, як багато хто з нас зараз використовує 'Google' як
+дієслово, що означає 'шукати', Unix-програмісти часто використовують
+слово 'grep'.
+'grep' - це скорочення від 'global/regular expression/print' (з англ. 'глобальний/регулярний вираз/друк'), поширена послідовність операцій у ранніх текстових редакторах Unix.
+Це також назва дуже корисної програми командного рядка.
 
-`grep` finds and prints lines in files that match a pattern.
-For our examples,
-we will use a file that contains three haiku taken from a
-[1998 competition](https://web.archive.org/web/19991201042211/http://salon.com/21st/chal/1998/01/26chal.html)
-in _Salon_ magazine (Credit to authors Bill Torcaso, Howard Korder, and
-Margaret Segall, respectively. See
-Haiku Error Messsages archived
-[Page 1](https://web.archive.org/web/20000310061355/http://www.salon.com/21st/chal/1998/02/10chal2.html)
-and
-[Page 2](https://web.archive.org/web/20000229135138/http://www.salon.com/21st/chal/1998/02/10chal3.html)
-.). For this set of examples,
-we're going to be working in the writing subdirectory:
+`grep` шукає і виводить рядки у файлах, які відповідають шаблону.
+У нашому прикладі ми використаємо файл, який містить три хайку, взяті з
+[конкурсу 1998 року](https://web.archive.org/web/19991201042211/http://salon.com/21st/chal/1998/01/26chal.html)
+в журналі _Salon_ (авторство належить Біллу Торкасо (Bill Torcaso), Говарду Кордеру (Howard Korder) та
+Маргарет Сігал (Margaret Segall), відповідно. Див.
+Haiku Error Messages в архіві
+[Сторінка 1] (https://web.archive.org/web/20000310061355/http://www.salon.com/21st/chal/1998/02/10chal2.html)
+та
+[Сторінка 2](https://web.archive.org/web/20000229135138/http://www.salon.com/21st/chal/1998/02/10chal3.html)
+.). Для цього набору прикладів ми будемо працювати у підкаталозі writing:
 
 ```bash
 $ cd
@@ -115,8 +112,8 @@ The Tao that is seen
 Note that a 'word boundary' includes the start and end of a line, so not
 just letters surrounded by spaces.
 Sometimes we don't
-want to search for a single word, but a phrase. We can also do this with
-`grep` by putting the phrase in quotes.
+want to search for a single word, but a phrase. Це також легко зробити за допомогою
+`grep`, взявши фразу в лапки.
 
 ```bash
 $ grep -w "is not" haiku.txt
@@ -254,7 +251,7 @@ and the presence of absence:
 
 ## Відповідь
 
-The correct answer is 3, because the `-w` option looks only for whole-word matches.
+Правильна відповідь 3, тому що опція `-w` шукає збіги лише між цілими словами.
 The other options will also match 'of' when part of another word.
 
 :::::::::::::::::::::::::
@@ -296,8 +293,7 @@ matches an actual 'o'.
 
 ## Tracking a Species
 
-Leah has several hundred
-data files saved in one directory, each of which is formatted like this:
+Лея має кілька сотень файлів даних, збережених в одному каталозі, кожен з яких відформатовано таким чином:
 
 ```source
 2012-11-05,deer,5
@@ -313,7 +309,7 @@ data files saved in one directory, each of which is formatted like this:
 She wants to write a shell script that takes a species as the first command-line argument
 and a directory as the second argument. The script should return one file called `<species>.txt`
 containing a list of dates and the number of that species seen on each date.
-For example using the data shown above, `rabbit.txt` would contain:
+Наприклад, використовуючи дані, показані вище, `rabbit.txt` буде містити:
 
 ```source
 2012-11-05,22
@@ -394,7 +390,7 @@ do
 done
 ```
 
-Alternative, slightly inferior solution:
+Альтернативне, трохи гірше рішення:
 
 ```source
 for sis in Jo Meg Beth Amy
@@ -404,12 +400,11 @@ do
 done
 ```
 
-This solution is inferior because `grep -c` only reports the number of lines matched.
+Це рішення є гіршим, оскільки `grep -c` повідомляє лише про кількість знайдених рядків.
 The total number of matches reported by this method will be lower if there is more
 than one match per line.
 
-Perceptive observers may have noticed that character names sometimes appear in all-uppercase
-in chapter titles (e.g. 'MEG GOES TO VANITY FAIR').
+Уважні спостерігачі могли помітити, що імена персонажів іноді пишуться великими літерами у назвах розділів (наприклад, "MEG GOES TO VANITY FAIR").
 If you wanted to count these as well, you could add the `-i` option for case-insensitivity
 (though in this case, it doesn't affect the answer to which sister is mentioned
 most frequently).
@@ -632,8 +627,7 @@ The `-v` option to `grep` inverts pattern matching, so that only lines
 which do _not_ match the pattern are printed. Given that, which of
 the following commands will find all .dat files in `creatures`
 except `unicorn.dat`?
-Once you have thought about your answer, you can test the commands in the
-`shell-lesson-data/exercise-data` directory.
+Після того, як ви обміркуєте свою відповідь, ви можете протестувати команди у каталогу `shell-lesson-data/exercise-data`.
 
 1. `find creatures -name "*.dat" | grep -v unicorn`
 2. `find creatures -name *.dat | grep -v unicorn`
@@ -644,14 +638,13 @@ Once you have thought about your answer, you can test the commands in the
 
 ## Відповідь
 
-Option 1 is correct. Putting the match expression in quotes prevents the shell
+Варіант 1 правильний. Putting the match expression in quotes prevents the shell
 expanding it, so it gets passed to the `find` command.
 
 Option 2 also works in this instance because the shell tries to expand `*.dat`
 but there are no `*.dat` files in the current directory,
 so the wildcard expression gets passed to `find`.
-We first encountered this in
-[episode 3](03-create.md).
+Вперше ми зіткнулися з цим у [епізоді 3](03-create.md).
 
 Option 3 is incorrect because it searches the contents of the files for lines which
 do not match 'unicorn', rather than searching the file names.
@@ -678,7 +671,7 @@ formulas?
 
 A last option is to recognize that the shell and text processing have
 their limits, and to use another programming language.
-When the time comes to do this, don't be too hard on the shell. Many
+Коли прийде час це зробити, не будьте надто суворими до термінала. Many
 modern programming languages have borrowed a lot of
 ideas from it, and imitation is also the sincerest form of praise.
 
@@ -713,7 +706,7 @@ wc -l $(find . -name "*.dat") | sort -n
 
 2. Count the number of lines each of these files contains
 
-3. Sort the output from step 2. numerically
+3. Sort the output from step 2. за числовим значенням
 
 :::::::::::::::::::::::::
 
@@ -721,7 +714,7 @@ wc -l $(find . -name "*.dat") | sort -n
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- `find` finds files with specific properties that match patterns.
+- `find` шукає файли з певними властивостями, які відповідають шаблонам.
 - `grep` selects lines in files that match patterns.
 - `--help` is an option supported by many bash commands, and programs that can be run from within Bash, to display more information on how to use these commands or programs.
 - `man [command]` displays the manual page for a given command.
