@@ -7,9 +7,9 @@ exercises: 20
 ::::::::::::::::::::::::::::::::::::::: objectives
 
 - Use `grep` to select lines from text files that match simple patterns.
-- Use `find` to find files and directories whose names match simple patterns.
-- Use the output of one command as the command-line argument(s) to another command.
-- Explain what is meant by 'text' and 'binary' files, and why many common tools don't handle the latter well.
+- Використати `find` для пошуку файлів і каталогів, назви яких відповідають простим шаблонам.
+- Використати вихідні дані однієї команди як аргумент(и) командного рядка для іншої команди.
+- Пояснити, що мається на увазі під 'текстовими' та 'бінарними' файлами, і чому багато поширених інструментів погано працюють з останніми.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
