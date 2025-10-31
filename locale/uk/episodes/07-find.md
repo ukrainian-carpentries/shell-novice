@@ -390,7 +390,7 @@ do
 done
 ```
 
-Alternative, slightly inferior solution:
+Альтернативне, трохи гірше рішення:
 
 ```source
 for sis in Jo Meg Beth Amy
@@ -400,12 +400,11 @@ do
 done
 ```
 
-This solution is inferior because `grep -c` only reports the number of lines matched.
+Це рішення є гіршим, оскільки `grep -c` повідомляє лише про кількість знайдених рядків.
 The total number of matches reported by this method will be lower if there is more
 than one match per line.
 
-Perceptive observers may have noticed that character names sometimes appear in all-uppercase
-in chapter titles (e.g. 'MEG GOES TO VANITY FAIR').
+Уважні спостерігачі могли помітити, що імена персонажів іноді пишуться великими літерами у назвах розділів (наприклад, "MEG GOES TO VANITY FAIR").
 If you wanted to count these as well, you could add the `-i` option for case-insensitivity
 (though in this case, it doesn't affect the answer to which sister is mentioned
 most frequently).
