@@ -318,7 +318,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Пошук з командного рядка</h1>
-        <p>Останнє оновлення 2025-10-12 |
+        <p>Останнє оновлення 2025-10-31 |
 
         <a href="https://github.com/ukrainian-carpentries/shell-novice/edit/main/episodes/07-find.md" class="external-link">Редагувати цю сторінку <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -338,7 +338,7 @@
 <div class="inner">
 <h3 class="card-title">Питання</h3>
 <ul><li>How can I find files?</li>
-<li>How can I find things in files?</li>
+<li>Як знайти щось у файлах?</li>
 </ul></div>
 </div>
 </div>
@@ -348,31 +348,34 @@
 <h3 class="card-title">Цілі</h3>
 <ul><li>Use <code>grep</code> to select lines from text files that match
 simple patterns.</li>
-<li>Use <code>find</code> to find files and directories whose names
-match simple patterns.</li>
-<li>Use the output of one command as the command-line argument(s) to
-another command.</li>
-<li>Explain what is meant by ‘text’ and ‘binary’ files, and why many
-common tools don’t handle the latter well.</li>
+<li>Використати <code>find</code> для пошуку файлів і каталогів, назви
+яких відповідають простим шаблонам.</li>
+<li>Використати вихідні дані однієї команди як аргумент(и) командного
+рядка для іншої команди.</li>
+<li>Пояснити, що мається на увазі під ‘текстовими’ та ‘бінарними’
+файлами, і чому багато поширених інструментів погано працюють з
+останніми.</li>
 </ul></div>
 </div>
 </div>
 </div>
 </div>
-<p>In the same way that many of us now use ‘Google’ as a verb meaning
-‘to find’, Unix programmers often use the word ‘grep’. ‘grep’ is a
-contraction of ‘global/regular expression/print’, a common sequence of
-operations in early Unix text editors. It is also the name of a very
-useful command-line program.</p>
-<p><code>grep</code> finds and prints lines in files that match a
-pattern. For our examples, we will use a file that contains three haiku
-taken from a <a href="https://web.archive.org/web/19991201042211/http://salon.com/21st/chal/1998/01/26chal.html" class="external-link">1998
-competition</a> in <em>Salon</em> magazine (Credit to authors Bill
-Torcaso, Howard Korder, and Margaret Segall, respectively. See Haiku
-Error Messsages archived <a href="https://web.archive.org/web/20000310061355/http://www.salon.com/21st/chal/1998/02/10chal2.html" class="external-link">Page
-1</a> and <a href="https://web.archive.org/web/20000229135138/http://www.salon.com/21st/chal/1998/02/10chal3.html" class="external-link">Page
-2</a> .). For this set of examples, we’re going to be working in the
-writing subdirectory:</p>
+<p>Так само, як багато хто з нас зараз використовує ‘Google’ як
+дієслово, що означає ‘шукати’, Unix-програмісти часто використовують
+слово ‘grep’. ‘grep’ - це скорочення від ‘global/regular
+expression/print’ (з англ. ‘глобальний/регулярний вираз/друк’), поширена
+послідовність операцій у ранніх текстових редакторах Unix. Це також
+назва дуже корисної програми командного рядка.</p>
+<p><code>grep</code> шукає і виводить рядки у файлах, які відповідають
+шаблону. У нашому прикладі ми використаємо файл, який містить три хайку,
+взяті з <a href="https://web.archive.org/web/19991201042211/http://salon.com/21st/chal/1998/01/26chal.html" class="external-link">конкурсу
+1998 року</a> в журналі <em>Salon</em> (авторство належить Біллу Торкасо
+(Bill Torcaso), Говарду Кордеру (Howard Korder) та Маргарет Сігал
+(Margaret Segall), відповідно. Див. Haiku Error Messages в архіві
+[Сторінка 1] (<a href="https://web.archive.org/web/20000310061355/http://www.salon.com/21st/chal/1998/02/10chal2.html" class="external-link uri">https://web.archive.org/web/20000310061355/http://www.salon.com/21st/chal/1998/02/10chal2.html</a>)
+та <a href="https://web.archive.org/web/20000229135138/http://www.salon.com/21st/chal/1998/02/10chal3.html" class="external-link">Сторінка
+2</a> .). Для цього набору прикладів ми будемо працювати у підкаталозі
+writing:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -450,8 +453,8 @@ behavior of grep with respect to its case sensitivity.</p>
 </div>
 <p>Note that a ‘word boundary’ includes the start and end of a line, so
 not just letters surrounded by spaces. Sometimes we don’t want to search
-for a single word, but a phrase. We can also do this with
-<code>grep</code> by putting the phrase in quotes.</p>
+for a single word, but a phrase. Це також легко зробити за допомогою
+<code>grep</code>, взявши фразу в лапки.</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -612,9 +615,9 @@ Miscellaneous:
 </button>
 <div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
-<p>The correct answer is 3, because the <code>-w</code> option looks
-only for whole-word matches. The other options will also match ‘of’ when
-part of another word.</p>
+<p>Правильна відповідь 3, тому що опція <code>-w</code> шукає збіги лише
+між цілими словами. The other options will also match ‘of’ when part of
+another word.</p>
 </div>
 </div>
 </div>
@@ -665,8 +668,8 @@ character (just like <code>?</code> in the shell), while the
 <div id="tracking-a-species" class="callout-inner">
 <h3 class="callout-title">Tracking a Species</h3>
 <div class="callout-content">
-<p>Leah has several hundred data files saved in one directory, each of
-which is formatted like this:</p>
+<p>Лея має кілька сотень файлів даних, збережених в одному каталозі,
+кожен з яких відформатовано таким чином:</p>
 <pre class="source"><code>2012-11-05,deer,5
 2012-11-05,rabbit,22
 2012-11-05,raccoon,7
@@ -679,8 +682,8 @@ which is formatted like this:</p>
 command-line argument and a directory as the second argument. The script
 should return one file called <code>&lt;species&gt;.txt</code>
 containing a list of dates and the number of that species seen on each
-date. For example using the data shown above, <code>rabbit.txt</code>
-would contain:</p>
+date. Наприклад, використовуючи дані, показані вище,
+<code>rabbit.txt</code> буде містити:</p>
 <pre class="source"><code>2012-11-05,22
 2012-11-06,19
 2012-11-07,16</code></pre>
@@ -769,18 +772,18 @@ do
     echo $sis:
     grep -ow $sis LittleWomen.txt | wc -l
 done</code></pre>
-<p>Alternative, slightly inferior solution:</p>
+<p>Альтернативне, трохи гірше рішення:</p>
 <pre class="source"><code>for sis in Jo Meg Beth Amy
 do
     echo $sis:
     grep -ocw $sis LittleWomen.txt
 done</code></pre>
-<p>This solution is inferior because <code>grep -c</code> only reports
-the number of lines matched. The total number of matches reported by
+<p>Це рішення є гіршим, оскільки <code>grep -c</code> повідомляє лише
+про кількість знайдених рядків. The total number of matches reported by
 this method will be lower if there is more than one match per line.</p>
-<p>Perceptive observers may have noticed that character names sometimes
-appear in all-uppercase in chapter titles (e.g. ‘MEG GOES TO VANITY
-FAIR’). If you wanted to count these as well, you could add the
+<p>Уважні спостерігачі могли помітити, що імена персонажів іноді
+пишуться великими літерами у назвах розділів (наприклад, “MEG GOES TO
+VANITY FAIR”). If you wanted to count these as well, you could add the
 <code>-i</code> option for case-insensitivity (though in this case, it
 doesn’t affect the answer to which sister is mentioned most
 frequently).</p>
@@ -1015,9 +1018,9 @@ the current directory:</p>
 <p>The <code>-v</code> option to <code>grep</code> inverts pattern
 matching, so that only lines which do <em>not</em> match the pattern are
 printed. Given that, which of the following commands will find all .dat
-files in <code>creatures</code> except <code>unicorn.dat</code>? Once
-you have thought about your answer, you can test the commands in the
-<code>shell-lesson-data/exercise-data</code> directory.</p>
+files in <code>creatures</code> except <code>unicorn.dat</code>? Після
+того, як ви обміркуєте свою відповідь, ви можете протестувати команди у
+каталогу <code>shell-lesson-data/exercise-data</code>.</p>
 <ol style="list-style-type: decimal"><li><code>find creatures -name "*.dat" | grep -v unicorn</code></li>
 <li><code>find creatures -name *.dat | grep -v unicorn</code></li>
 <li><code>grep -v "unicorn" $(find creatures -name "*.dat")</code></li>
@@ -1034,13 +1037,13 @@ you have thought about your answer, you can test the commands in the
 </button>
 <div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
-<p>Option 1 is correct. Putting the match expression in quotes prevents
+<p>Варіант 1 правильний. Putting the match expression in quotes prevents
 the shell expanding it, so it gets passed to the <code>find</code>
 command.</p>
 <p>Option 2 also works in this instance because the shell tries to
 expand <code>*.dat</code> but there are no <code>*.dat</code> files in
 the current directory, so the wildcard expression gets passed to
-<code>find</code>. We first encountered this in <a href="03-create.html">episode 3</a>.</p>
+<code>find</code>. Вперше ми зіткнулися з цим у <a href="03-create.html">епізоді 3</a>.</p>
 <p>Option 3 is incorrect because it searches the contents of the files
 for lines which do not match ‘unicorn’, rather than searching the file
 names.</p>
@@ -1068,8 +1071,8 @@ that will extract X and Y dimensions from image files for
 <code>grep</code> to play with, but how would you write something to
 find values in a spreadsheet whose cells contained formulas?</p>
 <p>A last option is to recognize that the shell and text processing have
-their limits, and to use another programming language. When the time
-comes to do this, don’t be too hard on the shell. Many modern
+their limits, and to use another programming language. Коли прийде час
+це зробити, не будьте надто суворими до термінала. Many modern
 programming languages have borrowed a lot of ideas from it, and
 imitation is also the sincerest form of praise.</p>
 </div>
@@ -1116,7 +1119,7 @@ Comprehension</h3>
 <ol style="list-style-type: decimal"><li><p>Find all files with a <code>.dat</code> extension recursively
 from the current directory</p></li>
 <li><p>Count the number of lines each of these files contains</p></li>
-<li><p>Sort the output from step 2. numerically</p></li>
+<li><p>Sort the output from step 2. за числовим значенням</p></li>
 </ol></div>
 </div>
 </div>
@@ -1129,8 +1132,8 @@ from the current directory</p></li>
 <div class="callout-inner">
 <div class="callout-content">
 <ul><li>
-<code>find</code> finds files with specific properties that match
-patterns.</li>
+<code>find</code> шукає файли з певними властивостями, які
+відповідають шаблонам.</li>
 <li>
 <code>grep</code> selects lines in files that match patterns.</li>
 <li>
@@ -1206,8 +1209,8 @@ command.</li>
   "url": "https://ukrainian-carpentries.github.io/shell-novice/07-find.html",
   "identifier": "https://ukrainian-carpentries.github.io/shell-novice/07-find.html",
   "dateCreated": "2014-10-22",
-  "dateModified": "2025-10-12",
-  "datePublished": "2025-10-29"
+  "dateModified": "2025-10-31",
+  "datePublished": "2025-10-31"
 }
 
   </script><script>
