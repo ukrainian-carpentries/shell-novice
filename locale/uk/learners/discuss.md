@@ -1,5 +1,5 @@
 ---
-title: Discussion
+title: Обговорення
 ---
 
 ## Alphabet Soup
