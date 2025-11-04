@@ -490,7 +490,7 @@ cp unicorn.dat original-unicorn.dat
 Тепер Неллі готова обробити свої файли даних, використовуючи `goostats.sh` --- скрипт командної оболонки, який був написаний її керівником. Він розраховує деякі статистичні параметри для зразка білка, і приймає два аргументи:
 
 1. an input file (containing the raw data)
-2. an output file (to store the calculated statistics)
+2. вихідний файл (для збереження обчисленої статистики)
 
 Since she's still learning how to use the shell,
 she decides to build up the required commands in stages.
