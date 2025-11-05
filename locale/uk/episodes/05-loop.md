@@ -695,12 +695,10 @@ It also _does not_ modify nor create the file `all.pdb`, as the `>>`
 is treated literally as part of a string rather than as a
 redirection instruction.
 
-The first version appends the output from the command `echo cat $datafile`
-to the file, `all.pdb`. This file will just contain the list;
+Перша версія додає вивід команди `echo cat $datafile` до файлу `all.pdb`. This file will just contain the list;
 `cat cubane.pdb`, `cat ethane.pdb`, `cat methane.pdb` etc.
 
-Try both versions for yourself to see the output! Be sure to open the
-`all.pdb` file to view its contents.
+Try both versions for yourself to see the output! Обов'язково відкрийте файл `all.pdb`, щоб переглянути його вміст.
 
 :::::::::::::::::::::::::
 
@@ -708,7 +706,7 @@ Try both versions for yourself to see the output! Be sure to open the
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Nested Loops
+## Вкладені цикли
 
 Suppose we want to set up a directory structure to organize
 some experiments measuring reaction rate constants with different compounds
@@ -730,7 +728,7 @@ $ for species in cubane ethane methane
 
 Ми маємо вкладений цикл, тобто такий, що міститься в іншому циклі, тому для кожного значення змінної `species` у зовнішньому циклі внутрішній цикл (вкладений цикл) перебирає список температур і створює новий каталог для кожної комбінації.
 
-Try running the code for yourself to see which directories are created!
+Спробуйте запустити цей код самостійно, щоб побачити, які каталоги буде створено!
 
 :::::::::::::::::::::::::
 
@@ -742,7 +740,7 @@ Try running the code for yourself to see which directories are created!
 - Every `for` loop needs a variable to refer to the thing it is currently operating on.
 - Use `$name` to expand a variable (i.e., get its value). Також можна використовувати `${name}`.
 - Do not use spaces, quotes, or wildcard characters such as '\*' or '?' in filenames, as it complicates variable expansion.
-- Give files consistent names that are easy to match with wildcard patterns to make it easy to select them for looping.
+- Надавайте файлам послідовні імена, які можна легко описати за допомогою шаблонів, щоб полегшити їх вибір для циклів.
 - Use the up-arrow key to scroll up through previous commands to edit and repeat them.
 - Використовуйте <kbd>Ctrl</kbd>\+<kbd>R</kbd> для пошуку попередньо введених команд.
 - Use `history` to display recent commands, and `![number]` to repeat a command by number.
