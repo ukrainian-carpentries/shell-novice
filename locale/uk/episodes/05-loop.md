@@ -553,15 +553,13 @@ the shell redisplays the whole loop on one line
 $ for datafile in NENE A.txt NENE B.txt; do echo $datafile stats-$datafile; done
 ```
 
-Using the <kbd>←</kbd>,
-Nelle navigates to the `echo` command and changes it to `bash goostats.sh`:
+Використовуючи <kbd>←</kbd>, Неллі переходить до команди `echo` та змінює її на `bash goostats.sh`:
 
 ```bash
 $ for datafile in NENE*A.txt NENE*B.txt; do bash goostats.sh $datafile stats-$datafile; done
 ```
 
-When she presses <kbd>Enter</kbd>,
-the shell runs the modified command.
+Коли вона натискає <kbd>Enter</kbd>, термінал виконує змінену команду.
 However, nothing appears to happen --- there is no output.
 After a moment, Nelle realizes that since her script doesn't print anything to the screen
 any longer, she has no idea whether it is running, much less how quickly.
