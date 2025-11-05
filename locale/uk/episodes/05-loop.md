@@ -574,7 +574,7 @@ bash goostats.sh $datafile stats-$datafile; done
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Beginning and End
+## Початок і кінець рядка
 
 We can move to the beginning of a line in the shell by typing <kbd>Ctrl</kbd>\+<kbd>A</kbd>
 and to the end using <kbd>Ctrl</kbd>\+<kbd>E</kbd>.
@@ -604,7 +604,7 @@ so she decides to get some coffee and catch up on her reading.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Those Who Know History Can Choose to Repeat It
+## Хто знає історію, той може її повторити
 
 Another way to repeat previous work is to use the `history` command to
 get a list of the last few hundred commands that have been executed, and
@@ -624,8 +624,7 @@ stats-$datafile; done
 460  history | tail -n 5
 ```
 
-then she can re-run `goostats.sh` on the files simply by typing
-`!459`.
+то вона може перезапустити `goostats.sh` просто набравши `!459`.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
