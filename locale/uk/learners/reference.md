@@ -4,22 +4,22 @@ title: 'Summary of Basic Commands'
 
 ## Summary of Basic Commands
 
-| Action       | Files | Folders      |
-| ------------ | ----- | ------------ |
-| Inspect      | ls    | ls           |
-| View content | cat   | ls           |
-| Navigate to  |       | cd           |
-| Move         | mv    | mv           |
-| Copy         | cp    | cp -r        |
-| Create       | nano  | mkdir        |
-| Delete       | rm    | rmdir, rm -r |
+| Action                                                         | Files | Folders      |
+| -------------------------------------------------------------- | ----- | ------------ |
+| Оглянути                                                       | ls    | ls           |
+| Проглянути вміст                                               | cat   | ls           |
+| Перейти до ... |       | cd           |
+| Перемістити                                                    | mv    | mv           |
+| Копіювати                                                      | cp    | cp -r        |
+| Створити                                                       | nano  | mkdir        |
+| Видалити                                                       | rm    | rmdir, rm -r |
 
 ## Filesystem hierarchy
 
 The following is an overview of a standard Unix filesystem.
 The exact hierarchy depends on the platform. Your file/directory structure may differ slightly:
 
-![](fig/standard-filesystem-hierarchy.svg){alt='Linux filesystem hierarchy'}
+![](fig/standard-filesystem-hierarchy.svg){alt='Ієрархія файлової системи Linux'}
 
 ## Glossary
 
@@ -34,12 +34,12 @@ See also: [relative path](#relative-path).
 :   A value given to a function or program when it runs.
 The term is often used interchangeably (and inconsistently) with [parameter](#parameter).
 
-[command shell]{#command-shell}
-:   See [shell](#shell)
+[командна оболонка]{#command-shell}
+:   Дивись [термінал](#shell)
 
-[command-line interface]{#command-line-interface}
-:   A user interface based on typing commands,
-usually at a [REPL](#read-evaluate-print-loop).
+[інтерфейс командного рядка]{#command-line-interface}
+:   Інтерфейс користувача, заснований на введенні команд,
+зазвичай у циклі [REPL](#read-evaluate-print-loop).
 See also: [graphical user interface](#graphical-user-interface).
 
 [comment]{#comment}
@@ -66,9 +66,7 @@ the [operating system](#operating-system) manages access.
 
 [filename extension]{#filename-extension}
 :   The portion of a file's name that comes after the final "." character.
-By convention this identifies the file's type:
-`.txt` means "text file", `.png` means "Portable Network Graphics file",
-and so on. These conventions are not enforced by most operating systems:
+За домовленістю це визначає тип файлу: `.txt` означає "текстовий файл (від англ. "TeXT"), `.png` означає "файл портативної мережевої графіки" (від англ. "Portable Network Graphics file"), і так далі. These conventions are not enforced by most operating systems:
 it is perfectly possible (but confusing!) to name an MP3 sound file `homepage.html`.
 Since many applications use filename extensions to identify the
 [MIME type](#mime-type) of the file,
