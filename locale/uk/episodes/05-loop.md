@@ -650,14 +650,13 @@ There are a number of other shortcut commands for getting at the history.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Doing a Dry Run
+## Пробний запуск
 
 A loop is a way to do many things at once --- or to make many mistakes at
 once if it does the wrong thing. One way to check what a loop _would_ do
 is to `echo` the commands it would run instead of actually running them.
 
-Suppose we want to preview the commands the following loop will execute
-without actually running those commands:
+Припустимо, ми хочемо переглянути команди, які виконає наступний цикл, без виконання цих команд:
 
 ```bash
 $ for datafile in *.pdb
