@@ -489,13 +489,11 @@ cp unicorn.dat original-unicorn.dat
 
 Тепер Неллі готова обробити свої файли даних, використовуючи `goostats.sh` --- скрипт командної оболонки, який був написаний її керівником. Він розраховує деякі статистичні параметри для зразка білка, і приймає два аргументи:
 
-1. an input file (containing the raw data)
+1. вхідний файл (що містить необроблені дані)
 2. вихідний файл (для збереження обчисленої статистики)
 
-Since she's still learning how to use the shell,
-she decides to build up the required commands in stages.
-Her first step is to make sure that she can select the right input files --- remember,
-these are ones whose names end in 'A' or 'B', rather than 'Z'.
+Оскільки вона все ще вчиться користуватися терміналом, вона вирішує будувати потрібну послідовність команд поступово.
+Спершу потрібно впевнитися, що було обрано правильні вхідні файли — ті, назви яких закінчуються на 'A' або 'B', але не на 'Z'.
 Переходячи до каталогу `north-pacific-gyre`, Неллі вводить:
 
 ```bash
@@ -516,10 +514,9 @@ NENE02043A.txt
 NENE02043B.txt
 ```
 
-Her next step is to decide
-what to call the files that the `goostats.sh` analysis program will create.
-Prefixing each input file's name with 'stats' seems simple,
-so she modifies her loop to do that:
+Далі треба вирішити як назвати файли, які створюватиме програма аналізу `goostats.sh`.
+Додавання префікса 'stats' до назви кожного вхідного файлу здається простим рішенням,
+тому вона модифікує свій цикл відповідним чином:
 
 ```bash
 $ for datafile in NENE*A.txt NENE*B.txt
@@ -537,17 +534,12 @@ NENE02043A.txt stats-NENE02043A.txt
 NENE02043B.txt stats-NENE02043B.txt
 ```
 
-She hasn't actually run `goostats.sh` yet,
-but now she's sure she can select the right files and generate the right output filenames.
+Насправді вона ще не запускала `goostats.sh`, але тепер переконалася, що її скрипт зможе обрати потрібні файли та створити правильні вихідні імена для результатів.
 
-Typing in commands over and over again is becoming tedious,
-though,
-and Nelle is worried about making mistakes,
-so instead of re-entering her loop,
-she presses <kbd>↑</kbd>.
-In response,
-the shell redisplays the whole loop on one line
-(using semi-colons to separate the pieces):
+Постійне повторення одних і тих самих команд уже починає набридати,
+і Неллі боїться помилитися,
+тому замість цього вона натискає клавішу <kbd>↑</kbd>.
+У результаті оболонка повторно показує весь цикл в один рядок (використовуючи крапку з комою для розділення його частин):
 
 ```bash
 $ for datafile in NENE A.txt NENE B.txt; do echo $datafile stats-$datafile; done
@@ -560,12 +552,9 @@ $ for datafile in NENE*A.txt NENE*B.txt; do bash goostats.sh $datafile stats-$da
 ```
 
 Коли вона натискає <kbd>Enter</kbd>, термінал виконує змінену команду.
-However, nothing appears to happen --- there is no output.
-After a moment, Nelle realizes that since her script doesn't print anything to the screen
-any longer, she has no idea whether it is running, much less how quickly.
-She kills the running command by typing <kbd>Ctrl</kbd>\+<kbd>C</kbd>,
-uses <kbd>↑</kbd> to repeat the command,
-and edits it to read:
+Однак, здається, нічого не відбувається --- немає жодного виводу.
+Через деякий час Неллі розуміє, що оскільки її скрипт більше нічого не виводить на екран, вона не має жодного уявлення як швидко він виконується і чи працює взагалі.
+Вона перериває виконання команди, натискаючи <kbd>Ctrl</kbd>\+<kbd>C</kbd>, та за допомогою клавіші<kbd>↑</kbd> повторно викликає її та редагує, щоб вона виглядала так:
 
 ```bash
 $ for datafile in NENE*A.txt NENE*B.txt; do echo $datafile;
@@ -576,13 +565,11 @@ bash goostats.sh $datafile stats-$datafile; done
 
 ## Початок і кінець рядка
 
-We can move to the beginning of a line in the shell by typing <kbd>Ctrl</kbd>\+<kbd>A</kbd>
-and to the end using <kbd>Ctrl</kbd>\+<kbd>E</kbd>.
+Щоб швидко переміститися на початок рядка в терміналі, натисніть <kbd>Ctrl</kbd>\+<kbd>A</kbd>, а щоб перейти в його кінець — <kbd>Ctrl</kbd>\+<kbd>E</kbd>.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-When she runs her program now,
-it produces one line of output every five seconds or so:
+Тепер, коли Неллі запускає свою програму, та виводить один рядок приблизно кожні п'ять секунд:
 
 ```output
 NENE01729A.txt
@@ -591,25 +578,15 @@ NENE01751A.txt
 ...
 ```
 
-1518 times 5 seconds,
-divided by 60,
-tells her that her script will take about two hours to run.
-As a final check,
-she opens another terminal window,
-goes into `north-pacific-gyre`,
-and uses `cat stats-NENE01729B.txt`
-to examine one of the output files.
-It looks good,
-so she decides to get some coffee and catch up on her reading.
+Помножив 1518 файлів на 5 секунд і поділивши результат на 60, Неллі підраховує що її скрипт буде виконуватися близько двох годин.
+Для завершення перевірки вона відкриває нове вікно терміналу, переходить до каталогу `north-pacific-gyre` та використовує команду `cat stats-NENE01729B.txt`. для перегляду одного зі створених файлів.
+Оскільки все працює як слід, Неллі задоволено йде зробити каву та провести час із книжкою.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
 ## Хто знає історію, той може її повторити
 
-Another way to repeat previous work is to use the `history` command to
-get a list of the last few hundred commands that have been executed, and
-then to use `!123` (where '123' is replaced by the command number) to
-repeat one of those commands. Наприклад, якщо Неллі набере наступне:
+Ще один спосіб відтворити попередні дії — це команда `history`, яка показує перелік останніх кількох сотень виконаних команд. Після цього можна ввести `!123` (де '123' замінено на номер відповідної команди), щоб запустити її знову. Наприклад, якщо Неллі набере наступне:
 
 ```bash
 $ history | tail -n 5
@@ -630,21 +607,16 @@ stats-$datafile; done
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Other History Commands
+## Інші корисні команди для роботи з історією
 
-There are a number of other shortcut commands for getting at the history.
+Окрім `history`, існує низка скорочень, які дозволяють швидше переглядати та викликати попередні команди.
 
-- <kbd>Ctrl</kbd>\+<kbd>R</kbd> enters a history search mode 'reverse-i-search' and finds the
-  most recent command in your history that matches the text you enter next.
-  Press <kbd>Ctrl</kbd>\+<kbd>R</kbd> one or more additional times to search for earlier matches.
-  You can then use the left and right arrow keys to choose that line and edit
-  it then hit <kbd>Return</kbd> to run the command.
-- `!!` повертає безпосередньо попередню команду (ви можете знайти це більш зручним, ніж використання <kbd>↑</kbd>)
+- <kbd>Ctrl</kbd>\+<kbd>R</kbd> переходить у режим 'зворотного пошуку', який дозволяє знайти останню команду завдяки частині тексту.
+  Натисніть <kbd>Ctrl</kbd>\+<kbd>R</kbd> ще один або кілька разів для перегляду більш ранніх збігів.
+  Після цього можна за допомогою стрілок вліво та вправо переміститися по знайденому рядку, відредагувати його та натиснути <kbd>Return</kbd>, щоб виконати команду.
+- `!!` повертає безпосередньо попередню команду (деякі з вас можуть знайти це більш зручним, ніж використання <kbd>↑</kbd>)
 - `!$` повертає останнє слово останньої команди.
-  That's useful more often than you might expect: after
-  `bash goostats.sh NENE01729B.txt stats-NENE01729B.txt`, you can type
-  `less !$` to look at the file `stats-NENE01729B.txt`, which is
-  quicker than doing <kbd>↑</kbd> and editing the command-line.
+  Ця можливість корисна частіше, ніж здається: після `bash goostats.sh NENE01729B.txt stats-NENE01729B.txt` можна просто набрати `less !$` для перегляду файлу `stats-NENE01729B.txt`, що швидше, ніж шукати попередню команду зі <kbd>↑</kbd> та змінювати її вручну.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -652,9 +624,7 @@ There are a number of other shortcut commands for getting at the history.
 
 ## Пробний запуск
 
-A loop is a way to do many things at once --- or to make many mistakes at
-once if it does the wrong thing. One way to check what a loop _would_ do
-is to `echo` the commands it would run instead of actually running them.
+Цикл --- це спосіб виконати багато дій одночасно --- або зробити багато помилок одразу, якщо він робить щось не те. Один зі способів перевірити роботу циклу - замінити фактичне виконання команд на `echo`.
 
 Припустимо, ми хочемо переглянути команди, які виконає наступний цикл, без виконання цих команд:
 
@@ -665,8 +635,7 @@ $ for datafile in *.pdb
 > done
 ```
 
-What is the difference between the two loops below, and which one would we
-want to run?
+У чому різниця між двома наведеними нижче циклами, і який із них слід запустити?
 
 ```bash
 # Варіант 1
@@ -688,17 +657,13 @@ $ for datafile in *.pdb
 
 ## Відповідь
 
-The second version is the one we want to run.
-This prints to screen everything enclosed in the quote marks, expanding the
-loop variable name because we have prefixed it with a dollar sign.
-It also _does not_ modify nor create the file `all.pdb`, as the `>>`
-is treated literally as part of a string rather than as a
-redirection instruction.
+Нам потрібен саме другий варіант циклу.
+Він виводить на екран увесь текст у лапках, підставивши назву змінної циклу, оскільки перед нею стоїть знак долара.
+Крім того, ця команда не створює і не змінює файл `all.pdb`, оскільки оператор `>>` розглядається як частина рядка, а не як інструкція перенаправлення виводу.
 
-Перша версія додає вивід команди `echo cat $datafile` до файлу `all.pdb`. This file will just contain the list;
-`cat cubane.pdb`, `cat ethane.pdb`, `cat methane.pdb` etc.
+Перша версія додає вивід команди `echo cat $datafile` до файлу `all.pdb`. Цей файл міститиме лише список команд типу `cat cubane.pdb`, `cat ethane.pdb`, `cat methane.pdb` тощо.
 
-Try both versions for yourself to see the output! Обов'язково відкрийте файл `all.pdb`, щоб переглянути його вміст.
+Спробуйте обидві версії самостійно, щоб побачити результат! Обов'язково відкрийте файл `all.pdb`, щоб переглянути його вміст.
 
 :::::::::::::::::::::::::
 
@@ -708,9 +673,7 @@ Try both versions for yourself to see the output! Обов'язково відк
 
 ## Вкладені цикли
 
-Suppose we want to set up a directory structure to organize
-some experiments measuring reaction rate constants with different compounds
-_and_ different temperatures.  Яким буде результат виконання наступного коду:
+Припустімо, що ми хочемо створити систему каталогів для впорядкування певних експериментів, у яких досліджується швидкість реакцій із різними хімічними сполуками та температурами.  Яким буде результат виконання наступного коду:
 
 ```bash
 $ for species in cubane ethane methane
@@ -737,7 +700,7 @@ $ for species in cubane ethane methane
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - Цикл `for` повторює команди один раз для кожного елемента списку.
-- Every `for` loop needs a variable to refer to the thing it is currently operating on.
+- У кожному циклі `for` використовується змінна, що вказує на поточний об’єкт, з яким він зараз працює.
 - Use `$name` to expand a variable (i.e., get its value). Також можна використовувати `${name}`.
 - Do not use spaces, quotes, or wildcard characters such as '\*' or '?' in filenames, as it complicates variable expansion.
 - Надавайте файлам послідовні імена, які можна легко описати за допомогою шаблонів, щоб полегшити їх вибір для циклів.
