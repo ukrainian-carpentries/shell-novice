@@ -66,10 +66,7 @@ ATOM     13  H           1      -3.172  -1.337   0.206  1.00  0.00
 
 ## Текст або будь-що інше?
 
-Зазвичай ми називаємо "текстовими редакторами" програми на кшталт Microsoft Word або LibreOffice Writer, але коли мова йде про програмування, потрібно бути трохи обережнішими. За замовчуванням, Microsoft Word зберігає у файлах `.docx` не лише текст, але й інформацію про форматування: шрифти, заголовки тощо. This extra information isn't stored as characters and doesn't mean
-anything to tools like `head`, which expects input files to contain
-nothing but the letters, digits, and punctuation on a standard computer
-keyboard. Отже, редагуючи програми, вам слід користуватися текстовим редактором, який працює зі звичайним текстом, або подбати про те, щоб файли зберігалися у форматі звичайного тексту.
+Зазвичай ми називаємо "текстовими редакторами" програми на кшталт Microsoft Word або LibreOffice Writer, але коли мова йде про програмування, потрібно бути трохи обережнішими. За замовчуванням, Microsoft Word зберігає у файлах `.docx` не лише текст, але й інформацію про форматування: шрифти, заголовки тощо. Ця додаткова інформація не зберігається у вигляді звичайних символів і є незрозумілою для програм на кшталт `head`, яка очікує на те, що у файлі будуть тільки літери, числа та пунктуація зі стандартної комп'ютерної клавіатури. Отже, редагуючи програми, вам слід користуватися текстовим редактором, який працює зі звичайним текстом, або подбати про те, щоб файли зберігалися у форматі звичайного тексту.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -118,23 +115,17 @@ ATOM     13  H           1      -1.183   0.500  -1.412  1.00  0.00
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Double-Quotes Around Arguments
+## Подвійні лапки навколо аргументів
 
-For the same reason that we put the loop variable inside double-quotes,
-in case the filename happens to contain any spaces,
-we surround `$1` with double-quotes.
+Як і у випадку зі змінною циклу, `$1` потрібно брати в подвійні лапки, оскільки назва файлу містить пробіли.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Currently, we need to edit `middle.sh` each time we want to adjust the range of
-lines that is returned.
-Let's fix that by configuring our script to instead use three command-line arguments.
-After the first command-line argument (`$1`), each additional argument that we
-provide will be accessible via the special variables `$1`, `$2`, `$3`,
-which refer to the first, second, third command-line arguments, respectively.
+Наразі нам доводиться редагувати `middle.sh` щоразу, коли ми хочемо змінити діапазон рядків, які повертаються.
+Ми виправимо це, налаштувавши наш скрипт для використання трьох аргументів командного рядка.
+Після першого аргументу командного рядка (`$1`), наступні надані аргументи будуть зберігатися у спеціальних змінних `$1`, `$2`, `$3`, які відповідно посилаються на перший, другий і третій аргумент командного рядка.
 
-Knowing this, we can use additional arguments to define the range of lines to
-be passed to `head` and `tail` respectively:
+Знаючи це, ми можемо використовувати додаткові аргументи для визначення діапазону рядків, які треба передати до `head` та `tail`:
 
 ```bash
 $ nano middle.sh
@@ -144,7 +135,7 @@ $ nano middle.sh
 head -n "$2" "$1" | tail -n "$3"
 ```
 
-We can now run:
+Тепер ми можемо запустити:
 
 ```bash
 $ bash middle.sh pentane.pdb 15 5
@@ -158,8 +149,7 @@ ATOM     12  H           1      -0.048  -1.362  -0.205  1.00  0.00
 ATOM     13  H           1      -1.183   0.500  -1.412  1.00  0.00
 ```
 
-By changing the arguments to our command, we can change our script's
-behaviour:
+Достатньо змінити аргументи команди й скрипт працюватиме по-іншому:
 
 ```bash
 $ bash middle.sh pentane.pdb 20 5
@@ -173,9 +163,8 @@ ATOM     17  H           1      -3.393   0.254  -0.321  1.00  0.00
 TER      18              1
 ```
 
-This works,
-but it may take the next person who reads `middle.sh` a moment to figure out what it does.
-We can improve our script by adding some **comments** at the top:
+Такий варіант працює, але іншому користувачеві може знадобитися певний час, щоб розібратися, як саме працює скрипт `middle.sh`.
+Щоб зробити скрипт зрозумілішим, додамо на його початку кілька **коментарів**:
 
 ```bash
 $ nano middle.sh
@@ -187,27 +176,22 @@ $ nano middle.sh
 head -n "$2" "$1" | tail -n "$3"
 ```
 
-A comment starts with a `#` character and runs to the end of the line.
-The computer ignores comments,
-but they're invaluable for helping people (including your future self) understand and use scripts.
+Коментар починається зі символу `#` і триває до кінця рядка.
+Коментарі не впливають на виконання коду, але вони допомагають користувачам (і вам самим у майбутньому) швидко зрозуміти та використовувати скрипти.
 Єдине застереження полягає у тому, що кожного разу, коли ви змінюєте скрипт, ви повинні перевіряти, що коментар все ще правильний. Пояснення, яке спрямовує читача в неправильному напрямку, гірше, ніж його відсутність.
 
-What if we want to process many files in a single pipeline?
-For example, if we want to sort our `.pdb` files by length, we would type:
+Що робити, якщо ми хочемо обробити багато файлів в одному конвеєрі?
+Наприклад, якщо ми хочемо відсортувати наші `.pdb`-файли за довжиною, ми введемо:
 
 ```bash
 $ wc -l *.pdb | sort -n
 ```
 
-because `wc -l` lists the number of lines in the files
-(recall that `wc` stands for 'word count', adding the `-l` option means 'count lines' instead)
-and `sort -n` sorts things numerically.
-We could put this in a file,
-but then it would only ever sort a list of `.pdb` files in the current directory.
-If we want to be able to get a sorted list of other kinds of files,
-we need a way to get all those names into the script.
-We can't use `$1`, `$2`, and so on
-because we don't know how many files there are.
+оскільки `wc -l` виводить кількість рядків у файлах (нагадаємо, що `wc` означає 'підрахунок слів' (word count), а додавання опції `-l` натомість означає 'підрахунок рядків' (lines)) та `sort -n` використовує числове сортування.
+Ми можемо записати цей конвеєр у файл, але тоді він сортуватиме лише список `.pdb` файлів у поточному каталозі.
+Якщо ми хочемо отримати відсортований список інших типів файлів, нам потрібно передати всі ці імена у скрипт.
+У цьому випадку не можна скористатися змінними `$1`, `$2` тощо,
+бо ми не знаємо наперед, скільки файлів потрібно обробити.
 Instead, we use the special variable `$@`,
 which means,
 'All of the command-line arguments to the shell script'.
