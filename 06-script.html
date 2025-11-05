@@ -325,7 +325,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Скрипти командної оболонки</h1>
-        <p>Останнє оновлення 2025-09-29 |
+        <p>Останнє оновлення 2025-11-05 |
 
         <a href="https://github.com/ukrainian-carpentries/shell-novice/edit/main/episodes/06-script.md" class="external-link">Редагувати цю сторінку <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -430,11 +430,11 @@ ATOM     13  H           1      -3.172  -1.337   0.206  1.00  0.00</code></pre>
 Microsoft Word або LibreOffice Writer, але коли мова йде про
 програмування, потрібно бути трохи обережнішими. За замовчуванням,
 Microsoft Word зберігає у файлах <code>.docx</code> не лише текст, але й
-інформацію про форматування: шрифти, заголовки тощо. This extra
-information isn’t stored as characters and doesn’t mean anything to
-tools like <code>head</code>, which expects input files to contain
-nothing but the letters, digits, and punctuation on a standard computer
-keyboard. Отже, редагуючи програми, вам слід користуватися текстовим
+інформацію про форматування: шрифти, заголовки тощо. Ця додаткова
+інформація не зберігається у вигляді звичайних символів і є незрозумілою
+для програм на кшталт <code>head</code>, яка очікує на те, що у файлі
+будуть тільки літери, числа та пунктуація зі стандартної комп’ютерної
+клавіатури. Отже, редагуючи програми, вам слід користуватися текстовим
 редактором, який працює зі звичайним текстом, або подбати про те, щоб
 файли зберігалися у форматі звичайного тексту.</p>
 </div>
@@ -486,37 +486,36 @@ ATOM     11  H           1      -0.074  -0.384   1.288  1.00  0.00
 ATOM     12  H           1      -0.048  -1.362  -0.205  1.00  0.00
 ATOM     13  H           1      -1.183   0.500  -1.412  1.00  0.00</code></pre>
 </div>
-<div id="double-quotes-around-arguments" class="callout">
+<div id="подвійні-лапки-навколо-аргументів" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <span class="callout-header">Виноска</span>
-<div id="double-quotes-around-arguments" class="callout-inner">
-<h3 class="callout-title">Double-Quotes Around Arguments</h3>
+<div id="подвійні-лапки-навколо-аргументів" class="callout-inner">
+<h3 class="callout-title">Подвійні лапки навколо аргументів</h3>
 <div class="callout-content">
-<p>For the same reason that we put the loop variable inside
-double-quotes, in case the filename happens to contain any spaces, we
-surround <code>$1</code> with double-quotes.</p>
+<p>Як і у випадку зі змінною циклу, <code>$1</code> потрібно брати в
+подвійні лапки, оскільки назва файлу містить пробіли.</p>
 </div>
 </div>
 </div>
-<p>Currently, we need to edit <code>middle.sh</code> each time we want
-to adjust the range of lines that is returned. Let’s fix that by
-configuring our script to instead use three command-line arguments.
-After the first command-line argument (<code>$1</code>), each additional
-argument that we provide will be accessible via the special variables
-<code>$1</code>, <code>$2</code>, <code>$3</code>, which refer to the
-first, second, third command-line arguments, respectively.</p>
-<p>Knowing this, we can use additional arguments to define the range of
-lines to be passed to <code>head</code> and <code>tail</code>
-respectively:</p>
+<p>Наразі нам доводиться редагувати <code>middle.sh</code> щоразу, коли
+ми хочемо змінити діапазон рядків, які повертаються. Ми виправимо це,
+налаштувавши наш скрипт для використання трьох аргументів командного
+рядка. Після першого аргументу командного рядка (<code>$1</code>),
+наступні надані аргументи будуть зберігатися у спеціальних змінних
+<code>$1</code>, <code>$2</code>, <code>$3</code>, які відповідно
+посилаються на перший, другий і третій аргумент командного рядка.</p>
+<p>Знаючи це, ми можемо використовувати додаткові аргументи для
+визначення діапазону рядків, які треба передати до <code>head</code> та
+<code>tail</code>:</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="ex">$</span> nano middle.sh</span></code></pre>
 </div>
 <pre class="source"><code>head -n "$2" "$1" | tail -n "$3"</code></pre>
-<p>We can now run:</p>
+<p>Тепер ми можемо запустити:</p>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -531,8 +530,8 @@ ATOM     11  H           1      -0.074  -0.384   1.288  1.00  0.00
 ATOM     12  H           1      -0.048  -1.362  -0.205  1.00  0.00
 ATOM     13  H           1      -1.183   0.500  -1.412  1.00  0.00</code></pre>
 </div>
-<p>By changing the arguments to our command, we can change our script’s
-behaviour:</p>
+<p>Достатньо змінити аргументи команди й скрипт працюватиме
+по-іншому:</p>
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -547,10 +546,10 @@ ATOM     16  H           1      -2.540  -1.303  -0.404  1.00  0.00
 ATOM     17  H           1      -3.393   0.254  -0.321  1.00  0.00
 TER      18              1</code></pre>
 </div>
-<p>This works, but it may take the next person who reads
-<code>middle.sh</code> a moment to figure out what it does. We can
-improve our script by adding some <strong>comments</strong> at the
-top:</p>
+<p>Такий варіант працює, але іншому користувачеві може знадобитися
+певний час, щоб розібратися, як саме працює скрипт
+<code>middle.sh</code>. Щоб зробити скрипт зрозумілішим, додамо на його
+початку кілька <strong>коментарів</strong>:</p>
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -559,35 +558,36 @@ top:</p>
 <pre class="source"><code># Виділення рядків з середини файлу.
 # Використання: bash middle.sh filename end_line num_lines
 head -n "$2" "$1" | tail -n "$3"</code></pre>
-<p>A comment starts with a <code>#</code> character and runs to the end
-of the line. The computer ignores comments, but they’re invaluable for
-helping people (including your future self) understand and use scripts.
-Єдине застереження полягає у тому, що кожного разу, коли ви змінюєте
-скрипт, ви повинні перевіряти, що коментар все ще правильний. Пояснення,
-яке спрямовує читача в неправильному напрямку, гірше, ніж його
-відсутність.</p>
-<p>What if we want to process many files in a single pipeline? For
-example, if we want to sort our <code>.pdb</code> files by length, we
-would type:</p>
+<p>Коментар починається зі символу <code>#</code> і триває до кінця
+рядка. Коментарі не впливають на виконання коду, але вони допомагають
+користувачам (і вам самим у майбутньому) швидко зрозуміти та
+використовувати скрипти. Єдине застереження полягає у тому, що кожного
+разу, коли ви змінюєте скрипт, ви повинні перевіряти, що коментар все ще
+правильний. Пояснення, яке спрямовує читача в неправильному напрямку,
+гірше, ніж його відсутність.</p>
+<p>Що робити, якщо ми хочемо обробити багато файлів в одному конвеєрі?
+Наприклад, якщо ми хочемо відсортувати наші <code>.pdb</code>-файли за
+довжиною, ми введемо:</p>
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="ex">$</span> wc <span class="at">-l</span> <span class="pp">*</span>.pdb <span class="kw">|</span> <span class="fu">sort</span> <span class="at">-n</span></span></code></pre>
 </div>
-<p>because <code>wc -l</code> lists the number of lines in the files
-(recall that <code>wc</code> stands for ‘word count’, adding the
-<code>-l</code> option means ‘count lines’ instead) and
-<code>sort -n</code> sorts things numerically. We could put this in a
-file, but then it would only ever sort a list of <code>.pdb</code> files
-in the current directory. If we want to be able to get a sorted list of
-other kinds of files, we need a way to get all those names into the
-script. We can’t use <code>$1</code>, <code>$2</code>, and so on because
-we don’t know how many files there are. Instead, we use the special
-variable <code>$@</code>, which means, ‘All of the command-line
-arguments to the shell script’. We also should put <code>$@</code>
-inside double-quotes to handle the case of arguments containing spaces
-(<code>"$@"</code> is special syntax and is equivalent to
-<code>"$1"</code> <code>"$2"</code> …).</p>
+<p>оскільки <code>wc -l</code> виводить кількість рядків у файлах
+(нагадаємо, що <code>wc</code> означає ‘підрахунок слів’ (word count), а
+додавання опції <code>-l</code> натомість означає ‘підрахунок рядків’
+(lines)) та <code>sort -n</code> використовує числове сортування. Ми
+можемо записати цей конвеєр у файл, але тоді він сортуватиме лише список
+<code>.pdb</code> файлів у поточному каталозі. Якщо ми хочемо отримати
+відсортований список інших типів файлів, нам потрібно передати всі ці
+імена у скрипт. У цьому випадку не можна скористатися змінними
+<code>$1</code>, <code>$2</code> тощо, бо ми не знаємо наперед, скільки
+файлів потрібно обробити. Instead, we use the special variable
+<code>$@</code>, which means, ‘All of the command-line arguments to the
+shell script’. We also should put <code>$@</code> inside double-quotes
+to handle the case of arguments containing spaces (<code>"$@"</code> is
+special syntax and is equivalent to <code>"$1"</code> <code>"$2"</code>
+…).</p>
 <p>Here’s an example:</p>
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -655,7 +655,7 @@ each of those files separately.</p>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -724,7 +724,7 @@ to the log before running them. Why do you think it does this?</p>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>If a command causes something to crash or hang, it might be useful to
 know what that command was, in order to investigate the problem. Were
@@ -849,7 +849,7 @@ between flexibility and complexity.</p>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>The correct answer is 2.</p>
 <p>The special variables <code>$1</code>, <code>$2</code> and
@@ -906,7 +906,7 @@ Extension</h3>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb40">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -978,7 +978,7 @@ three scripts would do when run as <code>bash script1.sh *.pdb</code>,
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <p>In each case, the shell expands the wildcard in <code>*.pdb</code>
 before passing the resulting list of file names as arguments to the
@@ -1048,7 +1048,7 @@ directory:</p>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <p>The <code>-x</code> option causes <code>bash</code> to run in debug
 mode. This prints out each command as it is run, which will help you to
@@ -1143,8 +1143,8 @@ consistent with built-in Unix commands.</li>
   "url": "https://ukrainian-carpentries.github.io/shell-novice/06-script.html",
   "identifier": "https://ukrainian-carpentries.github.io/shell-novice/06-script.html",
   "dateCreated": "2014-10-22",
-  "dateModified": "2025-09-29",
-  "datePublished": "2025-11-04"
+  "dateModified": "2025-11-05",
+  "datePublished": "2025-11-05"
 }
 
   </script><script>
