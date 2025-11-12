@@ -199,7 +199,7 @@ We also should put `$@` inside double-quotes
 to handle the case of arguments containing spaces
 (`"$@"` is special syntax and is equivalent to `"$1"` `"$2"` ...).
 
-Here's an example:
+Ось приклад:
 
 ```bash
 $ nano sorted.sh
@@ -230,7 +230,7 @@ $ bash sorted.sh *.pdb ../creatures/*.dat
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## List Unique Species
+## Перелік унікальних видів тварин
 
 Лія має кілька сотень файлів даних, кожен з яких відформатований наступним чином:
 
@@ -245,8 +245,7 @@ $ bash sorted.sh *.pdb ../creatures/*.dat
 2013-11-07,bear,1
 ```
 
-An example of this type of file is given in
-`shell-lesson-data/exercise-data/animal-counts/animals.csv`.
+Приклад файлу такого типу наведено у `shell-lesson-data/exercise-data/animal-counts/animals.сsv`.
 
 We can use the command `cut -d , -f 2 animals.csv | sort | uniq` to produce
 the unique species in `animals.csv`.
@@ -290,7 +289,7 @@ we can do this:
 $ history | tail -n 5 > redo-figure-3.sh
 ```
 
-The file `redo-figure-3.sh` now contains:
+Файл `redo-figure-3.sh` тепер містить наступне:
 
 ```source
 297 bash goostats.sh NENE01729B.txt stats-NENE01729B.txt
