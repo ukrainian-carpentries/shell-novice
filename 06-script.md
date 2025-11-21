@@ -192,14 +192,10 @@ $ wc -l *.pdb | sort -n
 Якщо ми хочемо отримати відсортований список інших типів файлів, нам потрібно передати всі ці імена у скрипт.
 У цьому випадку не можна скористатися змінними `$1`, `$2` тощо,
 бо ми не знаємо наперед, скільки файлів потрібно обробити.
-Instead, we use the special variable `$@`,
-which means,
-'All of the command-line arguments to the shell script'.
-We also should put `$@` inside double-quotes
-to handle the case of arguments containing spaces
-(`"$@"` is special syntax and is equivalent to `"$1"` `"$2"` ...).
+Натомість ми використовуємо спеціальну змінну `$@`, що означає, "Всі аргументи командного рядка передані скрипту".
+Необхідно взяти `$@` у подвійні лапки, щоб правильно обробляти аргументи з пробілами (`"$@"` є спеціальним синтаксисом еквівалентним `"$1"` `"$2"` ...).
 
-Here's an example:
+Ось приклад:
 
 ```bash
 $ nano sorted.sh
@@ -230,7 +226,7 @@ $ bash sorted.sh *.pdb ../creatures/*.dat
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## List Unique Species
+## Перелік унікальних видів тварин
 
 Лія має кілька сотень файлів даних, кожен з яких відформатований наступним чином:
 
@@ -245,17 +241,12 @@ $ bash sorted.sh *.pdb ../creatures/*.dat
 2013-11-07,bear,1
 ```
 
-An example of this type of file is given in
-`shell-lesson-data/exercise-data/animal-counts/animals.csv`.
+Приклад файлу такого типу наведено у `shell-lesson-data/exercise-data/animal-counts/animals.сsv`.
 
-We can use the command `cut -d , -f 2 animals.csv | sort | uniq` to produce
-the unique species in `animals.csv`.
-In order to avoid having to type out this series of commands every time,
-a scientist may choose to write a shell script instead.
+Ми можемо скористатися командою `cut -d , -f 2 animals.csv | sort | uniq`, щоб отримати унікальні види тварин з файлу `animals.csv`.
+Щоб заощадити час і не повторювати введення команд, науковець може замість цього написати скрипт командної оболонки.
 
-Write a shell script called `species.sh` that takes any number of
-filenames as command-line arguments and uses a variation of the above command
-to print a list of the unique species appearing in each of those files separately.
+Створіть скрипт із назвою `species.sh`, який сприймає довільну кількість імен файлів за аргументи командного рядка. Він має використовувати змінену версію попередньої команди для виведення списку унікальних видів, які зустрічаються в кожному з цих файлів окремо.
 
 :::::::::::::::  solution
 
@@ -278,19 +269,15 @@ done
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Suppose we have just run a series of commands that did something useful --- for example,
-creating a graph we'd like to use in a paper.
-We'd like to be able to re-create the graph later if we need to,
-so we want to save the commands in a file.
-Instead of typing them in again
-(and potentially getting them wrong)
-we can do this:
+Припустимо, ми щойно виконали низку команд, які зробили щось корисне --- наприклад, створили графік, який ми плануємо використати у публікації.
+Ми хотіли б мати змогу відтворити графік пізніше, якщо знадобиться, тому збережемо команди у файл.
+Замість повторного введення (і ризику помилок), ми можемо зробити ось так:
 
 ```bash
 $ history | tail -n 5 > redo-figure-3.sh
 ```
 
-The file `redo-figure-3.sh` now contains:
+Файл `redo-figure-3.sh` тепер містить наступне:
 
 ```source
 297 bash goostats.sh NENE01729B.txt stats-NENE01729B.txt
@@ -306,7 +293,7 @@ we have a completely accurate record of how we created that figure.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Why Record Commands in the History Before Running Them?
+## Чому варто записувати команди в історію перед їх виконанням?
 
 Якщо виконати команду:
 
@@ -314,26 +301,20 @@ we have a completely accurate record of how we created that figure.
 $ history | tail -n 5 > recent.sh
 ```
 
-останньою командою у файлі є сама команда `history`, тобто, термінал додав `history` до журналу команд перед тим, як фактично її виконав. In fact, the shell _always_ adds commands to the log
-before running them. Why do you think it does this?
+останньою командою у файлі є сама команда `history`, тобто, термінал додав `history` до журналу команд перед тим, як фактично її виконав. Насправді термінал _завжди_ додає команди до журналу перед їх виконанням. Як ви гадаєте, чому він поводиться саме так?
 
 :::::::::::::::  solution
 
 ## Відповідь
 
-If a command causes something to crash or hang, it might be useful
-to know what that command was, in order to investigate the problem.
-Were the command only be recorded after running it, we would not
-have a record of the last command run in the event of a crash.
+Якщо якась команда призводить до збою або зависання, знання того, яка саме команда це спричинила, допоможе з’ясувати причину проблеми.
+Якби команда записувалася лише після її виконання, ми б втратили запис останньої команди у разі збою.
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-In practice, most people develop shell scripts by running commands
-at the shell prompt a few times
-to make sure they're doing the right thing,
-then saving them in a file for re-use.
+На практиці, більшість людей створюють скрипти терміналу, запускаючи команди в командному рядку кілька разів, щоб переконатися, що вони роблять все правильно, а потім зберігають їх у файлі для подальшого використання.
 This style of work allows people to recycle
 what they discover about their data and their workflow with one call to `history`
 and a bit of editing to clean up the output
