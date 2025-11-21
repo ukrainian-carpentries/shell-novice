@@ -325,7 +325,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Скрипти командної оболонки</h1>
-        <p>Останнє оновлення 2025-11-05 |
+        <p>Останнє оновлення 2025-11-21 |
 
         <a href="https://github.com/ukrainian-carpentries/shell-novice/edit/main/episodes/06-script.md" class="external-link">Редагувати цю сторінку <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -584,13 +584,13 @@ head -n "$2" "$1" | tail -n "$3"</code></pre>
 відсортований список інших типів файлів, нам потрібно передати всі ці
 імена у скрипт. У цьому випадку не можна скористатися змінними
 <code>$1</code>, <code>$2</code> тощо, бо ми не знаємо наперед, скільки
-файлів потрібно обробити. Instead, we use the special variable
-<code>$@</code>, which means, ‘All of the command-line arguments to the
-shell script’. We also should put <code>$@</code> inside double-quotes
-to handle the case of arguments containing spaces (<code>"$@"</code> is
-special syntax and is equivalent to <code>"$1"</code> <code>"$2"</code>
-…).</p>
-<p>Here’s an example:</p>
+файлів потрібно обробити. Натомість ми використовуємо спеціальну змінну
+<code>$@</code>, що означає, “Всі аргументи командного рядка передані
+скрипту”. Необхідно взяти <code>$@</code> у подвійні лапки, щоб
+правильно обробляти аргументи з пробілами (<code>"$@"</code> є
+спеціальним синтаксисом еквівалентним <code>"$1"</code>
+<code>"$2"</code> …).</p>
+<p>Ось приклад:</p>
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -618,13 +618,13 @@ wc -l "$@" | sort -n</code></pre>
 163 ../creatures/unicorn.dat
 596 total</code></pre>
 </div>
-<div id="list-unique-species" class="callout challenge">
+<div id="перелік-унікальних-видів-тварин" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Вправа</span>
-<div id="list-unique-species" class="callout-inner">
-<h3 class="callout-title">List Unique Species</h3>
+<div id="перелік-унікальних-видів-тварин" class="callout-inner">
+<h3 class="callout-title">Перелік унікальних видів тварин</h3>
 <div class="callout-content">
 <p>Лія має кілька сотень файлів даних, кожен з яких відформатований
 наступним чином:</p>
@@ -636,17 +636,17 @@ wc -l "$@" | sort -n</code></pre>
 2013-11-06,fox,1
 2013-11-07,rabbit,18
 2013-11-07,bear,1</code></pre>
-<p>An example of this type of file is given in
-<code>shell-lesson-data/exercise-data/animal-counts/animals.csv</code>.</p>
-<p>We can use the command
-<code>cut -d , -f 2 animals.csv | sort | uniq</code> to produce the
-unique species in <code>animals.csv</code>. In order to avoid having to
-type out this series of commands every time, a scientist may choose to
-write a shell script instead.</p>
-<p>Write a shell script called <code>species.sh</code> that takes any
-number of filenames as command-line arguments and uses a variation of
-the above command to print a list of the unique species appearing in
-each of those files separately.</p>
+<p>Приклад файлу такого типу наведено у
+<code>shell-lesson-data/exercise-data/animal-counts/animals.сsv</code>.</p>
+<p>Ми можемо скористатися командою
+<code>cut -d , -f 2 animals.csv | sort | uniq</code>, щоб отримати
+унікальні види тварин з файлу <code>animals.csv</code>. Щоб заощадити
+час і не повторювати введення команд, науковець може замість цього
+написати скрипт командної оболонки.</p>
+<p>Створіть скрипт із назвою <code>species.sh</code>, який сприймає
+довільну кількість імен файлів за аргументи командного рядка. Він має
+використовувати змінену версію попередньої команди для виведення списку
+унікальних видів, які зустрічаються в кожному з цих файлів окремо.</p>
 </div>
 </div>
 </div>
@@ -657,7 +657,7 @@ each of those files separately.</p>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -677,17 +677,17 @@ each of those files separately.</p>
 </div>
 </div>
 </div>
-<p>Suppose we have just run a series of commands that did something
-useful — for example, creating a graph we’d like to use in a paper. We’d
-like to be able to re-create the graph later if we need to, so we want
-to save the commands in a file. Instead of typing them in again (and
-potentially getting them wrong) we can do this:</p>
+<p>Припустимо, ми щойно виконали низку команд, які зробили щось корисне
+— наприклад, створили графік, який ми плануємо використати у публікації.
+Ми хотіли б мати змогу відтворити графік пізніше, якщо знадобиться, тому
+збережемо команди у файл. Замість повторного введення (і ризику
+помилок), ми можемо зробити ось так:</p>
 <div class="codewrapper sourceCode" id="cb26">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="ex">$</span> history <span class="kw">|</span> <span class="fu">tail</span> <span class="at">-n</span> 5 <span class="op">&gt;</span> redo-figure-3.sh</span></code></pre>
 </div>
-<p>The file <code>redo-figure-3.sh</code> now contains:</p>
+<p>Файл <code>redo-figure-3.sh</code> тепер містить наступне:</p>
 <pre class="source"><code>297 bash goostats.sh NENE01729B.txt stats-NENE01729B.txt
 298 bash goodiff.sh stats-NENE01729B.txt /data/validated/01729.txt &gt; 01729-differences.txt
 299 cut -d ',' -f 2-3 01729-differences.txt &gt; 01729-time-series.txt
@@ -697,14 +697,14 @@ potentially getting them wrong) we can do this:</p>
 the commands, and to remove the final line where we called the
 <code>history</code> command, we have a completely accurate record of
 how we created that figure.</p>
-<div id="why-record-commands-in-the-history-before-running-them" class="callout challenge">
+<div id="чому-варто-записувати-команди-в-історію-перед-їх-виконанням" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Вправа</span>
-<div id="why-record-commands-in-the-history-before-running-them" class="callout-inner">
-<h3 class="callout-title">Why Record Commands in the History Before
-Running Them?</h3>
+<div id="чому-варто-записувати-команди-в-історію-перед-їх-виконанням" class="callout-inner">
+<h3 class="callout-title">Чому варто записувати команди в історію перед
+їх виконанням?</h3>
 <div class="callout-content">
 <p>Якщо виконати команду:</p>
 <div class="codewrapper sourceCode" id="cb28">
@@ -714,8 +714,9 @@ Running Them?</h3>
 </div>
 <p>останньою командою у файлі є сама команда <code>history</code>,
 тобто, термінал додав <code>history</code> до журналу команд перед тим,
-як фактично її виконав. In fact, the shell <em>always</em> adds commands
-to the log before running them. Why do you think it does this?</p>
+як фактично її виконав. Насправді термінал <em>завжди</em> додає команди
+до журналу перед їх виконанням. Як ви гадаєте, чому він поводиться саме
+так?</p>
 </div>
 </div>
 </div>
@@ -726,22 +727,23 @@ to the log before running them. Why do you think it does this?</p>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
-<p>If a command causes something to crash or hang, it might be useful to
-know what that command was, in order to investigate the problem. Were
-the command only be recorded after running it, we would not have a
-record of the last command run in the event of a crash.</p>
+<p>Якщо якась команда призводить до збою або зависання, знання того, яка
+саме команда це спричинила, допоможе з’ясувати причину проблеми. Якби
+команда записувалася лише після її виконання, ми б втратили запис
+останньої команди у разі збою.</p>
 </div>
 </div>
 </div>
 </div>
-<p>In practice, most people develop shell scripts by running commands at
-the shell prompt a few times to make sure they’re doing the right thing,
-then saving them in a file for re-use. This style of work allows people
-to recycle what they discover about their data and their workflow with
-one call to <code>history</code> and a bit of editing to clean up the
-output and save it as a shell script.</p>
+<p>На практиці, більшість людей створюють скрипти терміналу, запускаючи
+команди в командному рядку кілька разів, щоб переконатися, що вони
+роблять все правильно, а потім зберігають їх у файлі для подальшого
+використання. This style of work allows people to recycle what they
+discover about their data and their workflow with one call to
+<code>history</code> and a bit of editing to clean up the output and
+save it as a shell script.</p>
 <section><h2 class="section-heading" id="nelles-pipeline-creating-a-script">Nelle’s Pipeline: Creating a Script<a class="anchor" aria-label="anchor" href="#nelles-pipeline-creating-a-script"></a></h2>
 <hr class="half-width"><p>Nelle’s supervisor insisted that all her analytics must be
 reproducible. The easiest way to capture all the steps is in a
@@ -851,7 +853,7 @@ between flexibility and complexity.</p>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>The correct answer is 2.</p>
 <p>The special variables <code>$1</code>, <code>$2</code> and
@@ -908,7 +910,7 @@ Extension</h3>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb40">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -980,7 +982,7 @@ three scripts would do when run as <code>bash script1.sh *.pdb</code>,
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <p>In each case, the shell expands the wildcard in <code>*.pdb</code>
 before passing the resulting list of file names as arguments to the
@@ -1050,7 +1052,7 @@ directory:</p>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <p>The <code>-x</code> option causes <code>bash</code> to run in debug
 mode. This prints out each command as it is run, which will help you to
@@ -1145,8 +1147,8 @@ consistent with built-in Unix commands.</li>
   "url": "https://ukrainian-carpentries.github.io/shell-novice/instructor/06-script.html",
   "identifier": "https://ukrainian-carpentries.github.io/shell-novice/instructor/06-script.html",
   "dateCreated": "2014-10-22",
-  "dateModified": "2025-11-05",
-  "datePublished": "2025-11-18"
+  "dateModified": "2025-11-21",
+  "datePublished": "2025-11-21"
 }
 
   </script><script>
