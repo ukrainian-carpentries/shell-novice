@@ -120,8 +120,8 @@ as in `-o /tmp/output.txt`.
 :   A variable named in a function's declaration that is used to hold a value passed into the call.
 The term is often used interchangeably (and inconsistently) with [argument](#argument).
 
-[parent directory]{#parent-directory}
-:   The directory that "contains" the one in question.
+[батьківський каталог]{#parent-directory}
+:   Каталог, який "містить" каталог, про який йде мова.
 Every directory in a file system except the [root directory](#root-directory) has a parent.
 A directory's parent is usually referred to using the shorthand notation `..`
 (pronounced "dot dot").
