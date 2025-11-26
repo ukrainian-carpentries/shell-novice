@@ -249,7 +249,7 @@ and the presence of absence:
 ## Відповідь
 
 Правильна відповідь 3, тому що опція `-w` шукає збіги лише між цілими словами.
-The other options will also match 'of' when part of another word.
+Інші варіанти також шукатимуть збіги зі словом 'of', якщо воно є частиною іншого слова.
 
 :::::::::::::::::::::::::
 
@@ -257,10 +257,9 @@ The other options will also match 'of' when part of another word.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Wildcards
+## Символи підстановки
 
-`grep`'s real power doesn't come from its options, though; it comes from
-the fact that patterns can include wildcards. (The technical name for
+Проте справжня сила `grep` полягає не у його опціях, а у тому, що шаблони можуть містити символи підстановки. (The technical name for
 these is **regular expressions**, which
 is what the 're' in 'grep' stands for.) Regular expressions are both complex
 and powerful; if you want to do complex searches, please look at the lesson
@@ -279,8 +278,7 @@ Software is like that.
 
 We use the `-E` option and put the pattern in quotes to prevent the shell
 from trying to interpret it. (If the pattern contained a `*`, for
-example, the shell would try to expand it before running `grep`.) The
-`^` in the pattern anchors the match to the start of the line. The `.`
+example, the shell would try to expand it before running `grep`.) Символ `^` у шаблоні вимагає, щоб збіг був на початку рядка. The `.`
 matches a single character (just like `?` in the shell), while the `o`
 matches an actual 'o'.
 
@@ -288,7 +286,7 @@ matches an actual 'o'.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Tracking a Species
+## Відстеження видів диких тварин
 
 Лея має кілька сотень файлів даних, збережених в одному каталозі, кожен з яких відформатовано таким чином:
 
