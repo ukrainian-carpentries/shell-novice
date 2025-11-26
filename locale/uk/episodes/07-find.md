@@ -116,12 +116,11 @@ $ grep -w "is not" haiku.txt
 Today it is not working
 ```
 
-We've now seen that you don't have to have quotes around single words,
-but it is useful to use quotes when searching for multiple words.
+Ми вже бачили, що не обов'язково брати в лапки окремі слова, але лапки варто використовувати під час пошуку кількох слів.
 Це також допомагає легше відрізнити пошуковий термін або фразу від файлу, в якому відбувається пошук.
 У наступних прикладах ми будемо використовувати лапки.
 
-Another useful option is `-n`, which numbers the lines that match:
+Ще одна корисна опція - це `-n`, яка додає до виводу номери знайдених рядків:
 
 ```bash
 $ grep -n "it" haiku.txt
@@ -483,21 +482,17 @@ $ find . -name *.txt
 ```
 
 Ми очікували, що будуть знайдені усі текстові файли, але було виведено лише `./numbers.txt`.
-The problem is that the shell expands wildcard characters like `*` _before_ commands run.
-Since `*.txt` in the current directory expands to `./numbers.txt`,
-the command we actually ran was:
+Проблема полягає у тому, що оболонка розкриває символи підстановки, такі як `*`, ще _до_ виконання команд.
+Оскільки `*.txt` у поточному каталозі розширюється до `./numbers.txt`, то команда, яку ми виконали, була такою:
 
 ```bash
 $ find . -name numbers.txt
 ```
 
-`find` did what we asked; we just asked for the wrong thing.
+Команда `find` зробила те, що ми просили; ми просто попросили не те, що слід.
 
-To get what we want,
-let's do what we did with `grep`:
-put `*.txt` in quotes to prevent the shell from expanding the `*` wildcard.
-This way,
-`find` actually gets the pattern `*.txt`, not the expanded filename `numbers.txt`:
+Щоб досягти потрібного результату, слід зробити так само, як і з `grep`: візьмемо `*.txt` у лапки, щоб оболонка не змогла розгорнути шаблон `*`.
+Таким чином, `find` фактично отримає шаблон `*.txt`, а не ім'я файлу `numbers.txt`:
 
 ```bash
 $ find . -name "*.txt"
@@ -513,20 +508,14 @@ $ find . -name "*.txt"
 
 ## Порівняння `ls` та `find`
 
-`ls` and `find` can be made to do similar things given the right options,
-but under normal circumstances,
-`ls` lists everything it can,
-while `find` searches for things with certain properties and shows them.
+Обидві команди `ls` та `find` можна налаштувати для виконання подібних завдань за допомогою відповідних опцій, але зазвичай `ls` перелічує всі доступні елементи, тоді як, тоді як `find` шукає обʼєкти з певними властивостями.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-As we said earlier,
-the command line's power lies in combining tools.
-We've seen how to do that with pipes;
-let's look at another technique.
-As we just saw,
-`find . -name "*.txt"` gives us a list of all text files in or below the current directory.
-How can we combine that with `wc -l` to count the lines in all those files?
+Як ми вже зазначали, потужність командного рядка полягає в об’єднанні різних інструментів.
+Ми бачили, як цього досягти за допомогою каналів; тепер розглянемо іншу методику.
+Як ми щойно бачили, команда `find . -name "*.txt"` повертає список усіх текстових файлів у поточному каталозі та його підкаталогах.
+Як ми можемо поєднати це з `wc -l`, щоб порахувати кількість рядків в усіх цих файлах?
 
 Найпростіший спосіб - помістити команду `find` всередину `$()`:
 
@@ -541,25 +530,20 @@ $ wc -l $(find . -name "*.txt")
   21038 total
 ```
 
-When the shell executes this command,
-the first thing it does is run whatever is inside the `$()`.
+Коли термінал виконуватиме цю команду, він спочатку виконує все, що знаходиться у виразі `$()`.
 Потім він замінить вираз `$()` на результат виконання цієї команди.
-Since the output of `find` is the three filenames `./writing/LittleWomen.txt`,
-`./writing/haiku.txt`, and `./numbers.txt`, the shell constructs the command:
+Оскільки результатом команди `find` є три файли `./writing/LittleWomen.txt`, `./writing/haiku.txt` та `./numbers.txt`, термінал створює таку команду:
 
 ```bash
 $ wc -l ./writing/LittleWomen.txt ./writing/haiku.txt ./numbers.txt
 ```
 
-which is what we wanted.
-This expansion is exactly what the shell does when it expands wildcards like `*` and `?`,
-but lets us use any command we want as our own 'wildcard'.
+що є саме тим, що нам було потрібно.
+Це розширення працює так само, як обробка шаблонів `*` та `?` в оболонці, але дозволяє нам використовувати будь-яку команду як власний "шаблон".
 
-It's very common to use `find` and `grep` together.
-The first finds files that match a pattern;
-the second looks for lines inside those files that match another pattern.
-Here, for example, we can find txt files that contain the word "searching"
-by looking for the string 'searching' in all the `.txt` files in the current directory:
+Дуже поширено використовувати `find` та `grep` разом.
+Перша команда знаходить файли, які відповідають заданому шаблону; тоді як друга шукає в цих файлах рядки, що відповідають іншому шаблону.
+Наприклад, ми можемо знайти txt-файли, які містять слово "searching" шляхом пошуку рядка 'searching' у всіх файлах `.txt` поточного каталогу:
 
 ```bash
 $ grep "searching" $(find . -name "*.txt")
@@ -575,26 +559,21 @@ $ grep "searching" $(find . -name "*.txt")
 ## Порівняння та віднімання
 
 The `-v` option to `grep` inverts pattern matching, so that only lines
-which do _not_ match the pattern are printed. Given that, which of
-the following commands will find all .dat files in `creatures`
-except `unicorn.dat`?
+which do _not_ match the pattern are printed. Враховуючи це, яка з наведених нижче команд знайде всі файли `.dat` у каталозі `creatures` окрім файлу `unicorn.dat`?
 Після того, як ви обміркуєте свою відповідь, ви можете протестувати команди у каталогу `shell-lesson-data/exercise-data`.
 
 1. `find creatures -name "*.dat" | grep -v unicorn`
 2. `find creatures -name *.dat | grep -v unicorn`
 3. `grep -v "unicorn" $(find creatures -name "*.dat")`
-4. None of the above.
+4. Жоден із наведених вище варіантів.
 
 :::::::::::::::  solution
 
 ## Відповідь
 
-Варіант 1 правильний. Putting the match expression in quotes prevents the shell
-expanding it, so it gets passed to the `find` command.
+Варіант 1 правильний. Взяття виразу шаблону у лапки запобігає розгортанню його у терміналі та гарантує передачу безпосередньо команді `find`.
 
-Option 2 also works in this instance because the shell tries to expand `*.dat`
-but there are no `*.dat` files in the current directory,
-so the wildcard expression gets passed to `find`.
+Варіант 2 також працює у цьому випадку, оскільки термінал намагається розгорнути `*.dat`, але у поточному каталозі немає файлів `*.dat`, тому вираз із символами підстановки буде передано до `find`.
 Вперше ми зіткнулися з цим у [епізоді 3](03-create.md).
 
 Option 3 is incorrect because it searches the contents of the files for lines which
@@ -606,10 +585,9 @@ do not match 'unicorn', rather than searching the file names.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Binary Files
+## Бінарні файли
 
-We have focused exclusively on finding patterns in text files. What if
-your data is stored as images, in databases, or in some other format?
+Ми зосереджувалися виключно на пошуку шаблонів у текстових файлах. Але що робити, якщо ваші дані зберігаються у вигляді зображень, баз даних або в іншому форматі?
 
 A handful of tools extend `grep` to handle a few non text formats. But a
 more generalizable approach is to convert the data to text, or
@@ -628,7 +606,7 @@ ideas from it, and imitation is also the sincerest form of praise.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-The Unix shell is older than most of the people who use it. It has
+Термінал Unix був створений ще до того, як народилась більшість його користувачів. It has
 survived so long because it is one of the most productive programming
 environments ever created --- maybe even _the_ most productive. Its syntax
 may be cryptic, but people who have mastered it can experiment with
@@ -641,9 +619,9 @@ without thinking about them.'
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## `find` Pipeline Reading Comprehension
+## Розуміння використання `find` у конвеєрі
 
-Write a short explanatory comment for the following shell script:
+Напишіть короткий пояснювальний коментар до наступного скрипту термінала:
 
 ```bash
 wc -l $(find . -name "*.dat") | sort -n
@@ -653,7 +631,7 @@ wc -l $(find . -name "*.dat") | sort -n
 
 ## Відповідь
 
-1. Find all files with a `.dat` extension recursively from the current directory
+1. Рекурсивно знаходить всі файли з розширенням `.dat` у поточному каталозі
 
 2. Count the number of lines each of these files contains
 
@@ -669,7 +647,7 @@ wc -l $(find . -name "*.dat") | sort -n
 - `grep` selects lines in files that match patterns.
 - `--help` is an option supported by many bash commands, and programs that can be run from within Bash, to display more information on how to use these commands or programs.
 - `man [command]` displays the manual page for a given command.
-- `$([command])` inserts a command's output in place.
+- `$([команда])` виконує команду та заміняє вираз `$()` на результат її виконання.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
