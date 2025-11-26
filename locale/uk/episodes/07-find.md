@@ -365,20 +365,16 @@ done
 ```
 
 Це рішення є гіршим, оскільки `grep -c` повідомляє лише про кількість знайдених рядків.
-The total number of matches reported by this method will be lower if there is more
-than one match per line.
+Загальна кількість збігів, отриманих за допомогою цього методу, буде меншою, якщо в одному рядку є більше ніж один збіг.
 
 Уважні спостерігачі могли помітити, що імена персонажів іноді пишуться великими літерами у назвах розділів (наприклад, "MEG GOES TO VANITY FAIR").
-If you wanted to count these as well, you could add the `-i` option for case-insensitivity
-(though in this case, it doesn't affect the answer to which sister is mentioned
-most frequently).
+Якщо ви хочете врахувати й ці випадки, можна додати опцію `-i` для нечутливості до регістру (хоча в цьому випадку це не впливає на відповідь, яка сестра згадується найчастіше).
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-While `grep` finds lines in files,
-the `find` command finds files themselves.
+Поки `grep` знаходить рядки у файлах, команда `find` знаходить самі файли.
 Again,
 it has a lot of options;
 to show how the simplest ones work, we'll use the `shell-lesson-data/exercise-data`
@@ -405,8 +401,7 @@ directory tree shown below.
     └── LittleWomen.txt
 ```
 
-The `exercise-data` directory contains one file, `numbers.txt` and four directories:
-`animal-counts`, `creatures`, `alkanes` and `writing` containing various files.
+Каталог `exercise-data` містить один файл `numbers.txt` та чотири підкаталоги: `animal-counts`, `creatures`, `proteins` і `writing`, кожен з яких містить різні файли.
 
 Для початку виконаймо `find .` (не забудьте запустити цю команду з каталогу `shell-lesson-data/exercise-data`).
 
@@ -435,16 +430,12 @@ $ find .
 ./alkanes/cubane.pdb
 ```
 
-As always, the `.` on its own means the current working directory,
-which is where we want our search to start.
-`find`'s output is the names of every file **and** directory
-under the current working directory.
-This can seem useless at first but `find` has many options
-to filter the output and in this lesson we will discover some
-of them.
+Як завжди, символ `.` сам по собі позначає поточний робочий каталог, звідки починається наш пошук.
+Результатом виконання `find` буде перелік імен усіх файлів **та** каталогів у поточному робочому каталозі.
+Спочатку це може виглядати безглуздо, але `find` має багато можливостей для фільтрації результатів, і у цьому уроці ми розглянемо деякі з них.
 
 Наприклад, опція `-type d` означає 'обʼєкти, які є каталогами'.
-Sure enough, `find`'s output is the names of the five directories (including `.`):
+Як і очікувалося, команда `find` виведе імена п'яти каталогів (включно з `.`):
 
 ```bash
 $ find . -type d
@@ -458,9 +449,8 @@ $ find . -type d
 ./alkanes
 ```
 
-Notice that the objects `find` finds are not listed in any particular order.
-If we change `-type d` to `-type f`,
-we get a listing of all the files instead:
+Зверніть увагу, що об'єкти, які знаходить `find`, не відсортовані.
+Якщо ми змінимо `-type d` на `-type f`, натомість ми отримаємо список усіх файлів:
 
 ```bash
 $ find . -type f
@@ -482,7 +472,7 @@ $ find . -type f
 ./alkanes/cubane.pdb
 ```
 
-Now let's try matching by name:
+Тепер спробуємо пошук за іменем:
 
 ```bash
 $ find . -name *.txt
@@ -492,8 +482,7 @@ $ find . -name *.txt
 ./numbers.txt
 ```
 
-We expected it to find all the text files,
-but it only prints out `./numbers.txt`.
+Ми очікували, що будуть знайдені усі текстові файли, але було виведено лише `./numbers.txt`.
 The problem is that the shell expands wildcard characters like `*` _before_ commands run.
 Since `*.txt` in the current directory expands to `./numbers.txt`,
 the command we actually ran was:
@@ -522,7 +511,7 @@ $ find . -name "*.txt"
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Listing vs. Finding
+## Порівняння `ls` та `find`
 
 `ls` and `find` can be made to do similar things given the right options,
 but under normal circumstances,
@@ -539,7 +528,7 @@ As we just saw,
 `find . -name "*.txt"` gives us a list of all text files in or below the current directory.
 How can we combine that with `wc -l` to count the lines in all those files?
 
-The simplest way is to put the `find` command inside `$()`:
+Найпростіший спосіб - помістити команду `find` всередину `$()`:
 
 ```bash
 $ wc -l $(find . -name "*.txt")
@@ -554,7 +543,7 @@ $ wc -l $(find . -name "*.txt")
 
 When the shell executes this command,
 the first thing it does is run whatever is inside the `$()`.
-It then replaces the `$()` expression with that command's output.
+Потім він замінить вираз `$()` на результат виконання цієї команди.
 Since the output of `find` is the three filenames `./writing/LittleWomen.txt`,
 `./writing/haiku.txt`, and `./numbers.txt`, the shell constructs the command:
 
@@ -583,7 +572,7 @@ $ grep "searching" $(find . -name "*.txt")
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Matching and Subtracting
+## Порівняння та віднімання
 
 The `-v` option to `grep` inverts pattern matching, so that only lines
 which do _not_ match the pattern are printed. Given that, which of
