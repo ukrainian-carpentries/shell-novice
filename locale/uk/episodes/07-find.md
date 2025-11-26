@@ -140,7 +140,7 @@ $ grep -n "it" haiku.txt
 
 Ми бачимо, що рядки 5, 9 і 10 містять літери 'it'.
 
-We can combine options (i.e. flags) as we do with other Unix commands.
+Ми можемо комбінувати опції (тобто прапорці) так само як і в інших командах Unix.
 For example, let's find the lines that contain the word 'the'.
 We can combine the option `-w` to find the lines that contain the word 'the'
 and `-n` to number the lines that match:
@@ -154,7 +154,7 @@ $ grep -n -w "the" haiku.txt
 6:and the presence of absence:
 ```
 
-Now we want to use the option `-i` to make our search case-insensitive:
+Тепер ми хочемо використати опцію `-i`, щоб зробити наш пошук нечутливим до регістру:
 
 ```bash
 $ grep -n -w -i "the" haiku.txt
@@ -231,9 +231,9 @@ Miscellaneous:
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Using `grep`
+## Використання `grep`
 
-Which command would result in the following output:
+Яка команда призведе до наступного результату:
 
 ```output
 and the presence of absence:
