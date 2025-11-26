@@ -162,8 +162,8 @@ executes it, prints the result, and waits for another command.
 :   To send a command's output to a file rather than to the screen or another command,
 or equivalently to read a command's input from a file.
 
-[regular expression]{#regular-expression}
-:   A pattern that specifies a set of character strings.
+[регулярний вираз]{#regular-expression}
+:   Шаблон, який визначає набір рядків символів.
 REs are most often used to find sequences of characters in strings.
 
 [relative path]{#relative-path}
