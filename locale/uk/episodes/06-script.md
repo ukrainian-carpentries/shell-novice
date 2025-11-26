@@ -320,9 +320,9 @@ what they discover about their data and their workflow with one call to `history
 and a bit of editing to clean up the output
 and save it as a shell script.
 
-## Nelle's Pipeline: Creating a Script
+## Конвеєр Неллі: створення скрипту
 
-Nelle's supervisor insisted that all her analytics must be reproducible.
+Науковий керівник Неллі наполягав на тому, що вся її аналітика має бути відтворюваною.
 The easiest way to capture all the steps is in a script.
 
 First we return to Nelle's project directory:
@@ -331,16 +331,16 @@ First we return to Nelle's project directory:
 $ cd ../../north-pacific-gyre/
 ```
 
-She creates a file using `nano` ...
+За допомогою `nano` вона створює файл ...
 
 ```bash
 $ nano do-stats.sh
 ```
 
-...which contains the following:
+...який містить наступне:
 
 ```bash
-# Calculate stats for data files.
+# Розрахунок статистики для файлів даних.
 for datafile in "$@"
 do
     echo $datafile
@@ -355,7 +355,7 @@ so that she can now re-do the first stage of her analysis by typing:
 $ bash do-stats.sh NENE*A.txt NENE*B.txt
 ```
 
-She can also do this:
+Вона також може зробити наступне:
 
 ```bash
 $ bash do-stats.sh NENE*A.txt NENE*B.txt | wc -l
@@ -366,10 +366,10 @@ rather than the names of the files that were processed.
 
 One thing to note about Nelle's script is that
 it lets the person running it decide what files to process.
-She could have written it as:
+Вона могла б також написати його так:
 
 ```bash
-# Calculate stats for Site A and Site B data files.
+# Розрахунок статистики для файлів з локацій A та B. 
 for datafile in NENE*A.txt NENE*B.txt
 do
     echo $datafile
@@ -416,7 +416,7 @@ $ bash script.sh '*.pdb' 1 1
 
 ## Відповідь
 
-The correct answer is 2.
+Правильною є відповідь 2.
 
 The special variables `$1`, `$2` and `$3` represent the command line arguments given to the
 script, such that the commands run are:
@@ -426,7 +426,7 @@ $ head -n 1 cubane.pdb ethane.pdb octane.pdb pentane.pdb propane.pdb
 $ tail -n 1 cubane.pdb ethane.pdb octane.pdb pentane.pdb propane.pdb
 ```
 
-The shell does not expand `'*.pdb'` because it is enclosed by quote marks.
+Термінал не розгортає `'*.pdb'`, оскільки символи взято у лапки.
 Таким чином, першим аргументом скрипту є `'*.pdb'`, який буде розгорнуто у скрипті за допомогою `head` і `tail`.
 
 :::::::::::::::::::::::::
@@ -435,9 +435,9 @@ The shell does not expand `'*.pdb'` because it is enclosed by quote marks.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Find the Longest File With a Given Extension
+## Пошук найдовшого файлу із заданим розширенням
 
-Напишіть сценарій терміналу з назвою `longest.sh`, який отримує в якості аргументів ім'я каталогу і розширення імені файлу як аргументи, і виводить назву файлу з найбільшою кількістю рядків у цьому каталозі з цим розширенням. For example:
+Напишіть сценарій терміналу з назвою `longest.sh`, який отримує в якості аргументів ім'я каталогу і розширення імені файлу як аргументи, і виводить назву файлу з найбільшою кількістю рядків у цьому каталозі з цим розширенням. Наприклад:
 
 ```bash
 $ bash longest.sh shell-lesson-data/exercise-data/alkanes pdb
@@ -445,7 +445,7 @@ $ bash longest.sh shell-lesson-data/exercise-data/alkanes pdb
 
 виведе назву файлу `.pdb` у каталозі `shell-lesson-data/exercise-data/proteins`, який має найбільшу кількість рядків.
 
-Feel free to test your script on another directory e.g.
+Ви можете протестувати свій скрипт в іншому каталозі, наприклад
 
 ```bash
 $ bash longest.sh shell-lesson-data/exercise-data/writing txt
@@ -456,11 +456,11 @@ $ bash longest.sh shell-lesson-data/exercise-data/writing txt
 ## Відповідь
 
 ```bash
-# Shell script which takes two arguments:
-#    1. a directory name
-#    2. a file extension
-# and prints the name of the file in that directory
-# with the most lines which matches the file extension.
+# Скрипт терміналу, який приймає два аргументи:
+#    1. ім'я каталогу
+#    2. розширення файлу
+# і виводить ім'я файлу з даним розширенням в цьому каталозі 
+# який має найбільшу кількість рядків
 
 wc -l $1/*.$2 | sort -n | tail -n 2 | head -n 1
 ```
@@ -480,7 +480,7 @@ the output.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Script Reading Comprehension
+## Читання і розуміння скриптів
 
 For this question, consider the `shell-lesson-data/exercise-data/alkanes` directory once again.
 This contains a number of `.pdb` files in addition to any other files you
@@ -513,10 +513,10 @@ echo $@.pdb
 In each case, the shell expands the wildcard in `*.pdb` before passing the resulting
 list of file names as arguments to the script.
 
-Script 1 would print out a list of all files containing a dot in their name.
+Скрипт 1 виведе список усіх файлів, що містять крапку в їх назві.
 The arguments passed to the script are not actually used anywhere in the script.
 
-Script 2 would print the contents of the first 3 files with a `.pdb` file extension.
+Скрипт 2 виведе вміст перших 3 файлів з розширенням `.pdb`.
 `$1`, `$2`, and `$3` refer to the first, second, and third argument respectively.
 
 Script 3 would print all the arguments to the script (i.e. all the `.pdb` files),
@@ -533,13 +533,13 @@ cubane.pdb ethane.pdb methane.pdb octane.pdb pentane.pdb propane.pdb.pdb
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Debugging Scripts
+## Налагодження скриптів
 
 Suppose you have saved the following script in a file called `do-errors.sh`
 in Nelle's `north-pacific-gyre` directory:
 
 ```bash
-# Calculate stats for data files.
+# Статистичні розрахунки для файлів даних.
 for datafile in "$@"
 do
     echo $datfile
@@ -561,7 +561,7 @@ $ bash -x do-errors.sh NENE*A.txt NENE*B.txt
 ```
 
 Що показує вивід?
-Which line is responsible for the error?
+Який рядок призводить до помилки?
 
 :::::::::::::::  solution
 
@@ -569,7 +569,7 @@ Which line is responsible for the error?
 
 The `-x` option causes `bash` to run in debug mode.
 This prints out each command as it is run, which will help you to locate errors.
-In this example, we can see that `echo` isn't printing anything. We have made a typo
+У цьому прикладі ми таким чином можемо побачити, що команда `echo` нічого не виводить. We have made a typo
 in the loop variable name, and the variable `datfile` doesn't exist, hence returning
 an empty string.
 
@@ -579,7 +579,7 @@ an empty string.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Save commands in files (usually called shell scripts) for re-use.
+- Зберігайте команди у файлах (які зазвичай називають скриптами оболонки або скриптами терміналу) для їх повторного використання.
 - `bash [ім'я файлу]` виконує команди, збережені у відповідному файлі.
 - `$@` refers to all of a shell script's command-line arguments.
 - `$1`, `$2`, etc., refer to the first command-line argument, the second command-line argument, etc.
