@@ -6,7 +6,7 @@ exercises: 20
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Use `grep` to select lines from text files that match simple patterns.
+- Використати `grep` для пошуку у текстових файлах рядків, які відповідають простим шаблонам.
 - Використати `find` для пошуку файлів і каталогів, назви яких відповідають простим шаблонам.
 - Використати вихідні дані однієї команди як аргумент(и) командного рядка для іншої команди.
 - Пояснити, що мається на увазі під 'текстовими' та 'бінарними' файлами, і чому багато поширених інструментів погано працюють з останніми.
@@ -15,7 +15,7 @@ exercises: 20
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- How can I find files?
+- Як я можу знайти потрібні файли?
 - Як знайти щось у файлах?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -57,7 +57,7 @@ Today it is not working
 Software is like that.
 ```
 
-Let's find lines that contain the word 'not':
+Знайдемо рядки, які містять слово 'not':
 
 ```bash
 $ grep not haiku.txt
@@ -70,17 +70,17 @@ Today it is not working
 ```
 
 Here, `not` is the pattern we're searching for.
-The grep command searches through the file, looking for matches to the pattern specified.
+Команда `grep` шукає у файлі збіги із заданим шаблоном.
 To use it type `grep`, then the pattern we're searching for and finally
 the name of the file (or files) we're searching in.
 
-The output is the three lines in the file that contain the letters 'not'.
+У вихідний файл виводяться три рядки, які містять літери 'not'.
 
-By default, grep searches for a pattern in a case-sensitive way.
+За замовчуванням `grep` шукає шаблон з урахуванням регістру.
 In addition, the search pattern we have selected does not have to form a complete word,
 as we will see in the next example.
 
-Let's search for the pattern: 'The'.
+Відшукаймо тепер шаблон 'The'.
 
 ```bash
 $ grep The haiku.txt
@@ -98,8 +98,7 @@ To restrict matches to lines containing the word 'The' on its own,
 we can give `grep` the `-w` option.
 This will limit matches to word boundaries.
 
-Later in this lesson, we will also see how we can change the search behavior of grep
-with respect to its case sensitivity.
+Пізніше у цьому уроці ми також побачимо, як можна змінити поведінку пошуку `grep` стосовно чутливості до регістру.
 
 ```bash
 $ grep -w The haiku.txt
@@ -111,8 +110,7 @@ The Tao that is seen
 
 Note that a 'word boundary' includes the start and end of a line, so not
 just letters surrounded by spaces.
-Sometimes we don't
-want to search for a single word, but a phrase. Це також легко зробити за допомогою
+Іноді ми хочемо шукати не окреме слово, а фразу. Це також легко зробити за допомогою
 `grep`, взявши фразу в лапки.
 
 ```bash
@@ -125,8 +123,7 @@ Today it is not working
 
 We've now seen that you don't have to have quotes around single words,
 but it is useful to use quotes when searching for multiple words.
-It also helps to make it easier to distinguish between the search term or phrase
-and the file being searched.
+Це також допомагає легше відрізнити пошуковий термін або фразу від файлу, в якому відбувається пошук.
 We will use quotes in the remaining examples.
 
 Another useful option is `-n`, which numbers the lines that match:
@@ -141,9 +138,9 @@ $ grep -n "it" haiku.txt
 10:Today it is not working
 ```
 
-Here, we can see that lines 5, 9, and 10 contain the letters 'it'.
+Ми бачимо, що рядки 5, 9 і 10 містять літери 'it'.
 
-We can combine options (i.e. flags) as we do with other Unix commands.
+Ми можемо комбінувати опції (тобто прапорці) так само як і в інших командах Unix.
 For example, let's find the lines that contain the word 'the'.
 We can combine the option `-w` to find the lines that contain the word 'the'
 and `-n` to number the lines that match:
@@ -157,7 +154,7 @@ $ grep -n -w "the" haiku.txt
 6:and the presence of absence:
 ```
 
-Now we want to use the option `-i` to make our search case-insensitive:
+Тепер ми хочемо використати опцію `-i`, щоб зробити наш пошук нечутливим до регістру:
 
 ```bash
 $ grep -n -w -i "the" haiku.txt
@@ -234,9 +231,9 @@ Miscellaneous:
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Using `grep`
+## Використання `grep`
 
-Which command would result in the following output:
+Яка команда призведе до наступного результату:
 
 ```output
 and the presence of absence:
@@ -252,7 +249,7 @@ and the presence of absence:
 ## Відповідь
 
 Правильна відповідь 3, тому що опція `-w` шукає збіги лише між цілими словами.
-The other options will also match 'of' when part of another word.
+Інші варіанти також шукатимуть збіги зі словом 'of', якщо воно є частиною іншого слова.
 
 :::::::::::::::::::::::::
 
@@ -260,10 +257,9 @@ The other options will also match 'of' when part of another word.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Wildcards
+## Символи підстановки
 
-`grep`'s real power doesn't come from its options, though; it comes from
-the fact that patterns can include wildcards. (The technical name for
+Проте справжня сила `grep` полягає не у його опціях, а у тому, що шаблони можуть містити символи підстановки. (The technical name for
 these is **regular expressions**, which
 is what the 're' in 'grep' stands for.) Regular expressions are both complex
 and powerful; if you want to do complex searches, please look at the lesson
@@ -282,8 +278,7 @@ Software is like that.
 
 We use the `-E` option and put the pattern in quotes to prevent the shell
 from trying to interpret it. (If the pattern contained a `*`, for
-example, the shell would try to expand it before running `grep`.) The
-`^` in the pattern anchors the match to the start of the line. The `.`
+example, the shell would try to expand it before running `grep`.) Символ `^` у шаблоні вимагає, щоб збіг був на початку рядка. The `.`
 matches a single character (just like `?` in the shell), while the `o`
 matches an actual 'o'.
 
@@ -291,7 +286,7 @@ matches an actual 'o'.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Tracking a Species
+## Відстеження видів диких тварин
 
 Лея має кілька сотень файлів даних, збережених в одному каталозі, кожен з яких відформатовано таким чином:
 

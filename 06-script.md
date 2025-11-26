@@ -253,14 +253,13 @@ $ bash sorted.sh *.pdb ../creatures/*.dat
 ## Відповідь
 
 ```bash
-# Script to find unique species in csv files where species is the second data field
-# This script accepts any number of file names as command line arguments
+# Скрипт для пошуку унікальних видів у csv-файлах, де другий стовпець містить назви видів
+# Цей скрипт приймає будь-яку кількість імен файлів як аргументи командного рядка 
 
-# Loop over all files
-for file in $@
+# Перебір всіх файлів
 do
     echo "Unique species in $file:"
-    # Extract species names
+    # Вилучити назви видів
     cut -d , -f 2 $file | sort | uniq
 done
 ```
@@ -287,9 +286,7 @@ $ history | tail -n 5 > redo-figure-3.sh
 301 history | tail -n 5 > redo-figure-3.sh
 ```
 
-After a moment's work in an editor to remove the serial numbers on the commands,
-and to remove the final line where we called the `history` command,
-we have a completely accurate record of how we created that figure.
+Після невеликого редагування для видалення номерів команд і останнього рядка з командою `history`, ми отримаємо абсолютно точний запис того, як було створено цей графік.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
@@ -315,32 +312,29 @@ $ history | tail -n 5 > recent.sh
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 На практиці, більшість людей створюють скрипти терміналу, запускаючи команди в командному рядку кілька разів, щоб переконатися, що вони роблять все правильно, а потім зберігають їх у файлі для подальшого використання.
-This style of work allows people to recycle
-what they discover about their data and their workflow with one call to `history`
-and a bit of editing to clean up the output
-and save it as a shell script.
+Такий підхід дозволяє повторно відтворити робочий процес та дослідження даних, за допомогою одного виклику `history` і невеликого редагування для впорядкування команд та їх збереження як скрипт терміналу.
 
-## Nelle's Pipeline: Creating a Script
+## Конвеєр Неллі: створення скрипту
 
-Nelle's supervisor insisted that all her analytics must be reproducible.
-The easiest way to capture all the steps is in a script.
+Науковий керівник Неллі наполягав на тому, що вся її аналітика має бути відтворюваною.
+Найпростіший спосіб зберегти всі кроки - записати їх у скрипт.
 
-First we return to Nelle's project directory:
+Спочатку повернемося до каталогу проєкту Неллі:
 
 ```bash
 $ cd ../../north-pacific-gyre/
 ```
 
-She creates a file using `nano` ...
+За допомогою `nano` вона створює файл ...
 
 ```bash
 $ nano do-stats.sh
 ```
 
-...which contains the following:
+...який містить наступне:
 
 ```bash
-# Calculate stats for data files.
+# Розрахунок статистики для файлів даних.
 for datafile in "$@"
 do
     echo $datafile
@@ -348,28 +342,25 @@ do
 done
 ```
 
-She saves this in a file called `do-stats.sh`
-so that she can now re-do the first stage of her analysis by typing:
+Вона зберігає цей код у файлі з назвою `do-stats.sh`, щоб тепер мати змогу повторно виконати перший етап аналізу, набравши:
 
 ```bash
 $ bash do-stats.sh NENE*A.txt NENE*B.txt
 ```
 
-She can also do this:
+Вона також може зробити наступне:
 
 ```bash
 $ bash do-stats.sh NENE*A.txt NENE*B.txt | wc -l
 ```
 
-so that the output is just the number of files processed
-rather than the names of the files that were processed.
+щоб вивести лише кількість оброблених файлів, а не їхні назви.
 
-One thing to note about Nelle's script is that
-it lets the person running it decide what files to process.
-She could have written it as:
+Одна з важливих особливостей скрипту Неллі полягає в тому, що він дозволяє користувачеві самостійно вибирати, які файли потрібно обробляти.
+Вона могла б також написати його так:
 
 ```bash
-# Calculate stats for Site A and Site B data files.
+# Розрахунок статистики для файлів з локацій A та B. 
 for datafile in NENE*A.txt NENE*B.txt
 do
     echo $datafile
@@ -377,20 +368,14 @@ do
 done
 ```
 
-The advantage is that this always selects the right files:
-she doesn't have to remember to exclude the 'Z' files.
-The disadvantage is that it _always_ selects just those files --- she can't run it on all files
-(including the 'Z' files),
-or on the 'G' or 'H' files her colleagues in Antarctica are producing,
-without editing the script.
-If she wanted to be more adventurous,
-she could modify her script to check for command-line arguments,
-and use `NENE*A.txt NENE*B.txt` if none were provided.
-Of course, this introduces another tradeoff between flexibility and complexity.
+Перевага цього буде полягати в тому, що цей код завжди вибирає правильні файли, і Неллі не потрібно пам’ятати про виключення файлів із літерою 'Z'.
+Недолік полягає в тому, що скрипт завжди обробляє лише ці файли. Не редагуючи скрипт, Неллі не може застосувати його до всіх файлів (у тому числі до файлів 'Z') або до файлів 'G' чи 'H', які створюють її колеги в Антарктиді.
+Якщо вона хотіла б піти далі, то могла б модифікувати свій скрипт для перевірки аргументів командного рядка та за замовчуванням використовував NENE_A.txt NENE_B.txt, якщо жодних аргументів не передано.
+Звичайно, це створює інший компроміс між гнучкістю і складністю.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Variables in Shell Scripts
+## Змінні в скриптах терміналу
 
 Уявіть, що у каталозі `alkanes` у вас є скрипт з назвою `script.sh`, який містить наступні команди:
 
@@ -416,17 +401,16 @@ $ bash script.sh '*.pdb' 1 1
 
 ## Відповідь
 
-The correct answer is 2.
+Правильною є відповідь 2.
 
-The special variables `$1`, `$2` and `$3` represent the command line arguments given to the
-script, such that the commands run are:
+Спеціальні змінні $1, $2 та $3 відповідають аргументам командного рядка, що передаються скрипту, тому виконуються наступні команди:
 
 ```bash
 $ head -n 1 cubane.pdb ethane.pdb octane.pdb pentane.pdb propane.pdb
 $ tail -n 1 cubane.pdb ethane.pdb octane.pdb pentane.pdb propane.pdb
 ```
 
-The shell does not expand `'*.pdb'` because it is enclosed by quote marks.
+Термінал не розгортає `'*.pdb'`, оскільки символи взято у лапки.
 Таким чином, першим аргументом скрипту є `'*.pdb'`, який буде розгорнуто у скрипті за допомогою `head` і `tail`.
 
 :::::::::::::::::::::::::
@@ -435,9 +419,9 @@ The shell does not expand `'*.pdb'` because it is enclosed by quote marks.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Find the Longest File With a Given Extension
+## Пошук найдовшого файлу із заданим розширенням
 
-Напишіть сценарій терміналу з назвою `longest.sh`, який отримує в якості аргументів ім'я каталогу і розширення імені файлу як аргументи, і виводить назву файлу з найбільшою кількістю рядків у цьому каталозі з цим розширенням. For example:
+Напишіть сценарій терміналу з назвою `longest.sh`, який отримує в якості аргументів ім'я каталогу і розширення імені файлу як аргументи, і виводить назву файлу з найбільшою кількістю рядків у цьому каталозі з цим розширенням. Наприклад:
 
 ```bash
 $ bash longest.sh shell-lesson-data/exercise-data/alkanes pdb
@@ -445,7 +429,7 @@ $ bash longest.sh shell-lesson-data/exercise-data/alkanes pdb
 
 виведе назву файлу `.pdb` у каталозі `shell-lesson-data/exercise-data/proteins`, який має найбільшу кількість рядків.
 
-Feel free to test your script on another directory e.g.
+Ви можете протестувати свій скрипт в іншому каталозі, наприклад
 
 ```bash
 $ bash longest.sh shell-lesson-data/exercise-data/writing txt
@@ -456,23 +440,18 @@ $ bash longest.sh shell-lesson-data/exercise-data/writing txt
 ## Відповідь
 
 ```bash
-# Shell script which takes two arguments:
-#    1. a directory name
-#    2. a file extension
-# and prints the name of the file in that directory
-# with the most lines which matches the file extension.
+# Скрипт терміналу, який приймає два аргументи:
+#    1. ім'я каталогу
+#    2. розширення файлу
+# і виводить ім'я файлу з даним розширенням в цьому каталозі 
+# який має найбільшу кількість рядків
 
 wc -l $1/*.$2 | sort -n | tail -n 2 | head -n 1
 ```
 
-The first part of the pipeline, `wc -l $1/*.$2 | sort -n`, counts
-the lines in each file and sorts them numerically (largest last). When
-there's more than one file, `wc` also outputs a final summary line,
-giving the total number of lines across _all_ files.  Ми використовуємо `tail -n 2 | head -n 1`, щоб відкинути цей останній рядок.
+Перша частина конвеєра, `wc -l $1/*.$2 | sort -n`, рахує кількість рядків у кожному файлі та сортує їх у числовому порядку (найбільший файл буде останнім). Коли надано кілька файлів, `wc` також виведе останній підсумковий рядок, який покаже загальну кількість рядків у _всіх_ файлах.  Ми використовуємо `tail -n 2 | head -n 1`, щоб відкинути цей останній рядок.
 
-With `wc -l $1/*.$2 | sort -n | tail -n 1` we'll see the final summary
-line: we can build our pipeline up in pieces to be sure we understand
-the output.
+Використовуючи `wc -l $1/*.$2 | sort -n | tail -n 1`, ми побачимо останній підсумковий рядок. Ми також можемо будувати конвеєр крок за кроком, щоб краще зрозуміти результат.
 
 :::::::::::::::::::::::::
 
@@ -480,13 +459,11 @@ the output.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Script Reading Comprehension
+## Читання і розуміння скриптів
 
-For this question, consider the `shell-lesson-data/exercise-data/alkanes` directory once again.
-This contains a number of `.pdb` files in addition to any other files you
-may have created.
-Explain what each of the following three scripts would do when run as
-`bash script1.sh *.pdb`, `bash script2.sh *.pdb`, and `bash script3.sh *.pdb` respectively.
+Для цього завдання ще раз розглянемо каталог `shell-lesson-data/exercise-data/proteins`.
+У ньому міститься низка файлів `.pdb` разом з іншими файлами, які ви могли створити.
+Опишіть, що відбудеться при послідовному виконанні кожного з трьох скриптів із командами `bash script1.sh *.pdb`, `bash script2.sh *.pdb` та `bash script3.sh *.pdb`.
 
 ```bash
 # Скрипт 1
@@ -510,18 +487,16 @@ echo $@.pdb
 
 ## Відповідь
 
-In each case, the shell expands the wildcard in `*.pdb` before passing the resulting
-list of file names as arguments to the script.
+У кожному випадку термінал розгортає символ підстановки у `*.pdb`, а потім передає отриманий список файлів як аргументи скрипту.
 
-Script 1 would print out a list of all files containing a dot in their name.
-The arguments passed to the script are not actually used anywhere in the script.
+Скрипт 1 виведе список усіх файлів, що містять крапку в їх назві.
+Передані скрипту аргументи взагалі не використовуються.
 
-Script 2 would print the contents of the first 3 files with a `.pdb` file extension.
-`$1`, `$2`, and `$3` refer to the first, second, and third argument respectively.
+Скрипт 2 виведе вміст перших 3 файлів з розширенням `.pdb`.
+`$1`, `$2` і `$3` відповідають першому, другому та третьому аргументам відповідно.
 
-Script 3 would print all the arguments to the script (i.e. all the `.pdb` files),
-followed by `.pdb`.
-`$@` refers to _all_ the arguments given to a shell script.
+Скрипт 3 виведе всі аргументи скрипту (тобто назви всіх файлів з розширенням `.pdb`), і додасть до них `.pdb`.
+Змінна `$@` зазначає усі аргументи, що були передані скрипту.
 
 ```output
 cubane.pdb ethane.pdb methane.pdb octane.pdb pentane.pdb propane.pdb.pdb
@@ -533,13 +508,12 @@ cubane.pdb ethane.pdb methane.pdb octane.pdb pentane.pdb propane.pdb.pdb
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Debugging Scripts
+## Налагодження скриптів
 
-Suppose you have saved the following script in a file called `do-errors.sh`
-in Nelle's `north-pacific-gyre` directory:
+Припустимо, ви зберегли наступний скрипт у файлі з назвою `do-errors.sh` у каталозі `north-pacific-gyre/scripts`:
 
 ```bash
-# Calculate stats for data files.
+# Статистичні розрахунки для файлів даних.
 for datafile in "$@"
 do
     echo $datfile
@@ -561,17 +535,15 @@ $ bash -x do-errors.sh NENE*A.txt NENE*B.txt
 ```
 
 Що показує вивід?
-Which line is responsible for the error?
+Який рядок призводить до помилки?
 
 :::::::::::::::  solution
 
 ## Відповідь
 
-The `-x` option causes `bash` to run in debug mode.
-This prints out each command as it is run, which will help you to locate errors.
-In this example, we can see that `echo` isn't printing anything. We have made a typo
-in the loop variable name, and the variable `datfile` doesn't exist, hence returning
-an empty string.
+Параметр `-x` призводить до запуску скрипту у режимі налагодження (відлагодження).
+Він виводить кожну команду під час її виконання, допомагаючи вам локалізувати помилки.
+У цьому прикладі ми таким чином можемо побачити, що команда `echo` нічого не виводить. Ми допустили друкарську помилку у назві змінної циклу, і оскільки змінної `datfile` не існує, вона повертає порожній рядок.
 
 :::::::::::::::::::::::::
 
@@ -579,12 +551,12 @@ an empty string.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Save commands in files (usually called shell scripts) for re-use.
+- Зберігайте команди у файлах (які зазвичай називають скриптами оболонки або скриптами терміналу) для їх повторного використання.
 - `bash [ім'я файлу]` виконує команди, збережені у відповідному файлі.
-- `$@` refers to all of a shell script's command-line arguments.
-- `$1`, `$2`, etc., refer to the first command-line argument, the second command-line argument, etc.
-- Place variables in quotes if the values might have spaces in them.
-- Letting users decide what files to process is more flexible and more consistent with built-in Unix commands.
+- `$@` посилається на всі аргументи командного рядка, передані скрипту оболонки.
+- `$1`, `$2` і так далі представляють перший, другий та наступні аргументи командного рядка.
+- Беріть змінні в лапки, якщо їхні значення можуть містити пробіли.
+- Надання користувачам можливості самим обирати файли для обробки робить скрипт гнучкішим і більш узгодженим із вбудованими командами Unix.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
