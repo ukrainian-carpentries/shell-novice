@@ -251,7 +251,7 @@
 
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
-        <ul><li><a href="#nelles-pipeline-creating-a-script">Nelle’s Pipeline: Creating a Script</a></li>
+        <ul><li><a href="#%D0%BA%D0%BE%D0%BD%D0%B2%D0%B5%D1%94%D1%80-%D0%BD%D0%B5%D0%BB%D0%BB%D1%96-%D1%81%D1%82%D0%B2%D0%BE%D1%80%D0%B5%D0%BD%D0%BD%D1%8F-%D1%81%D0%BA%D1%80%D0%B8%D0%BF%D1%82%D1%83">Конвеєр Неллі: створення скрипту</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -325,7 +325,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Скрипти командної оболонки</h1>
-        <p>Останнє оновлення 2025-11-21 |
+        <p>Останнє оновлення 2025-11-26 |
 
         <a href="https://github.com/ukrainian-carpentries/shell-novice/edit/main/episodes/06-script.md" class="external-link">Редагувати цю сторінку <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -655,21 +655,20 @@ wc -l "$@" | sort -n</code></pre>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="co"># Script to find unique species in csv files where species is the second data field</span></span>
-<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a><span class="co"># This script accepts any number of file names as command line arguments</span></span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="co"># Скрипт для пошуку унікальних видів у csv-файлах, де другий стовпець містить назви видів</span></span>
+<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a><span class="co"># Цей скрипт приймає будь-яку кількість імен файлів як аргументи командного рядка </span></span>
 <span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a></span>
-<span id="cb25-4"><a href="#cb25-4" tabindex="-1"></a><span class="co"># Loop over all files</span></span>
-<span id="cb25-5"><a href="#cb25-5" tabindex="-1"></a><span class="cf">for</span> file <span class="kw">in</span> <span class="va">$@</span></span>
-<span id="cb25-6"><a href="#cb25-6" tabindex="-1"></a><span class="cf">do</span></span>
-<span id="cb25-7"><a href="#cb25-7" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"Unique species in </span><span class="va">$file</span><span class="st">:"</span></span>
-<span id="cb25-8"><a href="#cb25-8" tabindex="-1"></a>    <span class="co"># Extract species names</span></span>
-<span id="cb25-9"><a href="#cb25-9" tabindex="-1"></a>    <span class="fu">cut</span> <span class="at">-d</span> , <span class="at">-f</span> 2 <span class="va">$file</span> <span class="kw">|</span> <span class="fu">sort</span> <span class="kw">|</span> <span class="fu">uniq</span></span>
-<span id="cb25-10"><a href="#cb25-10" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
+<span id="cb25-4"><a href="#cb25-4" tabindex="-1"></a><span class="co"># Перебір всіх файлів</span></span>
+<span id="cb25-5"><a href="#cb25-5" tabindex="-1"></a><span class="cf">do</span></span>
+<span id="cb25-6"><a href="#cb25-6" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"Unique species in </span><span class="va">$file</span><span class="st">:"</span></span>
+<span id="cb25-7"><a href="#cb25-7" tabindex="-1"></a>    <span class="co"># Вилучити назви видів</span></span>
+<span id="cb25-8"><a href="#cb25-8" tabindex="-1"></a>    <span class="fu">cut</span> <span class="at">-d</span> , <span class="at">-f</span> 2 <span class="va">$file</span> <span class="kw">|</span> <span class="fu">sort</span> <span class="kw">|</span> <span class="fu">uniq</span></span>
+<span id="cb25-9"><a href="#cb25-9" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -691,10 +690,9 @@ wc -l "$@" | sort -n</code></pre>
 299 cut -d ',' -f 2-3 01729-differences.txt &gt; 01729-time-series.txt
 300 ygraph --format scatter --color bw --borders none 01729-time-series.txt figure-3.png
 301 history | tail -n 5 &gt; redo-figure-3.sh</code></pre>
-<p>After a moment’s work in an editor to remove the serial numbers on
-the commands, and to remove the final line where we called the
-<code>history</code> command, we have a completely accurate record of
-how we created that figure.</p>
+<p>Після невеликого редагування для видалення номерів команд і
+останнього рядка з командою <code>history</code>, ми отримаємо абсолютно
+точний запис того, як було створено цей графік.</p>
 <div id="чому-варто-записувати-команди-в-історію-перед-їх-виконанням" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -725,7 +723,7 @@ how we created that figure.</p>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>Якщо якась команда призводить до збою або зависання, знання того, яка
 саме команда це спричинила, допоможе з’ясувати причину проблеми. Якби
@@ -738,81 +736,81 @@ how we created that figure.</p>
 <p>На практиці, більшість людей створюють скрипти терміналу, запускаючи
 команди в командному рядку кілька разів, щоб переконатися, що вони
 роблять все правильно, а потім зберігають їх у файлі для подальшого
-використання. This style of work allows people to recycle what they
-discover about their data and their workflow with one call to
-<code>history</code> and a bit of editing to clean up the output and
-save it as a shell script.</p>
-<section><h2 class="section-heading" id="nelles-pipeline-creating-a-script">Nelle’s Pipeline: Creating a Script<a class="anchor" aria-label="anchor" href="#nelles-pipeline-creating-a-script"></a></h2>
-<hr class="half-width"><p>Nelle’s supervisor insisted that all her analytics must be
-reproducible. The easiest way to capture all the steps is in a
-script.</p>
-<p>First we return to Nelle’s project directory:</p>
+використання. Такий підхід дозволяє повторно відтворити робочий процес
+та дослідження даних, за допомогою одного виклику <code>history</code> і
+невеликого редагування для впорядкування команд та їх збереження як
+скрипт терміналу.</p>
+<section><h2 class="section-heading" id="конвеєр-неллі-створення-скрипту">Конвеєр Неллі: створення скрипту<a class="anchor" aria-label="anchor" href="#%D0%BA%D0%BE%D0%BD%D0%B2%D0%B5%D1%94%D1%80-%D0%BD%D0%B5%D0%BB%D0%BB%D1%96-%D1%81%D1%82%D0%B2%D0%BE%D1%80%D0%B5%D0%BD%D0%BD%D1%8F-%D1%81%D0%BA%D1%80%D0%B8%D0%BF%D1%82%D1%83"></a></h2>
+<hr class="half-width"><p>Науковий керівник Неллі наполягав на тому, що вся її аналітика має
+бути відтворюваною. Найпростіший спосіб зберегти всі кроки - записати їх
+у скрипт.</p>
+<p>Спочатку повернемося до каталогу проєкту Неллі:</p>
 <div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a><span class="ex">$</span> cd ../../north-pacific-gyre/</span></code></pre>
 </div>
-<p>She creates a file using <code>nano</code> …</p>
+<p>За допомогою <code>nano</code> вона створює файл …</p>
 <div class="codewrapper sourceCode" id="cb30">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="ex">$</span> nano do-stats.sh</span></code></pre>
 </div>
-<p>…which contains the following:</p>
+<p>…який містить наступне:</p>
 <div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a><span class="co"># Calculate stats for data files.</span></span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a><span class="co"># Розрахунок статистики для файлів даних.</span></span>
 <span id="cb31-2"><a href="#cb31-2" tabindex="-1"></a><span class="cf">for</span> datafile <span class="kw">in</span> <span class="st">"</span><span class="va">$@</span><span class="st">"</span></span>
 <span id="cb31-3"><a href="#cb31-3" tabindex="-1"></a><span class="cf">do</span></span>
 <span id="cb31-4"><a href="#cb31-4" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">$datafile</span></span>
 <span id="cb31-5"><a href="#cb31-5" tabindex="-1"></a>    <span class="fu">bash</span> goostats.sh <span class="va">$datafile</span> stats-<span class="va">$datafile</span></span>
 <span id="cb31-6"><a href="#cb31-6" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
 </div>
-<p>She saves this in a file called <code>do-stats.sh</code> so that she
-can now re-do the first stage of her analysis by typing:</p>
+<p>Вона зберігає цей код у файлі з назвою <code>do-stats.sh</code>, щоб
+тепер мати змогу повторно виконати перший етап аналізу, набравши:</p>
 <div class="codewrapper sourceCode" id="cb32">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="ex">$</span> bash do-stats.sh NENE<span class="pp">*</span>A.txt NENE<span class="pp">*</span>B.txt</span></code></pre>
 </div>
-<p>She can also do this:</p>
+<p>Вона також може зробити наступне:</p>
 <div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a><span class="ex">$</span> bash do-stats.sh NENE<span class="pp">*</span>A.txt NENE<span class="pp">*</span>B.txt <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code></pre>
 </div>
-<p>so that the output is just the number of files processed rather than
-the names of the files that were processed.</p>
-<p>One thing to note about Nelle’s script is that it lets the person
-running it decide what files to process. She could have written it
-as:</p>
+<p>щоб вивести лише кількість оброблених файлів, а не їхні назви.</p>
+<p>Одна з важливих особливостей скрипту Неллі полягає в тому, що він
+дозволяє користувачеві самостійно вибирати, які файли потрібно
+обробляти. Вона могла б також написати його так:</p>
 <div class="codewrapper sourceCode" id="cb34">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" tabindex="-1"></a><span class="co"># Calculate stats for Site A and Site B data files.</span></span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" tabindex="-1"></a><span class="co"># Розрахунок статистики для файлів з локацій A та B. </span></span>
 <span id="cb34-2"><a href="#cb34-2" tabindex="-1"></a><span class="cf">for</span> datafile <span class="kw">in</span> NENE<span class="pp">*</span>A.txt NENE<span class="pp">*</span>B.txt</span>
 <span id="cb34-3"><a href="#cb34-3" tabindex="-1"></a><span class="cf">do</span></span>
 <span id="cb34-4"><a href="#cb34-4" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">$datafile</span></span>
 <span id="cb34-5"><a href="#cb34-5" tabindex="-1"></a>    <span class="fu">bash</span> goostats.sh <span class="va">$datafile</span> stats-<span class="va">$datafile</span></span>
 <span id="cb34-6"><a href="#cb34-6" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
 </div>
-<p>The advantage is that this always selects the right files: she
-doesn’t have to remember to exclude the ‘Z’ files. The disadvantage is
-that it <em>always</em> selects just those files — she can’t run it on
-all files (including the ‘Z’ files), or on the ‘G’ or ‘H’ files her
-colleagues in Antarctica are producing, without editing the script. If
-she wanted to be more adventurous, she could modify her script to check
-for command-line arguments, and use <code>NENE*A.txt NENE*B.txt</code>
-if none were provided. Of course, this introduces another tradeoff
-between flexibility and complexity.</p>
-<div id="variables-in-shell-scripts" class="callout challenge">
+<p>Перевага цього буде полягати в тому, що цей код завжди вибирає
+правильні файли, і Неллі не потрібно пам’ятати про виключення файлів із
+літерою ‘Z’. Недолік полягає в тому, що скрипт завжди обробляє лише ці
+файли. Не редагуючи скрипт, Неллі не може застосувати його до всіх
+файлів (у тому числі до файлів ‘Z’) або до файлів ‘G’ чи ‘H’, які
+створюють її колеги в Антарктиді. Якщо вона хотіла б піти далі, то могла
+б модифікувати свій скрипт для перевірки аргументів командного рядка та
+за замовчуванням використовував NENE_A.txt NENE_B.txt, якщо жодних
+аргументів не передано. Звичайно, це створює інший компроміс між
+гнучкістю і складністю.</p>
+<div id="змінні-в-скриптах-терміналу" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Вправа</span>
-<div id="variables-in-shell-scripts" class="callout-inner">
-<h3 class="callout-title">Variables in Shell Scripts</h3>
+<div id="змінні-в-скриптах-терміналу" class="callout-inner">
+<h3 class="callout-title">Змінні в скриптах терміналу</h3>
 <div class="callout-content">
 <p>Уявіть, що у каталозі <code>alkanes</code> у вас є скрипт з назвою
 <code>script.sh</code>, який містить наступні команди:</p>
@@ -851,39 +849,38 @@ between flexibility and complexity.</p>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
-<p>The correct answer is 2.</p>
-<p>The special variables <code>$1</code>, <code>$2</code> and
-<code>$3</code> represent the command line arguments given to the
-script, such that the commands run are:</p>
+<p>Правильною є відповідь 2.</p>
+<p>Спеціальні змінні $1, $2 та $3 відповідають аргументам командного
+рядка, що передаються скрипту, тому виконуються наступні команди:</p>
 <div class="codewrapper sourceCode" id="cb37">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" tabindex="-1"></a><span class="ex">$</span> head <span class="at">-n</span> 1 cubane.pdb ethane.pdb octane.pdb pentane.pdb propane.pdb</span>
 <span id="cb37-2"><a href="#cb37-2" tabindex="-1"></a><span class="ex">$</span> tail <span class="at">-n</span> 1 cubane.pdb ethane.pdb octane.pdb pentane.pdb propane.pdb</span></code></pre>
 </div>
-<p>The shell does not expand <code>'*.pdb'</code> because it is enclosed
-by quote marks. Таким чином, першим аргументом скрипту є
-<code>'*.pdb'</code>, який буде розгорнуто у скрипті за допомогою
-<code>head</code> і <code>tail</code>.</p>
+<p>Термінал не розгортає <code>'*.pdb'</code>, оскільки символи взято у
+лапки. Таким чином, першим аргументом скрипту є <code>'*.pdb'</code>,
+який буде розгорнуто у скрипті за допомогою <code>head</code> і
+<code>tail</code>.</p>
 </div>
 </div>
 </div>
 </div>
-<div id="find-the-longest-file-with-a-given-extension" class="callout challenge">
+<div id="пошук-найдовшого-файлу-із-заданим-розширенням" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Вправа</span>
-<div id="find-the-longest-file-with-a-given-extension" class="callout-inner">
-<h3 class="callout-title">Find the Longest File With a Given
-Extension</h3>
+<div id="пошук-найдовшого-файлу-із-заданим-розширенням" class="callout-inner">
+<h3 class="callout-title">Пошук найдовшого файлу із заданим
+розширенням</h3>
 <div class="callout-content">
 <p>Напишіть сценарій терміналу з назвою <code>longest.sh</code>, який
 отримує в якості аргументів ім’я каталогу і розширення імені файлу як
 аргументи, і виводить назву файлу з найбільшою кількістю рядків у цьому
-каталозі з цим розширенням. For example:</p>
+каталозі з цим розширенням. Наприклад:</p>
 <div class="codewrapper sourceCode" id="cb38">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -892,7 +889,7 @@ Extension</h3>
 <p>виведе назву файлу <code>.pdb</code> у каталозі
 <code>shell-lesson-data/exercise-data/proteins</code>, який має
 найбільшу кількість рядків.</p>
-<p>Feel free to test your script on another directory e.g.</p>
+<p>Ви можете протестувати свій скрипт в іншому каталозі, наприклад</p>
 <div class="codewrapper sourceCode" id="cb39">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -908,47 +905,48 @@ Extension</h3>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb40">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" tabindex="-1"></a><span class="co"># Shell script which takes two arguments:</span></span>
-<span id="cb40-2"><a href="#cb40-2" tabindex="-1"></a><span class="co">#    1. a directory name</span></span>
-<span id="cb40-3"><a href="#cb40-3" tabindex="-1"></a><span class="co">#    2. a file extension</span></span>
-<span id="cb40-4"><a href="#cb40-4" tabindex="-1"></a><span class="co"># and prints the name of the file in that directory</span></span>
-<span id="cb40-5"><a href="#cb40-5" tabindex="-1"></a><span class="co"># with the most lines which matches the file extension.</span></span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" tabindex="-1"></a><span class="co"># Скрипт терміналу, який приймає два аргументи:</span></span>
+<span id="cb40-2"><a href="#cb40-2" tabindex="-1"></a><span class="co">#    1. ім'я каталогу</span></span>
+<span id="cb40-3"><a href="#cb40-3" tabindex="-1"></a><span class="co">#    2. розширення файлу</span></span>
+<span id="cb40-4"><a href="#cb40-4" tabindex="-1"></a><span class="co"># і виводить ім'я файлу з даним розширенням в цьому каталозі </span></span>
+<span id="cb40-5"><a href="#cb40-5" tabindex="-1"></a><span class="co"># який має найбільшу кількість рядків</span></span>
 <span id="cb40-6"><a href="#cb40-6" tabindex="-1"></a></span>
 <span id="cb40-7"><a href="#cb40-7" tabindex="-1"></a><span class="fu">wc</span> <span class="at">-l</span> <span class="va">$1</span>/<span class="pp">*</span>.<span class="va">$2</span> <span class="kw">|</span> <span class="fu">sort</span> <span class="at">-n</span> <span class="kw">|</span> <span class="fu">tail</span> <span class="at">-n</span> 2 <span class="kw">|</span> <span class="fu">head</span> <span class="at">-n</span> 1</span></code></pre>
 </div>
-<p>The first part of the pipeline, <code>wc -l $1/*.$2 | sort -n</code>,
-counts the lines in each file and sorts them numerically (largest last).
-When there’s more than one file, <code>wc</code> also outputs a final
-summary line, giving the total number of lines across <em>all</em>
-files. Ми використовуємо <code>tail -n 2 | head -n 1</code>, щоб
-відкинути цей останній рядок.</p>
-<p>With <code>wc -l $1/*.$2 | sort -n | tail -n 1</code> we’ll see the
-final summary line: we can build our pipeline up in pieces to be sure we
-understand the output.</p>
+<p>Перша частина конвеєра, <code>wc -l $1/*.$2 | sort -n</code>, рахує
+кількість рядків у кожному файлі та сортує їх у числовому порядку
+(найбільший файл буде останнім). Коли надано кілька файлів,
+<code>wc</code> також виведе останній підсумковий рядок, який покаже
+загальну кількість рядків у <em>всіх</em> файлах. Ми використовуємо
+<code>tail -n 2 | head -n 1</code>, щоб відкинути цей останній
+рядок.</p>
+<p>Використовуючи <code>wc -l $1/*.$2 | sort -n | tail -n 1</code>, ми
+побачимо останній підсумковий рядок. Ми також можемо будувати конвеєр
+крок за кроком, щоб краще зрозуміти результат.</p>
 </div>
 </div>
 </div>
 </div>
-<div id="script-reading-comprehension" class="callout challenge">
+<div id="читання-і-розуміння-скриптів" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Вправа</span>
-<div id="script-reading-comprehension" class="callout-inner">
-<h3 class="callout-title">Script Reading Comprehension</h3>
+<div id="читання-і-розуміння-скриптів" class="callout-inner">
+<h3 class="callout-title">Читання і розуміння скриптів</h3>
 <div class="callout-content">
-<p>For this question, consider the
-<code>shell-lesson-data/exercise-data/alkanes</code> directory once
-again. This contains a number of <code>.pdb</code> files in addition to
-any other files you may have created. Explain what each of the following
-three scripts would do when run as <code>bash script1.sh *.pdb</code>,
-<code>bash script2.sh *.pdb</code>, and
-<code>bash script3.sh *.pdb</code> respectively.</p>
+<p>Для цього завдання ще раз розглянемо каталог
+<code>shell-lesson-data/exercise-data/proteins</code>. У ньому міститься
+низка файлів <code>.pdb</code> разом з іншими файлами, які ви могли
+створити. Опишіть, що відбудеться при послідовному виконанні кожного з
+трьох скриптів із командами <code>bash script1.sh *.pdb</code>,
+<code>bash script2.sh *.pdb</code> та
+<code>bash script3.sh *.pdb</code>.</p>
 <div class="codewrapper sourceCode" id="cb41">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -980,21 +978,20 @@ three scripts would do when run as <code>bash script1.sh *.pdb</code>,
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
-<p>In each case, the shell expands the wildcard in <code>*.pdb</code>
-before passing the resulting list of file names as arguments to the
-script.</p>
-<p>Script 1 would print out a list of all files containing a dot in
-their name. The arguments passed to the script are not actually used
-anywhere in the script.</p>
-<p>Script 2 would print the contents of the first 3 files with a
-<code>.pdb</code> file extension. <code>$1</code>, <code>$2</code>, and
-<code>$3</code> refer to the first, second, and third argument
-respectively.</p>
-<p>Script 3 would print all the arguments to the script (i.e. all the
-<code>.pdb</code> files), followed by <code>.pdb</code>. <code>$@</code>
-refers to <em>all</em> the arguments given to a shell script.</p>
+<p>У кожному випадку термінал розгортає символ підстановки у
+<code>*.pdb</code>, а потім передає отриманий список файлів як аргументи
+скрипту.</p>
+<p>Скрипт 1 виведе список усіх файлів, що містять крапку в їх назві.
+Передані скрипту аргументи взагалі не використовуються.</p>
+<p>Скрипт 2 виведе вміст перших 3 файлів з розширенням
+<code>.pdb</code>. <code>$1</code>, <code>$2</code> і <code>$3</code>
+відповідають першому, другому та третьому аргументам відповідно.</p>
+<p>Скрипт 3 виведе всі аргументи скрипту (тобто назви всіх файлів з
+розширенням <code>.pdb</code>), і додасть до них <code>.pdb</code>.
+Змінна <code>$@</code> зазначає усі аргументи, що були передані
+скрипту.</p>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1004,21 +1001,21 @@ refers to <em>all</em> the arguments given to a shell script.</p>
 </div>
 </div>
 </div>
-<div id="debugging-scripts" class="callout challenge">
+<div id="налагодження-скриптів" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Вправа</span>
-<div id="debugging-scripts" class="callout-inner">
-<h3 class="callout-title">Debugging Scripts</h3>
+<div id="налагодження-скриптів" class="callout-inner">
+<h3 class="callout-title">Налагодження скриптів</h3>
 <div class="callout-content">
-<p>Suppose you have saved the following script in a file called
-<code>do-errors.sh</code> in Nelle’s <code>north-pacific-gyre</code>
-directory:</p>
+<p>Припустимо, ви зберегли наступний скрипт у файлі з назвою
+<code>do-errors.sh</code> у каталозі
+<code>north-pacific-gyre/scripts</code>:</p>
 <div class="codewrapper sourceCode" id="cb45">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb45-1"><a href="#cb45-1" tabindex="-1"></a><span class="co"># Calculate stats for data files.</span></span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb45-1"><a href="#cb45-1" tabindex="-1"></a><span class="co"># Статистичні розрахунки для файлів даних.</span></span>
 <span id="cb45-2"><a href="#cb45-2" tabindex="-1"></a><span class="cf">for</span> datafile <span class="kw">in</span> <span class="st">"</span><span class="va">$@</span><span class="st">"</span></span>
 <span id="cb45-3"><a href="#cb45-3" tabindex="-1"></a><span class="cf">do</span></span>
 <span id="cb45-4"><a href="#cb45-4" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">$datfile</span></span>
@@ -1039,7 +1036,7 @@ directory:</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb47-1"><a href="#cb47-1" tabindex="-1"></a><span class="ex">$</span> bash <span class="at">-x</span> do-errors.sh NENE<span class="pp">*</span>A.txt NENE<span class="pp">*</span>B.txt</span></code></pre>
 </div>
-<p>Що показує вивід? Which line is responsible for the error?</p>
+<p>Що показує вивід? Який рядок призводить до помилки?</p>
 </div>
 </div>
 </div>
@@ -1050,14 +1047,15 @@ directory:</p>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
-<p>The <code>-x</code> option causes <code>bash</code> to run in debug
-mode. This prints out each command as it is run, which will help you to
-locate errors. In this example, we can see that <code>echo</code> isn’t
-printing anything. We have made a typo in the loop variable name, and
-the variable <code>datfile</code> doesn’t exist, hence returning an
-empty string.</p>
+<p>Параметр <code>-x</code> призводить до запуску скрипту у режимі
+налагодження (відлагодження). Він виводить кожну команду під час її
+виконання, допомагаючи вам локалізувати помилки. У цьому прикладі ми
+таким чином можемо побачити, що команда <code>echo</code> нічого не
+виводить. Ми допустили друкарську помилку у назві змінної циклу, і
+оскільки змінної <code>datfile</code> не існує, вона повертає порожній
+рядок.</p>
 </div>
 </div>
 </div>
@@ -1069,21 +1067,22 @@ empty string.</p>
 <span class="callout-header">Ключові моменти</span>
 <div class="callout-inner">
 <div class="callout-content">
-<ul><li>Save commands in files (usually called shell scripts) for
-re-use.</li>
+<ul><li>Зберігайте команди у файлах (які зазвичай називають скриптами
+оболонки або скриптами терміналу) для їх повторного використання.</li>
 <li>
 <code>bash [ім'я файлу]</code> виконує команди, збережені у
 відповідному файлі.</li>
 <li>
-<code>$@</code> refers to all of a shell script’s command-line
-arguments.</li>
+<code>$@</code> посилається на всі аргументи командного рядка,
+передані скрипту оболонки.</li>
 <li>
-<code>$1</code>, <code>$2</code>, etc., refer to the first
-command-line argument, the second command-line argument, etc.</li>
-<li>Place variables in quotes if the values might have spaces in
-them.</li>
-<li>Letting users decide what files to process is more flexible and more
-consistent with built-in Unix commands.</li>
+<code>$1</code>, <code>$2</code> і так далі представляють перший,
+другий та наступні аргументи командного рядка.</li>
+<li>Беріть змінні в лапки, якщо їхні значення можуть містити
+пробіли.</li>
+<li>Надання користувачам можливості самим обирати файли для обробки
+робить скрипт гнучкішим і більш узгодженим із вбудованими командами
+Unix.</li>
 </ul></div>
 </div>
 </div>
@@ -1145,7 +1144,7 @@ consistent with built-in Unix commands.</li>
   "url": "https://ukrainian-carpentries.github.io/shell-novice/06-script.html",
   "identifier": "https://ukrainian-carpentries.github.io/shell-novice/06-script.html",
   "dateCreated": "2014-10-22",
-  "dateModified": "2025-11-21",
+  "dateModified": "2025-11-26",
   "datePublished": "2025-11-26"
 }
 

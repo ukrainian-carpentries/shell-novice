@@ -318,7 +318,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Пошук з командного рядка</h1>
-        <p>Останнє оновлення 2025-10-31 |
+        <p>Останнє оновлення 2025-11-26 |
 
         <a href="https://github.com/ukrainian-carpentries/shell-novice/edit/main/episodes/07-find.md" class="external-link">Редагувати цю сторінку <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -337,7 +337,7 @@
 <div class="card-body">
 <div class="inner">
 <h3 class="card-title">Питання</h3>
-<ul><li>How can I find files?</li>
+<ul><li>Як я можу знайти потрібні файли?</li>
 <li>Як знайти щось у файлах?</li>
 </ul></div>
 </div>
@@ -346,8 +346,8 @@
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Цілі</h3>
-<ul><li>Use <code>grep</code> to select lines from text files that match
-simple patterns.</li>
+<ul><li>Використати <code>grep</code> для пошуку у текстових файлах рядків,
+які відповідають простим шаблонам.</li>
 <li>Використати <code>find</code> для пошуку файлів і каталогів, назви
 яких відповідають простим шаблонам.</li>
 <li>Використати вихідні дані однієї команди як аргумент(и) командного
@@ -398,7 +398,7 @@ Yesterday it worked
 Today it is not working
 Software is like that.</code></pre>
 </div>
-<p>Let’s find lines that contain the word ‘not’:</p>
+<p>Знайдемо рядки, які містять слово ‘not’:</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -411,17 +411,15 @@ Software is like that.</code></pre>
 "My Thesis" not found
 Today it is not working</code></pre>
 </div>
-<p>Here, <code>not</code> is the pattern we’re searching for. The grep
-command searches through the file, looking for matches to the pattern
-specified. To use it type <code>grep</code>, then the pattern we’re
-searching for and finally the name of the file (or files) we’re
-searching in.</p>
-<p>The output is the three lines in the file that contain the letters
-‘not’.</p>
-<p>By default, grep searches for a pattern in a case-sensitive way. In
-addition, the search pattern we have selected does not have to form a
-complete word, as we will see in the next example.</p>
-<p>Let’s search for the pattern: ‘The’.</p>
+<p>Here, <code>not</code> is the pattern we’re searching for. Команда
+<code>grep</code> шукає у файлі збіги із заданим шаблоном. To use it
+type <code>grep</code>, then the pattern we’re searching for and finally
+the name of the file (or files) we’re searching in.</p>
+<p>У вихідний файл виводяться три рядки, які містять літери ‘not’.</p>
+<p>За замовчуванням <code>grep</code> шукає шаблон з урахуванням
+регістру. In addition, the search pattern we have selected does not have
+to form a complete word, as we will see in the next example.</p>
+<p>Відшукаймо тепер шаблон ‘The’.</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -439,8 +437,8 @@ one of which contained our search pattern within a larger word,
 <p>To restrict matches to lines containing the word ‘The’ on its own, we
 can give <code>grep</code> the <code>-w</code> option. This will limit
 matches to word boundaries.</p>
-<p>Later in this lesson, we will also see how we can change the search
-behavior of grep with respect to its case sensitivity.</p>
+<p>Пізніше у цьому уроці ми також побачимо, як можна змінити поведінку
+пошуку <code>grep</code> стосовно чутливості до регістру.</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -452,9 +450,9 @@ behavior of grep with respect to its case sensitivity.</p>
 <pre class="output" tabindex="0"><code>The Tao that is seen</code></pre>
 </div>
 <p>Note that a ‘word boundary’ includes the start and end of a line, so
-not just letters surrounded by spaces. Sometimes we don’t want to search
-for a single word, but a phrase. Це також легко зробити за допомогою
-<code>grep</code>, взявши фразу в лапки.</p>
+not just letters surrounded by spaces. Іноді ми хочемо шукати не окреме
+слово, а фразу. Це також легко зробити за допомогою <code>grep</code>,
+взявши фразу в лапки.</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -467,9 +465,9 @@ for a single word, but a phrase. Це також легко зробити за 
 </div>
 <p>We’ve now seen that you don’t have to have quotes around single
 words, but it is useful to use quotes when searching for multiple words.
-It also helps to make it easier to distinguish between the search term
-or phrase and the file being searched. We will use quotes in the
-remaining examples.</p>
+Це також допомагає легше відрізнити пошуковий термін або фразу від
+файлу, в якому відбувається пошук. We will use quotes in the remaining
+examples.</p>
 <p>Another useful option is <code>-n</code>, which numbers the lines
 that match:</p>
 <div class="codewrapper sourceCode" id="cb11">
@@ -484,12 +482,12 @@ that match:</p>
 9:Yesterday it worked
 10:Today it is not working</code></pre>
 </div>
-<p>Here, we can see that lines 5, 9, and 10 contain the letters
-‘it’.</p>
-<p>We can combine options (i.e. flags) as we do with other Unix
-commands. For example, let’s find the lines that contain the word ‘the’.
-We can combine the option <code>-w</code> to find the lines that contain
-the word ‘the’ and <code>-n</code> to number the lines that match:</p>
+<p>Ми бачимо, що рядки 5, 9 і 10 містять літери ‘it’.</p>
+<p>Ми можемо комбінувати опції (тобто прапорці) так само як і в інших
+командах Unix. For example, let’s find the lines that contain the word
+‘the’. We can combine the option <code>-w</code> to find the lines that
+contain the word ‘the’ and <code>-n</code> to number the lines that
+match:</p>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -501,8 +499,8 @@ the word ‘the’ and <code>-n</code> to number the lines that match:</p>
 <pre class="output" tabindex="0"><code>2:Is not the true Tao, until
 6:and the presence of absence:</code></pre>
 </div>
-<p>Now we want to use the option <code>-i</code> to make our search
-case-insensitive:</p>
+<p>Тепер ми хочемо використати опцію <code>-i</code>, щоб зробити наш
+пошук нечутливим до регістру:</p>
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -584,16 +582,16 @@ Regexp selection and interpretation:
 Miscellaneous:
 ...        ...        ...</code></pre>
 </div>
-<div id="using-grep" class="callout challenge">
+<div id="використання-grep" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Вправа</span>
-<div id="using-grep" class="callout-inner">
-<h3 class="callout-title">Using <code>grep</code>
+<div id="використання-grep" class="callout-inner">
+<h3 class="callout-title">Використання <code>grep</code>
 </h3>
 <div class="callout-content">
-<p>Which command would result in the following output:</p>
+<p>Яка команда призведе до наступного результату:</p>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -613,29 +611,29 @@ Miscellaneous:
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Правильна відповідь 3, тому що опція <code>-w</code> шукає збіги лише
-між цілими словами. The other options will also match ‘of’ when part of
-another word.</p>
+між цілими словами. Інші варіанти також шукатимуть збіги зі словом ‘of’,
+якщо воно є частиною іншого слова.</p>
 </div>
 </div>
 </div>
 </div>
-<div id="wildcards" class="callout">
+<div id="символи-підстановки" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <span class="callout-header">Виноска</span>
-<div id="wildcards" class="callout-inner">
-<h3 class="callout-title">Wildcards</h3>
+<div id="символи-підстановки" class="callout-inner">
+<h3 class="callout-title">Символи підстановки</h3>
 <div class="callout-content">
-<p><code>grep</code>‘s real power doesn’t come from its options, though;
-it comes from the fact that patterns can include wildcards. (The
-technical name for these is <strong>regular expressions</strong>, which
-is what the ’re’ in ‘grep’ stands for.) Regular expressions are both
-complex and powerful; if you want to do complex searches, please look at
-the lesson on <a href="https://librarycarpentry.org/lc-data-intro/01-regular-expressions.html" class="external-link">our
+<p>Проте справжня сила <code>grep</code> полягає не у його опціях, а у
+тому, що шаблони можуть містити символи підстановки. (The technical name
+for these is <strong>regular expressions</strong>, which is what the
+‘re’ in ‘grep’ stands for.) Regular expressions are both complex and
+powerful; if you want to do complex searches, please look at the lesson
+on <a href="https://librarycarpentry.org/lc-data-intro/01-regular-expressions.html" class="external-link">our
 website</a>. As a taster, we can find lines that have an ‘o’ in the
 second position like this:</p>
 <div class="codewrapper sourceCode" id="cb24">
@@ -653,20 +651,20 @@ Software is like that.</code></pre>
 <p>We use the <code>-E</code> option and put the pattern in quotes to
 prevent the shell from trying to interpret it. (If the pattern contained
 a <code>*</code>, for example, the shell would try to expand it before
-running <code>grep</code>.) The <code>^</code> in the pattern anchors
-the match to the start of the line. The <code>.</code> matches a single
-character (just like <code>?</code> in the shell), while the
-<code>o</code> matches an actual ‘o’.</p>
+running <code>grep</code>.) Символ <code>^</code> у шаблоні вимагає, щоб
+збіг був на початку рядка. The <code>.</code> matches a single character
+(just like <code>?</code> in the shell), while the <code>o</code>
+matches an actual ‘o’.</p>
 </div>
 </div>
 </div>
-<div id="tracking-a-species" class="callout challenge">
+<div id="відстеження-видів-диких-тварин" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Вправа</span>
-<div id="tracking-a-species" class="callout-inner">
-<h3 class="callout-title">Tracking a Species</h3>
+<div id="відстеження-видів-диких-тварин" class="callout-inner">
+<h3 class="callout-title">Відстеження видів диких тварин</h3>
 <div class="callout-content">
 <p>Лея має кілька сотень файлів даних, збережених в одному каталозі,
 кожен з яких відформатовано таким чином:</p>
@@ -715,7 +713,7 @@ one field in a line.</p>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <pre class="source"><code>grep -w $1 -r $2 | cut -d : -f 2 | cut -d , -f 1,3 &gt; $1.txt</code></pre>
 <p>Actually, you can swap the order of the two cut commands and it still
@@ -765,7 +763,7 @@ speed.</p>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <pre class="source"><code>for sis in Jo Meg Beth Amy
 do
@@ -1035,7 +1033,7 @@ files in <code>creatures</code> except <code>unicorn.dat</code>? Після
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>Варіант 1 правильний. Putting the match expression in quotes prevents
 the shell expanding it, so it gets passed to the <code>find</code>
@@ -1114,7 +1112,7 @@ Comprehension</h3>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li><p>Find all files with a <code>.dat</code> extension recursively
 from the current directory</p></li>
@@ -1209,7 +1207,7 @@ command.</li>
   "url": "https://ukrainian-carpentries.github.io/shell-novice/07-find.html",
   "identifier": "https://ukrainian-carpentries.github.io/shell-novice/07-find.html",
   "dateCreated": "2014-10-22",
-  "dateModified": "2025-10-31",
+  "dateModified": "2025-11-26",
   "datePublished": "2025-11-26"
 }
 
