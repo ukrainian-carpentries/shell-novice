@@ -287,9 +287,7 @@ $ history | tail -n 5 > redo-figure-3.sh
 301 history | tail -n 5 > redo-figure-3.sh
 ```
 
-After a moment's work in an editor to remove the serial numbers on the commands,
-and to remove the final line where we called the `history` command,
-we have a completely accurate record of how we created that figure.
+Після невеликого редагування для видалення номерів команд і останнього рядка з командою `history`, ми отримаємо абсолютно точний запис того, як було створено цей графік.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
