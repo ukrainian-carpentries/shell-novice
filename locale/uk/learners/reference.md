@@ -200,8 +200,8 @@ data sent to standard output is displayed on the screen;
 in a [pipe](#pipe),
 it is passed to the [standard input](#standard-input) of the next process.
 
-[sub-directory]{#sub-directory}
-:   A directory contained within another directory.
+[підкаталог]{#sub-directory}
+:   Каталог, що міститься у іншому каталозі.
 
 [tab completion]{#tab-completion}
 :   A feature provided by many interactive systems in which
