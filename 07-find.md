@@ -69,16 +69,14 @@ Is not the true Tao, until
 Today it is not working
 ```
 
-Here, `not` is the pattern we're searching for.
+У цьому випадку `not` — це шаблон для пошуку.
 Команда `grep` шукає у файлі збіги із заданим шаблоном.
-To use it type `grep`, then the pattern we're searching for and finally
-the name of the file (or files) we're searching in.
+Щоб скористатися нею, введіть `grep`, далі шаблон для пошуку, а потім назву файлу (або файлів), у якому (у яких) ми шукаємо.
 
 У вихідний файл виводяться три рядки, які містять літери 'not'.
 
 За замовчуванням `grep` шукає шаблон з урахуванням регістру.
-In addition, the search pattern we have selected does not have to form a complete word,
-as we will see in the next example.
+Також обраний нами шаблон пошуку не обов’язково повинен бути повним словом, як показано в наступному прикладі.
 
 Відшукаймо тепер шаблон 'The'.
 
@@ -91,12 +89,10 @@ The Tao that is seen
 "My Thesis" not found.
 ```
 
-This time, two lines that include the letters 'The' are outputted,
-one of which contained our search pattern within a larger word, 'Thesis'.
+Цього разу буде виведено два рядки з літерами 'The', і один із них містить наш шаблон пошуку всередині довшого слова 'Thesis'.
 
-To restrict matches to lines containing the word 'The' on its own,
-we can give `grep` the `-w` option.
-This will limit matches to word boundaries.
+Щоб обмежити збіги до рядків, що містять слово 'The' окремо, а не як частинку іншого слова, ми використаємо `grep` з опцією `-w`.
+Це обмежить збіги лише межами повних слів.
 
 Пізніше у цьому уроці ми також побачимо, як можна змінити поведінку пошуку `grep` стосовно чутливості до регістру.
 
@@ -108,8 +104,7 @@ $ grep -w The haiku.txt
 The Tao that is seen
 ```
 
-Note that a 'word boundary' includes the start and end of a line, so not
-just letters surrounded by spaces.
+Зауважте, що 'межа слова' включає початок і кінець рядка, а не лише літери, оточені пробілами.
 Іноді ми хочемо шукати не окреме слово, а фразу. Це також легко зробити за допомогою
 `grep`, взявши фразу в лапки.
 
@@ -121,12 +116,11 @@ $ grep -w "is not" haiku.txt
 Today it is not working
 ```
 
-We've now seen that you don't have to have quotes around single words,
-but it is useful to use quotes when searching for multiple words.
+Ми вже бачили, що не обов'язково брати в лапки окремі слова, але лапки варто використовувати під час пошуку кількох слів.
 Це також допомагає легше відрізнити пошуковий термін або фразу від файлу, в якому відбувається пошук.
-We will use quotes in the remaining examples.
+У наступних прикладах ми будемо використовувати лапки.
 
-Another useful option is `-n`, which numbers the lines that match:
+Ще одна корисна опція - це `-n`, яка додає до виводу номери знайдених рядків:
 
 ```bash
 $ grep -n "it" haiku.txt
@@ -142,8 +136,7 @@ $ grep -n "it" haiku.txt
 
 Ми можемо комбінувати опції (тобто прапорці) так само як і в інших командах Unix.
 For example, let's find the lines that contain the word 'the'.
-We can combine the option `-w` to find the lines that contain the word 'the'
-and `-n` to number the lines that match:
+Ми можемо комбінувати опцію `-w` для пошуку рядків зі словом 'the', та опцію `-n` для нумерації рядків із результатами:
 
 ```bash
 $ grep -n -w "the" haiku.txt
@@ -166,8 +159,7 @@ $ grep -n -w -i "the" haiku.txt
 6:and the presence of absence:
 ```
 
-Now, we want to use the option `-v` to invert our search, i.e., we want to output
-the lines that do not contain the word 'the'.
+Тепер використаймо опцію `-v` для зворотного пошуку, тобто виводу рядків, які не містять слова 'the'.
 
 ```bash
 $ grep -n -w -v "the" haiku.txt
@@ -188,7 +180,7 @@ $ grep -n -w -v "the" haiku.txt
 If we use the `-r` (recursive) option,
 `grep` can search for a pattern recursively through a set of files in subdirectories.
 
-Let's search recursively for `Yesterday` in the `shell-lesson-data/exercise-data/writing` directory:
+Виконаймо рекурсивний пошук слова `Yesterday` у каталозі `shell-lesson-data/exercise-data/writing`:
 
 ```bash
 $ grep -r Yesterday .
@@ -201,7 +193,7 @@ $ grep -r Yesterday .
 ./haiku.txt:Yesterday it worked
 ```
 
-`grep` has lots of other options. To find out what they are, we can type:
+`grep` має багато інших опцій. Щоб переглянути їх, ми можемо ввести:
 
 ```bash
 $ grep --help
@@ -261,10 +253,7 @@ and the presence of absence:
 
 Проте справжня сила `grep` полягає не у його опціях, а у тому, що шаблони можуть містити символи підстановки. (The technical name for
 these is **regular expressions**, which
-is what the 're' in 'grep' stands for.) Regular expressions are both complex
-and powerful; if you want to do complex searches, please look at the lesson
-on [our website](https://librarycarpentry.org/lc-data-intro/01-regular-expressions.html). As a taster, we can
-find lines that have an 'o' in the second position like this:
+is what the 're' in 'grep' stands for.) Регулярні вирази є водночас складними й потужними; якщо ви хочете виконувати розширені пошуки, перегляньте [цей урок на нашому сайті](https://librarycarpentry.org/lc-data-intro/01-regular-expressions.html). Як короткий приклад, ми можемо знайти рядки, у яких літера 'o' знаходиться на другій позиції, ось так:
 
 ```bash
 $ grep -E "^.o" haiku.txt
@@ -276,11 +265,7 @@ Today it is not working
 Software is like that.
 ```
 
-We use the `-E` option and put the pattern in quotes to prevent the shell
-from trying to interpret it. (If the pattern contained a `*`, for
-example, the shell would try to expand it before running `grep`.) Символ `^` у шаблоні вимагає, щоб збіг був на початку рядка. The `.`
-matches a single character (just like `?` in the shell), while the `o`
-matches an actual 'o'.
+Ми використовуємо опцію `-E` і беремо шаблон у лапки, щоб оболонка не намагалася його інтерпретувати іншим чином. (Наприклад, якщо шаблон містить `*`, то оболонка спробує розгорнути його перед виконанням `grep`.) Символ `^` у шаблоні вимагає, щоб збіг був на початку рядка. Символ `.` відповідає одному символу (подібно до `?` у командному рядку), тоді як `o` відповідає справжній літері 'o'.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -301,9 +286,7 @@ matches an actual 'o'.
 2012-11-07,bear,1
 ```
 
-She wants to write a shell script that takes a species as the first command-line argument
-and a directory as the second argument. The script should return one file called `<species>.txt`
-containing a list of dates and the number of that species seen on each date.
+Вона хоче створити командний скрипт, який використовує вид тварини як перший аргумент командного рядка, а каталог — як другий. Скрипт повинен повернути один файл з назвою `<species>.txt`, який містить список дат і кількість особин цього виду, які були помічені для кожної дати.
 Наприклад, використовуючи дані, показані вище, `rabbit.txt` буде містити:
 
 ```source
@@ -312,8 +295,7 @@ containing a list of dates and the number of that species seen on each date.
 2012-11-07,16
 ```
 
-Below, each line contains an individual command, or pipe.  Arrange their
-sequence in one command in order to achieve Leah's goal:
+Нижче кожен рядок містить окрему команду або канал.  Розташуйте їх у правильному порядку в одній команді, щоб допомогти Леї досягти її мети:
 
 ```bash
 cut -d : -f 2
@@ -325,11 +307,9 @@ $1.txt
 cut -d , -f 1,3
 ```
 
-Hint: use `man grep` to look for how to grep text recursively in a directory
-and `man cut` to select more than one field in a line.
+Підказка: перегляньте `man grep` для інформації про рекурсивний пошук у каталогах і `man cut` для виділення декількох полів у рядку.
 
-An example of such a file is provided in
-`shell-lesson-data/exercise-data/animal-counts/animals.csv`
+Приклад файлу такого типу наведено у `shell-lesson-data/exercise-data/animal-counts/animals.сsv`.
 
 :::::::::::::::  solution
 
@@ -339,11 +319,9 @@ An example of such a file is provided in
 grep -w $1 -r $2 | cut -d : -f 2 | cut -d , -f 1,3 > $1.txt
 ```
 
-Actually, you can swap the order of the two cut commands and it still works. At the
-command line, try changing the order of the cut commands, and have a look at the output
-from each step to see why this is the case.
+Насправді ви можете поміняти місцями порядок двох команд `cut`, і це все одно буде працювати. У командному рядку спробуйте це з командами `cut` і перегляньте вивід після кожного етапу, щоб зрозуміти, чому це відбувається.
 
-You would call the script above like this:
+Ось як слід запускати наведений вище скрипт:
 
 ```bash
 $ bash count-species.sh bear .
@@ -355,23 +333,13 @@ $ bash count-species.sh bear .
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Little Women
+## "Маленькі жінки"
 
-You and your friend, having just finished reading _Little Women_ by
-Louisa May Alcott, are in an argument.  Of the four sisters in the
-book, Jo, Meg, Beth, and Amy, your friend thinks that Jo was the
-most mentioned.  You, however, are certain it was Amy.  Luckily, you
-have a file `LittleWomen.txt` containing the full text of the novel
-(`shell-lesson-data/exercise-data/writing/LittleWomen.txt`).
-Using a `for` loop, how would you tabulate the number of times each
-of the four sisters is mentioned?
+Ви з другом щойно закінчили читати "Маленькі жінки" Луїзи Мей Елкотт і дискутуєте.  З чотирьох сестер у книзі — Джо, Мег, Бет і Емі — ваш друг вважає, що Джо згадувалася найчастіше.  Ви, однак, впевнені, що це Емі.  На щастя, у вас є файл `LittleWomen.txt`, який містить повний текст роману (`shell-lesson-data/exercise-data/writing/LittleWomen.txt`).
+Використовуючи цикл `for`, як можна вивести звіт про те, скільки разів згадується кожна з чотирьох сестер?
 
-Hint: one solution might employ
-the commands `grep` and `wc` and a `|`, while another might utilize
-`grep` options.
-There is often more than one way to solve a programming task, so a
-particular solution is usually chosen based on a combination of
-yielding the correct result, elegance, readability, and speed.
+Підказка: один варіант відповіді може використовувати команди `grep`, `wc` та `|` разом, а інший може використовувати опції команди `grep`.
+Зазвичай існує кілька способів розв'язання задачі програмування, вибір рішення залежить від комбінації отримання правильного результату, елегантності, читабельності та швидкості.
 
 :::::::::::::::  solution
 
@@ -396,20 +364,16 @@ done
 ```
 
 Це рішення є гіршим, оскільки `grep -c` повідомляє лише про кількість знайдених рядків.
-The total number of matches reported by this method will be lower if there is more
-than one match per line.
+Загальна кількість збігів, отриманих за допомогою цього методу, буде меншою, якщо в одному рядку є більше ніж один збіг.
 
 Уважні спостерігачі могли помітити, що імена персонажів іноді пишуться великими літерами у назвах розділів (наприклад, "MEG GOES TO VANITY FAIR").
-If you wanted to count these as well, you could add the `-i` option for case-insensitivity
-(though in this case, it doesn't affect the answer to which sister is mentioned
-most frequently).
+Якщо ви хочете врахувати й ці випадки, можна додати опцію `-i` для нечутливості до регістру (хоча в цьому випадку це не впливає на відповідь, яка сестра згадується найчастіше).
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-While `grep` finds lines in files,
-the `find` command finds files themselves.
+Поки `grep` знаходить рядки у файлах, команда `find` знаходить самі файли.
 Again,
 it has a lot of options;
 to show how the simplest ones work, we'll use the `shell-lesson-data/exercise-data`
@@ -436,11 +400,9 @@ directory tree shown below.
     └── LittleWomen.txt
 ```
 
-The `exercise-data` directory contains one file, `numbers.txt` and four directories:
-`animal-counts`, `creatures`, `alkanes` and `writing` containing various files.
+Каталог `exercise-data` містить один файл `numbers.txt` та чотири підкаталоги: `animal-counts`, `creatures`, `proteins` і `writing`, кожен з яких містить різні файли.
 
-For our first command,
-let's run `find .` (remember to run this command from the `shell-lesson-data/exercise-data` folder).
+Для початку виконаймо `find .` (не забудьте запустити цю команду з каталогу `shell-lesson-data/exercise-data`).
 
 ```bash
 $ find .
@@ -467,17 +429,12 @@ $ find .
 ./alkanes/cubane.pdb
 ```
 
-As always, the `.` on its own means the current working directory,
-which is where we want our search to start.
-`find`'s output is the names of every file **and** directory
-under the current working directory.
-This can seem useless at first but `find` has many options
-to filter the output and in this lesson we will discover some
-of them.
+Як завжди, символ `.` сам по собі позначає поточний робочий каталог, звідки починається наш пошук.
+Результатом виконання `find` буде перелік імен усіх файлів **та** каталогів у поточному робочому каталозі.
+Спочатку це може виглядати безглуздо, але `find` має багато можливостей для фільтрації результатів, і у цьому уроці ми розглянемо деякі з них.
 
-The first option in our list is
-`-type d` that means 'things that are directories'.
-Sure enough, `find`'s output is the names of the five directories (including `.`):
+Наприклад, опція `-type d` означає 'обʼєкти, які є каталогами'.
+Як і очікувалося, команда `find` виведе імена п'яти каталогів (включно з `.`):
 
 ```bash
 $ find . -type d
@@ -491,9 +448,8 @@ $ find . -type d
 ./alkanes
 ```
 
-Notice that the objects `find` finds are not listed in any particular order.
-If we change `-type d` to `-type f`,
-we get a listing of all the files instead:
+Зверніть увагу, що об'єкти, які знаходить `find`, не відсортовані.
+Якщо ми змінимо `-type d` на `-type f`, натомість ми отримаємо список усіх файлів:
 
 ```bash
 $ find . -type f
@@ -515,7 +471,7 @@ $ find . -type f
 ./alkanes/cubane.pdb
 ```
 
-Now let's try matching by name:
+Тепер спробуємо пошук за іменем:
 
 ```bash
 $ find . -name *.txt
@@ -525,23 +481,18 @@ $ find . -name *.txt
 ./numbers.txt
 ```
 
-We expected it to find all the text files,
-but it only prints out `./numbers.txt`.
-The problem is that the shell expands wildcard characters like `*` _before_ commands run.
-Since `*.txt` in the current directory expands to `./numbers.txt`,
-the command we actually ran was:
+Ми очікували, що будуть знайдені усі текстові файли, але було виведено лише `./numbers.txt`.
+Проблема полягає у тому, що оболонка розкриває символи підстановки, такі як `*`, ще _до_ виконання команд.
+Оскільки `*.txt` у поточному каталозі розширюється до `./numbers.txt`, то команда, яку ми виконали, була такою:
 
 ```bash
 $ find . -name numbers.txt
 ```
 
-`find` did what we asked; we just asked for the wrong thing.
+Команда `find` зробила те, що ми просили; ми просто попросили не те, що слід.
 
-To get what we want,
-let's do what we did with `grep`:
-put `*.txt` in quotes to prevent the shell from expanding the `*` wildcard.
-This way,
-`find` actually gets the pattern `*.txt`, not the expanded filename `numbers.txt`:
+Щоб досягти потрібного результату, слід зробити так само, як і з `grep`: візьмемо `*.txt` у лапки, щоб оболонка не змогла розгорнути шаблон `*`.
+Таким чином, `find` фактично отримає шаблон `*.txt`, а не ім'я файлу `numbers.txt`:
 
 ```bash
 $ find . -name "*.txt"
@@ -555,24 +506,18 @@ $ find . -name "*.txt"
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Listing vs. Finding
+## Порівняння `ls` та `find`
 
-`ls` and `find` can be made to do similar things given the right options,
-but under normal circumstances,
-`ls` lists everything it can,
-while `find` searches for things with certain properties and shows them.
+Обидві команди `ls` та `find` можна налаштувати для виконання подібних завдань за допомогою відповідних опцій, але зазвичай `ls` перелічує всі доступні елементи, тоді як, тоді як `find` шукає обʼєкти з певними властивостями.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-As we said earlier,
-the command line's power lies in combining tools.
-We've seen how to do that with pipes;
-let's look at another technique.
-As we just saw,
-`find . -name "*.txt"` gives us a list of all text files in or below the current directory.
-How can we combine that with `wc -l` to count the lines in all those files?
+Як ми вже зазначали, потужність командного рядка полягає в об’єднанні різних інструментів.
+Ми бачили, як цього досягти за допомогою каналів; тепер розглянемо іншу методику.
+Як ми щойно бачили, команда `find . -name "*.txt"` повертає список усіх текстових файлів у поточному каталозі та його підкаталогах.
+Як ми можемо поєднати це з `wc -l`, щоб порахувати кількість рядків в усіх цих файлах?
 
-The simplest way is to put the `find` command inside `$()`:
+Найпростіший спосіб - помістити команду `find` всередину `$()`:
 
 ```bash
 $ wc -l $(find . -name "*.txt")
@@ -585,25 +530,20 @@ $ wc -l $(find . -name "*.txt")
   21038 total
 ```
 
-When the shell executes this command,
-the first thing it does is run whatever is inside the `$()`.
-It then replaces the `$()` expression with that command's output.
-Since the output of `find` is the three filenames `./writing/LittleWomen.txt`,
-`./writing/haiku.txt`, and `./numbers.txt`, the shell constructs the command:
+Коли термінал виконуватиме цю команду, він спочатку виконує все, що знаходиться у виразі `$()`.
+Потім він замінить вираз `$()` на результат виконання цієї команди.
+Оскільки результатом команди `find` є три файли `./writing/LittleWomen.txt`, `./writing/haiku.txt` та `./numbers.txt`, термінал створює таку команду:
 
 ```bash
 $ wc -l ./writing/LittleWomen.txt ./writing/haiku.txt ./numbers.txt
 ```
 
-which is what we wanted.
-This expansion is exactly what the shell does when it expands wildcards like `*` and `?`,
-but lets us use any command we want as our own 'wildcard'.
+що є саме тим, що нам було потрібно.
+Це розширення працює так само, як обробка шаблонів `*` та `?` в оболонці, але дозволяє нам використовувати будь-яку команду як власний "шаблон".
 
-It's very common to use `find` and `grep` together.
-The first finds files that match a pattern;
-the second looks for lines inside those files that match another pattern.
-Here, for example, we can find txt files that contain the word "searching"
-by looking for the string 'searching' in all the `.txt` files in the current directory:
+Дуже поширено використовувати `find` та `grep` разом.
+Перша команда знаходить файли, які відповідають заданому шаблону; тоді як друга шукає в цих файлах рядки, що відповідають іншому шаблону.
+Наприклад, ми можемо знайти txt-файли, які містять слово "searching" шляхом пошуку рядка 'searching' у всіх файлах `.txt` поточного каталогу:
 
 ```bash
 $ grep "searching" $(find . -name "*.txt")
@@ -616,29 +556,24 @@ $ grep "searching" $(find . -name "*.txt")
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Matching and Subtracting
+## Порівняння та віднімання
 
 The `-v` option to `grep` inverts pattern matching, so that only lines
-which do _not_ match the pattern are printed. Given that, which of
-the following commands will find all .dat files in `creatures`
-except `unicorn.dat`?
+which do _not_ match the pattern are printed. Враховуючи це, яка з наведених нижче команд знайде всі файли `.dat` у каталозі `creatures` окрім файлу `unicorn.dat`?
 Після того, як ви обміркуєте свою відповідь, ви можете протестувати команди у каталогу `shell-lesson-data/exercise-data`.
 
 1. `find creatures -name "*.dat" | grep -v unicorn`
 2. `find creatures -name *.dat | grep -v unicorn`
 3. `grep -v "unicorn" $(find creatures -name "*.dat")`
-4. None of the above.
+4. Жоден із наведених вище варіантів.
 
 :::::::::::::::  solution
 
 ## Відповідь
 
-Варіант 1 правильний. Putting the match expression in quotes prevents the shell
-expanding it, so it gets passed to the `find` command.
+Варіант 1 правильний. Взяття виразу шаблону у лапки запобігає розгортанню його у терміналі та гарантує передачу безпосередньо команді `find`.
 
-Option 2 also works in this instance because the shell tries to expand `*.dat`
-but there are no `*.dat` files in the current directory,
-so the wildcard expression gets passed to `find`.
+Варіант 2 також працює у цьому випадку, оскільки термінал намагається розгорнути `*.dat`, але у поточному каталозі немає файлів `*.dat`, тому вираз із символами підстановки буде передано до `find`.
 Вперше ми зіткнулися з цим у [епізоді 3](03-create.md).
 
 Option 3 is incorrect because it searches the contents of the files for lines which
@@ -650,10 +585,9 @@ do not match 'unicorn', rather than searching the file names.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Binary Files
+## Бінарні файли
 
-We have focused exclusively on finding patterns in text files. What if
-your data is stored as images, in databases, or in some other format?
+Ми зосереджувалися виключно на пошуку шаблонів у текстових файлах. Але що робити, якщо ваші дані зберігаються у вигляді зображень, баз даних або в іншому форматі?
 
 A handful of tools extend `grep` to handle a few non text formats. But a
 more generalizable approach is to convert the data to text, or
@@ -672,7 +606,7 @@ ideas from it, and imitation is also the sincerest form of praise.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-The Unix shell is older than most of the people who use it. It has
+Термінал Unix був створений ще до того, як народилась більшість його користувачів. It has
 survived so long because it is one of the most productive programming
 environments ever created --- maybe even _the_ most productive. Its syntax
 may be cryptic, but people who have mastered it can experiment with
@@ -685,9 +619,9 @@ without thinking about them.'
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## `find` Pipeline Reading Comprehension
+## Розуміння використання `find` у конвеєрі
 
-Write a short explanatory comment for the following shell script:
+Напишіть короткий пояснювальний коментар до наступного скрипту термінала:
 
 ```bash
 wc -l $(find . -name "*.dat") | sort -n
@@ -697,7 +631,7 @@ wc -l $(find . -name "*.dat") | sort -n
 
 ## Відповідь
 
-1. Find all files with a `.dat` extension recursively from the current directory
+1. Рекурсивно знаходить всі файли з розширенням `.dat` у поточному каталозі
 
 2. Count the number of lines each of these files contains
 
@@ -713,7 +647,7 @@ wc -l $(find . -name "*.dat") | sort -n
 - `grep` selects lines in files that match patterns.
 - `--help` is an option supported by many bash commands, and programs that can be run from within Bash, to display more information on how to use these commands or programs.
 - `man [command]` displays the manual page for a given command.
-- `$([command])` inserts a command's output in place.
+- `$([команда])` виконує команду та заміняє вираз `$()` на результат її виконання.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
