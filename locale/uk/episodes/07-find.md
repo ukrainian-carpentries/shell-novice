@@ -70,17 +70,17 @@ Today it is not working
 ```
 
 Here, `not` is the pattern we're searching for.
-The grep command searches through the file, looking for matches to the pattern specified.
+Команда `grep` шукає у файлі збіги із заданим шаблоном.
 To use it type `grep`, then the pattern we're searching for and finally
 the name of the file (or files) we're searching in.
 
-The output is the three lines in the file that contain the letters 'not'.
+У вихідний файл виводяться три рядки, які містять літери 'not'.
 
-By default, grep searches for a pattern in a case-sensitive way.
+За замовчуванням `grep` шукає шаблон з урахуванням регістру.
 In addition, the search pattern we have selected does not have to form a complete word,
 as we will see in the next example.
 
-Let's search for the pattern: 'The'.
+Відшукаймо тепер шаблон 'The'.
 
 ```bash
 $ grep The haiku.txt
@@ -98,8 +98,7 @@ To restrict matches to lines containing the word 'The' on its own,
 we can give `grep` the `-w` option.
 This will limit matches to word boundaries.
 
-Later in this lesson, we will also see how we can change the search behavior of grep
-with respect to its case sensitivity.
+Пізніше у цьому уроці ми також побачимо, як можна змінити поведінку пошуку `grep` стосовно чутливості до регістру.
 
 ```bash
 $ grep -w The haiku.txt
@@ -111,8 +110,7 @@ The Tao that is seen
 
 Note that a 'word boundary' includes the start and end of a line, so not
 just letters surrounded by spaces.
-Sometimes we don't
-want to search for a single word, but a phrase. Це також легко зробити за допомогою
+Іноді ми хочемо шукати не окреме слово, а фразу. Це також легко зробити за допомогою
 `grep`, взявши фразу в лапки.
 
 ```bash
@@ -125,8 +123,7 @@ Today it is not working
 
 We've now seen that you don't have to have quotes around single words,
 but it is useful to use quotes when searching for multiple words.
-It also helps to make it easier to distinguish between the search term or phrase
-and the file being searched.
+Це також допомагає легше відрізнити пошуковий термін або фразу від файлу, в якому відбувається пошук.
 We will use quotes in the remaining examples.
 
 Another useful option is `-n`, which numbers the lines that match:
@@ -141,7 +138,7 @@ $ grep -n "it" haiku.txt
 10:Today it is not working
 ```
 
-Here, we can see that lines 5, 9, and 10 contain the letters 'it'.
+Ми бачимо, що рядки 5, 9 і 10 містять літери 'it'.
 
 We can combine options (i.e. flags) as we do with other Unix commands.
 For example, let's find the lines that contain the word 'the'.
