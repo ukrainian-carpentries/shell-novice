@@ -135,7 +135,7 @@ $ grep -n "it" haiku.txt
 Ми бачимо, що рядки 5, 9 і 10 містять літери 'it'.
 
 Ми можемо комбінувати опції (тобто прапорці) так само як і в інших командах Unix.
-For example, let's find the lines that contain the word 'the'.
+Наприклад, знайдемо рядки, які містять слово 'the'.
 Ми можемо комбінувати опцію `-w` для пошуку рядків зі словом 'the', та опцію `-n` для нумерації рядків із результатами:
 
 ```bash
@@ -177,8 +177,7 @@ $ grep -n -w -v "the" haiku.txt
 11:Software is like that.
 ```
 
-If we use the `-r` (recursive) option,
-`grep` can search for a pattern recursively through a set of files in subdirectories.
+Якщо ми використовуємо опцію `-r` (recursive, з англ. - рекурсивний), `grep` може шукати шаблон рекурсивно у підкаталогах.
 
 Виконаймо рекурсивний пошук слова `Yesterday` у каталозі `shell-lesson-data/exercise-data/writing`:
 
@@ -251,9 +250,7 @@ and the presence of absence:
 
 ## Символи підстановки
 
-Проте справжня сила `grep` полягає не у його опціях, а у тому, що шаблони можуть містити символи підстановки. (The technical name for
-these is **regular expressions**, which
-is what the 're' in 'grep' stands for.) Регулярні вирази є водночас складними й потужними; якщо ви хочете виконувати розширені пошуки, перегляньте [цей урок на нашому сайті](https://librarycarpentry.org/lc-data-intro/01-regular-expressions.html). Як короткий приклад, ми можемо знайти рядки, у яких літера 'o' знаходиться на другій позиції, ось так:
+Проте справжня сила `grep` полягає не у його опціях, а у тому, що шаблони можуть містити символи підстановки. (Технічний термін для них - **регулярні вирази** (regular expressions) - саме це має на увазі 're' у слові 'grep'). Регулярні вирази є водночас складними й потужними; якщо ви хочете виконувати розширені пошуки, перегляньте [цей урок на нашому сайті](https://librarycarpentry.org/lc-data-intro/01-regular-expressions.html). Як короткий приклад, ми можемо знайти рядки, у яких літера 'o' знаходиться на другій позиції, ось так:
 
 ```bash
 $ grep -E "^.o" haiku.txt
@@ -374,10 +371,7 @@ done
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 Поки `grep` знаходить рядки у файлах, команда `find` знаходить самі файли.
-Again,
-it has a lot of options;
-to show how the simplest ones work, we'll use the `shell-lesson-data/exercise-data`
-directory tree shown below.
+Знову ж таки, у неї є багато опцій; щоб продемонструвати, як працюють найпростіші з них, ми скористаємося структурою каталогів `shell-lesson-data/exercise-data`, наведеною нижче.
 
 ```output
 .
@@ -558,8 +552,7 @@ $ grep "searching" $(find . -name "*.txt")
 
 ## Порівняння та віднімання
 
-The `-v` option to `grep` inverts pattern matching, so that only lines
-which do _not_ match the pattern are printed. Враховуючи це, яка з наведених нижче команд знайде всі файли `.dat` у каталозі `creatures` окрім файлу `unicorn.dat`?
+Параметр `-v` із командою `grep` змінює логіку зіставлення на протилежну, тому виводяться лише рядки, які _не_ відповідають шаблону. Враховуючи це, яка з наведених нижче команд знайде всі файли `.dat` у каталозі `creatures` окрім файлу `unicorn.dat`?
 Після того, як ви обміркуєте свою відповідь, ви можете протестувати команди у каталогу `shell-lesson-data/exercise-data`.
 
 1. `find creatures -name "*.dat" | grep -v unicorn`
@@ -576,8 +569,7 @@ which do _not_ match the pattern are printed. Враховуючи це, яка 
 Варіант 2 також працює у цьому випадку, оскільки термінал намагається розгорнути `*.dat`, але у поточному каталозі немає файлів `*.dat`, тому вираз із символами підстановки буде передано до `find`.
 Вперше ми зіткнулися з цим у [епізоді 3](03-create.md).
 
-Option 3 is incorrect because it searches the contents of the files for lines which
-do not match 'unicorn', rather than searching the file names.
+Варіант 3 є хибним, оскільки він переглядає вміст файлів у пошуках рядків, що не містять слово 'unicorn', замість фільтрації за іменами файлів.
 
 :::::::::::::::::::::::::
 
@@ -589,33 +581,15 @@ do not match 'unicorn', rather than searching the file names.
 
 Ми зосереджувалися виключно на пошуку шаблонів у текстових файлах. Але що робити, якщо ваші дані зберігаються у вигляді зображень, баз даних або в іншому форматі?
 
-A handful of tools extend `grep` to handle a few non text formats. But a
-more generalizable approach is to convert the data to text, or
-extract the text-like elements from the data. On the one hand, it makes simple
-things easy to do. On the other hand, complex things are usually impossible. For
-example, it's easy enough to write a program that will extract X and Y
-dimensions from image files for `grep` to play with, but how would you
-write something to find values in a spreadsheet whose cells contained
-formulas?
+Існує декілька інструментів, які розширюють можливості `grep` для роботи з деякими нетекстовими форматами. Проте більш гнучкий підхід полягає в перетворенні даних у текст або вилучення текстових елементів з даних. З одного боку, це полегшує виконання простих завдань. З іншого боку, складні завдання зазвичай неможливо виконати. Наприклад, досить легко написати програму, яка знаходить розміри X і Y з файлів зображень для роботи з `grep`, але як ви напишете щось для пошуку значень в електронній таблиці, клітинки якої містять формули?
 
-A last option is to recognize that the shell and text processing have
-their limits, and to use another programming language.
-Коли прийде час це зробити, не будьте надто суворими до термінала. Many
-modern programming languages have borrowed a lot of
-ideas from it, and imitation is also the sincerest form of praise.
+Останній варіант - усвідомити обмеження оболонки та обробки тексту і скористатися іншою мовою програмування.
+Коли прийде час це зробити, не будьте надто суворими до термінала. Багато сучасних мов програмування запозичили з нього багато ідей, а наслідування вважається найщирішою формою похвали.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Термінал Unix був створений ще до того, як народилась більшість його користувачів. It has
-survived so long because it is one of the most productive programming
-environments ever created --- maybe even _the_ most productive. Its syntax
-may be cryptic, but people who have mastered it can experiment with
-different commands interactively, then use what they have learned to
-automate their work. Graphical user interfaces may be easier to use at
-first, but once learned, the productivity in the shell is unbeatable.
-And as Alfred North Whitehead wrote in 1911, 'Civilization advances by
-extending the number of important operations which we can perform
-without thinking about them.'
+Термінал Unix був створений ще до того, як народилась більшість його користувачів. Він проіснував так довго, тому що це одне з найпродуктивніших середовищ для програмування, які коли-небудь були створені - можливо, навіть _саме найпродуктивніше_. Хоча його синтаксис може здаватися незрозумілим, ті, хто його опанував, можуть експериментувати з різними командами в інтерактивному режимі, а потім використовувати набуті знання для автоматизації своїх завдань. Графічні інтерфейси користувача можуть бути простішими у використанні спочатку, але після опанування терміналу, продуктивність роботи в ньому стає неперевершеною.
+І, як писав Альфред Норт Уайтхед у 1911 році: 'Цивілізація розвивається шляхом збільшення кількості важливих операцій, які ми можемо виконувати, не думаючи про них свідомо'.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
@@ -633,9 +607,9 @@ wc -l $(find . -name "*.dat") | sort -n
 
 1. Рекурсивно знаходить всі файли з розширенням `.dat` у поточному каталозі
 
-2. Count the number of lines each of these files contains
+2. Рахує кількість рядків у кожному з цих файлів
 
-3. Sort the output from step 2. за числовим значенням
+3. Сортує вивід з пункту 2. за числовим значенням
 
 :::::::::::::::::::::::::
 
@@ -644,9 +618,9 @@ wc -l $(find . -name "*.dat") | sort -n
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - `find` шукає файли з певними властивостями, які відповідають шаблонам.
-- `grep` selects lines in files that match patterns.
-- `--help` is an option supported by many bash commands, and programs that can be run from within Bash, to display more information on how to use these commands or programs.
-- `man [command]` displays the manual page for a given command.
+- `grep` фільтрує та повертає рядки з файлів, які відповідають заданим шаблонам.
+- Опція `--help` підтримується багатьма командами bash та програмами, які можна виконати у bash, для отримання довідки щодо їх використання.
+- `man [команда]` показує сторінку довідки для заданої команди.
 - `$([команда])` виконує команду та заміняє вираз `$()` на результат її виконання.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
