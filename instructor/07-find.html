@@ -318,7 +318,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Пошук з командного рядка</h1>
-        <p>Останнє оновлення 2025-11-26 |
+        <p>Останнє оновлення 2025-11-27 |
 
         <a href="https://github.com/ukrainian-carpentries/shell-novice/edit/main/episodes/07-find.md" class="external-link">Редагувати цю сторінку <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -485,9 +485,9 @@ Today it is not working</code></pre>
 </div>
 <p>Ми бачимо, що рядки 5, 9 і 10 містять літери ‘it’.</p>
 <p>Ми можемо комбінувати опції (тобто прапорці) так само як і в інших
-командах Unix. For example, let’s find the lines that contain the word
-‘the’. Ми можемо комбінувати опцію <code>-w</code> для пошуку рядків зі
-словом ‘the’, та опцію <code>-n</code> для нумерації рядків із
+командах Unix. Наприклад, знайдемо рядки, які містять слово ‘the’. Ми
+можемо комбінувати опцію <code>-w</code> для пошуку рядків зі словом
+‘the’, та опцію <code>-n</code> для нумерації рядків із
 результатами:</p>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -534,9 +534,9 @@ Today it is not working</code></pre>
 10:Today it is not working
 11:Software is like that.</code></pre>
 </div>
-<p>If we use the <code>-r</code> (recursive) option, <code>grep</code>
-can search for a pattern recursively through a set of files in
-subdirectories.</p>
+<p>Якщо ми використовуємо опцію <code>-r</code> (recursive, з англ. -
+рекурсивний), <code>grep</code> може шукати шаблон рекурсивно у
+підкаталогах.</p>
 <p>Виконаймо рекурсивний пошук слова <code>Yesterday</code> у каталозі
 <code>shell-lesson-data/exercise-data/writing</code>:</p>
 <div class="codewrapper sourceCode" id="cb19">
@@ -611,7 +611,7 @@ Miscellaneous:
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Правильна відповідь 3, тому що опція <code>-w</code> шукає збіги лише
 між цілими словами. Інші варіанти також шукатимуть збіги зі словом ‘of’,
@@ -629,10 +629,11 @@ Miscellaneous:
 <h3 class="callout-title">Символи підстановки</h3>
 <div class="callout-content">
 <p>Проте справжня сила <code>grep</code> полягає не у його опціях, а у
-тому, що шаблони можуть містити символи підстановки. (The technical name
-for these is <strong>regular expressions</strong>, which is what the
-‘re’ in ‘grep’ stands for.) Регулярні вирази є водночас складними й
-потужними; якщо ви хочете виконувати розширені пошуки, перегляньте <a href="https://librarycarpentry.org/lc-data-intro/01-regular-expressions.html" class="external-link">цей
+тому, що шаблони можуть містити символи підстановки. (Технічний термін
+для них - <strong>регулярні вирази</strong> (regular expressions) - саме
+це має на увазі ‘re’ у слові ‘grep’). Регулярні вирази є водночас
+складними й потужними; якщо ви хочете виконувати розширені пошуки,
+перегляньте <a href="https://librarycarpentry.org/lc-data-intro/01-regular-expressions.html" class="external-link">цей
 урок на нашому сайті</a>. Як короткий приклад, ми можемо знайти рядки, у
 яких літера ‘o’ знаходиться на другій позиції, ось так:</p>
 <div class="codewrapper sourceCode" id="cb24">
@@ -713,7 +714,7 @@ Software is like that.</code></pre>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <pre class="source"><code>grep -w $1 -r $2 | cut -d : -f 2 | cut -d , -f 1,3 &gt; $1.txt</code></pre>
 <p>Насправді ви можете поміняти місцями порядок двох команд
@@ -762,7 +763,7 @@ Software is like that.</code></pre>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <pre class="source"><code>for sis in Jo Meg Beth Amy
 do
@@ -789,10 +790,10 @@ VANITY FAIR”). Якщо ви хочете врахувати й ці випа�
 </div>
 </div>
 <p>Поки <code>grep</code> знаходить рядки у файлах, команда
-<code>find</code> знаходить самі файли. Again, it has a lot of options;
-to show how the simplest ones work, we’ll use the
-<code>shell-lesson-data/exercise-data</code> directory tree shown
-below.</p>
+<code>find</code> знаходить самі файли. Знову ж таки, у неї є багато
+опцій; щоб продемонструвати, як працюють найпростіші з них, ми
+скористаємося структурою каталогів
+<code>shell-lesson-data/exercise-data</code>, наведеною нижче.</p>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1016,12 +1017,12 @@ below.</p>
 <div id="порівняння-та-віднімання" class="callout-inner">
 <h3 class="callout-title">Порівняння та віднімання</h3>
 <div class="callout-content">
-<p>The <code>-v</code> option to <code>grep</code> inverts pattern
-matching, so that only lines which do <em>not</em> match the pattern are
-printed. Враховуючи це, яка з наведених нижче команд знайде всі файли
-<code>.dat</code> у каталозі <code>creatures</code> окрім файлу
-<code>unicorn.dat</code>? Після того, як ви обміркуєте свою відповідь,
-ви можете протестувати команди у каталогу
+<p>Параметр <code>-v</code> із командою <code>grep</code> змінює логіку
+зіставлення на протилежну, тому виводяться лише рядки, які <em>не</em>
+відповідають шаблону. Враховуючи це, яка з наведених нижче команд знайде
+всі файли <code>.dat</code> у каталозі <code>creatures</code> окрім
+файлу <code>unicorn.dat</code>? Після того, як ви обміркуєте свою
+відповідь, ви можете протестувати команди у каталогу
 <code>shell-lesson-data/exercise-data</code>.</p>
 <ol style="list-style-type: decimal"><li><code>find creatures -name "*.dat" | grep -v unicorn</code></li>
 <li><code>find creatures -name *.dat | grep -v unicorn</code></li>
@@ -1037,7 +1038,7 @@ printed. Враховуючи це, яка з наведених нижче ко
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>Варіант 1 правильний. Взяття виразу шаблону у лапки запобігає
 розгортанню його у терміналі та гарантує передачу безпосередньо команді
@@ -1046,9 +1047,9 @@ printed. Враховуючи це, яка з наведених нижче ко
 розгорнути <code>*.dat</code>, але у поточному каталозі немає файлів
 <code>*.dat</code>, тому вираз із символами підстановки буде передано до
 <code>find</code>. Вперше ми зіткнулися з цим у <a href="03-create.html">епізоді 3</a>.</p>
-<p>Option 3 is incorrect because it searches the contents of the files
-for lines which do not match ‘unicorn’, rather than searching the file
-names.</p>
+<p>Варіант 3 є хибним, оскільки він переглядає вміст файлів у пошуках
+рядків, що не містять слово ‘unicorn’, замість фільтрації за іменами
+файлів.</p>
 </div>
 </div>
 </div>
@@ -1064,33 +1065,35 @@ names.</p>
 <p>Ми зосереджувалися виключно на пошуку шаблонів у текстових файлах.
 Але що робити, якщо ваші дані зберігаються у вигляді зображень, баз
 даних або в іншому форматі?</p>
-<p>A handful of tools extend <code>grep</code> to handle a few non text
-formats. But a more generalizable approach is to convert the data to
-text, or extract the text-like elements from the data. On the one hand,
-it makes simple things easy to do. On the other hand, complex things are
-usually impossible. For example, it’s easy enough to write a program
-that will extract X and Y dimensions from image files for
-<code>grep</code> to play with, but how would you write something to
-find values in a spreadsheet whose cells contained formulas?</p>
-<p>A last option is to recognize that the shell and text processing have
-their limits, and to use another programming language. Коли прийде час
-це зробити, не будьте надто суворими до термінала. Many modern
-programming languages have borrowed a lot of ideas from it, and
-imitation is also the sincerest form of praise.</p>
+<p>Існує декілька інструментів, які розширюють можливості
+<code>grep</code> для роботи з деякими нетекстовими форматами. Проте
+більш гнучкий підхід полягає в перетворенні даних у текст або вилучення
+текстових елементів з даних. З одного боку, це полегшує виконання
+простих завдань. З іншого боку, складні завдання зазвичай неможливо
+виконати. Наприклад, досить легко написати програму, яка знаходить
+розміри X і Y з файлів зображень для роботи з <code>grep</code>, але як
+ви напишете щось для пошуку значень в електронній таблиці, клітинки якої
+містять формули?</p>
+<p>Останній варіант - усвідомити обмеження оболонки та обробки тексту і
+скористатися іншою мовою програмування. Коли прийде час це зробити, не
+будьте надто суворими до термінала. Багато сучасних мов програмування
+запозичили з нього багато ідей, а наслідування вважається найщирішою
+формою похвали.</p>
 </div>
 </div>
 </div>
 <p>Термінал Unix був створений ще до того, як народилась більшість його
-користувачів. It has survived so long because it is one of the most
-productive programming environments ever created — maybe even
-<em>the</em> most productive. Its syntax may be cryptic, but people who
-have mastered it can experiment with different commands interactively,
-then use what they have learned to automate their work. Graphical user
-interfaces may be easier to use at first, but once learned, the
-productivity in the shell is unbeatable. And as Alfred North Whitehead
-wrote in 1911, ‘Civilization advances by extending the number of
-important operations which we can perform without thinking about
-them.’</p>
+користувачів. Він проіснував так довго, тому що це одне з
+найпродуктивніших середовищ для програмування, які коли-небудь були
+створені - можливо, навіть <em>саме найпродуктивніше</em>. Хоча його
+синтаксис може здаватися незрозумілим, ті, хто його опанував, можуть
+експериментувати з різними командами в інтерактивному режимі, а потім
+використовувати набуті знання для автоматизації своїх завдань. Графічні
+інтерфейси користувача можуть бути простішими у використанні спочатку,
+але після опанування терміналу, продуктивність роботи в ньому стає
+неперевершеною. І, як писав Альфред Норт Уайтхед у 1911 році:
+‘Цивілізація розвивається шляхом збільшення кількості важливих операцій,
+які ми можемо виконувати, не думаючи про них свідомо’.</p>
 <div id="розуміння-використання-find-у-конвеєрі" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -1117,12 +1120,12 @@ them.’</p>
   Відповідь
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li><p>Рекурсивно знаходить всі файли з розширенням <code>.dat</code> у
 поточному каталозі</p></li>
-<li><p>Count the number of lines each of these files contains</p></li>
-<li><p>Sort the output from step 2. за числовим значенням</p></li>
+<li><p>Рахує кількість рядків у кожному з цих файлів</p></li>
+<li><p>Сортує вивід з пункту 2. за числовим значенням</p></li>
 </ol></div>
 </div>
 </div>
@@ -1138,14 +1141,14 @@ them.’</p>
 <code>find</code> шукає файли з певними властивостями, які
 відповідають шаблонам.</li>
 <li>
-<code>grep</code> selects lines in files that match patterns.</li>
+<code>grep</code> фільтрує та повертає рядки з файлів, які
+відповідають заданим шаблонам.</li>
+<li>Опція <code>--help</code> підтримується багатьма командами bash та
+програмами, які можна виконати у bash, для отримання довідки щодо їх
+використання.</li>
 <li>
-<code>--help</code> is an option supported by many bash commands,
-and programs that can be run from within Bash, to display more
-information on how to use these commands or programs.</li>
-<li>
-<code>man [command]</code> displays the manual page for a given
-command.</li>
+<code>man [команда]</code> показує сторінку довідки для заданої
+команди.</li>
 <li>
 <code>$([команда])</code> виконує команду та заміняє вираз
 <code>$()</code> на результат її виконання.</li>
@@ -1213,8 +1216,8 @@ command.</li>
   "url": "https://ukrainian-carpentries.github.io/shell-novice/instructor/07-find.html",
   "identifier": "https://ukrainian-carpentries.github.io/shell-novice/instructor/07-find.html",
   "dateCreated": "2014-10-22",
-  "dateModified": "2025-11-26",
-  "datePublished": "2025-11-26"
+  "dateModified": "2025-11-27",
+  "datePublished": "2025-11-27"
 }
 
   </script><script>
