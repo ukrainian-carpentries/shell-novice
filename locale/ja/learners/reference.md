@@ -1,5 +1,5 @@
 ---
-title: Summary of Basic Commands
+title: 'Summary of Basic Commands'
 ---
 
 ## Summary of Basic Commands
