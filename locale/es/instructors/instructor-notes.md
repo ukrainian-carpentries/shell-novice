@@ -267,9 +267,9 @@ but:
 1. they don't work well on underpowered machines,
 2. they're confusing for novices (because simple things like copy and paste work differently),
 3. learners leave the workshop without a working environment on their operating system of choice,
-  and
+   and
 4. learners may show up without having downloaded the VM or the wireless will go down
-  (or become congested) during the lesson.
+   (or become congested) during the lesson.
 
 Whatever you use,
 please _test it yourself_ on a Windows machine _before_ your workshop:
