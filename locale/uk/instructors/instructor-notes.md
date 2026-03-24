@@ -6,19 +6,19 @@ title: Instructor Notes
   - Allows users to automate repetitive tasks
   - And capture small data manipulation steps that are normally not recorded
     to make research reproducible
-- The Problem
+- Проблема
   - Running the same workflow on several samples can be unnecessarily labour intensive
-  - Manual manipulation of data files:
+  - Ручна маніпуляція з файлами даних:
     - is often not captured in documentation
-    - is hard to reproduce
-    - is hard to troubleshoot, review, or improve
+    - важка для відтворення
+    - важко усунути несправності, переглянути або вдосконалити
 - The Shell
-  - Workflows can be automated through the use of shell scripts
+  - Робочі процеси можна автоматизувати за допомогою скриптів терміналу
   - Built-in commands allow for easy data manipulation (e.g. sort, grep, etc.)
   - Every step can be captured in the shell script and allow reproducibility and
     easy troubleshooting
 
-## Overall
+## Підсумок
 
 Many people have questioned whether we should still teach the shell.
 After all,
@@ -37,8 +37,8 @@ and with related ideas like standard input and output.
 Many tools also use its terminology
 (for example, the `%ls` and `%cd` magic commands in IPython).
 
-The second answer is,
-"Because it's an easy way to introduce some fundamental ideas about how to use computers."
+Друга відповідь така:
+"Тому що це простий спосіб показати деякі фундаментальні ідеї про те, як користуватися комп'ютером."
 As we teach people how to use the Unix shell,
 we teach them that they should get the computer to repeat things
 (via tab completion,
