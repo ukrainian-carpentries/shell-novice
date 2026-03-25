@@ -30,12 +30,12 @@ So why teach the shell?
 
 The first answer is,
 "Because so much else depends on it."
-Installing software,
-configuring your default editor,
-and controlling remote machines frequently assume a basic familiarity with the shell,
-and with related ideas like standard input and output.
-Many tools also use its terminology
-(for example, the `%ls` and `%cd` magic commands in IPython).
+Встановлення програмного забезпечення,
+налаштування редактора за замовчуванням
+та керування віддаленими комп'ютерами часто вимагають базового знайомства з командним терміналом
+та пов'язаними з ним поняттями, такими як стандартний ввід та вивід.
+Багато інструментів також використовують його термінологію
+(наприклад, магічні команди `%ls` та `%cd` в IPython).
 
 Друга відповідь така:
 "Тому що це простий спосіб показати деякі фундаментальні ідеї про те, як користуватися комп'ютером."
@@ -45,13 +45,13 @@ we teach them that they should get the computer to repeat things
 `!` followed by a command number,
 and `for` loops)
 rather than repeating things themselves.
-We also teach them to take things they've discovered they do frequently
-and save them for later re-use
-(via shell scripts),
-to give things sensible names,
-and to write a little bit of documentation
-(like comment at the top of shell scripts)
-to make their future selves' lives better.
+Ми також вчимо їх брати речі, які, як виявилося, вони роблять часто,
+і зберігати їх для подальшого використання
+(за допомогою скриптів терміналу),
+давати речам розумні назви
+і писати невелику документацію
+(наприклад, коментар у верхній частині скрипта терміналу)
+щоб покращити життя свого майбутнього "Я".
 
 The third answer is,
 "Because it enables use of many domain-specific tools and compute resources researchers
