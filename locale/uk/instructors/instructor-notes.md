@@ -9,14 +9,13 @@ title: Instructor Notes
 - Проблема
   - Running the same workflow on several samples can be unnecessarily labour intensive
   - Ручна маніпуляція з файлами даних:
-    - is often not captured in documentation
+    - часто не відображається в документації
     - важка для відтворення
     - важко усунути несправності, переглянути або вдосконалити
 - The Shell
   - Робочі процеси можна автоматизувати за допомогою скриптів терміналу
-  - Built-in commands allow for easy data manipulation (e.g. sort, grep, etc.)
-  - Every step can be captured in the shell script and allow reproducibility and
-    easy troubleshooting
+  - Вбудовані команди дозволяють легко маніпулювати даними (наприклад, sort, grep тощо.)
+  - Кожен крок може бути зафіксований у скрипті терміналу, що забезпечує відтворюваність та легке усунення несправностей
 
 ## Підсумок
 
