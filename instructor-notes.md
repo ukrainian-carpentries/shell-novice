@@ -6,19 +6,18 @@ title: Instructor Notes
   - Allows users to automate repetitive tasks
   - And capture small data manipulation steps that are normally not recorded
     to make research reproducible
-- The Problem
+- Проблема
   - Running the same workflow on several samples can be unnecessarily labour intensive
-  - Manual manipulation of data files:
-    - is often not captured in documentation
-    - is hard to reproduce
-    - is hard to troubleshoot, review, or improve
+  - Ручна маніпуляція з файлами даних:
+    - часто не відображається в документації
+    - важка для відтворення
+    - важко усунути несправності, переглянути або вдосконалити
 - The Shell
-  - Workflows can be automated through the use of shell scripts
-  - Built-in commands allow for easy data manipulation (e.g. sort, grep, etc.)
-  - Every step can be captured in the shell script and allow reproducibility and
-    easy troubleshooting
+  - Робочі процеси можна автоматизувати за допомогою скриптів терміналу
+  - Вбудовані команди дозволяють легко маніпулювати даними (наприклад, sort, grep тощо.)
+  - Кожен крок може бути зафіксований у скрипті терміналу, що забезпечує відтворюваність та легке усунення несправностей
 
-## Overall
+## Підсумок
 
 Many people have questioned whether we should still teach the shell.
 After all,
@@ -30,28 +29,28 @@ So why teach the shell?
 
 The first answer is,
 "Because so much else depends on it."
-Installing software,
-configuring your default editor,
-and controlling remote machines frequently assume a basic familiarity with the shell,
-and with related ideas like standard input and output.
-Many tools also use its terminology
-(for example, the `%ls` and `%cd` magic commands in IPython).
+Встановлення програмного забезпечення,
+налаштування редактора за замовчуванням
+та керування віддаленими комп'ютерами часто вимагають базового знайомства з командним терміналом
+та пов'язаними з ним поняттями, такими як стандартний ввід та вивід.
+Багато інструментів також використовують його термінологію
+(наприклад, магічні команди `%ls` та `%cd` в IPython).
 
-The second answer is,
-"Because it's an easy way to introduce some fundamental ideas about how to use computers."
+Друга відповідь така:
+"Тому що це простий спосіб показати деякі фундаментальні ідеї про те, як користуватися комп'ютером."
 As we teach people how to use the Unix shell,
 we teach them that they should get the computer to repeat things
 (via tab completion,
 `!` followed by a command number,
 and `for` loops)
 rather than repeating things themselves.
-We also teach them to take things they've discovered they do frequently
-and save them for later re-use
-(via shell scripts),
-to give things sensible names,
-and to write a little bit of documentation
-(like comment at the top of shell scripts)
-to make their future selves' lives better.
+Ми також вчимо їх брати речі, які, як виявилося, вони роблять часто,
+і зберігати їх для подальшого використання
+(за допомогою скриптів терміналу),
+давати речам розумні назви
+і писати невелику документацію
+(наприклад, коментар у верхній частині скрипта терміналу)
+щоб покращити життя свого майбутнього "Я".
 
 The third answer is,
 "Because it enables use of many domain-specific tools and compute resources researchers
