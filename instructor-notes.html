@@ -381,30 +381,31 @@
 recorded to make research reproducible</li>
 </ul>
 </li>
-<li>The Problem
+<li>Проблема
 <ul>
 <li>Running the same workflow on several samples can be unnecessarily
 labour intensive</li>
-<li>Manual manipulation of data files:
+<li>Ручна маніпуляція з файлами даних:
 <ul>
-<li>is often not captured in documentation</li>
-<li>is hard to reproduce</li>
-<li>is hard to troubleshoot, review, or improve</li>
+<li>часто не відображається в документації</li>
+<li>важка для відтворення</li>
+<li>важко усунути несправності, переглянути або вдосконалити</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>The Shell
 <ul>
-<li>Workflows can be automated through the use of shell scripts</li>
-<li>Built-in commands allow for easy data manipulation (e.g. sort, grep,
-etc.)</li>
-<li>Every step can be captured in the shell script and allow
-reproducibility and easy troubleshooting</li>
+<li>Робочі процеси можна автоматизувати за допомогою скриптів
+терміналу</li>
+<li>Вбудовані команди дозволяють легко маніпулювати даними (наприклад,
+sort, grep тощо.)</li>
+<li>Кожен крок може бути зафіксований у скрипті терміналу, що забезпечує
+відтворюваність та легке усунення несправностей</li>
 </ul>
 </li>
 </ul>
-<section><h2 class="section-heading" id="overall">Overall<a class="anchor" aria-label="anchor" href="#overall"></a>
+<section><h2 class="section-heading" id="підсумок">Підсумок<a class="anchor" aria-label="anchor" href="#%D0%BF%D1%96%D0%B4%D1%81%D1%83%D0%BC%D0%BE%D0%BA"></a>
 </h2>
 <hr class="half-width">
 <p>Many people have questioned whether we should still teach the shell.
@@ -412,22 +413,23 @@ After all, anyone who wants to rename several thousand data files can
 easily do so interactively in the Python interpreter, and anyone who’s
 doing serious data analysis is probably going to do most of their work
 inside the IPython Notebook or R Studio. So why teach the shell?</p>
-<p>The first answer is, “Because so much else depends on it.” Installing
-software, configuring your default editor, and controlling remote
-machines frequently assume a basic familiarity with the shell, and with
-related ideas like standard input and output. Many tools also use its
-terminology (for example, the <code>%ls</code> and <code>%cd</code>
-magic commands in IPython).</p>
-<p>The second answer is, “Because it’s an easy way to introduce some
-fundamental ideas about how to use computers.” As we teach people how to
-use the Unix shell, we teach them that they should get the computer to
-repeat things (via tab completion, <code>!</code> followed by a command
-number, and <code>for</code> loops) rather than repeating things
-themselves. We also teach them to take things they’ve discovered they do
-frequently and save them for later re-use (via shell scripts), to give
-things sensible names, and to write a little bit of documentation (like
-comment at the top of shell scripts) to make their future selves’ lives
-better.</p>
+<p>The first answer is, “Because so much else depends on it.”
+Встановлення програмного забезпечення, налаштування редактора за
+замовчуванням та керування віддаленими комп’ютерами часто вимагають
+базового знайомства з командним терміналом та пов’язаними з ним
+поняттями, такими як стандартний ввід та вивід. Багато інструментів
+також використовують його термінологію (наприклад, магічні команди
+<code>%ls</code> та <code>%cd</code> в IPython).</p>
+<p>Друга відповідь така: “Тому що це простий спосіб показати деякі
+фундаментальні ідеї про те, як користуватися комп’ютером.” As we teach
+people how to use the Unix shell, we teach them that they should get the
+computer to repeat things (via tab completion, <code>!</code> followed
+by a command number, and <code>for</code> loops) rather than repeating
+things themselves. Ми також вчимо їх брати речі, які, як виявилося, вони
+роблять часто, і зберігати їх для подальшого використання (за допомогою
+скриптів терміналу), давати речам розумні назви і писати невелику
+документацію (наприклад, коментар у верхній частині скрипта терміналу)
+щоб покращити життя свого майбутнього “Я”.</p>
 <p>The third answer is, “Because it enables use of many domain-specific
 tools and compute resources researchers cannot access otherwise.”
 Familiarity with the shell is very useful for remote accessing machines,
@@ -663,7 +665,7 @@ Carpentry Windows Installer</a>.</p>
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Шаблон ліцензовано за <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a>. Автори шаблону: <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Створено за допомогою <a href="https://github.com/carpentries/sandpaper/tree/main" class="external-link">sandpaper (0.20.1.9000)</a>, <a href="https://github.com/carpentries/pegboard/tree/main" class="external-link">pegboard (0.7.9)</a> та <a href="https://github.com/carpentries/varnish/tree/1.0.9" class="external-link">varnish (1.0.9)</a></p>
+        <p>Створено за допомогою <a href="https://github.com/carpentries/sandpaper/tree/main" class="external-link">sandpaper (0.20.1.9000)</a>, <a href="https://github.com/carpentries/pegboard/tree/main" class="external-link">pegboard (0.7.9)</a> та <a href="https://github.com/carpentries/varnish/tree/main" class="external-link">varnish (1.0.9)</a></p>
 		</div>
 		</footer>
 </div> <!-- / div.container -->
@@ -686,8 +688,8 @@ Carpentry Windows Installer</a>.</p>
   "url": "https://ukrainian-carpentries.github.io/shell-novice/instructor-notes.html",
   "identifier": "https://ukrainian-carpentries.github.io/shell-novice/instructor-notes.html",
   "dateCreated": "2014-10-22",
-  "dateModified": "2026-03-24",
-  "datePublished": "2026-03-24"
+  "dateModified": "2026-03-29",
+  "datePublished": "2026-03-29"
 }
 
   </script><script>
