@@ -21,8 +21,7 @@
         <img id="swc-logo" alt="Software Carpentry" src="assets/images/software-logo.svg"></div>
     </div>
     <div class="selector-container">
-      <div id="theme-selector">
-        <li class="nav-item dropdown" id="theme-button-list">
+      <menu class="theme-selector" id="theme-selector-menu"><li class="nav-item dropdown theme-button-list" id="theme-button-list-menu">
           <button class="btn btn-link nav-link px-0 px-lg-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme (auto)">
             <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg><i data-feather="chevron-down"></i>
           </button>
@@ -45,10 +44,7 @@
                 <svg class="bi ms-auto d-none"><use href="#check2"></use></svg></button>
             </li>
           </ul></li>
-      </div>
-
-
-      <div class="dropdown" id="instructor-dropdown">
+    </menu><div class="dropdown" id="instructor-dropdown">
         <button class="btn btn-secondary dropdown-toggle bordered-button" type="button" id="dropdownMenu1" data-bs-toggle="dropdown" aria-expanded="false">
           <i aria-hidden="true" class="icon" data-feather="eye"></i> Версія для слухача <i data-feather="chevron-down"></i>
         </button>
@@ -105,15 +101,11 @@
     -->
     <a id="search-button" class="btn btn-primary" href="aio.html" role="button" aria-label="Пошук на сторінці «All In One».">Пошук на сторінці «All In One».</a>
   </div><!--/div.container-fluid -->
-</nav><div class="col-md-12 mobile-title">
-  Командний рядок Unix
-</div>
-
-<aside class="col-md-12 lesson-progress"><div style="width: 17%" class="percentage">
+</nav><aside class="col-md-12 lesson-progress"><div style="width: 17%" class="percentage">
     17%
   </div>
   <div class="progress software">
-    <div class="progress-bar software" role="progressbar" style="width: 17%" aria-valuenow="17" aria-label="Хід уроку" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar software" role="progressbar" aria-label="Хід уроку" aria-valuemin="0" aria-valuemax="100" aria-valuenow="17" style="width: 17%">
     </div>
   </div>
 </aside><div class="container">
@@ -121,13 +113,12 @@
         <!-- START: inst/pkgdown/templates/navbar.html -->
 <div id="sidebar-col" class="col-lg-4">
   <div id="sidebar" class="sidebar">
-      <nav aria-labelledby="flush-headingEleven"><button role="button" aria-label="закрити меню" alt="закрити меню" aria-expanded="true" aria-controls="sidebar" class="collapse-toggle" data-collapse="Згорнути " data-episodes="Епізоди ">
+      <nav aria-labelledby="flush-collapse-chapters-toggle"><button role="button" aria-label="Згорнути" alt="Згорнути" aria-expanded="true" aria-controls="sidebar" class="collapse-toggle" data-collapse="Згорнути " data-episodes="Епізоди ">
           <i class="search-icon" data-feather="x" role="img"></i>
         </button>
         <div class="sidebar-inner">
           <div class="row mobile-row" id="theme-row-mobile">
-            <div class="col" id="theme-selector">
-              <li class="nav-item dropdown" id="theme-button-list">
+            <menu class="col theme-selector" id="theme-selector-sidebar"><li class="nav-item dropdown theme-button-list" id="theme-button-list-sidebar">
                 <button class="btn btn-link nav-link px-0 px-lg-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme (auto)">
                   <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg><span class="d-lg-none ms-1" id="bd-theme-text">Toggle Theme</span>
                 </button>
@@ -150,19 +141,18 @@
                       <svg class="bi ms-auto d-none"><use href="#check2"></use></svg></button>
                   </li>
                 </ul></li>
-            </div>
-          </div>
+            </menu></div>
           <div class="row mobile-row">
             <div class="col">
               <div class="sidenav-view-selector">
-                <div class="accordion accordion-flush" id="accordionFlush9">
+                <div class="accordion accordion-flush" id="accordion-instructor-toggle">
                   <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingNine">
-                      <button class="accordion-button collapsed" id="instructor" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseNine" aria-expanded="false" aria-controls="flush-collapseNine">
+                    <h2 class="accordion-header" id="flush-heading-instructor-toggle">
+                      <button class="accordion-button collapsed" id="instructor" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-instructor-toggle" aria-expanded="false" aria-controls="flush-collapse-instructor-toggle">
                         <i id="eye" aria-hidden="true" class="icon" data-feather="eye"></i> Версія для слухача
                       </button>
                     </h2>
-                    <div id="flush-collapseNine" class="accordion-collapse collapse" aria-labelledby="flush-headingNine" data-bs-parent="#accordionFlush2">
+                    <div id="flush-collapse-instructor-toggle" class="accordion-collapse collapse" data-bs-parent="#accordion-instructor-toggle">
                       <div class="accordion-body">
                         <a href="instructor/03-create.html">Версія для інструктора</a>
                       </div>
@@ -174,15 +164,15 @@
 
             <hr></div><!--/div.mobile-row -->
 
-          <div class="accordion accordion-flush" id="accordionFlush11">
+          <div class="accordion accordion-flush" id="accordion-chapters-toggle">
             <div class="accordion-item">
 
-              <button id="chapters" class="accordion-button show" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEleven" aria-expanded="false" aria-controls="flush-collapseEleven">
-                <h2 class="accordion-header chapters" id="flush-headingEleven">
+              <button id="chapters" class="accordion-button show" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-chapters-toggle" aria-expanded="false" aria-controls="flush-collapse-chapters-toggle">
+                <h2 class="accordion-header chapters" id="flush-heading-chapters-toggle">
                   ЕПІЗОДИ
                 </h2>
               </button>
-              <div id="flush-collapseEleven" class="accordion-collapse show collapse" aria-labelledby="flush-headingEleven" data-bs-parent="#accordionFlush11">
+              <div id="flush-collapse-chapters-toggle" class="accordion-collapse show collapse" data-bs-parent="#accordion-chapters-toggle">
 
                 <div class="accordion-body">
                   <div class="accordion accordion-flush" id="accordionFlush1">
@@ -223,7 +213,7 @@
       </button>
     </div><!--/div.accordion-header-->
 
-    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
+    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#%D1%81%D1%82%D0%B2%D0%BE%D1%80%D0%B5%D0%BD%D0%BD%D1%8F-%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3%D1%96%D0%B2">Створення каталогів</a></li>
 <li><a href="#%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D1%96%D1%89%D0%B5%D0%BD%D0%BD%D1%8F-%D1%84%D0%B0%D0%B9%D0%BB%D1%96%D0%B2-%D1%96-%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3%D1%96%D0%B2">Переміщення файлів і каталогів</a></li>
@@ -276,14 +266,14 @@
               </div>
             </div>
 
-            <hr class="half-width"><div class="accordion accordion-flush lesson-resources" id="accordionFlush12">
+            <hr class="half-width"><div class="accordion accordion-flush lesson-resources" id="accordion-resources-toggle">
               <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingTwelve">
-                  <button class="accordion-button collapsed" id="lesson-resources" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwelve" aria-expanded="false" aria-controls="flush-collapseTwelve">
+                <h2 class="accordion-header" id="flush-heading-resources-toggle">
+                  <button class="accordion-button collapsed" id="lesson-resources" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-resources-toggle" aria-expanded="false" aria-controls="flush-collapse-resources-toggle">
                     РЕСУРСИ
                   </button>
                 </h2>
-                <div id="flush-collapseTwelve" class="accordion-collapse collapse" aria-labelledby="flush-headingTwelve" data-bs-parent="#accordionFlush12">
+                <div id="flush-collapse-resources-toggle" class="accordion-collapse collapse" data-bs-parent="#accordion-resources-toggle">
                   <div class="accordion-body">
                     <ul><li>
                         <a href="key-points.html">Ключові моменти</a>
@@ -313,7 +303,7 @@
 
         <!-- START: inst/pkgdown/templates/content-instructor.html -->
   <div class="col-xl-8 col-lg-12 primary-content">
-    <nav class="lesson-content mx-md-4" aria-label="Попередній і наступний розділ"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
+    <nav class="lesson-content mx-md-4" aria-label="Попередній і наступний розділ Top"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="02-filedir.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Попередній</a>
         <a class="chapter-link float-end" href="04-pipefilter.html">Далі<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
@@ -381,7 +371,7 @@
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span> pwd</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a><span class="ex">$</span> pwd</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -393,8 +383,8 @@
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">$</span> cd exercise-data/writing/</span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-F</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1" aria-label="code-block-3-1"></a><span class="ex">$</span> cd exercise-data/writing/</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1" aria-label="code-block-3-2"></a><span class="ex">$</span> ls <span class="at">-F</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -409,7 +399,7 @@
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">$</span> mkdir thesis</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1" aria-label="code-block-5-1"></a><span class="ex">$</span> mkdir thesis</span></code></pre>
 </div>
 <p>Як ви можете здогадатися з її назви, команда <code>mkdir</code>
 означає ‘створити каталог’ (англ. ‘make directory’). Оскільки
@@ -419,7 +409,7 @@
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-F</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1" aria-label="code-block-6-1"></a><span class="ex">$</span> ls <span class="at">-F</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -431,7 +421,7 @@
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-F</span> thesis</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1" aria-label="code-block-8-1"></a><span class="ex">$</span> ls <span class="at">-F</span> thesis</span></code></pre>
 </div>
 <p>Зауважте, що команда <code>mkdir</code> не тільки створює окремі
 каталоги по одному за раз. Параметр <code>-p</code> дозволяє команді
@@ -440,7 +430,7 @@
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">$</span> mkdir <span class="at">-p</span> ../project/data ../project/results</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1" aria-label="code-block-9-1"></a><span class="ex">$</span> mkdir <span class="at">-p</span> ../project/data ../project/results</span></code></pre>
 </div>
 <p>Параметр <code>-R</code> з командою <code>ls</code> покаже усі
 вкладені підкаталоги у каталозі. Скористаймось <code>ls -FR</code> для
@@ -449,7 +439,7 @@
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-FR</span> ../project</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1" aria-label="code-block-10-1"></a><span class="ex">$</span> ls <span class="at">-FR</span> ../project</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -525,8 +515,8 @@ data/  results/
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="ex">$</span> cd thesis</span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="ex">$</span> nano draft.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" tabindex="-1" aria-label="code-block-12-1"></a><span class="ex">$</span> cd thesis</span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1" aria-label="code-block-12-2"></a><span class="ex">$</span> nano draft.txt</span></code></pre>
 </div>
 <div id="який-редактор-використовувати" class="callout">
 <div class="callout-square">
@@ -607,7 +597,7 @@ Windows також має вбудований редактор з назвою 
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="ex">$</span> ls</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1" aria-label="code-block-13-1"></a><span class="ex">$</span> ls</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -627,7 +617,7 @@ Windows також має вбудований редактор з назвою 
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="ex">$</span> touch my_file.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1" aria-label="code-block-15-1"></a><span class="ex">$</span> touch my_file.txt</span></code></pre>
 </div>
 <ol style="list-style-type: decimal"><li><p>Що зробила команда <code>touch</code>? Якщо ви відкриєте поточний
 каталог у файловому провіднику, чи видно в ньому цей файл?</p></li>
@@ -680,7 +670,7 @@ Windows також має вбудований редактор з назвою 
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="ex">$</span> rm my_file.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1" aria-label="code-block-16-1"></a><span class="ex">$</span> rm my_file.txt</span></code></pre>
 </div>
 </div>
 </div>
@@ -724,7 +714,7 @@ PDF-документи, конфігураційні файли, зображе�
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="ex">$</span> cd ~/Desktop/shell-lesson-data/exercise-data/writing</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1" aria-label="code-block-17-1"></a><span class="ex">$</span> cd ~/Desktop/shell-lesson-data/exercise-data/writing</span></code></pre>
 </div>
 <p>У нашому каталозі <code>thesis</code> є файл <code>draft.txt</code>,
 з не надто інформативною назвою, тому змінімо назву файлу за допомогою
@@ -733,7 +723,7 @@ PDF-документи, конфігураційні файли, зображе�
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="ex">$</span> mv thesis/draft.txt thesis/quotes.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1" aria-label="code-block-18-1"></a><span class="ex">$</span> mv thesis/draft.txt thesis/quotes.txt</span></code></pre>
 </div>
 <p>Перший аргумент говорить <code>mv</code>, що ми “переміщаємо”, а
 другий - куди саме. У цьому випадку ми переміщуємо
@@ -744,7 +734,7 @@ PDF-документи, конфігураційні файли, зображе�
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="ex">$</span> ls thesis</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1" aria-label="code-block-19-1"></a><span class="ex">$</span> ls thesis</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -769,7 +759,7 @@ PDF-документи, конфігураційні файли, зображе�
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="ex">$</span> mv thesis/quotes.txt .</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" tabindex="-1" aria-label="code-block-21-1"></a><span class="ex">$</span> mv thesis/quotes.txt .</span></code></pre>
 </div>
 <p>Наслідком цього буде переміщення файлу з початкового каталогу до
 поточного робочого каталогу. Тепер <code>ls</code> показує нам, що
@@ -777,7 +767,7 @@ PDF-документи, конфігураційні файли, зображе�
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="ex">$</span> ls thesis</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" tabindex="-1" aria-label="code-block-22-1"></a><span class="ex">$</span> ls thesis</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -790,7 +780,7 @@ PDF-документи, конфігураційні файли, зображе�
 <div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="ex">$</span> ls thesis/quotes.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" tabindex="-1" aria-label="code-block-24-1"></a><span class="ex">$</span> ls thesis/quotes.txt</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ПОМИЛКА<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -805,7 +795,7 @@ PDF-документи, конфігураційні файли, зображе�
 <div class="codewrapper sourceCode" id="cb26">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="ex">$</span> ls quotes.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" tabindex="-1" aria-label="code-block-26-1"></a><span class="ex">$</span> ls quotes.txt</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -826,18 +816,18 @@ PDF-документи, конфігураційні файли, зображе�
 <div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-F</span></span>
-<span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a> <span class="ex">analyzed/</span> raw/</span>
-<span id="cb28-3"><a href="#cb28-3" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-F</span> analyzed</span>
-<span id="cb28-4"><a href="#cb28-4" tabindex="-1"></a><span class="ex">fructose.dat</span> glucose.dat maltose.dat sucrose.dat</span>
-<span id="cb28-5"><a href="#cb28-5" tabindex="-1"></a><span class="ex">$</span> cd analyzed</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" tabindex="-1" aria-label="code-block-28-1"></a><span class="ex">$</span> ls <span class="at">-F</span></span>
+<span id="cb28-2"><a href="#cb28-2" tabindex="-1" aria-label="code-block-28-2"></a> <span class="ex">analyzed/</span> raw/</span>
+<span id="cb28-3"><a href="#cb28-3" tabindex="-1" aria-label="code-block-28-3"></a><span class="ex">$</span> ls <span class="at">-F</span> analyzed</span>
+<span id="cb28-4"><a href="#cb28-4" tabindex="-1" aria-label="code-block-28-4"></a><span class="ex">fructose.dat</span> glucose.dat maltose.dat sucrose.dat</span>
+<span id="cb28-5"><a href="#cb28-5" tabindex="-1" aria-label="code-block-28-5"></a><span class="ex">$</span> cd analyzed</span></code></pre>
 </div>
 <p>Заповніть пропуски, щоб перемістити ці файли до каталогу
 <code>raw/</code> (тобто туди, куди вона забула їх помістити)</p>
 <div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a><span class="ex">$</span> mv sucrose.dat maltose.dat ____/____</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" tabindex="-1" aria-label="code-block-29-1"></a><span class="ex">$</span> mv sucrose.dat maltose.dat ____/____</span></code></pre>
 </div>
 </div>
 </div>
@@ -852,7 +842,7 @@ PDF-документи, конфігураційні файли, зображе�
 <div class="codewrapper sourceCode" id="cb30">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="ex">$</span> mv sucrose.dat maltose.dat ../raw</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" tabindex="-1" aria-label="code-block-30-1"></a><span class="ex">$</span> mv sucrose.dat maltose.dat ../raw</span></code></pre>
 </div>
 <p>Пам’ятайте, що <code>..</code> вказує на батьківський каталог (тобто
 на каталог рівнем вище поточного), а <code>.</code> вказує на поточний
@@ -870,8 +860,8 @@ PDF-документи, конфігураційні файли, зображе�
 <div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a><span class="ex">$</span> cp quotes.txt thesis/quotations.txt</span>
-<span id="cb31-2"><a href="#cb31-2" tabindex="-1"></a><span class="ex">$</span> ls quotes.txt thesis/quotations.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" tabindex="-1" aria-label="code-block-31-1"></a><span class="ex">$</span> cp quotes.txt thesis/quotations.txt</span>
+<span id="cb31-2"><a href="#cb31-2" tabindex="-1" aria-label="code-block-31-2"></a><span class="ex">$</span> ls quotes.txt thesis/quotations.txt</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -883,14 +873,14 @@ PDF-документи, конфігураційні файли, зображе�
 <div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a><span class="ex">$</span> cp <span class="at">-r</span> thesis thesis_backup</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" tabindex="-1" aria-label="code-block-33-1"></a><span class="ex">$</span> cp <span class="at">-r</span> thesis thesis_backup</span></code></pre>
 </div>
 <p>Ми можемо перевірити результат, переглянувши вміст каталогів
 <code>thesis</code> та <code>thesis_backup</code>:</p>
 <div class="codewrapper sourceCode" id="cb34">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" tabindex="-1"></a><span class="ex">$</span> ls thesis thesis_backup</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" tabindex="-1" aria-label="code-block-34-1"></a><span class="ex">$</span> ls thesis thesis_backup</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -907,8 +897,8 @@ PDF-документи, конфігураційні файли, зображе�
 <div class="codewrapper sourceCode" id="cb36">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" tabindex="-1"></a><span class="ex">$</span> cp thesis thesis_backup</span>
-<span id="cb36-2"><a href="#cb36-2" tabindex="-1"></a><span class="ex">cp:</span> <span class="at">-r</span> not specified<span class="kw">;</span> <span class="ex">omitting</span> directory <span class="st">'thesis'</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" tabindex="-1" aria-label="code-block-36-1"></a><span class="ex">$</span> cp thesis thesis_backup</span>
+<span id="cb36-2"><a href="#cb36-2" tabindex="-1" aria-label="code-block-36-2"></a><span class="ex">cp:</span> <span class="at">-r</span> not specified<span class="kw">;</span> <span class="ex">omitting</span> directory <span class="st">'thesis'</span></span></code></pre>
 </div>
 <div id="перейменування-файлів" class="callout challenge">
 <div class="callout-square">
@@ -962,7 +952,7 @@ PDF-документи, конфігураційні файли, зображе�
 <div class="codewrapper sourceCode" id="cb37">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" tabindex="-1"></a><span class="ex">$</span> pwd</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" tabindex="-1" aria-label="code-block-37-1"></a><span class="ex">$</span> pwd</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -972,7 +962,7 @@ PDF-документи, конфігураційні файли, зображе�
 <div class="codewrapper sourceCode" id="cb39">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" tabindex="-1"></a><span class="ex">$</span> ls</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" tabindex="-1" aria-label="code-block-39-1"></a><span class="ex">$</span> ls</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -982,10 +972,10 @@ PDF-документи, конфігураційні файли, зображе�
 <div class="codewrapper sourceCode" id="cb41">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" tabindex="-1"></a><span class="ex">$</span> mkdir recombined</span>
-<span id="cb41-2"><a href="#cb41-2" tabindex="-1"></a><span class="ex">$</span> mv proteins.dat recombined/</span>
-<span id="cb41-3"><a href="#cb41-3" tabindex="-1"></a><span class="ex">$</span> cp recombined/proteins.dat ../proteins-saved.dat</span>
-<span id="cb41-4"><a href="#cb41-4" tabindex="-1"></a><span class="ex">$</span> ls</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" tabindex="-1" aria-label="code-block-41-1"></a><span class="ex">$</span> mkdir recombined</span>
+<span id="cb41-2"><a href="#cb41-2" tabindex="-1" aria-label="code-block-41-2"></a><span class="ex">$</span> mv proteins.dat recombined/</span>
+<span id="cb41-3"><a href="#cb41-3" tabindex="-1" aria-label="code-block-41-3"></a><span class="ex">$</span> cp recombined/proteins.dat ../proteins-saved.dat</span>
+<span id="cb41-4"><a href="#cb41-4" tabindex="-1" aria-label="code-block-41-4"></a><span class="ex">$</span> ls</span></code></pre>
 </div>
 <ol style="list-style-type: decimal"><li><code>proteins-saved.dat recombined</code></li>
 <li><code>recombined</code></li>
@@ -1037,14 +1027,14 @@ PDF-документи, конфігураційні файли, зображе�
 <div class="codewrapper sourceCode" id="cb42">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" tabindex="-1"></a><span class="ex">$</span> rm quotes.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" tabindex="-1" aria-label="code-block-42-1"></a><span class="ex">$</span> rm quotes.txt</span></code></pre>
 </div>
 <p>Ми можемо перевірити видалення файлу за допомогою
 <code>ls</code>:</p>
 <div class="codewrapper sourceCode" id="cb43">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" tabindex="-1"></a><span class="ex">$</span> ls quotes.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" tabindex="-1" aria-label="code-block-43-1"></a><span class="ex">$</span> ls quotes.txt</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ПОМИЛКА<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1111,7 +1101,7 @@ PDF-документи, конфігураційні файли, зображе�
 <div class="codewrapper sourceCode" id="cb46">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb46-1"><a href="#cb46-1" tabindex="-1"></a><span class="ex">$</span> rm thesis</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb46-1"><a href="#cb46-1" tabindex="-1" aria-label="code-block-46-1"></a><span class="ex">$</span> rm thesis</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ПОМИЛКА<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1126,7 +1116,7 @@ PDF-документи, конфігураційні файли, зображе�
 <div class="codewrapper sourceCode" id="cb48">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb48-1"><a href="#cb48-1" tabindex="-1"></a><span class="ex">$</span> rm <span class="at">-r</span> thesis</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb48-1"><a href="#cb48-1" tabindex="-1" aria-label="code-block-48-1"></a><span class="ex">$</span> rm <span class="at">-r</span> thesis</span></code></pre>
 </div>
 <p>Оскільки файли, видалені за допомогою терміналу не відновлюються,
 команду <code>rm -r</code> слід застосовувати з великою обережністю (ви
@@ -1152,16 +1142,16 @@ PDF-документи, конфігураційні файли, зображе�
 <div class="codewrapper sourceCode" id="cb49">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb49-1"><a href="#cb49-1" tabindex="-1"></a><span class="ex">$</span> mkdir backup</span>
-<span id="cb49-2"><a href="#cb49-2" tabindex="-1"></a><span class="ex">$</span> cp creatures/minotaur.dat creatures/unicorn.dat backup/</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb49-1"><a href="#cb49-1" tabindex="-1" aria-label="code-block-49-1"></a><span class="ex">$</span> mkdir backup</span>
+<span id="cb49-2"><a href="#cb49-2" tabindex="-1" aria-label="code-block-49-2"></a><span class="ex">$</span> cp creatures/minotaur.dat creatures/unicorn.dat backup/</span></code></pre>
 </div>
 <p>Що робить команда <code>cp</code> у наведеному нижче прикладі, коли
 їй задано три або більше імен файлів?</p>
 <div class="codewrapper sourceCode" id="cb50">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb50-1"><a href="#cb50-1" tabindex="-1"></a><span class="ex">$</span> cd creatures</span>
-<span id="cb50-2"><a href="#cb50-2" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-F</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb50-1"><a href="#cb50-1" tabindex="-1" aria-label="code-block-50-1"></a><span class="ex">$</span> cd creatures</span>
+<span id="cb50-2"><a href="#cb50-2" tabindex="-1" aria-label="code-block-50-2"></a><span class="ex">$</span> ls <span class="at">-F</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1171,7 +1161,7 @@ PDF-документи, конфігураційні файли, зображе�
 <div class="codewrapper sourceCode" id="cb52">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb52-1"><a href="#cb52-1" tabindex="-1"></a><span class="ex">$</span> cp minotaur.dat unicorn.dat basilisk.dat</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb52-1"><a href="#cb52-1" tabindex="-1" aria-label="code-block-52-1"></a><span class="ex">$</span> cp minotaur.dat unicorn.dat basilisk.dat</span></code></pre>
 </div>
 </div>
 </div>
@@ -1303,25 +1293,25 @@ PDF-документи, конфігураційні файли, зображе�
 <div class="codewrapper sourceCode" id="cb54">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb54-1"><a href="#cb54-1" tabindex="-1"></a><span class="bu">.</span></span>
-<span id="cb54-2"><a href="#cb54-2" tabindex="-1"></a><span class="ex">├──</span> 2015-10-23-calibration.txt</span>
-<span id="cb54-3"><a href="#cb54-3" tabindex="-1"></a><span class="ex">├──</span> 2015-10-23-dataset1.txt</span>
-<span id="cb54-4"><a href="#cb54-4" tabindex="-1"></a><span class="ex">├──</span> 2015-10-23-dataset2.txt</span>
-<span id="cb54-5"><a href="#cb54-5" tabindex="-1"></a><span class="ex">├──</span> 2015-10-23-dataset_overview.txt</span>
-<span id="cb54-6"><a href="#cb54-6" tabindex="-1"></a><span class="ex">├──</span> 2015-10-26-calibration.txt</span>
-<span id="cb54-7"><a href="#cb54-7" tabindex="-1"></a><span class="ex">├──</span> 2015-10-26-dataset1.txt</span>
-<span id="cb54-8"><a href="#cb54-8" tabindex="-1"></a><span class="ex">├──</span> 2015-10-26-dataset2.txt</span>
-<span id="cb54-9"><a href="#cb54-9" tabindex="-1"></a><span class="ex">├──</span> 2015-10-26-dataset_overview.txt</span>
-<span id="cb54-10"><a href="#cb54-10" tabindex="-1"></a><span class="ex">├──</span> 2015-11-23-calibration.txt</span>
-<span id="cb54-11"><a href="#cb54-11" tabindex="-1"></a><span class="ex">├──</span> 2015-11-23-dataset1.txt</span>
-<span id="cb54-12"><a href="#cb54-12" tabindex="-1"></a><span class="ex">├──</span> 2015-11-23-dataset2.txt</span>
-<span id="cb54-13"><a href="#cb54-13" tabindex="-1"></a><span class="ex">├──</span> 2015-11-23-dataset_overview.txt</span>
-<span id="cb54-14"><a href="#cb54-14" tabindex="-1"></a><span class="ex">├──</span> backup</span>
-<span id="cb54-15"><a href="#cb54-15" tabindex="-1"></a><span class="ex">│  </span> ├── calibration</span>
-<span id="cb54-16"><a href="#cb54-16" tabindex="-1"></a><span class="ex">│  </span> └── datasets</span>
-<span id="cb54-17"><a href="#cb54-17" tabindex="-1"></a><span class="ex">└──</span> send_to_bob</span>
-<span id="cb54-18"><a href="#cb54-18" tabindex="-1"></a>    <span class="ex">├──</span> all_datasets_created_on_a_23rd</span>
-<span id="cb54-19"><a href="#cb54-19" tabindex="-1"></a>    <span class="ex">└──</span> all_november_files</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb54-1"><a href="#cb54-1" tabindex="-1" aria-label="code-block-54-1"></a><span class="bu">.</span></span>
+<span id="cb54-2"><a href="#cb54-2" tabindex="-1" aria-label="code-block-54-2"></a><span class="ex">├──</span> 2015-10-23-calibration.txt</span>
+<span id="cb54-3"><a href="#cb54-3" tabindex="-1" aria-label="code-block-54-3"></a><span class="ex">├──</span> 2015-10-23-dataset1.txt</span>
+<span id="cb54-4"><a href="#cb54-4" tabindex="-1" aria-label="code-block-54-4"></a><span class="ex">├──</span> 2015-10-23-dataset2.txt</span>
+<span id="cb54-5"><a href="#cb54-5" tabindex="-1" aria-label="code-block-54-5"></a><span class="ex">├──</span> 2015-10-23-dataset_overview.txt</span>
+<span id="cb54-6"><a href="#cb54-6" tabindex="-1" aria-label="code-block-54-6"></a><span class="ex">├──</span> 2015-10-26-calibration.txt</span>
+<span id="cb54-7"><a href="#cb54-7" tabindex="-1" aria-label="code-block-54-7"></a><span class="ex">├──</span> 2015-10-26-dataset1.txt</span>
+<span id="cb54-8"><a href="#cb54-8" tabindex="-1" aria-label="code-block-54-8"></a><span class="ex">├──</span> 2015-10-26-dataset2.txt</span>
+<span id="cb54-9"><a href="#cb54-9" tabindex="-1" aria-label="code-block-54-9"></a><span class="ex">├──</span> 2015-10-26-dataset_overview.txt</span>
+<span id="cb54-10"><a href="#cb54-10" tabindex="-1" aria-label="code-block-54-10"></a><span class="ex">├──</span> 2015-11-23-calibration.txt</span>
+<span id="cb54-11"><a href="#cb54-11" tabindex="-1" aria-label="code-block-54-11"></a><span class="ex">├──</span> 2015-11-23-dataset1.txt</span>
+<span id="cb54-12"><a href="#cb54-12" tabindex="-1" aria-label="code-block-54-12"></a><span class="ex">├──</span> 2015-11-23-dataset2.txt</span>
+<span id="cb54-13"><a href="#cb54-13" tabindex="-1" aria-label="code-block-54-13"></a><span class="ex">├──</span> 2015-11-23-dataset_overview.txt</span>
+<span id="cb54-14"><a href="#cb54-14" tabindex="-1" aria-label="code-block-54-14"></a><span class="ex">├──</span> backup</span>
+<span id="cb54-15"><a href="#cb54-15" tabindex="-1" aria-label="code-block-54-15"></a><span class="ex">│  </span> ├── calibration</span>
+<span id="cb54-16"><a href="#cb54-16" tabindex="-1" aria-label="code-block-54-16"></a><span class="ex">│  </span> └── datasets</span>
+<span id="cb54-17"><a href="#cb54-17" tabindex="-1" aria-label="code-block-54-17"></a><span class="ex">└──</span> send_to_bob</span>
+<span id="cb54-18"><a href="#cb54-18" tabindex="-1" aria-label="code-block-54-18"></a>    <span class="ex">├──</span> all_datasets_created_on_a_23rd</span>
+<span id="cb54-19"><a href="#cb54-19" tabindex="-1" aria-label="code-block-54-19"></a>    <span class="ex">└──</span> all_november_files</span></code></pre>
 </div>
 <p>Перед тим, як вирушити на чергову польову подорож, вона хоче створити
 резервну копію даних і надіслати деякі набори своєму колезі Бобу.
@@ -1329,57 +1319,57 @@ PDF-документи, конфігураційні файли, зображе�
 <div class="codewrapper sourceCode" id="cb55">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb55-1"><a href="#cb55-1" tabindex="-1"></a><span class="ex">$</span> cp <span class="pp">*</span>dataset<span class="pp">*</span> backup/datasets</span>
-<span id="cb55-2"><a href="#cb55-2" tabindex="-1"></a><span class="ex">$</span> cp ____calibration____ backup/calibration</span>
-<span id="cb55-3"><a href="#cb55-3" tabindex="-1"></a><span class="ex">$</span> cp 2015-____-____ send_to_bob/all_november_files/</span>
-<span id="cb55-4"><a href="#cb55-4" tabindex="-1"></a><span class="ex">$</span> cp ____ send_to_bob/all_datasets_created_on_a_23rd/</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb55-1"><a href="#cb55-1" tabindex="-1" aria-label="code-block-55-1"></a><span class="ex">$</span> cp <span class="pp">*</span>dataset<span class="pp">*</span> backup/datasets</span>
+<span id="cb55-2"><a href="#cb55-2" tabindex="-1" aria-label="code-block-55-2"></a><span class="ex">$</span> cp ____calibration____ backup/calibration</span>
+<span id="cb55-3"><a href="#cb55-3" tabindex="-1" aria-label="code-block-55-3"></a><span class="ex">$</span> cp 2015-____-____ send_to_bob/all_november_files/</span>
+<span id="cb55-4"><a href="#cb55-4" tabindex="-1" aria-label="code-block-55-4"></a><span class="ex">$</span> cp ____ send_to_bob/all_datasets_created_on_a_23rd/</span></code></pre>
 </div>
 <p>Допоможіть Саманті, заповнивши пропуски.</p>
 <p>Отримана структура каталогів повинна виглядати наступним чином:</p>
 <div class="codewrapper sourceCode" id="cb56">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb56-1"><a href="#cb56-1" tabindex="-1"></a><span class="bu">.</span></span>
-<span id="cb56-2"><a href="#cb56-2" tabindex="-1"></a><span class="ex">├──</span> 2015-10-23-calibration.txt</span>
-<span id="cb56-3"><a href="#cb56-3" tabindex="-1"></a><span class="ex">├──</span> 2015-10-23-dataset1.txt</span>
-<span id="cb56-4"><a href="#cb56-4" tabindex="-1"></a><span class="ex">├──</span> 2015-10-23-dataset2.txt</span>
-<span id="cb56-5"><a href="#cb56-5" tabindex="-1"></a><span class="ex">├──</span> 2015-10-23-dataset_overview.txt</span>
-<span id="cb56-6"><a href="#cb56-6" tabindex="-1"></a><span class="ex">├──</span> 2015-10-26-calibration.txt</span>
-<span id="cb56-7"><a href="#cb56-7" tabindex="-1"></a><span class="ex">├──</span> 2015-10-26-dataset1.txt</span>
-<span id="cb56-8"><a href="#cb56-8" tabindex="-1"></a><span class="ex">├──</span> 2015-10-26-dataset2.txt</span>
-<span id="cb56-9"><a href="#cb56-9" tabindex="-1"></a><span class="ex">├──</span> 2015-10-26-dataset_overview.txt</span>
-<span id="cb56-10"><a href="#cb56-10" tabindex="-1"></a><span class="ex">├──</span> 2015-11-23-calibration.txt</span>
-<span id="cb56-11"><a href="#cb56-11" tabindex="-1"></a><span class="ex">├──</span> 2015-11-23-dataset1.txt</span>
-<span id="cb56-12"><a href="#cb56-12" tabindex="-1"></a><span class="ex">├──</span> 2015-11-23-dataset2.txt</span>
-<span id="cb56-13"><a href="#cb56-13" tabindex="-1"></a><span class="ex">├──</span> 2015-11-23-dataset_overview.txt</span>
-<span id="cb56-14"><a href="#cb56-14" tabindex="-1"></a><span class="ex">├──</span> backup</span>
-<span id="cb56-15"><a href="#cb56-15" tabindex="-1"></a><span class="ex">│  </span> ├── calibration</span>
-<span id="cb56-16"><a href="#cb56-16" tabindex="-1"></a><span class="ex">│  </span> │   ├── 2015-10-23-calibration.txt</span>
-<span id="cb56-17"><a href="#cb56-17" tabindex="-1"></a><span class="ex">│  </span> │   ├── 2015-10-26-calibration.txt</span>
-<span id="cb56-18"><a href="#cb56-18" tabindex="-1"></a><span class="ex">│  </span> │   └── 2015-11-23-calibration.txt</span>
-<span id="cb56-19"><a href="#cb56-19" tabindex="-1"></a><span class="ex">│  </span> └── datasets</span>
-<span id="cb56-20"><a href="#cb56-20" tabindex="-1"></a><span class="ex">│  </span>     ├── 2015-10-23-dataset1.txt</span>
-<span id="cb56-21"><a href="#cb56-21" tabindex="-1"></a><span class="ex">│  </span>     ├── 2015-10-23-dataset2.txt</span>
-<span id="cb56-22"><a href="#cb56-22" tabindex="-1"></a><span class="ex">│  </span>     ├── 2015-10-23-dataset_overview.txt</span>
-<span id="cb56-23"><a href="#cb56-23" tabindex="-1"></a><span class="ex">│  </span>     ├── 2015-10-26-dataset1.txt</span>
-<span id="cb56-24"><a href="#cb56-24" tabindex="-1"></a><span class="ex">│  </span>     ├── 2015-10-26-dataset2.txt</span>
-<span id="cb56-25"><a href="#cb56-25" tabindex="-1"></a><span class="ex">│  </span>     ├── 2015-10-26-dataset_overview.txt</span>
-<span id="cb56-26"><a href="#cb56-26" tabindex="-1"></a><span class="ex">│  </span>     ├── 2015-11-23-dataset1.txt</span>
-<span id="cb56-27"><a href="#cb56-27" tabindex="-1"></a><span class="ex">│  </span>     ├── 2015-11-23-dataset2.txt</span>
-<span id="cb56-28"><a href="#cb56-28" tabindex="-1"></a><span class="ex">│  </span>     └── 2015-11-23-dataset_overview.txt</span>
-<span id="cb56-29"><a href="#cb56-29" tabindex="-1"></a><span class="ex">└──</span> send_to_bob</span>
-<span id="cb56-30"><a href="#cb56-30" tabindex="-1"></a>    <span class="ex">├──</span> all_datasets_created_on_a_23rd</span>
-<span id="cb56-31"><a href="#cb56-31" tabindex="-1"></a>    <span class="ex">│  </span> ├── 2015-10-23-dataset1.txt</span>
-<span id="cb56-32"><a href="#cb56-32" tabindex="-1"></a>    <span class="ex">│  </span> ├── 2015-10-23-dataset2.txt</span>
-<span id="cb56-33"><a href="#cb56-33" tabindex="-1"></a>    <span class="ex">│  </span> ├── 2015-10-23-dataset_overview.txt</span>
-<span id="cb56-34"><a href="#cb56-34" tabindex="-1"></a>    <span class="ex">│  </span> ├── 2015-11-23-dataset1.txt</span>
-<span id="cb56-35"><a href="#cb56-35" tabindex="-1"></a>    <span class="ex">│  </span> ├── 2015-11-23-dataset2.txt</span>
-<span id="cb56-36"><a href="#cb56-36" tabindex="-1"></a>    <span class="ex">│  </span> └── 2015-11-23-dataset_overview.txt</span>
-<span id="cb56-37"><a href="#cb56-37" tabindex="-1"></a>    <span class="ex">└──</span> all_november_files</span>
-<span id="cb56-38"><a href="#cb56-38" tabindex="-1"></a>        <span class="ex">├──</span> 2015-11-23-calibration.txt</span>
-<span id="cb56-39"><a href="#cb56-39" tabindex="-1"></a>        <span class="ex">├──</span> 2015-11-23-dataset1.txt</span>
-<span id="cb56-40"><a href="#cb56-40" tabindex="-1"></a>        <span class="ex">├──</span> 2015-11-23-dataset2.txt</span>
-<span id="cb56-41"><a href="#cb56-41" tabindex="-1"></a>        <span class="ex">└──</span> 2015-11-23-dataset_overview.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb56-1"><a href="#cb56-1" tabindex="-1" aria-label="code-block-56-1"></a><span class="bu">.</span></span>
+<span id="cb56-2"><a href="#cb56-2" tabindex="-1" aria-label="code-block-56-2"></a><span class="ex">├──</span> 2015-10-23-calibration.txt</span>
+<span id="cb56-3"><a href="#cb56-3" tabindex="-1" aria-label="code-block-56-3"></a><span class="ex">├──</span> 2015-10-23-dataset1.txt</span>
+<span id="cb56-4"><a href="#cb56-4" tabindex="-1" aria-label="code-block-56-4"></a><span class="ex">├──</span> 2015-10-23-dataset2.txt</span>
+<span id="cb56-5"><a href="#cb56-5" tabindex="-1" aria-label="code-block-56-5"></a><span class="ex">├──</span> 2015-10-23-dataset_overview.txt</span>
+<span id="cb56-6"><a href="#cb56-6" tabindex="-1" aria-label="code-block-56-6"></a><span class="ex">├──</span> 2015-10-26-calibration.txt</span>
+<span id="cb56-7"><a href="#cb56-7" tabindex="-1" aria-label="code-block-56-7"></a><span class="ex">├──</span> 2015-10-26-dataset1.txt</span>
+<span id="cb56-8"><a href="#cb56-8" tabindex="-1" aria-label="code-block-56-8"></a><span class="ex">├──</span> 2015-10-26-dataset2.txt</span>
+<span id="cb56-9"><a href="#cb56-9" tabindex="-1" aria-label="code-block-56-9"></a><span class="ex">├──</span> 2015-10-26-dataset_overview.txt</span>
+<span id="cb56-10"><a href="#cb56-10" tabindex="-1" aria-label="code-block-56-10"></a><span class="ex">├──</span> 2015-11-23-calibration.txt</span>
+<span id="cb56-11"><a href="#cb56-11" tabindex="-1" aria-label="code-block-56-11"></a><span class="ex">├──</span> 2015-11-23-dataset1.txt</span>
+<span id="cb56-12"><a href="#cb56-12" tabindex="-1" aria-label="code-block-56-12"></a><span class="ex">├──</span> 2015-11-23-dataset2.txt</span>
+<span id="cb56-13"><a href="#cb56-13" tabindex="-1" aria-label="code-block-56-13"></a><span class="ex">├──</span> 2015-11-23-dataset_overview.txt</span>
+<span id="cb56-14"><a href="#cb56-14" tabindex="-1" aria-label="code-block-56-14"></a><span class="ex">├──</span> backup</span>
+<span id="cb56-15"><a href="#cb56-15" tabindex="-1" aria-label="code-block-56-15"></a><span class="ex">│  </span> ├── calibration</span>
+<span id="cb56-16"><a href="#cb56-16" tabindex="-1" aria-label="code-block-56-16"></a><span class="ex">│  </span> │   ├── 2015-10-23-calibration.txt</span>
+<span id="cb56-17"><a href="#cb56-17" tabindex="-1" aria-label="code-block-56-17"></a><span class="ex">│  </span> │   ├── 2015-10-26-calibration.txt</span>
+<span id="cb56-18"><a href="#cb56-18" tabindex="-1" aria-label="code-block-56-18"></a><span class="ex">│  </span> │   └── 2015-11-23-calibration.txt</span>
+<span id="cb56-19"><a href="#cb56-19" tabindex="-1" aria-label="code-block-56-19"></a><span class="ex">│  </span> └── datasets</span>
+<span id="cb56-20"><a href="#cb56-20" tabindex="-1" aria-label="code-block-56-20"></a><span class="ex">│  </span>     ├── 2015-10-23-dataset1.txt</span>
+<span id="cb56-21"><a href="#cb56-21" tabindex="-1" aria-label="code-block-56-21"></a><span class="ex">│  </span>     ├── 2015-10-23-dataset2.txt</span>
+<span id="cb56-22"><a href="#cb56-22" tabindex="-1" aria-label="code-block-56-22"></a><span class="ex">│  </span>     ├── 2015-10-23-dataset_overview.txt</span>
+<span id="cb56-23"><a href="#cb56-23" tabindex="-1" aria-label="code-block-56-23"></a><span class="ex">│  </span>     ├── 2015-10-26-dataset1.txt</span>
+<span id="cb56-24"><a href="#cb56-24" tabindex="-1" aria-label="code-block-56-24"></a><span class="ex">│  </span>     ├── 2015-10-26-dataset2.txt</span>
+<span id="cb56-25"><a href="#cb56-25" tabindex="-1" aria-label="code-block-56-25"></a><span class="ex">│  </span>     ├── 2015-10-26-dataset_overview.txt</span>
+<span id="cb56-26"><a href="#cb56-26" tabindex="-1" aria-label="code-block-56-26"></a><span class="ex">│  </span>     ├── 2015-11-23-dataset1.txt</span>
+<span id="cb56-27"><a href="#cb56-27" tabindex="-1" aria-label="code-block-56-27"></a><span class="ex">│  </span>     ├── 2015-11-23-dataset2.txt</span>
+<span id="cb56-28"><a href="#cb56-28" tabindex="-1" aria-label="code-block-56-28"></a><span class="ex">│  </span>     └── 2015-11-23-dataset_overview.txt</span>
+<span id="cb56-29"><a href="#cb56-29" tabindex="-1" aria-label="code-block-56-29"></a><span class="ex">└──</span> send_to_bob</span>
+<span id="cb56-30"><a href="#cb56-30" tabindex="-1" aria-label="code-block-56-30"></a>    <span class="ex">├──</span> all_datasets_created_on_a_23rd</span>
+<span id="cb56-31"><a href="#cb56-31" tabindex="-1" aria-label="code-block-56-31"></a>    <span class="ex">│  </span> ├── 2015-10-23-dataset1.txt</span>
+<span id="cb56-32"><a href="#cb56-32" tabindex="-1" aria-label="code-block-56-32"></a>    <span class="ex">│  </span> ├── 2015-10-23-dataset2.txt</span>
+<span id="cb56-33"><a href="#cb56-33" tabindex="-1" aria-label="code-block-56-33"></a>    <span class="ex">│  </span> ├── 2015-10-23-dataset_overview.txt</span>
+<span id="cb56-34"><a href="#cb56-34" tabindex="-1" aria-label="code-block-56-34"></a>    <span class="ex">│  </span> ├── 2015-11-23-dataset1.txt</span>
+<span id="cb56-35"><a href="#cb56-35" tabindex="-1" aria-label="code-block-56-35"></a>    <span class="ex">│  </span> ├── 2015-11-23-dataset2.txt</span>
+<span id="cb56-36"><a href="#cb56-36" tabindex="-1" aria-label="code-block-56-36"></a>    <span class="ex">│  </span> └── 2015-11-23-dataset_overview.txt</span>
+<span id="cb56-37"><a href="#cb56-37" tabindex="-1" aria-label="code-block-56-37"></a>    <span class="ex">└──</span> all_november_files</span>
+<span id="cb56-38"><a href="#cb56-38" tabindex="-1" aria-label="code-block-56-38"></a>        <span class="ex">├──</span> 2015-11-23-calibration.txt</span>
+<span id="cb56-39"><a href="#cb56-39" tabindex="-1" aria-label="code-block-56-39"></a>        <span class="ex">├──</span> 2015-11-23-dataset1.txt</span>
+<span id="cb56-40"><a href="#cb56-40" tabindex="-1" aria-label="code-block-56-40"></a>        <span class="ex">├──</span> 2015-11-23-dataset2.txt</span>
+<span id="cb56-41"><a href="#cb56-41" tabindex="-1" aria-label="code-block-56-41"></a>        <span class="ex">└──</span> 2015-11-23-dataset_overview.txt</span></code></pre>
 </div>
 </div>
 </div>
@@ -1394,9 +1384,9 @@ PDF-документи, конфігураційні файли, зображе�
 <div class="codewrapper sourceCode" id="cb57">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb57-1"><a href="#cb57-1" tabindex="-1"></a><span class="ex">$</span> cp <span class="pp">*</span>calibration.txt backup/calibration</span>
-<span id="cb57-2"><a href="#cb57-2" tabindex="-1"></a><span class="ex">$</span> cp 2015-11-<span class="pp">*</span> send_to_bob/all_november_files/</span>
-<span id="cb57-3"><a href="#cb57-3" tabindex="-1"></a><span class="ex">$</span> cp <span class="pp">*</span>-23-dataset<span class="pp">*</span> send_to_bob/all_datasets_created_on_a_23rd/</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb57-1"><a href="#cb57-1" tabindex="-1" aria-label="code-block-57-1"></a><span class="ex">$</span> cp <span class="pp">*</span>calibration.txt backup/calibration</span>
+<span id="cb57-2"><a href="#cb57-2" tabindex="-1" aria-label="code-block-57-2"></a><span class="ex">$</span> cp 2015-11-<span class="pp">*</span> send_to_bob/all_november_files/</span>
+<span id="cb57-3"><a href="#cb57-3" tabindex="-1" aria-label="code-block-57-3"></a><span class="ex">$</span> cp <span class="pp">*</span>-23-dataset<span class="pp">*</span> send_to_bob/all_datasets_created_on_a_23rd/</span></code></pre>
 </div>
 </div>
 </div>
@@ -1415,7 +1405,7 @@ PDF-документи, конфігураційні файли, зображе�
 <div class="codewrapper sourceCode" id="cb58">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb58-1"><a href="#cb58-1" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-F</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb58-1"><a href="#cb58-1" tabindex="-1" aria-label="code-block-58-1"></a><span class="ex">$</span> ls <span class="at">-F</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1429,7 +1419,7 @@ PDF-документи, конфігураційні файли, зображе�
 <div class="codewrapper sourceCode" id="cb60">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb60-1"><a href="#cb60-1" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-F</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb60-1"><a href="#cb60-1" tabindex="-1" aria-label="code-block-60-1"></a><span class="ex">$</span> ls <span class="at">-F</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1439,7 +1429,7 @@ PDF-документи, конфігураційні файли, зображе�
 <div class="codewrapper sourceCode" id="cb62">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb62-1"><a href="#cb62-1" tabindex="-1"></a><span class="ex">$</span> ls analyzed</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb62-1"><a href="#cb62-1" tabindex="-1" aria-label="code-block-62-1"></a><span class="ex">$</span> ls analyzed</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ВИХІД<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1459,7 +1449,7 @@ PDF-документи, конфігураційні файли, зображе�
 <div class="codewrapper sourceCode" id="cb64">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb64-1"><a href="#cb64-1" tabindex="-1"></a><span class="fu">mv</span> <span class="pp">*</span>.dat analyzed</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb64-1"><a href="#cb64-1" tabindex="-1" aria-label="code-block-64-1"></a><span class="fu">mv</span> <span class="pp">*</span>.dat analyzed</span></code></pre>
 </div>
 <p>Джеймі потрібно перемістити файли <code>fructose.dat</code> та
 <code>sucrose.dat</code> до каталогу <code>analyzed</code>. Термінал
@@ -1499,39 +1489,39 @@ PDF-документи, конфігураційні файли, зображе�
 <div class="codewrapper sourceCode" id="cb66">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb66-1"><a href="#cb66-1" tabindex="-1"></a><span class="ex">$</span> mkdir 2016-05-20</span>
-<span id="cb66-2"><a href="#cb66-2" tabindex="-1"></a><span class="ex">$</span> mkdir 2016-05-20/data</span>
-<span id="cb66-3"><a href="#cb66-3" tabindex="-1"></a><span class="ex">$</span> mkdir 2016-05-20/data/processed</span>
-<span id="cb66-4"><a href="#cb66-4" tabindex="-1"></a><span class="ex">$</span> mkdir 2016-05-20/data/raw</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb66-1"><a href="#cb66-1" tabindex="-1" aria-label="code-block-66-1"></a><span class="ex">$</span> mkdir 2016-05-20</span>
+<span id="cb66-2"><a href="#cb66-2" tabindex="-1" aria-label="code-block-66-2"></a><span class="ex">$</span> mkdir 2016-05-20/data</span>
+<span id="cb66-3"><a href="#cb66-3" tabindex="-1" aria-label="code-block-66-3"></a><span class="ex">$</span> mkdir 2016-05-20/data/processed</span>
+<span id="cb66-4"><a href="#cb66-4" tabindex="-1" aria-label="code-block-66-4"></a><span class="ex">$</span> mkdir 2016-05-20/data/raw</span></code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb67">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb67-1"><a href="#cb67-1" tabindex="-1"></a><span class="ex">$</span> mkdir 2016-05-20</span>
-<span id="cb67-2"><a href="#cb67-2" tabindex="-1"></a><span class="ex">$</span> cd 2016-05-20</span>
-<span id="cb67-3"><a href="#cb67-3" tabindex="-1"></a><span class="ex">$</span> mkdir data</span>
-<span id="cb67-4"><a href="#cb67-4" tabindex="-1"></a><span class="ex">$</span> cd data</span>
-<span id="cb67-5"><a href="#cb67-5" tabindex="-1"></a><span class="ex">$</span> mkdir raw processed</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb67-1"><a href="#cb67-1" tabindex="-1" aria-label="code-block-67-1"></a><span class="ex">$</span> mkdir 2016-05-20</span>
+<span id="cb67-2"><a href="#cb67-2" tabindex="-1" aria-label="code-block-67-2"></a><span class="ex">$</span> cd 2016-05-20</span>
+<span id="cb67-3"><a href="#cb67-3" tabindex="-1" aria-label="code-block-67-3"></a><span class="ex">$</span> mkdir data</span>
+<span id="cb67-4"><a href="#cb67-4" tabindex="-1" aria-label="code-block-67-4"></a><span class="ex">$</span> cd data</span>
+<span id="cb67-5"><a href="#cb67-5" tabindex="-1" aria-label="code-block-67-5"></a><span class="ex">$</span> mkdir raw processed</span></code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb68">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb68-1"><a href="#cb68-1" tabindex="-1"></a><span class="ex">$</span> mkdir 2016-05-20/data/raw</span>
-<span id="cb68-2"><a href="#cb68-2" tabindex="-1"></a><span class="ex">$</span> mkdir 2016-05-20/data/processed</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb68-1"><a href="#cb68-1" tabindex="-1" aria-label="code-block-68-1"></a><span class="ex">$</span> mkdir 2016-05-20/data/raw</span>
+<span id="cb68-2"><a href="#cb68-2" tabindex="-1" aria-label="code-block-68-2"></a><span class="ex">$</span> mkdir 2016-05-20/data/processed</span></code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb69">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb69-1"><a href="#cb69-1" tabindex="-1"></a><span class="ex">$</span> mkdir <span class="at">-p</span> 2016-05-20/data/raw</span>
-<span id="cb69-2"><a href="#cb69-2" tabindex="-1"></a><span class="ex">$</span> mkdir <span class="at">-p</span> 2016-05-20/data/processed</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb69-1"><a href="#cb69-1" tabindex="-1" aria-label="code-block-69-1"></a><span class="ex">$</span> mkdir <span class="at">-p</span> 2016-05-20/data/raw</span>
+<span id="cb69-2"><a href="#cb69-2" tabindex="-1" aria-label="code-block-69-2"></a><span class="ex">$</span> mkdir <span class="at">-p</span> 2016-05-20/data/processed</span></code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb70">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb70-1"><a href="#cb70-1" tabindex="-1"></a><span class="ex">$</span> mkdir 2016-05-20</span>
-<span id="cb70-2"><a href="#cb70-2" tabindex="-1"></a><span class="ex">$</span> cd 2016-05-20</span>
-<span id="cb70-3"><a href="#cb70-3" tabindex="-1"></a><span class="ex">$</span> mkdir data</span>
-<span id="cb70-4"><a href="#cb70-4" tabindex="-1"></a><span class="ex">$</span> mkdir raw processed</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb70-1"><a href="#cb70-1" tabindex="-1" aria-label="code-block-70-1"></a><span class="ex">$</span> mkdir 2016-05-20</span>
+<span id="cb70-2"><a href="#cb70-2" tabindex="-1" aria-label="code-block-70-2"></a><span class="ex">$</span> cd 2016-05-20</span>
+<span id="cb70-3"><a href="#cb70-3" tabindex="-1" aria-label="code-block-70-3"></a><span class="ex">$</span> mkdir data</span>
+<span id="cb70-4"><a href="#cb70-4" tabindex="-1" aria-label="code-block-70-4"></a><span class="ex">$</span> mkdir raw processed</span></code></pre>
 </div>
 </div>
 </div>
@@ -1598,7 +1588,7 @@ Nano текстовий редактор.</li>
 </div>
 </div>
 </section></div> <!-- / div.lesson-content -->
-    </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Попередній і наступний розділ"><div class="d-block d-sm-block d-md-none">
+    </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Попередній і наступний розділ Bottom"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="02-filedir.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Попередній</a>
         <a class="chapter-link float-end" href="04-pipefilter.html">Далі<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
@@ -1658,7 +1648,7 @@ Nano текстовий редактор.</li>
   "identifier": "https://ukrainian-carpentries.github.io/shell-novice/03-create.html",
   "dateCreated": "2014-10-22",
   "dateModified": "2025-08-28",
-  "datePublished": "2026-03-31"
+  "datePublished": "2026-04-07"
 }
 
   </script><script>
