@@ -38,12 +38,12 @@ The first answer is,
 
 Друга відповідь така:
 "Тому що це простий спосіб показати деякі фундаментальні ідеї про те, як користуватися комп'ютером."
-As we teach people how to use the Unix shell,
-we teach them that they should get the computer to repeat things
-(via tab completion,
-`!` followed by a command number,
-and `for` loops)
-rather than repeating things themselves.
+Коли ми вчимо людей користуватися терміналом Unix,
+ми вчимо їх, що вони повинні змусити комп'ютер повторювати дії
+(за допомогою завершення клавішею табуляції,
+знаком `!`, за яким йде номер команди,
+та циклів "for")
+замість того, щоб повторювати щось самому.
 Ми також вчимо їх брати речі, які, як виявилося, вони роблять часто,
 і зберігати їх для подальшого використання
 (за допомогою скриптів терміналу),
@@ -52,14 +52,14 @@ rather than repeating things themselves.
 (наприклад, коментар у верхній частині скрипта терміналу)
 щоб покращити життя свого майбутнього "Я".
 
-The third answer is,
-"Because it enables use of many domain-specific tools and compute resources researchers
-cannot access otherwise."
+Третя відповідь така:
+"Тому що це дозволяє використовувати багато вузькоспеціалізованих інструментів та обчислювальних ресурсів,
+до яких дослідники не можуть отримати доступ інакше."
 Familiarity with the shell is very useful for remote accessing machines,
 using high-performance computing infrastructure,
 and running new specialist tools in many disciplines.
-We do not teach HPC or domain-specific skills here
-but lay the groundwork for further development of these skills.
+Ми не навчаємо навичкам роботи з високопродуктивними обчислювальними системами або роботі в конкретних галузях,
+але закладаємо основу для подальшого розвитку цих навичок.
 In particular,
 understanding the syntax of commands, flags, and help systems is useful for domain specific tools
 and understanding the file system (and how to navigate it) is useful for remote access.
@@ -77,9 +77,9 @@ as long as learners using Windows do not run into roadblocks such as:
 
 - not being able to figure out where their home directory is
   (particularly if they're using Cygwin);
-- not being able to run a plain text editor;
-  and
-- the shell refusing to run scripts that include DOS line endings.
+- невміння запустити звичайний текстовий редактор;
+  та
+- відмова терміналу виконувати скрипти, які містять закінчення рядків DOS.
 
 ## Preparing to Teach
 
