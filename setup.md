@@ -1,43 +1,48 @@
 ---
-title: Налаштування
+title: Setup
 ---
 
-## Завантаження файлів
+## Download files
 
-Для роботи з цим уроком вам необхідно попередньо завантажити деякі файли.
+You need to download some files to follow this lesson.
 
-1. Завантажте [shell-lesson-data.zip][zip-file] і перенесіть цей файл на робочий стіл.
-2. Розархівуйте файл.
-   **Зверніться до інструктора, якщо вам потрібна допомога на цьому етапі**.
-   На вашому робочому столі має з'явитися новий каталог з назвою **`shell-lesson-data`**.
+1. Download [shell-lesson-data.zip][zip-file] and move the file to your Desktop.
+2. Unzip/extract the file.
+  **Let your instructor know if you need help with this step**.
+  You should end up with a new folder called **`shell-lesson-data`** on your Desktop.
 
-## Інсталяція програмного забезпечення
+## Install software
 
-Якщо у вас ще не встановлено програму-термінал, вам потрібно [завантажити та встановити][install_shell] її.
+If you do not already have the shell software installed, you will need to
+[download and install][install_shell] it.
 
-## Відкриття нового терміналу
+## Open a new shell
 
-Після встановлення програмного забезпечення
+After installing the software
 
-3. Відкрийте термінал.
-   Якщо не знаєте, як відкрити термінал у вашій операційній системі, скористайтеся наведеними нижче інструкціями.
-4. У терміналі введіть `cd` і натисніть клавішу <kbd>Return</kbd>.
-   Цей крок гарантує, що ви почнете з вашого домашнього каталогу як з робочого каталогу.
+3. Open a terminal.
+  If you're not sure how to open a terminal on your operating system, see the instructions below.
+4. In the terminal type `cd` then press the <kbd>Return</kbd> key.
+  This step will make sure you start with your home folder as your working directory.
 
-У цьому уроці ви дізнаєтеся, як отримати доступ до файлів даних у цьому каталозі.
+In the lesson, you will find out how to access the data files in this folder.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Як відкрити новий термінал у вашій операційній системі
+## Where to type commands: How to open a new shell
 
-Термінал - це програма для введення команд і отримання результатів від комп’ютера.
-Її також називають оболонкою або командним рядком.
+The shell is a program that enables us to send commands to the computer and receive output.
+It is also referred to as the terminal or command line.
 
-На деяких комп'ютерах встановлено програму Unix Shell за замовчуванням.
-Наведені нижче кроки допоможуть вам визначити, чи є вона у вашій системі, та як її запустити.
-Існують і інші шляхи пошуку та завантаження Unix Shell, емулятора Linux/UNIX або програми для підключення до Unix Shell на віддаленому сервері.
+Some computers include a default Unix Shell program.
+The steps below describe some methods for identifying and opening
+a Unix Shell program if you already have one installed.
+There are also options for identifying and downloading a Unix Shell program,
+a Linux/UNIX emulator, or a program to access a Unix Shell on a server.
 
-Якщо жоден із наведених нижче варіантів не підходить для вашої ситуації, спробуйте пошукати в інтернеті з ключовими словами: Unix shell [модель вашого комп'ютера] [ваша операційна система].
+If none of the options below address your circumstances,
+try an online search for: Unix shell [your computer model] [your operating system].
+
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -45,17 +50,21 @@ title: Налаштування
 
 ### Windows {#windows}
 
-Комп'ютери з операційною системою Windows не мають заздалегідь встановленої програми Unix Shell.
-У цьому уроці ми рекомендуємо вам скористатися емулятором, що входить до складу [Git for Windows][install_shell],
-який надає доступ як до команд оболонки Bash, так і до Git'у.
+Computers with Windows operating systems do not automatically have a Unix Shell program
+installed.
+In this lesson, we encourage you to use an emulator included in [Git for Windows][install_shell],
+which gives you access to both Bash shell commands and Git.
 
-Після встановлення ви можете відкрити термінал, запустивши програму Git Bash зі стартового меню Windows.
+Once installed, you can open a terminal by running the program Git Bash from the Windows start
+menu.
 
-**Для досвідчених користувачів:**
+**For advanced users:**
 
-Замість Git для Windows ви можете [встановити підсистему Windows для Linux (WSL)][wsl], що дозволяє працювати з Bash shell у Windows версії 10 і вище.
+As an alternative to Git for Windows you may wish to [Install the Windows Subsystem for Linux][wsl]
+which gives access to a Bash shell command-line tool in Windows 10 and above.
 
-Зверніть увагу, що команди у підсистемі Windows для Linux (WSL) можуть дещо відрізнятися від тих, що показані в уроці або представлені на семінарі.
+Please note that commands in the Windows Subsystem for Linux (WSL) may differ slightly
+from those shown in the lesson or presented in the workshop.
 
 ::::::::::::
 
@@ -63,22 +72,24 @@ title: Налаштування
 
 ### MacOS {#macos}
 
-На комп'ютерах Mac із macOS Mojave або ранішими версіями, стандартним терміналом Unix є Bash.
-На комп'ютерах Mac з macOS Catalina або пізніших версій стандартним терміналом Unix є Zsh.
-Відкрити їх можна через програму "Terminal" у каталозі "Utilities".
+For a Mac computer running macOS Mojave or earlier releases, the default Unix Shell is Bash.
+For a Mac computer running macOS Catalina or later releases, the default Unix Shell is Zsh.
+Your default shell is available via the Terminal program within your Utilities folder.
 
-Щоб відкрити Термінал, спробуйте один або обидва з наведених нижче способів:
+To open Terminal, try one or both of the following:
 
-- У Finder натисніть меню "Go", а потім виберіть "Utilities".
-  Знайдіть програму "Terminal" у каталозі "Utilities" і відкрийте її.
-- Скористайтеся функцією пошуку 'Spotlight'.
-  Знайдіть `Terminal` і натисніть <kbd>Return</kbd>.
+- In Finder, select the Go menu, then select Utilities.
+  Locate Terminal in the Utilities folder and open it.
+- Use the Mac 'Spotlight' computer search function.
+  Search for: `Terminal` and press <kbd>Return</kbd>.
 
-Щоб дізнатися, яка саме оболонка використовується за замовчуванням, введіть у терміналі команду `echo $SHELL`.
+To check if your machine is set up to use something other than Bash,
+type `echo $SHELL` in your terminal window.
 
-Якщо ваш комп'ютер налаштований на використання чогось іншого, ніж Bash, ви можете запустити Bash, відкривши термінал і набравши `bash`.
+If your machine is set up to use something other than Bash,
+you can run it by opening a terminal and typing `bash`.
 
-[Як користуватися терміналом на Mac][mac-terminal]
+[How to Use Terminal on a Mac][mac-terminal]
 
 ::::::::::::
 
@@ -86,9 +97,12 @@ title: Налаштування
 
 ### Linux {#linux}
 
-Стандартним терміналом Unix для операційних систем Linux зазвичай є Bash.
-У більшості версій Linux доступ до Bash можна отримати через термінали, такі як [Gnome Terminal][gnome-terminal], [KDE Konsole][kde-konsole] або [xterm][xterm], які можна знайти за допомогою меню програм або рядка пошуку.
-Якщо за замовчуванням використовується інша оболонка, просто відкрийте термінал і наберіть `bash`, щоб запустити Bash.
+The default Unix Shell for Linux operating systems is usually Bash.
+On most versions of Linux, it is accessible by running the
+[Gnome Terminal][gnome-terminal] or [KDE Konsole][kde-konsole] or [xterm],
+which can be found via the applications menu or the search bar.
+If your machine is set up to use something other than Bash,
+you can run it by opening a terminal and typing `bash`.
 
 ::::::::::::
 

@@ -1,5 +1,5 @@
 ---
-title: Обговорення
+title: Discussion
 ---
 
 ## Alphabet Soup
@@ -42,8 +42,8 @@ following are all equivalent `Ctrl-C`, `Ctrl+C`, `Control-C`, `Control+C`, `^C`)
   You can then use the command `fg` to restart the job in the foreground.
 
 For new shell users, these control codes can all appear to have
-the same effect: they make things "go away." Але корисно
-розуміти відмінності. In general, if something went wrong and
+the same effect: they make things "go away." But it is helpful to
+understand the differences. In general, if something went wrong and
 you just want to get your shell prompt back, it is better to use
 `Ctrl-C`.
 

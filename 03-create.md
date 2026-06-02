@@ -1,33 +1,37 @@
 ---
-title: Робота з файлами та каталогами
+title: Working With Files and Directories
 teaching: 30
 exercises: 20
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Створити ієрархію каталогів, яка відповідає заданій схемі.
-- Створити файли в цій ієрархії за допомогою редактора або шляхом копіювання та перейменування файлів, що вже існують.
-- Видалити, скопіювати та перемістити вказані файли та/або каталоги.
+- Create a directory hierarchy that matches a given diagram.
+- Create files in that hierarchy using an editor or by copying and renaming existing files.
+- Delete, copy and move specified files and/or directories.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- Як я можу створювати, копіювати та видаляти файли і каталоги?
-- Як я можу редагувати файли?
+- How can I create, copy, and delete files and directories?
+- How can I edit files?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Створення каталогів
 
-Тепер ми знаємо, як досліджувати файли та каталоги, але як їх створювати?
+## Creating directories
 
-У цьому уроці ми дізнаємося про створення та переміщення файлів і каталогів на прикладі каталогу `exercise-data/writing`.
+We now know how to explore files and directories,
+but how do we create them in the first place?
 
-### Крок перший: подивимось, де ми знаходимося і що вже маємо
+In this episode we will learn about creating and moving files and directories,
+using the `exercise-data/writing` directory as an example.
 
-Ми все ще маємо бути у каталозі `shell-lesson-data` на Робочому столі (англ. Desktop), що ми можемо перевірити за допомогою:
+### Step one: see where we are and what we already have
+
+We should still be in the `shell-lesson-data` directory on the Desktop,
+which we can check using:
 
 ```bash
 $ pwd
@@ -37,7 +41,7 @@ $ pwd
 /Users/nelle/Desktop/shell-lesson-data
 ```
 
-Далі ми перейдемо до каталогу `exercise-data/writing` і подивимося, що у ньому міститься:
+Next we'll move to the `exercise-data/writing` directory and see what it contains:
 
 ```bash
 $ cd exercise-data/writing/
@@ -45,21 +49,23 @@ $ ls -F
 ```
 
 ```output
-haiku.txt LittleWomen.txt
+haiku.txt  LittleWomen.txt
 ```
 
-### Створення каталогу
+### Create a directory
 
-Створимо новий каталог з назвою `thesis` за допомогою команди `mkdir thesis` (яка не має виводу):
+Let's create a new directory called `thesis` using the command `mkdir thesis`
+(which has no output):
 
 ```bash
 $ mkdir thesis
 ```
 
-Як ви можете здогадатися з її назви, команда `mkdir` означає 'створити каталог' (англ. 'make directory').
-Оскільки `thesis` є відносним шляхом
-(тобто не має початкової косої риски, як `/what/ever/thesis`),
-новий каталог буде створено у поточному робочому каталозі:
+As you might guess from its name,
+`mkdir` means 'make directory'.
+Since `thesis` is a relative path
+(i.e., does not have a leading slash, like `/what/ever/thesis`),
+the new directory is created in the current working directory:
 
 ```bash
 $ ls -F
@@ -69,21 +75,23 @@ $ ls -F
 haiku.txt  LittleWomen.txt  thesis/
 ```
 
-Оскільки ми щойно створили каталог `thesis`, у ньому ще нічого немає:
+Since we've just created the `thesis` directory, there's nothing in it yet:
 
 ```bash
 $ ls -F thesis
 ```
 
-Зауважте, що команда `mkdir` не тільки створює окремі каталоги по одному за раз.
-Параметр `-p` дозволяє команді `mkdir` створювати каталог із вкладеними підкаталогами за одну операцію:
+Note that `mkdir` is not limited to creating single directories one at a time.
+The `-p` option allows `mkdir` to create a directory with nested subdirectories
+in a single operation:
 
 ```bash
 $ mkdir -p ../project/data ../project/results
 ```
 
-Параметр `-R` з командою `ls` покаже усі вкладені підкаталоги у каталозі.
-Скористаймось `ls -FR` для рекурсивного зображення нової ієрархії каталогів, яку ми щойно створили у каталозі `project`:
+The `-R` option to the `ls` command will list all nested subdirectories within a directory.
+Let's use `ls -FR` to recursively list the new directory hierarchy we just created in the
+`project` directory:
 
 ```bash
 $ ls -FR ../project
@@ -100,50 +108,65 @@ data/  results/
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Два способи зробити одне й те саме
+## Two ways of doing the same thing
 
-Використання терміналу для створення каталогу нічим не відрізняється від використання файлового провідника.
-Якщо ви зараз відкриєте поточний каталог за допомогою графічного провідника файлів вашої операційної системи, там також з'явиться каталог `thesis`.
-Хоча термінал і файловий провідник - це два різні способи взаємодії з файлами, самі файли й каталоги одні й ті ж самі.
+Using the shell to create a directory is no different than using a file explorer.
+If you open the current directory using your operating system's graphical file explorer,
+the `thesis` directory will appear there too.
+While the shell and the file explorer are two different ways of interacting with the files,
+the files and directories themselves are the same.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Доречні імена для файлів і каталогів
+## Good names for files and directories
 
-Використання надто складних імен для файлів і каталогів може ускладнити роботу в командному рядку. Ось кілька корисних порад щодо вибору ефективних імен.
+Complicated names of files and directories can make your life painful
+when working on the command line. Here we provide a few useful
+tips for the names of your files and directories.
 
-1. Не використовуйте пробіли.
+1. Don't use spaces.
 
-Пробіли можуть зробити назву більш змістовною, але оскільки вони використовуються для відокремлення аргументів у командному рядку, краще уникати їх у назвах файлів і каталогів.
-Ви можете використовувати `-` або `_` (наприклад, `north-pacific-gyre/` замість `north pacific gyre/`).
-Щоб перевірити це, спробуйте набрати `mkdir north pacific gyre` і подивіться, який каталог (або каталоги!)
-буде створено, перевірив це за допомогою `ls -F`.
+Spaces can make a name more meaningful,
+but since spaces are used to separate arguments on the command line
+it is better to avoid them in names of files and directories.
+You can use `-` or `_` instead (e.g. `north-pacific-gyre/` rather than `north pacific gyre/`).
+To test this out, try typing `mkdir north pacific gyre` and see what directory (or directories!)
+are made when you check with `ls -F`.
 
-2. Не починайте назву з `-` (тире).
+2. Don't begin the name with `-` (dash).
 
-Команди розглядають назви, що починаються з `-`, як опції.
+Commands treat names starting with `-` as options.
 
-3. Використовуйте літери, цифри, `.` (крапку), `-` (тире) і `_` (підкреслення).
+3. Stick with letters, numbers, `.` (period or 'full stop'), `-` (dash) and `_` (underscore).
 
-Багато інших символів мають особливе значення у командному рядку.
-Деякі з них ми розглянемо у цьому уроці.
-Існують спеціальні символи, які можуть спричинити неправильну роботу команди й навіть призвести до втрати даних.
+Many other characters have special meanings on the command line.
+We will learn about some of these during this lesson.
+There are special characters that can cause your command to not work as
+expected and can even result in data loss.
 
-Якщо вам потрібно звернутися до назв файлів або каталогів, які містять пробіли чи інші спеціальні символи, вам слід узяти назву в одинарні [лапки](https://www.gnu.org/software/bash/manual/html_node/Quoting.html) (`''`).
+If you need to refer to names of files or directories that have spaces
+or other special characters, you should surround the name in single
+[quotes](https://www.gnu.org/software/bash/manual/html_node/Quoting.html) (`''`).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::  instructor
 
-Початківці іноді не знають, як вийти з таких редакторів, як Vim, Emacs чи Nano. Закриття терміналу та відкриття нового вікна може бути незручним, оскільки учням доведеться знову переходити до потрібного каталогу. Для пом'якшення цієї проблеми ми радимо викладачам використовувати той самий текстовий редактор, що й учні під час семінарів (у більшості випадків Nano).
+Learners can sometimes get trapped within command-line text editors
+such as Vim, Emacs, or Nano. Closing the terminal emulator and opening
+a new one can be frustrating as learners will have to navigate to the
+correct folder again. Our recommendation to mitigate this problem is that
+instructors should use the same text editor as the learners during workshops
+(in most cases Nano).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Створення текстового файлу
+### Create a text file
 
-Перейдімо до каталогу `thesis` за допомогою `cd`, а потім запустимо текстовий редактор Nano та створимо файл з назвою `draft.txt`:
+Let's change our working directory to `thesis` using `cd`,
+then run a text editor called Nano to create a file called `draft.txt`:
 
 ```bash
 $ cd thesis
@@ -152,27 +175,52 @@ $ nano draft.txt
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Який редактор використовувати?
+## Which Editor?
 
-Коли ми говоримо, що '`nano` - це текстовий редактор', ми дійсно маємо на увазі 'текстовий'. У ньому неможливо переглядати або редагувати таблиці, зображення чи будь-які інші зручні для сприйняття людиною дані. Ми використовуємо його у прикладах, оскільки це один із найпростіших текстових редакторів. Однак, через це він може виявитися недостатньо потужним або гнучким для складніших завдань, які вам потрібно буде виконати після завершення цього семінару. У системах Unix (таких як Linux та macOS), багато програмістів використовують [Emacs] (https://www.gnu.org/software/emacs/) чи [Vim](https://www.vim.org/) (обидва вимагають більше часу на вивчення), або графічний редактор, такий як [Gedit](https://projects.gnome.org/gedit/) чи [VScode](https://code.visualstudio.com/). У Windows, можливо, ви захочете скористатися [Notepad++](https://notepad-plus-plus.org/).  Операційна система Windows також має вбудований редактор з назвою `notepad`, який можна запустити з командного рядка так само, як і `nano` для цього семінару.
+When we say, '`nano` is a text editor' we really do mean 'text'. It can
+only work with plain character data, not tables, images, or any other
+human-friendly media. We use it in examples because it is one of the
+least complex text editors. However, because of this trait, it may
+not be powerful enough or flexible enough for the work you need to do
+after this workshop. On Unix systems (such as Linux and macOS),
+many programmers use [Emacs](https://www.gnu.org/software/emacs/) or
+[Vim](https://www.vim.org/) (both of which require more time to learn),
+or a graphical editor such as [Gedit](https://projects.gnome.org/gedit/)
+or [VScode](https://code.visualstudio.com/). On Windows, you may wish to
+use [Notepad++](https://notepad-plus-plus.org/).  Windows also has a built-in
+editor called `notepad` that can be run from the command line in the same
+way as `nano` for the purposes of this lesson.
 
-Незалежно від того, яким редактором ви користуєтеся, вам потрібно знати, де він шукає і зберігає файли. Якщо ви запускаєте його з термінала, він (імовірно) використовуватиме ваш поточний робочий каталог як розташування за замовчуванням. Однак, якщо ви використовуєте меню "Пуск" вашого комп'ютера, файли за замовчуванням можуть зберігатися замість цього на робочому столі або в каталозі "Документи" (Documents). Ви можете змінити це, перейшовши до іншого каталогу під час першого виконання команди "Зберегти як..." ("Save As...").
+No matter what editor you use, you will need to know where it searches
+for and saves files. If you start it from the shell, it will (probably)
+use your current working directory as its default location. If you use
+your computer's start menu, it may want to save files in your Desktop or
+Documents directory instead. You can change this by navigating to
+another directory the first time you 'Save As...'
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Наберемо кілька рядків тексту.
+Let's type in a few lines of text.
 
-![](fig/nano-screenshot.png){alt="Скриншот текстового редактора nano в дії з текстом "У минулому це було - публікуй чи зникни, а наразі стало - ділися та процвітай"}
+![](fig/nano-screenshot.png){alt="screenshot of nano text editor in action with the text It's not publish or perish any more, it's share and thrive"}
 
-Як тільки ми будемо задоволені нашим текстом, нам треба використати комбінацію <kbd>Ctrl</kbd>\+<kbd>O</kbd> (утримуючи клавішу <kbd>Ctrl</kbd> or <kbd>Control</kbd>, натисніть клавішу <kbd>O</kbd>), щоб зберегти наші дані на диск. Потім нам буде запропоновано вказати ім’я файлу, у якому зберігатиметься наш текст. Натисніть <kbd>Return</kbd>, щоб прийняти запропоновану за замовчуванням назву `draft.txt`.
+Once we're happy with our text, we can press <kbd>Ctrl</kbd>\+<kbd>O</kbd>
+(press the <kbd>Ctrl</kbd> or <kbd>Control</kbd> key and, while
+holding it down, press the <kbd>O</kbd> key) to write our data to disk. We will be asked
+to provide a name for the file that will contain our text. Press <kbd>Return</kbd> to accept
+the suggested default of `draft.txt`.
 
-Як тільки файл було збережено, скористаємось комбінацією клавіш <kbd>Ctrl</kbd>\+<kbd>X</kbd>, щоб вийти з редактора і повернутися до термінала.
+Once our file is saved, we can use <kbd>Ctrl</kbd>\+<kbd>X</kbd> to quit the editor and
+return to the shell.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Клавіша Control, Ctrl або ^
+## Control, Ctrl, or ^ Key
 
-Клавіші Control також називається клавішею 'Ctrl'. Існує декілька способів, якими може бути описане використання клавіші Control. Наприклад, ви можете побачити вказівку натиснути клавішу <kbd>Control</kbd> і, утримуючи її натиснутою, потім натиснути клавішу <kbd>X</kbd>, описану будь-яким з наступних способів:
+The Control key is also called the 'Ctrl' key. There are various ways
+in which using the Control key may be described. For example, you may
+see an instruction to press the <kbd>Control</kbd> key and, while holding it down,
+press the <kbd>X</kbd> key, described as any of:
 
 - `Control-X`
 - `Control+X`
@@ -181,12 +229,14 @@ $ nano draft.txt
 - `^X`
 - `C-x`
 
-У nano, у нижній частині екрана ви побачите `^G Get Help ^O WriteOut`.
-Це означає, що ви можете скористатися `Control-G` для отримання довідки й `Control-O` для збереження вашого файлу.
+In nano, along the bottom of the screen you'll see `^G Get Help ^O WriteOut`.
+This means that you can use `Control-G` to get help and `Control-O` to save your
+file.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Після завершення роботи команда `nano` не залишає жодних даних на екрані, але `ls` тепер показує, що ми створили файл з назвою `draft.txt`:
+`nano` doesn't leave any output on the screen after it exits,
+but `ls` now shows that we have created a file called `draft.txt`:
 
 ```bash
 $ ls
@@ -198,38 +248,50 @@ draft.txt
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Створення файлів іншим способом
+## Creating Files a Different Way
 
-Ми побачили, як створювати текстові файли за допомогою редактора `nano`.
-Тепер спробуйте виконати наступну команду:
+We have seen how to create text files using the `nano` editor.
+Now, try the following command:
 
 ```bash
 $ touch my_file.txt
 ```
 
-1. Що зробила команда `touch`?
-   Якщо ви відкриєте поточний каталог у файловому провіднику, чи видно в ньому цей файл?
+1. What did the `touch` command do?
+  When you look at your current directory using the GUI file explorer,
+  does the file show up?
 
-2. Скористуйтеся `ls -l` для перегляду файлів.  Який розмір має файл `my_file.txt`?
+2. Use `ls -l` to inspect the files.  How large is `my_file.txt`?
 
-3. У яких випадках доцільно створювати файл саме таким чином?
+3. When might you want to create a file this way?
 
 :::::::::::::::  solution
 
-## Відповідь
+## Solution
 
-1. Команда `touch` створює новий файл з назвою `my_file.txt` у вашому поточному каталозі.  Щоб переконатися, що файл створено, скористайтеся командою `ls`.  Файл `my_file.txt` також можна переглянути у вашому графічному провіднику файлів.
+1. The `touch` command generates a new file called `my_file.txt` in
+  your current directory.  You
+  can observe this newly generated file by typing `ls` at the
+  command line prompt.  `my_file.txt` can also be viewed in your
+  GUI file explorer.
 
-2. Коли ви перевіряєте файл за допомогою `ls -l`, зверніть увагу, що розмір `my_file.txt` — 0 байт.  Це означає, що файл порожній.
-   Якщо відкрити його в редакторі, ви не знайдете в ньому жодного вмісту.
+2. When you inspect the file with `ls -l`, note that the size of
+  `my_file.txt` is 0 bytes.  In other words, it contains no data.
+  If you open `my_file.txt` using your text editor it is blank.
 
-3. Іноді програми не генерують вихідні файли автоматично, а потребують, щоб порожні файли були створені заздалегідь.
-   Потім під час виконання програма шукає наявний файл, щоб заповнити його своїми даними.  За допомогою команди `touch` можна ефективно створити порожній текстовий файл для подальшого використання такими програмами.
+3. Some programs do not generate output files themselves, but
+  instead require that empty files have already been generated.
+  When the program is run, it searches for an existing file to
+  populate with its output.  The touch command allows you to
+  efficiently generate a blank text file to be used by such
+  programs.
 
 :::::::::::::::::::::::::
 
-Щоб уникнути плутанини пізніше, радимо видалити створений файл перед продовженням епізоду, інакше майбутні результати можуть відрізнятися від наведених в уроці.
-Для цього скористайтеся наступною командою:
+To avoid confusion later on,
+we suggest removing the file you've just created before proceeding with the rest
+of the episode, otherwise future outputs may vary from those given in the lesson.
+To do this, use the following command:
 
 ```bash
 $ rm my_file.txt
@@ -239,33 +301,57 @@ $ rm my_file.txt
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Що ховається в імені?
+## What's In A Name?
 
-Ви, мабуть, помітили, що всі файли Неллі називаються 'щось крапка щось', і у цій частині уроку ми завжди використовували розширення `.txt`.  Це лише умовність: ми можемо назвати файл `mythesis` або майже як завгодно. Однак, більшість людей здебільшого використовують назви, що складаються з двох частин для того, щоб допомогти їм (і їхнім програмам) розрізняти різні типи файлів. Друга частина такого імені називається розширенням файлу і вказує тип даних у файлі: `.txt` вказує на простий текстовий файл, `.pdf` вказує на PDF-документ, `.cfg` - це конфігураційний файл з параметрами для тієї чи іншої програми, `.png` - зображення у форматі PNG, і так далі.
+You may have noticed that all of Nelle's files are named 'something dot
+something', and in this part of the lesson, we always used the extension
+`.txt`.  This is just a convention; we can call a file `mythesis` or
+almost anything else we want. However, most people use two-part names
+most of the time to help them (and their programs) tell different kinds
+of files apart. The second part of such a name is called the
+**filename extension** and indicates
+what type of data the file holds: `.txt` signals a plain text file, `.pdf`
+indicates a PDF document, `.cfg` is a configuration file full of parameters
+for some program or other, `.png` is a PNG image, and so on.
 
-Це лише умовність, хоча й важлива. Файли містять лише байти: це ми та наші програми будемо їх відповідно інтерпретувати — як текст, PDF-документи, конфігураційні файли, зображення тощо.
+This is just a convention, albeit an important one. Files merely contain
+bytes; it's up to us and our programs to interpret those bytes
+according to the rules for plain text files, PDF documents, configuration
+files, images, and so on.
 
-Якщо ви назвете зображення кита у форматі PNG як `whale.mp3`, це не перетворить його якимось чарівним чином на запис пісні кита, хоча це _може_ змусити операційну систему спробувати відкрити його за допомогою музичного плеєра. У цьому випадку, якщо хтось двічі клацне на файлі `whale.mp3` у файловому провіднику, музичний програвач автоматично (і помилково) спробує відкрити файл `whale.mp3`.
+Naming a PNG image of a whale as `whale.mp3` doesn't somehow
+magically turn it into a recording of whale song, though it *might*
+cause the operating system to associate the file with a music player
+program. In this case, if someone double-clicked `whale.mp3` in a file
+explorer program, the music player will automatically (and erroneously)
+attempt to open the `whale.mp3` file.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Переміщення файлів і каталогів
+## Moving files and directories
 
-Повернемося до каталогу `shell-lesson-data/exercise-data/writing`:
+Returning to the `shell-lesson-data/exercise-data/writing` directory,
 
 ```bash
 $ cd ~/Desktop/shell-lesson-data/exercise-data/writing
 ```
 
-У нашому каталозі `thesis` є файл `draft.txt`, з не надто інформативною назвою, тому змінімо назву файлу за допомогою команди `mv`, що є скороченням від 'move' (з англ. - 'переміщати'):
+In our `thesis` directory we have a file `draft.txt`
+which isn't a particularly informative name,
+so let's change the file's name using `mv`,
+which is short for 'move':
 
 ```bash
 $ mv thesis/draft.txt thesis/quotes.txt
 ```
 
-Перший аргумент говорить `mv`, що ми "переміщаємо", а другий - куди саме.
-У цьому випадку ми переміщуємо `thesis/draft.txt` до `thesis/quotes.txt`, що має той самий ефект, що і перейменування файлу.
-Після цього `ls` підтверджує, що `thesis` тепер містить один файл з назвою `quotes.txt`:
+The first argument tells `mv` what we're 'moving',
+while the second is where it's to go.
+In this case,
+we're moving `thesis/draft.txt` to `thesis/quotes.txt`,
+which has the same effect as renaming the file.
+Sure enough,
+`ls` shows us that `thesis` now contains one file called `quotes.txt`:
 
 ```bash
 $ ls thesis
@@ -275,22 +361,29 @@ $ ls thesis
 quotes.txt
 ```
 
-Слід бути обережним, вказуючи ім'я цільового файлу, оскільки `mv` приховано перезапише будь-який наявний файл з такою самою назвою, а це може призвести до втрати даних. За замовчуванням `mv` не запитуватиме підтвердження перед перезаписом файлів.
-Однак додатковий параметр `mv -i` (або `mv --interactive`) змусить `mv` запросити таке підтвердження.
+One must be careful when specifying the target file name, since `mv` will
+silently overwrite any existing file with the same name, which could
+lead to data loss. By default, `mv` will not ask for confirmation before overwriting files.
+However, an additional option, `mv -i` (or `mv --interactive`), will cause `mv` to request
+such confirmation.
 
-Зверніть увагу, що `mv` також працює з каталогами.
+Note that `mv` also works on directories.
 
-Перемістимо `quotes.txt` до поточного робочого каталогу.
-Знову скористаємося `mv`, але цього разу ми використаємо лише назву каталогу як другий аргумент щоб повідомити `mv`, що ми хочемо зберегти назву файлу, але перемістити файл у нове місце.
-(Ось чому команда називається 'перемістити'.)
-У цьому випадку ми використовуємо спеціальну назву `.` поточного каталогу, про яку ми згадували раніше.
+Let's move `quotes.txt` into the current working directory.
+We use `mv` once again,
+but this time we'll use just the name of a directory as the second argument
+to tell `mv` that we want to keep the filename
+but put the file somewhere new.
+(This is why the command is called 'move'.)
+In this case,
+the directory name we use is the special directory name `.` that we mentioned earlier.
 
 ```bash
 $ mv thesis/quotes.txt .
 ```
 
-Наслідком цього буде переміщення файлу з початкового каталогу до поточного робочого каталогу.
-Тепер `ls` показує нам, що каталог thesis\` порожній:
+The effect is to move the file from the directory it was in to the current working directory.
+`ls` now shows us that `thesis` is empty:
 
 ```bash
 $ ls thesis
@@ -300,7 +393,8 @@ $ ls thesis
 $
 ```
 
-Крім того, ми можемо переконатися, що файл `quotes.txt` більше не присутній у каталозі `thesis`, спробувавши показати інформацію про нього:
+Alternatively, we can confirm the file `quotes.txt` is no longer present in the `thesis` directory
+by explicitly trying to list it:
 
 ```bash
 $ ls thesis/quotes.txt
@@ -310,9 +404,9 @@ $ ls thesis/quotes.txt
 ls: cannot access 'thesis/quotes.txt': No such file or directory
 ```
 
-Команда `ls`, якщо вказати ім’я файлу або каталогу як аргумент, виводить лише список запитуваних файлів або каталогів.
-Якщо вказаного файлу не існує, термінал поверне помилку — як ми вже бачили раніше.
-Таким чином ми можемо перевірити, що файл `quotes.txt` тепер знаходиться у поточному каталозі:
+`ls` with a filename or directory as an argument only lists the requested file or directory.
+If the file given as the argument doesn't exist, the shell returns an error as we saw above.
+We can use this to see that `quotes.txt` is now present in our current directory:
 
 ```bash
 $ ls quotes.txt
@@ -324,10 +418,11 @@ quotes.txt
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Переміщення файлів до нового каталогу
+## Moving Files to a new folder
 
-Після виконання наступних команд Джеймі зрозуміла, що помістила файли `sucrose.dat` та `maltose.dat` не до того каталогу.
-Файли потрібно було помістити у каталог `raw`.
+After running the following commands,
+Jamie realizes that she put the files `sucrose.dat` and `maltose.dat` into the wrong folder.
+The files should have been placed in the `raw` folder.
 
 ```bash
 $ ls -F
@@ -337,7 +432,8 @@ fructose.dat glucose.dat maltose.dat sucrose.dat
 $ cd analyzed
 ```
 
-Заповніть пропуски, щоб перемістити ці файли до каталогу `raw/` (тобто туди, куди вона забула їх помістити)
+Fill in the blanks to move these files to the `raw/` folder
+(i.e. the one she forgot to put them in)
 
 ```bash
 $ mv sucrose.dat maltose.dat ____/____
@@ -345,22 +441,26 @@ $ mv sucrose.dat maltose.dat ____/____
 
 :::::::::::::::  solution
 
-## Відповідь
+## Solution
 
 ```bash
 $ mv sucrose.dat maltose.dat ../raw
 ```
 
-Пам'ятайте, що `..` вказує на батьківський каталог (тобто на каталог рівнем вище поточного), а `.` вказує на поточний каталог.
+Recall that `..` refers to the parent directory (i.e. one above the current directory)
+and that `.` refers to the current directory.
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Копіювання файлів і каталогів
+## Copying files and directories
 
-Команда `cp` працює майже так само, як і `mv`, але замість переміщення копіює файл.
-Ми можемо перевірити результат за допомогою `ls` з двома шляхами у ролі параметрів, адже `ls` та більшість команд Unix здатні приймати декілька аргументів одночасно:
+The `cp` command works very much like `mv`,
+except it copies a file instead of moving it.
+We can check that it did the right thing using `ls`
+with two paths as arguments --- like most Unix commands,
+`ls` can be given multiple paths at once:
 
 ```bash
 $ cp quotes.txt thesis/quotations.txt
@@ -371,13 +471,15 @@ $ ls quotes.txt thesis/quotations.txt
 quotes.txt   thesis/quotations.txt
 ```
 
-Ми також можемо скопіювати каталог і весь його вміст за допомогою [рекурсивної](https://uk.wikipedia.org/wiki/Рекурсія) опції `-r`, наприклад, для створення резервної копії каталогу:
+We can also copy a directory and all its contents by using the
+[recursive](https://en.wikipedia.org/wiki/Recursion) option `-r`,
+e.g. to back up a directory:
 
 ```bash
 $ cp -r thesis thesis_backup
 ```
 
-Ми можемо перевірити результат, переглянувши вміст каталогів `thesis` та `thesis_backup`:
+We can check the result by listing the contents of both the `thesis` and `thesis_backup` directory:
 
 ```bash
 $ ls thesis thesis_backup
@@ -391,20 +493,24 @@ thesis_backup:
 quotations.txt
 ```
 
-Важливо додати опцію `-r`. Якщо ви хочете скопіювати каталог і не вкажете цей параметр ви побачите повідомлення про те, що каталог було пропущено, оскільки `-r` не вказано.
+It is important to include the `-r` flag. If you want to copy a directory and you omit this option
+you will see a message that the directory has been omitted because `-r not specified`.
 
-```bash
+``` bash
 $ cp thesis thesis_backup
 cp: -r not specified; omitting directory 'thesis'
 ```
 
+
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Перейменування файлів
+## Renaming Files
 
-Припустімо, що ви створили у поточному каталозі простий текстовий файл, який містить список статистичних тестів, які вам знадобляться для аналізу ваших даних, і назвали його `statstics.txt`
+Suppose that you created a plain-text file in your current directory to contain a list of the
+statistical tests you will need to do to analyze your data, and named it `statstics.txt`
 
-Після створення і збереження цього файлу ви зрозуміли, що неправильно написали назву файлу! Ви хочете виправити помилку. Яку з наведених нижче команд ви можете використати для цього?
+After creating and saving this file you realize you misspelled the filename! You want to
+correct the mistake, which of the following commands could you use to do so?
 
 1. `cp statstics.txt statistics.txt`
 2. `mv statstics.txt statistics.txt`
@@ -413,12 +519,17 @@ cp: -r not specified; omitting directory 'thesis'
 
 :::::::::::::::  solution
 
-## Відповідь
+## Solution
 
-1. Ні.  Хоча це створить файл з правильною назвою, неправильно названий файл все одно існуватиме у каталозі, і його потрібно буде видалити.
-2. Так, це спрацює для перейменування файлу.
-3. Ні, крапка (.) вказує, куди перемістити файл, але не надає нового імені файлу; файли з однаковими іменами не можуть бути створені.
-4. Ні, крапка (.) вказує, куди скопіювати файл, але не надає нового імені файлу; файли з однаковими іменами не можуть бути створені.
+1. No.  While this would create a file with the correct name,
+  the incorrectly named file still exists in the directory
+  and would need to be deleted.
+2. Yes, this would work to rename the file.
+3. No, the period(.) indicates where to move the file, but does not provide a new file name;
+  identical file names
+  cannot be created.
+4. No, the period(.) indicates where to copy the file, but does not provide a new file name;
+  identical file names cannot be created.
 
 :::::::::::::::::::::::::
 
@@ -426,9 +537,9 @@ cp: -r not specified; omitting directory 'thesis'
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Переміщення та копіювання
+## Moving and Copying
 
-Що виводить остання команда `ls` у наведеній нижче послідовності?
+What is the output of the closing `ls` command in the sequence shown below?
 
 ```bash
 $ pwd
@@ -460,36 +571,37 @@ $ ls
 
 :::::::::::::::  solution
 
-## Відповідь
+## Solution
 
-Ми розпочинаємо роботу в каталозі `/Users/jamie/data` і створюємо нову папку з назвою `recombined`.
-Другий рядок переміщує (`mv`) файл `proteins.dat` до нового каталогу (`recombined`).
-Третій рядок робить копію файлу, який ми щойно перемістили.
-Складність полягає у тому, куди саме було скопійовано цей файл.
-Нагадаємо, що `..` означає "піднятися на рівень вище", тому скопійований файл тепер знаходиться у `/Users/jamie`.
-Зверніть увагу, що `..` інтерпретується відносно поточного робочого каталогу, а **не** відносно розташування файлу, який копіюється.
-Отже, єдине, що буде показано за допомогою команди `ls` (у каталозі `/Users/jamie/data`) - це каталог `recombined`.
+We start in the `/Users/jamie/data` directory, and create a new folder called `recombined`.
+The second line moves (`mv`) the file `proteins.dat` to the new folder (`recombined`).
+The third line makes a copy of the file we just moved.
+The tricky part here is where the file was copied to.
+Recall that `..` means 'go up a level', so the copied file is now in `/Users/jamie`.
+Notice that `..` is interpreted with respect to the current working
+directory, **not** with respect to the location of the file being copied.
+So, the only thing that will show using ls (in `/Users/jamie/data`) is the recombined folder.
 
-1. Ні, див. пояснення вище.  Каталог `proteins-saved.dat` розташовано у каталозі `/Users/jamie`
-2. Так
-3. Ні, див. пояснення вище.  Файл `proteins.dat` знаходиться в каталозі `/Users/jamie/data/recombined`
-4. Ні, див. пояснення вище.  Файл `proteins-saved.dat` знаходиться в каталозі `/Users/jamie`
+1. No, see explanation above.  `proteins-saved.dat` is located at `/Users/jamie`
+2. Yes
+3. No, see explanation above.  `proteins.dat` is located at `/Users/jamie/data/recombined`
+4. No, see explanation above.  `proteins-saved.dat` is located at `/Users/jamie`
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Видалення файлів і каталогів
+## Removing files and directories
 
-Повертаючись до каталогу `shell-lesson-data/exercise-data/writing`,
-давайте почистимо цей каталог, видаливши створений нами файл `quotes.txt`.
-Для цього ми скористаємося командою Unix `rm` (скорочення від англ. `remove` - видаляти):
+Returning to the `shell-lesson-data/exercise-data/writing` directory,
+let's tidy up this directory by removing the `quotes.txt` file we created.
+The Unix command we'll use for this is `rm` (short for 'remove'):
 
 ```bash
 $ rm quotes.txt
 ```
 
-Ми можемо перевірити видалення файлу за допомогою `ls`:
+We can confirm the file has gone using `ls`:
 
 ```bash
 $ ls quotes.txt
@@ -501,74 +613,89 @@ ls: cannot access 'quotes.txt': No such file or directory
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Видалення - це назавжди
+## Deleting Is Forever
 
-В терміналі Unix немає кошика для відновлення видалених файлів (хоча у більшості графічних інтерфейсів Unix він є).  Натомість коли ми видаляємо файли, вони від'єднуються від файлової системи, щоб їх місце на диску можна було використати повторно. Інструменти для пошуку та відновлення видалених файлів існують, але вони не гарантують успішного відновлення, оскільки комп'ютер може відразу перезаписати місце, яке займав файл.
+The Unix shell doesn't have a trash bin that we can recover deleted
+files from (though most graphical interfaces to Unix do).  Instead,
+when we delete files, they are unlinked from the file system so that
+their storage space on disk can be recycled. Tools for finding and
+recovering deleted files do exist, but there's no guarantee they'll
+work in any particular situation, since the computer may recycle the
+file's disk space right away.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Безпечне використання `rm`
+## Using `rm` Safely
 
-Що відбувається, коли ми виконуємо `rm -i thesis_backup/quotations.txt`?
-Навіщо нам може бути потрібен цей захист при використанні `rm`?
+What happens when we execute `rm -i thesis_backup/quotations.txt`?
+Why would we want this protection when using `rm`?
 
 :::::::::::::::  solution
 
-## Відповідь
+## Solution
 
 ```output
 rm: remove regular file 'thesis_backup/quotations.txt'? y
 ```
 
-Параметр `-i` призведе до окремого запиту перед (кожним) вилученням (використовуйте <kbd>Y</kbd> для підтвердження вилучення або <kbd>N</kbd>, щоб зберегти файл).
-У командному терміналі Unix немає кошика, тому видалені файли зникнуть назавжди.
-Використання опції `-i` дає можливість перевірити, що ми видаляємо лише обрані файли.
+The `-i` option will prompt before (every) removal (use <kbd>Y</kbd> to confirm deletion
+or <kbd>N</kbd> to keep the file).
+The Unix shell doesn't have a trash bin, so all the files removed will disappear forever.
+By using the `-i` option, we have the chance to check that we are deleting only the files
+that we want to remove.
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Якщо ми спробуємо видалити каталог `thesis` за допомогою `rm thesis`, ми отримаємо повідомлення про помилку:
+If we try to remove the `thesis` directory using `rm thesis`,
+we get an error message:
 
 ```bash
 $ rm thesis
 ```
 
 ```error
-rm: cannot remove `thesis': Is a directory
+rm: cannot remove 'thesis': Is a directory
 ```
 
-Це відбувається тому, що команда `rm` за замовчуванням працює лише з файлами, а не з каталогами.
+This happens because `rm` by default only works on files, not directories.
 
-Команда `rm` може видалити каталог і весь його вміст, якщо додати рекурсивний параметр `-r`, і це станеться без жодних запитів на підтвердження:
+`rm` can remove a directory *and all its contents* if we use the
+recursive option `-r`, and it will do so *without any confirmation prompts*:
 
 ```bash
 $ rm -r thesis
 ```
 
-Оскільки файли, видалені за допомогою терміналу не відновлюються, команду `rm -r` слід застосовувати з великою обережністю (ви можете додати інтерактивну опцію `rm -r -i`).
+Given that there is no way to retrieve files deleted using the shell,
+`rm -r` *should be used with great caution*
+(you might consider adding the interactive option `rm -r -i`).
 
-## Операції з декількома файлами та каталогами
+## Operations with multiple files and directories
 
-Час від часу нам знадобиться скопіювати або перемістити кілька файлів одночасно.
-Для цього треба надати список імен окремих файлів, або вказати шаблон імен за допомогою символів підстановки. Це символи, які можна використовувати для представлення невідомих символів або груп символів під час навігації по файловій системі Unix.
+Oftentimes one needs to copy or move several files at once.
+This can be done by providing a list of individual filenames,
+or specifying a naming pattern using wildcards. Wildcards are
+special characters that can be used to represent unknown characters
+or sets of characters when navigating the Unix file system.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Копіювання кількох файлів водночас
+## Copy with Multiple Filenames
 
-Для цієї вправи ви можете випробувати команди у каталозі `shell-lesson-data/exercise-data`.
+For this exercise, you can test the commands in the `shell-lesson-data/exercise-data` directory.
 
-Що робить команда `cp` у наведеному нижче прикладі, коли їй надано декілька імен файлів і назву каталогу?
+In the example below, what does `cp` do when given several filenames and a directory name?
 
 ```bash
 $ mkdir backup
 $ cp creatures/minotaur.dat creatures/unicorn.dat backup/
 ```
 
-Що робить команда `cp` у наведеному нижче прикладі, коли їй задано три або більше імен файлів?
+In the example below, what does `cp` do when given three or more file names?
 
 ```bash
 $ cd creatures
@@ -585,11 +712,14 @@ $ cp minotaur.dat unicorn.dat basilisk.dat
 
 :::::::::::::::  solution
 
-## Відповідь
+## Solution
 
-Якщо надано декілька імен файлів та ім'я каталогу (каталог призначення має бути останнім аргументом), команда `cp` копіює файли до вказаного каталогу.
+If given more than one file name followed by a directory name
+(i.e. the destination directory must be the last argument),
+`cp` copies the files to the named directory.
 
-Якщо надано тільки три імені файлів, то `cp` видасть помилку, подібну до наведеної нижче, бо останній аргумент повинен бути ім'ям каталогу.
+If given three file names, `cp` throws an error such as the one below,
+because it is expecting a directory name as the last argument.
 
 ```error
 cp: target 'basilisk.dat' is not a directory
@@ -599,31 +729,47 @@ cp: target 'basilisk.dat' is not a directory
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Використання символів підстановки для роботи з кількома файлами одночасно
+### Using wildcards for accessing multiple files at once
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Символи підстановки
+## Wildcards
 
-Символ `*` - це **символ підстановки** (wildcard), який відповідає нулю або більшій кількості будь-яких символів.
-Розглянемо каталог `shell-lesson-data/exercise-data/proteins`: `*.pdb` відповідає `ethane.pdb`, `propane.pdb` і кожному файлу, який закінчується на '.pdb'. З іншого боку, `p*.pdb` підходить тільки для файлів `pentane.pdb` і `propane.pdb`, оскільки початкова літера 'p' лише збігається з назвами файлів, які починаються з літери 'p'.
+`*` is a **wildcard**, which represents zero or more other characters.
+Let's consider the `shell-lesson-data/exercise-data/alkanes` directory:
+`*.pdb` represents `ethane.pdb`, `propane.pdb`, and every
+file that ends with '.pdb'. On the other hand, `p*.pdb` only represents
+`pentane.pdb` and `propane.pdb`, because the 'p' at the front can only
+represent filenames that begin with the letter 'p'.
 
-Символ `?` також є символом підстановки, але він відповідає рівно одному будь-якому символу.
-Отже, `?ethane.pdb` буде відповідати `methane.pdb`, тоді як `*ethane.pdb` відповідає як `ethane.pdb`, так і `methane.pdb`.
+`?` is also a wildcard, but it represents exactly one character.
+So `?ethane.pdb` could represent `methane.pdb` whereas
+`*ethane.pdb` represents both `ethane.pdb` and `methane.pdb`.
 
-Символи підстановки можна використовувати разом, комбінуючи їх у шаблонах. Наприклад, `???ane.pdb` відповідає трьом символам, за якими слідує `ane.pdb`, що дає `cubane.pdb ethane.pdb octane.pdb`.
+Wildcards can be used in combination with each other. For example,
+`???ane.pdb` indicates three characters followed by `ane.pdb`,
+giving `cubane.pdb  ethane.pdb  octane.pdb`.
 
-Коли термінал бачить символ підстановки, він розгортає його для створення списку відповідних імен файлів _до_ запуску команди, яку було введено.
-Як виняток, якщо вираз підстановки не відповідає жодному файлу, Bash передасть вираз як аргумент до команди, якою вона є. Наприклад, введення `ls *.pdf` у каталозі `proteins` (який містить лише файли з іменами, що закінчуються на `.pdb`) призведе до повідомлення про те, що не існує файлу з назвою `*.pdf`.
-Втім, зазвичай команди на кшталт `wc` і `ls` показують списки імен файлів, які відповідають цим виразам, але не самим символам підстановки. Саме термінал, а не інші програми, виконує розкриття символів підстановки.
+When the shell sees a wildcard, it expands the wildcard to create a
+list of matching filenames *before* running the preceding command.
+As an exception, if a wildcard expression does not match
+any file, Bash will pass the expression as an argument to the command
+as it is. For example, typing `ls *.pdf` in the `alkanes` directory
+(which contains only files with names ending with `.pdb`) results in
+an error message that there is no file called `*.pdf`.
+However, generally commands like `wc` and `ls` see the lists of
+file names matching these expressions, but not the wildcards
+themselves. It is the shell, not the other programs, that expands
+the wildcards.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Отримання переліку імен файлів, що відповідають шаблону
+## List filenames matching a pattern
 
-При виконанні в каталозі `alkanes`, яка з команд `ls` видасть наступний результат?
+When run in the `alkanes` directory, which `ls` command(s) will
+produce this output?
 
 `ethane.pdb   methane.pdb`
 
@@ -634,20 +780,25 @@ cp: target 'basilisk.dat' is not a directory
 
 :::::::::::::::  solution
 
-## Відповідь
+## Solution
 
-Відповіддю є `3.`
+The solution is `3.`
 
-`1.` показує всі файли, назви яких починаюьться з нуля або більше символів (`*`), за якими йде літера `t`, потім нуль або більше символів (`*`) і далі `ane.pdb`.
-Це дасть `ethane.pdb methane.pdb octane.pdb pentane.pdb`.
+`1.` shows all files whose names contain zero or more characters (`*`)
+followed by the letter `t`,
+then zero or more characters (`*`) followed by `ane.pdb`.
+This gives `ethane.pdb  methane.pdb  octane.pdb  pentane.pdb`.
 
-`2.` показує всі файли, назви яких починаються з нуля або більше символів (`*`), за якими йде літера `t`, потім один будь-який символ (`?`), потім `ne.` і далі нуль або більше символів (`*`).
-Це дасть нам `octane.pdb` і `pentane.pdb`, але не збігається ні з чим, що закінчується на `thane.pdb`.
+`2.` shows all files whose names start with zero or more characters (`*`) followed by
+the letter `t`,
+then a single character (`?`), then `ne.` followed by zero or more characters (`*`).
+This will give us `octane.pdb` and `pentane.pdb` but doesn't match anything
+which ends in `thane.pdb`.
 
-`3.` виправляє проблеми варіанта 2, вимагаючи два символи (`??`) між `t` і `ne`.
-Це і є рішення.
+`3.` fixes the problems of option 2 by matching two characters (`??`) between `t` and `ne`.
+This is the solution.
 
-`4.` показує лише файли, що починаються з `ethane.`.
+`4.` only shows files starting with `ethane.`.
 
 :::::::::::::::::::::::::
 
@@ -655,9 +806,10 @@ cp: target 'basilisk.dat' is not a directory
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Більше про символи підстановки
+## More on Wildcards
 
-Саманта має каталог, який містить дані калібрування, набори даних та їх описи:
+Sam has a directory containing calibration data, datasets, and descriptions of
+the datasets:
 
 ```bash
 .
@@ -681,7 +833,9 @@ cp: target 'basilisk.dat' is not a directory
     └── all_november_files
 ```
 
-Перед тим, як вирушити на чергову польову подорож, вона хоче створити резервну копію даних і надіслати деякі набори своєму колезі Бобу. Саманта використовує наступні команди щоб виконати цю роботу:
+Before heading off to another field trip, she wants to back up her data and
+send some datasets to her colleague Bob. Sam uses the following commands
+to get the job done:
 
 ```bash
 $ cp *dataset* backup/datasets
@@ -690,9 +844,9 @@ $ cp 2015-____-____ send_to_bob/all_november_files/
 $ cp ____ send_to_bob/all_datasets_created_on_a_23rd/
 ```
 
-Допоможіть Саманті, заповнивши пропуски.
+Help Sam by filling in the blanks.
 
-Отримана структура каталогів повинна виглядати наступним чином:
+The resulting directory structure should look like this
 
 ```bash
 .
@@ -740,7 +894,7 @@ $ cp ____ send_to_bob/all_datasets_created_on_a_23rd/
 
 :::::::::::::::  solution
 
-## Відповідь
+## Solution
 
 ```bash
 $ cp *calibration.txt backup/calibration
@@ -754,9 +908,10 @@ $ cp *-23-dataset* send_to_bob/all_datasets_created_on_a_23rd/
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Упорядкування каталогів і файлів
+## Organizing Directories and Files
 
-Джеймі працює над проєктом і бачить, що її файли не дуже добре впорядковані:
+Jamie is working on a project, and she sees that her files aren't very well
+organized:
 
 ```bash
 $ ls -F
@@ -766,7 +921,9 @@ $ ls -F
 analyzed/  fructose.dat    raw/   sucrose.dat
 ```
 
-Файли `fructose.dat` та `sucrose.dat` містять результати її аналізу. Яку (які) команду (команди), розглянуту (розглянуті) у цьому уроці, їй потрібно виконати, щоб наведені нижче команди вивели результати наведені нижче?
+The `fructose.dat` and `sucrose.dat` files contain output from her data
+analysis. What command(s) covered in this lesson does she need to run
+so that the commands below will produce the output shown?
 
 ```bash
 $ ls -F
@@ -781,20 +938,20 @@ $ ls analyzed
 ```
 
 ```output
-fructose.dat sucrose.dat
+fructose.dat    sucrose.dat
 ```
 
 :::::::::::::::  solution
 
-## Відповідь
+## Solution
 
 ```bash
 mv *.dat analyzed
 ```
 
-Джеймі потрібно перемістити файли `fructose.dat` та `sucrose.dat` до каталогу `analyzed`.
-Термінал розгорне шаблон \*.dat до переліку усіх файлів .dat у поточному каталозі.
-Команда `mv` перемістить ці файли .dat до каталогу 'analyzed'.
+Jamie needs to move her files `fructose.dat` and `sucrose.dat` to the `analyzed` directory.
+The shell will expand \*.dat to match all .dat files in the current directory.
+The `mv` command then moves the list of .dat files to the 'analyzed' directory.
 
 :::::::::::::::::::::::::
 
@@ -802,11 +959,16 @@ mv *.dat analyzed
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Відтворення структури каталогів
+## Reproduce a folder structure
 
-Ви починаєте новий експеримент і бажаєте продублювати структуру каталогів з попереднього експерименту, щоб потім додати нові дані.
+You're starting a new experiment and would like to duplicate the directory
+structure from your previous experiment so you can add new data.
 
-Припустимо, що попередній експеримент знаходиться у каталозі з назвою `2016-05-18`, який містить каталог `data`, який аналогічно містить каталоги `raw` і `processed` у яких містяться файли даних.  Мета полягає у копіюванні структури `2016-05-18` до каталогу `2016-05-20` таким чином, щоб ваша фінальна структура виглядала наступним чином:
+Assume that the previous experiment is in a folder called `2016-05-18`,
+which contains a `data` folder that in turn contains folders named `raw` and
+`processed` that contain data files.  The goal is to copy the folder structure
+of the `2016-05-18` folder into a folder called `2016-05-20`
+so that your final directory structure looks like this:
 
 ```output
 2016-05-20/
@@ -815,8 +977,8 @@ mv *.dat analyzed
    └── raw
 ```
 
-Який з наведених нижче наборів команд досягне цієї мети?
-Що зроблять інші команди?
+Which of the following set of commands would achieve this objective?
+What would the other commands do?
 
 ```bash
 $ mkdir 2016-05-20
@@ -852,16 +1014,22 @@ $ mkdir raw processed
 
 :::::::::::::::  solution
 
-## Відповідь
+## Solution
 
-Перші два набори команд досягають цієї мети.
-Перший набір використовує відносні шляхи для створення каталогу верхнього рівня перед створенням підкаталогів.
+The first two sets of commands achieve this objective.
+The first set uses relative paths to create the top-level directory before
+the subdirectories.
 
-Третій набір команд призведе до помилки, оскільки поведінка `mkdir` за замовчуванням не створює підкаталог в каталозі, що не існує: спочатку мають бути створені каталоги проміжних рівнів.
+The third set of commands will give an error because the default behavior of `mkdir`
+won't create a subdirectory of a non-existent directory:
+the intermediate level folders must be created first.
 
-Четвертий набір команд теж досягає цієї мети. Пам'ятайте, що опція `-p`, після якої вказується шлях до одного або декількох каталогів, змусить `mkdir` створити будь-які проміжні підкаталоги за потреби.
+The fourth set of commands achieve this objective. Remember, the `-p` option,
+followed by a path of one or more
+directories, will cause `mkdir` to create any intermediate subdirectories as required.
 
-Останній набір команд створить каталоги 'raw' і 'processed' на тому ж рівні, що і каталог 'data'.
+The final set of commands generates the 'raw' and 'processed' directories at the same level
+as the 'data' directory.
 
 :::::::::::::::::::::::::
 
@@ -869,15 +1037,15 @@ $ mkdir raw processed
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- `cp [old] [new]` копіює файл.
-- `mkdir [path]` створює новий каталог.
-- `mv [old] [new]` переміщує (перейменовує) файл або каталог.
-- `rm [path]` вилучає (видаляє) файл.
-- `*` відповідає нулю або більшій кількості символів в імені файлу, тому `*.txt` відповідає всім файлам, імена яких закінчуються на `.txt`.
-- `?` відповідає будь-якому одному символу у назві файлу, тому `?.txt` відповідає `a.txt`, але не `any.txt`.
-- Використання клавіші Control можна описати різними способами, зокрема `Ctrl-X`, `Control-X` та `^X`.
-- В терміналі немає кошика для сміття: як тільки щось видалено - його неможливо відновити.
-- Більшість файлів мають назву на кшталт "щось.розширення". Розширення не є обов'язковим і нічого не гарантує, але зазвичай використовується для позначення типу даних у файлі.
-- Залежно від типу вашої роботи вам може знадобитися потужніший ніж Nano текстовий редактор.
+- `cp [old] [new]` copies a file.
+- `mkdir [path]` creates a new directory.
+- `mv [old] [new]` moves (renames) a file or directory.
+- `rm [path]` removes (deletes) a file.
+- `*` matches zero or more characters in a filename, so `*.txt` matches all files ending in `.txt`.
+- `?` matches any single character in a filename, so `?.txt` matches `a.txt` but not `any.txt`.
+- Use of the Control key may be described in many ways, including `Ctrl-X`, `Control-X`, and `^X`.
+- The shell does not have a trash bin: once something is deleted, it's really gone.
+- Most files' names are `something.extension`. The extension isn't required, and doesn't guarantee anything, but is normally used to indicate the type of data in the file.
+- Depending on the type of work you do, you may need a more powerful text editor than Nano.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::

@@ -1,56 +1,64 @@
 ---
-title: Цикли
+title: Loops
 teaching: 40
 exercises: 10
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Написати цикл, який застосовує одну або декілька команд окремо до кожного файлу в наборі файлів.
-- Простежити, яких значень набуває змінна циклу під час виконання циклу.
-- Пояснити різницю між ім'ям змінної та її значенням.
-- Пояснити, чому в іменах файлів не можна використовувати пробіли та деякі розділові знаки.
-- Продемонструвати, як побачити, які команди були виконані останнім часом.
-- Перезапустити нещодавно виконані команди без повторного введення.
+- Write a loop that applies one or more commands separately to each file in a set of files.
+- Trace the values taken on by a loop variable during execution of the loop.
+- Explain the difference between a variable's name and its value.
+- Explain why spaces and some punctuation characters shouldn't be used in file names.
+- Demonstrate how to see what commands have recently been executed.
+- Re-run recently executed commands without retyping them.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- Як виконати одні й ті ж дії над різними файлами?
+- How can I perform the same actions on many different files?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-**Цикли** - це конструкції програмування, які дозволяють повторити команду або набір команд для кожного елемента у списку.
-Таким чином, автоматизація виконання повторюваних дій суттєво підвищує ефективність.
-Подібно до шаблонів і автодоповнення, цикли допомагають зменшити кількість вручну набраного тексту (а отже, зменшують кількість помилок).
+**Loops** are a programming construct which allow us to repeat a command or set of commands
+for each item in a list.
+As such they are key to productivity improvements through automation.
+Similar to wildcards and tab completion, using loops also reduces the
+amount of typing required (and hence reduces the number of typing mistakes).
 
-Припустимо, у нас є кілька сотень файлів даних, які містять інформацію про геноми та мають імена на кшталт `basilisk.dat`, `minotaur.dat` та `unicorn.dat`.
-Для наступного прикладу ми використаємо каталог `exercise-data/creatures`, який містить лише три зразкові файли, але ті ж самі методи можна застосувати до значно більшої кількості файлів одночасно.
+Suppose we have several hundred genome data files named `basilisk.dat`, `minotaur.dat`, and
+`unicorn.dat`.
+For this example, we'll use the `exercise-data/creatures` directory which only has three
+example files,
+but the principles can be applied to many many more files at once.
 
-Ці файли мають однакову структуру: перші три рядки містять назву виду, його класифікацію та дату оновлення, а у наступних рядках наведені послідовності ДНК.
-Погляньмо, що містять ці файли:
+The structure of these files is the same: the common name, classification, and updated date are
+presented on the first three lines, with DNA sequences on the following lines.
+Let's look at the files:
 
 ```bash
 $ head -n 5 basilisk.dat minotaur.dat unicorn.dat
 ```
 
-Для кожного виду ми хотіли б надрукувати його класифікацію, яка наведена у другому рядку відповідного файлу.
-Для кожного файлу нам потрібно виконати команду `head -n 2` і передати її результат через канал до команди `tail -n 1`.
-Скористаймося циклом, щоб уникнути цю проблему, але спочатку розгляньмо загальну форму циклу, використовуючи наведений нижче псевдокод:
+We would like to print out the classification for each species, which is given on the second
+line of each file.
+For each file, we would need to execute the command `head -n 2` and pipe this to `tail -n 1`.
+We'll use a loop to solve this problem, but first let's look at the general form of a loop,
+using the pseudo-code below:
 
 ```bash
-# Слово "for" вказує на початок команди для виконання циклу "For"
+# The word "for" indicates the start of a "For-loop" command
 for thing in list_of_things 
-# Слово "do" вказує на початок списку завдань для виконання
+#The word "do" indicates the start of job execution list
 do 
-    # Відступи всередині циклу не є обов'язковими, але сприяють розбірливості
+    # Indentation within the loop is not required, but aids legibility
     operation_using/command $thing 
-# Слово "done" вказує на кінець циклу
+# The word "done" indicates the end of a loop
 done  
 ```
 
-У такому разі, ми можемо застосувати це до нашого прикладу наступним чином:
+and we can apply this to our example like this:
 
 ```bash
 $ for filename in basilisk.dat minotaur.dat unicorn.dat
@@ -71,43 +79,72 @@ CLASSIFICATION: equus monoceros
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Слідкуйте за підказками командного рядка
+## Follow the Prompt
 
-Під час введення нашого циклу запрошення термінала змінювалося з `$` на `>` та назад. Друге запрошення (`>`) відрізняється, щоб нагадати нам, що ми ще не завершили введення повної команди. Крапка з комою `;` використовується для розділення двох команд, написаних в одному рядку.
+The shell prompt changes from `$` to `>` and back again as we were
+typing in our loop. The second prompt, `>`, is different to remind
+us that we haven't finished typing a complete command yet. A semicolon, `;`,
+can be used to separate two commands written on a single line.
+
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Коли термінал бачить ключове слово `for`, він розуміє, що потрібно повторити команду (або групу команд) для кожного елемента зі списку.
-Кожного разу, коли цикл виконується (цей процес називається **ітерацією**), елемент списку послідовно присвоюється **змінній** та виконуються команди всередині циклу, після чого цикл переходить до наступного елементу списку.
-Усередині циклу ми звертаємося до значення змінної, додаючи `$` перед її іменем.
-Символ `$` повідомляє інтерпретатор командного рядка, що далі йде назва змінної, тож слід підставити її значення, а не сприймати запис як текст чи назву команди.
+When the shell sees the keyword `for`,
+it knows to repeat a command (or group of commands) once for each item in a list.
+Each time the loop runs (called an iteration), an item in the list is assigned in sequence to
+the **variable**, and the commands inside the loop are executed, before moving on to
+the next item in the list.
+Inside the loop,
+we call for the variable's value by putting `$` in front of it.
+The `$` tells the shell interpreter to treat
+the variable as a variable name and substitute its value in its place,
+rather than treat it as text or an external command.
 
-У цьому прикладі список складається з трьох файлів: `basilisk.dat`, `minotaur.dat` та `unicorn.dat`.
-Кожного разу, коли цикл повторюється, ми спочатку використовуємо `echo` для друку значення, яке наразі зберігає змінна `$filename`. Це не обов'язково робити, але допомагає нам слідкувати за виконанням програми.
-Далі ми виконаємо команду `head` для файлу, на який зараз посилається `$filename`.
-При першому проходженні циклу `$filename` має значення `basilisk.dat`.
-Інтерпретатор виконує команду `head` над `basilisk.dat` і передає перші два рядки команді `tail`, яка виводить другий рядок цього файлу.
-Для другої ітерації `$filename` стає `minotaur.dat`. Цього разу термінал виконує команду `head` над `minotaur.dat` і передає перші два рядки команді `tail`, яка виводить другий рядок `minotaur.dat`.
-На третій ітерації `$filename` стає `unicorn.dat`, тому термінал виконує команду `head` для цього файлу, і `tail` обробляє результат.
-Оскільки список містив лише три елементи, оболонка закінчує цикл `for`.
+In this example, the list is three filenames: `basilisk.dat`, `minotaur.dat`, and `unicorn.dat`.
+Each time the loop iterates, we first use `echo` to print the value that the variable
+`$filename` currently holds. This is not necessary for the result, but beneficial for us here to
+have an easier time to follow along.
+Next, we will run the `head` command on the file currently referred to by `$filename`.
+The first time through the loop, `$filename` is `basilisk.dat`.
+The interpreter runs the command `head` on `basilisk.dat`
+and pipes the first two lines to the `tail` command,
+which then prints the second line of `basilisk.dat`.
+For the second iteration, `$filename` becomes
+`minotaur.dat`. This time, the shell runs `head` on `minotaur.dat`
+and pipes the first two lines to the `tail` command,
+which then prints the second line of `minotaur.dat`.
+For the third iteration, `$filename` becomes
+`unicorn.dat`, so the shell runs the `head` command on that file,
+and `tail` on the output of that.
+Since the list was only three items, the shell exits the `for` loop.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Однакові символи, різні значення
+## Same Symbols, Different Meanings
 
-Тут ми бачимо, що символ `>` використовується як запрошення командного рядка, але `>` також застосовується для перенаправлення виводу.
-Аналогічно, символ `$` діє як запрошення оболонки, але, як ми бачили раніше, його функція теж може полягати в отриманні значення змінної.
+Here we see `>` being used as a shell prompt, whereas `>` is also
+used to redirect output.
+Similarly, `$` is used as a shell prompt, but, as we saw earlier,
+it is also used to ask the shell to get the value of a variable.
 
-Якщо _термінал_ друкує `>` або `$`, то він очікує від вас введення команди й цей символ є підказкою.
+If the *shell* prints `>` or `$` then it expects you to type something,
+and the symbol is a prompt.
 
-Якщо _ви_ вводите ` >` або `$` самостійно, це означає, що ви даєте команду оболонці перенаправити вивід або отримати значення змінної.
+If *you* type `>` or `$` yourself, it is an instruction from you that
+the shell should redirect output or get the value of a variable.
+
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-При використанні змінних також можна брати їхні імена у фігурні дужки, щоб чітко відокремити імена змінних: `$filename` еквівалентно `${filename}`, але відрізняється від `${file}name`. Ви можете побачити таку форму запису в інших програмах.
+When using variables it is also
+possible to put the names into curly braces to clearly delimit the variable
+name: `$filename` is equivalent to `${filename}`, but is different from
+`${file}name`. You may find this notation in other people's programs.
 
-Ми назвали змінну у цьому циклі `filename` (ім'я файлу), щоб її призначення було зрозуміліше для читачів.
-Самій оболонці байдуже, як називається змінна; якби ми написали цей цикл так:
+We have called the variable in this loop `filename`
+in order to make its purpose clearer to human readers.
+The shell itself doesn't care what the variable is called;
+if we wrote this loop as:
 
 ```bash
 $ for x in basilisk.dat minotaur.dat unicorn.dat
@@ -116,7 +153,7 @@ $ for x in basilisk.dat minotaur.dat unicorn.dat
 > done
 ```
 
-або:
+or:
 
 ```bash
 $ for temperature in basilisk.dat minotaur.dat unicorn.dat
@@ -125,22 +162,28 @@ $ for temperature in basilisk.dat minotaur.dat unicorn.dat
 > done
 ```
 
-це спрацювало б точно так само.
-_Але не робіть цього._ Програми корисні лише тоді, коли люди можуть їх розуміти, тому беззмістовні (наприклад, `x`) або оманливі (наприклад, `temperature`) назви підвищують ймовірність того, що програма поводитиметься не так, як очікують читачі.
+it would work exactly the same way.
+*Don't do this.*
+Programs are only useful if people can understand them,
+so meaningless names (like `x`) or misleading names (like `temperature`)
+increase the odds that the program won't do what its readers think it does.
 
-У наведених вище прикладах змінним (`thing`, `filename`, `x` та `temperature`) можна було б призначити будь-які інші імена, аби вони були зрозумілими як автору коду, так і його читачу.
+In the above examples, the variables (`thing`, `filename`, `x` and `temperature`)
+could have been given any other name, as long as it is meaningful to both the person
+writing the code and the person reading it.
 
-Також майте на увазі, що цикли можна використовувати не лише для імен файлів, а й для списків чисел або підмножини даних.
+Note also that loops can be used for other things than filenames, like a list of numbers
+or a subset of data.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Напишіть свій власний цикл
+## Write your own loop
 
-Як би ви написали цикл, який друкує всі 10 чисел від 0 до 9?
+How would you write a loop that echoes all 10 numbers from 0 to 9?
 
 :::::::::::::::  solution
 
-## Відповідь
+## Solution
 
 ```bash
 $ for loop_variable in 0 1 2 3 4 5 6 7 8 9
@@ -168,16 +211,16 @@ $ for loop_variable in 0 1 2 3 4 5 6 7 8 9
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Змінні в циклах
+## Variables in Loops
 
-Ця вправа стосується каталогу `shell-lesson-data/exercise-data/alkanes`.
-Команда `ls *.pdb` дає такий результат:
+This exercise refers to the `shell-lesson-data/exercise-data/alkanes` directory.
+`ls *.pdb` gives the following output:
 
 ```output
 cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
 ```
 
-Що виведе наступний код?
+What is the output of the following code?
 
 ```bash
 $ for datafile in *.pdb
@@ -186,7 +229,7 @@ $ for datafile in *.pdb
 > done
 ```
 
-А цей?
+Now, what is the output of the following code?
 
 ```bash
 $ for datafile in *.pdb
@@ -195,15 +238,18 @@ $ for datafile in *.pdb
 > done
 ```
 
-Чому ці два цикли дають різні результати?
+Why do these two loops give different outputs?
 
 :::::::::::::::  solution
 
-## Відповідь
+## Solution
 
-Перший блок коду дає однаковий результат на кожній ітерації циклу.
-Bash розгортає шаблон `*.pdb` в тілі циклу (а також перед початком циклу), щоб знайти всі файли, що закінчуються на `.pdb`, а потім виводить їх список за допомогою `ls`.
-Розширений цикл матиме такий вигляд:
+The first code block gives the same output on each iteration through
+the loop.
+Bash expands the wildcard `*.pdb` within the loop body (as well as
+before the loop starts) to match all files ending in `.pdb`
+and then lists them using `ls`.
+The expanded loop would look like this:
 
 ```bash
 $ for datafile in cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
@@ -221,8 +267,9 @@ cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
 cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
 ```
 
-Другий блок коду працює з іншим файлом під час кожної ітерації циклу.
-Значення змінної `datafile` отримується за допомогою `$datafile`, а потім виводиться командою `ls`.
+The second code block lists a different file on each loop iteration.
+The value of the `datafile` variable is evaluated using `$datafile`,
+and then listed using `ls`.
 
 ```output
 cubane.pdb
@@ -239,9 +286,10 @@ propane.pdb
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Обмеження наборів файлів
+## Limiting Sets of Files
 
-Що буде виведено у результаті виконання наступного циклу в каталозі `shell-lesson-data/exercise-data/alkanes`?
+What would be the output of running the following loop in the
+`shell-lesson-data/exercise-data/alkanes` directory?
 
 ```bash
 $ for filename in c*
@@ -250,20 +298,22 @@ $ for filename in c*
 > done
 ```
 
-1. Жодної назви файлу не буде виведено.
-2. Будуть перелічені всі файли.
-3. Будуть перелічені лише `cubane.pdb`, `octane.pdb` та `pentane.pdb`.
-4. Буде виведено лише `cubane.pdb`.
+1. No files are listed.
+2. All files are listed.
+3. Only `cubane.pdb`, `octane.pdb` and `pentane.pdb` are listed.
+4. Only `cubane.pdb` is listed.
 
 :::::::::::::::  solution
 
-## Відповідь
+## Solution
 
-4 - правильна відповідь. Символ `*` відповідає нулю або більшій кількості символів, тому будь-яке ім'я файлу, що починається з літери 'c', за якою йдуть нуль або більша кількість символів, буде відповідати шаблону `c*`.
+4 is the correct answer. `*` matches zero or more characters, so any file name starting with
+the letter c, followed by zero or more other characters will be matched.
+
 
 :::::::::::::::::::::::::
 
-Як зміниться результат, якщо замість цього скористатися ось цією командою?
+How would the output differ from using this command instead?
 
 ```bash
 $ for filename in *c*
@@ -272,17 +322,20 @@ $ for filename in *c*
 > done
 ```
 
-1. Будуть перелічені ті ж самі файли.
-2. Цього разу будуть перелічені всі файли.
-3. Цього разу не буде виведено жодного файлу.
-4. Будуть перелічені файли `cubane.pdb` та `octane.pdb`.
-5. Буде перелічено лише файл `octane.pdb`.
+1. The same files would be listed.
+2. All the files are listed this time.
+3. No files are listed this time.
+4. The files `cubane.pdb` and `octane.pdb` will be listed.
+5. Only the file `octane.pdb` will be listed.
 
 :::::::::::::::  solution
 
-## Відповідь
+## Solution
 
-4 - правильна відповідь. Символ `* ` відповідає нулю або більшій кількості символів, тому всі імена файлів з нулем або більшою кількістю символів перед літерою 'c' або після літери 'c' будуть відповідати шаблону `*c*`.
+4 is the correct answer. `*` matches zero or more characters, so a file name with zero or more
+characters before a letter c and zero or more characters after the letter c will be matched.
+
+
 
 :::::::::::::::::::::::::
 
@@ -290,9 +343,9 @@ $ for filename in *c*
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Як зберігати результати в файл під час виконання циклу - частина перша
+## Saving to a File in a Loop - Part One
 
-В каталозі `shell-lesson-data/exercise-data/alkanes `, яким буде результат роботи цього циклу?
+In the `shell-lesson-data/exercise-data/alkanes` directory, what is the effect of this loop?
 
 ```bash
 for alkanes in *.pdb
@@ -302,17 +355,24 @@ do
 done
 ```
 
-1. Буде виведено `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb`, `pentane.pdb` та `propane.pdb`, а текст з файлу `propane.pdb` буде збережено у файлі з назвою `alkanes.pdb`.
-2. Буде виведено `cubane.pdb`, `ethane.pdb` та `methane.pdb`, а текст з усіх трьох файлів буде об'єднано і збережено у файлі з назвою `alkanes.pdb`.
-3. Буде виведено `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb` та `pentane.pdb`, а текст з файлу `propane.pdb` буде збережено у файлі з назвою `alkanes.pdb`.
-4. Жоден із наведених варіантів.
+1. Prints `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb`, `pentane.pdb` and
+  `propane.pdb`, and the text from `propane.pdb` will be saved to a file called `alkanes.pdb`.
+2. Prints `cubane.pdb`, `ethane.pdb`, and `methane.pdb`, and the text from all three files
+  would be concatenated and saved to a file called `alkanes.pdb`.
+3. Prints `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb`, and `pentane.pdb`,
+  and the text from `propane.pdb` will be saved to a file called `alkanes.pdb`.
+4. None of the above.
 
 :::::::::::::::  solution
 
-## Відповідь
+## Solution
 
-1. Текст з кожного файлу по черзі буде записуватися у файл `alkanes.pdb`.
-   Однак, файл буде перезаписуватися на кожній ітерації циклу, тому остаточний вміст `alkanes.pdb' буде збігатися з текстом з файлу `propane.pdb\`.
+1. The text from each file in turn gets written to the `alkanes.pdb` file.
+  However, the file gets overwritten on each loop iteration, so the final content of
+  `alkanes.pdb`
+  is the text from the `propane.pdb` file.
+  
+  
 
 :::::::::::::::::::::::::
 
@@ -320,9 +380,10 @@ done
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Як зберігати результати в файл під час виконання циклу - частина друга
+## Saving to a File in a Loop - Part Two
 
-У тому ж каталозі `shell-lesson-data/exercise-data/alkanes `, що буде виведено у наступному циклі?
+Also in the `shell-lesson-data/exercise-data/alkanes` directory,
+what would be the output of the following loop?
 
 ```bash
 for datafile in *.pdb
@@ -331,24 +392,30 @@ do
 done
 ```
 
-1. Весь текст з файлів `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb` та `pentane.pdb` буде об'єднано і збережено у файлі з назвою `all.pdb`.
-2. Текст з файлу `ethane.pdb` буде збережено до файлу з назвою `all.pdb`.
-3. Весь текст з файлів `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb`, `pentane.pdb` та `propane.pdb` буде об'єднано та збережено у файл з назвою `all.pdb`.
-4. Весь текст з файлів `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb`, `pentane.pdb` та `propane.pdb` буде виведено на екран і збережено у файлі з назвою `all.pdb`.
+1. All of the text from `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb`, and
+  `pentane.pdb` would be concatenated and saved to a file called `all.pdb`.
+2. The text from `ethane.pdb` will be saved to a file called `all.pdb`.
+3. All of the text from `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb`, `pentane.pdb`
+  and `propane.pdb` would be concatenated and saved to a file called `all.pdb`.
+4. All of the text from `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb`, `pentane.pdb`
+  and `propane.pdb` would be printed to the screen and saved to a file called `all.pdb`.
 
 :::::::::::::::  solution
 
-## Відповідь
+## Solution
 
-3 - правильна відповідь. Оператор `>>` додає дані до файлу, а не перезаписує його вміст перенаправленням виводу команди.
-Оскільки вивід команди `cat` було перенаправлено, на екран нічого не буде виведено.
+3 is the correct answer. `>>` appends to a file, rather than overwriting it with the redirected
+output from a command.
+Given the output from the `cat` command has been redirected, nothing is printed to the screen.
+
+
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Для наступного прикладу перейдемо у каталог `shell-lesson-data/exercise-data/creatures`.
-Тут цикл трохи складніший:
+Let's continue with our example in the `shell-lesson-data/exercise-data/creatures` directory.
+Here's a slightly more complicated loop:
 
 ```bash
 $ for filename in *.dat
@@ -358,23 +425,26 @@ $ for filename in *.dat
 > done
 ```
 
-Термінал розпочинає роботу з розгортання `*.dat`, щоб створити список файлів для подальшої обробки.
-**Тіло циклу** виконує дві команди для кожного з них.
-Перша команда, `echo`, виводить свої аргументи на стандартний вивід (тобто, на standard output).
-Наприклад:
+The shell starts by expanding `*.dat` to create the list of files it will process.
+The **loop body**
+then executes two commands for each of those files.
+The first command, `echo`, prints its command-line arguments to standard output.
+For example:
 
 ```bash
 $ echo hello there
 ```
 
-друкує:
+prints:
 
 ```output
 hello there
 ```
 
-У цьому випадку, оскільки термінал підставить до `$filename` імʼя файлу, `echo $filename` виведе ім'я файлу.
-Зауважте, що ми не можемо написати це як:
+In this case,
+since the shell expands `$filename` to be the name of a file,
+`echo $filename` prints the name of the file.
+Note that we can't write this as:
 
 ```bash
 $ for filename in *.dat
@@ -384,22 +454,30 @@ $ for filename in *.dat
 > done
 ```
 
-тому що під час першої ітерації циклу, коли `$filename` буде замінено на `basilisk.dat`, термінал спробує запустити `basilisk.dat` як програму.
-Нарешті, комбінація `head` і `tail` виділить рядки 81-100 з будь-якого файлу, що наразі обробляється (за умови, що у відповідному файлі є принаймні 100 рядків).
+because then the first time through the loop,
+when `$filename` expanded to `basilisk.dat`, the shell would try to run `basilisk.dat` as
+a program.
+Finally,
+the `head` and `tail` combination selects lines 81-100
+from whatever file is being processed
+(assuming the file has at least 100 lines).
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Пробіли в іменах
+## Spaces in Names
 
-Пробіли використовуються для відокремлення елементів списку, які ми будемо перебирати у циклі. Якщо один з цих елементів містить пробіл, нам потрібно взяти його в лапки та зробити те ж саме зі змінною циклу.
-Припустимо, що наші файли даних мають імена:
+Spaces are used to separate the elements of the list
+that we are going to loop over. If one of those elements
+contains a space character, we need to surround it with
+quotes, and do the same thing to our loop variable.
+Suppose our data files are named:
 
 ```source
 red dragon.dat
 purple unicorn.dat
 ```
 
-Щоб переглянути ці файли у циклі, нам потрібно додати подвійні лапки, ось так:
+To loop over these files, we would need to add double quotes like so:
 
 ```bash
 $ for filename in "red dragon.dat" "purple unicorn.dat"
@@ -408,16 +486,20 @@ $ for filename in "red dragon.dat" "purple unicorn.dat"
 > done
 ```
 
-Простіше уникати використання пробілів (або інших спеціальних символів) у назвах файлів.
+It is simpler to avoid using spaces (or other special characters) in filenames.
 
-Вищевказані файли не існують, тому під час виконання цього коду команда `head` не зможе знайти їх; однак у повідомленні про помилку буде вказано, які саме файли вона намагалась відкрити:
+The files above don't exist, so if we run the above code, the `head` command will be unable
+to find them; however, the error message returned will show the name of the files it is
+expecting:
 
 ```error
 head: cannot open ‘red dragon.dat' for reading: No such file or directory
 head: cannot open ‘purple unicorn.dat' for reading: No such file or directory
 ```
 
-Спробуйте видалити лапки навколо `$filename` у наведеному вище циклі, щоб побачити ефект лапок на назвах з пробілами. Зверніть увагу, що ми отримуємо результат команди циклу для `unicorn.dat` коли ми запускаємо цей код у каталозі `creatures`:
+Try removing the quotes around `$filename` in the loop above to see the effect of the quote
+marks on spaces. Note that we get a result from the loop command for unicorn.dat
+when we run this code in the `creatures` directory:
 
 ```output
 head: cannot open ‘red' for reading: No such file or directory
@@ -431,27 +513,31 @@ CAAGTGTTCC
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Ми хочемо змінити кожен з файлів у `shell-lesson-data/exercise-data/creatures`, але при цьому зберегти оригінальні версії файлів. Наприклад, ми хочемо скопіювати оригінальні файли до нових файлів з назвами `original-basilisk.dat` та `original-unicorn.dat`. Ми не можемо використати:
+We would like to modify each of the files in `shell-lesson-data/exercise-data/creatures`,
+but also save a version of the original files. We want to copy the original files to new
+files named `original-basilisk.dat` and `original-unicorn.dat`, for example. We can't use:
 
 ```bash
 $ cp *.dat original-*.dat
 ```
 
-тому що це буде розширено до:
+because that would expand to:
 
 ```bash
 $ cp basilisk.dat minotaur.dat unicorn.dat original-*.dat
 ```
 
-Це не створить резервну копію наших файлів, натомість ми отримаємо помилку:
+This wouldn't back up our files, instead we get an error:
 
 ```error
 cp: target `original-*.dat' is not a directory
 ```
 
-Ця проблема виникає, коли команда `cp` отримує більше ніж два вхідних аргументи. Коли це відбувається, вона очікує, що останнім вхідним параметром буде каталог, куди вона зможе скопіювати всі файли, які їй було передано. Оскільки у каталозі `creatures` немає каталогу з назвою `original-*.dat`, ми отримаємо помилку.
+This problem arises when `cp` receives more than two inputs. When this happens, it expects the
+last input to be a directory where it can copy all the files it was passed. Since there is
+no directory named `original-*.dat` in the `creatures` directory, we get an error.
 
-Замість цього ми можемо використати цикл:
+Instead, we can use a loop:
 
 ```bash
 $ for filename in *.dat
@@ -460,41 +546,53 @@ $ for filename in *.dat
 > done
 ```
 
-Цей цикл виконує команду `cp` один раз для кожного імені файлу.
-Перший раз, коли змінна `$filename` має значення `basilisk.dat`, термінал виконує:
+This loop runs the `cp` command once for each filename.
+The first time,
+when `$filename` expands to `basilisk.dat`,
+the shell executes:
 
 ```bash
 cp basilisk.dat original-basilisk.dat
 ```
 
-Вдруге, буде виконана наступна команда:
+The second time, the command is:
 
 ```bash
 cp minotaur.dat original-minotaur.dat
 ```
 
-В останній раз, команда буде такою:
+The third and last time, the command is:
 
 ```bash
 cp unicorn.dat original-unicorn.dat
 ```
 
-Оскільки команда `cp` зазвичай не виводить жодного результату, важко перевірити що цикл працює правильно. Однак ми дізналися, як виводити рядки за допомогою `echo`. Це допоможе нам перевірити, які команди виконувалися б у циклі без їх фактичного виконання.
+Since the `cp` command does not normally produce any output, it's hard to check
+that the loop is working correctly. However, we learned earlier how to print strings
+using `echo`, and we can modify the loop to use `echo` to print our commands without
+actually executing them. As such we can check what commands *would be* run in the
+unmodified loop.
 
-Наступна діаграма показує, що відбувається при виконанні зміненого циклу, і демонструє, як доречне використання `echo` може допомагати у програмуванні.
+The following diagram
+shows what happens when the modified loop is executed and demonstrates how the
+judicious use of `echo` is a good debugging technique.
 
-![](fig/shell_script_for_loop_flow_chart.svg){alt='Цикл for "for filename in .dat; do echo cp $filename original-$filename; done" послідовно присвоїть імена всіх ".dat" файлів у вашому поточному каталозі змінній "$filename" та (для кожного значення) виконає команду. Для файлів "basilisk.dat", "minotaur.dat" та "unicorn.dat" в поточному каталозі цикл тричі послідовно викличе команду echo і виведе три рядки: "cp basislisk.dat original-basilisk.dat", потім "cp minotaur.dat original-minotaur.dat" та нарешті "cp unicorn.dat original-unicorn.dat"'}
+![](fig/shell_script_for_loop_flow_chart.svg){alt='The for loop "for filename in .dat; do echo cp $filename original-$filename;done" will successively assign the names of all ".dat" files in your currentdirectory to the variable "$filename" and then execute the command. With thefiles "basilisk.dat", "minotaur.dat" and "unicorn.dat" in the current directorythe loop will successively call the echo command three times and print threelines: "cp basislisk.dat original-basilisk.dat", then "cp minotaur.datoriginal-minotaur.dat" and finally "cp unicorn.datoriginal-unicorn.dat"'}
 
-## Конвеєр Неллі: Обробка файлів
+## Nelle's Pipeline: Processing Files
 
-Тепер Неллі готова обробити свої файли даних, використовуючи `goostats.sh` --- скрипт командної оболонки, який був написаний її керівником. Він розраховує деякі статистичні параметри для зразка білка, і приймає два аргументи:
+Nelle is now ready to process her data files using `goostats.sh` ---
+a shell script written by her supervisor. This calculates some statistics from a
+protein sample file and takes two arguments:
 
-1. вхідний файл (що містить необроблені дані)
-2. вихідний файл (для збереження обчисленої статистики)
+1. an input file (containing the raw data)
+2. an output file (to store the calculated statistics)
 
-Оскільки вона все ще вчиться користуватися терміналом, вона вирішує будувати потрібну послідовність команд поступово.
-Спершу потрібно впевнитися, що було обрано правильні вхідні файли — ті, назви яких закінчуються на 'A' або 'B', але не на 'Z'.
-Переходячи до каталогу `north-pacific-gyre`, Неллі вводить:
+Since she's still learning how to use the shell,
+she decides to build up the required commands in stages.
+Her first step is to make sure that she can select the right input files --- remember,
+these are ones whose names end in 'A' or 'B', rather than 'Z'.
+Moving to the `north-pacific-gyre` directory, Nelle types:
 
 ```bash
 $ cd
@@ -507,16 +605,18 @@ $ for datafile in NENE*A.txt NENE*B.txt
 
 ```output
 NENE01729A.txt
-NENE01729B.txt
 NENE01736A.txt
+NENE01751A.txt
+
 ...
-NENE02043A.txt
+NENE02040B.txt
 NENE02043B.txt
 ```
 
-Далі треба вирішити як назвати файли, які створюватиме програма аналізу `goostats.sh`.
-Додавання префікса 'stats' до назви кожного вхідного файлу здається простим рішенням,
-тому вона модифікує свій цикл відповідним чином:
+Her next step is to decide
+what to call the files that the `goostats.sh` analysis program will create.
+Prefixing each input file's name with 'stats' seems simple,
+so she modifies her loop to do that:
 
 ```bash
 $ for datafile in NENE*A.txt NENE*B.txt
@@ -527,34 +627,44 @@ $ for datafile in NENE*A.txt NENE*B.txt
 
 ```output
 NENE01729A.txt stats-NENE01729A.txt
-NENE01729B.txt stats-NENE01729B.txt
-NENE01736A.txt stats-NENE01736A.txt
+NENE01736A.txt stats-NENE01729A.txt
+NENE01751A.txt stats-NENE01729A.txt
 ...
-NENE02043A.txt stats-NENE02043A.txt
+NENE02040B.txt stats-NENE02040B.txt
 NENE02043B.txt stats-NENE02043B.txt
 ```
 
-Насправді вона ще не запускала `goostats.sh`, але тепер переконалася, що її скрипт зможе обрати потрібні файли та створити правильні вихідні імена для результатів.
+She hasn't actually run `goostats.sh` yet,
+but now she's sure she can select the right files and generate the right output filenames.
 
-Постійне повторення одних і тих самих команд уже починає набридати,
-і Неллі боїться помилитися,
-тому замість цього вона натискає клавішу <kbd>↑</kbd>.
-У результаті оболонка повторно показує весь цикл в один рядок (використовуючи крапку з комою для розділення його частин):
+Typing in commands over and over again is becoming tedious,
+though,
+and Nelle is worried about making mistakes,
+so instead of re-entering her loop,
+she presses <kbd>↑</kbd>.
+In response,
+the shell redisplays the whole loop on one line
+(using semi-colons to separate the pieces):
 
 ```bash
-$ for datafile in NENE A.txt NENE B.txt; do echo $datafile stats-$datafile; done
+$ for datafile in NENE*A.txt NENE*B.txt; do echo $datafile stats-$datafile; done
 ```
 
-Використовуючи <kbd>←</kbd>, Неллі переходить до команди `echo` та змінює її на `bash goostats.sh`:
+Using the <kbd>←</kbd>,
+Nelle navigates to the `echo` command and changes it to `bash goostats.sh`:
 
 ```bash
 $ for datafile in NENE*A.txt NENE*B.txt; do bash goostats.sh $datafile stats-$datafile; done
 ```
 
-Коли вона натискає <kbd>Enter</kbd>, термінал виконує змінену команду.
-Однак, здається, нічого не відбувається --- немає жодного виводу.
-Через деякий час Неллі розуміє, що оскільки її скрипт більше нічого не виводить на екран, вона не має жодного уявлення як швидко він виконується і чи працює взагалі.
-Вона перериває виконання команди, натискаючи <kbd>Ctrl</kbd>\+<kbd>C</kbd>, та за допомогою клавіші<kbd>↑</kbd> повторно викликає її та редагує, щоб вона виглядала так:
+When she presses <kbd>Enter</kbd>,
+the shell runs the modified command.
+However, nothing appears to happen --- there is no output.
+After a moment, Nelle realizes that since her script doesn't print anything to the screen
+any longer, she has no idea whether it is running, much less how quickly.
+She kills the running command by typing <kbd>Ctrl</kbd>\+<kbd>C</kbd>,
+uses <kbd>↑</kbd> to repeat the command,
+and edits it to read:
 
 ```bash
 $ for datafile in NENE*A.txt NENE*B.txt; do echo $datafile;
@@ -563,13 +673,16 @@ bash goostats.sh $datafile stats-$datafile; done
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Початок і кінець рядка
+## Beginning and End
 
-Щоб швидко переміститися на початок рядка в терміналі, натисніть <kbd>Ctrl</kbd>\+<kbd>A</kbd>, а щоб перейти в його кінець — <kbd>Ctrl</kbd>\+<kbd>E</kbd>.
+We can move to the beginning of a line in the shell by typing <kbd>Ctrl</kbd>\+<kbd>A</kbd>
+and to the end using <kbd>Ctrl</kbd>\+<kbd>E</kbd>.
+
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Тепер, коли Неллі запускає свою програму, та виводить один рядок приблизно кожні п'ять секунд:
+When she runs her program now,
+it produces one line of output every five seconds or so:
 
 ```output
 NENE01729A.txt
@@ -578,15 +691,25 @@ NENE01751A.txt
 ...
 ```
 
-Помножив 1518 файлів на 5 секунд і поділивши результат на 60, Неллі підраховує що її скрипт буде виконуватися близько двох годин.
-Для завершення перевірки вона відкриває нове вікно терміналу, переходить до каталогу `north-pacific-gyre` та використовує команду `cat stats-NENE01729B.txt`. для перегляду одного зі створених файлів.
-Оскільки все працює як слід, Неллі задоволено йде зробити каву та провести час із книжкою.
+1518 times 5 seconds,
+divided by 60,
+tells her that her script will take about two hours to run.
+As a final check,
+she opens another terminal window,
+goes into `north-pacific-gyre`,
+and uses `cat stats-NENE01729B.txt`
+to examine one of the output files.
+It looks good,
+so she decides to get some coffee and catch up on her reading.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Хто знає історію, той може її повторити
+## Those Who Know History Can Choose to Repeat It
 
-Ще один спосіб відтворити попередні дії — це команда `history`, яка показує перелік останніх кількох сотень виконаних команд. Після цього можна ввести `!123` (де '123' замінено на номер відповідної команди), щоб запустити її знову. Наприклад, якщо Неллі набере наступне:
+Another way to repeat previous work is to use the `history` command to
+get a list of the last few hundred commands that have been executed, and
+then to use `!123` (where '123' is replaced by the command number) to
+repeat one of those commands. For example, if Nelle types this:
 
 ```bash
 $ history | tail -n 5
@@ -601,32 +724,44 @@ stats-$datafile; done
 460  history | tail -n 5
 ```
 
-то вона може перезапустити `goostats.sh` просто набравши `!459`.
+then she can re-run `goostats.sh` on the files simply by typing
+`!459`.
+
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Інші корисні команди для роботи з історією
+## Other History Commands
 
-Окрім `history`, існує низка скорочень, які дозволяють швидше переглядати та викликати попередні команди.
+There are a number of other shortcut commands for getting at the history.
 
-- <kbd>Ctrl</kbd>\+<kbd>R</kbd> переходить у режим 'зворотного пошуку', який дозволяє знайти останню команду завдяки частині тексту.
-  Натисніть <kbd>Ctrl</kbd>\+<kbd>R</kbd> ще один або кілька разів для перегляду більш ранніх збігів.
-  Після цього можна за допомогою стрілок вліво та вправо переміститися по знайденому рядку, відредагувати його та натиснути <kbd>Return</kbd>, щоб виконати команду.
-- `!!` повертає безпосередньо попередню команду (деякі з вас можуть знайти це більш зручним, ніж використання <kbd>↑</kbd>)
-- `!$` повертає останнє слово останньої команди.
-  Ця можливість корисна частіше, ніж здається: після `bash goostats.sh NENE01729B.txt stats-NENE01729B.txt` можна просто набрати `less !$` для перегляду файлу `stats-NENE01729B.txt`, що швидше, ніж шукати попередню команду зі <kbd>↑</kbd> та змінювати її вручну.
+- <kbd>Ctrl</kbd>\+<kbd>R</kbd> enters a history search mode 'reverse-i-search' and finds the
+  most recent command in your history that matches the text you enter next.
+  Press <kbd>Ctrl</kbd>\+<kbd>R</kbd> one or more additional times to search for earlier matches.
+  You can then use the left and right arrow keys to choose that line and edit
+  it then hit <kbd>Return</kbd> to run the command.
+- `!!` retrieves the immediately preceding command
+  (you may or may not find this more convenient than using <kbd>↑</kbd>)
+- `!$` retrieves the last word of the last command.
+  That's useful more often than you might expect: after
+  `bash goostats.sh NENE01729B.txt stats-NENE01729B.txt`, you can type
+  `less !$` to look at the file `stats-NENE01729B.txt`, which is
+  quicker than doing <kbd>↑</kbd> and editing the command-line.
+  
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Пробний запуск
+## Doing a Dry Run
 
-Цикл --- це спосіб виконати багато дій одночасно --- або зробити багато помилок одразу, якщо він робить щось не те. Один зі способів перевірити роботу циклу - замінити фактичне виконання команд на `echo`.
+A loop is a way to do many things at once --- or to make many mistakes at
+once if it does the wrong thing. One way to check what a loop *would* do
+is to `echo` the commands it would run instead of actually running them.
 
-Припустимо, ми хочемо переглянути команди, які виконає наступний цикл, без виконання цих команд:
+Suppose we want to preview the commands the following loop will execute
+without actually running those commands:
 
 ```bash
 $ for datafile in *.pdb
@@ -635,10 +770,11 @@ $ for datafile in *.pdb
 > done
 ```
 
-У чому різниця між двома наведеними нижче циклами, і який із них слід запустити?
+What is the difference between the two loops below, and which one would we
+want to run?
 
 ```bash
-# Варіант 1
+# Version 1
 $ for datafile in *.pdb
 > do
 >     echo cat $datafile >> all.pdb
@@ -646,7 +782,7 @@ $ for datafile in *.pdb
 ```
 
 ```bash
-# Варіант 2
+# Version 2
 $ for datafile in *.pdb
 > do
 >     echo "cat $datafile >> all.pdb"
@@ -655,15 +791,23 @@ $ for datafile in *.pdb
 
 :::::::::::::::  solution
 
-## Відповідь
+## Solution
 
-Нам потрібен саме другий варіант циклу.
-Він виводить на екран увесь текст у лапках, підставивши назву змінної циклу, оскільки перед нею стоїть знак долара.
-Крім того, ця команда не створює і не змінює файл `all.pdb`, оскільки оператор `>>` розглядається як частина рядка, а не як інструкція перенаправлення виводу.
+The second version is the one we want to run.
+This prints to screen everything enclosed in the quote marks, expanding the
+loop variable name because we have prefixed it with a dollar sign.
+It also *does not* modify nor create the file `all.pdb`, as the `>>`
+is treated literally as part of a string rather than as a
+redirection instruction.
 
-Перша версія додає вивід команди `echo cat $datafile` до файлу `all.pdb`. Цей файл міститиме лише список команд типу `cat cubane.pdb`, `cat ethane.pdb`, `cat methane.pdb` тощо.
+The first version appends the output from the command `echo cat $datafile`
+to the file, `all.pdb`. This file will just contain the list;
+`cat cubane.pdb`, `cat ethane.pdb`, `cat methane.pdb` etc.
 
-Спробуйте обидві версії самостійно, щоб побачити результат! Обов'язково відкрийте файл `all.pdb`, щоб переглянути його вміст.
+Try both versions for yourself to see the output! Be sure to open the
+`all.pdb` file to view its contents.
+
+
 
 :::::::::::::::::::::::::
 
@@ -671,9 +815,12 @@ $ for datafile in *.pdb
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Вкладені цикли
+## Nested Loops
 
-Припустімо, що ми хочемо створити систему каталогів для впорядкування певних експериментів, у яких досліджується швидкість реакцій із різними хімічними сполуками та температурами.  Яким буде результат виконання наступного коду:
+Suppose we want to set up a directory structure to organize
+some experiments measuring reaction rate constants with different compounds
+*and* different temperatures.  What would be the
+result of the following code:
 
 ```bash
 $ for species in cubane ethane methane
@@ -687,26 +834,32 @@ $ for species in cubane ethane methane
 
 :::::::::::::::  solution
 
-## Відповідь
+## Solution
 
-Ми маємо вкладений цикл, тобто такий, що міститься в іншому циклі, тому для кожного значення змінної `species` у зовнішньому циклі внутрішній цикл (вкладений цикл) перебирає список температур і створює новий каталог для кожної комбінації.
+We have a nested loop, i.e. contained within another loop, so for each species
+in the outer loop, the inner loop (the nested loop) iterates over the list of
+temperatures, and creates a new directory for each combination.
 
-Спробуйте запустити цей код самостійно, щоб побачити, які каталоги буде створено!
+Try running the code for yourself to see which directories are created!
+
+
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+
+
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- Цикл `for` повторює команди один раз для кожного елемента списку.
-- У кожному циклі `for` використовується змінна, що вказує на поточний об’єкт, з яким він зараз працює.
-- Використовуйте `$name` для підстановки змінної (тобто отримання її значення). Також можна використовувати `${name}`.
-- Не варто використовувати пробіли, лапки чи символи підстановки, такі як '\*' або '?', у назвах файлів, адже це може призвести до помилок під час роботи зі змінними.
-- Надавайте файлам послідовні імена, які можна легко описати за допомогою шаблонів, щоб полегшити їх вибір для циклів.
-- Щоб швидко знайти й повторити попередню команду, скористайтеся клавішею зі стрілкою вгору — це дозволяє редагувати та виконувати її без повторного введення.
-- Використовуйте <kbd>Ctrl</kbd>\+<kbd>R</kbd> для пошуку попередньо введених команд.
-- Використовуйте команду `history`, щоб побачити перелік останніх команд; також застосовуйте `![номер]` для повторення команди за її номером.
+- A `for` loop repeats commands once for every thing in a list.
+- Every `for` loop needs a variable to refer to the thing it is currently operating on.
+- Use `$name` to expand a variable (i.e., get its value). `${name}` can also be used.
+- Do not use spaces, quotes, or wildcard characters such as '\*' or '?' in filenames, as it complicates variable expansion.
+- Give files consistent names that are easy to match with wildcard patterns to make it easy to select them for looping.
+- Use the up-arrow key to scroll up through previous commands to edit and repeat them.
+- Use <kbd>Ctrl</kbd>\+<kbd>R</kbd> to search through the previously entered commands.
+- Use `history` to display recent commands, and `![number]` to repeat a command by number.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
