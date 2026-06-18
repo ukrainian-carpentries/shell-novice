@@ -1,32 +1,28 @@
 ---
-title: Pipes and Filters
+title: Канали та фільтри
 teaching: 25
 exercises: 10
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain the advantage of linking commands with pipes and filters.
-- Combine sequences of commands to get new output
-- Redirect a command's output to a file.
-- Explain what usually happens if a program or pipeline isn't given any input to process.
+- Зрозуміти перевагу поєднання команд за допомогою каналів та фільтрів.
+- Навчитись комбінувати послідовності команд для отримання нового результату
+- Навчитись перенаправляти вивід команди до файлу.
+- Зрозуміти, що зазвичай відбувається, якщо програмі або конвеєру не надається жодних вхідних даних для обробки.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- How can I combine existing commands to produce a desired output?
-- How can I show only part of the output? 
+- Як я можу комбінувати команди, що вже існують, щоб робити нові речі?
+- Як відобразити лише частину виведених даних?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Now that we know a few basic commands,
-we can finally look at the shell's most powerful feature:
-the ease with which it lets us combine existing programs in new ways.
-We'll start with the directory `shell-lesson-data/exercise-data/alkanes`
-that contains six files describing some simple organic molecules.
-The `.pdb` extension indicates that these files are in Protein Data Bank format,
-a simple text format that specifies the type and position of each atom in the molecule.
+Тепер, після ознайомлення з основними командами, ми можемо нарешті розглянути найпотужнішу функцію терміналу: здатність комбінувати наявні програми різними способами.
+Ми почнемо з каталогу `shell-lesson-data/exercise-data/proteins`, який містить шість файлів, що описують деякі прості органічні молекули.
+Розширення `.pdb` вказує на те, що ці файли мають формат Protein Data Bank - простий текстовий формат, який визначає тип і положення кожного атома в молекулі.
 
 ```bash
 $ ls
@@ -37,22 +33,20 @@ cubane.pdb    methane.pdb    pentane.pdb
 ethane.pdb    octane.pdb     propane.pdb
 ```
 
-Let's run an example command:
+Запустимо наприклад цю команду:
 
 ```bash
 $ wc cubane.pdb
 ```
 
 ```output
-20  156 1158 cubane.pdb
+20 156 1158 cubane.pdb
 ```
 
-`wc` is the 'word count' command:
-it counts the number of lines, words, and characters in files (returning the values
-in that order from left to right).
+`wc` - команда для підрахунку слів (англ. 'word count'):
+вона рахує кількість рядків, слів і символів у файлах (повертаючи значення в такому порядку зліва направо).
 
-If we run the command `wc *.pdb`, the `*` in `*.pdb` matches zero or more characters,
-so the shell turns `*.pdb` into a list of all `.pdb` files in the current directory:
+Якщо ми виконаємо команду `wc *.pdb`, то символ `*` у `*.pdb` відповідає будь-якій кількості символів (включаючи пустий рядок), тож термінал перетворить `*.pdb` на перелік усіх файлів з розширенням `.pdb` у поточному каталозі:
 
 ```bash
 $ wc *.pdb
@@ -68,13 +62,12 @@ $ wc *.pdb
  107  819  6081  total
 ```
 
-Note that `wc *.pdb` also shows the total number of all lines in the last line of the output.
+Зверніть увагу, що `wc *.pdb` в останньому рядку свого виводу також показує загальну кількість усіх рядків у перелічених файлах.
 
-If we run `wc -l` instead of just `wc`,
-the output shows only the number of lines per file:
+Якщо ми виконаємо `wc -l` замість просто `wc`, то виводитиметься лише кількість рядків у файлах:
 
 ```bash
-$ wc -l *.pdb
+$ wc -l .pdb
 ```
 
 ```output
@@ -87,52 +80,42 @@ $ wc -l *.pdb
  107  total
 ```
 
-The `-m` and `-w` options can also be used with the `wc` command to show
-only the number of characters or the number of words, respectively.
+Параметри `-m` та `-w` з командою `wc` дозволяють показувати тільки кількість символів або тільки кількість слів у файлах.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Why Isn't It Doing Anything?
+## Чому нічого не відбувається?
 
-What happens if a command is supposed to process a file, but we
-don't give it a filename? For example, what if we type:
+Що станеться, коли команді, яка має обробляти файл, не надати його назву? Наприклад, що буде, якщо ми наберемо:
 
 ```bash
 $ wc -l
 ```
 
-but don't type `*.pdb` (or anything else) after the command?
-Since it doesn't have any filenames, `wc` assumes it is supposed to
-process input given at the command prompt, so it just sits there and waits
-for us to give it some data interactively. From the outside, though, all we
-see is it sitting there, and the command doesn't appear to do anything.
+але не будемо вводити `*.pdb` (або щось інше) після цієї команди?
+Оскільки команда не отримала жодних назв файлів, `wc` вважає, що треба обробляти введені дані з командного рядка, тому вона просто очікує, поки ми надамо їй якісь дані інтерактивно. Ззовні, однак, це виглядає так, ніби команда нічого не робить.
 
-If you make this kind of mistake, you can escape out of this state by
-holding down the control key (<kbd>Ctrl</kbd>) and pressing the letter
-<kbd>C</kbd> once: <kbd>Ctrl</kbd>\+<kbd>C</kbd>. Then release both keys.
-
+Якщо ви припустилися такої помилки, ви можете вийти з цього стану, утримуючи клавішу control (<kbd>Ctrl</kbd>), та один раз натиснувши клавішу <kbd>C</kbd>: <kbd>Ctrl</kbd>\+<kbd>C</kbd>. Потім відпустіть обидві клавіші.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Capturing output from commands
+## Перехоплення виводу з команд
 
-Which of these files contains the fewest lines?
-It's an easy question to answer when there are only six files,
-but what if there were 6000?
-Our first step toward a solution is to run the command:
+Який з цих файлів містить найменшу кількість рядків?
+Це легко визначити, коли файлів лише шість, але що робити, якщо їх 6000?
+Наш перший крок до пошуку рішення - це запуск наступної команди:
 
 ```bash
 $ wc -l *.pdb > lengths.txt
 ```
 
-The greater than symbol, `>`, tells the shell to **redirect** the command's output to a
-file instead of printing it to the screen. This command prints no screen output, because
-everything that `wc` would have printed has gone into the file `lengths.txt` instead.
-If the file doesn't exist prior to issuing the command, the shell will create the file.
-If the file exists already, it will be silently overwritten, which may lead to data loss.
-Thus, **redirect** commands require caution.
+Символ 'більше ніж', тобто `>`, вказує терміналу **перенаправити** вивід команди
+до файлу замість виведення його на екран. Ця команда не виводить дані на екран, оскільки увесь вивід `wc` записується до файлу `lengths.txt`.
+Якщо файлу не існувало до виконання команди, його буде створено.
+Якщо файл вже існує, він буде непомітно перезаписаний, що може призвести до втрати даних.
+Таким чином, **перенаправлення** команд вимагає обережності.
 
-`ls lengths.txt` confirms that the file exists:
+Команда `ls lengths.txt` підтверджує, що файл існує:
 
 ```bash
 $ ls lengths.txt
@@ -142,11 +125,9 @@ $ ls lengths.txt
 lengths.txt
 ```
 
-We can now send the content of `lengths.txt` to the screen using `cat lengths.txt`.
-The `cat` command gets its name from 'concatenate' i.e. join together,
-and it prints the contents of files one after another.
-There's only one file in this case,
-so `cat` just shows us what it contains:
+Тепер ми можемо вивести вміст файлу `lengths.txt` на екран за допомогою команди `cat lengths.txt`.
+Назва команди `cat` походить від слова 'concatenate', тобто об'єднувати, і вона виводить вміст файлів один за одним.
+У цьому випадку є лише один файл, тому `cat` просто виводить нам його вміст:
 
 ```bash
 $ cat lengths.txt
@@ -164,28 +145,25 @@ $ cat lengths.txt
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Output Page by Page
+## Виведення сторінки за сторінкою
 
-We'll continue to use `cat` in this lesson, for convenience and consistency,
-but it has the disadvantage that it always dumps the whole file onto your screen.
-More useful in practice is the command `less` (e.g. `less lengths.txt`).
-This displays a screenful of the file, and then stops.
-You can go forward one screenful by pressing the spacebar,
-or back one by pressing `b`.  Press `q` to quit.
-
+У цьому уроці, для зручності та послідовності ми й надалі використовуватимемо команду `cat`, але її недолік полягає в тому, що вона завжди показує весь файл одразу.
+Більш корисною на практиці є команда `less` (наприклад, `less lengths.txt`).
+Вона виводить стільки вмісту файлу, скільки вміщується в одному екрані, а потім робить паузу.
+Ви можете перейти на один екран вперед, натиснувши пробіл, або на один екран назад, натиснувши клавішу `b`.  Щоб вийти з перегляду вмісту файлу, натисніть `q`.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Filtering output
+## Фільтрування виводу
 
-Next we'll use the `sort` command to sort the contents of the `lengths.txt` file.
-But first we'll do an exercise to learn a little about the sort command:
+Далі ми скористаємося командою `sort` для сортування вмісту файлу `lengths.txt`.
+Але спершу виконаємо вправу, щоб трохи ознайомитися з командою `sort`:
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## What Does `sort -n` Do?
+## Що робить `sort -n`?
 
-The file `shell-lesson-data/exercise-data/numbers.txt` contains the following lines:
+Файл `shell-lesson-data/exercise-data/numbers.txt` містить наступні рядки:
 
 ```source
 10
@@ -195,7 +173,7 @@ The file `shell-lesson-data/exercise-data/numbers.txt` contains the following li
 6
 ```
 
-If we run `sort` on this file, the output is:
+Якщо ми виконаємо команду `sort` для цього файлу, то отримаємо наступне:
 
 ```output
 10
@@ -205,7 +183,7 @@ If we run `sort` on this file, the output is:
 6
 ```
 
-If we run `sort -n` on the same file, we get this instead:
+Якщо ми виконаємо команду `sort -n` для того ж файлу, то замість цього ми отримаємо наступне:
 
 ```output
 2
@@ -215,24 +193,20 @@ If we run `sort -n` on the same file, we get this instead:
 22
 ```
 
-Explain why `-n` has this effect.
+Поясніть, чому `-n` має такий ефект.
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
-The `-n` option specifies a numerical rather than an alphanumerical sort.
-
-
+Опція `-n` задає числове, а не алфавітно-цифрове сортування.
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-We will also use the `-n` option to specify that the sort is
-numerical instead of alphanumerical.
-This does *not* change the file;
-instead, it sends the sorted result to the screen:
+Ми також використовуватимемо опцію `-n`, щоб задати числове сортування замість алфавітно-цифрового.
+Це _не змінить_ файл; натомість відсортований результат буде виведено на екран:
 
 ```bash
 $ sort -n lengths.txt
@@ -248,11 +222,8 @@ $ sort -n lengths.txt
 107  total
 ```
 
-We can put the sorted list of lines in another temporary file called `sorted-lengths.txt`
-by putting `> sorted-lengths.txt` after the command,
-just as we used `> lengths.txt` to put the output of `wc` into `lengths.txt`.
-Once we've done that,
-we can run another command called `head` to get the first few lines in `sorted-lengths.txt`:
+Ми можемо записати відсортований список рядків в інший тимчасовий файл з назвою `sorted-lengths.txt`, додавши `> sorted-lengths.txt` після команди, так само як ми використовували `> lengths.txt`, щоб записати вивід `wc` у `lengths.txt`.
+Потім можна скористатися командою `head`, щоб отримати перші кілька рядків у `sorted-lengths.txt`:
 
 ```bash
 $ sort -n lengths.txt > sorted-lengths.txt
@@ -260,43 +231,33 @@ $ head -n 1 sorted-lengths.txt
 ```
 
 ```output
-  9  methane.pdb
+  9 methane.pdb
 ```
 
-Using `-n 1` with `head` tells it that
-we only want the first line of the file;
-`-n 20` would get the first 20,
-and so on.
-Since `sorted-lengths.txt` contains the lengths of our files ordered from least to greatest,
-the output of `head` must be the file with the fewest lines.
+Використання `-n 1` з `head` вказує команді, що нам потрібен лише перший рядок файлу; `-n 20` поверне перші 20 тощо.
+Оскільки файл `sorted-lengths.txt` містить довжини наших файлів, впорядковані від найменшої до найбільшої, виведенням `head` має бути файл з найменшою кількістю рядків.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Redirecting to the same file
+## Перенаправлення до того ж самого файлу
 
-It's a very bad idea to try redirecting
-the output of a command that operates on a file
-to the same file. For example:
+Намагатися перенаправити вивід команди, яка працює з файлом, у той самий файл — дуже погана ідея. Наприклад:
 
 ```bash
 $ sort -n lengths.txt > lengths.txt
 ```
 
-Doing something like this may give you
-incorrect results and/or delete
-the contents of `lengths.txt`.
-
+Виконання таких дій може надати вам некоректні результати та/або видалити вміст файлу `lengths.txt`.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## What Does `>>` Mean?
+## Що означає `>>`?
 
-We have seen the use of `>`, but there is a similar operator `>>`
-which works slightly differently.
-We'll learn about the differences between these two operators by printing some strings.
-We can use the `echo` command to print strings e.g.
+Ми вже розглядали оператор `>`, але ще існує схожий оператор `>>`, який працює трохи інакше.
+Ми дізнаємося про відмінності між цими двома операторами, надрукувавши кілька рядків.
+Для виведення рядків ми можемо скористатися командою `echo`, наприклад:
 
 ```bash
 $ echo The echo command prints text
@@ -306,33 +267,27 @@ $ echo The echo command prints text
 The echo command prints text
 ```
 
-Now test the commands below to reveal the difference between the two operators:
+Тепер протестуйте наведені нижче команди, щоб виявити різницю між цими двома операторами:
 
 ```bash
 $ echo hello > testfile01.txt
 ```
 
-and:
+та:
 
 ```bash
 $ echo hello >> testfile02.txt
 ```
 
-Hint: Try executing each command twice in a row and then examining the output files.
+Підказка: Спробуйте виконати кожну команду двічі поспіль, а потім переглянути вихідні файли.
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
-In the first example with `>`, the string 'hello' is written to `testfile01.txt`,
-but the file gets overwritten each time we run the command.
+У першому прикладі з `>` рядок 'hello' записується до файлу `testfile01.txt`, але файл перезаписується кожного разу, коли ми запускаємо команду.
 
-We see from the second example that the `>>` operator also writes 'hello' to a file
-(in this case `testfile02.txt`),
-but appends the string to the file if it already exists
-(i.e. when we run it for the second time).
-
-
+З другого прикладу ми бачимо, що оператор `>>` також записує рядок 'hello' у файл (у цьому випадку `testfile02.txt`), але додає рядок до файлу, якщо останній вже існує (тобто, коли ми запускаємо його вдруге).
 
 :::::::::::::::::::::::::
 
@@ -340,73 +295,63 @@ but appends the string to the file if it already exists
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Appending Data
+## Додавання даних у кінець файлу
 
-We have already met the `head` command, which prints lines from the start of a file.
-`tail` is similar, but prints lines from the end of a file instead.
+Ми вже знайомі з командою `head`, яка виводить рядки з початку файлу.
+Команда `tail` схожа на неї, але виводить рядки з кінця файлу.
 
-Consider the file `shell-lesson-data/exercise-data/animal-counts/animals.csv`.
-After these commands, select the answer that
-corresponds to the file `animals-subset.csv`:
+Розглянемо файл `shell-lesson-data/exercise-data/animal-counts/animals.csv`.
+Після виконання цих команд оберіть відповідь, яка відповідає вмісту файлу `animals-subset.csv`:
 
 ```bash
 $ head -n 3 animals.csv > animals-subset.csv
 $ tail -n 2 animals.csv >> animals-subset.csv
 ```
 
-1. The first three lines of `animals.csv`
-2. The last two lines of `animals.csv`
-3. The first three lines and the last two lines of `animals.csv`
-4. The second and third lines of `animals.csv`
+1. Перші три рядки файлу `animals.csv`
+2. Останні два рядки файлу `animals.csv`
+3. Перші три рядки та останні два рядки файлу `animals.csv`
+4. Другий і третій рядки файлу `animals.csv`
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
-Option 3 is correct.
-For option 1 to be correct we would only run the `head` command.
-For option 2 to be correct we would only run the `tail` command.
-For option 4 to be correct we would have to pipe the output of `head` into `tail -n 2`
-by doing `head -n 3 animals.csv | tail -n 2 > animals-subset.csv`
-
-
+Варіант 3 є правильним.
+Щоб варіант 1 був правильним, потрібно виконати лише команду `head`.
+Щоб варіант 2 був правильним, нам слід виконати лише команду `tail`.
+Щоб варіант 4 був коректним, нам слід передати вивід команди `head` у команду `tail -n 2` виконавши `head -n 3 animals.csv | tail -n 2 > animals-subset.csv`
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Passing output to another command
+## Передача виводу іншій команді
 
-In our example of finding the file with the fewest lines,
-we are using two intermediate files `lengths.txt` and `sorted-lengths.txt` to store output.
-This is a confusing way to work because
-even once you understand what `wc`, `sort`, and `head` do,
-those intermediate files make it hard to follow what's going on.
-We can make it easier to understand by running `sort` and `head` together:
+У нашому прикладі для пошуку файлу з найменшою кількістю рядків, ми використовуємо два проміжні файли `lengths.txt` та `sorted-lengths.txt` для зберігання результатів.
+Такий підхід може збивати з пантелику, оскільки навіть зрозумівши як працюють `wc`, `sort` і `head`, ці проміжні файли ускладнюють відстеження всього процесу.
+Щоб легше було зрозуміти, можна одночасно виконати `sort` і `head`:
 
 ```bash
 $ sort -n lengths.txt | head -n 1
 ```
 
 ```output
-  9  methane.pdb
+  9 methane.pdb
 ```
 
-The vertical bar, `|`, between the two commands is called a **pipe**.
-It tells the shell that we want to use
-the output of the command on the left
-as the input to the command on the right.
+Вертикальна риска `|` між двома командами називається **каналом** (pipe).
+Вона вказує терміналу, що вивід команди ліворуч слід використати як вхідні дані для команди праворуч.
 
-This has removed the need for the `sorted-lengths.txt` file.
+Це усуває необхідність у файлі `sorted-lengths.txt`.
 
-## Combining multiple commands
+## Поєднання декількох команд
 
-Nothing prevents us from chaining pipes consecutively.
-We can for example send the output of `wc` directly to `sort`,
-and then send the resulting output to `head`.
-This removes the need for any intermediate files.
+Ніщо не заважає нам з'єднувати канали послідовно.
+Наприклад, ми можемо надсилати вивід `wc` безпосередньо до `sort`, а потім результат — до `head`.
+Це усуває необхідність у будь-яких проміжних файлах.
 
-We'll start by using a pipe to send the output of `wc` to `sort`:
+Ми почнемо з використання каналу для надсилання виводу `wc` до `sort`:
 
 ```bash
 $ wc -l *.pdb | sort -n
@@ -422,31 +367,28 @@ $ wc -l *.pdb | sort -n
  107 total
 ```
 
-We can then send that output through another pipe, to `head`, so that the full pipeline becomes:
+Потім ми можемо передати цей вивід через інший канал до `head`, отже повний конвеєр буде мати наступний вигляд:
 
 ```bash
 $ wc -l *.pdb | sort -n | head -n 1
 ```
 
 ```output
-   9  methane.pdb
+   9 methane.pdb
 ```
 
-This is exactly like a mathematician nesting functions like *log(3x)*
-and saying 'the log of three times *x*'.
-In our case,
-the algorithm is 'head of sort of line count of `*.pdb`'.
+Це подібне тому, як в математиці ми розглядаємо складні функції на кшталт _log(3x)_ і кажемо 'логарифм трьох x\*'.
+У нашому випадку, обчислюється 'head від sort від підрахунку кількості рядків у файлах `*.pdb`'.
 
-The redirection and pipes used in the last few commands are illustrated below:
+Перенаправлення та канали, використані в останніх кількох командах, проілюстровані нижче:
 
-![](fig/redirects-and-pipes.svg){alt='Redirects and Pipes of different commands: "wc -l \*.pdb" will direct theoutput to the shell. "wc -l \*.pdb > lengths" will direct output to the file"lengths". "wc -l \*.pdb | sort -n | head -n 1" will build a pipeline where theoutput of the "wc" command is the input to the "sort" command, the output ofthe "sort" command is the input to the "head" command and the output of the"head" command is directed to the shell'}
+![](fig/redirects-and-pipes.svg){alt='Перенаправлення та канали різних команд: "wc -l \*.pdb" перенаправить виведення до терміналу. "wc -l \*.pdb lengths" спрямує вивід до файлу "lengths". "wc -l \*.pdb | sort -n | head -n 1" побудує конвеєр, де вихід команди "wc" передається як вхідні дані до "sort", вихід команди "sort" є входом для команди "head", а результат команди "head" буде спрямовано до терміналу'}
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Piping Commands Together
+## З'єднання команд у конвеєр
 
-In our current directory, we want to find the 3 files which have the least number of
-lines. Which command listed below would work?
+У нашому поточному каталозі ми хочемо знайти 3 файли, які мають найменшу кількість рядків. Яка з наведених нижче команд підійде для цього?
 
 1. `wc -l * > sort -n > head -n 3`
 2. `wc -l * | sort -n | head -n 1-3`
@@ -455,48 +397,34 @@ lines. Which command listed below would work?
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
-Option 4 is the solution.
-The pipe character `|` is used to connect the output from one command to
-the input of another.
-`>` is used to redirect standard output to a file.
-Try it in the `shell-lesson-data/exercise-data/alkanes` directory!
-
-
+Варіант 4 є рішенням.
+Символ каналу `|` використовується для під'єднання виводу однієї команди до входу іншої.
+Символ `>` використовується для перенаправлення стандартного виводу до файлу.
+Спробуйте це у каталозі `shell-lesson-data/exercise-data/proteins`!
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Tools designed to work together
+## Інструменти, створені для співробітництва
 
-This idea of linking programs together is why Unix has been so successful.
-Instead of creating enormous programs that try to do many different things,
-Unix programmers focus on creating lots of simple tools that each do one job well,
-and that work well with each other.
-This programming model is called 'pipes and filters'.
-We've already seen pipes;
-a **filter** is a program like `wc` or `sort`
-that transforms a stream of input into a stream of output.
-Almost all of the standard Unix tools can work this way.
-Unless told to do otherwise,
-they read from standard input,
-do something with what they've read,
-and write to standard output.
+Представлена вище можливість комбінування програм є причиною успіху Unix.
+Замість створення величезних програми, які намагаються робити багато різних речей, розробники Unix зосередилися на створенні численних простих інструментів, кожен з яких добре виконує одну роботу і при цьому чудово взаємодіє з іншими.
+Ця модель програмування називається 'канали та фільтри'.
+Ми вже бачили приклад **каналів**; а **фільтри** — це програми на кшталт `wc` або `sort`, які перетворюють потік вхідних даних у потік вихідних.
+Майже всі стандартні інструменти Unix можуть працювати таким чином.
+Якщо їм не вказано робити інше, такі програми читають дані зі стандартного вводу, виконують з ними певні дії та записують результат у стандартний вивід.
 
-The key is that any program that reads lines of text from standard input
-and writes lines of text to standard output
-can be combined with every other program that behaves this way as well.
-You can *and should* write your programs this way
-so that you and other people can put those programs into pipes to multiply their power.
+Головне полягає в тому, що будь-яка програма, яка зчитує рядки тексту зі стандартного вводу і записує їх у стандартний вивід, може бути об'єднана з будь-якою іншою програмою, яка працює так само.
+Ви можете _і повинні_ писати свої програми таким чином, щоб ви та інші люди могли з’єднувати їх через канали і тим самим суттєво збільшуючи їхню потужність.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Pipe Reading Comprehension
+## Розуміння роботи з каналами
 
-A file called `animals.csv` (in the `shell-lesson-data/exercise-data/animal-counts` folder)
-contains the following data:
+Файл з назвою `animals.csv` (у каталозі `shell-lesson-data/exercise-data/animal-counts`) містить наступні дані:
 
 ```source
 2012-11-05,deer,5
@@ -509,25 +437,25 @@ contains the following data:
 2012-11-07,bear,1
 ```
 
-What text passes through each of the pipes and the final redirect in the pipeline below?
-Note, the `sort -r` command sorts in reverse order.
+Який текст проходить через кожен із каналів та фінальне перенаправлення у конвеєрі нижче?
+Зауважте, що команда `sort -r` сортує у зворотному порядку.
 
 ```bash
 $ cat animals.csv | head -n 5 | tail -n 3 | sort -r > final.txt
 ```
 
-Hint: build the pipeline up one command at a time to test your understanding
+Підказка: створюйте конвеєр по одній команді за раз, щоб перевіряти своє розуміння
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
-The `head` command extracts the first 5 lines from `animals.csv`.
-Then, the last 3 lines are extracted from the previous 5 by using the `tail` command.
-With the `sort -r` command those 3 lines are sorted in reverse order.
-Finally, the output is redirected to a file: `final.txt`.
-The content of this file can be checked by executing `cat final.txt`.
-The file should contain the following lines:
+Команда `head` виділяє перші 5 рядків з файлу `animals.csv`.
+Потім останні 3 рядки виділяються з попередніх 5 за допомогою команди `tail`.
+За допомогою команди `sort -r` ці 3 рядки сортуються у зворотному порядку.
+І нарешті, результат перенаправляється до файлу `final.txt`.
+Вміст цього файлу можна перевірити, виконавши команду `cat final.txt`.
+Файл повинен містити наступні рядки:
 
 ```source
 2012-11-06,rabbit,19
@@ -541,20 +469,19 @@ The file should contain the following lines:
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Pipe Construction
+## Конструювання каналу
 
-For the file `animals.csv` from the previous exercise, consider the following command:
+Для файлу `animals.csv` з попередньої вправи розглянемо наступну команду:
 
 ```bash
 $ cut -d , -f 2 animals.csv
 ```
 
-The `cut` command is used to remove or 'cut out' certain sections of each line in the file,
-and `cut` expects the lines to be separated into columns by a <kbd>Tab</kbd> character.
-A character used in this way is called a **delimiter**.
-In the example above we use the `-d` option to specify the comma as our delimiter character.
-We have also used the `-f` option to specify that we want to extract the second field (column).
-This gives the following output:
+Команда `cut` використовується для видалення або 'вирізання' певних частин кожного рядка у файлі. Вона очікує, що рядки буде розділено на стовпчики символом <kbd>Tab</kbd>.
+Символ, який використовується таким чином, називається **роздільником**.
+У наведеному вище прикладі ми використали опцію `-d`, щоб вказати кому як роздільник.
+Ми також використали опцію `-f`, щоб зазначити, що ми хочемо вилучити друге поле (стовпчик).
+Це призведе до наступного результату:
 
 ```output
 deer
@@ -567,14 +494,12 @@ rabbit
 bear
 ```
 
-The `uniq` command filters out adjacent matching lines in a file.
-How could you extend this pipeline (using `uniq` and another command) to find
-out what animals the file contains (without any duplicates in their
-names)?
+Команда `uniq` відфільтровує сусідні однакові рядки у файлі.
+Як можна розширити цей конвеєр (за допомогою `uniq` та інших команд), щоб з'ясувати, назви яких тварин містяться у файлі (без повторень у їхніх назвах)?
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
 ```bash
 $ cut -d , -f 2 animals.csv | sort | uniq
@@ -586,9 +511,9 @@ $ cut -d , -f 2 animals.csv | sort | uniq
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Which Pipe?
+## Який з каналів використати?
 
-The file `animals.csv` contains 8 lines of data formatted as follows:
+Файл `animals.csv` містить 8 рядків даних, відформатованих наступним чином:
 
 ```output
 2012-11-05,deer,5
@@ -598,11 +523,7 @@ The file `animals.csv` contains 8 lines of data formatted as follows:
 ...
 ```
 
-The `uniq` command has a `-c` option which gives a count of the
-number of times a line occurs in its input.  Assuming your current
-directory is `shell-lesson-data/exercise-data/animal-counts`,
-what command would you use to produce a table that shows
-the total count of each type of animal in the file?
+Команда `uniq` має опцію `-c`, яка підраховує кількість разів, коли рядок зʼявляється у вхідних даних.  Припускаючи що ваш поточний каталог має назву `shell-lesson-data/exercise-data/animal-counts`, яку команду слід використати, щоб створити таблицю у файлі з підрахунком загальної кількості тварин кожного типу?
 
 1. `sort animals.csv | uniq -c`
 2. `sort -t, -k2,2 animals.csv | uniq -c`
@@ -612,31 +533,26 @@ the total count of each type of animal in the file?
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
-Option 4. is the correct answer.
-If you have difficulty understanding why, try running the commands, or sub-sections of
-the pipelines (make sure you are in the `shell-lesson-data/exercise-data/animal-counts`
-directory).
-
-
+Варіант 4. Це правильна відповідь.
+Якщо вам важко зрозуміти, чому, спробуйте виконати команди або фрагменти конвеєру (перед цим переконайтеся, що ви перебуваєте у каталозі `shell-lesson-data/exercise-data/animal-counts`).
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Nelle's Pipeline: Checking Files
+## Конвеєр Неллі: перевірка файлів
 
-Nelle has run her samples through the assay machines
-and created 17 files in the `north-pacific-gyre` directory described earlier.
-As a quick check, starting from the `shell-lesson-data` directory, Nelle types:
+Неллі обробила свої зразки в аналізаторах і створила 17 файлів в каталозі `north-pacific-gyre`, описаному раніше.
+Для швидкої перевірки, вона переходить у каталог `shell-lesson-data` та набирає:
 
 ```bash
 $ cd north-pacific-gyre
 $ wc -l *.txt
 ```
 
-The output is 18 lines that look like this:
+На виході вона отримує 18 рядків, які виглядають наступним чином:
 
 ```output
 300 NENE01729A.txt
@@ -648,7 +564,7 @@ The output is 18 lines that look like this:
 ... ...
 ```
 
-Now she types this:
+Тепер вона набирає наступне:
 
 ```bash
 $ wc -l *.txt | sort -n | head -n 5
@@ -662,13 +578,11 @@ $ wc -l *.txt | sort -n | head -n 5
  300 NENE01751A.txt
 ```
 
-Whoops: one of the files is 60 lines shorter than the others.
-When she goes back and checks it,
-she sees that she did that assay at 8:00 on a Monday morning --- someone
-was probably in using the machine on the weekend,
-and she forgot to reset it.
-Before re-running that sample,
-she checks to see if any files have too much data:
+Ого - несподіванка! Один з файлів на 60 рядків коротший за інші.
+Коли вона повертається до цього файлу та перевіряє його,
+вона бачить, що зробила цей аналіз о 8:00 ранку в понеділок --- хтось, можливо, користувався машиною на вихідних,
+і вона забула її перезавантажити.
+Перед тим, як повторно проаналізувати цей зразок, вона перевіряє, чи є файли, що містять забагато даних:
 
 ```bash
 $ wc -l *.txt | sort -n | tail -n 5
@@ -682,11 +596,9 @@ $ wc -l *.txt | sort -n | tail -n 5
 5040 total
 ```
 
-Those numbers look good --- but what's that 'Z' doing there in the third-to-last line?
-All of her samples should be marked 'A' or 'B';
-by convention,
-her lab uses 'Z' to indicate samples with missing information.
-To find others like it, she does this:
+Ці цифри мають сенс --- але що робить ця 'Z' у другому рядку?
+Всі її зразки мають бути позначені 'A' або 'B'; за попередньою домовленістю її лабораторія використовує 'Z' для позначення зразків з недостатньою інформацією.
+Щоб знайти інші подібні зразки, вона робить наступне:
 
 ```bash
 $ ls *Z.txt
@@ -696,25 +608,17 @@ $ ls *Z.txt
 NENE01971Z.txt    NENE02040Z.txt
 ```
 
-Sure enough,
-when she checks the log on her laptop,
-there's no depth recorded for either of those samples.
-Since it's too late to get the information any other way,
-she must exclude those two files from her analysis.
-She could delete them using `rm`,
-but there are actually some analyses she might do later where depth doesn't matter,
-so instead, she'll have to be careful later on to select files using the wildcard expressions
-`NENE*A.txt NENE*B.txt`.
+Справді, коли вона перевіряє файл журналу на своєму ноутбуці, то виявляється, що глибина не була записана для жодного з цих зразків.
+Оскільки отримати цю інформацію іншим способом вже неможливо, їй доведеться виключити ці два файли з аналізу.
+Вона може видалити їх за допомогою `rm`, але деякі подальші аналізи даних не вимагатимуть інформації про глибину, тому їй буде потрібно обережно обирати файли за допомогою шаблонів `NENE*A.txt NENE*B.txt`.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Removing Unneeded Files
+## Видалення непотрібних файлів
 
-Suppose you want to delete your processed data files, and only keep
-your raw files and processing script to save storage.
-The raw files end in `.dat` and the processed files end in `.txt`.
-Which of the following would remove all the processed data files,
-and *only* the processed data files?
+Припустимо, ви хочете видалити файли з обробленими даними й зберегти лише вихідні файли та скрипт обробки для економії місця у сховищі.
+Вихідні файли закінчуються на `.dat`, а оброблені файли закінчуються на `.txt`.
+Яка з наведених нижче команд видалить усі оброблені файли даних і _тільки_ їх?
 
 1. `rm ?.txt`
 2. `rm *.txt`
@@ -723,35 +627,31 @@ and *only* the processed data files?
 
 :::::::::::::::  solution
 
-## Solution
+## Відповідь
 
-1. This would remove `.txt` files with one-character names
-2. This is the correct answer
-3. The shell would expand `*` to match everything in the current directory,
-  so the command would try to remove all matched files and an additional
-  file called `.txt`
-4. The shell expands `*.*` to match all filenames containing at least one
-  `.`, including the processed files (`.txt`) *and* raw files (`.dat`)
-  
-  
+1. Це призведе до вилучення файлів `.txt` з односимвольними назвами
+
+2. Це правильна відповідь
+
+3. Термінал розширить шаблон `*` до переліку усіх файлів у поточному каталозі, таким чином, команда спробує видалити всі знайдені файли та додатковий файл з назвою \`.txt'
+
+4. Термінал розширює `*.*` до переліку усіх файлів, назви яких містять принаймні одну крапку (`.`), включно з обробленими файлами (`.txt`), _і_ вихідними файлами (`.dat`)
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-
-
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- `wc` counts lines, words, and characters in its inputs.
-- `cat` displays the contents of its inputs.
-- `sort` sorts its inputs.
-- `head` displays the first 10 lines of its input by default without additional arguments.
-- `tail` displays the last 10 lines of its input by default without additional arguments.
-- `command > [file]` redirects a command's output to a file (overwriting any existing content).
-- `command >> [file]` appends a command's output to a file.
-- `[first] | [second]` is a pipeline: the output of the first command is used as the input to the second.
-- The best way to use the shell is to use pipes to combine simple single-purpose programs (filters).
+- `wc` підраховує рядки, слова та символи у своїх вхідних даних.
+- `cat` виводить вміст своїх вхідних даних.
+- `sort` сортує вхідні дані.
+- `head` за замовчуванням (тобто без додаткових аргументів) виводить перші 10 рядків вхідних даних.
+- `tail` за замовчуванням (тобто без додаткових аргументів) виводить останні 10 рядків вхідних даних.
+- `command > [file]` перенаправляє вивід команди у файл (перезаписуючи будь-який наявний вміст цього файлу, якщо файл вже існує).
+- `command >> [file]` додає вивід команди до файлу.
+- `[first] | [second]` є конвеєром: вихід першої команди використовується як вхідні дані для другої.
+- Найкращий спосіб використання терміналу - це комбінування простих однозадачних програм (фільтрів) за допомогою каналів.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 

@@ -6,19 +6,18 @@ title: Instructor Notes
   - Allows users to automate repetitive tasks
   - And capture small data manipulation steps that are normally not recorded
     to make research reproducible
-- The Problem
+- Проблема
   - Running the same workflow on several samples can be unnecessarily labour intensive
-  - Manual manipulation of data files:
-    - is often not captured in documentation
-    - is hard to reproduce
-    - is hard to troubleshoot, review, or improve
+  - Ручна маніпуляція з файлами даних:
+    - часто не відображається в документації
+    - важка для відтворення
+    - важко усунути несправності, переглянути або вдосконалити
 - The Shell
-  - Workflows can be automated through the use of shell scripts
-  - Built-in commands allow for easy data manipulation (e.g. sort, grep, etc.)
-  - Every step can be captured in the shell script and allow reproducibility and
-    easy troubleshooting
+  - Робочі процеси можна автоматизувати за допомогою скриптів терміналу
+  - Вбудовані команди дозволяють легко маніпулювати даними (наприклад, sort, grep тощо.)
+  - Кожен крок може бути зафіксований у скрипті терміналу, що забезпечує відтворюваність та легке усунення несправностей
 
-## Overall
+## Підсумок
 
 Many people have questioned whether we should still teach the shell.
 After all,
@@ -30,37 +29,37 @@ So why teach the shell?
 
 The first answer is,
 "Because so much else depends on it."
-Installing software,
-configuring your default editor,
-and controlling remote machines frequently assume a basic familiarity with the shell,
-and with related ideas like standard input and output.
-Many tools also use its terminology
-(for example, the `%ls` and `%cd` magic commands in IPython).
+Встановлення програмного забезпечення,
+налаштування редактора за замовчуванням
+та керування віддаленими комп'ютерами часто вимагають базового знайомства з командним терміналом
+та пов'язаними з ним поняттями, такими як стандартний ввід та вивід.
+Багато інструментів також використовують його термінологію
+(наприклад, магічні команди `%ls` та `%cd` в IPython).
 
-The second answer is,
-"Because it's an easy way to introduce some fundamental ideas about how to use computers."
-As we teach people how to use the Unix shell,
-we teach them that they should get the computer to repeat things
-(via tab completion,
-`!` followed by a command number,
-and `for` loops)
-rather than repeating things themselves.
-We also teach them to take things they've discovered they do frequently
-and save them for later re-use
-(via shell scripts),
-to give things sensible names,
-and to write a little bit of documentation
-(like comment at the top of shell scripts)
-to make their future selves' lives better.
+Друга відповідь така:
+"Тому що це простий спосіб показати деякі фундаментальні ідеї про те, як користуватися комп'ютером."
+Коли ми вчимо людей користуватися терміналом Unix,
+ми вчимо їх, що вони повинні змусити комп'ютер повторювати дії
+(за допомогою завершення клавішею табуляції,
+знаком `!`, за яким йде номер команди,
+та циклів "for")
+замість того, щоб повторювати щось самому.
+Ми також вчимо їх брати речі, які, як виявилося, вони роблять часто,
+і зберігати їх для подальшого використання
+(за допомогою скриптів терміналу),
+давати речам розумні назви
+і писати невелику документацію
+(наприклад, коментар у верхній частині скрипта терміналу)
+щоб покращити життя свого майбутнього "Я".
 
-The third answer is,
-"Because it enables use of many domain-specific tools and compute resources researchers
-cannot access otherwise."
+Третя відповідь така:
+"Тому що це дозволяє використовувати багато вузькоспеціалізованих інструментів та обчислювальних ресурсів,
+до яких дослідники не можуть отримати доступ інакше."
 Familiarity with the shell is very useful for remote accessing machines,
 using high-performance computing infrastructure,
 and running new specialist tools in many disciplines.
-We do not teach HPC or domain-specific skills here
-but lay the groundwork for further development of these skills.
+Ми не навчаємо навичкам роботи з високопродуктивними обчислювальними системами або роботі в конкретних галузях,
+але закладаємо основу для подальшого розвитку цих навичок.
 In particular,
 understanding the syntax of commands, flags, and help systems is useful for domain specific tools
 and understanding the file system (and how to navigate it) is useful for remote access.
@@ -78,21 +77,21 @@ as long as learners using Windows do not run into roadblocks such as:
 
 - not being able to figure out where their home directory is
   (particularly if they're using Cygwin);
-- not being able to run a plain text editor;
-  and
-- the shell refusing to run scripts that include DOS line endings.
+- невміння запустити звичайний текстовий редактор;
+  та
+- відмова терміналу виконувати скрипти, які містять закінчення рядків DOS.
 
 ## Preparing to Teach
 
 - Use the `data` directory for in-workshop exercises and live coding examples.
-  You can clone the shell-novice directory or use the *Download ZIP*
+  You can clone the shell-novice directory or use the _Download ZIP_
   button on the right to get the entire
   [Git repository](https://github.com/swcarpentry/shell-novice). We also now provide
   a zip file of the `data` directory
   at the [Setup page](../learners/setup.md).
 
 - Website: various practices have been used.
-  
+
   - Option 1: Can give links to learners before the lesson so they can follow along,
     catch up,
     and see exercises (particularly if you're following the lesson content without many changes).
@@ -145,9 +144,9 @@ as long as learners using Windows do not run into roadblocks such as:
   isn't a small thing either,
   and neither are wildcard expansion and `for` loops.
   Each one is an opportunity to repeat one of the big ideas of Software Carpentry:
-  if the computer *can* repeat it,
+  if the computer _can_ repeat it,
   some programmer somewhere will almost certainly have built
-  some way for the computer *to* repeat it.
+  some way for the computer _to_ repeat it.
 
 - Building up a pipeline with four or five stages,
   then putting it in a shell script for re-use
@@ -191,12 +190,12 @@ as long as learners using Windows do not run into roadblocks such as:
 - Installing Bash and a reasonable set of Unix commands on Windows
   always involves some fiddling and frustration.
   Please see the latest set of installation guidelines for advice,
-  and try it out yourself *before* teaching a class.
+  and try it out yourself _before_ teaching a class.
 
 - By default, you may have a long string of information attached to
   your command prompt in Git Bash. To reduce the "noise" and proceed
   with a tidier prompt, enter the command:
-  
+
   ```bash
   PS1='$ '
   ```
@@ -209,12 +208,12 @@ as long as learners using Windows do not run into roadblocks such as:
   the purposes of this lesson, `notepad` and `nano` can be used almost interchangeably.
 
 - On Windows, it appears that:
-  
+
   ```bash
   $ cd
   $ cd Desktop
   ```
-  
+
   will always put someone on their desktop
   (unless their machine is backed up using enterprise OneDrive, see next point).
   Have them create the example directory for the shell exercises there
@@ -226,12 +225,12 @@ as long as learners using Windows do not run into roadblocks such as:
   The OneDrive desktop should be accessible using one of the following commands
   (if the name of the enterprise isn't clear, look through the output of `ls` to find
   the right folder):
-  
+
   ```bash
   $ cd "~/OneDrive - Name Of Enterprise/Desktop"
   $ cd "C:/Users/Username/OneDrive - Name Of Enterprise/Desktop"
   ```
-  
+
   One way to spot if the computer is using this kind of configuration is to look at files,
   folders or links on the desktop. Usually the icon contains a shortcut/arrow symbol if it
   is a link, or just the plain icon if the file is just saved in the `Desktop` folder.
@@ -249,7 +248,7 @@ as long as learners using Windows do not run into roadblocks such as:
 Installing Bash and a reasonable set of Unix commands on Windows
 always involves some fiddling and frustration.
 Please see the latest set of installation guidelines for advice,
-and try it out yourself *before* teaching a class.
+and try it out yourself _before_ teaching a class.
 Options we have explored include:
 
 1. [msysGit](https://msysgit.github.io/) (also called "Git Bash"),
@@ -267,12 +266,12 @@ but:
 1. they don't work well on underpowered machines,
 2. they're confusing for novices (because simple things like copy and paste work differently),
 3. learners leave the workshop without a working environment on their operating system of choice,
-  and
+   and
 4. learners may show up without having downloaded the VM or the wireless will go down
-  (or become congested) during the lesson.
+   (or become congested) during the lesson.
 
 Whatever you use,
-please *test it yourself* on a Windows machine *before* your workshop:
+please _test it yourself_ on a Windows machine _before_ your workshop:
 things may always have changed behind your back since your last workshop.
 And please also make use of our
 [Software Carpentry Windows Installer][windows-installer].

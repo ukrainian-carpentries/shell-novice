@@ -4,22 +4,22 @@ title: 'Summary of Basic Commands'
 
 ## Summary of Basic Commands
 
-| Action       | Files | Folders      | 
-| ------------ | ----- | ------------ |
-| Inspect      | ls    | ls           | 
-| View content | cat   | ls           | 
-| Navigate to  |       | cd           | 
-| Move         | mv    | mv           | 
-| Copy         | cp    | cp -r        | 
-| Create       | nano  | mkdir        | 
-| Delete       | rm    | rmdir, rm -r | 
+| Action                                                         | Files | Folders      |
+| -------------------------------------------------------------- | ----- | ------------ |
+| Оглянути                                                       | ls    | ls           |
+| Проглянути вміст                                               | cat   | ls           |
+| Перейти до ... |       | cd           |
+| Перемістити                                                    | mv    | mv           |
+| Копіювати                                                      | cp    | cp -r        |
+| Створити                                                       | nano  | mkdir        |
+| Видалити                                                       | rm    | rmdir, rm -r |
 
 ## Filesystem hierarchy
 
 The following is an overview of a standard Unix filesystem.
 The exact hierarchy depends on the platform. Your file/directory structure may differ slightly:
 
-![](fig/standard-filesystem-hierarchy.svg){alt='Linux filesystem hierarchy'}
+![](fig/standard-filesystem-hierarchy.svg){alt='Ієрархія файлової системи Linux'}
 
 ## Glossary
 
@@ -34,12 +34,12 @@ See also: [relative path](#relative-path).
 :   A value given to a function or program when it runs.
 The term is often used interchangeably (and inconsistently) with [parameter](#parameter).
 
-[command shell]{#command-shell}
-:   See [shell](#shell)
+[командна оболонка]{#command-shell}
+:   Дивись [термінал](#shell)
 
-[command-line interface]{#command-line-interface}
-:   A user interface based on typing commands,
-usually at a [REPL](#read-evaluate-print-loop).
+[інтерфейс командного рядка]{#command-line-interface}
+:   Інтерфейс користувача, заснований на введенні команд,
+зазвичай у циклі [REPL](#read-evaluate-print-loop).
 See also: [graphical user interface](#graphical-user-interface).
 
 [comment]{#comment}
@@ -66,9 +66,7 @@ the [operating system](#operating-system) manages access.
 
 [filename extension]{#filename-extension}
 :   The portion of a file's name that comes after the final "." character.
-By convention this identifies the file's type:
-`.txt` means "text file", `.png` means "Portable Network Graphics file",
-and so on. These conventions are not enforced by most operating systems:
+За домовленістю це визначає тип файлу: `.txt` означає "текстовий файл (від англ. "TeXT"), `.png` означає "файл портативної мережевої графіки" (від англ. "Portable Network Graphics file"), і так далі. These conventions are not enforced by most operating systems:
 it is perfectly possible (but confusing!) to name an MP3 sound file `homepage.html`.
 Since many applications use filename extensions to identify the
 [MIME type](#mime-type) of the file,
@@ -122,8 +120,8 @@ as in `-o /tmp/output.txt`.
 :   A variable named in a function's declaration that is used to hold a value passed into the call.
 The term is often used interchangeably (and inconsistently) with [argument](#argument).
 
-[parent directory]{#parent-directory}
-:   The directory that "contains" the one in question.
+[батьківський каталог]{#parent-directory}
+:   Каталог, який "містить" каталог, про який йде мова.
 Every directory in a file system except the [root directory](#root-directory) has a parent.
 A directory's parent is usually referred to using the shorthand notation `..`
 (pronounced "dot dot").
@@ -164,8 +162,8 @@ executes it, prints the result, and waits for another command.
 :   To send a command's output to a file rather than to the screen or another command,
 or equivalently to read a command's input from a file.
 
-[regular expression]{#regular-expression}
-:   A pattern that specifies a set of character strings.
+[регулярний вираз]{#regular-expression}
+:   Шаблон, який визначає набір рядків символів.
 REs are most often used to find sequences of characters in strings.
 
 [relative path]{#relative-path}
@@ -202,8 +200,8 @@ data sent to standard output is displayed on the screen;
 in a [pipe](#pipe),
 it is passed to the [standard input](#standard-input) of the next process.
 
-[sub-directory]{#sub-directory}
-:   A directory contained within another directory.
+[підкаталог]{#sub-directory}
+:   Каталог, що міститься у іншому каталозі.
 
 [tab completion]{#tab-completion}
 :   A feature provided by many interactive systems in which
