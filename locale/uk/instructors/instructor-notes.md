@@ -1,8 +1,8 @@
 ---
-title: Instructor Notes
+title: Примітки для інструктора
 ---
 
-- Why do we learn to use the shell?
+- Навіщо ми вчимося користуватися терміналом?
   - Allows users to automate repetitive tasks
   - And capture small data manipulation steps that are normally not recorded
     to make research reproducible
