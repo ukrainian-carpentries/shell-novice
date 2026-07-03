@@ -3,7 +3,7 @@ title: Примітки для інструктора
 ---
 
 - Навіщо ми вчимося користуватися терміналом?
-  - Allows users to automate repetitive tasks
+  - Дозволяє користувачам автоматизувати повторювані завдання
   - And capture small data manipulation steps that are normally not recorded
     to make research reproducible
 - Проблема
@@ -12,23 +12,23 @@ title: Примітки для інструктора
     - часто не відображається в документації
     - важка для відтворення
     - важко усунути несправності, переглянути або вдосконалити
-- The Shell
+- Термінал
   - Робочі процеси можна автоматизувати за допомогою скриптів терміналу
   - Вбудовані команди дозволяють легко маніпулювати даними (наприклад, sort, grep тощо.)
   - Кожен крок може бути зафіксований у скрипті терміналу, що забезпечує відтворюваність та легке усунення несправностей
 
 ## Підсумок
 
-Many people have questioned whether we should still teach the shell.
+Багато хто ставить під сумнів, чи варто нам продовжувати навчати людей працювати з терміналом.
 After all,
 anyone who wants to rename several thousand data files
 can easily do so interactively in the Python interpreter,
 and anyone who's doing serious data analysis
 is probably going to do most of their work inside the IPython Notebook or R Studio.
-So why teach the shell?
+Тож навіщо навчатися роботі в терміналі?
 
-The first answer is,
-"Because so much else depends on it."
+Перша відповідь така:
+"Тому що багато інших речей залежать від цього."
 Встановлення програмного забезпечення,
 налаштування редактора за замовчуванням
 та керування віддаленими комп'ютерами часто вимагають базового знайомства з командним терміналом
