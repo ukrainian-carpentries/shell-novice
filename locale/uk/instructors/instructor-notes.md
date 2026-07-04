@@ -81,9 +81,9 @@ as long as learners using Windows do not run into roadblocks such as:
   та
 - відмова терміналу виконувати скрипти, які містять закінчення рядків DOS.
 
-## Preparing to Teach
+## Підготовка до викладання
 
-- Use the `data` directory for in-workshop exercises and live coding examples.
+- Використовуйте каталог `data` для вправ на семінарах та для прикладів кодування в реальному часі.
   You can clone the shell-novice directory or use the _Download ZIP_
   button on the right to get the entire
   [Git repository](https://github.com/swcarpentry/shell-novice). We also now provide
