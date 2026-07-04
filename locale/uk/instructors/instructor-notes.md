@@ -80,9 +80,9 @@ as long as learners using Windows do not run into roadblocks such as:
 - Використовуйте каталог `data` для вправ на семінарах та для прикладів кодування в реальному часі.
   You can clone the shell-novice directory or use the _Download ZIP_
   button on the right to get the entire
-  [Git repository](https://github.com/swcarpentry/shell-novice). We also now provide
-  a zip file of the `data` directory
-  at the [Setup page](../learners/setup.md).
+  [Git repository](https://github.com/swcarpentry/shell-novice). Також тепер ми надаємо
+  zip-файл каталогу `data`
+  на [Сторінці налаштування](../learners/setup.md).
 
 - Website: various practices have been used.
 
@@ -93,13 +93,13 @@ as long as learners using Windows do not run into roadblocks such as:
     as it can be distracting:
     students may read instead of listen, and having another window open is an additional
     cognitive load.
-  - In any case, make sure to point to website as a post-workshop reference.
+  - У будь-якому випадку, обов'язково вкажіть на вебсайт як на довідковий ресурс після семінару.
 
 - Content:
   Unless you have a truly generous amount of time (4+ hours),
   it is likely that you will not cover ALL the material in this lesson in a single half-day
   session.
-  Plan ahead on what you might skip, what you really want to emphasize, etc.
+  Заздалегідь вирішіть, що можна пропустити, а на чому варто зробити акцент тощо.
 
 - Exercises:
   Think in advance about how you might want to handle exercises during the lesson.
@@ -119,7 +119,7 @@ as long as learners using Windows do not run into roadblocks such as:
 
 ## Teaching Notes
 
-- Super cool online resource!
+- Чудовий онлайн-ресурс!
   [http://explainshell.com/](https://explainshell.com/) will dissect any shell command you type in
   and display help text for each piece.
   Additional nice manual tool could be [http://tldr.sh/](https://tldr.sh/)
@@ -175,8 +175,7 @@ as long as learners using Windows do not run into roadblocks such as:
   this can be covered instead using the online lessons as guidelines.
   These limitations also have follow-on consequences:
 
-- It's hard to discuss `#!` (shebang) without first discussing
-  permissions, which we don't do.  `#!` is also [pretty
+- Важко обговорювати `#!` (шебанг), не обговоривши попередньо дозволів, чого ми не робимо.  `#!` is also [pretty
   complicated][shebang], so even if we did discuss permissions, we
   probably still wouldn't want to discuss `#!`.
 
