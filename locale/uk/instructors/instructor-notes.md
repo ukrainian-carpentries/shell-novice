@@ -121,8 +121,7 @@ as long as learners using Windows do not run into roadblocks such as:
   Feel free to add your own examples or side comments,
   but know that it shouldn't be necessary:
   the topics and commands can be taught as given on the lesson pages.
-  If you think there is a place where the lesson is lacking,
-  feel free to file an issue or submit a pull request.
+  Якщо ви вважаєте, що в уроці чогось не вистачає, не соромтеся повідомити про проблему або створити запит на зміну матеріалу.
 
 ## Teaching Notes
 
