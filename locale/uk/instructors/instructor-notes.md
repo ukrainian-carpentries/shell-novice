@@ -7,7 +7,7 @@ title: Примітки для інструктора
   - And capture small data manipulation steps that are normally not recorded
     to make research reproducible
 - Проблема
-  - Running the same workflow on several samples can be unnecessarily labour intensive
+  - Запускати той самий процес для кількох зразків — це зайва робота
   - Ручна маніпуляція з файлами даних:
     - часто не відображається в документації
     - важка для відтворення
@@ -55,28 +55,22 @@ is probably going to do most of their work inside the IPython Notebook or R Stud
 Третя відповідь така:
 "Тому що це дозволяє використовувати багато вузькоспеціалізованих інструментів та обчислювальних ресурсів,
 до яких дослідники не можуть отримати доступ інакше."
-Familiarity with the shell is very useful for remote accessing machines,
-using high-performance computing infrastructure,
-and running new specialist tools in many disciplines.
+Знання терміналу дуже стає у пригоді — для віддаленого доступу до комп'ютерів,
+роботи з потужними обчислювальними системами
+та використання нових спеціалізованих інструментів у багатьох дисциплінах.
 Ми не навчаємо навичкам роботи з високопродуктивними обчислювальними системами або роботі в конкретних галузях,
 але закладаємо основу для подальшого розвитку цих навичок.
-In particular,
-understanding the syntax of commands, flags, and help systems is useful for domain specific tools
-and understanding the file system (and how to navigate it) is useful for remote access.
+Зокрема,
+розуміння синтаксису команд, їх опцій та довідкових систем допомагає використовувати спеціалізовані інструменти.
+А розуміння файлової системи (та способів навігації по ній) корисне для віддаленого доступу.
 
-Finally,
-and perhaps most importantly,
-teaching people the shell lets us teach them
-to think about programming in terms of function composition.
-In the case of the shell,
-this takes the form of pipelines rather than nested function calls,
-but the core idea of "small pieces, loosely joined" is the same.
+І нарешті, мабуть, найважливіше: навчання людей роботі з терміналом, ми вчимо їх думати про програмування з точки зору композиції функцій.
+У терміналі замість вкладених функцій використовуються конвеєри, але ідея та сама: "маленькі частини, нещільно з'єднані між собою".
 
 All of this material can be covered in three hours
 as long as learners using Windows do not run into roadblocks such as:
 
-- not being able to figure out where their home directory is
-  (particularly if they're using Cygwin);
+- труднощі з визначенням розташування домашнього каталогу (особливо якщо вони використовують Cygwin);
 - невміння запустити звичайний текстовий редактор;
   та
 - відмова терміналу виконувати скрипти, які містять закінчення рядків DOS.
