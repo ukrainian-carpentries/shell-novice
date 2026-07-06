@@ -368,17 +368,17 @@
         
 
 <ul>
-<li>Why do we learn to use the shell?
+<li>Навіщо ми вчимося користуватися терміналом?
 <ul>
-<li>Allows users to automate repetitive tasks</li>
-<li>And capture small data manipulation steps that are normally not
-recorded to make research reproducible</li>
+<li>Дозволяє користувачам автоматизувати повторювані завдання</li>
+<li>Та зберігає маленькі кроки роботи з даними, які зазвичай не
+записують — щоб дослідження можна було повторити</li>
 </ul>
 </li>
 <li>Проблема
 <ul>
-<li>Running the same workflow on several samples can be unnecessarily
-labour intensive</li>
+<li>Запускати той самий процес для кількох зразків — це зайва
+робота</li>
 <li>Ручна маніпуляція з файлами даних:
 <ul>
 <li>часто не відображається в документації</li>
@@ -388,7 +388,7 @@ labour intensive</li>
 </li>
 </ul>
 </li>
-<li>The Shell
+<li>Термінал
 <ul>
 <li>Робочі процеси можна автоматизувати за допомогою скриптів
 терміналу</li>
@@ -402,13 +402,12 @@ sort, grep тощо.)</li>
 <section><h2 class="section-heading" id="підсумок">Підсумок<a class="anchor" aria-label="anchor" href="#%D0%BF%D1%96%D0%B4%D1%81%D1%83%D0%BC%D0%BE%D0%BA"></a>
 </h2>
 <hr class="half-width">
-<p>Many people have questioned whether we should still teach the shell.
-After all, anyone who wants to rename several thousand data files can
-easily do so interactively in the Python interpreter, and anyone who’s
-doing serious data analysis is probably going to do most of their work
-inside the IPython Notebook or R Studio. So why teach the shell?</p>
-<p>The first answer is, “Because so much else depends on it.”
-Встановлення програмного забезпечення, налаштування редактора за
+<p>Багато хто ставить під сумнів, чи варто нам продовжувати навчати
+людей працювати з терміналом. Адже перейменувати тисячі файлів можна в
+Python, а серйозний аналіз даних можна зробити у IPython Notebook або R
+Studio. Тож навіщо навчатися роботі в терміналі?</p>
+<p>Перша відповідь така: “Тому що багато інших речей залежать від
+цього.” Встановлення програмного забезпечення, налаштування редактора за
 замовчуванням та керування віддаленими комп’ютерами часто вимагають
 базового знайомства з командним терміналом та пов’язаними з ним
 поняттями, такими як стандартний ввід та вивід. Багато інструментів
@@ -427,184 +426,190 @@ inside the IPython Notebook or R Studio. So why teach the shell?</p>
 “Я”.</p>
 <p>Третя відповідь така: “Тому що це дозволяє використовувати багато
 вузькоспеціалізованих інструментів та обчислювальних ресурсів, до яких
-дослідники не можуть отримати доступ інакше.” Familiarity with the shell
-is very useful for remote accessing machines, using high-performance
-computing infrastructure, and running new specialist tools in many
-disciplines. Ми не навчаємо навичкам роботи з високопродуктивними
-обчислювальними системами або роботі в конкретних галузях, але
-закладаємо основу для подальшого розвитку цих навичок. In particular,
-understanding the syntax of commands, flags, and help systems is useful
-for domain specific tools and understanding the file system (and how to
-navigate it) is useful for remote access.</p>
-<p>Finally, and perhaps most importantly, teaching people the shell lets
-us teach them to think about programming in terms of function
-composition. In the case of the shell, this takes the form of pipelines
-rather than nested function calls, but the core idea of “small pieces,
-loosely joined” is the same.</p>
-<p>All of this material can be covered in three hours as long as
-learners using Windows do not run into roadblocks such as:</p>
+дослідники не можуть отримати доступ інакше.” Знання терміналу дуже стає
+у пригоді — для віддаленого доступу до комп’ютерів, роботи з потужними
+обчислювальними системами та використання нових спеціалізованих
+інструментів у багатьох дисциплінах. Ми не навчаємо навичкам роботи з
+високопродуктивними обчислювальними системами або роботі в конкретних
+галузях, але закладаємо основу для подальшого розвитку цих навичок.
+Зокрема, розуміння синтаксису команд, їх опцій та довідкових систем
+допомагає використовувати спеціалізовані інструменти. А розуміння
+файлової системи (та способів навігації по ній) корисне для віддаленого
+доступу.</p>
+<p>І нарешті, мабуть, найважливіше: навчання людей роботі з терміналом,
+ми вчимо їх думати про програмування з точки зору композиції функцій. У
+терміналі замість вкладених функцій використовуються конвеєри, але ідея
+та сама: “маленькі частини, нещільно з’єднані між собою”.</p>
+<p>Цей матеріал можна викласти за три години — якщо в учнів на Windows
+не виникне таких проблем, як:</p>
 <ul>
-<li>not being able to figure out where their home directory is
-(particularly if they’re using Cygwin);</li>
+<li>труднощі з визначенням розташування домашнього каталогу (особливо
+якщо вони використовують Cygwin);</li>
 <li>невміння запустити звичайний текстовий редактор; та</li>
 <li>відмова терміналу виконувати скрипти, які містять закінчення рядків
 DOS.</li>
-</ul></section><section><h2 class="section-heading" id="preparing-to-teach">Preparing to Teach<a class="anchor" aria-label="anchor" href="#preparing-to-teach"></a>
+</ul></section><section><h2 class="section-heading" id="підготовка-до-викладання">Підготовка до викладання<a class="anchor" aria-label="anchor" href="#%D0%BF%D1%96%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0-%D0%B4%D0%BE-%D0%B2%D0%B8%D0%BA%D0%BB%D0%B0%D0%B4%D0%B0%D0%BD%D0%BD%D1%8F"></a>
 </h2>
 <hr class="half-width">
 <ul>
-<li><p>Use the <code>data</code> directory for in-workshop exercises and
-live coding examples. You can clone the shell-novice directory or use
-the <em>Download ZIP</em> button on the right to get the entire <a href="https://github.com/swcarpentry/shell-novice" class="external-link">Git repository</a>.
-We also now provide a zip file of the <code>data</code> directory at the
-<a href="index.html#setup">Setup page</a>.</p></li>
+<li><p>Використовуйте каталог <code>data</code> для вправ на семінарах
+та для прикладів кодування в реальному часі. Ви можете клонувати
+репозиторій shell-novice або скористатися кнопкою * Download ZIP*
+праворуч, щоб отримати весь <a href="https://github.com/swcarpentry/shell-novice" class="external-link">репозиторій</a>.
+Також тепер ми надаємо zip-файл каталогу <code>data</code> на <a href="index.html#setup">Сторінці налаштування</a>.</p></li>
 <li>
-<p>Website: various practices have been used.</p>
+<p>Вебсайт: до цього використовувалися різні практики.</p>
 <ul>
-<li>Option 1: Can give links to learners before the lesson so they can
-follow along, catch up, and see exercises (particularly if you’re
-following the lesson content without many changes).</li>
-<li>Option 2: Don’t show the website to the learners during the lesson,
-as it can be distracting: students may read instead of listen, and
-having another window open is an additional cognitive load.</li>
-<li>In any case, make sure to point to website as a post-workshop
-reference.</li>
+<li>Варіант 1: Ви можете дати учням посилання перед початком уроку, щоб
+вони могли стежити за матеріалом, наздоганяти та бачити вправи (особливо
+якщо ви дотримуєтеся змісту уроку без суттєвих змін).</li>
+<li>Варіант 2: Не показуйте вебсайт під час уроку — він відволікає. Учні
+будуть читати замість того, щоб слухати, а зайве вікно заважає
+зосередитися.</li>
+<li>У будь-якому випадку, обов’язково вкажіть на вебсайт як на
+довідковий ресурс після семінару.</li>
 </ul>
 </li>
-<li><p>Content: Unless you have a truly generous amount of time (4+
-hours), it is likely that you will not cover ALL the material in this
-lesson in a single half-day session. Plan ahead on what you might skip,
-what you really want to emphasize, etc.</p></li>
-<li><p>Exercises: Think in advance about how you might want to handle
-exercises during the lesson. How are you assigning them (website, slide,
-handout)? Do you want everyone to try it and then you show the solution?
-Have a learner show the solution? Have groups each do a different
-exercise and present their solutions?</p></li>
-<li><p>The <a href="reference.html">Reference page</a> can be printed
-out and given to students as a reference, your choice.</p></li>
-<li><p>Other preparation: Feel free to add your own examples or side
-comments, but know that it shouldn’t be necessary: the topics and
-commands can be taught as given on the lesson pages. If you think there
-is a place where the lesson is lacking, feel free to file an issue or
-submit a pull request.</p></li>
-</ul></section><section><h2 class="section-heading" id="teaching-notes">Teaching Notes<a class="anchor" aria-label="anchor" href="#teaching-notes"></a>
+<li><p>Зміст: Якщо ви не маєте багато часу (4+ години), швидше за все,
+ви не встигнете пройти ВЕСЬ матеріал за одне заняття тривалістю пів дня.
+Заздалегідь вирішіть, що можна пропустити, а на чому варто зробити
+акцент тощо.</p></li>
+<li><p>Вправи: Заздалегідь продумайте, як ви будете організовувати
+виконання вправ під час уроку. Як слухачі будуть бачити завдання
+(вебсайт, слайд, супровідні матеріали)? Чи хочете ви, щоб усі спробували
+виконати вправу, а потім ви покажете розв’язок? Або запропонуєте одному
+з учасників продемонструвати розв’язок? Чи поділите слухачів на групи та
+запропонуєте кожній групі виконати окрему вправу, а потім презентувати
+отримані рішення?</p></li>
+<li><p>На ваш вибір, <a href="reference.html">сторінку довідки</a> можна
+надрукувати та роздати студентам для ознайомлення.</p></li>
+<li><p>Подальша підготовка: Ви можете додавати власні приклади чи
+коментарі, але знайте, що це не обов’язково: усі поняття та команди
+можна викладати так, як зазначено на сторінках уроку. Якщо ви вважаєте,
+що в уроці чогось не вистачає, не соромтеся повідомити про проблему або
+створити запит на зміну матеріалу.</p></li>
+</ul></section><section><h2 class="section-heading" id="нотатки-для-викладача">Нотатки для викладача<a class="anchor" aria-label="anchor" href="#%D0%BD%D0%BE%D1%82%D0%B0%D1%82%D0%BA%D0%B8-%D0%B4%D0%BB%D1%8F-%D0%B2%D0%B8%D0%BA%D0%BB%D0%B0%D0%B4%D0%B0%D1%87%D0%B0"></a>
 </h2>
 <hr class="half-width">
 <ul>
-<li><p>Super cool online resource! <a href="https://explainshell.com/" class="external-link">http://explainshell.com/</a> will
-dissect any shell command you type in and display help text for each
-piece. Additional nice manual tool could be <a href="https://tldr.sh/" class="external-link">http://tldr.sh/</a> with short very descriptive
-manuals for shell commands, useful especially on Windows while using Git
-BASH where <code>man</code> could not work.</p></li>
-<li><p>Another super cool online resource is <a href="https://www.shellcheck.net" class="external-link">http://www.shellcheck.net</a>, which
-will check shell scripts (both uploaded and typed in) for common
-errors.</p></li>
-<li><p>Resources for “splitting” your shell so that recent commands
-remain in view: <a href="https://github.com/rgaiacs/swc-shell-split-window" class="external-link">https://github.com/rgaiacs/swc-shell-split-window</a>.</p></li>
-<li><p>Tab completion sounds like a small thing: it isn’t. Re-running
-old commands using <code>!123</code> or <code>!wc</code> isn’t a small
-thing either, and neither are wildcard expansion and <code>for</code>
-loops. Each one is an opportunity to repeat one of the big ideas of
-Software Carpentry: if the computer <em>can</em> repeat it, some
-programmer somewhere will almost certainly have built some way for the
-computer <em>to</em> repeat it.</p></li>
-<li><p>Building up a pipeline with four or five stages, then putting it
-in a shell script for re-use and calling that script inside a
-<code>for</code> loop, is a great opportunity to show how “seven plus or
-minus two” connects to programming. Once we have figured out how to do
-something moderately complicated, we make it re-usable and give it a
-name so that it only takes up one slot in working memory rather than
-several. It is also a good opportunity to talk about exploratory
-programming: rather than designing a program up front, we can do a few
-useful things and then retroactively decide which are worth
-encapsulating for future re-use.</p></li>
-<li><p>If everything is going well, you can drive home the point that
-file extensions are essentially there to help computers (and human
-readers) understand file content and are not a requirement of files
-(covered briefly in <a href="02-filedir.html">Navigating Files and
-Directories</a>). This can be done in the <a href="04-pipefilter.html">Pipes and Filters</a> section by showing that
-you can redirect standard output to a file without the .txt extension
-(e.g., lengths), and that the resulting file is still a perfectly usable
-text file. Make the point that if double-clicked in the GUI, the
-computer will probably ask you what you want to do.</p></li>
-<li><p>We have to leave out many important things because of time
-constraints, including file permissions, job control, and SSH. If
-learners already understand the basic material, this can be covered
-instead using the online lessons as guidelines. These limitations also
-have follow-on consequences:</p></li>
-<li><p>It’s hard to discuss <code>#!</code> (shebang) without first
-discussing permissions, which we don’t do. <code>#!</code> is also <a href="https://www.in-ulm.de/~mascheck/various/shebang/" class="external-link">pretty
-complicated</a>, so even if we did discuss permissions, we probably
-still wouldn’t want to discuss <code>#!</code>.</p></li>
-<li><p>Installing Bash and a reasonable set of Unix commands on Windows
-always involves some fiddling and frustration. Please see the latest set
-of installation guidelines for advice, and try it out yourself
-<em>before</em> teaching a class.</p></li>
+<li><p>Чудовий онлайн-ресурс! <a href="https://explainshell.com/" class="external-link">http://explainshell.com/</a> аналізує
+будь-яку команду терміналу та показує пояснення до кожної її частини.
+Чудовим додатковим посібником може бути <a href="https://tldr.sh/" class="external-link">http://tldr.sh/</a> з короткими та дуже місткими
+інструкціями для команд терміналу. Це особливо корисно у Windows під час
+використання Git Bash, де <code>man</code> не може працювати.</p></li>
+<li><p>Ще один чудовий онлайн-ресурс - це <a href="https://www.shellcheck.net" class="external-link">http://www.shellcheck.net</a>, який
+перевірить скрипти оболонки (як завантажені, так і введені) на наявність
+розповсюджених помилок.</p></li>
+<li><p>Програма для “розщеплення” вашої терміналу так, щоб останні
+команди залишалися в полі зору: <a href="https://github.com/rgaiacs/swc-shell-split-window" class="external-link">https://github.com/rgaiacs/swc-shell-split-window</a>.</p></li>
+<li><p>Автодоповнення за допомогою Tab здається дрібницею — але це не
+так. Повторний запуск попередніх команд за допомогою <code>!123</code>
+або <code>!wc</code> теж не дрібниця, так само як і символи підстановки
+та цикли <code>for</code>. Кожне з цих понять — нагода повторити головну
+ідею Software Carpentry: якщо комп’ютер <em>може</em> щось повторити,
+якийсь програміст уже придумав, <em>як</em> комп’ютеру це
+зробити.</p></li>
+<li><p>Побудова конвеєра з чотирьох або п’яти етапів із подальшим
+збереженням у скрипті та викликом у циклі <code>for</code> є чудовою
+нагодою продемонструвати зв’язок концепції “сім плюс-мінус два” з
+програмуванням. Як тільки ми розібралися, як зробити щось відносно
+складне, ми робимо його придатним для повторного використання та даємо
+йому назву — щоб це займало один <code>слот</code> у робочій пам’яті, а
+не кілька. Це також чудова нагода поговорити про дослідницьке
+програмування. Замість того щоб одразу проєктувати програму, ми робимо
+кілька корисних речей, а потім вирішуємо, що варто виділити у функцію
+для повторного використання.</p></li>
+<li><p>Якщо все йде згідно з планом, можна підкреслити, що розширення
+файлів допомагають комп’ютерам (і людям - читачам) зрозуміти вміст
+файлів і не є обов’язковою вимогою (коротко висвітлено в секції <a href="02-filedir.html">Навігація файлами та каталогами</a>). Це можна
+зробити в секції <a href="04-pipefilter.html">Канали та фільтри</a>
+шляхом демонстрації того, що ви можете перенаправити стандартний вивід у
+файл без розширення .txt (наприклад, lengths), і що отриманий файл
+залишається звичайним текстовим файлом. Наголосіть, що якщо двічі
+клацнути по такому файлі в графічному інтерфейсі, комп’ютер, ймовірно,
+запитає, що з ним робити.</p></li>
+<li><p>Через брак часу нам доводиться пропускати багато важливих тем,
+зокрема дозволи на файли, керування завданнями та SSH. Якщо слухачі вже
+розуміють базовий матеріал, цей розділ можна розглянути, використовуючи
+онлайн-уроки як настанови. Ці обмеження також мають подальші
+наслідки:</p></li>
+<li><p>Важко обговорювати <code>#!</code> (шебанг), не обговоривши
+попередньо дозволів, чого ми не робимо. Навіть якби ми обговорювали
+дозволи, ми, мабуть, все одно б не захотіли обговорювати
+<code>#!</code>, оскільки він <a href="https://www.in-ulm.de/~mascheck/various/shebang/" class="external-link">доволі
+складний</a>.</p></li>
+<li><p>Встановлення Bash та доцільного набору команд Unix на Windows
+завжди супроводжується деякими клопотами та розчаруваннями. Будь ласка,
+порадьтеся з актуальними інструкціями щодо встановлення, і спробуйте
+виконати їх самостійно, перш ніж викладати у класі.</p></li>
 <li>
-<p>By default, you may have a long string of information attached to
-your command prompt in Git Bash. To reduce the “noise” and proceed with
-a tidier prompt, enter the command:</p>
+<p>За замовчуванням у Git Bash ваше запрошення командного рядка може
+містити довгий рядок інформації. Щоб зменшити “шум” та отримати охайніше
+запрошення, введіть команду:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a><span class="va">PS1</span><span class="op">=</span><span class="st">'$ '</span></span></code></pre>
 </div>
 </li>
-<li><p>On Windows machines if <code>nano</code> hasn’t been properly
-installed with the <a href="https://github.com/swcarpentry/windows-installer" class="external-link">Software
-Carpentry Windows Installer</a> it is possible to use
-<code>notepad</code> as an alternative. There will be a GUI interface
-and line endings are treated differently, but otherwise, for the
-purposes of this lesson, <code>notepad</code> and <code>nano</code> can
-be used almost interchangeably.</p></li>
+<li><p>На машинах з Windows, якщо <code>nano</code> не було належним
+чином встановлено за допомогою <a href="https://github.com/swcarpentry/windows-installer" class="external-link">Software
+Carpentry Windows Installer</a> можна скористатися <code>notepad</code>
+як альтернативою. У цьому випадку буде використовуватися графічний
+інтерфейс і закінчення рядків обробляються інакше. Проте для цілей цього
+уроку <code>notepad</code> та <code>nano</code> можна використовувати
+майже як взаємозамінні.</p></li>
 <li>
-<p>On Windows, it appears that:</p>
+<p>На машинах з Windows виявляється, що наступні команди:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1" aria-label="code-block-2-1"></a><span class="ex">$</span> cd</span>
 <span id="cb2-2"><a href="#cb2-2" tabindex="-1" aria-label="code-block-2-2"></a><span class="ex">$</span> cd Desktop</span></code></pre>
 </div>
-<p>will always put someone on their desktop (unless their machine is
-backed up using enterprise OneDrive, see next point). Have them create
-the example directory for the shell exercises there so that they can
-find it easily and watch it evolve.</p>
+<p>завжди відправлять користувача на робочий стіл (якщо тільки їхній
+комп’ютер не зберігає резервну копію за допомогою корпоративного
+OneDrive, див. наступний пункт). Попросіть слухачів створити там каталог
+для вправ, щоб можна було легко його знайти.</p>
 </li>
 <li>
-<p>If a Windows machine is backed up with enterprise OneDrive, their
-GUI desktop may be rendered from a folder within OneDrive, which will
-not match the contents of <code>~/Desktop</code>. The OneDrive desktop
-should be accessible using one of the following commands (if the name of
-the enterprise isn’t clear, look through the output of <code>ls</code>
-to find the right folder):</p>
+<p>Якщо комп’ютер з Windows синхронізується з корпоративним
+OneDrive, графічний робочий стіл може зображатися з каталогу всередині
+OneDrive. Це означає, що його вміст не збігатиметься з вмістом
+<code>~/Desktop</code>. Робочий стіл OneDrive можна знайти за допомогою
+однієї з наведених нижче команд (якщо точний формат назви організації
+невідомий, перегляньте вивід <code>ls</code>, щоб знайти потрібний
+каталог):</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1" aria-label="code-block-3-1"></a><span class="ex">$</span> cd <span class="st">"~/OneDrive - Name Of Enterprise/Desktop"</span></span>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1" aria-label="code-block-3-2"></a><span class="ex">$</span> cd <span class="st">"C:/Users/Username/OneDrive - Name Of Enterprise/Desktop"</span></span></code></pre>
 </div>
-<p>One way to spot if the computer is using this kind of configuration
-is to look at files, folders or links on the desktop. Usually the icon
-contains a shortcut/arrow symbol if it is a link, or just the plain icon
-if the file is just saved in the <code>Desktop</code> folder. Files
-synced with OneDrive contain an additional symbol indicating the sync
-status (typically blue arrows for ‘sync pending’ or a green tick for
-‘synced’).</p>
+<p>Один зі способів визначити, чи використовує комп’ютер таку
+конфігурацію - це переглянути файли, каталоги або посилання на робочому
+столі. Зазвичай піктограма містить символ ярлика/стрілки, якщо це
+посилання. Якщо ж файл безпосередньо збережено в каталозі
+<code>Desktop</code> — зображається звичайна піктограма. Файли, які
+синхронізуються з OneDrive, містять додатковий символ, що вказує на стан
+синхронізації (зазвичай сині стрілки для “очікує синхронізації” або
+зелена галочка для “синхронізовано”).</p>
 </li>
-<li><p>Stay within POSIX-compliant commands, as all the teaching
-materials do. Your particular shell may have extensions beyond POSIX
-that are not available on other machines, especially the default macOS
-bash and Windows bash emulators. For example, POSIX <code>ls</code> does
-not have an <code>--ignore=</code> or <code>-I</code> option, and POSIX
-<code>head</code> takes <code>-n 10</code> or <code>-10</code>, but not
-the long form of <code>--lines=10</code>.</p></li>
-</ul></section><section><h2 class="section-heading" id="windows">Windows<a class="anchor" aria-label="anchor" href="#windows"></a>
+<li><p>Дотримуйтеся команд, сумісних з POSIX, як і в усіх навчальних
+матеріалах. Your particular shell may have extensions beyond POSIX that
+are not available on other machines, especially the default macOS bash
+and Windows bash emulators. Наприклад, POSIX <code>ls</code> не має
+опції <code>--ignore=</code> або <code>-I</code>, а POSIX
+<code>head</code> приймає <code>-n 10</code> або <code>-10</code>, але
+не довгу форму <code>--lines=10</code>.</p></li>
+</ul></section><section><h2 class="section-heading" id="особливості-для-windows">Особливості для Windows<a class="anchor" aria-label="anchor" href="#%D0%BE%D1%81%D0%BE%D0%B1%D0%BB%D0%B8%D0%B2%D0%BE%D1%81%D1%82%D1%96-%D0%B4%D0%BB%D1%8F-windows"></a>
 </h2>
 <hr class="half-width">
-<p>Installing Bash and a reasonable set of Unix commands on Windows
-always involves some fiddling and frustration. Please see the latest set
-of installation guidelines for advice, and try it out yourself
-<em>before</em> teaching a class. Options we have explored include:</p>
+<p>Встановлення Bash та доцільного набору команд Unix на Windows завжди
+супроводжується деякими клопотами та розчаруваннями. Please see the
+latest set of installation guidelines for advice, and try it out
+yourself <em>before</em> teaching a class. Options we have explored
+include:</p>
 <ol style="list-style-type: decimal">
 <li>
 <a href="https://msysgit.github.io/" class="external-link">msysGit</a> (also called “Git
@@ -713,8 +718,8 @@ Emacs чи Nano. Закриття терміналу та відкриття н�
   "url": "https://ukrainian-carpentries.github.io/shell-novice/instructor/instructor-notes.html",
   "identifier": "https://ukrainian-carpentries.github.io/shell-novice/instructor/instructor-notes.html",
   "dateCreated": "2014-10-22",
-  "dateModified": "2026-06-30",
-  "datePublished": "2026-06-30"
+  "dateModified": "2026-07-06",
+  "datePublished": "2026-07-06"
 }
 
   </script><script>
