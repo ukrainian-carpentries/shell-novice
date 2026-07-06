@@ -114,10 +114,7 @@ title: Примітки для інструктора
   Re-running old commands using `!123` or `!wc`
   isn't a small thing either,
   and neither are wildcard expansion and `for` loops.
-  Each one is an opportunity to repeat one of the big ideas of Software Carpentry:
-  if the computer _can_ repeat it,
-  some programmer somewhere will almost certainly have built
-  some way for the computer _to_ repeat it.
+  Кожне з цих понять — нагода повторити головну ідею Software Carpentry: якщо комп'ютер _може_ щось повторити, якийсь програміст уже придумав, _як_ комп’ютеру це зробити.
 
 - Building up a pipeline with four or five stages,
   then putting it in a shell script for re-use
@@ -125,42 +122,22 @@ title: Примітки для інструктора
   is a great opportunity to show how
   "seven plus or minus two"
   connects to programming.
-  Once we have figured out how to do something moderately complicated,
-  we make it re-usable and give it a name
-  so that it only takes up one slot in working memory
-  rather than several.
-  It is also a good opportunity to talk about exploratory programming:
-  rather than designing a program up front,
-  we can do a few useful things
-  and then retroactively decide which are worth encapsulating
-  for future re-use.
+  Як тільки ми розібралися, як зробити щось відносно складне, ми робимо його придатним для повторного використання та даємо йому назву — щоб це займало один `слот` у робочій пам'яті, а не кілька.
+  Це також чудова нагода поговорити про дослідницьке програмування. Замість того щоб одразу проєктувати програму, ми робимо кілька корисних речей, а потім вирішуємо, що варто виділити у функцію для повторного використання.
 
-- If everything is going well, you can drive home the point that file
-  extensions are essentially there to help computers (and human
-  readers) understand file content and are not a requirement of files
-  (covered briefly in
-  [Navigating Files and Directories](../episodes/02-filedir.md)).
-  This can be done in the
-  [Pipes and Filters](../episodes/04-pipefilter.md) section by showing
-  that you can redirect standard output to a file without the .txt extension
-  (e.g., lengths), and that the resulting file is still a perfectly usable text file.
-  Make the point that if double-clicked in the GUI, the computer will
-  probably ask you what you want to do.
+- Якщо все йде згідно з планом, можна підкреслити, що розширення файлів допомагають комп'ютерам (і людям - читачам) зрозуміти вміст файлів і не є обов'язковою вимогою (коротко висвітлено в секції [Навігація файлами та каталогами](../episodes/02-filedir.md)).
+  Це можна зробити в секції [Канали та фільтри](../episodes/04-pipefilter.md) шляхом демонстрації того, що ви можете перенаправити стандартний вивід у файл без розширення .txt (наприклад, lengths), і що отриманий файл залишається звичайним текстовим файлом.
+  Наголосіть, що якщо двічі клацнути по такому файлі в графічному інтерфейсі, комп'ютер, ймовірно, запитає, що з ним робити.
 
-- We have to leave out many important things because of time constraints,
-  including file permissions, job control, and SSH.
+- Через брак часу нам доводиться пропускати багато важливих тем, зокрема дозволи на файли, керування завданнями та SSH.
   If learners already understand the basic material,
   this can be covered instead using the online lessons as guidelines.
-  These limitations also have follow-on consequences:
+  Ці обмеження також мають подальші наслідки:
 
-- Важко обговорювати `#!` (шебанг), не обговоривши попередньо дозволів, чого ми не робимо.  `#!` is also [pretty
-  complicated][shebang], so even if we did discuss permissions, we
-  probably still wouldn't want to discuss `#!`.
+- Важко обговорювати `#!` (шебанг), не обговоривши попередньо дозволів, чого ми не робимо.  Навіть якби ми обговорювали дозволи, ми, мабуть, все одно б не захотіли обговорювати `#!`, оскільки він [доволі складний][shebang].
 
-- Installing Bash and a reasonable set of Unix commands on Windows
-  always involves some fiddling and frustration.
-  Please see the latest set of installation guidelines for advice,
-  and try it out yourself _before_ teaching a class.
+- Встановлення Bash та доцільного набору команд Unix на Windows завжди супроводжується деякими клопотами та розчаруваннями.
+  Будь ласка, порадьтеся з актуальними інструкціями щодо встановлення, і спробуйте виконати їх самостійно, перш ніж викладати у класі.
 
 - By default, you may have a long string of information attached to
   your command prompt in Git Bash. To reduce the "noise" and proceed
@@ -170,14 +147,11 @@ title: Примітки для інструктора
   PS1='$ '
   ```
 
-- On Windows machines
-  if `nano` hasn't been properly installed with the
-  [Software Carpentry Windows Installer][windows-installer]
-  it is possible to use `notepad` as an alternative.  There will be a GUI
+- На машинах з Windows, якщо `nano` не було належним чином встановлено за допомогою [Software Carpentry Windows Installer][windows-installer] можна скористатися `notepad` як альтернативою.  There will be a GUI
   interface and line endings are treated differently, but otherwise, for
   the purposes of this lesson, `notepad` and `nano` can be used almost interchangeably.
 
-- On Windows, it appears that:
+- На машинах з Windows виявляється, що наступні команди:
 
   ```bash
   $ cd
