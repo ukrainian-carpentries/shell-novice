@@ -111,17 +111,10 @@ title: Примітки для інструктора
 - Програма для "розщеплення" вашої терміналу так, щоб останні команди залишалися в полі зору: [https://github.com/rgaiacs/swc-shell-split-window](https://github.com/rgaiacs/swc-shell-split-window).
 
 - Автодоповнення за допомогою Tab здається дрібницею — але це не так.
-  Re-running old commands using `!123` or `!wc`
-  isn't a small thing either,
-  and neither are wildcard expansion and `for` loops.
+  Повторний запуск попередніх команд за допомогою `!123` або `!wc` теж не дрібниця, так само як і символи підстановки та цикли `for`.
   Кожне з цих понять — нагода повторити головну ідею Software Carpentry: якщо комп'ютер _може_ щось повторити, якийсь програміст уже придумав, _як_ комп’ютеру це зробити.
 
-- Building up a pipeline with four or five stages,
-  then putting it in a shell script for re-use
-  and calling that script inside a `for` loop,
-  is a great opportunity to show how
-  "seven plus or minus two"
-  connects to programming.
+- Побудова конвеєра з чотирьох або п'яти етапів із подальшим збереженням у скрипті та викликом у циклі `for` є чудовою нагодою продемонструвати зв'язок концепції "сім плюс-мінус два" з програмуванням.
   Як тільки ми розібралися, як зробити щось відносно складне, ми робимо його придатним для повторного використання та даємо йому назву — щоб це займало один `слот` у робочій пам'яті, а не кілька.
   Це також чудова нагода поговорити про дослідницьке програмування. Замість того щоб одразу проєктувати програму, ми робимо кілька корисних речей, а потім вирішуємо, що варто виділити у функцію для повторного використання.
 
@@ -130,8 +123,7 @@ title: Примітки для інструктора
   Наголосіть, що якщо двічі клацнути по такому файлі в графічному інтерфейсі, комп'ютер, ймовірно, запитає, що з ним робити.
 
 - Через брак часу нам доводиться пропускати багато важливих тем, зокрема дозволи на файли, керування завданнями та SSH.
-  If learners already understand the basic material,
-  this can be covered instead using the online lessons as guidelines.
+  Якщо слухачі вже розуміють базовий матеріал, цей розділ можна розглянути, використовуючи онлайн-уроки як настанови.
   Ці обмеження також мають подальші наслідки:
 
 - Важко обговорювати `#!` (шебанг), не обговоривши попередньо дозволів, чого ми не робимо.  Навіть якби ми обговорювали дозволи, ми, мабуть, все одно б не захотіли обговорювати `#!`, оскільки він [доволі складний][shebang].
@@ -139,17 +131,13 @@ title: Примітки для інструктора
 - Встановлення Bash та доцільного набору команд Unix на Windows завжди супроводжується деякими клопотами та розчаруваннями.
   Будь ласка, порадьтеся з актуальними інструкціями щодо встановлення, і спробуйте виконати їх самостійно, перш ніж викладати у класі.
 
-- By default, you may have a long string of information attached to
-  your command prompt in Git Bash. To reduce the "noise" and proceed
-  with a tidier prompt, enter the command:
+- За замовчуванням у Git Bash ваше запрошення командного рядка може містити довгий рядок інформації. Щоб зменшити "шум" та отримати охайніше запрошення, введіть команду:
 
   ```bash
   PS1='$ '
   ```
 
-- На машинах з Windows, якщо `nano` не було належним чином встановлено за допомогою [Software Carpentry Windows Installer][windows-installer] можна скористатися `notepad` як альтернативою.  There will be a GUI
-  interface and line endings are treated differently, but otherwise, for
-  the purposes of this lesson, `notepad` and `nano` can be used almost interchangeably.
+- На машинах з Windows, якщо `nano` не було належним чином встановлено за допомогою [Software Carpentry Windows Installer][windows-installer] можна скористатися `notepad` як альтернативою.  У цьому випадку буде використовуватися графічний інтерфейс і закінчення рядків обробляються інакше. Проте для цілей цього уроку `notepad` та `nano` можна використовувати майже як взаємозамінні.
 
 - На машинах з Windows виявляється, що наступні команди:
 
@@ -158,39 +146,28 @@ title: Примітки для інструктора
   $ cd Desktop
   ```
 
-  will always put someone on their desktop
-  (unless their machine is backed up using enterprise OneDrive, see next point).
-  Have them create the example directory for the shell exercises there
-  so that they can find it easily
-  and watch it evolve.
+  завжди відправлять користувача на робочий стіл (якщо тільки їхній комп'ютер не зберігає резервну копію за допомогою корпоративного OneDrive, див. наступний пункт).
+  Попросіть слухачів створити там каталог для вправ, щоб можна було легко його знайти.
 
-- If a Windows machine is backed up with enterprise OneDrive, their GUI desktop may
-  be rendered from a folder within OneDrive, which will not match the contents of `~/Desktop`.
-  The OneDrive desktop should be accessible using one of the following commands
-  (if the name of the enterprise isn't clear, look through the output of `ls` to find
-  the right folder):
+- Якщо комп'ютер з Windows синхронізується з корпоративним OneDrive, графічний робочий стіл може зображатися з каталогу всередині OneDrive. Це означає, що його вміст не збігатиметься з вмістом `~/Desktop`.
+  Робочий стіл OneDrive можна знайти за допомогою однієї з наведених нижче команд (якщо точний формат назви організації невідомий, перегляньте вивід `ls`, щоб знайти потрібний каталог):
 
   ```bash
   $ cd "~/OneDrive - Name Of Enterprise/Desktop"
   $ cd "C:/Users/Username/OneDrive - Name Of Enterprise/Desktop"
   ```
 
-  One way to spot if the computer is using this kind of configuration is to look at files,
-  folders or links on the desktop. Usually the icon contains a shortcut/arrow symbol if it
-  is a link, or just the plain icon if the file is just saved in the `Desktop` folder.
-  Files synced with OneDrive contain an additional symbol indicating the sync status
-  (typically blue arrows for 'sync pending' or a green tick for 'synced').
+  Один зі способів визначити, чи використовує комп'ютер таку конфігурацію - це переглянути файли, каталоги або посилання на робочому столі. Зазвичай піктограма містить символ ярлика/стрілки, якщо це посилання. Якщо ж файл безпосередньо збережено в каталозі  `Desktop` — зображається звичайна піктограма.
+  Файли, які синхронізуються з OneDrive, містять додатковий символ, що вказує на стан синхронізації (зазвичай сині стрілки для "очікує синхронізації" або зелена галочка для "синхронізовано").
 
-- Stay within POSIX-compliant commands, as all the teaching materials do.
+- Дотримуйтеся команд, сумісних з POSIX, як і в усіх навчальних матеріалах.
   Your particular shell may have extensions beyond POSIX that are not available
   on other machines, especially the default macOS bash and Windows bash emulators.
-  For example, POSIX `ls` does not have an `--ignore=` or `-I` option, and POSIX
-  `head` takes `-n 10` or `-10`, but not the long form of `--lines=10`.
+  Наприклад, POSIX `ls` не має опції `--ignore=` або `-I`, а POSIX `head` приймає `-n 10` або `-10`, але не довгу форму `--lines=10`.
 
-## Windows
+## Особливості для Windows
 
-Installing Bash and a reasonable set of Unix commands on Windows
-always involves some fiddling and frustration.
+Встановлення Bash та доцільного набору команд Unix на Windows завжди супроводжується деякими клопотами та розчаруваннями.
 Please see the latest set of installation guidelines for advice,
 and try it out yourself _before_ teaching a class.
 Options we have explored include:
