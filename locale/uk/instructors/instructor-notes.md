@@ -161,41 +161,30 @@ title: Примітки для інструктора
   Файли, які синхронізуються з OneDrive, містять додатковий символ, що вказує на стан синхронізації (зазвичай сині стрілки для "очікує синхронізації" або зелена галочка для "синхронізовано").
 
 - Дотримуйтеся команд, сумісних з POSIX, як і в усіх навчальних матеріалах.
-  Your particular shell may have extensions beyond POSIX that are not available
-  on other machines, especially the default macOS bash and Windows bash emulators.
+  Ваш термінал може підтримувати додаткові можливості за межами POSIX — особливо у стандартному bash macOS та емуляторах bash Windows.
   Наприклад, POSIX `ls` не має опції `--ignore=` або `-I`, а POSIX `head` приймає `-n 10` або `-10`, але не довгу форму `--lines=10`.
 
 ## Особливості для Windows
 
 Встановлення Bash та доцільного набору команд Unix на Windows завжди супроводжується деякими клопотами та розчаруваннями.
-Please see the latest set of installation guidelines for advice,
-and try it out yourself _before_ teaching a class.
-Options we have explored include:
+Будь ласка, порадьтеся з актуальними інструкціями щодо встановлення, і спробуйте виконати їх самостійно, перш ніж викладати у класі.
+Попередньо, ми розглядали такі варіанти:
 
-1. [msysGit](https://msysgit.github.io/) (also called "Git Bash"),
+1. [msysGit](https://msysgit.github.io/) (також відомий як "Git Bash"),
 2. [Cygwin](https://www.cygwin.com/),
-3. using a desktop virtual machine, and
-4. having learners connect to a remote Unix machine (typically a VM in the cloud).
+3. використання віртуальної машини, та
+4. підключення учнів до віддаленої Unix-машини (як правило, віртуальної машини в хмарі).
 
-Cygwin was the preferred option until mid-2013,
-but once we started teaching Git,
-msysGit proved to work better.
-Desktop virtual machines and cloud-based VMs work well for technically sophisticated learners,
-and can reduce installation and configuration at the start of the workshop,
-but:
+Cygwin був найкращим варіантом до середини 2013 року, але як тільки ми почали викладати Git, msysGit виявився кращим.
+Локальні та хмарні віртуальні машини добре підходять для технічно досвідчених слухачів і можуть скоротити час на встановлення та налаштування на початку семінару, але:
 
-1. they don't work well on underpowered machines,
-2. they're confusing for novices (because simple things like copy and paste work differently),
-3. learners leave the workshop without a working environment on their operating system of choice,
-   and
-4. learners may show up without having downloaded the VM or the wireless will go down
-   (or become congested) during the lesson.
+1. вони погано працюють на малопотужних машинах,
+2. вони збивають з пантелику початківців (тому що такі прості речі, як копіювання та вставлення, працюють по-різному),
+3. слухачі залишають семінар без робочого середовища на обраній ними операційній системі,
+4. слухачі можуть не завантажити віртуальну машину перед початком семінару, або бездротовий зв'язок зникне (або стане перевантаженим) під час уроку.
 
-Whatever you use,
-please _test it yourself_ on a Windows machine _before_ your workshop:
-things may always have changed behind your back since your last workshop.
-And please also make use of our
-[Software Carpentry Windows Installer][windows-installer].
+Що б ви не використовували, будь ласка, _перевірте це власноруч_ на комп'ютері з Windows _до_ початку семінару: після вашого останнього семінару все могло змінитися без вашого відома.
+Також, будь ласка, користуйтеся нашим [Software Carpentry Windows Installer][windows-installer].
 
 [shebang]: https://www.in-ulm.de/~mascheck/various/shebang/
 [windows-installer]: https://github.com/swcarpentry/windows-installer
