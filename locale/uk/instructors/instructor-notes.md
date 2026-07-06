@@ -108,10 +108,9 @@ title: Примітки для інструктора
 
 - Ще один чудовий онлайн-ресурс - це [http://www.shellcheck.net](https://www.shellcheck.net), який перевірить скрипти оболонки (як завантажені, так і введені) на наявність розповсюджених помилок.
 
-- Resources for "splitting" your shell so that recent commands
-  remain in view: [https://github.com/rgaiacs/swc-shell-split-window](https://github.com/rgaiacs/swc-shell-split-window).
+- Програма для "розщеплення" вашої терміналу так, щоб останні команди залишалися в полі зору: [https://github.com/rgaiacs/swc-shell-split-window](https://github.com/rgaiacs/swc-shell-split-window).
 
-- Tab completion sounds like a small thing: it isn't.
+- Автодоповнення за допомогою Tab здається дрібницею — але це не так.
   Re-running old commands using `!123` or `!wc`
   isn't a small thing either,
   and neither are wildcard expansion and `for` loops.
