@@ -1,34 +1,29 @@
 ---
-title: Instructor Notes
+title: Примітки для інструктора
 ---
 
-- Why do we learn to use the shell?
-  - Allows users to automate repetitive tasks
-  - And capture small data manipulation steps that are normally not recorded
-    to make research reproducible
+- Навіщо ми вчимося користуватися терміналом?
+  - Дозволяє користувачам автоматизувати повторювані завдання
+  - Та зберігає маленькі кроки роботи з даними, які зазвичай не записують — щоб дослідження можна було повторити
 - Проблема
-  - Running the same workflow on several samples can be unnecessarily labour intensive
+  - Запускати той самий процес для кількох зразків — це зайва робота
   - Ручна маніпуляція з файлами даних:
     - часто не відображається в документації
     - важка для відтворення
     - важко усунути несправності, переглянути або вдосконалити
-- The Shell
+- Термінал
   - Робочі процеси можна автоматизувати за допомогою скриптів терміналу
   - Вбудовані команди дозволяють легко маніпулювати даними (наприклад, sort, grep тощо.)
   - Кожен крок може бути зафіксований у скрипті терміналу, що забезпечує відтворюваність та легке усунення несправностей
 
 ## Підсумок
 
-Many people have questioned whether we should still teach the shell.
-After all,
-anyone who wants to rename several thousand data files
-can easily do so interactively in the Python interpreter,
-and anyone who's doing serious data analysis
-is probably going to do most of their work inside the IPython Notebook or R Studio.
-So why teach the shell?
+Багато хто ставить під сумнів, чи варто нам продовжувати навчати людей працювати з терміналом.
+Адже перейменувати тисячі файлів можна в Python, а серйозний аналіз даних можна зробити у IPython Notebook або R Studio.
+Тож навіщо навчатися роботі в терміналі?
 
-The first answer is,
-"Because so much else depends on it."
+Перша відповідь така:
+"Тому що багато інших речей залежать від цього."
 Встановлення програмного забезпечення,
 налаштування редактора за замовчуванням
 та керування віддаленими комп'ютерами часто вимагають базового знайомства з командним терміналом
@@ -55,198 +50,124 @@ The first answer is,
 Третя відповідь така:
 "Тому що це дозволяє використовувати багато вузькоспеціалізованих інструментів та обчислювальних ресурсів,
 до яких дослідники не можуть отримати доступ інакше."
-Familiarity with the shell is very useful for remote accessing machines,
-using high-performance computing infrastructure,
-and running new specialist tools in many disciplines.
+Знання терміналу дуже стає у пригоді — для віддаленого доступу до комп'ютерів,
+роботи з потужними обчислювальними системами
+та використання нових спеціалізованих інструментів у багатьох дисциплінах.
 Ми не навчаємо навичкам роботи з високопродуктивними обчислювальними системами або роботі в конкретних галузях,
 але закладаємо основу для подальшого розвитку цих навичок.
-In particular,
-understanding the syntax of commands, flags, and help systems is useful for domain specific tools
-and understanding the file system (and how to navigate it) is useful for remote access.
+Зокрема,
+розуміння синтаксису команд, їх опцій та довідкових систем допомагає використовувати спеціалізовані інструменти.
+А розуміння файлової системи (та способів навігації по ній) корисне для віддаленого доступу.
 
-Finally,
-and perhaps most importantly,
-teaching people the shell lets us teach them
-to think about programming in terms of function composition.
-In the case of the shell,
-this takes the form of pipelines rather than nested function calls,
-but the core idea of "small pieces, loosely joined" is the same.
+І нарешті, мабуть, найважливіше: навчання людей роботі з терміналом, ми вчимо їх думати про програмування з точки зору композиції функцій.
+У терміналі замість вкладених функцій використовуються конвеєри, але ідея та сама: "маленькі частини, нещільно з'єднані між собою".
 
-All of this material can be covered in three hours
-as long as learners using Windows do not run into roadblocks such as:
+Цей матеріал можна викласти за три години — якщо в учнів на Windows не виникне таких проблем, як:
 
-- not being able to figure out where their home directory is
-  (particularly if they're using Cygwin);
+- труднощі з визначенням розташування домашнього каталогу (особливо якщо вони використовують Cygwin);
 - невміння запустити звичайний текстовий редактор;
   та
 - відмова терміналу виконувати скрипти, які містять закінчення рядків DOS.
 
-## Preparing to Teach
+## Підготовка до викладання
 
-- Use the `data` directory for in-workshop exercises and live coding examples.
-  You can clone the shell-novice directory or use the _Download ZIP_
-  button on the right to get the entire
-  [Git repository](https://github.com/swcarpentry/shell-novice). We also now provide
-  a zip file of the `data` directory
-  at the [Setup page](../learners/setup.md).
+- Використовуйте каталог `data` для вправ на семінарах та для прикладів кодування в реальному часі.
+  Ви можете клонувати репозиторій shell-novice або скористатися кнопкою \* Download ZIP\* праворуч, щоб отримати весь [репозиторій](https://github.com/swcarpentry/shell-novice). Також тепер ми надаємо
+  zip-файл каталогу `data`
+  на [Сторінці налаштування](../learners/setup.md).
 
-- Website: various practices have been used.
+- Вебсайт: до цього використовувалися різні практики.
 
-  - Option 1: Can give links to learners before the lesson so they can follow along,
-    catch up,
-    and see exercises (particularly if you're following the lesson content without many changes).
-  - Option 2: Don't show the website to the learners during the lesson,
-    as it can be distracting:
-    students may read instead of listen, and having another window open is an additional
-    cognitive load.
-  - In any case, make sure to point to website as a post-workshop reference.
+  - Варіант 1: Ви можете дати учням посилання перед початком уроку, щоб вони могли стежити за матеріалом, наздоганяти та бачити вправи (особливо якщо ви дотримуєтеся змісту уроку без суттєвих змін).
+  - Варіант 2: Не показуйте вебсайт під час уроку — він відволікає. Учні будуть читати замість того, щоб слухати, а зайве вікно заважає зосередитися.
+  - У будь-якому випадку, обов'язково вкажіть на вебсайт як на довідковий ресурс після семінару.
 
-- Content:
-  Unless you have a truly generous amount of time (4+ hours),
-  it is likely that you will not cover ALL the material in this lesson in a single half-day
-  session.
-  Plan ahead on what you might skip, what you really want to emphasize, etc.
+- Зміст:
+  Якщо ви не маєте багато часу (4+ години), швидше за все, ви не встигнете пройти ВЕСЬ матеріал за одне заняття тривалістю пів дня.
+  Заздалегідь вирішіть, що можна пропустити, а на чому варто зробити акцент тощо.
 
-- Exercises:
-  Think in advance about how you might want to handle exercises during the lesson.
-  How are you assigning them (website, slide, handout)?
-  Do you want everyone to try it and then you show the solution?
-  Have a learner show the solution?
-  Have groups each do a different exercise and present their solutions?
+- Вправи:
+  Заздалегідь продумайте, як ви будете організовувати виконання вправ під час уроку.
+  Як слухачі будуть бачити завдання (вебсайт, слайд, супровідні матеріали)?
+  Чи хочете ви, щоб усі спробували виконати вправу, а потім ви покажете розв'язок?
+  Або запропонуєте одному з учасників продемонструвати розв'язок?
+  Чи поділите слухачів на групи та запропонуєте кожній групі виконати окрему вправу, а потім презентувати отримані рішення?
 
-- The [Reference page](../learners/reference.md) can be printed out
-  and given to students as a reference, your choice.
+- На ваш вибір, [сторінку довідки](../learners/reference.md) можна надрукувати та роздати студентам для ознайомлення.
 
-- Other preparation:
-  Feel free to add your own examples or side comments,
-  but know that it shouldn't be necessary:
-  the topics and commands can be taught as given on the lesson pages.
-  If you think there is a place where the lesson is lacking,
-  feel free to file an issue or submit a pull request.
+- Подальша підготовка:
+  Ви можете додавати власні приклади чи коментарі,
+  але знайте, що це не обов'язково: усі поняття та команди можна викладати так, як зазначено на сторінках уроку.
+  Якщо ви вважаєте, що в уроці чогось не вистачає, не соромтеся повідомити про проблему або створити запит на зміну матеріалу.
 
-## Teaching Notes
+## Нотатки для викладача
 
-- Super cool online resource!
-  [http://explainshell.com/](https://explainshell.com/) will dissect any shell command you type in
-  and display help text for each piece.
-  Additional nice manual tool could be [http://tldr.sh/](https://tldr.sh/)
-  with short very descriptive manuals for shell commands,
-  useful especially on Windows while using Git BASH where `man` could not work.
+- Чудовий онлайн-ресурс!
+  [http://explainshell.com/](https://explainshell.com/) аналізує будь-яку команду терміналу та показує пояснення до кожної її частини.
+  Чудовим додатковим посібником може бути [http://tldr.sh/](https://tldr.sh/) з короткими та дуже місткими інструкціями для команд терміналу. Це особливо корисно у Windows під час використання Git Bash, де `man` не може працювати.
 
-- Another super cool online resource is [http://www.shellcheck.net](https://www.shellcheck.net),
-  which will check shell scripts (both uploaded and typed in) for common errors.
+- Ще один чудовий онлайн-ресурс - це [http://www.shellcheck.net](https://www.shellcheck.net), який перевірить скрипти оболонки (як завантажені, так і введені) на наявність розповсюджених помилок.
 
-- Resources for "splitting" your shell so that recent commands
-  remain in view: [https://github.com/rgaiacs/swc-shell-split-window](https://github.com/rgaiacs/swc-shell-split-window).
+- Програма для "розщеплення" вашої терміналу так, щоб останні команди залишалися в полі зору: [https://github.com/rgaiacs/swc-shell-split-window](https://github.com/rgaiacs/swc-shell-split-window).
 
-- Tab completion sounds like a small thing: it isn't.
-  Re-running old commands using `!123` or `!wc`
-  isn't a small thing either,
-  and neither are wildcard expansion and `for` loops.
-  Each one is an opportunity to repeat one of the big ideas of Software Carpentry:
-  if the computer _can_ repeat it,
-  some programmer somewhere will almost certainly have built
-  some way for the computer _to_ repeat it.
+- Автодоповнення за допомогою Tab здається дрібницею — але це не так.
+  Повторний запуск попередніх команд за допомогою `!123` або `!wc` теж не дрібниця, так само як і символи підстановки та цикли `for`.
+  Кожне з цих понять — нагода повторити головну ідею Software Carpentry: якщо комп'ютер _може_ щось повторити, якийсь програміст уже придумав, _як_ комп’ютеру це зробити.
 
-- Building up a pipeline with four or five stages,
-  then putting it in a shell script for re-use
-  and calling that script inside a `for` loop,
-  is a great opportunity to show how
-  "seven plus or minus two"
-  connects to programming.
-  Once we have figured out how to do something moderately complicated,
-  we make it re-usable and give it a name
-  so that it only takes up one slot in working memory
-  rather than several.
-  It is also a good opportunity to talk about exploratory programming:
-  rather than designing a program up front,
-  we can do a few useful things
-  and then retroactively decide which are worth encapsulating
-  for future re-use.
+- Побудова конвеєра з чотирьох або п'яти етапів із подальшим збереженням у скрипті та викликом у циклі `for` є чудовою нагодою продемонструвати зв'язок концепції "сім плюс-мінус два" з програмуванням.
+  Як тільки ми розібралися, як зробити щось відносно складне, ми робимо його придатним для повторного використання та даємо йому назву — щоб це займало один `слот` у робочій пам'яті, а не кілька.
+  Це також чудова нагода поговорити про дослідницьке програмування. Замість того щоб одразу проєктувати програму, ми робимо кілька корисних речей, а потім вирішуємо, що варто виділити у функцію для повторного використання.
 
-- If everything is going well, you can drive home the point that file
-  extensions are essentially there to help computers (and human
-  readers) understand file content and are not a requirement of files
-  (covered briefly in
-  [Navigating Files and Directories](../episodes/02-filedir.md)).
-  This can be done in the
-  [Pipes and Filters](../episodes/04-pipefilter.md) section by showing
-  that you can redirect standard output to a file without the .txt extension
-  (e.g., lengths), and that the resulting file is still a perfectly usable text file.
-  Make the point that if double-clicked in the GUI, the computer will
-  probably ask you what you want to do.
+- Якщо все йде згідно з планом, можна підкреслити, що розширення файлів допомагають комп'ютерам (і людям - читачам) зрозуміти вміст файлів і не є обов'язковою вимогою (коротко висвітлено в секції [Навігація файлами та каталогами](../episodes/02-filedir.md)).
+  Це можна зробити в секції [Канали та фільтри](../episodes/04-pipefilter.md) шляхом демонстрації того, що ви можете перенаправити стандартний вивід у файл без розширення .txt (наприклад, lengths), і що отриманий файл залишається звичайним текстовим файлом.
+  Наголосіть, що якщо двічі клацнути по такому файлі в графічному інтерфейсі, комп'ютер, ймовірно, запитає, що з ним робити.
 
-- We have to leave out many important things because of time constraints,
-  including file permissions, job control, and SSH.
-  If learners already understand the basic material,
-  this can be covered instead using the online lessons as guidelines.
-  These limitations also have follow-on consequences:
+- Через брак часу нам доводиться пропускати багато важливих тем, зокрема дозволи на файли, керування завданнями та SSH.
+  Якщо слухачі вже розуміють базовий матеріал, цей розділ можна розглянути, використовуючи онлайн-уроки як настанови.
+  Ці обмеження також мають подальші наслідки:
 
-- It's hard to discuss `#!` (shebang) without first discussing
-  permissions, which we don't do.  `#!` is also [pretty
-  complicated][shebang], so even if we did discuss permissions, we
-  probably still wouldn't want to discuss `#!`.
+- Важко обговорювати `#!` (шебанг), не обговоривши попередньо дозволів, чого ми не робимо.  Навіть якби ми обговорювали дозволи, ми, мабуть, все одно б не захотіли обговорювати `#!`, оскільки він [доволі складний][shebang].
 
-- Installing Bash and a reasonable set of Unix commands on Windows
-  always involves some fiddling and frustration.
-  Please see the latest set of installation guidelines for advice,
-  and try it out yourself _before_ teaching a class.
+- Встановлення Bash та доцільного набору команд Unix на Windows завжди супроводжується деякими клопотами та розчаруваннями.
+  Будь ласка, порадьтеся з актуальними інструкціями щодо встановлення, і спробуйте виконати їх самостійно, перш ніж викладати у класі.
 
-- By default, you may have a long string of information attached to
-  your command prompt in Git Bash. To reduce the "noise" and proceed
-  with a tidier prompt, enter the command:
+- За замовчуванням у Git Bash ваше запрошення командного рядка може містити довгий рядок інформації. Щоб зменшити "шум" та отримати охайніше запрошення, введіть команду:
 
   ```bash
   PS1='$ '
   ```
 
-- On Windows machines
-  if `nano` hasn't been properly installed with the
-  [Software Carpentry Windows Installer][windows-installer]
-  it is possible to use `notepad` as an alternative.  There will be a GUI
-  interface and line endings are treated differently, but otherwise, for
-  the purposes of this lesson, `notepad` and `nano` can be used almost interchangeably.
+- На машинах з Windows, якщо `nano` не було належним чином встановлено за допомогою [Software Carpentry Windows Installer][windows-installer] можна скористатися `notepad` як альтернативою.  У цьому випадку буде використовуватися графічний інтерфейс і закінчення рядків обробляються інакше. Проте для цілей цього уроку `notepad` та `nano` можна використовувати майже як взаємозамінні.
 
-- On Windows, it appears that:
+- На машинах з Windows виявляється, що наступні команди:
 
   ```bash
   $ cd
   $ cd Desktop
   ```
 
-  will always put someone on their desktop
-  (unless their machine is backed up using enterprise OneDrive, see next point).
-  Have them create the example directory for the shell exercises there
-  so that they can find it easily
-  and watch it evolve.
+  завжди відправлять користувача на робочий стіл (якщо тільки їхній комп'ютер не зберігає резервну копію за допомогою корпоративного OneDrive, див. наступний пункт).
+  Попросіть слухачів створити там каталог для вправ, щоб можна було легко його знайти.
 
-- If a Windows machine is backed up with enterprise OneDrive, their GUI desktop may
-  be rendered from a folder within OneDrive, which will not match the contents of `~/Desktop`.
-  The OneDrive desktop should be accessible using one of the following commands
-  (if the name of the enterprise isn't clear, look through the output of `ls` to find
-  the right folder):
+- Якщо комп'ютер з Windows синхронізується з корпоративним OneDrive, графічний робочий стіл може зображатися з каталогу всередині OneDrive. Це означає, що його вміст не збігатиметься з вмістом `~/Desktop`.
+  Робочий стіл OneDrive можна знайти за допомогою однієї з наведених нижче команд (якщо точний формат назви організації невідомий, перегляньте вивід `ls`, щоб знайти потрібний каталог):
 
   ```bash
   $ cd "~/OneDrive - Name Of Enterprise/Desktop"
   $ cd "C:/Users/Username/OneDrive - Name Of Enterprise/Desktop"
   ```
 
-  One way to spot if the computer is using this kind of configuration is to look at files,
-  folders or links on the desktop. Usually the icon contains a shortcut/arrow symbol if it
-  is a link, or just the plain icon if the file is just saved in the `Desktop` folder.
-  Files synced with OneDrive contain an additional symbol indicating the sync status
-  (typically blue arrows for 'sync pending' or a green tick for 'synced').
+  Один зі способів визначити, чи використовує комп'ютер таку конфігурацію - це переглянути файли, каталоги або посилання на робочому столі. Зазвичай піктограма містить символ ярлика/стрілки, якщо це посилання. Якщо ж файл безпосередньо збережено в каталозі  `Desktop` — зображається звичайна піктограма.
+  Файли, які синхронізуються з OneDrive, містять додатковий символ, що вказує на стан синхронізації (зазвичай сині стрілки для "очікує синхронізації" або зелена галочка для "синхронізовано").
 
-- Stay within POSIX-compliant commands, as all the teaching materials do.
+- Дотримуйтеся команд, сумісних з POSIX, як і в усіх навчальних матеріалах.
   Your particular shell may have extensions beyond POSIX that are not available
   on other machines, especially the default macOS bash and Windows bash emulators.
-  For example, POSIX `ls` does not have an `--ignore=` or `-I` option, and POSIX
-  `head` takes `-n 10` or `-10`, but not the long form of `--lines=10`.
+  Наприклад, POSIX `ls` не має опції `--ignore=` або `-I`, а POSIX `head` приймає `-n 10` або `-10`, але не довгу форму `--lines=10`.
 
-## Windows
+## Особливості для Windows
 
-Installing Bash and a reasonable set of Unix commands on Windows
-always involves some fiddling and frustration.
+Встановлення Bash та доцільного набору команд Unix на Windows завжди супроводжується деякими клопотами та розчаруваннями.
 Please see the latest set of installation guidelines for advice,
 and try it out yourself _before_ teaching a class.
 Options we have explored include:
