@@ -78,9 +78,7 @@ title: Примітки для інструктора
 
 - Вебсайт: до цього використовувалися різні практики.
 
-  - Option 1: Can give links to learners before the lesson so they can follow along,
-    catch up,
-    and see exercises (particularly if you're following the lesson content without many changes).
+  - Варіант 1: Ви можете дати учням посилання перед початком уроку, щоб вони могли стежити за матеріалом, наздоганяти та бачити вправи (особливо якщо ви дотримуєтеся змісту уроку без суттєвих змін).
   - Варіант 2: Не показуйте вебсайт під час уроку — він відволікає. Учні будуть читати замість того, щоб слухати, а зайве вікно заважає зосередитися.
   - У будь-якому випадку, обов'язково вкажіть на вебсайт як на довідковий ресурс після семінару.
 
@@ -93,7 +91,7 @@ title: Примітки для інструктора
   Як слухачі будуть бачити завдання (вебсайт, слайд, супровідні матеріали)?
   Чи хочете ви, щоб усі спробували виконати вправу, а потім ви покажете розв'язок?
   Або запропонуєте одному з учасників продемонструвати розв'язок?
-  Have groups each do a different exercise and present their solutions?
+  Чи поділите слухачів на групи та запропонуєте кожній групі виконати окрему вправу, а потім презентувати отримані рішення?
 
 - На ваш вибір, [сторінку довідки](../learners/reference.md) можна надрукувати та роздати студентам для ознайомлення.
 
@@ -106,12 +104,9 @@ title: Примітки для інструктора
 
 - Чудовий онлайн-ресурс!
   [http://explainshell.com/](https://explainshell.com/) аналізує будь-яку команду терміналу та показує пояснення до кожної її частини.
-  Additional nice manual tool could be [http://tldr.sh/](https://tldr.sh/)
-  with short very descriptive manuals for shell commands,
-  useful especially on Windows while using Git BASH where `man` could not work.
+  Чудовим додатковим посібником може бути [http://tldr.sh/](https://tldr.sh/) з короткими та дуже місткими інструкціями для команд терміналу. Це особливо корисно у Windows під час використання Git Bash, де `man` не може працювати.
 
-- Another super cool online resource is [http://www.shellcheck.net](https://www.shellcheck.net),
-  which will check shell scripts (both uploaded and typed in) for common errors.
+- Ще один чудовий онлайн-ресурс - це [http://www.shellcheck.net](https://www.shellcheck.net), який перевірить скрипти оболонки (як завантажені, так і введені) на наявність розповсюджених помилок.
 
 - Resources for "splitting" your shell so that recent commands
   remain in view: [https://github.com/rgaiacs/swc-shell-split-window](https://github.com/rgaiacs/swc-shell-split-window).
