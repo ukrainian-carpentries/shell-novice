@@ -4,8 +4,7 @@ title: Примітки для інструктора
 
 - Навіщо ми вчимося користуватися терміналом?
   - Дозволяє користувачам автоматизувати повторювані завдання
-  - And capture small data manipulation steps that are normally not recorded
-    to make research reproducible
+  - Та зберігає маленькі кроки роботи з даними, які зазвичай не записують — щоб дослідження можна було повторити
 - Проблема
   - Запускати той самий процес для кількох зразків — це зайва робота
   - Ручна маніпуляція з файлами даних:
@@ -20,11 +19,7 @@ title: Примітки для інструктора
 ## Підсумок
 
 Багато хто ставить під сумнів, чи варто нам продовжувати навчати людей працювати з терміналом.
-After all,
-anyone who wants to rename several thousand data files
-can easily do so interactively in the Python interpreter,
-and anyone who's doing serious data analysis
-is probably going to do most of their work inside the IPython Notebook or R Studio.
+Адже перейменувати тисячі файлів можна в Python, а серйозний аналіз даних можна зробити у IPython Notebook або R Studio.
 Тож навіщо навчатися роботі в терміналі?
 
 Перша відповідь така:
@@ -67,8 +62,7 @@ is probably going to do most of their work inside the IPython Notebook or R Stud
 І нарешті, мабуть, найважливіше: навчання людей роботі з терміналом, ми вчимо їх думати про програмування з точки зору композиції функцій.
 У терміналі замість вкладених функцій використовуються конвеєри, але ідея та сама: "маленькі частини, нещільно з'єднані між собою".
 
-All of this material can be covered in three hours
-as long as learners using Windows do not run into roadblocks such as:
+Цей матеріал можна викласти за три години — якщо в учнів на Windows не виникне таких проблем, як:
 
 - труднощі з визначенням розташування домашнього каталогу (особливо якщо вони використовують Cygwin);
 - невміння запустити звичайний текстовий редактор;
@@ -78,50 +72,40 @@ as long as learners using Windows do not run into roadblocks such as:
 ## Підготовка до викладання
 
 - Використовуйте каталог `data` для вправ на семінарах та для прикладів кодування в реальному часі.
-  You can clone the shell-novice directory or use the _Download ZIP_
-  button on the right to get the entire
-  [Git repository](https://github.com/swcarpentry/shell-novice). Також тепер ми надаємо
+  Ви можете клонувати репозиторій shell-novice або скористатися кнопкою \* Download ZIP\* праворуч, щоб отримати весь [репозиторій](https://github.com/swcarpentry/shell-novice). Також тепер ми надаємо
   zip-файл каталогу `data`
   на [Сторінці налаштування](../learners/setup.md).
 
-- Website: various practices have been used.
+- Вебсайт: до цього використовувалися різні практики.
 
   - Option 1: Can give links to learners before the lesson so they can follow along,
     catch up,
     and see exercises (particularly if you're following the lesson content without many changes).
-  - Option 2: Don't show the website to the learners during the lesson,
-    as it can be distracting:
-    students may read instead of listen, and having another window open is an additional
-    cognitive load.
+  - Варіант 2: Не показуйте вебсайт під час уроку — він відволікає. Учні будуть читати замість того, щоб слухати, а зайве вікно заважає зосередитися.
   - У будь-якому випадку, обов'язково вкажіть на вебсайт як на довідковий ресурс після семінару.
 
-- Content:
-  Unless you have a truly generous amount of time (4+ hours),
-  it is likely that you will not cover ALL the material in this lesson in a single half-day
-  session.
+- Зміст:
+  Якщо ви не маєте багато часу (4+ години), швидше за все, ви не встигнете пройти ВЕСЬ матеріал за одне заняття тривалістю пів дня.
   Заздалегідь вирішіть, що можна пропустити, а на чому варто зробити акцент тощо.
 
-- Exercises:
-  Think in advance about how you might want to handle exercises during the lesson.
-  How are you assigning them (website, slide, handout)?
-  Do you want everyone to try it and then you show the solution?
-  Have a learner show the solution?
+- Вправи:
+  Заздалегідь продумайте, як ви будете організовувати виконання вправ під час уроку.
+  Як слухачі будуть бачити завдання (вебсайт, слайд, супровідні матеріали)?
+  Чи хочете ви, щоб усі спробували виконати вправу, а потім ви покажете розв'язок?
+  Або запропонуєте одному з учасників продемонструвати розв'язок?
   Have groups each do a different exercise and present their solutions?
 
-- The [Reference page](../learners/reference.md) can be printed out
-  and given to students as a reference, your choice.
+- На ваш вибір, [сторінку довідки](../learners/reference.md) можна надрукувати та роздати студентам для ознайомлення.
 
-- Other preparation:
-  Feel free to add your own examples or side comments,
-  but know that it shouldn't be necessary:
-  the topics and commands can be taught as given on the lesson pages.
+- Подальша підготовка:
+  Ви можете додавати власні приклади чи коментарі,
+  але знайте, що це не обов'язково: усі поняття та команди можна викладати так, як зазначено на сторінках уроку.
   Якщо ви вважаєте, що в уроці чогось не вистачає, не соромтеся повідомити про проблему або створити запит на зміну матеріалу.
 
-## Teaching Notes
+## Нотатки для викладача
 
 - Чудовий онлайн-ресурс!
-  [http://explainshell.com/](https://explainshell.com/) will dissect any shell command you type in
-  and display help text for each piece.
+  [http://explainshell.com/](https://explainshell.com/) аналізує будь-яку команду терміналу та показує пояснення до кожної її частини.
   Additional nice manual tool could be [http://tldr.sh/](https://tldr.sh/)
   with short very descriptive manuals for shell commands,
   useful especially on Windows while using Git BASH where `man` could not work.
