@@ -594,48 +594,49 @@ OneDrive. Це означає, що його вміст не збігатиме�
 зелена галочка для “синхронізовано”).</p>
 </li>
 <li><p>Дотримуйтеся команд, сумісних з POSIX, як і в усіх навчальних
-матеріалах. Your particular shell may have extensions beyond POSIX that
-are not available on other machines, especially the default macOS bash
-and Windows bash emulators. Наприклад, POSIX <code>ls</code> не має
-опції <code>--ignore=</code> або <code>-I</code>, а POSIX
-<code>head</code> приймає <code>-n 10</code> або <code>-10</code>, але
-не довгу форму <code>--lines=10</code>.</p></li>
+матеріалах. Ваш термінал може підтримувати додаткові можливості за
+межами POSIX — особливо у стандартному bash macOS та емуляторах bash
+Windows. Наприклад, POSIX <code>ls</code> не має опції
+<code>--ignore=</code> або <code>-I</code>, а POSIX <code>head</code>
+приймає <code>-n 10</code> або <code>-10</code>, але не довгу форму
+<code>--lines=10</code>.</p></li>
 </ul></section><section><h2 class="section-heading" id="особливості-для-windows">Особливості для Windows<a class="anchor" aria-label="anchor" href="#%D0%BE%D1%81%D0%BE%D0%B1%D0%BB%D0%B8%D0%B2%D0%BE%D1%81%D1%82%D1%96-%D0%B4%D0%BB%D1%8F-windows"></a>
 </h2>
 <hr class="half-width">
 <p>Встановлення Bash та доцільного набору команд Unix на Windows завжди
-супроводжується деякими клопотами та розчаруваннями. Please see the
-latest set of installation guidelines for advice, and try it out
-yourself <em>before</em> teaching a class. Options we have explored
-include:</p>
+супроводжується деякими клопотами та розчаруваннями. Будь ласка,
+порадьтеся з актуальними інструкціями щодо встановлення, і спробуйте
+виконати їх самостійно, перш ніж викладати у класі. Попередньо, ми
+розглядали такі варіанти:</p>
 <ol style="list-style-type: decimal">
 <li>
-<a href="https://msysgit.github.io/" class="external-link">msysGit</a> (also called “Git
-Bash”),</li>
+<a href="https://msysgit.github.io/" class="external-link">msysGit</a> (також відомий як
+“Git Bash”),</li>
 <li>
 <a href="https://www.cygwin.com/" class="external-link">Cygwin</a>,</li>
-<li>using a desktop virtual machine, and</li>
-<li>having learners connect to a remote Unix machine (typically a VM in
-the cloud).</li>
+<li>використання віртуальної машини, та</li>
+<li>підключення учнів до віддаленої Unix-машини (як правило, віртуальної
+машини в хмарі).</li>
 </ol>
-<p>Cygwin was the preferred option until mid-2013, but once we started
-teaching Git, msysGit proved to work better. Desktop virtual machines
-and cloud-based VMs work well for technically sophisticated learners,
-and can reduce installation and configuration at the start of the
-workshop, but:</p>
+<p>Cygwin був найкращим варіантом до середини 2013 року, але як тільки
+ми почали викладати Git, msysGit виявився кращим. Локальні та хмарні
+віртуальні машини добре підходять для технічно досвідчених слухачів і
+можуть скоротити час на встановлення та налаштування на початку
+семінару, але:</p>
 <ol style="list-style-type: decimal">
-<li>they don’t work well on underpowered machines,</li>
-<li>they’re confusing for novices (because simple things like copy and
-paste work differently),</li>
-<li>learners leave the workshop without a working environment on their
-operating system of choice, and</li>
-<li>learners may show up without having downloaded the VM or the
-wireless will go down (or become congested) during the lesson.</li>
+<li>вони погано працюють на малопотужних машинах,</li>
+<li>вони збивають з пантелику початківців (тому що такі прості речі, як
+копіювання та вставлення, працюють по-різному),</li>
+<li>слухачі залишають семінар без робочого середовища на обраній ними
+операційній системі,</li>
+<li>слухачі можуть не завантажити віртуальну машину перед початком
+семінару, або бездротовий зв’язок зникне (або стане перевантаженим) під
+час уроку.</li>
 </ol>
-<p>Whatever you use, please <em>test it yourself</em> on a Windows
-machine <em>before</em> your workshop: things may always have changed
-behind your back since your last workshop. And please also make use of
-our <a href="https://github.com/swcarpentry/windows-installer" class="external-link">Software
+<p>Що б ви не використовували, будь ласка, <em>перевірте це
+власноруч</em> на комп’ютері з Windows <em>до</em> початку семінару:
+після вашого останнього семінару все могло змінитися без вашого відома.
+Також, будь ласка, користуйтеся нашим <a href="https://github.com/swcarpentry/windows-installer" class="external-link">Software
 Carpentry Windows Installer</a>.</p>
 </section><section id="aggregate-instructor-notes"></section>
 </div>
