@@ -1,4 +1,4 @@
-[![Create a Slack Account with us][create_slack_svg]][slack_invite]
+[![Створіть обліковий запис Slack][create_slack_svg]][slack_invite]
 
 # Репозиторій для інтернаціоналізації уроку shell-novice з програми уроків Software Carpentry
 
