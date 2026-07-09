@@ -152,60 +152,52 @@ title: 'Короткий опис основних команд'
 
 [стандартний ввід]{#standard-input}
 :   Потік вхідних даних, який процес використовує за замовчуванням.
-In interactive command-line applications,
-it is typically connected to the keyboard;
-in a [pipe](#pipe),
-it receives data from the [standard output](#standard-output) of the preceding process.
+В інтерактивних програмах командного рядка, він зазвичай підключається до клавіатури. У [каналі](#pipe) він отримує дані зі [стандартного виводу](#standard-output) попереднього процесу.
 
 [стандартний вивід]{#standard-output}
 :   Вихідний потік процесу за замовчуванням.
-In interactive command-line applications,
-data sent to standard output is displayed on the screen;
-in a [pipe](#pipe),
-it is passed to the [standard input](#standard-input) of the next process.
+В інтерактивних програмах командного рядка, дані, надіслані на стандартний вивід, виводяться на екран; в [каналі](#pipe) вони передаються до [стандартного вводу](#standard-input) наступного процесу.
 
 [підкаталог]{#sub-directory}
 :   Каталог, що міститься у іншому каталозі.
 
-[tab completion]{#tab-completion}
-:   A feature provided by many interactive systems in which
-pressing the Tab key triggers automatic completion of the current word or command.
+[автодоповнення]{#tab-completion}
+:   (клавішею табуляції):
+Функція, що надається багатьма інтерактивними системами, в яких натискання клавіші Tab автоматично доповнює поточне слово або команду.
 
-[variable]{#variable}
-:   A name in a program that is associated with a value or a collection of values.
+[змінна]{#variable}
+:   Ім'я у програмі, яке асоціюється зі значенням або набором значень.
 
-[while loop]{#while-loop}
-:   A loop that keeps executing as long as some condition is true.
-See also: [for loop](#for-loop).
+[цикл while]{#while-loop}
+:   Цикл, який виконується до тих пір, поки певна умова є істинною.
+Дивись також: [цикл for](#for-loop).
 
-[wildcard]{#wildcard}
-:   A character used in pattern matching.
-In the Unix shell,
-the wildcard `*` matches zero or more characters,
-so that `*.txt` matches all files whose names end in `.txt`.
+[символ підстановки]{#wildcard}
+:   Символ, який використовується для зіставлення із шаблоном.
+У терміналі Unix, шаблон `*` відповідає нулю або більше символів; таким чином, `*.txt` відповідає усім файлам, назви яких закінчуються на `.txt`.
 
-## External references
+## Зовнішні джерела
 
-### Opening a terminal
+### Відкриття терміналу
 
-- [How to Use Terminal on a Mac](https://www.macworld.co.uk/feature/mac-software/how-use-terminal-on-mac-3608274/)
-- [Git for Windows](https://git-for-windows.github.io/)
-- [How to Install Bash shell command-line tool on Windows 10](https://www.windowscentral.com/how-install-bash-shell-command-line-windows-10)
-- [Install and Use the Linux Bash Shell on Windows 10](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/)
-- [Using the Windows 10 Bash Shell](https://www.howtogeek.com/265900/everything-you-can-do-with-windows-10s-new-bash-shell/)
-- [Using a UNIX/Linux emulator (Cygwin) or Secure Shell (SSH) client (Putty)](https://faculty.smu.edu/reynolds/unixtut/windows.html)
+- [Як користуватися терміналом на Mac](https://www.macworld.co.uk/feature/mac-software/how-use-terminal-on-mac-3608274/) (матеріал англійською мовою)
+- [Git для Windows](https://git-for-windows.github.io/) (матеріал англійською мовою)
+- [Як встановити термінал Bash на Windows 10](https://www.windowscentral.com/how-install-bash-shell-command-line-windows-10) (матеріал англійською мовою)
+- [Встановлення та використання терміналу Linux Bash у Windows 10](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/) (матеріал англійською мовою)
+- [Використання терміналу Bash у Windows 10](https://www.howtogeek.com/265900/everything-you-can-do-with-windows-10s-new-bash-shell/) (матеріал англійською мовою)
+- [Використання емулятора UNIX/Linux (Cygwin) або клієнта Secure Shell (SSH) (Putty)](https://faculty.smu.edu/reynolds/unixtut/windows.html) (матеріал англійською мовою)
 
-### Manuals
+### Документація
 
-- [GNU manuals](https://www.gnu.org/manual/manual.html)
-- [Core GNU utilities](https://www.gnu.org/software/coreutils/manual/coreutils.html)
+- [Документація до компонентів проєкту GNU](https://www.gnu.org/manual/manual.html) (матеріал англійською мовою)
+- [Ключові утиліти GNU](https://www.gnu.org/software/coreutils/manual/coreutils.html) (матеріал англійською мовою)
 
-### Miscellaneous
+### Різне
 
-- [North Pacific Gyre](https://en.wikipedia.org/wiki/North_Pacific_Gyre)
-- [Great Pacific Garbage Patch](https://en.wikipedia.org/wiki/Great_Pacific_Garbage_Patch)
-- ['Ensuring the longevity of digital information' by Jeff Rothenberg](https://www.clir.org/pubs/archives/ensuring.pdf)
-- [Computer error haikus](https://wiki.c2.com/?ComputerErrorHaiku)
-- [How to name files nicely, by Jenny Bryan](https://speakerdeck.com/jennybc/how-to-name-files)
+- [Північнотихоокеанська течія](https://uk.wikipedia.org/wiki/Північнотихоокеанська_течія)
+- [Велика тихоокеанська сміттєва пляма](https://uk.wikipedia.org/wiki/Велика_тихоокеанська_сміттєва_пляма)
+- ['Забезпечення довговічності цифрової інформації', автор Jeff Rothenberg](https://www.clir.org/pubs/archives/ensuring.pdf) (матеріал англійською мовою)
+- [Хайку про комп'ютерні помилки](https://wiki.c2.com/?ComputerErrorHaiku) (матеріал англійською мовою)
+- ['Як правильно називати файли', автор Jenny Bryan](https://speakerdeck.com/jennybc/how-to-name-files) (матеріал англійською мовою)
 
 
