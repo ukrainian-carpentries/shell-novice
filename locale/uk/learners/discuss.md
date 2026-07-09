@@ -2,7 +2,7 @@
 title: Обговорення
 ---
 
-## Alphabet Soup
+## Таємничі назви команд
 
 If the command to find out who we are is `whoami`, the command to find
 out where we are ought to be called `whereami`, so why is it `pwd`
