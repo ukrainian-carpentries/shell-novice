@@ -42,10 +42,7 @@ title: 'Короткий опис основних команд'
 
 [коментар]{#comment}
 :   Зауваження в програмі, яке пояснює код людині-читачеві, але ігнорується комп'ютером.
-Comments in Python, R, and the Unix shell start with a `#` character
-and run to the end of the line;
-comments in SQL start with `--`,
-and other languages have other conventions.
+Коментарі у мовах Python, R та в терміналі Unix починаються з символу `#` та тривають до кінця відповідного рядка; коментарі в SQL починаються з `--`, а в інших мовах існують інші домовленості.
 
 [поточний робочий каталог]{#current-working-directory}
 :   Каталог, з якого визначаються [відносні шляхи](#relative-path); тобто місце, де відбувається пошук файлів, вказаних лише за назвою.
@@ -59,131 +56,109 @@ and other languages have other conventions.
 [розширення файлу]{#filename-extension}
 :   Частина імені файлу, яка йде після останнього символу ".".
 За домовленістю це визначає тип файлу: `.txt` означає "текстовий файл (від англ. "TeXT"), `.png` означає "файл портативної мережевої графіки" (від англ. "Portable Network Graphics file"), і так далі. Більшість операційних систем не наполягають на дотриманні цих домовленостей: цілком можливо (але призведе до плутанини!) назвати звуковий MP3 файл `homepage.html`.
-Since many applications use filename extensions to identify the
-[MIME type](#mime-type) of the file,
-misnaming files may cause those applications to fail.
+Оскільки багато програм використовують розширення назв файлів для ідентифікації [MIME типу](#mime-type) файлу, неправильні назви файлів можуть призвести до збоїв у роботі відповідних застосунків.
 
 [фільтр]{#filter}
 :   Програма, яка перетворює потік даних.
 Багато інструментів командного рядка Unix написано у вигляді фільтрів: вони зчитують дані зі [стандартного вводу](#standard-input), обробляють їх і записують результат у [стандартний вивід](#standard-output).
 
-[for loop]{#for-loop}
-:   A loop that is executed once for each value in some kind of set, list, or range.
-See also: [while loop](#while-loop).
+[цикл for]{#for-loop}
+:   Цикл, який виконується один раз для кожного значення в деякому наборі, списку або діапазоні.
+Дивись також: [цикл while](#while-loop).
 
-[graphical user interface]{#graphical-user-interface}
-:   A user interface based on selecting items and actions from a graphical display,
-usually controlled by using a mouse.
+[графічний інтерфейс користувача]{#graphical-user-interface}
+:   Інтерфейс користувача, у якому елементи й дії обираються на графічному екрані, зазвичай за допомогою миші.
 Дивись також: [інтерфейс командного рядка](#command-line-interface).
 
-[home directory]{#home-directory}
-:   The default directory associated with an account on a computer system.
-By convention, all of a user's files are stored in or below her home directory.
+[домашній каталог]{#home-directory}
+:   Каталог за замовчуванням, пов'язаний з обліковим записом у комп'ютерній системі.
+Зазвичай усі файли користувача зберігаються у домашньому каталозі або його підкаталогах.
 
-[loop]{#loop}
-:   A set of instructions to be executed multiple times.
-Consists of a [loop body](#loop-body) and (usually) a
-condition for exiting the loop. See also [for loop](#for-loop) and [while loop](#while-loop).
+[цикл]{#loop}
+:   Набір інструкцій, що виконується декілька разів.
+Складається з [тіла циклу](#loop-body) та (зазвичай) умови для виходу з нього. Дивись також: [цикл for](#for-loop) та [цикл while](#while-loop).
 
-[loop body]{#loop-body}
-:   The set of statements or commands that are repeated inside a [for loop](#for-loop)
-or [while loop](#while-loop).
+[тіло циклу]{#loop-body}
+:   Набір операторів або команд, які повторюються всередині [циклу for]((#for-loop) чи [циклу while](#while-loop).
 
-[MIME type]{#mime-type}
-:   MIME (Multi-Purpose Internet Mail Extensions) types describe different file types for exchange
-on the Internet, for example, images, audio, and documents.
+[тип MIME]{#mime-type}
+:   Типи MIME (багатоцільові розширення інтернет-пошти, з англ. Multi-Purpose Internet Mail Extensions) описують різні типи файлів для обміну в Інтернеті через Інтернет, наприклад: зображення, аудіо та документи.
 
-[operating system]{#operating-system}
-:   Software that manages interactions between users, hardware, and software [processes](#process).
-Common examples are Linux, macOS, and Windows.
+[операційна система]{#operating-system}
+:   Програмне забезпечення, що забезпечує взаємодію між користувачами, обладнанням і програмними [процесами](#process).
+Поширеними прикладами є Linux, macOS та Windows.
 
-[option]{#option}
-:   A way to specify an argument or setting to a command-line program.
-By convention Unix applications use a dash followed by a single letter,
-such as `-v`, or two dashes followed by a word, such as `--verbose`,
-while DOS applications use a slash, such as `/V`.
-Depending on the application, an option may be followed by a single argument,
-as in `-o /tmp/output.txt`.
+[опція]{#option}
+:   Спосіб вказати аргумент або параметр у програмі, що викликається з командного рядка.
+Зазвичай програми для Unix використовують тире, за яким слідує одна літера (наприклад, `-v`) або два тире за якими слідує слово (наприклад, `--verbose`). Застосунки DOS натомість використовують скісну риску (наприклад `/V`).
+Залежно від програми, опція може супроводжуватися одним аргументом, наприклад `-o /tmp/output.txt`.
 
-[parameter]{#parameter}
-:   A variable named in a function's declaration that is used to hold a value passed into the call.
-The term is often used interchangeably (and inconsistently) with [argument](#argument).
+[параметр]{#parameter}
+:   Змінна в оголошенні функції, яка отримує значення при виклику функції.
+Цей термін часто (та непослідовно) замінюється на [аргумент](#аргумент).
 
 [батьківський каталог]{#parent-directory}
 :   Каталог, який "містить" каталог, про який йде мова.
-Every directory in a file system except the [root directory](#root-directory) has a parent.
-A directory's parent is usually referred to using the shorthand notation `..`
-(pronounced "dot dot").
+Кожен каталог у файловій системі, окрім [кореневого каталогу](#root-directory), має батьківський каталог.
+На батьківський каталог зазвичай посилаються за допомогою скороченого позначення `..` ("крапка крапка").
 
-[path]{#path}
-:   A description that specifies the location of a file or directory within a
-[file system](#file-system).
-See also: [absolute path](#absolute-path), [relative path](#relative-path).
+[шлях]{#path}
+:   Нотація, яка вказує розташування файлу або каталогу у [файловій системі](#file-system).
+Див. також: [абсолютний шлях](#absolute-path), [відносний шлях](#relative-path).
 
-[pipe]{#pipe}
-:   A connection from the output of one program to the input of another.
-When two or more programs are connected in this way, they are called a "pipeline".
+[канал]{#pipe}
+:   З'єднання виходу однієї програми зі входом іншої.
+Коли дві або більше програм з'єднані таким чином, вони називаються "конвеєром" (pipeline).
 
-[process]{#process}
-:   A running instance of a program, containing code, variable values,
-open files and network connections, and so on.
-Processes are the "actors" that the [operating system](#operating-system) manages;
-it typically runs each process for a few milliseconds at a time
-to give the impression that they are executing simultaneously.
+[процес]{#process}
+:   Виконуваний екземпляр програми, який містить код, значення змінних, відкриті файли, мережеві з'єднання тощо.
+Процеси - це "актори", якими керує [операційна система](#operating-system); зазвичай вона виконує кожен процес по кілька мілісекунд за раз щоб створити враження, що вони виконуються одночасно.
 
-[prompt]{#prompt}
-:   A character or characters display by a [REPL](#read-evaluate-print-loop) to show that
-it is waiting for its next command.
+[запит на введення]{#prompt}
+:   Символ або символи, які виводяться циклом [REPL](#read-evaluate-print-loop), щоб показати, що він чекає на наступну команду.
 
-[quoting]{#quoting}
-:   (in the shell):
-Using quotation marks of various kinds to prevent the shell from interpreting special
-characters.
-For example, to pass the string `*.txt` to a program,
-it is usually necessary to write it as `'*.txt'` (with single quotes)
-so that the shell will not try to expand the `*` wildcard.
+[взяття в лапки]{#quoting}
+:   (в терміналі):
+Використання лапок різного типу із метою запобігання інтерпретації командним рядком спеціальних символів.
+Наприклад, щоб передати програмі рядок `*.txt`, зазвичай потрібно записати його як `'*.txt'` (з одинарними лапками), щоб термінал не намагався розгорнути символ підстановки `*`.
 
-[read-evaluate-print loop]{#read-evaluate-print-loop}
-:   (REPL): A [command-line interface](#command-line-interface) that reads a command from the user,
-executes it, prints the result, and waits for another command.
+[цикл REPL]{#read-evaluate-print-loop}
+:   (REPL): [Інтерфейс командного рядка](#command-line-interface), який читає команду від користувача, виконує її, виводить результат і чекає на наступну команду.
 
-[redirect]{#redirect}
-:   To send a command's output to a file rather than to the screen or another command,
-or equivalently to read a command's input from a file.
+[перенаправлення]{#redirect}
+:   Надсилання виводу команди до файлу замість екрана чи іншої команди або читання її вхідних даних із файлу.
 
 [регулярний вираз]{#regular-expression}
 :   Шаблон, який визначає набір рядків символів.
-REs are most often used to find sequences of characters in strings.
+Регулярні вирази найчастіше використовуються для пошуку послідовностей символів у рядках.
 
-[relative path]{#relative-path}
-:   A [path](#path) that specifies the location of a file or directory
-with respect to the [current working directory](#current-working-directory).
-Any path that does not begin with a separator character ("/" or "\\") is a relative path.
-See also: [absolute path](#absolute-path).
+[відносний шлях]{#relative-path}
+:   [Шлях](#path), який вказує розташування файлу або каталогу відносно [поточного робочого каталогу](#current-working-directory).
+Будь-який шлях, який не починається з символу-розділювача ("/" або "\\"), є відносним шляхом.
+Див. також: [абсолютний шлях](#absolute-path).
 
-[root directory]{#root-directory}
-:   The top-most directory in a [file system](#file-system).
-Its name is "/" on Unix (including Linux and macOS) and "\\" on Microsoft Windows.
+[кореневий каталог]{#root-directory}
+:   Найвищий каталог у [файловій системі](#file-system), від якого відгалужуються всі інші каталоги.
+Він позначається "/" в Unix (включаючи Linux і macOS) та "\\" в Microsoft Windows.
 
-[shell]{#shell}
-:   A [command-line interface](#command-line-interface) such as Bash (the Bourne-Again Shell)
-or the Microsoft Windows DOS shell
-that allows a user to interact with the [operating system](#operating-system).
+[термінал]{#shell}
+:   (оболонка):
+[Інтерфейс командного рядка](#command-line-interface), наприклад, Bash (Bourne-Again Shell) або DOS термінал у Microsoft Windows, що дозволяють користувачеві взаємодіяти з [операційною системою](#operating-system).
 
-[shell script]{#shell-script}
-:   A set of [shell](#shell) commands stored in a file for re-use.
-A shell script is a program executed by the shell;
-the name "script" is used for historical reasons.
+[скрипт терміналу]{#shell-script}
+:   (скрипт оболонки):
+Набір команд [терміналу](#shell), збережений у файлі для повторного використання.
+Скрипт терміналу - це програма, яку виконує термінал; назва "скрипт" використовується з історичних причин.
 
-[standard input]{#standard-input}
-:   A process's default input stream.
+[стандартний ввід]{#standard-input}
+:   Потік вхідних даних, який процес використовує за замовчуванням.
 In interactive command-line applications,
 it is typically connected to the keyboard;
 in a [pipe](#pipe),
 it receives data from the [standard output](#standard-output) of the preceding process.
 
-[standard output]{#standard-output}
-:   A process's default output stream.
+[стандартний вивід]{#standard-output}
+:   Вихідний потік процесу за замовчуванням.
 In interactive command-line applications,
 data sent to standard output is displayed on the screen;
 in a [pipe](#pipe),
