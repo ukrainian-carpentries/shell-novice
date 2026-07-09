@@ -2,71 +2,41 @@
 title: Обговорення
 ---
 
-## Alphabet Soup
+## Таємничі назви команд
 
-If the command to find out who we are is `whoami`, the command to find
-out where we are ought to be called `whereami`, so why is it `pwd`
-instead? The usual answer is that in the early 1970s, when Unix was
-first being developed, every keystroke counted: the devices of the day
-were slow, and backspacing on a teletype was so painful that cutting the
-number of keystrokes in order to cut the number of typing mistakes was
-actually a win for usability. The reality is that commands were added to
-Unix one by one, without any master plan, by people who were immersed in
-its jargon. The result is as inconsistent as the roolz uv Inglish
-speling, but we're stuck with it now.
+Якщо команда, що дає змогу дізнатися, хто ми є, називається `whoami`, то команда, яка показує, де ми є, мала б називатися `whereami` — то чому ж тоді вона зветься `pwd`? На початку 1970-х кожне натискання клавіші мало значення, адже тодішні пристрої були повільними. Виправляти помилки та зворотні видалення на телетайпі було так важко, що менше клавіш означало менше помилок — і це було зручніше. Реальність полягає у тому, що команди додавалися до Unix одна за одною, без жодного загального плану, людьми, які були занурені в його жаргон. Результат настільки ж непослідовний, як би ми писали 'roolz uv Inglish speling' англійською (rules of English spelling) — і з цим доведеться змиритися.
 
-## Job Control Codes
+## Спеціальні комбінації клавіш
 
-The shell accepts a few special commands that allow users to interact
-with running processes or programs. You can enter each of these
-"control codes" by holding down the `Ctrl` key and then pressing one
-of the control characters. In other tutorials, you may see the term
-`Control` or the `^` used to represent the `Ctrl` key (e.g. the
-following are all equivalent `Ctrl-C`, `Ctrl+C`, `Control-C`, `Control+C`, `^C`).
+Термінал приймає кілька спеціальних команд, які дозволяють користувачам взаємодіяти з процесами чи програмами, що вже запущені. Ці "коди керування" вводяться так: тримайте `Ctrl` і натискайте потрібну клавішу. В інших підручниках ви можете зустріти слово `Control` або символ `^`, які використовуються для позначення клавіші `Ctrl` (наприклад наведені нижче комбінації є еквівалентними `Ctrl-C`, `Ctrl+C`, `Control-C`, `Control+C`, `^C`).
 
 - `Ctrl-C`:
-  interrupts and cancels a running program.
-  This is useful if you want to cancel a command that is taking too long to execute.
+  перериває і скасовує запущену програму.
+  Це корисно, якщо ви хочете скасувати команду, яка виконується занадто довго.
 
 - `Ctrl-D`:
-  indicates the end of a file or stream of characters that you are entering on the command line.
-  For example, we saw earlier that the `wc` command counts lines, words, and characters in a file.
-  If we just type `wc` and hit the Enter key without providing a file name,
-  then `wc` will assume we want it to analyze all the stuff we type next.
-  After typing our magnum opus directly into the shell prompt,
-  we can then type Ctrl-D to tell `wc` that we're done
-  and we'd like to see the results of the word count.
+  вказує на кінець файлу або потоку символів, які ви вводите у командному рядку.
+  Наприклад, ми вже раніше бачили, що команда `wc` рахує кількість рядків, слів і символів у файлі.
+  Якщо просто ввести `wc` і натиснути Enter, не вказавши назву файлу, то `wc` вважатиме, що потрібно аналізувати все, що ми вводимо далі.
+  Після введення нашого грандіозного опусу безпосередньо у командний рядок, ми можемо натиснути Ctrl-D, щоб сказати `wc`, що введення завершено і потрібно показати результати підрахунку.
 
 - `Ctrl-Z`:
-  Suspends a process but does not terminate it.
-  You can then use the command `fg` to restart the job in the foreground.
+  Призупиняє процес, але не завершує його.
+  Потім ви можете скористатися командою `fg`, щоб перезапустити процес у активному режимі.
 
-For new shell users, these control codes can all appear to have
-the same effect: they make things "go away." Але корисно
-розуміти відмінності. In general, if something went wrong and
-you just want to get your shell prompt back, it is better to use
+Новим користувачам терміналу ці команди можуть здаватися однаковими: вони змушують речі "зникати". Але корисно
+розуміти відмінності. Загалом, якщо щось пішло не так
+і ви просто хочете повернути запит командного рядка, краще скористатися комбінацією
 `Ctrl-C`.
 
-## Other Shells
+## Інші термінали
 
-Before Bash became popular in the end of nineties, scientists widely
-used (and some still use) another shell, C-shell, or Csh. Bash and Csh
-have similar feature sets, but their syntax rules are different and
-this makes them incompatible with each other. A few other shells have
-appeared since, including ksh, zsh, and a number of others; they are
-mostly compatible with Bash, and Bash is the default shell on most
-modern implementations of Unix (including most packages that provide
-Unix-like tools for Windows) but if you get strange errors in shell
-scripts written by colleagues, check to see which shell they were
-written for.
+До того, як Bash став популярним наприкінці дев'яностих, вчені широко використовували (а дехто й досі використовує) інший термінал: C-shell , або Csh. Bash і Csh пропонують схожі можливості, але через різні синтаксичні правила вони несумісні між собою. Відтоді з'явилося ще кілька терміналів, зокрема ksh, zsh та інші. Більшість із них здебільшого сумісні з Bash, і саме Bash є типовим терміналом у більшості сучасних реалізацій Unix (включаючи більшість пакетів, які надають Unix-подібні інструменти для Windows). Однак якщо ви стикаєтеся з дивними помилками у скриптах, написаних колегами, перевірте, для якого саме терміналу вони були написані.
 
-## Bash Configurations
+## Конфігурації Bash
 
-Want to customize paths, environment variables, aliases,
-and other behaviors of your shell?
-This excellent blog post "[Bash Configurations Demystified][bash-demystified]"
-from Dalton Hubble
-covers tips, tricks, and how to avoid dangers.
+Хочете налаштувати шляхи, змінні середовища, псевдоніми, та інші параметри вашого терміналу?
+Ця чудова стаття в блозі "[Bash Configurations Demystified][bash-demystified]" від Далтона Хаббла містить корисні поради, хитрощі та поради щодо того, як уникнути помилок.
 
 [bash-demystified]: https://blog.dghubble.io/posts/.bashprofile-.profile-and-.bashrc-conventions/
 
