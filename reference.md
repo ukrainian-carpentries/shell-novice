@@ -1,38 +1,36 @@
 ---
-title: 'Summary of Basic Commands'
+title: 'Короткий опис основних команд'
 ---
 
-## Summary of Basic Commands
+## Короткий опис основних команд
 
-| Action                                                         | Files | Folders      |
-| -------------------------------------------------------------- | ----- | ------------ |
-| Оглянути                                                       | ls    | ls           |
-| Проглянути вміст                                               | cat   | ls           |
-| Перейти до ... |       | cd           |
-| Перемістити                                                    | mv    | mv           |
-| Копіювати                                                      | cp    | cp -r        |
-| Створити                                                       | nano  | mkdir        |
-| Видалити                                                       | rm    | rmdir, rm -r |
+| Дія                                                            | Для файлів | Для каталогів |
+| -------------------------------------------------------------- | ---------- | ------------- |
+| Оглянути                                                       | ls         | ls            |
+| Проглянути вміст                                               | cat        | ls            |
+| Перейти до ... |            | cd            |
+| Перемістити                                                    | mv         | mv            |
+| Копіювати                                                      | cp         | cp -r         |
+| Створити                                                       | nano       | mkdir         |
+| Видалити                                                       | rm         | rmdir, rm -r  |
 
-## Filesystem hierarchy
+## Ієрархія файлової системи
 
-The following is an overview of a standard Unix filesystem.
-The exact hierarchy depends on the platform. Your file/directory structure may differ slightly:
+Нижче наведено огляд стандартної файлової системи Unix.
+Її точна ієрархія може відрізнятися залежно від платформи. Ваша структура файлів/каталогів може дещо відрізнятися:
 
 ![](fig/standard-filesystem-hierarchy.svg){alt='Ієрархія файлової системи Linux'}
 
-## Glossary
+## Глосарій
 
-[absolute path]{#absolute-path}
-:   A [path](#path) that refers to a particular location in a file system.
-Absolute paths are usually written with respect to the file system's
-[root directory](#root-directory),
-and begin with either "/" (on Unix) or "\\" (on Microsoft Windows).
-See also: [relative path](#relative-path).
+[абсолютний шлях]{#absolute-path}
+:   [Шлях](#path), який посилається на певне місце у файловій системі.
+Абсолютні шляхи зазвичай записуються відносно [кореневого каталогу](#root-directory) файлової системи та починаються з символів "/" (у Unix) або "\\" (у Microsoft Windows).
+Див. також: [відносний шлях](#relative-path).
 
-[argument]{#argument}
-:   A value given to a function or program when it runs.
-The term is often used interchangeably (and inconsistently) with [parameter](#parameter).
+[аргумент]{#argument}
+:    Значення, яке передається до функції або програми під час її запуску.
+Цей термін часто (та непослідовно) замінюється на [параметр](#parameter).
 
 [командна оболонка]{#command-shell}
 :   Дивись [термінал](#shell)
@@ -40,208 +38,166 @@ The term is often used interchangeably (and inconsistently) with [parameter](#pa
 [інтерфейс командного рядка]{#command-line-interface}
 :   Інтерфейс користувача, заснований на введенні команд,
 зазвичай у циклі [REPL](#read-evaluate-print-loop).
-See also: [graphical user interface](#graphical-user-interface).
+Див. також: [графічний інтерфейс користувача](#graphical-user-interface).
 
-[comment]{#comment}
-:   A remark in a program that is intended to help human readers understand what is going on,
-but is ignored by the computer.
-Comments in Python, R, and the Unix shell start with a `#` character
-and run to the end of the line;
-comments in SQL start with `--`,
-and other languages have other conventions.
+[коментар]{#comment}
+:   Зауваження в програмі, яке пояснює код людині-читачеві, але ігнорується комп'ютером.
+Коментарі у мовах Python, R та в терміналі Unix починаються з символу `#` та тривають до кінця відповідного рядка; коментарі в SQL починаються з `--`, а в інших мовах існують інші домовленості.
 
-[current working directory]{#current-working-directory}
-:   The directory that [relative paths](#relative-path) are calculated from;
-equivalently,
-the place where files referenced by name only are searched for.
-Every [process](#process) has a current working directory.
-The current working directory is usually referred to using the shorthand notation `.`
-(pronounced "dot").
+[поточний робочий каталог]{#current-working-directory}
+:   Каталог, з якого визначаються [відносні шляхи](#relative-path); тобто місце, де відбувається пошук файлів, вказаних лише за назвою.
+Кожен [процес](#process) має власний поточний робочий каталог.
+На поточний робочий каталог зазвичай посилаються за допомогою скорочення `.` (тобто "крапка").
 
-[file system]{#file-system}
-:   A set of files, directories, and I/O devices (such as keyboards and screens).
-A file system may be spread across many physical devices,
-or many file systems may be stored on a single physical device;
-the [operating system](#operating-system) manages access.
+[файлова система]{#file-system}
+:   Набір файлів, каталогів та пристроїв вводу/виводу (таких як клавіатури та екрани).
+Файлова система може бути розподіленою на кількох фізичних пристроях одразу, або декілька файлових систем можуть зберігатися на одному пристрої; доступом керує [операційна система](#operating-system).
 
-[filename extension]{#filename-extension}
-:   The portion of a file's name that comes after the final "." character.
-За домовленістю це визначає тип файлу: `.txt` означає "текстовий файл (від англ. "TeXT"), `.png` означає "файл портативної мережевої графіки" (від англ. "Portable Network Graphics file"), і так далі. These conventions are not enforced by most operating systems:
-it is perfectly possible (but confusing!) to name an MP3 sound file `homepage.html`.
-Since many applications use filename extensions to identify the
-[MIME type](#mime-type) of the file,
-misnaming files may cause those applications to fail.
+[розширення файлу]{#filename-extension}
+:   Частина імені файлу, яка йде після останнього символу ".".
+За домовленістю це визначає тип файлу: `.txt` означає "текстовий файл (від англ. "TeXT"), `.png` означає "файл портативної мережевої графіки" (від англ. "Portable Network Graphics file"), і так далі. Більшість операційних систем не наполягають на дотриманні цих домовленостей: цілком можливо (але призведе до плутанини!) назвати звуковий MP3 файл `homepage.html`.
+Оскільки багато програм використовують розширення назв файлів для ідентифікації [MIME типу](#mime-type) файлу, неправильні назви файлів можуть призвести до збоїв у роботі відповідних застосунків.
 
-[filter]{#filter}
-:   A program that transforms a stream of data.
-Many Unix command-line tools are written as filters:
-they read data from [standard input](#standard-input),
-process it, and write the result to [standard output](#standard-output).
+[фільтр]{#filter}
+:   Програма, яка перетворює потік даних.
+Багато інструментів командного рядка Unix написано у вигляді фільтрів: вони зчитують дані зі [стандартного вводу](#standard-input), обробляють їх і записують результат у [стандартний вивід](#standard-output).
 
-[for loop]{#for-loop}
-:   A loop that is executed once for each value in some kind of set, list, or range.
-See also: [while loop](#while-loop).
+[цикл for]{#for-loop}
+:   Цикл, який виконується один раз для кожного значення в деякому наборі, списку або діапазоні.
+Дивись також: [цикл while](#while-loop).
 
-[graphical user interface]{#graphical-user-interface}
-:   A user interface based on selecting items and actions from a graphical display,
-usually controlled by using a mouse.
-See also: [command-line interface](#command-line-interface).
+[графічний інтерфейс користувача]{#graphical-user-interface}
+:   Інтерфейс користувача, у якому елементи й дії обираються на графічному екрані, зазвичай за допомогою миші.
+Дивись також: [інтерфейс командного рядка](#command-line-interface).
 
-[home directory]{#home-directory}
-:   The default directory associated with an account on a computer system.
-By convention, all of a user's files are stored in or below her home directory.
+[домашній каталог]{#home-directory}
+:   Каталог за замовчуванням, пов'язаний з обліковим записом у комп'ютерній системі.
+Зазвичай усі файли користувача зберігаються у домашньому каталозі або його підкаталогах.
 
-[loop]{#loop}
-:   A set of instructions to be executed multiple times.
-Consists of a [loop body](#loop-body) and (usually) a
-condition for exiting the loop. See also [for loop](#for-loop) and [while loop](#while-loop).
+[цикл]{#loop}
+:   Набір інструкцій, що виконується декілька разів.
+Складається з [тіла циклу](#loop-body) та (зазвичай) умови для виходу з нього. Дивись також: [цикл for](#for-loop) та [цикл while](#while-loop).
 
-[loop body]{#loop-body}
-:   The set of statements or commands that are repeated inside a [for loop](#for-loop)
-or [while loop](#while-loop).
+[тіло циклу]{#loop-body}
+:   Набір операторів або команд, які повторюються всередині [циклу for]((#for-loop) чи [циклу while](#while-loop).
 
-[MIME type]{#mime-type}
-:   MIME (Multi-Purpose Internet Mail Extensions) types describe different file types for exchange
-on the Internet, for example, images, audio, and documents.
+[тип MIME]{#mime-type}
+:   Типи MIME (багатоцільові розширення інтернет-пошти, з англ. Multi-Purpose Internet Mail Extensions) описують різні типи файлів для обміну в Інтернеті через Інтернет, наприклад: зображення, аудіо та документи.
 
-[operating system]{#operating-system}
-:   Software that manages interactions between users, hardware, and software [processes](#process).
-Common examples are Linux, macOS, and Windows.
+[операційна система]{#operating-system}
+:   Програмне забезпечення, що забезпечує взаємодію між користувачами, обладнанням і програмними [процесами](#process).
+Поширеними прикладами є Linux, macOS та Windows.
 
-[option]{#option}
-:   A way to specify an argument or setting to a command-line program.
-By convention Unix applications use a dash followed by a single letter,
-such as `-v`, or two dashes followed by a word, such as `--verbose`,
-while DOS applications use a slash, such as `/V`.
-Depending on the application, an option may be followed by a single argument,
-as in `-o /tmp/output.txt`.
+[опція]{#option}
+:   Спосіб вказати аргумент або параметр у програмі, що викликається з командного рядка.
+Зазвичай програми для Unix використовують тире, за яким слідує одна літера (наприклад, `-v`) або два тире за якими слідує слово (наприклад, `--verbose`). Застосунки DOS натомість використовують скісну риску (наприклад `/V`).
+Залежно від програми, опція може супроводжуватися одним аргументом, наприклад `-o /tmp/output.txt`.
 
-[parameter]{#parameter}
-:   A variable named in a function's declaration that is used to hold a value passed into the call.
-The term is often used interchangeably (and inconsistently) with [argument](#argument).
+[параметр]{#parameter}
+:   Змінна в оголошенні функції, яка отримує значення при виклику функції.
+Цей термін часто (та непослідовно) замінюється на [аргумент](#аргумент).
 
 [батьківський каталог]{#parent-directory}
 :   Каталог, який "містить" каталог, про який йде мова.
-Every directory in a file system except the [root directory](#root-directory) has a parent.
-A directory's parent is usually referred to using the shorthand notation `..`
-(pronounced "dot dot").
+Кожен каталог у файловій системі, окрім [кореневого каталогу](#root-directory), має батьківський каталог.
+На батьківський каталог зазвичай посилаються за допомогою скороченого позначення `..` ("крапка крапка").
 
-[path]{#path}
-:   A description that specifies the location of a file or directory within a
-[file system](#file-system).
-See also: [absolute path](#absolute-path), [relative path](#relative-path).
+[шлях]{#path}
+:   Нотація, яка вказує розташування файлу або каталогу у [файловій системі](#file-system).
+Див. також: [абсолютний шлях](#absolute-path), [відносний шлях](#relative-path).
 
-[pipe]{#pipe}
-:   A connection from the output of one program to the input of another.
-When two or more programs are connected in this way, they are called a "pipeline".
+[канал]{#pipe}
+:   З'єднання виходу однієї програми зі входом іншої.
+Коли дві або більше програм з'єднані таким чином, вони називаються "конвеєром" (pipeline).
 
-[process]{#process}
-:   A running instance of a program, containing code, variable values,
-open files and network connections, and so on.
-Processes are the "actors" that the [operating system](#operating-system) manages;
-it typically runs each process for a few milliseconds at a time
-to give the impression that they are executing simultaneously.
+[процес]{#process}
+:   Виконуваний екземпляр програми, який містить код, значення змінних, відкриті файли, мережеві з'єднання тощо.
+Процеси - це "актори", якими керує [операційна система](#operating-system); зазвичай вона виконує кожен процес по кілька мілісекунд за раз щоб створити враження, що вони виконуються одночасно.
 
-[prompt]{#prompt}
-:   A character or characters display by a [REPL](#read-evaluate-print-loop) to show that
-it is waiting for its next command.
+[запит на введення]{#prompt}
+:   Символ або символи, які виводяться циклом [REPL](#read-evaluate-print-loop), щоб показати, що він чекає на наступну команду.
 
-[quoting]{#quoting}
-:   (in the shell):
-Using quotation marks of various kinds to prevent the shell from interpreting special
-characters.
-For example, to pass the string `*.txt` to a program,
-it is usually necessary to write it as `'*.txt'` (with single quotes)
-so that the shell will not try to expand the `*` wildcard.
+[взяття в лапки]{#quoting}
+:   (в терміналі):
+Використання лапок різного типу із метою запобігання інтерпретації командним рядком спеціальних символів.
+Наприклад, щоб передати програмі рядок `*.txt`, зазвичай потрібно записати його як `'*.txt'` (з одинарними лапками), щоб термінал не намагався розгорнути символ підстановки `*`.
 
-[read-evaluate-print loop]{#read-evaluate-print-loop}
-:   (REPL): A [command-line interface](#command-line-interface) that reads a command from the user,
-executes it, prints the result, and waits for another command.
+[цикл REPL]{#read-evaluate-print-loop}
+:   (REPL): [Інтерфейс командного рядка](#command-line-interface), який читає команду від користувача, виконує її, виводить результат і чекає на наступну команду.
 
-[redirect]{#redirect}
-:   To send a command's output to a file rather than to the screen or another command,
-or equivalently to read a command's input from a file.
+[перенаправлення]{#redirect}
+:   Надсилання виводу команди до файлу замість екрана чи іншої команди або читання її вхідних даних із файлу.
 
 [регулярний вираз]{#regular-expression}
 :   Шаблон, який визначає набір рядків символів.
-REs are most often used to find sequences of characters in strings.
+Регулярні вирази найчастіше використовуються для пошуку послідовностей символів у рядках.
 
-[relative path]{#relative-path}
-:   A [path](#path) that specifies the location of a file or directory
-with respect to the [current working directory](#current-working-directory).
-Any path that does not begin with a separator character ("/" or "\\") is a relative path.
-See also: [absolute path](#absolute-path).
+[відносний шлях]{#relative-path}
+:   [Шлях](#path), який вказує розташування файлу або каталогу відносно [поточного робочого каталогу](#current-working-directory).
+Будь-який шлях, який не починається з символу-розділювача ("/" або "\\"), є відносним шляхом.
+Див. також: [абсолютний шлях](#absolute-path).
 
-[root directory]{#root-directory}
-:   The top-most directory in a [file system](#file-system).
-Its name is "/" on Unix (including Linux and macOS) and "\\" on Microsoft Windows.
+[кореневий каталог]{#root-directory}
+:   Найвищий каталог у [файловій системі](#file-system), від якого відгалужуються всі інші каталоги.
+Він позначається "/" в Unix (включаючи Linux і macOS) та "\\" в Microsoft Windows.
 
-[shell]{#shell}
-:   A [command-line interface](#command-line-interface) such as Bash (the Bourne-Again Shell)
-or the Microsoft Windows DOS shell
-that allows a user to interact with the [operating system](#operating-system).
+[термінал]{#shell}
+:   (оболонка):
+[Інтерфейс командного рядка](#command-line-interface), наприклад, Bash (Bourne-Again Shell) або DOS термінал у Microsoft Windows, що дозволяють користувачеві взаємодіяти з [операційною системою](#operating-system).
 
-[shell script]{#shell-script}
-:   A set of [shell](#shell) commands stored in a file for re-use.
-A shell script is a program executed by the shell;
-the name "script" is used for historical reasons.
+[скрипт терміналу]{#shell-script}
+:   (скрипт оболонки):
+Набір команд [терміналу](#shell), збережений у файлі для повторного використання.
+Скрипт терміналу - це програма, яку виконує термінал; назва "скрипт" використовується з історичних причин.
 
-[standard input]{#standard-input}
-:   A process's default input stream.
-In interactive command-line applications,
-it is typically connected to the keyboard;
-in a [pipe](#pipe),
-it receives data from the [standard output](#standard-output) of the preceding process.
+[стандартний ввід]{#standard-input}
+:   Потік вхідних даних, який процес використовує за замовчуванням.
+В інтерактивних програмах командного рядка, він зазвичай підключається до клавіатури. У [каналі](#pipe) він отримує дані зі [стандартного виводу](#standard-output) попереднього процесу.
 
-[standard output]{#standard-output}
-:   A process's default output stream.
-In interactive command-line applications,
-data sent to standard output is displayed on the screen;
-in a [pipe](#pipe),
-it is passed to the [standard input](#standard-input) of the next process.
+[стандартний вивід]{#standard-output}
+:   Вихідний потік процесу за замовчуванням.
+В інтерактивних програмах командного рядка, дані, надіслані на стандартний вивід, виводяться на екран; в [каналі](#pipe) вони передаються до [стандартного вводу](#standard-input) наступного процесу.
 
 [підкаталог]{#sub-directory}
 :   Каталог, що міститься у іншому каталозі.
 
-[tab completion]{#tab-completion}
-:   A feature provided by many interactive systems in which
-pressing the Tab key triggers automatic completion of the current word or command.
+[автодоповнення]{#tab-completion}
+:   (клавішею табуляції):
+Функція, що надається багатьма інтерактивними системами, в яких натискання клавіші Tab автоматично доповнює поточне слово або команду.
 
-[variable]{#variable}
-:   A name in a program that is associated with a value or a collection of values.
+[змінна]{#variable}
+:   Ім'я у програмі, яке асоціюється зі значенням або набором значень.
 
-[while loop]{#while-loop}
-:   A loop that keeps executing as long as some condition is true.
-See also: [for loop](#for-loop).
+[цикл while]{#while-loop}
+:   Цикл, який виконується до тих пір, поки певна умова є істинною.
+Дивись також: [цикл for](#for-loop).
 
-[wildcard]{#wildcard}
-:   A character used in pattern matching.
-In the Unix shell,
-the wildcard `*` matches zero or more characters,
-so that `*.txt` matches all files whose names end in `.txt`.
+[символ підстановки]{#wildcard}
+:   Символ, який використовується для зіставлення із шаблоном.
+У терміналі Unix, шаблон `*` відповідає нулю або більше символів; таким чином, `*.txt` відповідає усім файлам, назви яких закінчуються на `.txt`.
 
-## External references
+## Зовнішні джерела
 
-### Opening a terminal
+### Відкриття терміналу
 
-- [How to Use Terminal on a Mac](https://www.macworld.co.uk/feature/mac-software/how-use-terminal-on-mac-3608274/)
-- [Git for Windows](https://git-for-windows.github.io/)
-- [How to Install Bash shell command-line tool on Windows 10](https://www.windowscentral.com/how-install-bash-shell-command-line-windows-10)
-- [Install and Use the Linux Bash Shell on Windows 10](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/)
-- [Using the Windows 10 Bash Shell](https://www.howtogeek.com/265900/everything-you-can-do-with-windows-10s-new-bash-shell/)
-- [Using a UNIX/Linux emulator (Cygwin) or Secure Shell (SSH) client (Putty)](https://faculty.smu.edu/reynolds/unixtut/windows.html)
+- [Як користуватися терміналом на Mac](https://www.macworld.co.uk/feature/mac-software/how-use-terminal-on-mac-3608274/) (матеріал англійською мовою)
+- [Git для Windows](https://git-for-windows.github.io/) (матеріал англійською мовою)
+- [Як встановити термінал Bash на Windows 10](https://www.windowscentral.com/how-install-bash-shell-command-line-windows-10) (матеріал англійською мовою)
+- [Встановлення та використання терміналу Linux Bash у Windows 10](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/) (матеріал англійською мовою)
+- [Використання терміналу Bash у Windows 10](https://www.howtogeek.com/265900/everything-you-can-do-with-windows-10s-new-bash-shell/) (матеріал англійською мовою)
+- [Використання емулятора UNIX/Linux (Cygwin) або клієнта Secure Shell (SSH) (Putty)](https://faculty.smu.edu/reynolds/unixtut/windows.html) (матеріал англійською мовою)
 
-### Manuals
+### Документація
 
-- [GNU manuals](https://www.gnu.org/manual/manual.html)
-- [Core GNU utilities](https://www.gnu.org/software/coreutils/manual/coreutils.html)
+- [Документація до компонентів проєкту GNU](https://www.gnu.org/manual/manual.html) (матеріал англійською мовою)
+- [Ключові утиліти GNU](https://www.gnu.org/software/coreutils/manual/coreutils.html) (матеріал англійською мовою)
 
-### Miscellaneous
+### Різне
 
-- [North Pacific Gyre](https://en.wikipedia.org/wiki/North_Pacific_Gyre)
-- [Great Pacific Garbage Patch](https://en.wikipedia.org/wiki/Great_Pacific_Garbage_Patch)
-- ['Ensuring the longevity of digital information' by Jeff Rothenberg](https://www.clir.org/pubs/archives/ensuring.pdf)
-- [Computer error haikus](https://wiki.c2.com/?ComputerErrorHaiku)
-- [How to name files nicely, by Jenny Bryan](https://speakerdeck.com/jennybc/how-to-name-files)
+- [Північнотихоокеанська течія](https://uk.wikipedia.org/wiki/Північнотихоокеанська_течія)
+- [Велика тихоокеанська сміттєва пляма](https://uk.wikipedia.org/wiki/Велика_тихоокеанська_сміттєва_пляма)
+- ['Забезпечення довговічності цифрової інформації', автор Jeff Rothenberg](https://www.clir.org/pubs/archives/ensuring.pdf) (матеріал англійською мовою)
+- [Хайку про комп'ютерні помилки](https://wiki.c2.com/?ComputerErrorHaiku) (матеріал англійською мовою)
+- ['Як правильно називати файли', автор Jenny Bryan](https://speakerdeck.com/jennybc/how-to-name-files) (матеріал англійською мовою)
 
 
