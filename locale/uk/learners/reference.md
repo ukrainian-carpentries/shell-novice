@@ -1,38 +1,36 @@
 ---
-title: 'Summary of Basic Commands'
+title: 'Короткий опис основних команд'
 ---
 
-## Summary of Basic Commands
+## Короткий опис основних команд
 
-| Action                                                         | Files | Folders      |
-| -------------------------------------------------------------- | ----- | ------------ |
-| Оглянути                                                       | ls    | ls           |
-| Проглянути вміст                                               | cat   | ls           |
-| Перейти до ... |       | cd           |
-| Перемістити                                                    | mv    | mv           |
-| Копіювати                                                      | cp    | cp -r        |
-| Створити                                                       | nano  | mkdir        |
-| Видалити                                                       | rm    | rmdir, rm -r |
+| Дія                                                            | Для файлів | Для каталогів |
+| -------------------------------------------------------------- | ---------- | ------------- |
+| Оглянути                                                       | ls         | ls            |
+| Проглянути вміст                                               | cat        | ls            |
+| Перейти до ... |            | cd            |
+| Перемістити                                                    | mv         | mv            |
+| Копіювати                                                      | cp         | cp -r         |
+| Створити                                                       | nano       | mkdir         |
+| Видалити                                                       | rm         | rmdir, rm -r  |
 
-## Filesystem hierarchy
+## Ієрархія файлової системи
 
-The following is an overview of a standard Unix filesystem.
-The exact hierarchy depends on the platform. Your file/directory structure may differ slightly:
+Нижче наведено огляд стандартної файлової системи Unix.
+Її точна ієрархія може відрізнятися залежно від платформи. Ваша структура файлів/каталогів може дещо відрізнятися:
 
 ![](fig/standard-filesystem-hierarchy.svg){alt='Ієрархія файлової системи Linux'}
 
-## Glossary
+## Глосарій
 
-[absolute path]{#absolute-path}
-:   A [path](#path) that refers to a particular location in a file system.
-Absolute paths are usually written with respect to the file system's
-[root directory](#root-directory),
-and begin with either "/" (on Unix) or "\\" (on Microsoft Windows).
-See also: [relative path](#relative-path).
+[абсолютний шлях]{#absolute-path}
+:   [Шлях](#path), який посилається на певне місце у файловій системі.
+Абсолютні шляхи зазвичай записуються відносно [кореневого каталогу](#root-directory) файлової системи та починаються з символів "/" (у Unix) або "\\" (у Microsoft Windows).
+Див. також: [відносний шлях](#relative-path).
 
-[argument]{#argument}
-:   A value given to a function or program when it runs.
-The term is often used interchangeably (and inconsistently) with [parameter](#parameter).
+[аргумент]{#argument}
+:    Значення, яке передається до функції або програми під час її запуску.
+Цей термін часто (та непослідовно) замінюється на [параметр](#parameter).
 
 [командна оболонка]{#command-shell}
 :   Дивись [термінал](#shell)
@@ -40,43 +38,34 @@ The term is often used interchangeably (and inconsistently) with [parameter](#pa
 [інтерфейс командного рядка]{#command-line-interface}
 :   Інтерфейс користувача, заснований на введенні команд,
 зазвичай у циклі [REPL](#read-evaluate-print-loop).
-See also: [graphical user interface](#graphical-user-interface).
+Див. також: [графічний інтерфейс користувача](#graphical-user-interface).
 
-[comment]{#comment}
-:   A remark in a program that is intended to help human readers understand what is going on,
-but is ignored by the computer.
+[коментар]{#comment}
+:   Зауваження в програмі, яке пояснює код людині-читачеві, але ігнорується комп'ютером.
 Comments in Python, R, and the Unix shell start with a `#` character
 and run to the end of the line;
 comments in SQL start with `--`,
 and other languages have other conventions.
 
-[current working directory]{#current-working-directory}
-:   The directory that [relative paths](#relative-path) are calculated from;
-equivalently,
-the place where files referenced by name only are searched for.
-Every [process](#process) has a current working directory.
-The current working directory is usually referred to using the shorthand notation `.`
-(pronounced "dot").
+[поточний робочий каталог]{#current-working-directory}
+:   Каталог, з якого визначаються [відносні шляхи](#relative-path); тобто місце, де відбувається пошук файлів, вказаних лише за назвою.
+Кожен [процес](#process) має власний поточний робочий каталог.
+На поточний робочий каталог зазвичай посилаються за допомогою скорочення `.` (тобто "крапка").
 
-[file system]{#file-system}
-:   A set of files, directories, and I/O devices (such as keyboards and screens).
-A file system may be spread across many physical devices,
-or many file systems may be stored on a single physical device;
-the [operating system](#operating-system) manages access.
+[файлова система]{#file-system}
+:   Набір файлів, каталогів та пристроїв вводу/виводу (таких як клавіатури та екрани).
+Файлова система може бути розподіленою на кількох фізичних пристроях одразу, або декілька файлових систем можуть зберігатися на одному пристрої; доступом керує [операційна система](#operating-system).
 
-[filename extension]{#filename-extension}
-:   The portion of a file's name that comes after the final "." character.
-За домовленістю це визначає тип файлу: `.txt` означає "текстовий файл (від англ. "TeXT"), `.png` означає "файл портативної мережевої графіки" (від англ. "Portable Network Graphics file"), і так далі. These conventions are not enforced by most operating systems:
-it is perfectly possible (but confusing!) to name an MP3 sound file `homepage.html`.
+[розширення файлу]{#filename-extension}
+:   Частина імені файлу, яка йде після останнього символу ".".
+За домовленістю це визначає тип файлу: `.txt` означає "текстовий файл (від англ. "TeXT"), `.png` означає "файл портативної мережевої графіки" (від англ. "Portable Network Graphics file"), і так далі. Більшість операційних систем не наполягають на дотриманні цих домовленостей: цілком можливо (але призведе до плутанини!) назвати звуковий MP3 файл `homepage.html`.
 Since many applications use filename extensions to identify the
 [MIME type](#mime-type) of the file,
 misnaming files may cause those applications to fail.
 
-[filter]{#filter}
-:   A program that transforms a stream of data.
-Many Unix command-line tools are written as filters:
-they read data from [standard input](#standard-input),
-process it, and write the result to [standard output](#standard-output).
+[фільтр]{#filter}
+:   Програма, яка перетворює потік даних.
+Багато інструментів командного рядка Unix написано у вигляді фільтрів: вони зчитують дані зі [стандартного вводу](#standard-input), обробляють їх і записують результат у [стандартний вивід](#standard-output).
 
 [for loop]{#for-loop}
 :   A loop that is executed once for each value in some kind of set, list, or range.
@@ -85,7 +74,7 @@ See also: [while loop](#while-loop).
 [graphical user interface]{#graphical-user-interface}
 :   A user interface based on selecting items and actions from a graphical display,
 usually controlled by using a mouse.
-See also: [command-line interface](#command-line-interface).
+Дивись також: [інтерфейс командного рядка](#command-line-interface).
 
 [home directory]{#home-directory}
 :   The default directory associated with an account on a computer system.
