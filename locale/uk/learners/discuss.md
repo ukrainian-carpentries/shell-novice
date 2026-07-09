@@ -8,11 +8,7 @@ title: Обговорення
 
 ## Спеціальні комбінації клавіш
 
-Термінал приймає кілька спеціальних команд, які дозволяють користувачам взаємодіяти з процесами чи програмами, що вже запущені. You can enter each of these
-"control codes" by holding down the `Ctrl` key and then pressing one
-of the control characters. In other tutorials, you may see the term
-`Control` or the `^` used to represent the `Ctrl` key (e.g. the
-following are all equivalent `Ctrl-C`, `Ctrl+C`, `Control-C`, `Control+C`, `^C`).
+Термінал приймає кілька спеціальних команд, які дозволяють користувачам взаємодіяти з процесами чи програмами, що вже запущені. Ці "коди керування" вводяться так: тримайте `Ctrl` і натискайте потрібну клавішу. В інших підручниках ви можете зустріти слово `Control` або символ `^`, які використовуються для позначення клавіші `Ctrl` (наприклад наведені нижче комбінації є еквівалентними `Ctrl-C`, `Ctrl+C`, `Control-C`, `Control+C`, `^C`).
 
 - `Ctrl-C`:
   перериває і скасовує запущену програму.
@@ -20,42 +16,27 @@ following are all equivalent `Ctrl-C`, `Ctrl+C`, `Control-C`, `Control+C`, `^C`)
 
 - `Ctrl-D`:
   вказує на кінець файлу або потоку символів, які ви вводите у командному рядку.
-  For example, we saw earlier that the `wc` command counts lines, words, and characters in a file.
-  If we just type `wc` and hit the Enter key without providing a file name,
-  then `wc` will assume we want it to analyze all the stuff we type next.
-  After typing our magnum opus directly into the shell prompt,
-  we can then type Ctrl-D to tell `wc` that we're done
-  and we'd like to see the results of the word count.
+  Наприклад, ми вже раніше бачили, що команда `wc` рахує кількість рядків, слів і символів у файлі.
+  Якщо просто ввести `wc` і натиснути Enter, не вказавши назву файлу, то `wc` вважатиме, що потрібно аналізувати все, що ми вводимо далі.
+  Після введення нашого грандіозного опусу безпосередньо у командний рядок, ми можемо натиснути Ctrl-D, щоб сказати `wc`, що введення завершено і потрібно показати результати підрахунку.
 
 - `Ctrl-Z`:
   Призупиняє процес, але не завершує його.
   Потім ви можете скористатися командою `fg`, щоб перезапустити процес у активному режимі.
 
-For new shell users, these control codes can all appear to have
-the same effect: they make things "go away." Але корисно
+Новим користувачам терміналу ці команди можуть здаватися однаковими: вони змушують речі "зникати". Але корисно
 розуміти відмінності. Загалом, якщо щось пішло не так
 і ви просто хочете повернути запит командного рядка, краще скористатися комбінацією
 `Ctrl-C`.
 
 ## Інші термінали
 
-До того, як Bash став популярним наприкінці дев'яностих, вчені широко використовували (а дехто й досі використовує) інший термінал: C-shell , або Csh. Bash and Csh
-have similar feature sets, but their syntax rules are different and
-this makes them incompatible with each other. A few other shells have
-appeared since, including ksh, zsh, and a number of others; they are
-mostly compatible with Bash, and Bash is the default shell on most
-modern implementations of Unix (including most packages that provide
-Unix-like tools for Windows) but if you get strange errors in shell
-scripts written by colleagues, check to see which shell they were
-written for.
+До того, як Bash став популярним наприкінці дев'яностих, вчені широко використовували (а дехто й досі використовує) інший термінал: C-shell , або Csh. Bash і Csh пропонують схожі можливості, але через різні синтаксичні правила вони несумісні між собою. Відтоді з'явилося ще кілька терміналів, зокрема ksh, zsh та інші. Більшість із них здебільшого сумісні з Bash, і саме Bash є типовим терміналом у більшості сучасних реалізацій Unix (включаючи більшість пакетів, які надають Unix-подібні інструменти для Windows). Однак якщо ви стикаєтеся з дивними помилками у скриптах, написаних колегами, перевірте, для якого саме терміналу вони були написані.
 
 ## Конфігурації Bash
 
-Want to customize paths, environment variables, aliases,
-and other behaviors of your shell?
-This excellent blog post "[Bash Configurations Demystified][bash-demystified]"
-from Dalton Hubble
-covers tips, tricks, and how to avoid dangers.
+Хочете налаштувати шляхи, змінні середовища, псевдоніми, та інші параметри вашого терміналу?
+Ця чудова стаття в блозі "[Bash Configurations Demystified][bash-demystified]" від Далтона Хаббла містить корисні поради, хитрощі та поради щодо того, як уникнути помилок.
 
 [bash-demystified]: https://blog.dghubble.io/posts/.bashprofile-.profile-and-.bashrc-conventions/
 
